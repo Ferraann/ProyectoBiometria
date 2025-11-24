@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editarRepetirCorreoNuevo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Repita correo nuevo"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/guardarDatos"
+        app:layout_constraintEnd_toStartOf="@+id/modificarCorreo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editarCorreoNuevo" />
+
+    <EditText
+        android:id="@+id/editarCorreoNuevo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Correo nuevo"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/editarRepetirCorreoNuevo"
+        app:layout_constraintEnd_toStartOf="@+id/modificarCorreo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editarRepetirContrasenyaNueva" />
+
+    <Button
+        android:id="@+id/modificarCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:layout_marginBottom="25dp"
+        android:onClick="botonActivarModificarCorreo"
+        android:text="*/"
+        app:layout_constraintBottom_toTopOf="@+id/guardarDatos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editarCorreoNuevo"
+        app:layout_constraintTop_toBottomOf="@+id/modificarContrasenyaAntigua" />
+
+    <EditText
+        android:id="@+id/editarContrasenyaActual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Antigua contraseña"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/editarContrasenyaNueva"
+        app:layout_constraintEnd_toStartOf="@+id/modificarContrasenyaAntigua"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editarApellidos" />
+
+    <Button
+        android:id="@+id/modificarContrasenyaAntigua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="botonActivarModificarContrasenya"
+        android:text="*/"
+        app:layout_constraintBottom_toTopOf="@+id/modificarCorreo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editarContrasenyaActual"
+        app:layout_constraintTop_toBottomOf="@+id/modificarApellidos" />
+
+    <EditText
+        android:id="@+id/editarNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Nombre"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/editarApellidos"
+        app:layout_constraintEnd_toStartOf="@+id/modificarNombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editarContrasenyaNueva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Nueva contraseña"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/editarRepetirContrasenyaNueva"
+        app:layout_constraintEnd_toStartOf="@+id/modificarContrasenyaAntigua"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editarContrasenyaActual" />
+
+    <EditText
+        android:id="@+id/editarRepetirContrasenyaNueva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Repita nueva contraseña"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/editarCorreoNuevo"
+        app:layout_constraintEnd_toStartOf="@+id/modificarContrasenyaAntigua"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editarContrasenyaNueva" />
+
+    <Button
+        android:id="@+id/modificarNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="botonActivarModificarNombre"
+        android:text="*/"
+        app:layout_constraintBottom_toTopOf="@+id/modificarApellidos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editarNombre"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/modificarApellidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="botonActivarModificarApellidos"
+        android:text="*/"
+        app:layout_constraintBottom_toTopOf="@+id/modificarContrasenyaAntigua"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editarApellidos"
+        app:layout_constraintTop_toBottomOf="@+id/modificarNombre" />
+
+    <Button
+        android:id="@+id/guardarDatos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:onClick="botonGuardarModificaciones"
+        android:text="Guardar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editarRepetirCorreoNuevo" />
+
+    <EditText
+        android:id="@+id/editarApellidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Apellidos"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/editarContrasenyaActual"
+        app:layout_constraintEnd_toStartOf="@+id/modificarApellidos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editarNombre" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

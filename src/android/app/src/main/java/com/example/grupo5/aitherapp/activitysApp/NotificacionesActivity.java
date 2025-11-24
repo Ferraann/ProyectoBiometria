@@ -1,0 +1,127 @@
+package com.example.grupo5.aitherapp.activitysApp;
+
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
+import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
+import com.example.grupo5.aitherapp.R;
+
+public class NotificacionesActivity extends AppCompatActivity {
+    private static final String MY_CHANNEL_ID = "Aither";
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_notificaciones);
+        crearCanal();
+    }
+
+    public void crearCanal(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel(MY_CHANNEL_ID, "MyCanal", NotificationManager.IMPORTANCE_DEFAULT);
+            channel.enableVibration(true);
+            channel.setVibrationPattern(new long[]{0, 500, 500, 500});
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+    public void crearNotificacionPeligroExtremo(View v){
+        Intent intent = new Intent(this, NotificacionesActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+        int flag = 0;
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            flag = PendingIntent.FLAG_IMMUTABLE;
+        }
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intent,flag);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, MY_CHANNEL_ID)
+//                .setSmallIcon(R.drawable.logo_aither)
+                .setContentTitle("Peligro")
+                .setContentIntent(pendingIntent)
+                .setContentText("Cuidado estás es una zona demasiada contaminada")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+
+        NotificationManagerCompat.from(this).notify(1,builder.build());
+
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        long[] pattern = new long[]{0, 500, 500, 500}; // patrón de vibración
+
+        if (vibrator != null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                VibrationEffect effect = VibrationEffect.createWaveform(pattern, 0);
+                vibrator.vibrate(effect);
+            } else {
+                vibrator.vibrate(pattern, 0);
+            }
+
+            long tiempoVibrandoMs = 10000; // 10 segundos, ajusta a lo que quieras
+
+            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    vibrator.cancel();
+                }
+            }, tiempoVibrandoMs);
+        }
+    }
+
+//    public void crearNotificacionCuidado(View v){
+//        Intent intent = new Intent(this, NotificacionesActivity.class);
+//        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//
+//        int flag = 0;
+//        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+//            flag = PendingIntent.FLAG_IMMUTABLE;
+//        }
+//
+//        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, flag);
+//
+//        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, MY_CHANNEL_ID)
+//                .setSmallIcon(android.R.drawable.ic_delete)
+//                .setContentTitle("Atención")
+//                .setContentIntent(pendingIntent)
+//                .setContentText("Ten cuidado te estás acercando a un sitio peligroso")
+//                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+//
+//        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+//            return;
+//        }
+//
+//        NotificationManagerCompat.from(this).notify(1, builder.build());
+//
+//        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+//        long[] pattern = new long[]{0, 500}; // Solo vibra una vez
+//
+//        if (vibrator != null) {
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//                VibrationEffect effect = VibrationEffect.createWaveform(pattern, -1); // -1 = no repetir
+//                vibrator.vibrate(effect);
+//            } else {
+//                vibrator.vibrate(pattern, -1); // -1 = no repetir
+//            }
+//        }
+//    }
+}
