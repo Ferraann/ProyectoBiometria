@@ -1,0 +1,356 @@
+/* ----------------------------- */
+/* ---------- Colores ---------- */
+:root {
+    /* Colores principales */
+    --Principal_1: #152D9A;
+    --Principal_1_RGB: 21, 45, 154;
+    --Principal_2: #B1BEF9;
+    --Principal_2_RGB: 177, 190, 249;
+    /* Colores secundarios */
+    --Secundario_Blanco: #FFFFFF;
+    --Secundario_Negro: #000000;
+    --Secundario_Azul: #587DBD;
+    --Secundario_Azul_RGB: 88, 125, 189;
+    --bold: 700;
+    --semibold: 600;
+    --normal: 400;
+
+}
+/* ---------------------------- */
+/* ---------------------------- */
+
+/* --- Reseteo Básico y Estilos Globales --- */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    /* tipografia temporal */
+    font-family: 'Montserrat', sans-serif;
+    
+}
+/* ---------------------------- */
+/* ---------- Header ---------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--Secundario_Azul);
+}
+
+header a > img {
+    width: 160px;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    list-style: none;
+}
+nav ul li{
+    text-align: center;
+}
+
+nav a {
+    color: var(--Principal_1);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+nav a.nav-perfil {
+    flex-direction: column;  /* Cambia la dirección de flex (para apilar) */
+    align-items: center;     /* Centra el contenido horizontalmente */
+    gap: 4px;                /* Añade un pequeño espacio entre icono y texto */
+}
+
+
+nav a.nav-perfil i {
+    font-size: 2.5rem; /* Un 50% más grande que el texto (puedes ajustarlo) */
+}
+nav a:hover{
+    color: var(--Secundario_Blanco);
+}
+/* --- 1. Contenedor para posicionamiento relativo --- */
+.profile-dropdown-container {
+    /* Necesitamos que el <li> de la navegación sea el punto de referencia
+       para posicionar el menú de forma absoluta. */
+    position: relative;
+    /* Aseguramos que el logo y el nombre estén apilados verticalmente */
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+/* --- 2. Estilos del Menú Pop-up --- */
+.profile-menu {
+    /* POSICIONAMIENTO CLAVE */
+    position: absolute;
+    top: -15px; /* Ajusta para que el borde superior toque el borde del header */
+    right: -30px; /* Alinea el menú con el borde derecho de la pantalla (compensando el padding del header) */
+    z-index: 100; /* Asegura que esté por encima de todo */
+
+    /* DISEÑO */
+    width: 250px;
+    background-color: var(--Principal_1); /* El azul oscuro de la imagen */
+    color: var(--Secundario_Blanco);
+    border-radius: 0 0 10px 10px; /* Solo las esquinas inferiores redondeadas */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Importante para el radio de las esquinas */
+    
+    /* CONTROL JAVASCRIPT: oculto por defecto */
+    display: none; 
+}
+
+.profile-menu.show {
+    display: block; /* Clase añadida por JS para mostrarlo */
+}
+
+/* --- 3. Cabecera del Menú (Icono + Nombre + X) --- */
+.menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 10px;
+    background-color: rgba(255, 255, 255, 0.1); /* Ligero fondo para destacar */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-icon-large {
+    font-size: 2.5rem; /* Icono grande */
+}
+
+.profile-name {
+    font-weight: var(--semibold);
+    font-size: 1.1rem;
+    line-height: 1.1;
+    text-align: right;
+}
+
+.close-menu-btn {
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px; /* Área de clic más grande */
+}
+
+/* --- 4. Botones/Opciones del Menú --- */
+.menu-item {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    text-align: left;
+    text-decoration: none;
+    color: var(--Secundario_Blanco);
+    font-weight: var(--semibold);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s;
+}
+
+.menu-item:hover {
+    background-color: var(--Principal_2); /* Color más claro al pasar el ratón */
+    color: var(--Principal_1);
+}
+
+/* Estilo específico para el botón de Cerrar Sesión (último) */
+.logout-item {
+    border-bottom: none;
+    font-weight: var(--bold);
+}
+/* --- CONTENEDOR PRINCIPAL --- */
+.soporte-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    color: var(--Principal_1);
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* --- PESTAÑAS (TABS) --- */
+.tabs {
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 30px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-bottom: 10px;
+    cursor: pointer;
+    color: #666;
+    position: relative;
+    font-family: inherit;
+}
+
+.tab-btn.active {
+    color: var(--Principal_1);
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--Principal_1); /* Línea negra debajo de la pestaña activa */
+}
+
+/* --- SECCIONES DE CONTENIDO --- */
+.content-section {
+    display: none; /* Oculto por defecto */
+    animation: fadeIn 0.4s ease;
+}
+
+.content-section.active {
+    display: block; /* Visible si tiene la clase active */
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* --- ESTILOS GUÍA (PDFs) --- */
+.section-desc { margin-bottom: 30px; line-height: 1.5; }
+
+.pdf-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.pdf-left { display: flex; align-items: center; gap: 15px; }
+.pdf-icon { font-size: 2rem; color: var(--Principal_1); }
+.pdf-name { font-weight: 700; }
+.pdf-download { color: var(--Secundario_Azul); font-size: 1.5rem; transition: 0.3s; }
+.pdf-download:hover { color: var(--Principal_1); }
+
+/* --- ESTILOS FORMULARIO --- */
+.form-intro h3 { margin-bottom: 5px; font-size: 1.1rem; }
+.form-intro small { color: #666; display: block; margin-bottom: 25px; }
+
+.custom-label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.custom-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--Principal_1);
+    background-color: var(--Secundario_Blanco);
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* Botones y acciones del formulario */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.file-upload-wrapper {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-camera {
+    font-size: 1.8rem;
+    color: var(--Principal_1);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-camera:hover { transform: scale(1.1); }
+
+#imagenInput { display: none; } /* Ocultamos el input file feo */
+
+.btn-reset {
+    background-color: var(--Principal_1);
+    color: white;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.submit-container { 
+    text-align: left; 
+}
+
+.btn-send {
+    background-color: var(--Secundario_Azul);
+    border: 3px solid var(--Principal_1);
+    color: white;
+    padding: 12px 50px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    align-content:flex-start ;
+}
+
+.btn-send:hover { background-color: var(--Principal_1); }
+
+/* Estilo para el texto de archivos seleccionados */
+#file-count {
+    display: flex;
+    flex-direction: column; /* Hace que se pongan uno debajo de otro */
+    gap: 8px;               /* Espacio entre cada nombre de archivo */
+    margin-bottom: 25px;    /* Espacio entre la lista y el botón de Enviar */
+    width: 100%;
+}
+
+/* Estilo para cada fila de archivo (crearemos divs en el JS) */
+.file-item-row {
+    font-size: 0.9rem;
+    color: #333;
+    background-color: #f0f2f5; /* Un fondo gris clarito para cada archivo */
+    padding: 8px 12px;
+    border-radius: 5px;
+    border-left: 4px solid var(--Principal_1); /* Decoración azul a la izquierda */
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mensajes de estado */
+.msg-box { margin-top: 15px; text-align: center; font-weight: 600; }
+.text-danger { color: #d9534f; }
+.text-success { color: #5cb85c; }
+.text-warning { color: #f0ad4e; }

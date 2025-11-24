@@ -1,0 +1,172 @@
+/* ============================================================
+   ARCHIVO: libroEstilos.css
+   DESCRIPCIÓN: Este fichero define los estilos básicos del proyecto, colores,
+   tamaños de letra, botones, etc. También habrán variables para usar dentro del
+   resto de páginas.
+   AUTOR: Ferran Sansaloni Prats
+   FECHA: 05/11/2025
+============================================================ */
+
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+/* --------------------------------------- */
+/* ---------- Estilos generales ---------- */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /*font family*/
+}
+/* ---------------------------- */
+/* ---------------------------- */
+
+
+/* ----------------------------- */
+/* ---------- Colores ---------- */
+:root {
+    /* Colores principales */
+    --Principal_1: #152D9A;
+    --Principal_1_RGB: 21, 45, 154;
+    --Principal_2: #B1BEF9;
+    --Principal_2_RGB: 177, 190, 249;
+    /* Colores secundarios */
+    --Secundario_Blanco: #FFFFFF;
+    --Secundario_Negro: #000000;
+    --Secundario_Azul: #587DBD;
+    --Secundario_Azul_RGB: 88, 125, 189;
+
+}
+/* ---------------------------- */
+/* ---------------------------- */
+
+
+/* -------------------------------- */
+/* ---------- Tipografía ---------- */
+h1 {
+    font-family: "Rubik", sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+h2 {
+
+}
+
+h3 {
+    font-family: "Rubik", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+span {
+
+}
+/* -------------------------------- */
+/* -------------------------------- */
+
+
+/* -------------------------------- */
+/* ---------- Weight ---------- */
+:root {
+    --bold: 700;
+    --semibold: 600;
+    --normal: 400;
+}
+
+/* -------------------------------- */
+/* -------------------------------- */
+
+
+/* ---------------------------- */
+/* ---------- Header ---------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px;
+}
+
+header a > img {
+    width: 160px;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    list-style: none;
+}
+
+nav a {
+    color: var(--Principal_1);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Botón del header activo (clicable) */
+nav ul li:last-child a.enabled {
+    background-color: var(--Principal_1);
+    color: var(--Principal_2);
+    pointer-events: auto;
+    padding: 10px 20px;
+    cursor: pointer;
+    opacity: 1;
+    border-radius: 69px;
+    text-decoration: none;
+}
+
+nav ul li:last-child a.enabled:hover {
+    background-color: white;
+    color: var(--Principal_1);
+    transition: background-color 0.2s ease;
+}
+
+/* Botón del header deshabilitado */
+nav ul li:last-child a.disabled {
+    background-color: #5E5E5E;
+    color: var(--Principal_2);
+    /* evita clicks */
+    pointer-events: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    opacity: 0.6;
+    border-radius: 69px;
+
+    text-decoration: none;
+}
+
+nav ul li:last-child a.disabled:hover {
+    background-color: #5E5E5E; /* evitar hover */
+    color: var(--Principal_2);
+}
+
+
+nav a:hover {
+    /* Cuando esté el cursor encima se subraya */
+    color: white;
+}
+/* ---------------------------- */
+/* ---------------------------- */
+
+
+/* ---------------------------- */
+/* ---------- Body ---------- */
+body {
+    display: flex;
+    flex-direction: column;
+}
+/* ---------------------------- */
+/* ---------------------------- */
+
+
+/* -------------------------- */
+/* ---------- Main ---------- */
+main {
+
+}
+/* ---------------------------- */
+/* ---------------------------- */

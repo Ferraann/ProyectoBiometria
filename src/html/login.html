@@ -1,0 +1,228 @@
+<!--
+===============================================================================
+NOMBRE: login.html
+DESCRIPCIÓN: Página de inicio de sesión de la plataforma AITHER.
+             Incluye cabecera con navegación, formulario de login,
+             acceso rápido con redes sociales y enlace de registro.
+COPYRIGHT: © 2025 AITHER. Todos los derechos reservados.
+FECHA: 03/11/2025
+AUTOR: Ferran Sansaloni Prats
+APORTACIÓN: Estructura completa de la página HTML para el inicio de sesión
+            con enlaces a recursos CSS y JavaScript externos.
+===============================================================================
+-->
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AITHER - Inicia sesión</title>
+  <!-- IMPORTS de CSS y JS -->
+  <link rel="stylesheet" href="../css/libroEstilos.css">
+  <link rel="stylesheet" href="../css/login.css">
+  <script src="../js/login.js" defer></script>
+</head>
+<body>
+<!--
+----------------------------------------------------------------------------
+BLOQUE: <header>
+DISEÑO LÓGICO: Contiene el logotipo y la barra de navegación principal.
+DESCRIPCIÓN: Proporciona acceso rápido a secciones informativas y
+un botón para iniciar sesión.
+----------------------------------------------------------------------------
+-->
+<header>
+  <!-- Logo de Aither | Al hacer clic tiene que llevar a la landing -->
+  <a href="../index.html"><img src="../img/logo_Aither_web.png" alt="Este es el logo de nuestro Proyecto: Aither"></a>
+  <!-- Enlaces del header -->
+  <nav>
+    <!-- Saber mas, quienes somos, faq y boton de iniciar sesión -->
+    <ul>
+      <li><a href="saber_mas.html">SABER MÁS</a></li>
+      <li>
+        <a href="quienes_somos.html">¿QUIÉNES SOMOS?</a>
+      </li>
+      <li><a href="faq.html">FAQ</a></li>
+      <!-- No lleva a ningún sitio porque es el boton de login y ya estamos en login -->
+      <li><a href="login.html">INICIAR SESIÓN</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!--
+  ----------------------------------------------------------------------------
+  BLOQUE: <main>
+  DISEÑO LÓGICO: Contenedor principal del área de inicio de sesión.
+  DESCRIPCIÓN: Agrupa el formulario de acceso y el panel de registro alternativo.
+  ----------------------------------------------------------------------------
+  -->
+<main>
+  <!-- Contenedor del formulario -->
+  <div class="container" id="container">
+    <!-- Formulario de inicio de sesión -->
+    <div class="container-form sign-in-container">
+      <form action="#" id="loginForm">
+        <!-- Titulo -->
+        <h1>INICIA SESIÓN</h1>
+        <!-- Contenedor del correo -->
+        <div class="container-input">
+          <!-- Texto -->
+          <label for="correo-sign-in">Correo electrónico:</label>
+          <!-- Input -->
+          <input type="email" placeholder="" id="correo-sign-in">
+        </div>
+        <!-- Contenedor de la contarseña -->
+        <div class="container-input password-wrapper">
+          <!-- Texto -->
+          <label for="contraseña-sign-in">Contraseña:</label>
+          <!-- Input -->
+          <input type="password" placeholder="" id="contraseña-sign-in">
+          <!-- Icono del ojo para mostrar / ocultar contraseña -->
+          <img src="../img/ojo-cerrado.png" class="toggle-password" data-input="contraseña-sign-in" alt="Mostrar contraseña">
+        </div>
+        <!-- Enlace de contraseña olvidada -->
+        <a href="#" class="forgot">¿Has olvidado tu contraseña?</a>
+        <!-- Boton de iniciar sesión CTA-->
+        <button type="submit" class="btn-primary">INICIAR SESIÓN</button>
+        <!-- Separador de contenido -->
+        <h3 class="divider">Acceso rápido con</h3>
+        <!-- Iconos de redes sociales -->
+        <div class="social-networks">
+          <a href="#"><img src="../img/google.png" alt="Logo de Google"></a>
+          <a href="#"><img src="../img/facebook.png" alt="Logo de Facebook"></a>
+          <a href="#"><img src="../img/twitter.png" alt="Logo de Twitter"></a>
+        </div>
+      </form>
+    </div>
+
+    <!-- Formulario de registro -->
+    <div class="container-form sign-up-container">
+      <form action="#" id="registerForm">
+        <!-- Título -->
+        <h1>REGISTRO</h1>
+        <!-- Contenedor del nombre -->
+        <div class="container-input">
+          <label for="nombre">Nombre:</label>
+          <input type="text" placeholder="" id="nombre">
+        </div>
+        <!-- Contenedor de apellidos -->
+        <div class="container-input">
+          <label for="apellidos">Apellidos:</label>
+          <input type="text" placeholder="" id="apellidos">
+        </div>
+        <!-- Contenedor del correo electronico -->
+        <div class="container-input">
+          <label for="correo-sign-up">Correo electrónico:</label>
+          <input type="text" placeholder="" id="correo-sign-up">
+        </div>
+        <!-- Contenedor de la contraseña -->
+        <div class="container-input contraseña password-wrapper">
+          <label for="contraseña-sign-up">Contraseña: </label>
+          <input type="password" id="contraseña-sign-up">
+          <img src="../img/ojo-cerrado.png" class="toggle-password" data-input="contraseña-sign-up">
+        </div>
+        <!-- Contenedor de confirmar contraseña -->
+        <div class="container-input">
+          <label for="confirmar-contraseña-sign-up">Repetir contraseña:</label>
+          <input type="password" placeholder="" id="confirmar-contraseña-sign-up">
+        </div>
+        <!-- Contenedor de la politica de privacidad-->
+        <!-- Contenedor de la política de privacidad -->
+        <div class="politica-btn">
+          <div class="politica">
+            <!-- Checkbox customizada -->
+            <label class="checkbox-custom">
+              <!-- Checkbox normal | será invisible -->
+              <input type="checkbox" id="checkmark" disabled>
+              <!-- Checkbox modificada-->
+              <span class="checkmark"></span>
+            </label>
+            <!-- Texto de aceptar la política de privacidad con popup -->
+            <h5>
+              Acepto la <span class="popup-politica">Política de Privacidad</span> y los Términos de uso
+            </h5>
+          </div>
+          <!-- Botón de registrarse -->
+          <button class="btn-primary">REGÍSTRARSE</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Panel azul deslizante -->
+    <div class="overlay-container">
+      <div class="overlay">
+        <!-- Panel izquierdo (cuando está en registro) -->
+        <div class="overlay-panel overlay-left">
+          <h3>¿YA TIENES UNA CUENTA CREADA? <br> INICIA SESIÓN <span class="btn-secondary" id="signInBtn">AQUÍ</span> </h3>
+        </div>
+        <!-- Panel derecho (cuando está en login) -->
+        <div class="overlay-panel overlay-right">
+          <h3>¿AÚN NO TIENES CUENTA? <br> REGÍSTRATE <span class="btn-secondary" id="signUpBtn">AQUÍ</span></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- POPUP DE POLÍTICA DE PRIVACIDAD -->
+  <div id="popup-politica" class="popup-overlay">
+    <!-- Contenedor del popup -->
+    <div class="popup-content">
+      <!-- Titulo del popup -->
+      <h2>Política de Privacidad</h2>
+      <!-- Contenido del popup -->
+      <div class="popup-text" id="popupText">
+        <p>
+          En AITHER nos comprometemos a proteger la privacidad de nuestros usuarios.
+          La presente Política de Privacidad describe cómo recopilamos, utilizamos y protegemos la información personal que nos proporcionas al registrarte y utilizar nuestra plataforma.
+        </p>
+        <br>
+        <p>
+          <strong>1. Información que recopilamos:</strong><br>
+          Recopilamos datos personales como nombre, apellidos, correo electrónico y contraseña para permitir el acceso a nuestros servicios. También podemos recopilar información sobre el uso de la plataforma con fines de mejora y análisis.
+        </p>
+        <br>
+        <p>
+          <strong>2. Uso de la información:</strong><br>
+          La información recopilada se utiliza únicamente para proveer, mejorar y personalizar nuestros servicios, así como para comunicarnos contigo en relación con tu cuenta o servicios ofrecidos por AITHER.
+        </p>
+        <br>
+        <p>
+          <strong>3. Protección de la información:</strong><br>
+          Implementamos medidas de seguridad técnicas y administrativas para proteger tus datos personales contra accesos no autorizados, alteraciones, divulgación o destrucción.
+        </p>
+        <br>
+        <p>
+          <strong>4. Compartir información con terceros:</strong><br>
+          No vendemos, alquilamos ni compartimos tu información personal con terceros para fines comerciales. Solo compartimos datos con proveedores de servicios necesarios para la operación de la plataforma y bajo estrictas condiciones de confidencialidad.
+        </p>
+        <br>
+        <p>
+          <strong>5. Derechos del usuario:</strong><br>
+          Puedes acceder, rectificar o eliminar tus datos personales en cualquier momento. Para ello, ponte en contacto con nuestro soporte a través de los medios indicados en la plataforma.
+        </p>
+        <br>
+        <p>
+          <strong>6. Cambios en la política:</strong><br>
+          Nos reservamos el derecho de actualizar esta Política de Privacidad cuando sea necesario. Se notificará a los usuarios mediante la plataforma o correo electrónico sobre cambios relevantes.
+        </p>
+        <br>
+        <p>
+          Al <strong>aceptar esta política</strong>, confirmas que has leído, comprendido y aceptado cómo AITHER maneja tus datos personales.
+        </p>
+      </div>
+      <!-- Boton de aceptar -->
+      <button id="btnAccept" type="button" disabled>Aceptar</button>
+      <!-- Cruz para cerrar el popup -->
+      <span id="closePopup" class="close-btn">&times;</span>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>

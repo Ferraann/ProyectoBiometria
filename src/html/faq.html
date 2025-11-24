@@ -1,0 +1,230 @@
+<!--
+===============================================================================
+NOMBRE: FAQ.html
+DESCRIPCIÓN: Apartado donde se encontraran las respuestas frecuentes de los usuarios
+            además de un pequeño formulario por si acaso la duda que tienen no esta en 
+            el apartado creado. 
+COPYRIGHT: © 2025 AITHER. Todos los derechos reservados.
+FECHA: 10/11/2025
+AUTOR: Greysy Burgos Salazar
+APORTACIÓN: Estructura completa de la página HTML para el inicio de sesión
+            con enlaces a recursos CSS y JavaScript externos.
+===============================================================================
+-->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AITHER | Preguntas Frecuentes</title>
+        <link rel="icon" href="../img/logo_aither.png" type="image/png">
+        <link rel="stylesheet" href="../css/faq.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    </head>
+    <body>
+        <!--
+        ----------------------------------------------------------------------------
+        BLOQUE: <header>
+        DISEÑO LÓGICO: Contiene el logotipo y la barra de navegación principal.
+        DESCRIPCIÓN: Proporciona acceso rápido a secciones informativas y
+        un botón para iniciar sesión.
+        ----------------------------------------------------------------------------
+        -->
+        <header>
+            <!-- Logo de Aither | Al hacer clic tiene que llevar a la landing -->
+            <a href="../index.html"><img src="../img/logo_Aither_web.png" alt="Este es el logo de nuestro Proyecto: Aither"></a>
+            <nav>
+                <ul>
+                    <!-- Saber mas, quienes somos, faq y boton de iniciar sesión -->
+                <li><a href="saber_mas.html">SABER MÁS</a></li>
+                <li>
+                    <a href="quienes_somos.html">¿QUIÉNES SOMOS?</a>
+                </li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="login.html" class="btn btn-login">INICIAR SESIÓN</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!--
+        ----------------------------------------------------------------------------
+        BLOQUE: <main>
+        DISEÑO LÓGICO: Conformado por dos grandes secciones: la parte de las preguntas 
+        frecuentes, la organizacion mas logica fue details > summary, que dentro tienen la pregunta
+        la respuesta y un pequeño icono que representa si la respuesta esta visible o no. 
+        La otra parte formando por un cuestionario/formulario. 
+        ----------------------------------------------------------------------------
+        -->
+        <main>
+            <section class="faq-container">
+                <!--Titulo-->
+             <h1>Preguntas Frecuentes</h1>
+                <div class="faq-list">
+                    <details>
+                        <summary>
+                            <!--Titulo de la pragunta-->
+                            <span>¿Qué es este proyecto y quién lo impulsa?</span>
+                            <!--Icono flecha que indica si la pregunta esta abierta o no-->
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+                        <!--Respuesta-->
+                        <p>AITHER es una iniciativa para monitorizar la calidad del aire en los municipios mediante sensores ciudadanos y datos en tiempo real. El proyecto lo impulsa la empresa AITHER en colaboración con los ayuntamientos, que facilitan la distribución de los sensores a los vecinos. Su objetivo es ofrecer información útil y accesible sobre “el aire que compartimos”.</p>
+                    </details>
+
+                    <details>
+                        <summary>
+                            <span>¿Cómo vinculo mi sensor a la app?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+                        <p>Solo necesitas abrir la app, si ya tienes la cuenta creada en el icono inferior de la derecha podrás añadir tu sensor vía lectura de un QR que se encuentra en el sensor. Y si aun no te estas registrado, hazlo gratuitamente y el siguiente paso será automáticamente la vinculación del sensor a través del código QR.</p>
+                    </details>
+
+                    <details>
+                        <summary>
+                            <span>¿Qué hago si mi sensor no se conecta al móvil?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+                        <p>Asegúrate de que el Bluetooth esté activado y de que el sensor esté encendido y cerca del teléfono. <br>
+                            Si el problema persiste, reinicia el móvil y vuelve a intentar la conexión.
+                            Si sigue sin detectarse, contacta con el equipo técnico desde la sección Soporte de la app o la web.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>
+                            <span>¿Dónde debo colocar el sensor para obtener mejores mediciones?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+                        <p>El sensor puede colocarse en cualquier sitio ventilado que quieras, puedes colocarlo en la bicicleta, en un patín eléctrico o incluso en tu ropa siempre y cuando lo no cubras, para que el sensor pueda medir correctamente. </p>
+                    </details>
+
+                    <details>
+                        <summary>
+                            <span>¿Cómo puedo ver las mediciones de mi sensor?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+                        <p>En la app encontrarás la sección “Mis sensores”, donde podrás ver los datos en tiempo real (ozono, CO₂, temperatura y humedad).
+                            También puedes consultar el mapa web, donde se muestran las mediciones combinadas de toda la ciudad.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>
+                            <span>¿Puedo activar o desactivar las notificaciones?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+                        <p>Sí. Desde tu perfil, en la sección “Notificaciones”, puedes activar o desactivar avisos sobre calidad del aire, mantenimiento del sensor o novedades del proyecto.
+                            Los cambios se guardan automáticamente en tu cuenta.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>
+                            <span>¿Qué datos personales se recogen?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+                        <p>Solo almacenamos la información mínima necesaria: tu nombre, correo y datos del sensor.
+                            Estos se utilizan únicamente para el funcionamiento del sistema y el seguimiento de mediciones.
+                            Cumplimos con la Ley de Protección de Datos (RGPD) y nunca compartimos tu información con terceros
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>
+                            <span>¿Qué hago si mi sensor deja de funcionar?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+                        <p>Primero, comprueba que esté correctamente alimentado y dentro del alcance del móvil.
+                            Si el problema continúa, desde la web puedes acceder al apartado Soporte técnico → formulario y desde la app puedes ir a configuración de perfil y Soporte técnico envía una descripción del fallo.
+                            Nuestro equipo revisará el caso y, si es necesario, gestionará una sustitución.
+                        </p>
+                    </details>
+
+                </div>
+            </section>
+        </section>
+        <!--Seccion del formulario-->
+        <section class="contact-form-container">
+            <!--titulo-->
+            <h2>¿TIENES ALGUNA DUDA? CONSULTA CON NOSOTROS</h2>
+            <p>Antes de enviarnos tu consulta, revisa las preguntas más frecuentes. Es posible que encuentres la respuesta al instante.</p>
+            <!--Formulario-->
+            <form action="#" method="POST">
+                
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="consulta">Consulta:</label>
+                <textarea id="consulta" name="consulta" rows="6" required></textarea>
+                
+                <p class="form-footer-text">Gracias por ser parte de este proyecto. <br> Juntos, contribuimos a una ciudad más limpia y conectada.</p>
+                
+                <button type="submit" class="btn">ENVIAR</button>
+            </form>
+        </section>
+        </main>
+        <!--
+        ----------------------------------------------------------------------------
+        BLOQUE: <footer>
+        DISEÑO LÓGICO: Derechos reservados por copyright, logo y slogan, links que tambien
+        estan en el header y links a las redes sociales que aun no estan activas.  
+        ----------------------------------------------------------------------------
+        -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <h3>AITHER</h3>
+                        <p>Haciendo visible lo invisible.</p>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Enlaces</h4>
+                        <ul>
+                            <li><a href="saber_mas.html">Saber Más</a></li>
+                            <li><a href="quienes_somos.html">¿Quiénes Somos?</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-social">
+                        <h4>Síguenos</h4>
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2025 AITHER. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+    
+    <!--js para la animacion del icono flecha y para ocultar las respuestas, cuando una respuesta es visible el 
+    icono flecha se girara y aparecera la pregunta, si se abre una nueva la anterior sera cerrada-->
+    <script>
+        //Seleccionamos todos los elementos <details> de la lista
+        const allDetails = document.querySelectorAll('.faq-list details');
+
+        //Recorremos cada uno de ellos para añadirles una función
+        allDetails.forEach(detail => {
+            // Escuchamos el evento "toggle" (cuando se abre o se cierra)
+            detail.addEventListener('toggle', (event) => {
+                // Si el elemento se acaba de CERRAR, no hacemos nada
+                if (!detail.open) {
+                    return; 
+                }
+                //Si se acaba de ABRIR, revisamos todos los demás...
+                allDetails.forEach(otherDetail => {
+                    // y si no es el que acabamos de abrir y está abierto lo forzamos a cerrarse.
+                    if (otherDetail !== detail && otherDetail.open) {
+                        otherDetail.open = false;
+                    }
+                });
+            });
+        });
+    </script>
+    
+</html>

@@ -1,0 +1,330 @@
+/* ----------------------------- */
+/* ---------- Colores ---------- */
+:root {
+    /* Colores principales */
+    --Principal_1: #152D9A;
+    --Principal_1_RGB: 21, 45, 154;
+    --Principal_2: #B1BEF9;
+    --Principal_2_RGB: 177, 190, 249;
+    /* Colores secundarios */
+    --Secundario_Blanco: #FFFFFF;
+    --Secundario_Negro: #000000;
+    --Secundario_Azul: #587DBD;
+    --Secundario_Azul_RGB: 88, 125, 189;
+
+}
+/* ---------------------------- */
+/* ---------------------------- */
+
+/* --- Reseteo Básico y Estilos Globales --- */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    /* tipografia temporal */
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(../img/landing.jpg);
+    
+    background-attachment: fixed;/*fijar la imagen.*/
+    background-size: cover; /*cubrir todo el espacio de la pantalla*/
+    background-repeat: no-repeat; /*para que LA imagen no se repita*/
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+
+    position: relative; 
+    z-index: 1;
+}
+body::before {
+    content: ""; /* Requerido para que se muestre el pseudo-elemento */
+    position: fixed; /* Se posiciona sobre el 'body' */
+    /* Hace que cubra todo el 'body' */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Color de fondo negro (rgb(0, 0, 0)) con 0.6 de opacidad (60%) */
+    background-color: rgba(160, 160, 160, 0.35); 
+    /* Lo pone detrás del contenido (z-index: 1) pero encima del fondo */
+    z-index: -1; 
+}
+/* ---------------------------- */
+/* ---------- Header ---------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px;
+}
+
+header a > img {
+    width: 160px;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    list-style: none;
+}
+
+nav a {
+    color: var(--Principal_1);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+}
+nav a:hover{
+    color: var(--Secundario_Blanco);
+}
+
+.btn {
+    background-color: var(--Principal_1);
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 50px; /* Botones muy redondeados */
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login {
+    color: #fff;
+}
+.btn-login:hover {
+    background-color: var(--Secundario_Blanco);
+    color: var(--Principal_1);
+}
+.btn-arrow {
+    /* Color azul/púrpura del botón (aproximado) */ 
+    color: #fff;
+    font-size: 4rem;
+    border: none;
+    transition: transform 0.2s ease-out;
+    display: inline-block;
+    
+}
+.btn-arrow:hover {
+    transform: translateY(15px);
+    
+}
+
+/*body*/
+.hero {
+    margin: 12rem 0;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Espacio entre las dos columnas */
+}
+
+.hero-content {
+    flex: 1; /* Ocupa la mitad del espacio */
+    margin-left: 35px;
+    text-align: center;
+    
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #ccc; /* Texto un poco más apagado */
+}
+
+.hero-visual {
+    flex: 1; /* Ocupa la otra mitad */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Placeholder para el widget del mapa */
+.map-widget-placeholder {
+    width: 100%;
+    max-width: 450px;
+    height: 400px;
+    background-color: #3a4a5f; /* Un poco más claro que el fondo */
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    border: 1px solid #556;
+}
+.map-data {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+/* --- 3. Sección de Descarga de App --- */
+.app-download {
+    padding-top: 3.5rem;
+    margin-left: 35px;
+}
+
+.app-download .container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.app-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea el contenido a la izquierda */
+}
+
+.app-info h2 {
+    color: var(--Principal_1);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.app-info p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+.app-icon-placeholder{
+    padding-top: 5rem;
+    align-self: center;
+}
+.icon_aither{
+    max-width: 8rem;
+}
+
+.available-text {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.store-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.store-buttons img {
+    height: 40px; /* Ajusta al tamaño de tus imágenes */
+}
+
+.app-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.phone-mockup {
+    /* Ajusta el tamaño de la imagen de tu móvil */
+    max-width: 250px; 
+    border-radius: 45px;
+}
+.instalar{
+    margin: 0 5rem;
+}
+.instalar h3{
+    color: var(--Principal_1);
+    padding-bottom: 2rem;
+}
+.pasos-instalar{
+    display: flex;
+    gap: 50px;
+}
+.pasos-instalar h4{
+    width: 50px;  
+    height: 50px; 
+    border-radius: 50%; 
+    background-color:var(--Principal_2); 
+    color: var(--Principal_1); 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem; 
+
+    /* Centrar el número DENTRO del círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.pasos-instalar > div{
+    flex: 1;
+    text-align: center;
+}
+.pasos-instalar > div > i {
+  font-size: 2rem; /* Tamaño del icono */
+  color: var(--Principal_1); /* Color del icono */
+  margin-bottom: 1.5rem; /* Espacio debajo del icono */
+}
+.paso2 .apps {
+  display: flex;
+  justify-content: center; /* Centra los dos iconos */
+  gap: 2rem; /* Espacio entre ellos */
+  font-size: 2.5rem; /* Tamaño */
+  color: var(--Principal_1);
+  margin-top: 1rem; /* Espacio extra arriba */
+}
+
+
+/* --- 4. Estilos del Footer --- */
+footer {
+    background-color: #3a4a5f; 
+    color: #ccc;
+    padding: 50px 0 20px 0;
+    margin-top: 4rem; /
+}
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 30px; 
+}.footer-brand, .footer-links, .footer-social {
+    flex: 1;
+    min-width: 200px; 
+}.footer-brand h3 {
+    font-size: 2rem;
+    color: var(--Secundario_Blanco); 
+    margin-bottom: 10px;
+}footer h4 {
+    font-size: 1.2rem;
+    color: var(--Secundario_Blanco); 
+    margin-bottom: 15px;
+}footer ul {
+    list-style: none;
+    padding: 0;
+}footer ul li {
+    margin-bottom: 10px;
+}
+footer a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-social a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #556; 
+    font-size: 0.9rem;
+}

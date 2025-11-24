@@ -1,0 +1,21 @@
+# Denegar acceso a archivos sensibles
+<FilesMatch "\.(env|json|log|md|yml|yaml|lock)$">
+    Require all denied
+</FilesMatch>
+
+# Permitir todos los métodos HTTP
+<LimitExcept GET POST PUT OPTIONS DELETE>
+    Require all granted
+</LimitExcept>
+
+# Evitar listado de directorios
+Options -Indexes
+
+# Si usas mod_rewrite (opcional, por si acaso)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # No redirigir nada, solo dejar pasar todo a index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>

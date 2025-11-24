@@ -1,0 +1,499 @@
+/* ============================================================
+   ARCHIVO: login.css
+   DESCRIPCIÓN: Define el diseño visual de la página de login
+   del sistema AITHER, incluyendo estructura, encabezado,
+   formulario de acceso, panel lateral de registro.
+   AUTOR: Ferran Sansaloni Prats
+   FECHA: 03/11/2025
+   COPYRIGHT: © 2025 AITHER. Todos los derechos reservados.
+   ============================================================ */
+
+/* ------------------------------------------ */
+/* ---------- Contenedor principal ---------- */
+
+/* Estilos del cuerpo de la pagina */
+body {
+  margin: 0;
+  height: 100vh;
+  background-image: url("../img/landing.jpg");
+  /* Llena toda la pantalla, lo centra y evita repeticiones */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  font-family: "Rubik", sans-serif;
+}
+body::before {
+  content: ""; /* Requerido para que se muestre el pseudo-elemento */
+  position: fixed; /* Se posiciona sobre el 'body' */
+  /* Hace que cubra todo el 'body' */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Color de fondo negro (rgb(0, 0, 0)) con 0.6 de opacidad (60%) */
+  background-color: rgba(160, 160, 160, 0.35);
+  /* Lo pone detrás del contenido (z-index: 1) pero encima del fondo */
+  z-index: -1;
+}
+
+/* Estilos del contenido principal de la página web */
+main {
+  /* flex: 1 --> Para que el main ocupe el espacio restante entre el header y el main */
+  flex: 1;
+  /* Centrar todo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos del contenedor del inicio de sesión / registro */
+.container {
+  position: relative;
+  width: 900px;
+  height: 500px;
+  border-radius: 60px;
+  overflow: hidden;
+  background: rgba(var(--Principal_2_RGB));
+  opacity: 70%;
+}
+
+/* --------------------------------- */
+/* ---------- FORMULARIOS ---------- */
+
+/* Contenedor del formulario */
+.container-form {
+  /* Posicion absoluta respecto al contenedor principal ".container" */
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 60%;
+  padding: 0 80px;
+  color: var(--Secundario_Blanco);
+}
+
+/* sign-in-container y sign-up-container se usan para diferenciar las posiciones para hacer los
+efectos de superposicion */
+.sign-in-container {
+  left: 0;
+  z-index: 2;
+}
+
+.sign-up-container {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+/* alineamos ambas cosas al centro verticalmente */
+.sign-up-container,
+.sign-in-container {
+  align-items: center;
+}
+
+/* Cuando el contenedor principal .container tiene la clase .active:
+   - El formulario de inicio de sesión (.sign-in-container) se desplaza hacia la derecha,
+     se vuelve transparente y queda detrás del formulario de registro.
+   - El formulario de registro (.sign-up-container) se desplaza a la misma posición,
+     se hace visible y se coloca por encima, creando el efecto de deslizamiento entre ambos formularios. */
+.container.active .sign-in-container {
+  transform: translateX(67%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.active .sign-up-container {
+  transform: translateX(67%);
+  opacity: 1;
+  z-index: 2;
+}
+
+/* ------------------------------------------- */
+/* ---------- PANEL AZUL DESLIZANTE ---------- */
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 60%;
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Estilos del cuadrado overlay que se desliza */
+.overlay {
+  background: var(--Principal_1);
+  color: var(--Principal_2);
+  opacity: 80%;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Movimientos del overlay */
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+/* ------------------------------------------------- */
+/* --- Animación del overlay al activar registro --- */
+.container.active .overlay-container {
+  transform: translateX(-150%);
+}
+
+.container.active .overlay {
+  transform: translateX(50%);
+}
+
+.container.active .overlay-left {
+  transform: translateX(0);
+}
+
+.container.active .overlay-right {
+  transform: translateX(20%);
+}
+
+/* ---------------------------------------- */
+/* ---------- ELEMENTOS INTERNOS ---------- */
+
+/* Contenedor del input y el texto */
+.container-input {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Estilos del texto de cada bloque de input */
+.container-input h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: var(--Secundario_Blanco);
+}
+
+/* Estilos del input en cada bloque de input */
+.container-input input {
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  color:var(--Principal_1);
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--Principal_1);
+  outline: none;
+}
+
+/* Estilos del enlace de has olvidado la contraseña */
+.forgot {
+  color: var(--Principal_1);
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 16px;
+  margin-top: 8px;
+}
+.forgot:hover {
+  text-decoration: underline;
+}
+
+/* Estilos del separador entre el boton de inicio de sesión y los iconos de las redes sociales */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--Principal_1);
+  font-size: 16px;
+  font-weight: 400;
+  margin: 20px 0;
+}
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px solid var(--Principal_1);
+  margin: 0 10px;
+}
+
+/* Estilos para ojo abierto / ojo cerrado */
+.password-wrapper {
+  position: relative;
+}
+.toggle-password {
+  width: 22px;
+  position: absolute;
+  right: 10px;
+  top: 25px;
+  color: var(--Principal_1);
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+.toggle-password:hover {
+  opacity: 1;
+}
+/* Fin de estilos para ojo abierto / ojo cerrado */
+
+/* Contenedor de la politica de privacidad */
+.politica-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: -10px;
+}
+
+/* Boton del bloque de politica de privacidad */
+.politica-btn button {
+  height: 40px;
+  width: 200px;
+  margin: 10px 0 0;
+}
+
+/* Hacemos que el espacio del formulario de inicio de sesión ocupe el 100% del espacio */
+#loginForm {
+  width: 100%;
+}
+
+/* Estilos de los mensajes que salen por pantalla */
+#message-login,
+#message-register {
+  text-align: center;
+  word-wrap: break-word;
+  margin: 10px 0;
+}
+
+/* Estilos del mensaje de registro.
+  Este lo hacemos por separado porque en el HTML tenemos este mensaje dentro de un div con otras cosas y estas
+  estan alineadas a la derecha, así se nos alinea al centro como queremos. */
+#message-register {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Contenedor de la politica de privacidad */
+.politica {
+  display: flex;
+  align-items: center;
+}
+
+/* Checkbox customizada */
+.checkbox-custom {
+  display: flex;
+  align-items: center;
+}
+
+/* Ocultamos el checkbox real.
+  Lo vamos a ocultar pero va a estar ahi, entonces cuando pulsemos en el falso se nos activará tambien el real */
+.checkbox-custom input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Creamos el checkbox visible */
+.checkbox-custom .checkmark {
+  height: 16px;
+  width: 16px;
+  border: 2px solid var(--Principal_1);
+  background-color: transparent;
+  display: inline-block;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el cusor */
+.checkbox-custom:hover .checkmark {
+  background-color: rgba(var(--Principal_2_RGB), 0.1);
+}
+
+/* Checkbox marcado */
+.checkbox-custom input:checked + .checkmark {
+  background-color: var(--Principal_1);
+}
+
+/* ------------------------------------------- */
+/* ---------- Animación de mensajes ---------- */
+.fade-out {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, height 0.5s ease, margin 0.5s ease;
+}
+
+/* ----------------------------- */
+/* ---------- BOTONES ---------- */
+
+/* Boton principal */
+.btn-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  width: 240px;
+  background: var(--Secundario_Azul);
+  border: 3px solid var(--Principal_1);
+  color: white;
+  font-size: 20px;
+  font-weight: var(--semibold);
+  padding: 10px;
+  border-radius: 69px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn-primary:hover {
+  background: var(--Principal_1);
+}
+
+/* Boton secundario */
+.btn-secondary {
+  text-decoration: underline;
+  cursor: pointer;
+  text-underline-offset: 3px;
+  transition: color 0.3s ease;
+}
+.btn-secondary:hover {
+  color: var(--Secundario_Azul)
+}
+
+/* ------------------------------------ */
+/* ---------- REDES SOCIALES ---------- */
+
+form h1 {
+  color: var(--Principal_1);
+  margin-bottom: 20px;
+}
+
+/* ------------------------------------ */
+/* ---------- REDES SOCIALES ---------- */
+
+/* Estilos del contenedor de redes sociales */
+
+.social-networks {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* Estilos de los iconos */
+.social-networks img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.social-networks img:hover {
+  transform: scale(1.1);
+}
+
+/* ------------------------------------ */
+/* ---------- POPUP POLÍTICA ---------- */
+
+/* Texto de Política de Privacidad clicable en el formulario */
+.popup-politica {
+  cursor: pointer;
+  color: var(--Secundario_Azul);
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.popup-politica:hover {
+  color: var(--Principal_1); /* Cambia de color al pasar el ratón, opcional */
+}
+
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: none; /* Por defecto oculto */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  width: 600px;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Título del popup de política de privacidad */
+.popup-overlay .popup-content h2 {
+  color: var(--Principal_1);
+  margin-bottom: 15px;
+}
+
+.popup-text {
+  overflow-y: auto;
+  flex: 1;
+  margin-bottom: 20px;
+  padding: 5px 10px 5px 5px;
+  border: 1px solid #ccc;
+}
+
+#btnAccept {
+  background-color: var(--Secundario_Azul);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#btnAccept:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------- */
+/* ------------------------------------------------- */
+/* ------------------------------------------------- */
+/* ------------------------------------------------- */

@@ -1,0 +1,112 @@
+/* ============================================================
+   ARCHIVO: registro.css
+   DESCRIPCIÓN: Define el estilo visual del formulario de registro
+   del sistema AITHER, incluyendo estructura, tipografía, colores
+   y diseño responsivo para dispositivos móviles.
+   AUTOR: [Tu nombre aquí]
+   FECHA: 03/11/2025
+   COPYRIGHT: © 2025 AITHER. Todos los derechos reservados.
+   ============================================================ */
+
+/* ---------- Estilos generales ---------- */
+* {
+  box-sizing: border-box;  /* Incluye padding y border dentro del tamaño total del elemento */
+  margin: 0;               /* Elimina los márgenes por defecto de los navegadores */
+  padding: 0;              /* Elimina el relleno por defecto de los navegadores */
+  font-family: 'Segoe UI', Arial, sans-serif;  /* Fuente moderna y legible usada en todo el documento */
+}
+
+/* ---------- Cuerpo del documento ---------- */
+body {
+  /* Fondo con un degradado radial que va del azul claro al azul oscuro */
+  background: radial-gradient(circle at top left, #b6c8ff 0%, #4c6dc0 100%);
+  color: #fff;                /* Texto blanco para contraste */
+  min-height: 100vh;          /* Ocupa toda la altura visible de la ventana */
+  display: flex;              /* Usa flexbox para centrar contenido */
+  justify-content: center;    /* Centra horizontalmente el formulario */
+  align-items: center;        /* Centra verticalmente el formulario */
+}
+
+/* ---------- Contenedor del formulario ---------- */
+form {
+  background: rgba(255, 255, 255, 0.15); /* Fondo semitransparente con efecto de vidrio */
+  backdrop-filter: blur(8px);             /* Difumina el fondo detrás del formulario (efecto glassmorphism) */
+  padding: 40px 50px;                     /* Espaciado interno: 40px arriba/abajo y 50px a los lados */
+  border-radius: 15px;                    /* Bordes redondeados */
+  width: 350px;                           /* Ancho fijo del formulario */
+  display: flex;                          /* Usa flexbox para alinear internamente */
+  flex-direction: column;                 /* Coloca los elementos en columna */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); /* Sombra sutil para dar sensación de profundidad */
+}
+
+/* ---------- Título del formulario ---------- */
+form h2 {
+  text-align: center;   /* Centra el texto horizontalmente */
+  margin-bottom: 20px;  /* Espacio inferior entre el título y el resto del contenido */
+  font-weight: 700;     /* Texto en negrita */
+  color: #fff;          /* Color blanco para buen contraste sobre el fondo azul */
+}
+
+/* ---------- Etiquetas de los campos ---------- */
+label {
+  margin-top: 10px;     /* Espacio superior para separar las etiquetas entre sí */
+  font-size: 0.9rem;    /* Tamaño de fuente ligeramente más pequeño */
+  font-weight: 500;     /* Peso de fuente medio para mejor visibilidad */
+  color: #fff;          /* Texto blanco para contraste sobre el fondo */
+}
+
+/* ---------- Campos de entrada ---------- */
+input {
+  width: 100%;          /* El campo ocupa todo el ancho disponible */
+  padding: 10px;        /* Relleno interno para que el texto no quede pegado al borde */
+  margin-top: 5px;      /* Espacio entre el label y el input */
+  border: none;         /* Sin bordes visibles */
+  border-radius: 5px;   /* Esquinas redondeadas */
+  outline: none;        /* Elimina el contorno azul por defecto al hacer clic */
+  font-size: 0.9rem;    /* Tamaño de texto estándar para formularios */
+  color: #333;          /* Texto gris oscuro dentro del campo de entrada */
+}
+
+/* ---------- Botón principal ---------- */
+.btn-primary {
+  margin-top: 25px;       /* Espacio superior antes del botón */
+  width: 100%;            /* El botón ocupa todo el ancho del formulario */
+  background: #1e3799;    /* Color de fondo azul oscuro */
+  border: none;           /* Sin borde visible */
+  color: white;           /* Texto blanco */
+  font-weight: bold;      /* Texto en negrita para destacar */
+  padding: 10px;          /* Relleno interno del botón */
+  border-radius: 6px;     /* Bordes redondeados */
+  cursor: pointer;        /* Cambia el cursor al pasar por encima */
+  transition: background 0.3s; /* Efecto de transición suave en el color del fondo */
+}
+
+/* ---------- Efecto al pasar el ratón ---------- */
+.btn-primary:hover {
+  background: #274bba; /* Cambia a un azul más claro cuando el usuario pasa el ratón */
+}
+
+/* ---------- Mensaje informativo (error o éxito) ---------- */
+.message {
+  margin-top: 15px;      /* Espacio superior antes del mensaje */
+  font-size: 0.9rem;     /* Tamaño de texto moderado */
+  text-align: center;    /* Centra el texto */
+  min-height: 20px;      /* Reserva un espacio mínimo aunque no haya mensaje */
+  /* El color se define dinámicamente desde JavaScript (rojo o verde según el caso) */
+}
+
+/* ---------- Diseño responsive ---------- */
+@media (max-width: 500px) { /* Si el ancho de la pantalla es menor o igual a 500px... */
+  form {
+    width: 90%;           /* El formulario ocupa el 90% del ancho disponible */
+    padding: 30px;        /* Reduce el espaciado interno */
+  }
+
+  label {
+    font-size: 0.85rem;   /* Disminuye ligeramente el tamaño de las etiquetas */
+  }
+
+  input {
+    font-size: 0.85rem;   /* Disminuye el tamaño del texto dentro de los inputs */
+  }
+}

@@ -1,0 +1,163 @@
+/* ----------------------------- */
+/* ---------- Colores ---------- */
+:root {
+    --Principal_1: #152D9A;
+    --Principal_1_RGB: 21, 45, 154;
+    --Principal_2: #B1BEF9;
+    --Secundario_Blanco: #FFFFFF;
+    --Secundario_Negro: #000000;
+    --Secundario_Azul: #587DBD;
+    
+    --Success: #28a745; /* Verde éxito */
+    --Error: #dc3545;   /* Rojo error */
+    
+    --bold: 700;
+    --semibold: 600;
+    --normal: 400;
+}
+
+/* --- Reseteo Básico --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    /* Fondo con imagen y overlay oscuro */
+    background-image: url(../img/landing.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
+    
+    /* Usamos Flex column para que el footer (si hubiera) se vaya abajo */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Overlay oscuro sobre la imagen de fondo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(160, 160, 160, 0.35);  /* Azul oscuro con transparencia en lugar de gris */
+    z-index: -1;
+}
+
+/* ---------- Header ---------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(--Secundario_Azul); /* O transparente si prefieres */
+}
+
+header a > img { width: 160px; height: auto; }
+
+nav ul { display: flex; align-items: center; gap: 60px; list-style: none; }
+
+nav a {
+    color: var(--Principal_1);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav a:hover { color: var(--Secundario_Blanco); }
+
+.btn-login {
+    background-color: var(--Principal_1);
+    color: #fff !important; /* Forzamos blanco */
+    padding: 10px 25px;
+    border-radius: 50px;
+}
+
+.btn-login:hover {
+    background-color: var(--Secundario_Blanco);
+    color: var(--Principal_1) !important;
+}
+
+/* ------------------------------------------ */
+/* --- NUEVOS ESTILOS PARA LA ACTIVACIÓN --- */
+/* ------------------------------------------ */
+
+.activation-container {
+    flex: 1; /* Ocupa el espacio restante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.activation-card {
+    background-color: var(--Secundario_Blanco);
+    color: var(--Secundario_Negro);
+    width: 100%;
+    max-width: 500px;
+    padding: 50px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.activation-card h1 {
+    color: var(--Principal_1);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: var(--bold);
+}
+
+.activation-card p {
+    font-size: 1.2rem;
+    font-weight: var(--semibold);
+    margin-bottom: 20px;
+}
+
+/* Estilos para el icono de carga */
+.loading-icon {
+    font-size: 3rem;
+    color: var(--Secundario_Azul);
+    margin-bottom: 20px;
+}
+
+/* --- Estados (Clases que usa tu JS) --- */
+
+/* Estado OK */
+.ok {
+    color: var(--Success); /* Verde */
+    font-weight: var(--bold);
+}
+.icon-success {
+    color: var(--Success);
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: popIn 0.5s ease;
+}
+
+/* Estado KO */
+.ko {
+    color: var(--Error); /* Rojo */
+    font-weight: var(--bold);
+}
+.icon-error {
+    color: var(--Error);
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: shake 0.5s ease;
+}
+
+/* Animaciones sencillas */
+@keyframes popIn {
+    0% { transform: scale(0); }
+    80% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
