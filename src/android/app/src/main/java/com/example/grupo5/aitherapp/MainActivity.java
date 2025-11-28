@@ -17,6 +17,19 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.grupo5.aitherapp.activitysApp.RegistroActivity;
 
+// ------------------------------------------------------------------
+// Fichero: MainActivity.java
+// Autor: Pablo Chasi
+// Fecha: 28/10/2025
+// ------------------------------------------------------------------
+// Descripción:
+// Clase que gestiona la pantalla principal de inicio de sesión.
+// Permite al usuario introducir su email y contraseña para acceder
+// a la aplicación. También ofrece un botón para ir a la pantalla
+// de registro. La validación principal consiste en comprobar que
+// el email introducido tiene un formato válido antes de llamar a
+// la lógica de negocio para realizar el login.
+// ------------------------------------------------------------------
 public class MainActivity extends AppCompatActivity {
 
     EditText Email, Contrasenya;
