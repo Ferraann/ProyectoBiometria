@@ -17,7 +17,7 @@
 // INCLUDES NECESARIOS
 // ------------------------------------------------------------------
 include '../api/conexion.php';
-include '../logicaNegocio/index2.php';
+include '../api/logicaNegocio.php';
 
 // Abrimos la conexión
 $conn = abrirServidor();
@@ -31,7 +31,7 @@ echo "Test 1: Guardar usuario --> \t";
 $emailTest = "esteeselcorreoparaeltest@gmail.com";
 
 // Llamamos al metodo registrarUsuari y le pasamos datos para el test con el corro de prueba
-if (registrarUsuari("NombreTest", "ApellidosTest", $emailTest, "1234", $conn)) {
+if (registrarUsuario("NombreTest", "ApellidosTest", $emailTest, "1234", $conn)) {
     // Todo bien
     echo "Usuario insertado correctamente.\n\n";
 } else {
