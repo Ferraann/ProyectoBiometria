@@ -5,7 +5,7 @@
 El sistema permite recopilar y visualizar datos sobre **gases nocivos**, como el ozono, CO2,... Promoviendo la concienciación ambiental y la participación ciudadana.  
 Cada ayuntamiento gestiona los sensores de su zona y los datos locales, garantizando la **privacidad** y el **uso responsable de la información**.
 
-> *“AITHER: tecnología ciudadana para un aire mejor.”*
+> *“AITHER: Haz visible lo invisible, el aire que compartimos.”*
 
 ---
 
