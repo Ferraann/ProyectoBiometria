@@ -74,7 +74,7 @@ function registrarUsuario($conn, $data)
     }
 
     /* ---------- 5. Enviar correo de activación ---------- */
-    $enlace = "http://localhost/ProyectoBiometria/src/html/activacion.html?token=" . urlencode($token);
+    $enlace = "https://fsanpra.upv.edu.es/src/html/activacion.html?token=" . urlencode($token);
 
     $asunto  = "Activa tu cuenta en AITHER";
     $cuerpo  = "<h2>¡Hola $nombre!</h2>
