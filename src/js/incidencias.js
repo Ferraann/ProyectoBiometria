@@ -159,9 +159,7 @@ function renderIncidencias(datos) {
       // Guardamos la incidencia completa en sessionStorage
       const incidencia = datos.find(i => i.id == id);
       sessionStorage.setItem('incidenciaSeleccionada', JSON.stringify(incidencia));
-
-      // Redirigimos a la página de detalle
-      abrirDetalle(id);
+      window.location.href = `incidencia_detalle.html`;
     });
   });
 

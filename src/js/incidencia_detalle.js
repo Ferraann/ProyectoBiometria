@@ -1,22 +1,13 @@
 const cont = document.getElementById('contenido-detalle');
 
-// Intentamos obtener la incidencia desde sessionStorage
+// Recuperamos la incidencia desde sessionStorage
 let data = sessionStorage.getItem('incidenciaSeleccionada');
-if (data) {
-  data = JSON.parse(data);
-} else {
-  // Si no estaba, podemos intentar cargar desde API por id
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get('id');
-  if (!id) {
-    cont.innerHTML = "<p>Error: ID no especificado.</p>";
-    throw new Error("ID no encontrado en la URL");
-  }
-
-  // fetch() para cargar desde la API si no hay sessionStorage
-  const res = await fetch(`../api/index.php?accion=getIncidencia&id=${id}`);
-  data = await res.json();
+if (!data) {
+  cont.innerHTML = "<p>Error: no hay incidencia seleccionada.</p>";
+  throw new Error("No se encontró la incidencia en sessionStorage");
 }
+
+data = JSON.parse(data);
 
 // Renderizamos todos los campos
 cont.innerHTML = `
