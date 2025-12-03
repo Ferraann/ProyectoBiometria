@@ -137,8 +137,9 @@ function renderIncidencias(datos) {
     lista.innerHTML = '<p style="text-align:center;">No se encontraron incidencias.</p>';
     return;
   }
+
   lista.innerHTML = datos.map(inc => `
-    <div class="incidencia" data-id="${inc.id}" onclick="abrirDetalle(${inc.id})">
+    <div class="incidencia" data-id="${inc.id}">
       <h2>${inc.titulo}</h2>
       <p><strong>Descripción:</strong> ${inc.descripcion}</p>
       <p class="meta"><strong>Usuario:</strong> ${inc.usuario || 'Anónimo'}</p>
@@ -146,19 +147,20 @@ function renderIncidencias(datos) {
       <p class="meta"><strong>Estado:</strong> ${inc.estado}</p>
       <p class="meta"><strong>Fecha:</strong> ${new Date(inc.fecha_creacion).toLocaleString()}</p>
       <div class="fotos" id="fotos-${inc.id}"></div>
-    </div>`).join('');
+    </div>
+  `).join('');
 
-  /* Cargar fotos de las que se están mostrando */
+  // Asociamos el click dinámicamente
+  document.querySelectorAll('.incidencia').forEach(div => {
+    div.addEventListener('click', () => {
+      const id = div.dataset.id;
+      window.location.href = `incidencia_detalle.html?id=${id}`;
+    });
+  });
+
+  // Cargar fotos de las que se están mostrando
   cargarFotosVisibles();
 }
-/* ---------- ABRIR INFORMACION----------- */
-function abrirDetalle(id) {
-  if (!id) return console.error("ID no definido");
-  const url = `incidencia_detalle.html?id=${id}`;
-  console.log("Abriendo URL:", url);
-  window.location.href = url; // o window.open(url, '_blank') si quieres nueva pestaña
-}
-
 
 /* ---------- CARGAR FOTOS SOLO DE LO VISUALIZADO ---------- */
 async function cargarFotosVisibles() {
