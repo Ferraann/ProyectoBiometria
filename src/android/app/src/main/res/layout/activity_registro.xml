@@ -1,81 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/bg_azul_grisaceo"
+    android:fillViewport="true">
 
-    <EditText
-        android:id="@+id/NombreUsuario"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Nombre"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/ApellidosUsuario"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:padding="24dp">
 
-    <EditText
-        android:id="@+id/ApellidosUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Apellidos"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/EmailUsuario"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NombreUsuario" />
+        <ImageView
+            android:id="@+id/logoApp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_aither"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/txtPaso3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PASO 3:"
+            android:textColor="@color/azulOscuro_Principal"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logoApp" />
 
-    <EditText
-        android:id="@+id/ContrasenyaUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/RepetirContrasenyaUsuario"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EmailUsuario" />
+        <TextView
+            android:id="@+id/txtRegistrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGÍSTRATE"
+            android:textColor="@color/azulOscuro_Principal"
+            android:textStyle="bold"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPaso3" />
 
-    <EditText
-        android:id="@+id/RepetirContrasenyaUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Repetir contraseña"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/botonRegistrarse"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ContrasenyaUsuario" />
+        <TextView
+            android:id="@+id/lblNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre:"
+            android:textColor="@color/blanco"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtRegistrate" />
 
-    <EditText
-        android:id="@+id/EmailUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Correo Electronico"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/ContrasenyaUsuario"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ApellidosUsuario" />
+        <EditText
+            android:id="@+id/NombreUsuario"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Escribe tu nombre"
+            android:backgroundTint="@color/azulOscuro_Principal"
+            android:inputType="textCapWords"
+            android:textColor="@color/blanco"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblNombre" />
 
-    <Button
-        android:id="@+id/botonRegistrarse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="botonEnviarDatos"
-        android:text="Registrase"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RepetirContrasenyaUsuario" />
+        <TextView
+            android:id="@+id/lblApellidos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apellidos:"
+            android:textColor="@color/blanco"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/NombreUsuario" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/ApellidosUsuario"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Escribe tus apellidos"
+            android:backgroundTint="@color/azulOscuro_Principal"
+            android:inputType="textCapWords"
+            android:textColor="@color/blanco"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblApellidos" />
+
+        <TextView
+            android:id="@+id/lblEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Correo electrónico:"
+            android:textColor="@color/blanco"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ApellidosUsuario" />
+
+        <EditText
+            android:id="@+id/EmailUsuario"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Escribe tu correo electrónico"
+            android:backgroundTint="@color/azulOscuro_Principal"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/blanco"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblEmail" />
+
+        <TextView
+            android:id="@+id/txtAyudaPass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="La contraseña debe contener al menos 8 caracteres, un número, una mayúscula y un carácter especial."
+            android:textColor="@color/blanco"
+            android:textSize="12sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/EmailUsuario" />
+
+        <TextView
+            android:id="@+id/lblPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contraseña:"
+            android:textColor="@color/blanco"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAyudaPass" />
+
+        <EditText
+            android:id="@+id/ContrasenyaUsuario"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Escribe tu contraseña"
+            android:backgroundTint="@color/azulOscuro_Principal"
+            android:inputType="textPassword"
+            android:textColor="@color/blanco"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblPass" />
+
+        <TextView
+            android:id="@+id/lblRepetirPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Repetir contraseña:"
+            android:textColor="@color/blanco"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ContrasenyaUsuario" />
+
+        <EditText
+            android:id="@+id/RepetirContrasenyaUsuario"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Repite tu contraseña"
+            android:backgroundTint="@color/azulOscuro_Principal"
+            android:inputType="textPassword"
+            android:textColor="@color/blanco"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblRepetirPass" />
+
+        <CheckBox
+            android:id="@+id/chkTerminos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Acepto la Política de Privacidad y los Términos de uso."
+            android:textColor="@color/blanco"
+            android:buttonTint="@color/blanco"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/RepetirContrasenyaUsuario"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/botonRegistrarse"
+            android:layout_width="1.5in"
+            android:layout_height="wrap_content"
+            android:text="REGISTRARSE"
+            android:textColor="@color/blanco"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:background="@drawable/boton_principal"
+            android:onClick="botonEnviarDatos"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chkTerminos" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
