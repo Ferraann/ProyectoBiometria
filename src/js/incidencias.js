@@ -147,19 +147,22 @@ function renderIncidencias(datos) {
       <p class="meta"><strong>Estado:</strong> ${inc.estado}</p>
       <p class="meta"><strong>Fecha:</strong> ${new Date(inc.fecha_creacion).toLocaleString()}</p>
       <div class="fotos" id="fotos-${inc.id}"></div>
-    </div>
-  `).join('');
+    </div>`).join('');
 
-  // Asociamos el click dinámicamente
+  // Añadimos el click a todos los divs generados
   document.querySelectorAll('.incidencia').forEach(div => {
     div.addEventListener('click', () => {
       const id = div.dataset.id;
-      window.location.href = `incidencia_detalle.html?id=${id}`;
+      abrirDetalle(id);
     });
   });
 
   // Cargar fotos de las que se están mostrando
   cargarFotosVisibles();
+}
+
+function abrirDetalle(id) {
+  window.location.href = `incidencia_detalle.html?id=${id}`;
 }
 
 /* ---------- CARGAR FOTOS SOLO DE LO VISUALIZADO ---------- */
