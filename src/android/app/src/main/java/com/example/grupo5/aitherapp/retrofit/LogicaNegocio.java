@@ -210,6 +210,87 @@ public class LogicaNegocio {
 
 
 }
+public static void guardarDistanciaHoy(float distancia, Context contexto) {
+
+    SharedPreferences prefs = contexto.getSharedPreferences("SesionUsuario", Context.MODE_PRIVATE);
+    String usuarioId = prefs.getString("id", null);
+
+    if (usuarioId == null) {
+        Toast.makeText(contexto, "No hay sesión activa", Toast.LENGTH_SHORT).show();
+        return;
+    }
+
+    ApiService api = ApiCliente.getApiService();
+
+    PojoUsuario data = new PojoUsuario();
+    data.setAction("guardarDistancia"); // importante!
+    data.setId(usuarioId);
+    data.setDistancia(distancia);
+
+    Call<PojoRespuestaServidor> call = api.guardarDistancia(data);
+
+    call.enqueue(new Callback<PojoRespuestaServidor>() {
+        @Override
+        public void onResponse(Call<PojoRespuestaServidor> call, Response<PojoRespuestaServidor> response) {
+            if (!response.isSuccessful() || response.body() == null) {
+                Toast.makeText(contexto, "Error HTTP: " + response.code(), Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            PojoRespuestaServidor r = response.body();
+
+            // Mostrar mensaje
+            Toast.makeText(contexto, r.getMensaje(), Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onFailure(Call<PojoRespuestaServidor> call, Throwable t) {
+            Toast.makeText(contexto, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    });
+}
+public static void getHistorialDistancias(Context contexto, Callback<PojoRespuestaServidor> callback) {
+
+    SharedPreferences prefs = contexto.getSharedPreferences("SesionUsuario", Context.MODE_PRIVATE);
+    String usuarioId = prefs.getString("id", null);
+
+    if (usuarioId == null) {
+        Toast.makeText(contexto, "No hay sesión activa", Toast.LENGTH_SHORT).show();
+        return;
+    }
+
+    ApiService api = ApiCliente.getApiService();
+
+    PojoUsuario data = new PojoUsuario();
+    data.setAction("historialDistancias");
+    data.setId(usuarioId);
+
+    Call<PojoRespuestaServidor> call = api.historialDistancias(data);
+
+    call.enqueue(callback);
+}
+public static void getDistanciaFecha(String fecha, Context contexto, Callback<PojoRespuestaServidor> callback) {
+
+    SharedPreferences prefs = contexto.getSharedPreferences("SesionUsuario", Context.MODE_PRIVATE);
+    String usuarioId = prefs.getString("id", null);
+
+    if (usuarioId == null) {
+        Toast.makeText(contexto, "No hay sesión activa", Toast.LENGTH_SHORT).show();
+        return;
+    }
+
+    ApiService api = ApiCliente.getApiService();
+
+    PojoUsuario data = new PojoUsuario();
+    data.setAction("distanciaFecha");
+    data.setId(usuarioId);
+    data.setFecha(fecha);
+
+    Call<PojoRespuestaServidor> call = api.distanciaFecha(data);
+
+    call.enqueue(callback);
+}
+
 //---------------------------------------------------------------
 //---------------------------------------------------------------
 //--------------------------------------------------------------

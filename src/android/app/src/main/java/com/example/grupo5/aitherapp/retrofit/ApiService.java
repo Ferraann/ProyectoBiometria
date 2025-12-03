@@ -57,4 +57,14 @@ public interface ApiService {
 
     @POST("index.php")
     Call<JsonObject> obtenerSensoresUsuario(@Body JsonObject body);
+
+    @POST("index.php")
+Call<PojoRespuestaServidor> guardarDistancia(@Body PojoUsuario data);
+
+@POST("index.php")
+Call<PojoRespuestaServidor> historialDistancias(@Body PojoUsuario data);
+
+@POST("index.php")
+Call<PojoRespuestaServidor> distanciaFecha(@Body PojoUsuario data);
+
 }

@@ -768,4 +768,116 @@ function modificarDatos($conn, $data){
         "mensaje" => "Usuario actualizado correctamente",
         "usuario" => $usuarioActualizado
     ];
+
+    
+}
+function guardarDistanciaHoy($conn, $data)
+{
+    if (empty($data['usuario_id']) || !isset($data['distancia'])) {
+        return ["status" => "error", "mensaje" => "Faltan parámetros: usuario_id o distancia."];
+    }
+
+    $usuario_id = (int)$data['usuario_id'];
+    $distancia = (float)$data['distancia'];
+    $hoy = date("Y-m-d");
+
+    // Buscar si ya hay registro hoy
+    $stmt = $conn->prepare("
+        SELECT id, distancia_total 
+        FROM distancia_diaria 
+        WHERE usuario_id = ? AND fecha = ?
+    ");
+    $stmt->bind_param("is", $usuario_id, $hoy);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($row = $result->fetch_assoc()) {
+
+        $nueva = $row['distancia_total'] + $distancia;
+
+        $stmt2 = $conn->prepare("
+            UPDATE distancia_diaria 
+            SET distancia_total = ? 
+            WHERE id = ?
+        ");
+        $stmt2->bind_param("di", $nueva, $row['id']);
+        $stmt2->execute();
+        $stmt2->close();
+
+        return [
+            "status" => "ok",
+            "mensaje" => "Distancia actualizada.",
+            "distancia_total" => round($nueva, 2)
+        ];
+    }
+
+    // Si no existe → insertar nuevo
+    $stmt2 = $conn->prepare("
+        INSERT INTO distancia_diaria (usuario_id, fecha, distancia_total) 
+        VALUES (?, ?, ?)
+    ");
+    $stmt2->bind_param("isd", $usuario_id, $hoy, $distancia);
+    $stmt2->execute();
+    $stmt2->close();
+
+    return [
+        "status" => "ok",
+        "mensaje" => "Distancia guardada.",
+        "distancia_total" => round($distancia, 2)
+    ];
+}
+function getHistorialDistancias($conn, $data)
+{
+    if (empty($data['usuario_id'])) {
+        return ["status" => "error", "mensaje" => "Falta usuario_id."];
+    }
+
+    $usuario_id = (int)$data['usuario_id'];
+
+    $stmt = $conn->prepare("
+        SELECT fecha, distancia_total 
+        FROM distancia_diaria 
+        WHERE usuario_id = ?
+        ORDER BY fecha DESC
+    ");
+    $stmt->bind_param("i", $usuario_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $historial = [];
+    while ($row = $result->fetch_assoc()) {
+        $historial[] = [
+            "fecha" => $row['fecha'],
+            "distancia" => (float)$row['distancia_total']
+        ];
+    }
+
+    return [
+        "status" => "ok",
+        "historial" => $historial
+    ];
+}
+function getDistanciaFecha($conn, $data)
+{
+    if (empty($data['usuario_id']) || empty($data['fecha'])) {
+        return ["status" => "error", "mensaje" => "Faltan usuario_id o fecha."];
+    }
+
+    $usuario_id = (int)$data['usuario_id'];
+    $fecha = $data['fecha'];
+
+    $stmt = $conn->prepare("
+        SELECT distancia_total 
+        FROM distancia_diaria 
+        WHERE usuario_id = ? AND fecha = ?
+    ");
+    $stmt->bind_param("is", $usuario_id, $fecha);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($row = $result->fetch_assoc()) {
+        return ["status" => "ok", "distancia" => (float)$row['distancia_total']];
+    }
+
+    return ["status" => "ok", "distancia" => 0];
 }
