@@ -147,12 +147,13 @@ function renderIncidencias(datos) {
       <p class="meta"><strong>Estado:</strong> ${inc.estado}</p>
       <p class="meta"><strong>Fecha:</strong> ${new Date(inc.fecha_creacion).toLocaleString()}</p>
       <div class="fotos" id="fotos-${inc.id}"></div>
-    </div>`).join('');
+      <button class="btn-detalle" data-id="${inc.id}">Ver detalle</button>
+    </div>  `).join('');
 
-  // Añadimos el click a todos los divs generados
-  document.querySelectorAll('.incidencia').forEach(div => {
-    div.addEventListener('click', () => {
-      const id = div.dataset.id;
+  // Añadimos click solo a los botones
+  document.querySelectorAll('.btn-detalle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id;
       abrirDetalle(id);
     });
   });
