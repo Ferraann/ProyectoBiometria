@@ -11,9 +11,9 @@
 //  devolver los resultados al archivo index.php.
 // ------------------------------------------------------------------
 
-require '/p/vhosts/fsanpra.upv.edu.es/httpdocs/src/libs/PHPMailer-7.0.0/src/Exception.php';
-require '/p/vhosts/fsanpra.upv.edu.es/httpdocs/src/libs/PHPMailer-7.0.0/src/PHPMailer.php';
-require '/p/vhosts/fsanpra.upv.edu.es/httpdocs/src/libs/PHPMailer-7.0.0/src/SMTP.php';
+require __DIR__ . '/../libs/PHPMailer-7.0.0/src/Exception.php';
+require __DIR__ . '/../libs/PHPMailer-7.0.0/src/PHPMailer.php';
+require __DIR__ . '/../libs/PHPMailer-7.0.0/src/SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
