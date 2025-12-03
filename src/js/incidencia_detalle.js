@@ -1,52 +1,43 @@
-const API_URL = '../api/index.php';
 const cont = document.getElementById('contenido-detalle');
 
-// Obtener ?id=XX
-const params = new URLSearchParams(window.location.search);
-const id = params.get('id');
-
-if (!id) {
-  cont.innerHTML = "<p>Error: ID no especificado.</p>";
-  throw new Error("ID no encontrado en la URL");
-}
-
-async function cargarDetalle() {
-  try {
-    // 1. Datos de la incidencia
-    const res = await fetch(`${API_URL}?accion=getIncidencia&id=${id}`);
-    const data = await res.json();
-
-    if (!data || !data.id) {
-      cont.innerHTML = "<p>No se encontró la incidencia.</p>";
-      return;
-    }
-
-    // 2. Fotos
-    const resFotos = await fetch(`${API_URL}?accion=getFotosIncidencia&incidencia_id=${id}`);
-    const fotosData = await resFotos.json();
-
-    const htmlFotos = (fotosData.fotos?.length)
-      ? fotosData.fotos.map(f => `<img src="data:image/jpeg;base64,${f.foto}" />`).join('')
-      : "<p><em>Sin fotos</em></p>";
-
-    cont.innerHTML = `
-      <h2>${data.titulo}</h2>
-      <p><strong>Descripción:</strong> ${data.descripcion}</p>
-      <p><strong>Usuario:</strong> ${data.usuario || "Anónimo"}</p>
-      <p><strong>Técnico:</strong> ${data.tecnico}</p>
-      <p><strong>Estado:</strong> ${data.estado}</p>
-      <p><strong>Fecha:</strong> ${new Date(data.fecha_creacion).toLocaleString()}</p>
-
-      <h3>Fotos</h3>
-      <div class="fotos-detalle">${htmlFotos}</div>
-
-      <br>
-      <button onclick="history.back()">Volver</button>
-    `;
-  } catch (error) {
-    console.error(error);
-    cont.innerHTML = "<p>Error cargando los datos.</p>";
+// Intentamos obtener la incidencia desde sessionStorage
+let data = sessionStorage.getItem('incidenciaSeleccionada');
+if (data) {
+  data = JSON.parse(data);
+} else {
+  // Si no estaba, podemos intentar cargar desde API por id
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  if (!id) {
+    cont.innerHTML = "<p>Error: ID no especificado.</p>";
+    throw new Error("ID no encontrado en la URL");
   }
+
+  // fetch() para cargar desde la API si no hay sessionStorage
+  const res = await fetch(`../api/index.php?accion=getIncidencia&id=${id}`);
+  data = await res.json();
 }
 
-cargarDetalle();
+// Renderizamos todos los campos
+cont.innerHTML = `
+  <h2>Editar Incidencia #${data.id}</h2>
+  <label>Título:</label>
+  <input type="text" id="titulo" value="${data.titulo}" />
+
+  <label>Descripción:</label>
+  <textarea id="descripcion">${data.descripcion}</textarea>
+
+  <label>Usuario:</label>
+  <input type="text" value="${data.usuario || 'Anónimo'}" disabled />
+
+  <label>Técnico:</label>
+  <input type="text" id="tecnico" value="${data.tecnico}" />
+
+  <label>Estado:</label>
+  <input type="text" id="estado" value="${data.estado}" />
+
+  <label>Fecha de creación:</label>
+  <input type="datetime-local" value="${data.fecha_creacion.slice(0,16)}" disabled />
+
+  <button id="guardar-btn">Guardar cambios</button>
+`;

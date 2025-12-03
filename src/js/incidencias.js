@@ -148,23 +148,30 @@ function renderIncidencias(datos) {
       <p class="meta"><strong>Fecha:</strong> ${new Date(inc.fecha_creacion).toLocaleString()}</p>
       <div class="fotos" id="fotos-${inc.id}"></div>
       <button class="btn-detalle" data-id="${inc.id}">Ver detalle</button>
-    </div>  `).join('');
+    </div>
+  `).join('');
 
   // Añadimos click solo a los botones
   document.querySelectorAll('.btn-detalle').forEach(btn => {
     btn.addEventListener('click', () => {
       const id = btn.dataset.id;
+
+      // Guardamos la incidencia completa en sessionStorage
+      const incidencia = datos.find(i => i.id == id);
+      sessionStorage.setItem('incidenciaSeleccionada', JSON.stringify(incidencia));
+
+      // Redirigimos a la página de detalle
       abrirDetalle(id);
     });
   });
 
-  // Cargar fotos de las que se están mostrando
   cargarFotosVisibles();
 }
 
 function abrirDetalle(id) {
   window.location.href = `incidencia_detalle.html?id=${id}`;
 }
+
 
 /* ---------- CARGAR FOTOS SOLO DE LO VISUALIZADO ---------- */
 async function cargarFotosVisibles() {
