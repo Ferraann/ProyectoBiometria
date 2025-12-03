@@ -153,8 +153,12 @@ function renderIncidencias(datos) {
 }
 /* ---------- ABRIR INFORMACION----------- */
 function abrirDetalle(id) {
-  window.location.href = `incidencia_detalle.html?id=${id}`;
+  if (!id) return console.error("ID no definido");
+  const url = `incidencia_detalle.html?id=${id}`;
+  console.log("Abriendo URL:", url);
+  window.location.href = url; // o window.open(url, '_blank') si quieres nueva pestaña
 }
+
 
 /* ---------- CARGAR FOTOS SOLO DE LO VISUALIZADO ---------- */
 async function cargarFotosVisibles() {
