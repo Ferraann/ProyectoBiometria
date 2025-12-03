@@ -1,13 +1,14 @@
 package com.example.grupo5.aitherapp.pojos;
+
 // ------------------------------------------------------------------
 // Fichero: PojoUsuario.java
 // Autor: Pablo Chasi
 // Fecha: 28/10/2025
 // ------------------------------------------------------------------
 // Descripción:
-// Esta clase lo que pretende es ser un clase donde se guarde
-// información basica del usuario: nombre, Apellidos, Correo, Id
+// Clase que guarda información básica del usuario: nombre, apellidos, correo, id, estado, acción y distancia
 //-------------------------------------------------------------------
+
 public class PojoUsuario {
     private String id;
     private String nombre;
@@ -16,58 +17,42 @@ public class PojoUsuario {
     private String password;
     private String activo;
     private String accion;
+    private float distancia;
+    private String fecha; // <-- agregado
 
-    public String getId() {
-        return id;
-    }
+    // Distancia
+    public float getDistancia() { return distancia; }
+    public void setDistancia(float distancia) { this.distancia = distancia; }
 
-    public void setId(String Id) {
-        id = Id;
-    }
+    // Fecha
+    public String getFecha() { return fecha; }
+    public void setFecha(String fecha) { this.fecha = fecha; }
 
-    public String getNombre() {
-        return nombre;
-    }
+    // Id
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
 
-    public void setNombre(String Nombre) {
-        nombre = Nombre;
-    }
+    // Nombre
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public String getApellidos() {
-        return apellidos;
-    }
+    // Apellidos
+    public String getApellidos() { return apellidos; }
+    public void setApellidos(String apellidos) { this.apellidos = apellidos; }
 
-    public void setApellidos(String Apellidos) {
-        apellidos = Apellidos;
-    }
+    // Correo
+    public String getCorreo() { return gmail; }
+    public void setCorreo(String correo) { this.gmail = correo; }
 
-    public String getCorreo() {
-        return gmail;
-    }
+    // Contraseña
+    public String getContrasenya() { return password; }
+    public void setContrasenya(String contrasenya) { this.password = contrasenya; }
 
-    public void setCorreo(String correo) {
-        gmail = correo;
-    }
+    // Activo
+    public String getActivo() { return activo; }
+    public void setActivo(String activo) { this.activo = activo; }
 
-    public String getContrasenya() {
-        return password;
-    }
-
-    public void setContrasenya(String contrasenya) { password = contrasenya; }
-
-    public String getActivo() {
-        return activo;
-    }
-
-    public void setActivo(String Activo) {
-        activo = Activo;
-    }
-
-    public String getAction() {
-        return accion;
-    }
-
-    public void setAction(String action) {
-        accion = action;
-    }
+    // Acción
+    public String getAction() { return accion; }
+    public void setAction(String action) { this.accion = action; }
 }
