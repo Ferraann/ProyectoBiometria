@@ -138,7 +138,7 @@ function renderIncidencias(datos) {
     return;
   }
   lista.innerHTML = datos.map(inc => `
-    <div class="incidencia" data-id="${inc.id}">
+    <div class="incidencia" data-id="${inc.id}" onclick="abrirDetalle(${inc.id})">
       <h2>${inc.titulo}</h2>
       <p><strong>Descripción:</strong> ${inc.descripcion}</p>
       <p class="meta"><strong>Usuario:</strong> ${inc.usuario || 'Anónimo'}</p>
@@ -150,6 +150,10 @@ function renderIncidencias(datos) {
 
   /* Cargar fotos de las que se están mostrando */
   cargarFotosVisibles();
+}
+/* ---------- ABRIR INFORMACION----------- */
+function abrirDetalle(id) {
+  window.location.href = `incidencia_detalle.html?id=${id}`;
 }
 
 /* ---------- CARGAR FOTOS SOLO DE LO VISUALIZADO ---------- */
