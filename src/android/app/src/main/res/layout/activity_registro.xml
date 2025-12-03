@@ -200,7 +200,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/botonRegistrarse"
-            android:layout_width="1in"
+            android:layout_width="1.5in"
             android:layout_height="wrap_content"
             android:text="REGISTRARSE"
             android:textColor="@color/blanco"
