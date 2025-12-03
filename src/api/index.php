@@ -65,6 +65,8 @@ if ($method === 'POST' || $method === 'PUT') {
     $input = $_GET;
 }
 
+console.log("Accion a la API:", $accion);
+console.log("Enviando a la API:", $input);
 
 // Procesamos la petición según el método
 switch ($method) {
