@@ -225,6 +225,17 @@ INSERT INTO `usuario` (`id`, `nombre`, `apellidos`, `gmail`, `password`, `activo
 (19, 'manu', 'perez', 'manuper777@gmail.com', '$2y$10$Vuh5itCZryxeLE/GobTPfenPCI6TNktwzPmisyPN0tnQcBa6livoO', 1, NULL, NULL);
 
 -- --------------------------------------------------------
+CREATE TABLE distancia_diaria (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  usuario_id INT(11) NOT NULL,
+  fecha DATE NOT NULL,
+  distancia_total DECIMAL(10,2) NOT NULL DEFAULT 0,
+  PRIMARY KEY (id),
+  UNIQUE KEY usuario_fecha_unica (usuario_id, fecha),
+  FOREIGN KEY (usuario_id) REFERENCES usuario(id) 
+      ON DELETE CASCADE 
+      ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci; 
 
 --
 -- Estructura de tabla para la tabla `usuario_sensor`
