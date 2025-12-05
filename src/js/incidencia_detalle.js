@@ -63,12 +63,7 @@ if (!idIncidencia) {
       select.appendChild(opt);
     });
 
-    // 6. Desplegar panel estados
-    document.getElementById('btn-desplegar-estados').addEventListener('click', () => {
-      document.getElementById('panel-estados').classList.toggle('panel-visible');
-    });
-
-    // 7. Guardar estado
+    // 6. Guardar estado
     document.getElementById('btn-guardar-estado').addEventListener('click', async () => {
       const nuevoEstadoId = select.value;
       const res = await fetch('../api/index.php', {
@@ -89,7 +84,7 @@ if (!idIncidencia) {
       }
     });
 
-    // 8. Asignarme como técnico
+    // 7. Asignarme como técnico
     document.getElementById('btn-asignarme').addEventListener('click', async () => {
       if (!idUsuarioActivo) return alert('No hay usuario activo.');
       const ok = confirm('¿Quieres asignarte esta incidencia?');
