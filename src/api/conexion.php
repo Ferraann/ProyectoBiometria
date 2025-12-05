@@ -12,10 +12,10 @@ function abrirServidor() {
 
     // Verificar conexión
     if ($conn->connect_error) {
-        http_response_code(500);
-        header('Content-Type: application/json');
-        echo json_encode(["status" => "error", "mensaje" => "Error de conexión a la base de datos"]);
-        exit;
+        die(json_encode([
+            "status" => "error",
+            "message" => "Error de conexión: " . $conn->connect_error
+        ]));
     }
 
     // UTF-8
