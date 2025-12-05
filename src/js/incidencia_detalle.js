@@ -41,7 +41,6 @@ if (!idIncidencia) {
     document.getElementById('link-tecnico').textContent = nombreTec;
     document.getElementById('link-tecnico').href = `usuario_detalle.html?id=${inc.id_tecnico}&perfil=tecnico`;
 
-    document.getElementById('estado-actual').textContent = inc.estado || '-';
     document.getElementById('fecha-creacion').textContent = new Date(inc.fecha_creacion).toLocaleString();
     // Mostrar/ocultar fecha de finalización
     const filaFin = document.getElementById('fila-finalizacion');
