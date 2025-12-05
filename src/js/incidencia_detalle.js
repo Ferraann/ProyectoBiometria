@@ -44,11 +44,13 @@ if (!idIncidencia) {
     document.getElementById('fecha-creacion').textContent = new Date(inc.fecha_creacion).toLocaleString();
     // Mostrar/ocultar fecha de finalización
     const filaFin = document.getElementById('fila-finalizacion');
-    if (inc.fecha_finalizacion) {
-      filaFin.style.display = 'flex';
-      document.getElementById('fecha-finalizacion').textContent = new Date(inc.fecha_finalizacion).toLocaleString();
-    } else {
-      filaFin.style.display = 'none';
+    if (filaFin) {
+      if (inc.fecha_finalizacion) {
+        filaFin.style.display = 'flex';
+        document.getElementById('fecha-finalizacion').textContent = new Date(inc.fecha_finalizacion).toLocaleString();
+      } else {
+        filaFin.style.display = 'none';
+      }
     }
 
     // 5. Rellenar select de estados
