@@ -23,7 +23,7 @@ if (!idIncidencia) {
       fetch(`../api/index.php?accion=getUsuarioXId&id=${inc.id_tecnico}`)
     ]);
     const user = await resUser.json();
-    const tec  = await resTec.json();
+    const tec = await resTec.json();
 
     // 3. Cargar estados disponibles
     const resEst = await fetch('../api/index.php?accion=getEstadosIncidencia');
@@ -43,7 +43,14 @@ if (!idIncidencia) {
 
     document.getElementById('estado-actual').textContent = inc.estado || '-';
     document.getElementById('fecha-creacion').textContent = new Date(inc.fecha_creacion).toLocaleString();
-    document.getElementById('fecha-finalizacion').textContent = inc.fecha_finalizacion ? new Date(inc.fecha_finalizacion).toLocaleString() : '-';
+    // Mostrar/ocultar fecha de finalización
+    const filaFin = document.getElementById('fila-finalizacion');
+    if (inc.fecha_finalizacion) {
+      filaFin.style.display = 'flex';
+      document.getElementById('fecha-finalizacion').textContent = new Date(inc.fecha_finalizacion).toLocaleString();
+    } else {
+      filaFin.style.display = 'none';
+    }
 
     // 5. Rellenar select de estados
     const select = document.getElementById('select-estados');

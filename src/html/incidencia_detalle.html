@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,13 +8,14 @@
   <link rel="stylesheet" href="../css/incidencias_detalles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
   <header>
     <a href="incidencias.html"><i class="fa-solid fa-arrow-left"></i> Volver</a>
   </header>
 
   <main>
-    <h1>Detalle de Incidencia</h1>
+    <h1>Detalles de Incidencia</h1>
 
     <div id="contenido-detalle">
       <!-- Fila 1 -->
@@ -43,16 +45,9 @@
 
       <!-- Fila 5 -->
       <div class="fila">
-        <strong>Estado actual:</strong>
-        <span id="estado-actual">Cargando...</span>
-        <button id="btn-desplegar-estados" class="btn-accion">Cambiar estado</button>
-      </div>
-
-      <!-- Panel desplegable de estados -->
-      <div id="panel-estados" class="panel-oculto">
-        <label>Selecciona un estado:</label>
+        <strong>Estado:</strong>
         <select id="select-estados"></select>
-        <button id="btn-guardar-estado" class="btn-accion">Guardar estado</button>
+        <button id="btn-guardar-estado" class="btn-accion">Guardar</button>
       </div>
 
       <!-- Fila 6 -->
@@ -71,4 +66,5 @@
 
   <script type="module" src="../js/incidencia_detalle.js"></script>
 </body>
+
 </html>
