@@ -9,18 +9,19 @@
 // ------------------------------------------------------------------
 
 /* Devuelve true si el usuario está en la tabla técnicos */
-function esTecnico(PDO $conn, int $usuarioId): bool
+function esTecnico($conn, int $usuarioId): bool
 {
-    $stmt = $conn->prepare("SELECT 1 FROM tecnicos WHERE usuario_id = :id LIMIT 1");
-    $stmt->execute([':id' => $usuarioId]);
-    return (bool) $stmt->fetchColumn();
+    $stmt = $conn->prepare("SELECT 1 FROM tecnicos WHERE usuario_id = ? LIMIT 1");
+    $stmt->bind_param("i", $usuarioId);
+    $stmt->execute();
+    return (bool) $stmt->get_result()->fetch_column();
 }
 
-/* Devuelve true si el usuario está en la tabla administradores */
-function esAdministrador(PDO $conn, int $usuarioId): bool
+function esAdministrador($conn, int $usuarioId): bool
 {
-    $stmt = $conn->prepare("SELECT 1 FROM administradores WHERE usuario_id = :id LIMIT 1");
-    $stmt->execute([':id' => $usuarioId]);
-    return (bool) $stmt->fetchColumn();
+    $stmt = $conn->prepare("SELECT 1 FROM administradores WHERE usuario_id = ? LIMIT 1");
+    $stmt->bind_param("i", $usuarioId);
+    $stmt->execute();
+    return (bool) $stmt->get_result()->fetch_column();
 }
 ?>
