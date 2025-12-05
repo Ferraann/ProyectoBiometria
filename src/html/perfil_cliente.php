@@ -5,7 +5,7 @@ DESCRIPCIÓN: En esta seccion privada del usuario podra encontrar sus datos pers
             datos de los sensores y podra modificarlos en caso de que sea necesario.
 COPYRIGHT: © 2025 AITHER. Todos los derechos reservados.
 FECHA: 13/11/2025
-AUTOR: Greysy Burgos Salazar
+AUTOR: Greysy Burgos Salazar Y Ferran Sansaloni Prats
 APORTACIÓN: Estructura completa de la página HTML para el inicio de sesión
             con enlaces a recursos CSS y JavaScript externos.
 ===============================================================================
@@ -97,27 +97,34 @@ $password = $_SESSION['usuario_password'];
                     </div>
 
                     <div class="input-row">
-                        <label for="correo">Correo Electrónico:</label>
+                        <label for="gmail">Correo Electrónico:</label>
                         <input type="email" id="gmail" name="gmail" value="<?php echo htmlspecialchars($gmail); ?>" disabled>
                         <a href="#" class="edit-icon"><i class="fa-solid fa-pen-to-square"></i></a>
                     </div>
                     
                     <div class="input-row">
-                        <label for="repetir-correo">Repetir correo:</label>
+                        <label for="repetir-correo">Confirmar Correo:</label>
                         <input type="email" id="repetir-correo" name="repetir-correo" disabled>
                     </div>
 
                     <div class="input-row">
                         <label for="contrasena">Contraseña:</label>
-                        <input type="password" id="contrasena"  name="password"value="<?php echo htmlspecialchars($password); ?>" disabled>
+                        <input type="password" id="contrasena"  name="password" value="<?php echo htmlspecialchars($password); ?>" disabled>
                         <a href="#" class="edit-icon"><i class="fa-solid fa-pen-to-square"></i></a>
                     </div>
                     
                     <div class="input-row">
-                        <label for="repetir-contrasena">Repetir contraseña:</label>
+                        <label for="repetir-contrasena">Confirmar Contraseña:</label>
                         <input type="password" id="repetir-contrasena" name="repetir-contrasena" disabled>
                     </div>
+
+                    <div class="input-row">
+                        <label for="contrasenaAntigua">Contraseña Antigua:</label>
+                        <input type="password" id="contrasena-antigua"  name="password" disabled>
+                    </div>
                 </div>
+
+                <label></label>
 
                 <button type="submit" class="btn-guardar">GUARDAR</button>
             </form>

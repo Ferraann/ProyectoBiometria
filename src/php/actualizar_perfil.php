@@ -35,6 +35,10 @@ if (!empty($_POST['password'])) {
     if ($_POST['password'] !== $_POST['repetir-contrasena']) {
         die("Las contraseñas no coinciden.");
     }
+    else if ($data['password'] !== $_POST['contrasena-antigua']) {
+        die("La contraseña antigua no coincide.");
+    }
+
     $data['password'] = $_POST['password'];
 }
 

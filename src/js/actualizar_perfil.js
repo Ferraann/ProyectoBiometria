@@ -33,11 +33,22 @@ editIcons.forEach(icon => {
             }
 
             if (input.id === "contrasena") {
+                const corr = document.getElementById('contrasena');
                 const rep = document.getElementById('repetir-contrasena');
-                if (rep) {
+                const ant = document.getElementById('contrasena-antigua');
+
+                corr.type = "password";
+                rep.type = "password";
+                ant.type = "password";
+
+                if (rep && ant) {
                     rep.disabled = true;
                     rep.style.backgroundColor = "";
                     rep.value = "";
+
+                    ant.disabled = true;
+                    ant.style.backgroundColor = "";
+                    ant.value = "";
                 }
             }
 
@@ -61,10 +72,19 @@ editIcons.forEach(icon => {
         }
 
         if (input.id === "contrasena") {
+            const corr = document.getElementById('contrasena');
             const rep = document.getElementById('repetir-contrasena');
-            if (rep) {
+            const ant = document.getElementById('contrasena-antigua');
+            if (corr && rep && ant) {
                 rep.disabled = false;
                 rep.style.backgroundColor = "#f0f0f0";
+
+                corr.type = "text";
+                rep.type = "text";
+                ant.type = "text";
+
+                ant.disabled = false;
+                ant.style.backgroundColor = "#f0f0f0";
             }
         }
 
