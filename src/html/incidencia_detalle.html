@@ -3,15 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Detalle incidencia</title>
+  <title>Detalle de Incidencia – Aither</title>
   <link rel="stylesheet" href="../css/incidencias_detalles.css">
 </head>
 <body>
+  <header>
+    <a href="incidencias.html"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+  </header>
+
   <main>
     <h1>Detalle de Incidencia</h1>
-    <div id="contenido-detalle">Cargando...</div>
+
+    <div id="contenido-detalle">
+      <h2 id="titulo-incidencia">Cargando...</h2>
+
+      <div class="detalle-grid">
+        <div class="campo">
+          <label>Descripción:</label>
+          <textarea id="descripcion" readonly></textarea>
+        </div>
+
+        <div class="campo">
+          <label>Usuario:</label>
+          <input type="text" id="usuario" disabled />
+        </div>
+
+        <div class="campo">
+          <label>ID Usuario:</label>
+          <input type="text" id="id_usuario" disabled />
+        </div>
+
+        <div class="campo">
+          <label>Técnico:</label>
+          <input type="text" id="tecnico" />
+        </div>
+
+        <div class="campo">
+          <label>ID Técnico:</label>
+          <input type="text" id="id_tecnico" disabled />
+        </div>
+
+        <div class="campo">
+          <label>Estado:</label>
+          <input type="text" id="estado" />
+        </div>
+
+        <div class="campo">
+          <label>ID Estado:</label>
+          <input type="text" id="id_estado" disabled />
+        </div>
+
+        <div class="campo">
+          <label>Fecha de creación:</label>
+          <input type="datetime-local" id="fecha_creacion" disabled />
+        </div>
+
+        <div class="campo">
+          <label>Fecha finalización:</label>
+          <input type="datetime-local" id="fecha_finalizacion" disabled />
+        </div>
+      </div>
+
+      <button id="guardar-btn">Guardar cambios</button>
+    </div>
   </main>
 
-  <script src="../js/incidencia_detalle.js"></script>
+  <script type="module" src="../js/incidencia_detalle.js"></script>
 </body>
 </html>

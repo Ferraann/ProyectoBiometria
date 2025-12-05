@@ -1,97 +1,43 @@
-const cont = document.getElementById('contenido-detalle');
+// incidencia_detalle.js
 
-let data = sessionStorage.getItem('incidenciaSeleccionada');
-if (!data) {
-  cont.innerHTML = "<p>Error: no hay incidencia seleccionada.</p>";
-  throw new Error("No se encontró la incidencia en sessionStorage");
+// Leer id desde URL
+const params = new URLSearchParams(location.search);
+const idIncidencia = params.get('id');
+
+if (!idIncidencia) {
+  alert('No se indicó una incidencia.');
+  location.href = 'incidencias.html';
 }
 
-data = JSON.parse(data);
+// Rellenar campos con datos obtenidos
+async function cargarIncidencia() {
+  try {
+    const res = await fetch(`../api/index.php?accion=getIncidenciaXId&id=${idIncidencia}`);
+    const inc = await res.json();
 
-// Renderizamos todos los campos en columnas usando un grid
-cont.innerHTML = `
-  <h2>Editar Incidencia #${data.id}</h2>
-  <div class="detalle-grid">
-    <div class="campo">
-      <label>ID:</label>
-      <input type="text" value="${data.id}" disabled />
-    </div>
-    <div class="campo">
-      <label>Título:</label>
-      <input type="text" id="titulo" value="${data.titulo}" />
-    </div>
-    <div class="campo">
-      <label>Descripción:</label>
-      <textarea id="descripcion">${data.descripcion}</textarea>
-    </div>
-    <div class="campo">
-      <label>Usuario:</label>
-      <input type="text" value="${data.usuario || 'Anónimo'}" disabled />
-    </div>
-    <div class="campo">
-      <label>ID Usuario:</label>
-      <input type="text" value="${data.id_user || ''}" disabled />
-    </div>
-    <div class="campo">
-      <label>Técnico:</label>
-      <input type="text" id="tecnico" value="${data.tecnico}" />
-    </div>
-    <div class="campo">
-      <label>ID Técnico:</label>
-      <input type="text" value="${data.id_tecnico || ''}" disabled />
-    </div>
-    <div class="campo">
-      <label>Estado:</label>
-      <input type="text" id="estado" value="${data.estado}" />
-    </div>
-    <div class="campo">
-      <label>ID Estado:</label>
-      <input type="text" value="${data.estado_id || ''}" disabled />
-    </div>
-    <div class="campo">
-      <label>Fecha de creación:</label>
-      <input type="datetime-local" value="${data.fecha_creacion.slice(0,16)}" disabled />
-    </div>
-    <div class="campo">
-      <label>Fecha finalización:</label>
-      <input type="datetime-local" value="${data.fecha_finalizacion ? data.fecha_finalizacion.slice(0,16) : ''}" disabled />
-    </div>
-  </div>
-  <button id="guardar-btn">Guardar cambios</button>
-`;
+    if (!inc || inc.status === 'error') throw new Error('Incidencia no encontrada');
 
-// Estilos CSS para el grid
-const style = document.createElement('style');
-style.textContent = `
-.detalle-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+    document.getElementById('titulo-incidencia').textContent = `Incidencia: ${inc.titulo}`;
+    document.getElementById('descripcion').value = inc.descripcion || '';
+    document.getElementById('usuario').value = inc.usuario || 'Anónimo';
+    document.getElementById('id_usuario').value = inc.id_user || '';
+    document.getElementById('tecnico').value = inc.tecnico || '';
+    document.getElementById('id_tecnico').value = inc.id_tecnico || '';
+    document.getElementById('estado').value = inc.estado || '';
+    document.getElementById('id_estado').value = inc.estado_id || '';
+    document.getElementById('fecha_creacion').value = (inc.fecha_creacion || '').slice(0, 16);
+    document.getElementById('fecha_finalizacion').value = (inc.fecha_finalizacion || '').slice(0, 16);
+
+  } catch (e) {
+    alert(e.message);
+    location.href = 'incidencias.html';
+  }
 }
 
-.campo {
-  display: flex;
-  flex-direction: column;
-}
+// Cargar al arrancar
+cargarIncidencia();
 
-.campo label {
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.campo input,
-.campo textarea {
-  padding: 8px;
-  font-family: inherit;
-  font-size: 1rem;
-  border: 2px solid var(--Principal_1);
-  border-radius: 6px;
-}
-
-.campo textarea {
-  resize: vertical;
-  min-height: 80px;
-}
-`;
-document.head.appendChild(style);
+// (Opcional) guardado
+document.getElementById('guardar-btn')?.addEventListener('click', () => {
+  alert('Función de guardado no implementada aún');
+});

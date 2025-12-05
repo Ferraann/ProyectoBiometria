@@ -104,7 +104,7 @@ switch ($method) {
                 echo json_encode(activarUsuario($conn, $input['token']));
                 break;
 
-            case "finalizarRelacionSensor":   // marcar sensor con problema
+            case "finalizarRelacionSensor":   // marcar sensor con problema, hay que añadir que cree incidencia sin terminar relacion con usuario
                 echo json_encode(marcarSensorConProblemas($conn, $input));
                 break;
 
@@ -185,7 +185,29 @@ switch ($method) {
             case "getDistanciaFecha":
                 echo json_encode(getDistanciaFecha($conn, $_GET));
                 break;
+            
+            case "getIncidenciaXId":
+                $id = intval($_GET['id'] ?? 0);
+                $row = obtenerIncidenciaXId($conn, $id);
+                echo json_encode($row ?: ["status" => "error", "mensaje" => "Incidencia no encontrada"]);
+                break;
 
+            case "getUsuarioXId":
+                $id = intval($_GET['id'] ?? 0);
+                $row = obtenerUsuarioXId($conn, $id); 
+                echo json_encode($row ?: ["status" => "error", "mensaje" => "Usuario no encontrado"]);
+                break;
+
+            case "esTecnico":
+                $id = intval($_GET['id'] ?? 0);
+                echo json_encode(["es_tecnico" => esTecnico($conn, $id)]);
+                break;
+
+            case "esAdministrador":
+                $id = intval($_GET['id'] ?? 0);
+                echo json_encode(["es_admin" => esAdministrador($conn, $id)]);
+                break;
+            
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]);
                 break;

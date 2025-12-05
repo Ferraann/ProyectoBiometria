@@ -139,30 +139,24 @@ function renderIncidencias(datos) {
   }
 
   lista.innerHTML = datos.map(inc => `
-    <div class="incidencia" data-id="${inc.id}">
-      <h2>${inc.titulo}</h2>
-      <p><strong>Descripción:</strong> ${inc.descripcion}</p>
-      <p class="meta"><strong>Usuario:</strong> ${inc.usuario || 'Anónimo'}</p>
-      <p class="meta"><strong>Técnico:</strong> ${inc.tecnico}</p>
-      <p class="meta"><strong>Estado:</strong> ${inc.estado}</p>
-      <p class="meta"><strong>Fecha:</strong> ${new Date(inc.fecha_creacion).toLocaleString()}</p>
-      <div class="fotos" id="fotos-${inc.id}"></div>
-      <button class="btn-detalle" data-id="${inc.id}">Ver detalle</button>
-    </div>
-  `).join('');
+  <div class="incidencia" data-id="${inc.id}">
+    <h2><a href="usuario_detalle.html?id=${inc.id}&perfil=incidencia" class="titulo-incidencia">${inc.titulo}</a></h2>
+    <p><strong>Descripción:</strong> ${inc.descripcion}</p>
+    <p class="meta">
+      <strong>Usuario:</strong>
+      <a href="usuario_detalle.html?id=${inc.id_usuario}&perfil=usuario" class="enlace-usuario">${inc.usuario || 'Anónimo'}</a>
+    </p>
+    <p class="meta">
+      <strong>Técnico:</strong>
+      <a href="usuario_detalle.html?id=${inc.id_tecnico}&perfil=tecnico" class="enlace-tecnico">${inc.tecnico}</a>
+    </p>
+    <p class="meta"><strong>Estado:</strong> ${inc.estado}</p>
+    <p class="meta"><strong>Fecha:</strong> ${new Date(inc.fecha_creacion).toLocaleString()}</p>
+    <div class="fotos" id="fotos-${inc.id}"></div>
+  </div>
+`).join('');
 
-  // Añadimos click solo a los botones
-  document.querySelectorAll('.btn-detalle').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = btn.dataset.id;
-
-      // Guardamos la incidencia completa en sessionStorage
-      const incidencia = datos.find(i => i.id == id);
-      sessionStorage.setItem('incidenciaSeleccionada', JSON.stringify(incidencia));
-      window.location.href = `incidencia_detalle.html`;
-    });
-  });
-
+  // Eliminamos el event listener del botón detalle
   cargarFotosVisibles();
 }
 
