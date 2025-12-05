@@ -1,5 +1,4 @@
 <?php
-
 // ------------------------------------------------------------------
 // Fichero: index.php
 // Autor: Manuel
@@ -28,7 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 require_once('conexion.php');
-require_once('logicaNegocio.php');
+foreach (glob(__DIR__ . "/logicaNegocio/*.php") as $file) {
+    require_once $file;
+}
+//require_once('logicaNegocio.php');
 
 // Abrimos conexión a la base de datos
 $conn = abrirServidor();
