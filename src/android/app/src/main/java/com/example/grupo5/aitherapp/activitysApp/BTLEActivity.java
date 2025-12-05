@@ -29,7 +29,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
-
+// ------------------------------------------------------------------
+// Fichero: BTLEActivity.java
+// Autor: Pablo Chasi
+// Fecha: 28/10/2025
+// ------------------------------------------------------------------
+// Descripción:
+// Clase encargada de gestionar la detección de dispositivos Bluetooth
+// Low Energy (BTLE), especialmente iBeacons. Permite iniciar y detener
+// el escaneo, procesar la información recibida, extraer datos de tramas
+// iBeacon y enviarlas al servidor mediante Retrofit.
+// ------------------------------------------------------------------
 public class BTLEActivity extends AppCompatActivity {
     // --------------------------------------------------------------
     // --------------------------------------------------------------

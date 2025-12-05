@@ -17,6 +17,19 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.grupo5.aitherapp.activitysApp.RegistroActivity;
 
+// ------------------------------------------------------------------
+// Fichero: MainActivity.java
+// Autor: Pablo Chasi
+// Fecha: 28/10/2025
+// ------------------------------------------------------------------
+// Descripción:
+// Clase que gestiona la pantalla principal de inicio de sesión.
+// Permite al usuario introducir su email y contraseña para acceder
+// a la aplicación. También ofrece un botón para ir a la pantalla
+// de registro. La validación principal consiste en comprobar que
+// el email introducido tiene un formato válido antes de llamar a
+// la lógica de negocio para realizar el login.
+// ------------------------------------------------------------------
 public class MainActivity extends AppCompatActivity {
 
     EditText Email, Contrasenya;
@@ -34,9 +47,20 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // Nuevo metodo para recuperar contraseña
+    public void botonOlvidarContrasenya(View v) {
+        Toast.makeText(this, "Funcionalidad de recuperar contraseña pendiente", Toast.LENGTH_SHORT).show();
+        // Aquí pondrías el Intent para ir a la pantalla de recuperar contraseña
+    }
+
     public void botonLogin(View v) {
-        String email = Email.getText().toString();
-        String pass = Contrasenya.getText().toString();
+        String email = Email.getText().toString().trim();
+        String pass = Contrasenya.getText().toString().trim();
+
+        if (email.isEmpty() || pass.isEmpty()) {
+            Toast.makeText(this, "Por favor, rellena todos los campos", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(Email.getText()).matches()) {
             Toast.makeText(this, "Por favor, introduce un email valido", Toast.LENGTH_SHORT).show();
