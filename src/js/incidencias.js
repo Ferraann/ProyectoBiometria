@@ -36,7 +36,12 @@ window.addEventListener('DOMContentLoaded', async () => {
   try {
     /* 1. Incidencias */
     const res = await fetch(`${API_URL}?accion=getTodasIncidencias`);
-    const data = await res.json();
+    const textoCrudo = await res.text();
+
+    // Limpia cualquier texto antes del JSON real
+    const textoLimpio = textoCrudo.replace(/^[^\[\{]*/, '');
+
+    const data = JSON.parse(textoLimpio);
     if (!Array.isArray(data)) throw new Error('Respuesta no es array');
     incidencias = data;
 
