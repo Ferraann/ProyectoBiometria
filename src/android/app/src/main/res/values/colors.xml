@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="bg_azul_grisaceo">#8D96B1</color>
+    <color name="azulOscuro_Principal">#152D9A</color>
+    <color name="azulClaro_Secundario">#587DBD</color>
+    <color name="azul_ToolBar">#3656B3</color>
+    <color name="azul_Paneles">#AFBBE1</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="negro">#000000</color>
 </resources>

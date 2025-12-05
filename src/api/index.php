@@ -1,5 +1,4 @@
 <?php
-
 // ------------------------------------------------------------------
 // Fichero: index.php
 // Autor: Manuel
@@ -28,7 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 require_once('conexion.php');
-require_once('logicaNegocio.php');
+foreach (glob(__DIR__ . "/logicaNegocio/*.php") as $file) {
+    require_once $file;
+}
+//require_once('logicaNegocio.php');
 
 // Abrimos conexión a la base de datos
 $conn = abrirServidor();
@@ -65,6 +67,8 @@ if ($method === 'POST' || $method === 'PUT') {
     $input = $_GET;
 }
 
+//console.log("Accion a la API:", $accion);
+//console.log("Enviando a la API:", $input);
 
 // Procesamos la petición según el método
 switch ($method) {
@@ -127,6 +131,11 @@ switch ($method) {
             case "modificarDatos":
                 echo json_encode(modificarDatos($conn, $input));
                 break;
+            
+                case "guardarDistanciaHoy":
+                echo json_encode(guardarDistanciaHoy($conn, $input));
+                break;
+
 
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción POST no reconocida."]);
@@ -168,6 +177,15 @@ switch ($method) {
             case "getFotosIncidencia":
                 echo json_encode(obtenerFotosIncidencia($conn, $_GET['incidencia_id']));
                 break;
+
+            case "getHistorialDistancias":
+                echo json_encode(getHistorialDistancias($conn, $_GET));
+                break;
+
+            case "getDistanciaFecha":
+                echo json_encode(getDistanciaFecha($conn, $_GET));
+                break;
+
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]);
                 break;
