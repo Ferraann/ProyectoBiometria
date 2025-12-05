@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detalle de Incidencia – Aither</title>
   <link rel="stylesheet" href="../css/incidencias_detalles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
   <header>
@@ -15,56 +16,56 @@
     <h1>Detalle de Incidencia</h1>
 
     <div id="contenido-detalle">
-      <h2 id="titulo-incidencia">Cargando...</h2>
-
-      <div class="detalle-grid">
-        <div class="campo">
-          <label>Descripción:</label>
-          <textarea id="descripcion" readonly></textarea>
-        </div>
-
-        <div class="campo">
-          <label>Usuario:</label>
-          <input type="text" id="usuario" disabled />
-        </div>
-
-        <div class="campo">
-          <label>ID Usuario:</label>
-          <input type="text" id="id_usuario" disabled />
-        </div>
-
-        <div class="campo">
-          <label>Técnico:</label>
-          <input type="text" id="tecnico" />
-        </div>
-
-        <div class="campo">
-          <label>ID Técnico:</label>
-          <input type="text" id="id_tecnico" disabled />
-        </div>
-
-        <div class="campo">
-          <label>Estado:</label>
-          <input type="text" id="estado" />
-        </div>
-
-        <div class="campo">
-          <label>ID Estado:</label>
-          <input type="text" id="id_estado" disabled />
-        </div>
-
-        <div class="campo">
-          <label>Fecha de creación:</label>
-          <input type="datetime-local" id="fecha_creacion" disabled />
-        </div>
-
-        <div class="campo">
-          <label>Fecha finalización:</label>
-          <input type="datetime-local" id="fecha_finalizacion" disabled />
-        </div>
+      <!-- Fila 1 -->
+      <div class="fila">
+        <strong>Incidencia:</strong>
+        <span id="incidencia-titulo-id">Cargando...</span>
       </div>
 
-      <button id="guardar-btn">Guardar cambios</button>
+      <!-- Fila 2 -->
+      <div class="fila">
+        <strong>Descripción:</strong>
+        <span id="descripcion-texto">Cargando...</span>
+      </div>
+
+      <!-- Fila 3 -->
+      <div class="fila">
+        <strong>Usuario:</strong>
+        <a id="link-usuario" href="#">Cargando...</a>
+      </div>
+
+      <!-- Fila 4 -->
+      <div class="fila">
+        <strong>Técnico:</strong>
+        <a id="link-tecnico" href="#">Cargando...</a>
+        <button id="btn-asignarme" class="btn-accion">Asignarme incidencia</button>
+      </div>
+
+      <!-- Fila 5 -->
+      <div class="fila">
+        <strong>Estado actual:</strong>
+        <span id="estado-actual">Cargando...</span>
+        <button id="btn-desplegar-estados" class="btn-accion">Cambiar estado</button>
+      </div>
+
+      <!-- Panel desplegable de estados -->
+      <div id="panel-estados" class="panel-oculto">
+        <label>Selecciona un estado:</label>
+        <select id="select-estados"></select>
+        <button id="btn-guardar-estado" class="btn-accion">Guardar estado</button>
+      </div>
+
+      <!-- Fila 6 -->
+      <div class="fila">
+        <strong>Fecha de creación:</strong>
+        <span id="fecha-creacion">Cargando...</span>
+      </div>
+
+      <!-- Fila 7 -->
+      <div class="fila">
+        <strong>Fecha de finalización:</strong>
+        <span id="fecha-finalizacion">-</span>
+      </div>
     </div>
   </main>
 

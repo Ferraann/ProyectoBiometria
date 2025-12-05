@@ -1,6 +1,11 @@
 <?php
 // ------------------------------------------------------------------
-// Fichero: roles.php  (puedes meterlo en cualquier .php que ya uses)
+// Fichero: roles.php
+// Autor: Manuel
+// Fecha: 5/12/2025
+// ------------------------------------------------------------------
+// Descripción:
+//  Funciones para validar roles de usuario (técnico, administrador)
 // ------------------------------------------------------------------
 
 /* Devuelve true si el usuario está en la tabla técnicos */
