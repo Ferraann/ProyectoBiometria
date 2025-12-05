@@ -129,6 +129,11 @@ switch ($method) {
             case "modificarDatos":
                 echo json_encode(modificarDatos($conn, $input));
                 break;
+            
+                case "guardarDistanciaHoy":
+                echo json_encode(guardarDistanciaHoy($conn, $input));
+                break;
+
 
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción POST no reconocida."]);
@@ -170,6 +175,15 @@ switch ($method) {
             case "getFotosIncidencia":
                 echo json_encode(obtenerFotosIncidencia($conn, $_GET['incidencia_id']));
                 break;
+
+            case "getHistorialDistancias":
+                echo json_encode(getHistorialDistancias($conn, $_GET));
+                break;
+
+            case "getDistanciaFecha":
+                echo json_encode(getDistanciaFecha($conn, $_GET));
+                break;
+
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]);
                 break;
