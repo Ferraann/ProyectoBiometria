@@ -26,7 +26,6 @@ if (!isset($_SESSION['usuario_id'])) {
 $nombre = $_SESSION['usuario_nombre'];
 $nombreCompleto = $_SESSION['usuario_nombre'] . " " . $_SESSION['usuario_apellidos'];
 $gmail = $_SESSION['usuario_correo'];
-$password = $_SESSION['usuario_password'];
 ?>
 
 
