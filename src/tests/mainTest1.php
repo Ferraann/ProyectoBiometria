@@ -18,7 +18,6 @@
 // ------------------------------------------------------------------
 require_once('../api/conexion.php');
 
-// **CORRECCIÓN AQUÍ:** Asumimos que logicaNegocio está en la misma carpeta que 'conexion.php' (o sea, en ../api/)
 foreach (glob(__DIR__ . "/../api/logicaNegocio/*.php") as $file) {
     require_once $file;
 }

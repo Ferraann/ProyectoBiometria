@@ -24,7 +24,6 @@ if (!isset($_SESSION['usuario_id'])) {
 $nombre = $_SESSION['usuario_nombre'];
 $nombreCompleto = $_SESSION['usuario_nombre'] . " " . $_SESSION['usuario_apellidos'];
 $gmail = $_SESSION['usuario_correo'];
-$password = $_SESSION['usuario_password'];
 ?>
 
 
@@ -108,8 +107,8 @@ $password = $_SESSION['usuario_password'];
                     </div>
 
                     <div class="input-row">
-                        <label for="contrasena">Contraseña:</label>
-                        <input type="password" id="contrasena"  name="password" value="<?php echo htmlspecialchars($password); ?>" disabled>
+                        <label for="contrasena">Contraseña Nueva:</label>
+                        <input type="password" id="contrasena"  name="password" disabled>
                         <a href="#" class="edit-icon"><i class="fa-solid fa-pen-to-square"></i></a>
                     </div>
                     

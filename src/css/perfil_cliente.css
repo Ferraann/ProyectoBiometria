@@ -258,6 +258,12 @@ h2 {
     border-bottom: 1px solid #eee;
 }
 
+.input-row:nth-child(1),
+.input-row:nth-child(3),
+.input-row:nth-child(6) {
+    border-bottom: 1px solid #dcdcdc;
+}
+
 .input-row label {
     width: 150px; /* Ancho fijo para las etiquetas */
     font-weight: var(--semibold);
