@@ -27,10 +27,12 @@ function actualizarUsuario($conn, $data)
         if (!isset($data[$field])) {
             continue;
         }
-        /* hashear password si viene */
+        /*
+         *
         if ($field === 'password') {
             $data[$field] = password_hash($data[$field], PASSWORD_DEFAULT);
         }
+        */
         $setParts[] = "$field = ?";
         $types      .= in_array($field, ['activo'], true) ? 'i' : 's';
         $values[]    = $data[$field];

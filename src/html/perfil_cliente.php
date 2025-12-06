@@ -38,8 +38,6 @@ $gmail = $_SESSION['usuario_correo'];
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <script src="../js/actualizar_perfil.js" defer></script>
     </head>
 <body>
@@ -57,6 +55,7 @@ $gmail = $_SESSION['usuario_correo'];
             <nav>
                 <!--Mis sensores, soporte tecnico y perfil (configuracion y cerrar sesion)-->
                 <ul>
+                    <!-- Componentes del nav -->
                     <li><a href="dashboard.php">Mis <br> sensores</a></li>
                     <li>
                         <a href="soporte_tecnico_cliente.php">Soporte <br> técnico</a>
@@ -64,11 +63,14 @@ $gmail = $_SESSION['usuario_correo'];
                     <li class="profile-dropdown-container">
                         <a href="#" class="nav-perfil" id="profile-toggle-button"><i class="fa-solid fa-circle-user"></i><span><?php echo htmlspecialchars($nombre); ?></span></a>
                         <div class="profile-menu" id="profile-menu">
+                            <!-- Menú -->
                             <div class="menu-header">
+                                <!-- Icono, nombre y x de cerrar -->
                                 <i class="fa-solid fa-circle-user profile-icon-large"></i>
                                 <span class="profile-name"><?php echo htmlspecialchars($nombre); ?></span>
                                 <i class="fa-solid fa-xmark close-menu-btn" id="close-menu-button"></i>
                             </div>
+                            <!-- Componentes del menú -->
                             <a href="perfil_cliente.php" class="menu-item">CONFIGURACIÓN</a>
                             <a href="../php/logout.php" class="menu-item logout-item">CERRAR SESIÓN</a>
                         </div>
@@ -77,52 +79,63 @@ $gmail = $_SESSION['usuario_correo'];
             </nav>
         </header>
 
+   <!-- Contenedor main, cuerpo de la pagina -->
     <main class="perfil-container">
+        <!-- Sección de editar perfil -->
         <section class="edit-perfil-section">
             <h2>EDITAR PERFIL</h2>
             
             <form class="perfil-form" action="../php/actualizar_perfil.php" method="POST">
+                <!-- Logo del perfil y boton para editar -->
                 <div class="form-group foto-group">
                     <div class="foto-placeholder"><img src="../img/imagen-icono.webp" alt="Icono de usuario"></div>
                     <!-- <a href="#" class="edit-link">Editar <i class="fa-solid fa-pen"></i></a> -->
                 </div>
 
+                <!-- Campos de edición -->
                 <div class="form-fields">
-                    
+
+                    <!-- Campo de nombre -->
                     <div class="input-row">
                         <label for="nombre">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" value="<?php echo htmlspecialchars($nombreCompleto); ?>" disabled>
                         <a href="#" class="edit-icon"><i class="fa-solid fa-pen-to-square"></i></a>
                     </div>
 
+                    <!-- Campo de correo electrónico -->
                     <div class="input-row">
                         <label for="gmail">Correo Electrónico:</label>
                         <input type="email" id="gmail" name="gmail" value="<?php echo htmlspecialchars($gmail); ?>" disabled>
                         <a href="#" class="edit-icon"><i class="fa-solid fa-pen-to-square"></i></a>
                     </div>
-                    
+
+                    <!-- Campo de confirmar correo -->
                     <div class="input-row">
                         <label for="repetir-correo">Confirmar Correo:</label>
                         <input type="email" id="repetir-correo" name="repetir-correo" disabled>
                     </div>
 
+                    <!-- Campo de contraseña nueva -->
                     <div class="input-row">
                         <label for="contrasena">Contraseña Nueva:</label>
                         <input type="password" id="contrasena"  name="contrasena" disabled>
                         <a href="#" class="edit-icon"><i class="fa-solid fa-pen-to-square"></i></a>
                     </div>
-                    
+
+                    <!-- Campo de confirmar contraseña -->
                     <div class="input-row">
                         <label for="repetir-contrasena">Confirmar Contraseña:</label>
                         <input type="password" id="repetir-contrasena" name="repetir-contrasena" disabled>
                     </div>
 
+                    <!-- Campo de contraseña antigua -->
                     <div class="input-row">
                         <label for="contrasena-antigua">Contraseña Antigua:</label>
                         <input type="password" id="contrasena-antigua"  name="contrasena-antigua" disabled>
                     </div>
                 </div>
 
+                <!-- Controlador de los mensajes en pantalla, tanto los mensajes de error como los de éxito -->
                 <?php
                 // Muestra el mensaje de error si existe
                 if (isset($_SESSION['mensaje_error'])): ?>
@@ -143,13 +156,16 @@ $gmail = $_SESSION['usuario_correo'];
                 endif;
                 ?>
 
+                <!-- Botón de guardar (SUBMIT) -->
                 <button type="submit" class="btn-guardar">GUARDAR</button>
             </form>
         </section>
 
+        <!-- Seción de configuración de sensores -->
         <section class="config-sensores-section">
             <h2>CONFIGURAR SENSORES</h2>
-            
+
+            <!-- Selector de sensores -->
             <nav class="sensor-tabs">
                 <ul>
                     <li><a href="#" class="tab-link active" data-sensor="1">Sensor 1</a></li>
@@ -157,6 +173,7 @@ $gmail = $_SESSION['usuario_correo'];
                 </ul>
             </nav>
 
+            <!-- Información del sensor 1 -->
             <div class="sensor-details active-tab" id="sensor-1-content">
                 <ul>
                     <li>**ID del sensor:** <span>ES000123456</span></li>
@@ -165,7 +182,8 @@ $gmail = $_SESSION['usuario_correo'];
                     <li>**Incidencias antiguas:** <span>3 (Ver detalles)</span></li>
                 </ul>
             </div>
-            
+
+            <!-- Información del sensor 2 -->
             <div class="sensor-details" id="sensor-2-content">
                 <ul>
                     <li>**ID del sensor:** <span>ES000654321</span></li>
