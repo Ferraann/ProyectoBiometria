@@ -115,16 +115,15 @@ form.addEventListener('submit', function(e) {
         const id = input.id;
         const val = (input.value || "").trim();
 
-        // ... (validaciones para Nombre y Correo son correctas) ...
 
         // Contraseña
         if (id === 'contrasena') {
             const rep = form.querySelector('input[id="repetir-contrasena"]');
             const ant = form.querySelector('input[id="contrasena-antigua"]');
 
-            // 1. Validación de la Contraseña Antigua (NUEVA VALIDACIÓN)
+            // 1. Validación de la Contraseña Antigua
             if (!ant || ant.disabled || ant.value.trim() === '') {
-                alert('Debe introducir la Contraseña Antigua para confirmar el cambio.');
+                // no funcionaaa//  alert('Debe introducir la Contraseña Antigua para confirmar el cambio.');
                 ant && ant.focus();
                 return;
             }
@@ -149,13 +148,47 @@ form.addEventListener('submit', function(e) {
 
             // 4. Validación de coincidencia (existente)
             if (!rep || rep.disabled || val !== rep.value) {
-                alert('Las contraseñas no coinciden o no están rellenadas.');
+                // alert('Las contraseñas no coinciden o no están rellenadas.');
                 rep && rep.focus();
                 return;
             }
         }
     }
 
+    const mensaje_error = document.getElementById("mensaje_error");
+    const mensaje_exito = document.getElementById("mensaje_exito");
+
+    setTimeout(() => {
+        mensaje_error.style.display = "none";
+        mensaje_exito.style.display = "none";
+    }, 5000)
+
     // Enviar formulario normalmente
     form.submit();
 });
+
+/*
+
+// --- LÓGICA DE OCULTACIÓN AUTOMÁTICA DE ALERTAS ---
+function ocultarAlertasAutomaticamente() {
+    const alertaError = document.getElementById("js-alerta-error");
+    const alertaExito = document.getElementById("js-alerta-exito");
+
+    // Verificar si existe el mensaje de error y ocultarlo
+    if (alertaError) {
+        setTimeout(() => {
+            alertaError.style.display = "none";
+        }, 5000); // 5000 milisegundos = 5 segundos
+    }
+
+    // Verificar si existe el mensaje de éxito y ocultarlo
+    if (alertaExito) {
+        setTimeout(() => {
+            alertaExito.style.display = "none";
+        }, 5000); // 5 segundos
+    }
+}
+
+ocultarAlertasAutomaticamente();
+
+*/

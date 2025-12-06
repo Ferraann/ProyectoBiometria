@@ -108,7 +108,7 @@ $gmail = $_SESSION['usuario_correo'];
 
                     <div class="input-row">
                         <label for="contrasena">Contraseña Nueva:</label>
-                        <input type="password" id="contrasena"  name="password" disabled>
+                        <input type="password" id="contrasena"  name="contrasena" disabled>
                         <a href="#" class="edit-icon"><i class="fa-solid fa-pen-to-square"></i></a>
                     </div>
                     
@@ -118,12 +118,30 @@ $gmail = $_SESSION['usuario_correo'];
                     </div>
 
                     <div class="input-row">
-                        <label for="contrasenaAntigua">Contraseña Antigua:</label>
-                        <input type="password" id="contrasena-antigua"  name="password" disabled>
+                        <label for="contrasena-antigua">Contraseña Antigua:</label>
+                        <input type="password" id="contrasena-antigua"  name="contrasena-antigua" disabled>
                     </div>
                 </div>
 
-                <label></label>
+                <?php
+                // Muestra el mensaje de error si existe
+                if (isset($_SESSION['mensaje_error'])): ?>
+                    <div class="alert error" id="js-alerta-error">
+                        <?php echo htmlspecialchars($_SESSION['mensaje_error']); ?>
+                    </div>
+                    <?php
+                    unset($_SESSION['mensaje_error']); // Limpia el mensaje para que no se muestre de nuevo
+                endif;
+
+                // Muestra el mensaje de éxito si existe
+                if (isset($_SESSION['mensaje_exito'])): ?>
+                    <div class="alert success" id="js-alerta-exito">
+                        <?php echo htmlspecialchars($_SESSION['mensaje_exito']); ?>
+                    </div>
+                    <?php
+                    unset($_SESSION['mensaje_exito']); // Limpia el mensaje de éxito
+                endif;
+                ?>
 
                 <button type="submit" class="btn-guardar">GUARDAR</button>
             </form>

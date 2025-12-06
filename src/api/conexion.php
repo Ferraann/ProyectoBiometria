@@ -1,9 +1,9 @@
 <?php
 function abrirServidor() {
     // Parámetros de conexión (correctos para Plesk)
-    $servername = "localhost:3306";
-    $username   = "aitherdb";
-    $password   = "Sansaloni330.";
+    $servername = "localhost";
+    $username   = "root";
+    $password   = "";
     $dbname     = "aither";
 
     // Crear conexión con MySQL
