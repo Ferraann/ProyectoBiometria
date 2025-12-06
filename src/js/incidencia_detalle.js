@@ -1,97 +1,115 @@
-const cont = document.getElementById('contenido-detalle');
+// incidencia_detalle.js
 
-let data = sessionStorage.getItem('incidenciaSeleccionada');
-if (!data) {
-  cont.innerHTML = "<p>Error: no hay incidencia seleccionada.</p>";
-  throw new Error("No se encontró la incidencia en sessionStorage");
+const params = new URLSearchParams(location.search);
+const idIncidencia = params.get('id');
+const idUsuarioActivo = parseInt(sessionStorage.getItem('idUsuario') || '0');
+
+if (!idIncidencia) {
+  alert('No se indicó una incidencia.');
+  location.href = 'incidencias.html';
 }
 
-data = JSON.parse(data);
+// Cargar todo
+(async () => {
+  try {
+    // 1. Cargar incidencia
+    const resInc = await fetch(`../api/index.php?accion=getIncidenciaXId&id=${idIncidencia}`);
+    const inc = await resInc.json();
+    if (!inc || inc.status === 'error') throw new Error('Incidencia no encontrada');
 
-// Renderizamos todos los campos en columnas usando un grid
-cont.innerHTML = `
-  <h2>Editar Incidencia #${data.id}</h2>
-  <div class="detalle-grid">
-    <div class="campo">
-      <label>ID:</label>
-      <input type="text" value="${data.id}" disabled />
-    </div>
-    <div class="campo">
-      <label>Título:</label>
-      <input type="text" id="titulo" value="${data.titulo}" />
-    </div>
-    <div class="campo">
-      <label>Descripción:</label>
-      <textarea id="descripcion">${data.descripcion}</textarea>
-    </div>
-    <div class="campo">
-      <label>Usuario:</label>
-      <input type="text" value="${data.usuario || 'Anónimo'}" disabled />
-    </div>
-    <div class="campo">
-      <label>ID Usuario:</label>
-      <input type="text" value="${data.id_user || ''}" disabled />
-    </div>
-    <div class="campo">
-      <label>Técnico:</label>
-      <input type="text" id="tecnico" value="${data.tecnico}" />
-    </div>
-    <div class="campo">
-      <label>ID Técnico:</label>
-      <input type="text" value="${data.id_tecnico || ''}" disabled />
-    </div>
-    <div class="campo">
-      <label>Estado:</label>
-      <input type="text" id="estado" value="${data.estado}" />
-    </div>
-    <div class="campo">
-      <label>ID Estado:</label>
-      <input type="text" value="${data.estado_id || ''}" disabled />
-    </div>
-    <div class="campo">
-      <label>Fecha de creación:</label>
-      <input type="datetime-local" value="${data.fecha_creacion.slice(0,16)}" disabled />
-    </div>
-    <div class="campo">
-      <label>Fecha finalización:</label>
-      <input type="datetime-local" value="${data.fecha_finalizacion ? data.fecha_finalizacion.slice(0,16) : ''}" disabled />
-    </div>
-  </div>
-  <button id="guardar-btn">Guardar cambios</button>
-`;
+    // 2. Cargar nombres de usuario y técnico
+    const [resUser, resTec] = await Promise.all([
+      fetch(`../api/index.php?accion=getUsuarioXId&id=${inc.id_user}`),
+      fetch(`../api/index.php?accion=getUsuarioXId&id=${inc.id_tecnico}`)
+    ]);
+    const user = await resUser.json();
+    const tec = await resTec.json();
 
-// Estilos CSS para el grid
-const style = document.createElement('style');
-style.textContent = `
-.detalle-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
+    // 3. Cargar estados disponibles
+    const resEst = await fetch('../api/index.php?accion=getEstadosIncidencia');
+    const estados = await resEst.json();
 
-.campo {
-  display: flex;
-  flex-direction: column;
-}
+    // 4. Rellenar campos
+    document.getElementById('incidencia-titulo-id').textContent = `${inc.titulo} (${inc.id})`;
+    document.getElementById('descripcion-texto').textContent = inc.descripcion || '-';
 
-.campo label {
-  font-weight: 700;
-  margin-bottom: 5px;
-}
+    const nombreUser = user.status !== 'error' ? `${user.nombre} ${user.apellidos ?? ''}`.trim() : 'Anónimo';
+    document.getElementById('link-usuario').textContent = nombreUser;
+    document.getElementById('link-usuario').href = `usuario_detalle.html?id=${inc.id_user}&perfil=usuario`;
 
-.campo input,
-.campo textarea {
-  padding: 8px;
-  font-family: inherit;
-  font-size: 1rem;
-  border: 2px solid var(--Principal_1);
-  border-radius: 6px;
-}
+    const nombreTec = tec.status !== 'error' ? `${tec.nombre} ${tec.apellidos ?? ''}`.trim() : 'Sin asignar';
+    document.getElementById('link-tecnico').textContent = nombreTec;
+    document.getElementById('link-tecnico').href = `usuario_detalle.html?id=${inc.id_tecnico}&perfil=tecnico`;
 
-.campo textarea {
-  resize: vertical;
-  min-height: 80px;
-}
-`;
-document.head.appendChild(style);
+    document.getElementById('fecha-creacion').textContent = new Date(inc.fecha_creacion).toLocaleString();
+    // Mostrar/ocultar fecha de finalización
+    const filaFin = document.getElementById('fila-finalizacion');
+    if (filaFin) {
+      if (inc.fecha_finalizacion) {
+        filaFin.style.display = 'flex';
+        document.getElementById('fecha-finalizacion').textContent = new Date(inc.fecha_finalizacion).toLocaleString();
+      } else {
+        filaFin.style.display = 'none';
+      }
+    }
+
+    // 5. Rellenar select de estados
+    const select = document.getElementById('select-estados');
+    estados.forEach(e => {
+      const opt = document.createElement('option');
+      opt.value = e.id;
+      opt.textContent = e.nombre;
+      if (e.nombre === inc.estado) opt.selected = true;
+      select.appendChild(opt);
+    });
+
+    // 6. Guardar estado
+    document.getElementById('btn-guardar-estado').addEventListener('click', async () => {
+      const nuevoEstadoId = select.value;
+      const res = await fetch('../api/index.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          accion: 'actualizarEstadoIncidencia',
+          incidencia_id: idIncidencia,
+          estado_id: nuevoEstadoId
+        })
+      });
+      const data = await res.json();
+      if (data.status === 'ok') {
+        alert('Estado actualizado.');
+        location.reload();
+      } else {
+        alert('Error: ' + data.mensaje);
+      }
+    });
+
+    // 7. Asignarme como técnico
+    document.getElementById('btn-asignarme').addEventListener('click', async () => {
+      if (!idUsuarioActivo) return alert('No hay usuario activo.');
+      const ok = confirm('¿Quieres asignarte esta incidencia?');
+      if (!ok) return;
+
+      const res = await fetch('../api/index.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          accion: 'asignarmeTecnicoIncidencia',
+          incidencia_id: idIncidencia,
+          tecnico_id: idUsuarioActivo
+        })
+      });
+      const data = await res.json();
+      if (data.status === 'ok') {
+        alert('Incidencia asignada.');
+        location.reload();
+      } else {
+        alert('Error: ' + data.mensaje);
+      }
+    });
+
+  } catch (e) {
+    alert(e.message);
+    location.href = 'incidencias.html';
+  }
+})();

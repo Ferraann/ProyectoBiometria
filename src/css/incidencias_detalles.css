@@ -1,83 +1,177 @@
 /* ----------------------------- */
-/* Detalle Incidencia - CSS */
+/* Detalle Incidencia - CSS Renovado */
 /* ----------------------------- */
 
 :root {
-    --detalle-bg: #fff;
-    --detalle-border: var(--Secundario_Azul);
-    --detalle-btn-bg: var(--Principal_1);
-    --detalle-btn-hover: var(--Principal_2);
-    --detalle-btn-text: #fff;
+  --color-fondo: #f5f7fa;
+  --color-principal: #0052cc;
+  --color-secundario: #00c2ff;
+  --color-exito: #36b37e;
+  --color-peligro: #ff5630;
+  --color-texto: #172b4d;
+  --color-borde: #dfe1e6;
+  --color-boton-texto: #ffffff;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --radio: 8px;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f8f9fa;
-    min-height: 100vh;
-    padding: 0;
-    margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--color-fondo);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
 h1 {
-    color: var(--Principal_1);
-    font-size: 2rem;
-    margin-bottom: 25px;
-    text-align: center;
+  color: var(--color-principal);
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 #contenido-detalle {
-    background-color: var(--detalle-bg);
-    border-left: 5px solid var(--detalle-border);
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  background-color: #fff;
+  border-left: 5px solid var(--color-principal);
+  padding: 25px;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
 }
 
 #contenido-detalle h2 {
-    color: var(--Secundario_Azul);
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+  color: var(--color-secundario);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
 }
 
 #contenido-detalle p {
-    margin: 8px 0;
-    line-height: 1.5;
+  margin: 8px 0;
+  line-height: 1.5;
+  color: var(--color-texto);
 }
 
 #contenido-detalle .fotos-detalle {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
 }
 
 #contenido-detalle .fotos-detalle img {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 6px;
-    border: 1px solid #ddd;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: var(--radio);
+  border: 1px solid var(--color-borde);
+  transition: transform 0.2s;
 }
 
-#contenido-detalle button {
-    margin-top: 25px;
-    padding: 12px 30px;
-    background-color: var(--detalle-btn-bg);
-    color: var(--detalle-btn-text);
-    border: none;
-    border-radius: 25px;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s;
+#contenido-detalle .fotos-detalle img:hover {
+  transform: scale(1.05);
 }
 
-#contenido-detalle button:hover {
-    background-color: var(--detalle-btn-hover);
+/* ---------- BOTONES RENOVADOS ---------- */
+.btn-accion {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--color-boton-texto);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-accion:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-accion:active {
+  transform: translateY(0);
+}
+
+/* Colores por función */
+.btn-guardar {
+  background-color: var(--color-exito);
+}
+
+.btn-guardar:hover {
+  background-color: #2d9e6e;
+}
+
+.btn-asignar {
+  background-color: var(--color-principal);
+}
+
+.btn-asignar:hover {
+  background-color: #0041a8;
+}
+
+.btn-cancelar {
+  background-color: var(--color-peligro);
+}
+
+.btn-cancelar:hover {
+  background-color: #e03b20;
+}
+
+.btn-deshabilitado {
+  background-color: #a5adba;
+  cursor: not-allowed;
+}
+
+/* ---------- FILAS Y CAMPOS ---------- */
+.fila {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.fila strong {
+  min-width: 180px;
+  color: var(--color-texto);
+}
+
+.fila a {
+  color: var(--color-principal);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.fila a:hover {
+  text-decoration: underline;
+}
+
+#select-estados {
+  padding: 8px 12px;
+  border: 2px solid var(--color-borde);
+  border-radius: var(--radio);
+  font-size: 1rem;
+  background-color: #fff;
+  color: var(--color-texto);
+  transition: border-color 0.2s;
+}
+
+#select-estados:focus {
+  border-color: var(--color-principal);
+  outline: none;
+}
+
+/* ---------- FECHA FINALIZACIÓN (oculta si no hay) ---------- */
+#fila-finalizacion {
+  display: none;
+}
+
+#fila-finalizacion.visible {
+  display: flex;
 }

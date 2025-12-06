@@ -11,9 +11,9 @@
 // ------------------------------------------------------------------
 
 /* ================= DEBUG  ================= */
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-ini_set('log_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('log_errors', 1);
 /* ========================================== */
 header('Content-Type: application/json');
 
@@ -104,7 +104,7 @@ switch ($method) {
                 echo json_encode(activarUsuario($conn, $input['token']));
                 break;
 
-            case "finalizarRelacionSensor":   // marcar sensor con problema
+            case "finalizarRelacionSensor":   // marcar sensor con problema, hay que añadir que cree incidencia sin terminar relacion con usuario
                 echo json_encode(marcarSensorConProblemas($conn, $input));
                 break;
 
@@ -132,10 +132,17 @@ switch ($method) {
                 echo json_encode(modificarDatos($conn, $input));
                 break;
             
-                case "guardarDistanciaHoy":
+            case "guardarDistanciaHoy":
                 echo json_encode(guardarDistanciaHoy($conn, $input));
                 break;
 
+            case "actualizarEstadoIncidencia":
+                echo json_encode(actualizarEstadoIncidencia($conn, $input));
+                break;
+
+            case "asignarmeTecnicoIncidencia":
+                echo json_encode(asignarTecnicoIncidencia($conn, $input));
+                break;
 
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción POST no reconocida."]);
@@ -185,7 +192,31 @@ switch ($method) {
             case "getDistanciaFecha":
                 echo json_encode(getDistanciaFecha($conn, $_GET));
                 break;
+            
+            case "getIncidenciaXId":
+                $id = intval($_GET['id'] ?? 0);
+                $row = obtenerIncidenciaXId($conn, $id);
+                echo json_encode($row ?: ["status" => "error", "mensaje" => "Incidencia no encontrada"]);
+                break;
 
+            case "getUsuarioXId":
+                $id = intval($_GET['id'] ?? 0);
+                $row = obtenerUsuarioXId($conn, $id); 
+                echo json_encode($row ?: ["status" => "error", "mensaje" => "Usuario no encontrado"]);
+                break;
+
+            case "esTecnico":
+                $id = intval($_GET['id'] ?? 0);
+                echo json_encode(["es_tecnico" => esTecnico($conn, $id)]);
+                break;
+
+            case "esAdministrador":
+                $id = intval($_GET['id'] ?? 0);
+                echo json_encode(["es_admin" => esAdministrador($conn, $id)]);
+                break;
+            case "getEstadosIncidencia":
+                echo json_encode(obtenerEstadosIncidencia($conn));
+                break;
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]);
                 break;

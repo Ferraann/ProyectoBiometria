@@ -6,7 +6,7 @@
 // ------------------------------------------------------------------
 // Descripción:
 //  Función para obtener todas las incidencias con información
-//  del usuario, estado y técnico asignado.
+//  completa: descripción, IDs, nombres de usuario/técnico/estado.
 // ------------------------------------------------------------------
 
 function obtenerTodasIncidencias($conn)
@@ -14,18 +14,21 @@ function obtenerTodasIncidencias($conn)
     $sql = "
         SELECT 
             i.id,
-            u.nombre                           AS usuario,
             i.titulo,
             i.descripcion,
             i.fecha_creacion,
-            e.nombre                           AS estado,
+            i.fecha_finalizacion,
+            i.id_user,
+            u.nombre                      AS usuario,
             i.id_tecnico,
-            COALESCE(tu.nombre, 'Sin asignar') AS tecnico
+            COALESCE(tu.nombre, 'Sin asignar') AS tecnico,
+            i.estado_id,
+            e.nombre                      AS estado
         FROM incidencias i
-        LEFT JOIN usuario u ON i.id_user = u.id
-        LEFT JOIN estado_incidencia e ON i.estado_id = e.id
+        LEFT JOIN usuario u  ON i.id_user     = u.id
         LEFT JOIN tecnicos t ON i.id_tecnico = t.usuario_id
         LEFT JOIN usuario tu ON t.usuario_id = tu.id
+        LEFT JOIN estado_incidencia e ON i.estado_id = e.id
         ORDER BY i.fecha_creacion DESC
     ";
 
