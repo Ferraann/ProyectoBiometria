@@ -137,6 +137,35 @@ nav a:hover{
     text-align: right;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+/* Imagen de icono de perfil del usuario */
+#profile-image-upload {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .close-menu-btn {
     cursor: pointer;
     font-size: 1.2rem;

@@ -120,6 +120,76 @@ editIcons.forEach(icon => {
 });
 
 
+
+
+
+
+
+
+
+// 1. Obtener referencias de los nuevos elementos
+const editPhotoLink = document.getElementById('edit-photo-link');
+const fileInput = document.getElementById('profile-image-upload');
+const profileImageDisplay = document.getElementById('profile-image-display');
+
+if (editPhotoLink && fileInput && profileImageDisplay) {
+
+    // 2. Al hacer clic en el enlace "Editar", simular el clic en el input de archivo oculto
+    editPhotoLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        fileInput.click(); // Esto abre el administrador de archivos del sistema
+    });
+
+    // 3. Escuchar cuando se selecciona un archivo (evento 'change' en el input)
+    fileInput.addEventListener('change', function() {
+        // fileInput.files es una lista de archivos seleccionados
+        if (this.files && this.files[0]) {
+            const file = this.files[0];
+
+            // Marcamos el formulario como editado
+            const form = document.querySelector('.perfil-form');
+            form.dataset.editedByFile = "1";
+
+            // Verificar si el archivo es una imagen
+            if (file.type.startsWith('image/')) {
+
+                // Crea un objeto FileReader para leer el contenido del archivo
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    // Cuando el archivo se ha cargado (leído),
+                    // establece la fuente de la imagen de previsualización
+                    profileImageDisplay.src = e.target.result;
+                };
+
+                // Inicia la lectura del archivo como una URL de datos (Base64)
+                reader.readAsDataURL(file);
+
+            } else {
+                alert("Por favor, selecciona un archivo de imagen válido.");
+                fileInput.value = ''; // Limpiar el input para permitir una nueva selección
+            }
+        }
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Interceptar submit para validar SOLO campos activamente en edición
 const form = document.querySelector('.perfil-form');
 

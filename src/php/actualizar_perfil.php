@@ -1,5 +1,41 @@
 <?php
 session_start();
+
+
+
+
+
+
+
+
+
+
+
+// DEBUG: INICIO
+error_log("POST data: " . print_r($_POST, true)); // Verifica otros campos
+error_log("FILES data: " . print_r($_FILES, true)); // MUESTRA EL CONTENIDO DE FILES
+
+// Si $_FILES está vacío, muestra un error.
+if (empty($_FILES) && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    error_log("WARNING: La matriz \$FILES está vacía. Causa probable: límite de tamaño de POST.");
+}
+// DEBUG: FIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 require_once "../api/conexion.php";
 
 foreach (glob(__DIR__ . "/../api/logicaNegocio/*.php") as $file) {
@@ -20,33 +56,125 @@ if (!isset($_SESSION['usuario_id'])) {
 $id = $_SESSION['usuario_id'];
 $data = ["id" => $id];
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --- MANEJO DE LA SUBIDA DE ARCHIVO DE PERFIL ---
+
+if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] === UPLOAD_ERR_OK) {
+
+    $fileTmpPath = $_FILES['profile_image']['tmp_name'];
+    $fileName = $_FILES['profile_image']['name'];
+    $fileSize = $_FILES['profile_image']['size'];
+    $fileType = $_FILES['profile_image']['type'];
+    $fileNameCmps = explode(".", $fileName);
+    $fileExtension = strtolower(end($fileNameCmps));
+
+    // 1. Definir la ubicación y el nombre único (por seguridad)
+    $uploadFileDir = __DIR__ . '/../img/perfiles/';
+    $nuevoNombreArchivo = $id . '_' . time() . '.' . $fileExtension; // userID_timestamp.ext
+    $dest_path = $uploadFileDir . $nuevoNombreArchivo;
+
+    // 1. Si no existe el directorio perfiles, lo creo.
+    if (!is_dir($uploadFileDir)) {
+        // Tenta crear el directorio con permisos 0777 (lectura/escritura/ejecución para todos)
+        // El 'true' es para crear directorios anidados si fuera necesario.
+        if (!mkdir($uploadFileDir, 0777, true)) {
+            $_SESSION['mensaje_error'] = "Error interno: El directorio de destino no existe y no se pudo crear.";
+            header("Location: $mensaje_destino"); exit;
+        }
+    }
+    // ------------------------------------
+
+    // 2. Validación de seguridad (ej. tamaño máximo, solo imágenes)
+    if ($fileSize > 5000000) { // 5MB
+        $_SESSION['mensaje_error'] = "El archivo es demasiado grande (máx. 5MB).";
+        header("Location: $mensaje_destino");
+        exit;
+    }
+
+    $allowedfileExtensions = array('jpg', 'gif', 'png', 'jpeg', 'webp');
+    if (!in_array($fileExtension, $allowedfileExtensions)) {
+        $_SESSION['mensaje_error'] = "Formato de imagen no permitido.";
+        header("Location: $mensaje_destino");
+        exit;
+    }
+
+    // 3. Mover el archivo subido
+    if(move_uploaded_file($fileTmpPath, $dest_path)) {
+        // Éxito: Guardamos la nueva ruta de la imagen en $data
+        $data['foto_ruta'] = $dest_path;
+
+        // NOTA: Debes asegurarte de que tu función actualizarUsuario() sepa manejar
+        // un campo nuevo como 'foto_ruta' y lo guarde en la DB.
+
+       ;
+
+    } else {
+        $_SESSION['mensaje_error'] = "Hubo un error al guardar la imagen en el servidor.";
+        header("Location: $mensaje_destino"); exit;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // --- ACTUALIZACIÓN DE DATOS (Después de la verificación) ---
 
 // ----------------------------------------------------------------------------------------
 // 1. Nombre
 // ----------------------------------------------------------------------------------------
 
-// Si no esta vacío y es diferente al de la sesion ...
-if (!empty($_POST['nombre'])) {
-    // ... se guarda en $data, pero separado, por un lado el nombre y por el otro el apellido
-    $partes = explode(" ", $_POST['nombre'], 2);
-    $data['nombre'] = $partes[0];
-    $data['apellidos'] = $partes[1] ?? "";
-} else {
-    // 2A. VALIDACIÓN DE CAMPO DE NOMBRE COMPLETO. EL NOMBRE ESTÁ VACIO
-    if (isset($_POST['nombre'])) {
+// Nombre anterior
+$nombre_anterior = $_SESSION['usuario_nombre']." ".$_SESSION['usuario_apellidos'];
+
+// 1. Nombre
+// Si se envió un nombre...
+if (isset($_POST['nombre'])) {
+
+    // Si el campo está vacío, disparamos el error
+    if (empty($_POST['nombre'])) {
         $_SESSION['mensaje_error'] = "El nombre está vacío. Por favor, ingrese un nombre y apellido.";
         header("Location: $mensaje_destino");
         exit;
     }
-    // ------------------------------------
-}
 
-//2B. VALIDACIÓN DE CAMPO DE NOMBRE COMPLETO. EL NOMBRE ES IGUAL AL QUE TENÍA
-if ($_POST['nombre'] == ($_SESSION['usuario_nombre']." ".$_SESSION['usuario_apellidos'])) {
-    $_SESSION['mensaje_error'] = "El nombre y apellidos introducidos son idénticos a los actuales. No se ha realizado ninguna modificación.";
-    header("Location: $mensaje_destino");
-    exit;
+    // Si el nombre es diferente al de la sesión, lo guardamos en $data.
+    if ($_POST['nombre'] !== $nombre_anterior) {
+        $partes = explode(" ", $_POST['nombre'], 2);
+        $data['nombre'] = $partes[0];
+        $data['apellidos'] = $partes[1] ?? "";
+    }
+    // Si el nombre es idéntico, NO hacemos nada y el script continúa.
+    // La comprobación de 'No se detectaron modificaciones' se hace al final (Línea 231).
 }
 // ------------------------------------
 
@@ -179,8 +307,39 @@ if ($requiereVerificacion) {
 // 4. ¿Hay algo que modificar?
 // ----------------------------------------------------------------------------------------
 
+// Comprobar si hubo un archivo subido
+$archivo_subido = isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] === UPLOAD_ERR_OK;
+
+
+
+
+
+
+
+
+
+/*
+if(!$archivo_subido) {
+    $_SESSION['mensaje_error'] = "Foto no subida!";
+    header("Location: $mensaje_destino");
+    exit;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 // No hay nada que modificar? --> Error
-if (count($data) === 1 && isset($data['id'])) {
+if (count($data) === 1) {
     $_SESSION['mensaje_error'] = "No se detectaron modificaciones para guardar.";
     header("Location: $mensaje_destino");
     exit;
