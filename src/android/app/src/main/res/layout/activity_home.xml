@@ -1,34 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:gravity="center"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/blanco">
 
-    <Button
-        android:id="@+id/editarPerfil"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="botonEditarPerfil"
-        android:text="Editar perfil" />
+    <ImageView
+        android:id="@+id/logoHome"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/logo_aither"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnVincularQR"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/txtMisSensores"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vincular por qr" />
+        android:text="MIS SENSORES"
+        android:textColor="@color/azulOscuro_Principal"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoHome" />
 
-    <Button
-        android:id="@+id/notificaciones"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="botonIrNotificaciones"
-        android:text="Notificaciones" />
+    <View
+        android:id="@+id/lineaSeparadora"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/azulOscuro_Principal"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtMisSensores"
+        app:layout_constraintTop_toBottomOf="@+id/txtMisSensores" />
 
-    <Button
-        android:id="@+id/button5"
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineaSeparadora">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/azul_Paneles"
+                app:cardElevation="0dp"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@android:drawable/ic_dialog_map"
+                        app:tint="@color/azulOscuro_Principal"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mapa en construcción"
+                        android:textColor="@color/azulOscuro_Principal"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Acciones Rápidas:"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btnVincularQR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vincular por QR"
+                android:backgroundTint="@color/azulOscuro_Principal"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/notificaciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="botonIrNotificaciones"
+                android:text="Notificaciones"
+                android:backgroundTint="@color/azulOscuro_Principal"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="botonVerSensoresAfiliados"
+                android:text="Ver Sensores Afiliados"
+                android:backgroundTint="@color/azulOscuro_Principal"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="botonVerSensoresAfiliados"
-        android:text="Ver sensores afiliados" />
-</LinearLayout>
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

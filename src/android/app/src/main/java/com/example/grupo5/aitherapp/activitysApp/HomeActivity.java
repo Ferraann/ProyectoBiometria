@@ -3,6 +3,7 @@ package com.example.grupo5.aitherapp.activitysApp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,12 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+
+        ImageView btnHome = findViewById(R.id.nav_home);
+        if (btnHome != null) {
+            btnHome.setSelected(true);
+        }
+
         // ----------------------
         // TU CÓDIGO ORIGINAL
         // ----------------------
@@ -25,6 +32,9 @@ public class HomeActivity extends AppCompatActivity {
             bienvenida.setText("¡Bienvenido, " + emailUsuario + "!");
         }
 
+        // -----------------------------------------------------
+        // Botón Vincular QR
+        // -----------------------------------------------------
         findViewById(R.id.btnVincularQR).setOnClickListener(v -> {
             startActivity(new Intent(HomeActivity.this, VincularQRActivity.class));
         });
