@@ -317,8 +317,15 @@ efectos de superposicion */
   cursor: pointer;
 }
 
+.checkbox-custom input[type="checkbox"] {
+  /* Mantiene el input fuera del flujo de clic */
+  pointer-events: none;
+  cursor: pointer;
+}
+
 /* Creamos el checkbox visible */
 .checkbox-custom .checkmark {
+  cursor: pointer;
   height: 16px;
   width: 16px;
   border: 2px solid var(--Principal_1);
