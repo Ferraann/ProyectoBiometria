@@ -222,7 +222,7 @@ switch ($method) {
                 echo json_encode(obtenerEstadosIncidencia($conn));
                 break;
             case "getFotoPerfil":
-                echo json_encode(guardarFotoPerfil($conn, $input['usuario_id']));
+                echo json_encode(obtenerFotoPerfil($conn, $input['usuario_id']));
                 break;
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]);

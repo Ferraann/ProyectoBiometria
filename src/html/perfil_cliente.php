@@ -13,14 +13,52 @@ APORTACIÓN: Estructura completa de la página HTML para el inicio de sesión
 
 <?php
 require_once "../api/conexion.php";
+foreach (glob(__DIR__ . "/../api/logicaNegocio/*.php") as $file) {
+    require_once $file;
+}
+
 $conn = abrirServidor();
 
 session_start();
 
-// Construimos el nombre completo
+// -----------------------------------------------------------------------------------
+// 1. VALIDACIÓN DE SESIÓN
+// -----------------------------------------------------------------------------------
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: login.html");
+    exit;
+}
+
+$id_usuario = $_SESSION['usuario_id'];
+
+// -----------------------------------------------------------------------------------
+// 2. RECUPERAR LA FOTO DE PERFIL BLOB
+// -----------------------------------------------------------------------------------
+$DEFAULT_IMAGE_PATH = "../img/imagen-icono.webp";
+$foto_a_mostrar = $DEFAULT_IMAGE_PATH;
+
+// Nota: Asume que la función de obtención de foto (que era guardarFotoPerfil) se llama ahora obtenerFotoPerfil
+$resultado_foto = obtenerFotoPerfil($conn, $id_usuario);
+
+if ($resultado_foto['status'] === 'ok' &&
+    !empty($resultado_foto['fotos'][0]['foto'])) {
+
+    // Si la DB devuelve la imagen en Base64
+    $base64_img = $resultado_foto['fotos'][0]['foto'];
+
+    // Construimos el Data URI que el navegador puede leer directamente
+    // Usamos 'image/jpeg' como tipo por defecto, pero podrías intentar inferirlo.
+    $foto_a_mostrar = 'data:image/jpeg;base64,' . $base64_img;
+}
+
+
+// -----------------------------------------------------------------------------------
+// 3. CONSTRUCCIÓN DE VARIABLES DE SESIÓN (para el HEADER y CAMPOS)
+// -----------------------------------------------------------------------------------
 $nombre = $_SESSION['usuario_nombre'];
 $nombreCompleto = $_SESSION['usuario_nombre'] . " " . $_SESSION['usuario_apellidos'];
 $gmail = $_SESSION['usuario_correo'];
+
 ?>
 
 
@@ -86,7 +124,7 @@ $gmail = $_SESSION['usuario_correo'];
             <!-- Logo del perfil y boton para editar -->
             <div class="form-group foto-group">
                 <div class="foto-placeholder">
-                    <img id="profile-image-display" src="../img/imagen-icono.webp" alt="Foto de perfil">
+                    <img id="profile-image-display" src="<?php echo htmlspecialchars($foto_a_mostrar); ?>" alt="Foto de perfil">
                 </div>
 
                 <a href="#" class="edit-link" id="edit-photo-link">
@@ -94,6 +132,8 @@ $gmail = $_SESSION['usuario_correo'];
                 </a>
 
                 <input type="file" id="profile-image-upload" name="profile_image" accept="image/*">
+
+                <input type="hidden" id="profile-image-base64" name="profile_image_base64">
             </div>
 
             <!-- Campos de edición -->

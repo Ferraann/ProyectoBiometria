@@ -1,40 +1,9 @@
 <?php
 session_start();
 
-
-
-
-
-
-
-
-
-
-
 // DEBUG: INICIO
 error_log("POST data: " . print_r($_POST, true)); // Verifica otros campos
 error_log("FILES data: " . print_r($_FILES, true)); // MUESTRA EL CONTENIDO DE FILES
-
-// Si $_FILES está vacío, muestra un error.
-if (empty($_FILES) && $_SERVER['REQUEST_METHOD'] === 'POST') {
-    error_log("WARNING: La matriz \$FILES está vacía. Causa probable: límite de tamaño de POST.");
-}
-// DEBUG: FIN
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 require_once "../api/conexion.php";
 
@@ -56,95 +25,53 @@ if (!isset($_SESSION['usuario_id'])) {
 $id = $_SESSION['usuario_id'];
 $data = ["id" => $id];
 
+// --- VERIFICACIÓN DE EXISTENCIA DEL USUARIO CRÍTICA ---
+$check_user_stmt = $conn->prepare("SELECT id FROM usuario WHERE id = ?");
+$check_user_stmt->bind_param("i", $id);
+$check_user_stmt->execute();
+$check_user_res = $check_user_stmt->get_result();
+
+if ($check_user_res->num_rows === 0) {
+    // Si el ID de la sesión no existe en la tabla principal
+    $_SESSION['mensaje_error'] = "Error de autenticación: El usuario asociado a la sesión ya no existe.";
+    $check_user_stmt->close();
+    header("Location: $mensaje_destino");
+    exit;
+}
+$check_user_stmt->close();
+// --------------------------------------------------------
 
 
+// ----------------------------------------------------------------------------------------
+// MANEJO DE FOTO BLOB (Base64)
+// ----------------------------------------------------------------------------------------
 
+if (!empty($_POST['profile_image_base64'])) {
 
+    // 1. Preparamos los datos para la función de lógica de negocio (guardarFotoPerfil)
+    $foto_data = [
+        'usuario_id' => $id,
+        'foto' => $_POST['profile_image_base64'] // Contiene la cadena Base64
+    ];
 
+    // 2. Llamamos a la función de lógica de negocio
+    $resultado_foto = guardarFotoPerfil($conn, $foto_data);
 
+    if ($resultado_foto['status'] === 'ok') {
+        // Marcamos la foto como actualizada en el array de datos
+        // Usamos este campo como un flag para el chequeo final de cambios
+        $data['foto_actualizada'] = true;
 
-
-
-
-
-
-
-
-
-// --- MANEJO DE LA SUBIDA DE ARCHIVO DE PERFIL ---
-
-if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] === UPLOAD_ERR_OK) {
-
-    $fileTmpPath = $_FILES['profile_image']['tmp_name'];
-    $fileName = $_FILES['profile_image']['name'];
-    $fileSize = $_FILES['profile_image']['size'];
-    $fileType = $_FILES['profile_image']['type'];
-    $fileNameCmps = explode(".", $fileName);
-    $fileExtension = strtolower(end($fileNameCmps));
-
-    // 1. Definir la ubicación y el nombre único (por seguridad)
-    $uploadFileDir = __DIR__ . '/../img/perfiles/';
-    $nuevoNombreArchivo = $id . '_' . time() . '.' . $fileExtension; // userID_timestamp.ext
-    $dest_path = $uploadFileDir . $nuevoNombreArchivo;
-
-    // 1. Si no existe el directorio perfiles, lo creo.
-    if (!is_dir($uploadFileDir)) {
-        // Tenta crear el directorio con permisos 0777 (lectura/escritura/ejecución para todos)
-        // El 'true' es para crear directorios anidados si fuera necesario.
-        if (!mkdir($uploadFileDir, 0777, true)) {
-            $_SESSION['mensaje_error'] = "Error interno: El directorio de destino no existe y no se pudo crear.";
-            header("Location: $mensaje_destino"); exit;
-        }
-    }
-    // ------------------------------------
-
-    // 2. Validación de seguridad (ej. tamaño máximo, solo imágenes)
-    if ($fileSize > 5000000) { // 5MB
-        $_SESSION['mensaje_error'] = "El archivo es demasiado grande (máx. 5MB).";
-        header("Location: $mensaje_destino");
-        exit;
-    }
-
-    $allowedfileExtensions = array('jpg', 'gif', 'png', 'jpeg', 'webp');
-    if (!in_array($fileExtension, $allowedfileExtensions)) {
-        $_SESSION['mensaje_error'] = "Formato de imagen no permitido.";
-        header("Location: $mensaje_destino");
-        exit;
-    }
-
-    // 3. Mover el archivo subido
-    if(move_uploaded_file($fileTmpPath, $dest_path)) {
-        // Éxito: Guardamos la nueva ruta de la imagen en $data
-        $data['foto_ruta'] = $dest_path;
-
-        // NOTA: Debes asegurarte de que tu función actualizarUsuario() sepa manejar
-        // un campo nuevo como 'foto_ruta' y lo guarde en la DB.
-
-       ;
+        // Añadimos un mensaje de éxito para la UX
+        $_SESSION['mensaje_exito'] = "Foto de perfil actualizada correctamente.";
 
     } else {
-        $_SESSION['mensaje_error'] = "Hubo un error al guardar la imagen en el servidor.";
-        header("Location: $mensaje_destino"); exit;
+        // Error de la base de datos o Base64
+        $_SESSION['mensaje_error'] = "Error al guardar la foto: " . $resultado_foto['mensaje'];
+        header("Location: $mensaje_destino");
+        exit;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // --- ACTUALIZACIÓN DE DATOS (Después de la verificación) ---
@@ -206,6 +133,26 @@ if (!empty($_POST['gmail'])) {
         $_SESSION['mensaje_error'] = "El dominio del nuevo correo no está permitido. Por favor, use una dirección de correo válida.";
         header("Location: $mensaje_destino");
         exit;
+    }
+    // ------------------------------------
+
+    // 2C. VALIDACIÓN DE CORREO DUPLICADO (NUEVA LÓGICA)
+
+    // Solo verificamos si el correo es diferente al actual del usuario.
+    if ($gmail_nuevo !== $_SESSION['usuario_correo']) {
+        $stmt_check = $conn->prepare("SELECT id FROM usuario WHERE gmail = ?");
+        $stmt_check->bind_param("s", $gmail_nuevo);
+        $stmt_check->execute();
+        $stmt_check->store_result();
+
+        // Si encontramos alguna fila, el correo ya está en uso por otro usuario.
+        if ($stmt_check->num_rows > 0) {
+            $_SESSION['mensaje_error'] = "El correo electrónico introducido ya está asociado a otra cuenta.";
+            $stmt_check->close();
+            header("Location: $mensaje_destino");
+            exit;
+        }
+        $stmt_check->close();
     }
     // ------------------------------------
 
@@ -306,37 +253,6 @@ if ($requiereVerificacion) {
 // ----------------------------------------------------------------------------------------
 // 4. ¿Hay algo que modificar?
 // ----------------------------------------------------------------------------------------
-
-// Comprobar si hubo un archivo subido
-$archivo_subido = isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] === UPLOAD_ERR_OK;
-
-
-
-
-
-
-
-
-
-/*
-if(!$archivo_subido) {
-    $_SESSION['mensaje_error'] = "Foto no subida!";
-    header("Location: $mensaje_destino");
-    exit;
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
 
 // No hay nada que modificar? --> Error
 if (count($data) === 1) {

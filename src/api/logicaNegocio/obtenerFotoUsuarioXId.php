@@ -9,7 +9,7 @@
 //  Devuelve la foto en formato base64 codificado.
 // ------------------------------------------------------------------
 
-function guardarFotoPerfil($conn, $usuario_id) {
+function obtenerFotoPerfil($conn, $usuario_id) {
     $sql = "SELECT foto FROM fotos_perfil_usuario WHERE usuario_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $usuario_id);

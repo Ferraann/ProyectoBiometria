@@ -4,6 +4,7 @@
 
 // Selecciona todos los iconos de edición
 const editIcons = document.querySelectorAll('.edit-icon');
+const form = document.querySelector('.perfil-form');
 
 // Recorrer todos los iconos de edicion para saber cual es editable
 editIcons.forEach(icon => {
@@ -120,16 +121,10 @@ editIcons.forEach(icon => {
 });
 
 
-
-
-
-
-
-
-
 // 1. Obtener referencias de los nuevos elementos
 const editPhotoLink = document.getElementById('edit-photo-link');
 const fileInput = document.getElementById('profile-image-upload');
+const base64Input = document.getElementById('profile-image-base64');
 const profileImageDisplay = document.getElementById('profile-image-display');
 
 if (editPhotoLink && fileInput && profileImageDisplay) {
@@ -145,10 +140,8 @@ if (editPhotoLink && fileInput && profileImageDisplay) {
         // fileInput.files es una lista de archivos seleccionados
         if (this.files && this.files[0]) {
             const file = this.files[0];
-
             // Marcamos el formulario como editado
             const form = document.querySelector('.perfil-form');
-            form.dataset.editedByFile = "1";
 
             // Verificar si el archivo es una imagen
             if (file.type.startsWith('image/')) {
@@ -156,14 +149,17 @@ if (editPhotoLink && fileInput && profileImageDisplay) {
                 // Crea un objeto FileReader para leer el contenido del archivo
                 const reader = new FileReader();
 
+                // Cuando el lector termina, guardamos el Base64 en el campo oculto
                 reader.onload = function(e) {
-                    // Cuando el archivo se ha cargado (leído),
-                    // establece la fuente de la imagen de previsualización
+                    // El resultado (e.target.result) es la cadena Base64
+                    base64Input.value = e.target.result;
                     profileImageDisplay.src = e.target.result;
                 };
 
                 // Inicia la lectura del archivo como una URL de datos (Base64)
                 reader.readAsDataURL(file);
+                // Marca como editado
+                form.dataset.editedByFile = "1";
 
             } else {
                 alert("Por favor, selecciona un archivo de imagen válido.");
@@ -173,32 +169,6 @@ if (editPhotoLink && fileInput && profileImageDisplay) {
     });
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Interceptar submit para validar SOLO campos activamente en edición
-const form = document.querySelector('.perfil-form');
-
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    // Enviar formulario normalmente. Todas las comprobaciones se hacen desde el backend para mejor seguridad
-    form.submit();
-});
 
 // --- LÓGICA DE OCULTACIÓN AUTOMÁTICA DE ALERTAS ---
 function ocultarAlertasAutomaticamente() {
