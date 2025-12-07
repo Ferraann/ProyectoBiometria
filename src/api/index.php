@@ -144,6 +144,10 @@ switch ($method) {
                 echo json_encode(asignarTecnicoIncidencia($conn, $input));
                 break;
 
+            case "guardarFotoPerfil":
+                echo json_encode(guardarFotoPerfil($conn, $input));
+                break;
+            
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción POST no reconocida."]);
                 break;
@@ -216,6 +220,9 @@ switch ($method) {
                 break;
             case "getEstadosIncidencia":
                 echo json_encode(obtenerEstadosIncidencia($conn));
+                break;
+            case "getFotoPerfil":
+                echo json_encode(obtenerFotosIncidencia($conn, $input));
                 break;
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]);
