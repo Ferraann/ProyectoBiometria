@@ -36,7 +36,12 @@ window.addEventListener('DOMContentLoaded', async () => {
   try {
     /* 1. Incidencias */
     const res = await fetch(`${API_URL}?accion=getTodasIncidencias`);
-    const data = await res.json();
+    const textoCrudo = await res.text();
+
+    // Limpia cualquier texto antes del JSON real
+    const textoLimpio = textoCrudo.replace(/^[^\[\{]*/, '');
+
+    const data = JSON.parse(textoLimpio);
     if (!Array.isArray(data)) throw new Error('Respuesta no es array');
     incidencias = data;
 
@@ -137,20 +142,40 @@ function renderIncidencias(datos) {
     lista.innerHTML = '<p style="text-align:center;">No se encontraron incidencias.</p>';
     return;
   }
-  lista.innerHTML = datos.map(inc => `
-    <div class="incidencia" data-id="${inc.id}">
-      <h2>${inc.titulo}</h2>
-      <p><strong>Descripción:</strong> ${inc.descripcion}</p>
-      <p class="meta"><strong>Usuario:</strong> ${inc.usuario || 'Anónimo'}</p>
-      <p class="meta"><strong>Técnico:</strong> ${inc.tecnico}</p>
-      <p class="meta"><strong>Estado:</strong> ${inc.estado}</p>
-      <p class="meta"><strong>Fecha:</strong> ${new Date(inc.fecha_creacion).toLocaleString()}</p>
-      <div class="fotos" id="fotos-${inc.id}"></div>
-    </div>`).join('');
 
-  /* Cargar fotos de las que se están mostrando */
+  lista.innerHTML = datos.map(inc => `
+  <div class="incidencia" data-id="${inc.id}">
+    <!-- TÍTULO → detalle de la incidencia -->
+    <h2><a href="incidencia_detalle.html?id=${inc.id}" class="titulo-incidencia">${inc.titulo}</a></h2>
+
+    <p><strong>Descripción:</strong> ${inc.descripcion}</p>
+
+    <!-- USUARIO → perfil del usuario creador -->
+    <p class="meta">
+      <strong>Usuario:</strong>
+      <a href="usuario_detalle.html?id=${inc.id_user}&perfil=usuario" class="enlace-usuario">${inc.usuario || 'Anónimo'}</a>
+    </p>
+
+    <!-- TÉCNICO → perfil del técnico asignado -->
+    <p class="meta">
+      <strong>Técnico:</strong>
+      <a href="usuario_detalle.html?id=${inc.id_tecnico}&perfil=tecnico" class="enlace-tecnico">${inc.tecnico}</a>
+    </p>
+
+    <p class="meta"><strong>Estado:</strong> ${inc.estado}</p>
+    <p class="meta"><strong>Fecha:</strong> ${new Date(inc.fecha_creacion).toLocaleString()}</p>
+    <div class="fotos" id="fotos-${inc.id}"></div>
+  </div>
+`).join('');
+
+  // Eliminamos el event listener del botón detalle
   cargarFotosVisibles();
 }
+
+function abrirDetalle(id) {
+  window.location.href = `incidencia_detalle.html?id=${id}`;
+}
+
 
 /* ---------- CARGAR FOTOS SOLO DE LO VISUALIZADO ---------- */
 async function cargarFotosVisibles() {

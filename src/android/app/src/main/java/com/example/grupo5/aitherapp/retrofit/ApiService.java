@@ -8,7 +8,6 @@ import com.google.gson.JsonObject;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -20,56 +19,45 @@ import retrofit2.http.Query;
 // Interfaz ApiService
 //
 // Descripción:
-//  Interfaz donde se declaran las peticiones HTTP y las variables que
-//  se usarán y enviarán.
+//  Interfaz donde se declara las peticiones HTTP y las variables que
+//  se usaran y enviaran.
 // ------------------------------------------------------------------
 public interface ApiService {
+    //Metodo post para hacer el login
+    //lo que se pretende es enviar y no
+    //recibir al tener void.
 
-    // Registro de usuario
     @POST("index.php")
-    Call<PojoRespuestaServidor> datosRegistro(@Body PojoUsuario usuario);
+    Call<PojoRespuestaServidor> datosRegistro(
+            @Body PojoUsuario usuario
+    );
 
-    // Envío de datos de CO2 y Temperatura (form-urlencoded)
-    @FormUrlEncoded
-    @POST("index.php")
+    //Metodo post donde se muestra la extructura de enviar datos
+    @POST ("index.php")
     Call<Void> enviarDatos(
             @Field("CO2") float co2,
             @Field("Temperatura") float temperatura
     );
 
-    // Login de usuario
+    //Metodo post para hacer login del usuario
     @POST("index.php")
     Call<PojoRespuestaServidor> loginUsuario(@Body PojoUsuario usuario);
 
-    // Modificación de datos del usuario
-    @POST("index.php")
+    //Metodo post para modificar datos
+    @POST("index.php") // Cambia al endpoint real en tu servidor
     Call<PojoRespuestaServidor> modificarDatos(@Body PojoUsuario usuario);
 
-    // Vinculación de un sensor al usuario
+    //Metodo post vara crear el vinculo del sensor
     @POST("index.php")
     Call<PojoRespuestaServidor> vincularSensor(@Body PojoSensor sensor);
 
-    // Crear sensor y relación
+    //Metodo post crear sensor y relacion
     @POST("index.php")
     Call<JsonObject> crearSensorYRelacion(
             @Query("accion") String accion,
-            @Body JsonObject body
-    );
+            @Body JsonObject body);
 
-    // Obtener sensores de un usuario
+
     @POST("index.php")
     Call<JsonObject> obtenerSensoresUsuario(@Body JsonObject body);
-
-    // Guardar distancia del usuario
-    @POST("index.php")
-    Call<PojoRespuestaServidor> guardarDistancia(@Body PojoUsuario data);
-
-    // Obtener historial de distancias
-    @POST("index.php")
-    Call<PojoRespuestaServidor> historialDistancias(@Body PojoUsuario data);
-
-    // Obtener distancia de una fecha específica
-    @POST("index.php")
-    Call<PojoRespuestaServidor> distanciaFecha(@Body PojoUsuario data);
-
 }

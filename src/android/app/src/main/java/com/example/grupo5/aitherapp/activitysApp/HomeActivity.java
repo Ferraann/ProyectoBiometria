@@ -8,6 +8,16 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.grupo5.aitherapp.R;
+// ------------------------------------------------------------------
+// Fichero: HomeActivity.java
+// Autor: Pablo Chasi
+// Fecha: 28/10/2025
+// ------------------------------------------------------------------
+// Descripción:
+// Clase que actúa como pantalla principal del usuario tras iniciar
+// sesión. Muestra un mensaje de bienvenida, permite acceder a la
+// vinculación de sensores por QR, editar el perfil y ver notificaciones.
+// ------------------------------------------------------------------
 
 public class HomeActivity extends AppCompatActivity {
     @Override

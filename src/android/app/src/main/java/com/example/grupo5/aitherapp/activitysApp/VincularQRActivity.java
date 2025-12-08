@@ -34,7 +34,25 @@ import com.google.mlkit.vision.barcode.common.Barcode;
 import com.google.mlkit.vision.common.InputImage;
 
 import java.util.concurrent.ExecutionException;
-
+// ------------------------------------------------------------------
+// Fichero: VincularQRActivity.java
+// Autor: Pablo Chasi
+// Fecha: 28/10/2025
+// ------------------------------------------------------------------
+// Descripción:
+// Clase encargada de gestionar la lectura de códigos QR mediante la
+// cámara del dispositivo usando la librería CameraX junto con el
+// lector de QR de ML Kit. Su objetivo es vincular un sensor a un
+// usuario, extrayendo los datos del QR (MAC y modelo), verificando
+// que el usuario esté logueado y enviando dicha información a la API.
+//
+// Flujo principal:
+//  1. Solicitar permiso de cámara.
+//  2. Activar CameraX y procesar cada frame.
+//  3. Leer QR, interpretar JSON y extraer datos.
+//  4. Validar usuario y datos recibidos.
+//  5. Enviar el sensor a la base de datos con postVincularSensor().
+// ------------------------------------------------------------------
 public class VincularQRActivity extends AppCompatActivity {
     private static final int REQUEST_CAMERA_PERMISSION = 1001;
 

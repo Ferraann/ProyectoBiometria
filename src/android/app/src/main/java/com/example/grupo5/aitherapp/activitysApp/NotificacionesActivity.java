@@ -20,7 +20,20 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.example.grupo5.aitherapp.R;
-
+// ------------------------------------------------------------------
+// Fichero: NotificacionesActivity.java
+// Autor: Pablo Chasi
+// Fecha: 28/10/2025
+// ------------------------------------------------------------------
+// Descripción:
+// Clase encargada de gestionar la creación y envío de notificaciones
+// dentro de la aplicación. Incluye:
+//  - Creación del canal de notificaciones (Android 8+)
+//  - Envío de una alerta de peligro extremo
+//  - Activación de patrones de vibración personalizados
+// La actividad también controla permisos y configura acciones que se
+// ejecutan al pulsar sobre la notificación (PendingIntent).
+// ------------------------------------------------------------------
 public class NotificacionesActivity extends AppCompatActivity {
     private static final String MY_CHANNEL_ID = "Aither";
     @Override

@@ -1,5 +1,4 @@
 <?php
-
 // ------------------------------------------------------------------
 // Fichero: index.php
 // Autor: Manuel
@@ -12,9 +11,9 @@
 // ------------------------------------------------------------------
 
 /* ================= DEBUG  ================= */
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-ini_set('log_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('log_errors', 1);
 /* ========================================== */
 header('Content-Type: application/json');
 
@@ -28,7 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 require_once('conexion.php');
-require_once('logicaNegocio.php');
+foreach (glob(__DIR__ . "/logicaNegocio/*.php") as $file) {
+    require_once $file;
+}
+//require_once('logicaNegocio.php');
 
 // Abrimos conexión a la base de datos
 $conn = abrirServidor();
@@ -65,6 +67,8 @@ if ($method === 'POST' || $method === 'PUT') {
     $input = $_GET;
 }
 
+//console.log("Accion a la API:", $accion);
+//console.log("Enviando a la API:", $input);
 
 // Procesamos la petición según el método
 switch ($method) {
@@ -100,7 +104,7 @@ switch ($method) {
                 echo json_encode(activarUsuario($conn, $input['token']));
                 break;
 
-            case "finalizarRelacionSensor":   // marcar sensor con problema
+            case "finalizarRelacionSensor":   // marcar sensor con problema, hay que añadir que cree incidencia sin terminar relacion con usuario
                 echo json_encode(marcarSensorConProblemas($conn, $input));
                 break;
 
@@ -127,7 +131,23 @@ switch ($method) {
             case "modificarDatos":
                 echo json_encode(modificarDatos($conn, $input));
                 break;
+            
+            case "guardarDistanciaHoy":
+                echo json_encode(guardarDistanciaHoy($conn, $input));
+                break;
 
+            case "actualizarEstadoIncidencia":
+                echo json_encode(actualizarEstadoIncidencia($conn, $input));
+                break;
+
+            case "asignarmeTecnicoIncidencia":
+                echo json_encode(asignarTecnicoIncidencia($conn, $input));
+                break;
+
+            case "guardarFotoPerfil":
+                echo json_encode(guardarFotoPerfil($conn, $input));
+                break;
+            
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción POST no reconocida."]);
                 break;
@@ -167,6 +187,42 @@ switch ($method) {
 
             case "getFotosIncidencia":
                 echo json_encode(obtenerFotosIncidencia($conn, $_GET['incidencia_id']));
+                break;
+
+            case "getHistorialDistancias":
+                echo json_encode(getHistorialDistancias($conn, $_GET));
+                break;
+
+            case "getDistanciaFecha":
+                echo json_encode(getDistanciaFecha($conn, $_GET));
+                break;
+            
+            case "getIncidenciaXId":
+                $id = intval($_GET['id'] ?? 0);
+                $row = obtenerIncidenciaXId($conn, $id);
+                echo json_encode($row ?: ["status" => "error", "mensaje" => "Incidencia no encontrada"]);
+                break;
+
+            case "getUsuarioXId":
+                $id = intval($_GET['id'] ?? 0);
+                $row = obtenerUsuarioXId($conn, $id); 
+                echo json_encode($row ?: ["status" => "error", "mensaje" => "Usuario no encontrado"]);
+                break;
+
+            case "esTecnico":
+                $id = intval($_GET['id'] ?? 0);
+                echo json_encode(["es_tecnico" => esTecnico($conn, $id)]);
+                break;
+
+            case "esAdministrador":
+                $id = intval($_GET['id'] ?? 0);
+                echo json_encode(["es_admin" => esAdministrador($conn, $id)]);
+                break;
+            case "getEstadosIncidencia":
+                echo json_encode(obtenerEstadosIncidencia($conn));
+                break;
+            case "getFotoPerfil":
+                echo json_encode(obtenerFotoPerfil($conn, $input['usuario_id']));
                 break;
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]);

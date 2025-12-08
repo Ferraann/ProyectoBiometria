@@ -237,7 +237,8 @@ const popup = document.getElementById("popup-politica");
 const btnAccept = document.getElementById("btnAccept");
 const popupText = document.getElementById("popupText");
 const closePopup = document.getElementById("closePopup");
-const checkmark = document.getElementById("checkmark");
+const inputCheckmark = document.getElementById("checkmark");
+const checkmarkSpan = registerForm.querySelector(".politica .checkmark");
 
 // Abrir popup al pulsar el texto
 popupLinks.forEach(link => {
@@ -246,6 +247,28 @@ popupLinks.forEach(link => {
     btnAccept.disabled = true; // Reiniciamos
     popupText.scrollTop = 0; // Scroll al inicio
   });
+});
+
+// ABRIR POPUP AL PULSAR LA CASILLA VISIBLE (SPAN)
+checkmarkSpan.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  // Si el checkbox real está deshabilitado, es porque necesita aceptar la política.
+  if (inputCheckmark.disabled) {
+    // Comportamiento 1: Abrir Popup
+    popup.style.display = "flex";
+    btnAccept.disabled = true; // Reiniciamos
+    popupText.scrollTop = 0; // Scroll al inicio
+
+  } else {
+    // Comportamiento 2: Simular clic en el checkbox real para marcar/desmarcar
+
+    // Invertimos el estado 'checked' del input invisible
+    inputCheckmark.checked = !inputCheckmark.checked;
+
+    // Nota: El CSS se encargará de actualizar la apariencia del SPAN
+    // dependiendo del estado del INPUT.
+  }
 });
 
 // Cerrar popup al pulsar la X
@@ -263,6 +286,6 @@ popupText.addEventListener("scroll", () => {
 // Al pulsar aceptar, cerrar popup y habilitar el checkbox
 btnAccept.addEventListener("click", () => {
   popup.style.display = "none";
-  checkmark.disabled = false; // Ahora sí se puede marcar
-  checkmark.checked = true;   // Marcamos automáticamente
+  inputCheckmark.disabled = false; // Ahora sí se puede marcar
+  inputCheckmark.checked = true;   // Marcamos automáticamente
 });
