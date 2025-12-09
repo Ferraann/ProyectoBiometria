@@ -32,6 +32,20 @@ public class HomeActivity extends AppCompatActivity {
             btnHome.setSelected(true);
         }
 
+        ImageView btnBell = findViewById(R.id.nav_bell);
+        if (btnBell != null) {
+            btnBell.setOnClickListener(v -> {
+                Intent intent = new Intent(HomeActivity.this, NotificacionesActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            });
+        }
+
+        ImageView btnPerfil = findViewById(R.id.nav_profile);
+        if (btnPerfil != null) {
+            btnPerfil.setOnClickListener(this::botonEditarPerfil); // Reutilizamos tu método existente
+        }
+
         // ----------------------
         // TU CÓDIGO ORIGINAL
         // ----------------------
