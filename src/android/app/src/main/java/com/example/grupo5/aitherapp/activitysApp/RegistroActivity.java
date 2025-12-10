@@ -70,19 +70,22 @@ public class RegistroActivity extends AppCompatActivity {
             return;
         }
 
-        // PostRegistro y luego guardar usuario_registrado = true
+        // Enviar datos al servidor
         PostRegistro(usuario, apellidos, email, contrasenya, this);
 
-        // Guardar que hay usuario registrado para login/huella
+        // Guardar que hay un usuario recién registrado
         SharedPreferences prefs = getSharedPreferences("USER_PREFS", MODE_PRIVATE);
         prefs.edit().putBoolean("usuario_registrado", true).apply();
 
-        // Ir a HomeActivity tras registro
-        Intent intent = new Intent(this, com.example.grupo5.aitherapp.activitysApp.HomeActivity.class);
-        intent.putExtra("email_usuario", email);
-        startActivity(intent);
+        // Mostrar mensaje para activar la cuenta
+        Toast.makeText(this,
+                "Registro correcto. Revisa tu correo para activar la cuenta.",
+                Toast.LENGTH_LONG).show();
+
+        // Volver al login
         finish();
     }
+
 
     private void verificarContrasenya() {
         Contrasenya.addTextChangedListener(new TextWatcher() {
