@@ -63,6 +63,7 @@ public interface ApiService {
     @GET("index.php")
     Call<PojoRespuestaServidor> obtenerSensoresUsuario(
             @Query("accion") String accion,
-            @Query("usuario_id") String idUsuario);
+            @Query("usuario_id") String idUsuario
+    );
 
 }

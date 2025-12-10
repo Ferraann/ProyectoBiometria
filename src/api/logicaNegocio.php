@@ -217,8 +217,9 @@ function obtenerListaSensores($conn, $usuario_id){
     }
 
     if (empty($sensores)) {
-        return ["status" => "ok", "sensores" => [], "mensaje" => "El usuario no tiene sensores asociados."];
+        return ["status" => "ok", "listaSensores" => [], "mensaje" => "El usuario no tiene sensores asociados."];
     }
 
-    return ["status" => "ok", "sensores" => $sensores];
+    return ["status" => "ok", "listaSensores" => $sensores];
 }
+?>

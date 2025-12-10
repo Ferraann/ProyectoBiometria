@@ -223,9 +223,11 @@ switch ($method) {
             case "getFotoPerfil":
                 echo json_encode(obtenerFotoPerfil($conn, $input['usuario_id']));
                 break;
+
             case "getObtenerSensoresUsuario":
-                echo json_encode(obtenerListaSensores($conn, $input['usuario_id']));
+                echo json_encode(obtenerListaSensores($conn, $_GET['usuario_id']));
                 break;
+
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]);
                 break;
@@ -242,3 +244,4 @@ switch ($method) {
 
 // Cerramos conexión
 $conn->close();
+?>
