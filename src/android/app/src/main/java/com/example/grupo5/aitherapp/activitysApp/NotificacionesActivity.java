@@ -13,6 +13,7 @@ import android.os.Looper;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -41,6 +42,40 @@ public class NotificacionesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notificaciones);
         crearCanal();
+        configurarToolbar();
+    }
+
+    //Método nuevo para gestionar la barra de abajo
+    private void configurarToolbar() {
+        // 1. Resaltar el icono de la CAMPANA (porque estamos en notificaciones)
+        ImageView btnBell = findViewById(R.id.nav_bell);
+        if (btnBell != null) {
+            btnBell.setSelected(true); // Esto activa el selector (relleno)
+        }
+
+        // 2. Dar vida al botón de CASA para volver al Home
+        ImageView btnHome = findViewById(R.id.nav_home);
+        if (btnHome != null) {
+            btnHome.setOnClickListener(v -> {
+                Intent intent = new Intent(NotificacionesActivity.this, HomeActivity.class);
+                // Estas flags evitan que se acumulen pantallas si vas y vienes muchas veces
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+
+                overridePendingTransition(0, 0);
+            });
+        }
+
+        // 3. Dar vida al botón de PERFIL
+        ImageView btnPerfil = findViewById(R.id.nav_profile);
+        if (btnPerfil != null) {
+            btnPerfil.setOnClickListener(v -> {
+                Intent intent = new Intent(NotificacionesActivity.this, EditarPerfilActivity.class);
+                startActivity(intent);
+
+                overridePendingTransition(0, 0);
+            });
+        }
     }
 
     public void crearCanal(){
