@@ -2,6 +2,8 @@ package com.example.grupo5.aitherapp.activitysApp;
 
 import static com.example.grupo5.aitherapp.retrofit.LogicaNegocio.PostRegistro;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,32 +17,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.grupo5.aitherapp.R;
 
-// ------------------------------------------------------------------
-// Fichero: MainActivity.java
-// Autor: Pablo Chasi
-// Fecha: 28/10/2025
-// ------------------------------------------------------------------
-// Descripción:
-//  Clase donde a traves del formulario mostrado en el layout,
-//  se enviara los datos a traves de Retrofit al servidor web.
-//  Donde se guardara y se usara posteriormente.
-// ------------------------------------------------------------------
 public class RegistroActivity extends AppCompatActivity {
-    //Formulario del layout donde se trabaja
-    EditText Usuario,Apellidos,Email,Contrasenya,RepetirContrasenya;
+    EditText Usuario, Apellidos, Email, Contrasenya, RepetirContrasenya;
 
-    //Regex que me permite confirma que la contraseña es segura.
     String regexTieneMayuscula = "^(?=.*[A-Z]).+$";
     String regexTieneNumeros = "^(?=.*\\d).+$";
     String regexTieneSimbologia = "^(?=.*[$@€!%*?&]).+$";
     String regexTieneMasDe8Caracteres = "^.{8,}$";
 
-    //Metodo onCreate donde se ejecuta lo principal
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-        //Obtengo los edit text por su id que yo le he piesto
         Usuario = findViewById(R.id.NombreUsuario);
         Apellidos = findViewById(R.id.ApellidosUsuario);
         Email = findViewById(R.id.EmailUsuario);
@@ -50,7 +39,6 @@ public class RegistroActivity extends AppCompatActivity {
         verificarContrasenya();
     }
 
-    //Boton para enviar los datos al servidor
     public void botonEnviarDatos(View v){
         String usuario = Usuario.getText().toString().trim();
         String apellidos = Apellidos.getText().toString().trim();
@@ -65,7 +53,7 @@ public class RegistroActivity extends AppCompatActivity {
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            Toast.makeText(this, "Por favor, introduce un email valido", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Por favor, introduce un email válido", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -74,7 +62,6 @@ public class RegistroActivity extends AppCompatActivity {
             return;
         }
 
-        // NUEVA REGEX COMPLETA
         String regexContrasenaSegura =
                 "^(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&/#€._-]).{8,}$";
 
@@ -83,39 +70,31 @@ public class RegistroActivity extends AppCompatActivity {
             return;
         }
 
+        // PostRegistro y luego guardar usuario_registrado = true
         PostRegistro(usuario, apellidos, email, contrasenya, this);
+
+        // Guardar que hay usuario registrado para login/huella
+        SharedPreferences prefs = getSharedPreferences("USER_PREFS", MODE_PRIVATE);
+        prefs.edit().putBoolean("usuario_registrado", true).apply();
+
+        // Ir a HomeActivity tras registro
+        Intent intent = new Intent(this, com.example.grupo5.aitherapp.activitysApp.HomeActivity.class);
+        intent.putExtra("email_usuario", email);
+        startActivity(intent);
+        finish();
     }
 
-    public void verificarContrasenya() {
+    private void verificarContrasenya() {
         Contrasenya.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // No hacemos nada antes de cambiar
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String texto = Contrasenya.getText().toString();
-
-                if (texto.matches(regexTieneMayuscula)) {
-                    Log.d("Regex", "Tiene mayusculas");
-                }
-                if (texto.matches(regexTieneNumeros)) {
-                    Log.d("Regex", "Tiene numeros");
-                }
-                if (texto.matches(regexTieneMasDe8Caracteres)) {
-                    Log.d("Regex", "Tiene mas de 8 caracteres");
-                }
-                if (texto.matches(regexTieneSimbologia)) {
-                    Log.d("Regex", "Tiene simbologia");
-                }
+                if (texto.matches(regexTieneMayuscula)) Log.d("Regex", "Tiene mayusculas");
+                if (texto.matches(regexTieneNumeros)) Log.d("Regex", "Tiene numeros");
+                if (texto.matches(regexTieneMasDe8Caracteres)) Log.d("Regex", "Tiene mas de 8 caracteres");
+                if (texto.matches(regexTieneSimbologia)) Log.d("Regex", "Tiene simbologia");
             }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                // No hacemos nada después de cambiar
-            }
+            @Override public void afterTextChanged(Editable s) {}
         });
-    }}
-
-
+    }
+}

@@ -4,7 +4,13 @@
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <TextView
+        android:id="@+id/textoBienvenida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp"/>
     <Button
         android:id="@+id/editarPerfil"
         android:layout_width="match_parent"
