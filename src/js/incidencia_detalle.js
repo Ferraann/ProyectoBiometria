@@ -59,7 +59,7 @@ if (!idIncidencia) {
       const opt = document.createElement('option');
       opt.value = e.id;
       opt.textContent = e.nombre;
-      if (e.nombre === inc.estado) opt.selected = true;
+      if (e.id === inc.estado_id) opt.selected = true;
       select.appendChild(opt);
     });
 
