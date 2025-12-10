@@ -54,66 +54,68 @@ public class RegistroActivity extends AppCompatActivity {
     public void botonEnviarDatos(View v){
         String usuario = Usuario.getText().toString().trim();
         String apellidos = Apellidos.getText().toString().trim();
-        String contrasenya =Contrasenya.getText().toString().trim();
+        String contrasenya = Contrasenya.getText().toString().trim();
         String email = Email.getText().toString().trim();
         String repetirContrasenya = RepetirContrasenya.getText().toString().trim();
 
-
-        // validación que comprueba que si hay alguno que está vacio no se ejecuta la sentencia sql.
-        if (usuario.isEmpty() || apellidos.isEmpty()||contrasenya.isEmpty()||email.isEmpty()||repetirContrasenya.isEmpty()) {
+        if (usuario.isEmpty() || apellidos.isEmpty() || contrasenya.isEmpty()
+                || email.isEmpty() || repetirContrasenya.isEmpty()) {
             Toast.makeText(this, "Por favor, rellena todos los campos", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        //Con una biblioteca podemos comprobar la estructura basica de un email
-        //si está detecta que no es semejante a un email, entonces devuelve false.
-        //si es verdad entonces un true.
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             Toast.makeText(this, "Por favor, introduce un email valido", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if(!contrasenya.matches(repetirContrasenya)){
+        if (!contrasenya.equals(repetirContrasenya)) {
             Toast.makeText(this,"Por favor, repita correctamente la contraseña", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if (!contrasenya.matches(regexTieneMasDe8Caracteres)||!contrasenya.matches(regexTieneNumeros)||!contrasenya.matches(regexTieneMayuscula)||!contrasenya.matches(regexTieneSimbologia)){
+        // NUEVA REGEX COMPLETA
+        String regexContrasenaSegura =
+                "^(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&/#€._-]).{8,}$";
+
+        if (!contrasenya.matches(regexContrasenaSegura)) {
             Toast.makeText(this, "Por favor, introduce una contraseña segura", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        PostRegistro(Usuario.getText().toString(),Apellidos.getText().toString(),Email.getText().toString(),Contrasenya.getText().toString(),this);
-
+        PostRegistro(usuario, apellidos, email, contrasenya, this);
     }
 
-    public void verificarContrasenya(){
+    public void verificarContrasenya() {
         Contrasenya.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+                // No hacemos nada antes de cambiar
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(Contrasenya.getText().toString().matches(regexTieneMayuscula)){
-                    Log.d("Regex","Tiene mayusculas");
+                String texto = Contrasenya.getText().toString();
+
+                if (texto.matches(regexTieneMayuscula)) {
+                    Log.d("Regex", "Tiene mayusculas");
                 }
-                if(Contrasenya.getText().toString().matches(regexTieneNumeros)){
-                    Log.d("Regex","Tiene numeros");
+                if (texto.matches(regexTieneNumeros)) {
+                    Log.d("Regex", "Tiene numeros");
                 }
-                if(Contrasenya.getText().toString().matches(regexTieneMasDe8Caracteres)){
-                    Log.d("Regex","Tiene mas de 8 caracteres");
+                if (texto.matches(regexTieneMasDe8Caracteres)) {
+                    Log.d("Regex", "Tiene mas de 8 caracteres");
                 }
-                if(Contrasenya.getText().toString().matches(regexTieneSimbologia)){
-                    Log.d("Regex","Tiene simbologia");
+                if (texto.matches(regexTieneSimbologia)) {
+                    Log.d("Regex", "Tiene simbologia");
                 }
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-
+                // No hacemos nada después de cambiar
             }
         });
-    }
-}
+    }}
+
+
