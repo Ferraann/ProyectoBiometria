@@ -97,7 +97,7 @@ public class BTLEActivity extends AppCompatActivity {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-        this.elEscanner.startScan( this.callbackDelEscaneo);
+        this.elEscanner.startScan(this.callbackDelEscaneo);
 
     } // ()
 

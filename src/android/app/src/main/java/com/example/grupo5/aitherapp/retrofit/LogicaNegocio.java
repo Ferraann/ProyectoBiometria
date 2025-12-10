@@ -197,8 +197,12 @@ public class LogicaNegocio {
                     PojoRespuestaServidor r = response.body();
                     String mensaje = (r.getStatus() != null) ? r.getStatus() : "Añadido tu sensor";
                     Toast.makeText(contexto, mensaje, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(contexto, HomeActivity.class);
-                    contexto.startActivity(intent);
+
+
+                    PojoUsuario usuario = new PojoUsuario();
+                    usuario.setId(sensor.getUsuario_id());
+                    getListaSensores(usuario,contexto);
+
                 } else {
                     Toast.makeText(contexto, "Error HTTP: " + response.code(), Toast.LENGTH_SHORT).show();
                 }
