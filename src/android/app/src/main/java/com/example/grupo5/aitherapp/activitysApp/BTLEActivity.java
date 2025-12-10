@@ -55,6 +55,9 @@ public class BTLEActivity extends AppCompatActivity {
 
     List<ScanFilter> filtros = new ArrayList<>();
 
+    //--------------------------------
+    String DispositivoQueSeBusca = "";
+
     // --------------------------------------------------------------
     //Clase que sirve como ejemplo para encontrar Ibeacon
     // --------------------------------------------------------------
@@ -192,8 +195,6 @@ public class BTLEActivity extends AppCompatActivity {
         filtros.add(sf);
 
         Log.d(ETIQUETA_LOG, "  buscarEsteDispositivoBTLE(): empezamos a escanear buscando: " + dispositivoBuscado );
-        //Log.d(ETIQUETA_LOG, "  buscarEsteDispositivoBTLE(): empezamos a escanear buscando: " + dispositivoBuscado
-        //      + " -> " + Utilidades.stringToUUID( dispositivoBuscado ) );
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
             return;
@@ -237,7 +238,7 @@ public class BTLEActivity extends AppCompatActivity {
         //this.buscarEsteDispositivoBTLE( Utilidades.stringToUUID( "EPSG-GTI-PROY-3A" ) );
 
         //this.buscarEsteDispositivoBTLE( "EPSG-GTI-PROY-3A" );
-        this.buscarEsteDispositivoBTLE( "Grupo 6" );
+        this.buscarEsteDispositivoBTLE( DispositivoQueSeBusca );
 
     } // ()
 
@@ -363,4 +364,6 @@ public class BTLEActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }

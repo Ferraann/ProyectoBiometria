@@ -1,0 +1,205 @@
+\doxysection{Vincular\+QRActivity.\+java}
+\hypertarget{_vincular_q_r_activity_8java_source}{}\label{_vincular_q_r_activity_8java_source}\index{src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java@{src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.example.grupo5.aitherapp.activitysApp;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ com.example.grupo5.aitherapp.retrofit.LogicaNegocio.postVincularSensor;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00005}00005\ \textcolor{keyword}{import}\ android.Manifest;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00006}00006\ \textcolor{keyword}{import}\ android.content.Context;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00007}00007\ \textcolor{keyword}{import}\ android.content.SharedPreferences;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00008}00008\ \textcolor{keyword}{import}\ android.content.pm.PackageManager;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00009}00009\ \textcolor{keyword}{import}\ android.os.Bundle;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00010}00010\ \textcolor{keyword}{import}\ android.widget.TextView;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00011}00011\ \textcolor{keyword}{import}\ android.widget.Toast;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00013}00013\ \textcolor{keyword}{import}\ androidx.annotation.NonNull;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00014}00014\ \textcolor{keyword}{import}\ androidx.annotation.OptIn;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00015}00015\ \textcolor{keyword}{import}\ androidx.appcompat.app.AppCompatActivity;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00016}00016\ \textcolor{keyword}{import}\ androidx.camera.core.CameraSelector;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00017}00017\ \textcolor{keyword}{import}\ androidx.camera.core.ExperimentalGetImage;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00018}00018\ \textcolor{keyword}{import}\ androidx.camera.core.ImageAnalysis;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00019}00019\ \textcolor{keyword}{import}\ androidx.camera.core.ImageProxy;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00020}00020\ \textcolor{keyword}{import}\ androidx.camera.core.Preview;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00021}00021\ \textcolor{keyword}{import}\ androidx.camera.lifecycle.ProcessCameraProvider;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00022}00022\ \textcolor{keyword}{import}\ androidx.camera.view.PreviewView;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00023}00023\ \textcolor{keyword}{import}\ androidx.core.app.ActivityCompat;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00024}00024\ \textcolor{keyword}{import}\ androidx.core.content.ContextCompat;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00026}00026\ \textcolor{keyword}{import}\ com.example.grupo5.aitherapp.R;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00027}00027\ \textcolor{keyword}{import}\ com.example.grupo5.aitherapp.pojos.PojoSensor;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00028}00028\ \textcolor{keyword}{import}\ com.google.common.util.concurrent.ListenableFuture;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00029}00029\ \textcolor{keyword}{import}\ com.google.gson.Gson;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00030}00030\ \textcolor{keyword}{import}\ com.google.mlkit.vision.barcode.BarcodeScanner;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00031}00031\ \textcolor{keyword}{import}\ com.google.mlkit.vision.barcode.BarcodeScannerOptions;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00032}00032\ \textcolor{keyword}{import}\ com.google.mlkit.vision.barcode.BarcodeScanning;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00033}00033\ \textcolor{keyword}{import}\ com.google.mlkit.vision.barcode.common.Barcode;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00034}00034\ \textcolor{keyword}{import}\ com.google.mlkit.vision.common.InputImage;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00036}00036\ \textcolor{keyword}{import}\ java.util.concurrent.ExecutionException;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00037}00037\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00038}00038\ \textcolor{comment}{//\ Fichero:\ VincularQRActivity.java}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00039}00039\ \textcolor{comment}{//\ Autor:\ Pablo\ Chasi}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00040}00040\ \textcolor{comment}{//\ Fecha:\ 28/10/2025}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00041}00041\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00042}00042\ \textcolor{comment}{//\ Descripción:}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00043}00043\ \textcolor{comment}{//\ Clase\ encargada\ de\ gestionar\ la\ lectura\ de\ códigos\ QR\ mediante\ la}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00044}00044\ \textcolor{comment}{//\ cámara\ del\ dispositivo\ usando\ la\ librería\ CameraX\ junto\ con\ el}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00045}00045\ \textcolor{comment}{//\ lector\ de\ QR\ de\ ML\ Kit.\ Su\ objetivo\ es\ vincular\ un\ sensor\ a\ un}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00046}00046\ \textcolor{comment}{//\ usuario,\ extrayendo\ los\ datos\ del\ QR\ (MAC\ y\ modelo),\ verificando}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00047}00047\ \textcolor{comment}{//\ que\ el\ usuario\ esté\ logueado\ y\ enviando\ dicha\ información\ a\ la\ API.}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00048}00048\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00049}00049\ \textcolor{comment}{//\ Flujo\ principal:}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00050}00050\ \textcolor{comment}{//\ \ 1.\ Solicitar\ permiso\ de\ cámara.}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00051}00051\ \textcolor{comment}{//\ \ 2.\ Activar\ CameraX\ y\ procesar\ cada\ frame.}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00052}00052\ \textcolor{comment}{//\ \ 3.\ Leer\ QR,\ interpretar\ JSON\ y\ extraer\ datos.}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00053}00053\ \textcolor{comment}{//\ \ 4.\ Validar\ usuario\ y\ datos\ recibidos.}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00054}00054\ \textcolor{comment}{//\ \ 5.\ Enviar\ el\ sensor\ a\ la\ base\ de\ datos\ con\ postVincularSensor().}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00055}00055\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00056}\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity}{00056}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity}{VincularQRActivity}}\ \textcolor{keyword}{extends}\ AppCompatActivity\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ \textcolor{keywordtype}{int}\ REQUEST\_CAMERA\_PERMISSION\ =\ 1001;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{private}\ PreviewView\ previewView;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{private}\ TextView\ textResult;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00062}00062\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{boolean}\ qrProcesado\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00064}00064\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{void}\ onCreate(Bundle\ savedInstanceState)\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_vincular\_qr);}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ previewView\ =\ findViewById(R.id.previewView);}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ textResult\ =\ findViewById(R.id.textResult);}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (allPermissionsGranted())\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ startCamera();}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ ActivityCompat.requestPermissions(\textcolor{keyword}{this},}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ String[]\{Manifest.permission.CAMERA\},}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ REQUEST\_CAMERA\_PERMISSION);}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00081}00081\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{boolean}\ allPermissionsGranted()\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ContextCompat.checkSelfPermission(\textcolor{keyword}{this},\ Manifest.permission.CAMERA)}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ==\ PackageManager.PERMISSION\_GRANTED;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00086}00086\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00087}00087\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ onRequestPermissionsResult(\textcolor{keywordtype}{int}\ requestCode,\ @NonNull\ String[]\ permissions,}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ @NonNull\ \textcolor{keywordtype}{int}[]\ grantResults)\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ super.onRequestPermissionsResult(requestCode,\ permissions,\ grantResults);}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (requestCode\ ==\ REQUEST\_CAMERA\_PERMISSION)\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (allPermissionsGranted())\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ startCamera();}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Permiso\ de\ cámara\ requerido"{}},\ Toast.LENGTH\_SHORT).show();}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ finish();}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00100}00100\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ startCamera()\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ ListenableFuture<ProcessCameraProvider>\ cameraProviderFuture\ =}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ProcessCameraProvider.getInstance(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ cameraProviderFuture.addListener(()\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ProcessCameraProvider\ cameraProvider\ =\ cameraProviderFuture.get();}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Preview\ preview\ =\ \textcolor{keyword}{new}\ Preview.Builder().build();}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ preview.setSurfaceProvider(previewView.getSurfaceProvider());}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImageAnalysis\ imageAnalysis\ =\ \textcolor{keyword}{new}\ ImageAnalysis.Builder()}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .setBackpressureStrategy(ImageAnalysis.STRATEGY\_KEEP\_ONLY\_LATEST)}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .build();}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BarcodeScannerOptions\ options\ =\ \textcolor{keyword}{new}\ BarcodeScannerOptions.Builder()}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .setBarcodeFormats(Barcode.FORMAT\_QR\_CODE)}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .build();}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BarcodeScanner\ scanner\ =\ BarcodeScanning.getClient(options);}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageAnalysis.setAnalyzer(ContextCompat.getMainExecutor(\textcolor{keyword}{this}),\ imageProxy\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ processImageProxy(scanner,\ imageProxy,\ this);}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CameraSelector\ cameraSelector\ =\ CameraSelector.DEFAULT\_BACK\_CAMERA;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cameraProvider.unbindAll();}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cameraProvider.bindToLifecycle(\textcolor{keyword}{this},\ cameraSelector,\ preview,\ imageAnalysis);}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (ExecutionException\ |\ InterruptedException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00133}00133\ \ \ \ \ \ \ \ \ \},\ ContextCompat.getMainExecutor(\textcolor{keyword}{this}));}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00134}00134\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00136}00136\ \ \ \ \ @OptIn(markerClass\ =\ ExperimentalGetImage.class)}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00137}00137\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ processImageProxy(BarcodeScanner\ scanner,\ ImageProxy\ imageProxy,\ Context\ context)\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageProxy.getImage()\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ imageProxy.close();}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00141}00141\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00143}00143\ \ \ \ \ \ \ \ \ InputImage\ image\ =\ InputImage.fromMediaImage(}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageProxy.getImage(),}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageProxy.getImageInfo().getRotationDegrees()}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00146}00146\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00148}00148\ \ \ \ \ \ \ \ \ scanner.process(image)}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addOnSuccessListener(barcodes\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (qrProcesado)\ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ ya\ procesado,\ ignoramos}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Barcode\ barcode\ :\ barcodes)\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ raw\ =\ barcode.getRawValue();}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (raw\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qrProcesado\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ bloqueamos\ más\ lecturas}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QrData\ qr;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qr\ =\ \textcolor{keyword}{new}\ Gson().fromJson(raw,\ QrData.class);}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(context,\ \textcolor{stringliteral}{"{}QR\ no\ válido"{}},\ Toast.LENGTH\_SHORT).show();}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (qr.mac\ ==\ \textcolor{keyword}{null}\ ||\ qr.mac.isEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(context,\ \textcolor{stringliteral}{"{}Falta\ la\ MAC\ en\ el\ QR"{}},\ Toast.LENGTH\_SHORT).show();}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SharedPreferences\ prefs\ =\ context.getSharedPreferences(\textcolor{stringliteral}{"{}SesionUsuario"{}},\ MODE\_PRIVATE);}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idUsuario\ =\ Integer.parseInt(prefs.getString(\textcolor{stringliteral}{"{}id"{}},\textcolor{stringliteral}{"{}"{}}));}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (idUsuario\ <=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(context,\ \textcolor{stringliteral}{"{}Usuario\ no\ logueado"{}},\ Toast.LENGTH\_SHORT).show();}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textResult.setText(\textcolor{stringliteral}{"{}QR\ detectado:\ "{}}\ +\ raw);}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor}{PojoSensor}}\ sensor\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor}{PojoSensor}}();}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sensor.setAccion(\textcolor{stringliteral}{"{}crearSensorYRelacion"{}});}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sensor.setMac(qr.mac);}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sensor.setModelo(qr.modelo);}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sensor.setUsuario\_id(String.valueOf(idUsuario));}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ postVincularSensor(sensor,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ \textcolor{comment}{//\ salimos\ del\ for}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \})}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addOnFailureListener(Throwable::printStackTrace)}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addOnCompleteListener(task\ -\/>\ imageProxy.close());}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00192}00192\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00194}00194\ \ \ \ \ \textcolor{comment}{/*\ Clase\ auxiliar\ para\ parsear\ el\ JSON\ del\ QR\ */}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00195}00195\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }QrData\ \{}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00196}00196\ \ \ \ \ \ \ \ \ String\ mac;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00197}00197\ \ \ \ \ \ \ \ \ String\ modelo;}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00198}00198\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vincular_q_r_activity_8java_source_l00199}00199\ \}}
+
+\end{DoxyCode}

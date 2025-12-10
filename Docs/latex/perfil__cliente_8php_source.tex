@@ -1,0 +1,277 @@
+\doxysection{perfil\+\_\+cliente.\+php}
+\hypertarget{perfil__cliente_8php_source}{}\label{perfil__cliente_8php_source}\index{src/html/perfil\_cliente.php@{src/html/perfil\_cliente.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00001}00001\ <!-\/-\/}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00002}00002\ ===============================================================================}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00003}00003\ NOMBRE:\ perfil\_cliente.html}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00004}00004\ DESCRIPCIÓN:\ En\ esta\ seccion\ privada\ del\ usuario\ podra\ encontrar\ sus\ datos\ personalers,}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00005}00005\ \ \ \ \ \ \ \ \ \ \ \ \ datos\ de\ los\ sensores\ y\ podra\ modificarlos\ en\ caso\ de\ que\ sea\ necesario.}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00006}00006\ COPYRIGHT:\ ©\ 2025\ AITHER.\ Todos\ los\ derechos\ reservados.}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00007}00007\ FECHA:\ 13/11/2025}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00008}00008\ AUTOR:\ Greysy\ Burgos\ Salazar\ Y\ Ferran\ Sansaloni\ Prats}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00009}00009\ APORTACIÓN:\ Estructura\ completa\ de\ la\ página\ HTML\ para\ el\ inicio\ de\ sesión}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00010}00010\ \ \ \ \ \ \ \ \ \ \ \ \ con\ enlaces\ a\ recursos\ CSS\ y\ JavaScript\ externos.}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00011}00011\ ===============================================================================}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00012}00012\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00014}00014\ <?php}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00015}00015\ require\_once\ \textcolor{stringliteral}{"{}../api/conexion.php"{}};}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00016}00016\ \textcolor{keywordflow}{foreach}\ (glob(\_\_DIR\_\_\ .\ \textcolor{stringliteral}{"{}/../api/logicaNegocio/*.php"{}})\ as\ \$file)\ \{}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00017}00017\ \ \ \ \ require\_once\ \$file;}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00020}00020\ \$conn\ =\ abrirServidor();}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00022}00022\ session\_start();}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00024}00024\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00025}00025\ \textcolor{comment}{//\ 1.\ VALIDACIÓN\ DE\ SESIÓN}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00026}00026\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00027}00027\ \textcolor{keywordflow}{if}\ (!isset(\$\_SESSION[\textcolor{stringliteral}{'usuario\_id'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00028}00028\ \ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ login.html"{}});}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00029}00029\ \ \ \ \ exit;}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00032}00032\ \$id\_usuario\ =\ \$\_SESSION[\textcolor{stringliteral}{'usuario\_id'}];}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00034}00034\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00035}00035\ \textcolor{comment}{//\ 2.\ RECUPERAR\ LA\ FOTO\ DE\ PERFIL\ BLOB}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00036}00036\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00037}00037\ \$DEFAULT\_IMAGE\_PATH\ =\ \textcolor{stringliteral}{"{}../img/imagen-\/icono.webp"{}};}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00038}00038\ \$foto\_a\_mostrar\ =\ \$DEFAULT\_IMAGE\_PATH;}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00040}00040\ \textcolor{comment}{//\ Nota:\ Asume\ que\ la\ función\ de\ obtención\ de\ foto\ (que\ era\ guardarFotoPerfil)\ se\ llama\ ahora\ obtenerFotoPerfil}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00041}00041\ \$resultado\_foto\ =\ obtenerFotoPerfil(\$conn,\ \$id\_usuario);}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00043}00043\ \textcolor{keywordflow}{if}\ (\$resultado\_foto[\textcolor{stringliteral}{'status'}]\ ===\ \textcolor{stringliteral}{'ok'}\ \&\&}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00044}00044\ \ \ \ \ !empty(\$resultado\_foto[\textcolor{stringliteral}{'fotos'}][0][\textcolor{stringliteral}{'foto'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//\ Si\ la\ DB\ devuelve\ la\ imagen\ en\ Base64}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00047}00047\ \ \ \ \ \$base64\_img\ =\ \$resultado\_foto[\textcolor{stringliteral}{'fotos'}][0][\textcolor{stringliteral}{'foto'}];}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//\ Construimos\ el\ Data\ URI\ que\ el\ navegador\ puede\ leer\ directamente}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00050}00050\ \ \ \ \ \textcolor{comment}{//\ Usamos\ 'image/jpeg'\ como\ tipo\ por\ defecto,\ pero\ podrías\ intentar\ inferirlo.}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00051}00051\ \ \ \ \ \$foto\_a\_mostrar\ =\ \textcolor{stringliteral}{'data:image/jpeg;base64,'}\ .\ \$base64\_img;}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00055}00055\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00056}00056\ \textcolor{comment}{//\ 3.\ CONSTRUCCIÓN\ DE\ VARIABLES\ DE\ SESIÓN\ (para\ el\ HEADER\ y\ CAMPOS)}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00057}00057\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00058}00058\ \$nombre\ =\ \$\_SESSION[\textcolor{stringliteral}{'usuario\_nombre'}];}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00059}00059\ \$nombreCompleto\ =\ \$\_SESSION[\textcolor{stringliteral}{'usuario\_nombre'}]\ .\ \textcolor{stringliteral}{"{}\ "{}}\ .\ \$\_SESSION[\textcolor{stringliteral}{'usuario\_apellidos'}];}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00060}00060\ \$gmail\ =\ \$\_SESSION[\textcolor{stringliteral}{'usuario\_correo'}];}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00062}00062\ ?>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00065}00065\ <!DOCTYPE\ html>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00066}00066\ <html\ lang=\textcolor{stringliteral}{"{}es"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00067}00067\ <head>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00068}00068\ \ \ \ \ <meta\ charset=\textcolor{stringliteral}{"{}UTF-\/8"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00069}00069\ \ \ \ \ <meta\ name=\textcolor{stringliteral}{"{}viewport"{}}\ content=\textcolor{stringliteral}{"{}width=device-\/width,\ initial-\/scale=1.0"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00070}00070\ \ \ \ \ <title>AITHER\ |\ Perfil</title>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00071}00071\ \ \ \ \ <link\ rel=\textcolor{stringliteral}{"{}icon"{}}\ href=\textcolor{stringliteral}{"{}../img/logo\_aither.png"{}}\ type=\textcolor{stringliteral}{"{}image/png"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00072}00072\ \ \ \ \ <link\ rel=\textcolor{stringliteral}{"{}stylesheet"{}}\ href=\textcolor{stringliteral}{"{}../css/perfil\_cliente.css"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00073}00073\ \ \ \ \ <link\ href=\textcolor{stringliteral}{"{}https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700\&display=swap"{}}\ rel=\textcolor{stringliteral}{"{}stylesheet"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00074}00074\ \ \ \ \ <link\ rel=\textcolor{stringliteral}{"{}stylesheet"{}}\ href=\textcolor{stringliteral}{"{}https://cdnjs.cloudflare.com/ajax/libs/font-\/awesome/6.5.2/css/all.min.css"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00076}00076\ \ \ \ \ <script\ src=\textcolor{stringliteral}{"{}../js/actualizar\_perfil.js"{}}\ defer></script>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00077}00077\ </head>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00078}00078\ <body>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00079}00079\ <!-\/-\/}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00080}00080\ \ \ \ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00081}00081\ \ \ \ \ \ BLOQUE:\ <header>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00082}00082\ \ \ \ \ \ DISEÑO\ LÓGICO:\ Contiene\ el\ logotipo\ y\ la\ barra\ de\ navegación\ principal.}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00083}00083\ \ \ \ \ \ DESCRIPCIÓN:\ Proporciona\ acceso\ rápido\ a\ secciones\ informativas\ y}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00084}00084\ \ \ \ \ \ un\ botón\ para\ iniciar\ sesión.}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00085}00085\ \ \ \ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00086}00086\ \ \ \ \ \ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00087}00087\ <header>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00088}00088\ \ \ \ \ <!-\/-\/\ Logo\ de\ Aither\ |\ Al\ hacer\ clic\ tiene\ que\ llevar\ a\ la\ landing\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00089}00089\ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}./dashboard.php"{}}><img\ src=\textcolor{stringliteral}{"{}../img/logo\_Aither\_web.png"{}}\ alt=\textcolor{stringliteral}{"{}Este\ es\ el\ logo\ de\ nuestro\ Proyecto:\ Aither"{}}></a>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00090}00090\ \ \ \ \ <nav>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00091}00091\ \ \ \ \ \ \ \ \ <!-\/-\/Mis\ sensores,\ soporte\ tecnico\ y\ perfil\ (configuracion\ y\ cerrar\ sesion)-\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00092}00092\ \ \ \ \ \ \ \ \ <ul>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/\ Componentes\ del\ nav\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ <li><a\ href=\textcolor{stringliteral}{"{}dashboard.php"{}}>Mis\ <br>\ sensores</a></li>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ <li>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}soporte\_tecnico\_cliente.php"{}}>Soporte\ <br>\ técnico</a>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ </li>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ <li\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}profile-\/dropdown-\/container"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}\#"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}nav-\/perfil"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}profile-\/toggle-\/button"{}}><i\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}fa-\/solid\ fa-\/circle-\/user"{}}></i><span><?php\ echo\ htmlspecialchars(\$nombre);\ ?></span></a>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}profile-\/menu"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}profile-\/menu"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/\ Menú\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}menu-\/header"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/\ Icono,\ nombre\ y\ x\ de\ cerrar\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <i\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}fa-\/solid\ fa-\/circle-\/user\ profile-\/icon-\/large"{}}></i>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}profile-\/name"{}}><?php\ echo\ htmlspecialchars(\$nombre);\ ?></span>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <i\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}fa-\/solid\ fa-\/xmark\ close-\/menu-\/btn"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}close-\/menu-\/button"{}}></i>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/\ Componentes\ del\ menú\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}perfil\_cliente.php"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}menu-\/item"{}}>CONFIGURACIÓN</a>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}../php/logout.php"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}menu-\/item\ logout-\/item"{}}>CERRAR\ SESIÓN</a>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ </li>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00113}00113\ \ \ \ \ \ \ \ \ </ul>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00114}00114\ \ \ \ \ </nav>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00115}00115\ </header>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00117}00117\ <!-\/-\/\ Contenedor\ main,\ cuerpo\ de\ la\ pagina\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00118}00118\ <main\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}perfil-\/container"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00119}00119\ \ \ \ \ <!-\/-\/\ Sección\ de\ editar\ perfil\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00120}00120\ \ \ \ \ <section\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}edit-\/perfil-\/section"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00121}00121\ \ \ \ \ \ \ \ \ <h2>EDITAR\ PERFIL</h2>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00123}00123\ \ \ \ \ \ \ \ \ <form\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}perfil-\/form"{}}\ action=\textcolor{stringliteral}{"{}../php/actualizar\_perfil.php"{}}\ method=\textcolor{stringliteral}{"{}POST"{}}\ enctype=\textcolor{stringliteral}{"{}multipart/form-\/data"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/\ Logo\ del\ perfil\ y\ boton\ para\ editar\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}form-\/group\ foto-\/group"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}foto-\/placeholder"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <img\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}profile-\/image-\/display"{}}\ src=\textcolor{stringliteral}{"{}<?php\ echo\ htmlspecialchars(\$foto\_a\_mostrar);\ ?>"{}}\ alt=\textcolor{stringliteral}{"{}Foto\ de\ perfil"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}\#"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}edit-\/link"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}edit-\/photo-\/link"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Editar\ <i\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}fa-\/solid\ fa-\/pen"{}}></i>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </a>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}file"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}profile-\/image-\/upload"{}}\ name=\textcolor{stringliteral}{"{}profile\_image"{}}\ accept=\textcolor{stringliteral}{"{}image/*"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}hidden"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}profile-\/image-\/base64"{}}\ name=\textcolor{stringliteral}{"{}profile\_image\_base64"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/\ Campos\ de\ edición\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}form-\/fields"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/\ Campo\ de\ nombre\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}input-\/row"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}nombre"{}}>Nombre:</label>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}text"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}nombre"{}}\ name=\textcolor{stringliteral}{"{}nombre"{}}\ value=\textcolor{stringliteral}{"{}<?php\ echo\ htmlspecialchars(\$nombreCompleto);\ ?>"{}}\ disabled>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}\#"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}edit-\/icon"{}}><i\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}fa-\/solid\ fa-\/pen-\/to-\/square"{}}></i></a>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/\ Campo\ de\ correo\ electrónico\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}input-\/row"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}gmail"{}}>Correo\ Electrónico:</label>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}email"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}gmail"{}}\ name=\textcolor{stringliteral}{"{}gmail"{}}\ value=\textcolor{stringliteral}{"{}<?php\ echo\ htmlspecialchars(\$gmail);\ ?>"{}}\ disabled>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}\#"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}edit-\/icon"{}}><i\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}fa-\/solid\ fa-\/pen-\/to-\/square"{}}></i></a>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/\ Campo\ de\ confirmar\ correo\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}input-\/row"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}repetir-\/correo"{}}>Confirmar\ Correo:</label>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}email"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}repetir-\/correo"{}}\ name=\textcolor{stringliteral}{"{}repetir-\/correo"{}}\ disabled>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/\ Campo\ de\ contraseña\ nueva\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}input-\/row"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}contrasena"{}}>Contraseña\ Nueva:</label>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}password"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}contrasena"{}}\ \ name=\textcolor{stringliteral}{"{}contrasena"{}}\ disabled>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}\#"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}edit-\/icon"{}}><i\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}fa-\/solid\ fa-\/pen-\/to-\/square"{}}></i></a>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/\ Campo\ de\ confirmar\ contraseña\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}input-\/row"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}repetir-\/contrasena"{}}>Confirmar\ Contraseña:</label>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}password"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}repetir-\/contrasena"{}}\ name=\textcolor{stringliteral}{"{}repetir-\/contrasena"{}}\ disabled>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/\ Campo\ de\ contraseña\ antigua\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}input-\/row"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}contrasena-\/antigua"{}}>Contraseña\ Antigua:</label>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}password"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}contrasena-\/antigua"{}}\ \ name=\textcolor{stringliteral}{"{}contrasena-\/antigua"{}}\ disabled>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/\ Controlador\ de\ los\ mensajes\ en\ pantalla,\ tanto\ los\ mensajes\ de\ error\ como\ los\ de\ éxito\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ <?php}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Muestra\ el\ mensaje\ de\ error\ si\ existe}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isset(\$\_SESSION[\textcolor{stringliteral}{'mensaje\_error'}])):\ ?>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}alert\ error"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}js-\/alerta-\/error"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <?php\ echo\ htmlspecialchars(\$\_SESSION[\textcolor{stringliteral}{'mensaje\_error'}]);\ ?>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <?php}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ unset(\$\_SESSION[\textcolor{stringliteral}{'mensaje\_error'}]);\ \textcolor{comment}{//\ Limpia\ el\ mensaje\ para\ que\ no\ se\ muestre\ de\ nuevo}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ endif;}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Muestra\ el\ mensaje\ de\ éxito\ si\ existe}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isset(\$\_SESSION[\textcolor{stringliteral}{'mensaje\_exito'}])):\ ?>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}alert\ success"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}js-\/alerta-\/exito"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <?php\ echo\ htmlspecialchars(\$\_SESSION[\textcolor{stringliteral}{'mensaje\_exito'}]);\ ?>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <?php}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ unset(\$\_SESSION[\textcolor{stringliteral}{'mensaje\_exito'}]);\ \textcolor{comment}{//\ Limpia\ el\ mensaje\ de\ éxito}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ endif;}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ ?>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/\ Botón\ de\ guardar\ (SUBMIT)\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ <button\ type=\textcolor{stringliteral}{"{}submit"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}btn-\/guardar"{}}>GUARDAR</button>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00205}00205\ \ \ \ \ \ \ \ \ </form>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00206}00206\ \ \ \ \ </section>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00208}00208\ \ \ \ \ <!-\/-\/\ Seción\ de\ configuración\ de\ sensores\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00209}00209\ \ \ \ \ <section\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}config-\/sensores-\/section"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00210}00210\ \ \ \ \ \ \ \ \ <h2>CONFIGURAR\ SENSORES</h2>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00212}00212\ \ \ \ \ \ \ \ \ <!-\/-\/\ Selector\ de\ sensores\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00213}00213\ \ \ \ \ \ \ \ \ <nav\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}sensor-\/tabs"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ <ul>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li><a\ href=\textcolor{stringliteral}{"{}\#"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}tab-\/link\ active"{}}\ data-\/sensor=\textcolor{stringliteral}{"{}1"{}}>Sensor\ 1</a></li>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li><a\ href=\textcolor{stringliteral}{"{}\#"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}tab-\/link"{}}\ data-\/sensor=\textcolor{stringliteral}{"{}2"{}}>Sensor\ 2</a></li>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ </ul>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00218}00218\ \ \ \ \ \ \ \ \ </nav>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00220}00220\ \ \ \ \ \ \ \ \ <!-\/-\/\ Información\ del\ sensor\ 1\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00221}00221\ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}sensor-\/details\ active-\/tab"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}sensor-\/1-\/content"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ <ul>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li>**ID\ del\ sensor:**\ <span>ES000123456</span></li>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li>**Fecha\ de\ inicio:**\ <span>01/10/2025</span></li>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li>**Batería\ restante:**\ <span>78\%</span></li>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li>**Incidencias\ antiguas:**\ <span>3\ (Ver\ detalles)</span></li>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ </ul>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00228}00228\ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00230}00230\ \ \ \ \ \ \ \ \ <!-\/-\/\ Información\ del\ sensor\ 2\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00231}00231\ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}sensor-\/details"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}sensor-\/2-\/content"{}}>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ <ul>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li>**ID\ del\ sensor:**\ <span>ES000654321</span></li>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li>**Fecha\ de\ inicio:**\ <span>20/11/2025</span></li>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li>**Batería\ restante:**\ <span>100\%</span></li>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li>**Incidencias\ antiguas:**\ <span>0</span></li>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ </ul>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00238}00238\ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00240}00240\ \ \ \ \ </section>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00241}00241\ </main>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00242}00242\ <script\ src=\textcolor{stringliteral}{"{}../js/Fun\_icono\_perfil.js"{}}></script>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00243}00243\ <script>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00244}00244\ \ \ \ \ const\ tabLinks\ =\ document.querySelectorAll(\textcolor{stringliteral}{'.sensor-\/tabs\ a'});\ \textcolor{comment}{//\ Correcto:\ .sensor-\/tabs}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00245}00245\ \ \ \ \ \textcolor{keyword}{const}\ tabContents\ =\ document.querySelectorAll(\textcolor{stringliteral}{'.sensor-\/details'});\ \textcolor{comment}{//\ Correcto:\ .sensor-\/details}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00247}00247\ \ \ \ \ tabLinks.forEach(link\ =>\ \{}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00248}00248\ \ \ \ \ \ \ \ \ link.addEventListener(\textcolor{stringliteral}{'click'},\ \textcolor{keyword}{function}(event)\ \{}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{event}.preventDefault();}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1.\ Obtener\ el\ ID\ del\ sensor\ (usando\ data-\/sensor,\ no\ data-\/tab)}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ sensorId\ =\ this.dataset.sensor;}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2.\ Remover\ 'active'\ de\ todos\ los\ enlaces\ y\ 'active-\/tab'\ de\ todos\ los\ contenidos}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ tabLinks.forEach(l\ =>\ l.classList.remove(\textcolor{stringliteral}{'active'}));}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ tabContents.forEach(c\ =>\ c.classList.remove(\textcolor{stringliteral}{'active-\/tab'}));\ \textcolor{comment}{//\ Clase\ correcta:\ active-\/tab}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3.\ Añadir\ 'active'\ al\ enlace\ clickeado}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ this.classList.add(\textcolor{stringliteral}{'active'});}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00260}00260\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 4.\ Mostrar\ el\ contenido\ correspondiente\ (usando\ el\ ID)}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ activeContent\ =\ document.getElementById(\`{}sensor-\/\$\{sensorId\}-\/content\`{});}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (activeContent)\ \{}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ activeContent.classList.add(\textcolor{stringliteral}{'active-\/tab'});}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00266}00266\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00267}00267\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00268}00268\ </script>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00269}00269\ }
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00270}00270\ </body>}
+\DoxyCodeLine{\Hypertarget{perfil__cliente_8php_source_l00271}00271\ </html>}
+
+\end{DoxyCode}

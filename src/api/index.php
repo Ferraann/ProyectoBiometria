@@ -147,7 +147,6 @@ switch ($method) {
             case "guardarFotoPerfil":
                 echo json_encode(guardarFotoPerfil($conn, $input));
                 break;
-            
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción POST no reconocida."]);
                 break;
@@ -223,6 +222,9 @@ switch ($method) {
                 break;
             case "getFotoPerfil":
                 echo json_encode(obtenerFotoPerfil($conn, $input['usuario_id']));
+                break;
+            case "getObtenerSensoresUsuario":
+                echo json_encode(obtenerListaSensores($conn, $input['usuario_id']));
                 break;
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]);

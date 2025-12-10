@@ -1,0 +1,56 @@
+\doxysection{Api\+Cliente.\+java}
+\hypertarget{_api_cliente_8java_source}{}\label{_api_cliente_8java_source}\index{src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiCliente.java@{src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiCliente.java}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.example.grupo5.aitherapp.retrofit;}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00003}00003\ \textcolor{keyword}{import}\ okhttp3.OkHttpClient;}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00004}00004\ \textcolor{keyword}{import}\ okhttp3.logging.HttpLoggingInterceptor;}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00005}00005\ \textcolor{keyword}{import}\ retrofit2.Retrofit;}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00006}00006\ \textcolor{keyword}{import}\ retrofit2.converter.gson.GsonConverterFactory;}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00008}00008\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00009}00009\ \textcolor{comment}{//\ Fichero:\ ApiCliente}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00010}00010\ \textcolor{comment}{//\ Autor:\ Pablo\ Chasi}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00011}00011\ \textcolor{comment}{//\ Fecha:\ 24/10/2025}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00012}00012\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00013}00013\ \textcolor{comment}{//\ Clase\ ApiCliente}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00014}00014\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00015}00015\ \textcolor{comment}{//\ Descripción:}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00016}00016\ \textcolor{comment}{//\ \ \ Clase\ que\ se\ encarga\ de\ configurar\ y\ crear\ una\ estancia}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00017}00017\ \textcolor{comment}{//\ \ de\ Retrofit\ cliente\ que\ permite\ conectar\ tu\ aplicación}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00018}00018\ \textcolor{comment}{//\ \ Android\ con\ un\ servidor\ web\ o\ Api.\ Ademas,\ se\ declararan\ los\ metodos}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00019}00019\ \textcolor{comment}{//\ \ de\ las\ apps.}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00020}00020\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00021}\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_cliente}{00021}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_cliente}{ApiCliente}}\ \{}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//Declaro\ mi\ ip}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ String\ urlLocal\ =\ \textcolor{stringliteral}{"{}http://172.25.181.250/ProyectoBiometria\_2/src/api/"{}};}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//Pongo\ Retrofit\ en\ null\ para\ después\ comprobar\ si\ está\ o\ no\ funcional}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ Retrofit\ retrofit\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ getApiService()\ -\/-\/>\ retrofit}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service}{ApiService}}\ getApiService()\{}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (retrofit\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//interceptar\ metodo\ php}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ HttpLoggingInterceptor\ interceptor\ =\ \textcolor{keyword}{new}\ HttpLoggingInterceptor();}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Consigo\ el\ cliente\ para\ enviarlo}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ OkHttpClient\ client\ =\ \textcolor{keyword}{new}\ OkHttpClient.Builder().addInterceptor(interceptor).build();}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Declaro\ mi\ estructura\ para\ después\ saber\ donde\ envio\ los\ datos}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ retrofit\ =\ \textcolor{keyword}{new}\ Retrofit.Builder()}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .baseUrl(urlLocal)}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addConverterFactory(GsonConverterFactory.create())}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .client(client)}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .build();}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retrofit.create(\mbox{\hyperlink{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service}{ApiService}}.class);}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_api_cliente_8java_source_l00050}00050\ \}}
+
+\end{DoxyCode}

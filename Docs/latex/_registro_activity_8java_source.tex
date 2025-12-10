@@ -1,0 +1,125 @@
+\doxysection{Registro\+Activity.\+java}
+\hypertarget{_registro_activity_8java_source}{}\label{_registro_activity_8java_source}\index{src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java@{src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.example.grupo5.aitherapp.activitysApp;}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ com.example.grupo5.aitherapp.retrofit.LogicaNegocio.PostRegistro;}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00005}00005\ \textcolor{keyword}{import}\ android.os.Bundle;}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00006}00006\ \textcolor{keyword}{import}\ android.text.Editable;}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00007}00007\ \textcolor{keyword}{import}\ android.text.TextWatcher;}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00008}00008\ \textcolor{keyword}{import}\ android.util.Log;}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00009}00009\ \textcolor{keyword}{import}\ android.util.Patterns;}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00010}00010\ \textcolor{keyword}{import}\ android.view.View;}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00011}00011\ \textcolor{keyword}{import}\ android.widget.EditText;}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00012}00012\ \textcolor{keyword}{import}\ android.widget.Toast;}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00014}00014\ \textcolor{keyword}{import}\ androidx.appcompat.app.AppCompatActivity;}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00016}00016\ \textcolor{keyword}{import}\ com.example.grupo5.aitherapp.R;}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00018}00018\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00019}00019\ \textcolor{comment}{//\ Fichero:\ MainActivity.java}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00020}00020\ \textcolor{comment}{//\ Autor:\ Pablo\ Chasi}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00021}00021\ \textcolor{comment}{//\ Fecha:\ 28/10/2025}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00022}00022\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00023}00023\ \textcolor{comment}{//\ Descripción:}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00024}00024\ \textcolor{comment}{//\ \ Clase\ donde\ a\ traves\ del\ formulario\ mostrado\ en\ el\ layout,}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00025}00025\ \textcolor{comment}{//\ \ se\ enviara\ los\ datos\ a\ traves\ de\ Retrofit\ al\ servidor\ web.}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00026}00026\ \textcolor{comment}{//\ \ Donde\ se\ guardara\ y\ se\ usara\ posteriormente.}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00027}00027\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00028}\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity}{00028}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity}{RegistroActivity}}\ \textcolor{keyword}{extends}\ AppCompatActivity\ \{}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//Formulario\ del\ layout\ donde\ se\ trabaja}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00030}00030\ \ \ \ \ EditText\ Usuario,Apellidos,Email,Contrasenya,RepetirContrasenya;}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//Regex\ que\ me\ permite\ confirma\ que\ la\ contraseña\ es\ segura.}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00033}00033\ \ \ \ \ String\ regexTieneMayuscula\ =\ \textcolor{stringliteral}{"{}\string^(?=.*[A-\/Z]).+\$"{}};}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00034}00034\ \ \ \ \ String\ regexTieneNumeros\ =\ \textcolor{stringliteral}{"{}\string^(?=.*\(\backslash\)\(\backslash\)d).+\$"{}};}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00035}00035\ \ \ \ \ String\ regexTieneSimbologia\ =\ \textcolor{stringliteral}{"{}\string^(?=.*[\$@€!\%*?\&]).+\$"{}};}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00036}00036\ \ \ \ \ String\ regexTieneMasDe8Caracteres\ =\ \textcolor{stringliteral}{"{}\string^.\{8,\}\$"{}};}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//Metodo\ onCreate\ donde\ se\ ejecuta\ lo\ principal}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{void}\ onCreate(Bundle\ savedInstanceState)\ \{}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_registro);}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Obtengo\ los\ edit\ text\ por\ su\ id\ que\ yo\ le\ he\ piesto}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ Usuario\ =\ findViewById(R.id.NombreUsuario);}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ Apellidos\ =\ findViewById(R.id.ApellidosUsuario);}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ Email\ =\ findViewById(R.id.EmailUsuario);}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ Contrasenya\ =\ findViewById(R.id.ContrasenyaUsuario);}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ RepetirContrasenya\ =\ findViewById(R.id.RepetirContrasenyaUsuario);}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ verificarContrasenya();}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00053}00053\ \ \ \ \ \textcolor{comment}{//Boton\ para\ enviar\ los\ datos\ al\ servidor}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ botonEnviarDatos(View\ v)\{}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ String\ usuario\ =\ Usuario.getText().toString().trim();}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ String\ apellidos\ =\ Apellidos.getText().toString().trim();}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ String\ contrasenya\ =Contrasenya.getText().toString().trim();}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ String\ email\ =\ Email.getText().toString().trim();}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ String\ repetirContrasenya\ =\ RepetirContrasenya.getText().toString().trim();}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ validación\ que\ comprueba\ que\ si\ hay\ alguno\ que\ está\ vacio\ no\ se\ ejecuta\ la\ sentencia\ sql.}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (usuario.isEmpty()\ ||\ apellidos.isEmpty()||contrasenya.isEmpty()||email.isEmpty()||repetirContrasenya.isEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Por\ favor,\ rellena\ todos\ los\ campos"{}},\ Toast.LENGTH\_SHORT).show();}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Con\ una\ biblioteca\ podemos\ comprobar\ la\ estructura\ basica\ de\ un\ email}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//si\ está\ detecta\ que\ no\ es\ semejante\ a\ un\ email,\ entonces\ devuelve\ false.}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//si\ es\ verdad\ entonces\ un\ true.}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Patterns.EMAIL\_ADDRESS.matcher(email).matches())\{}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Por\ favor,\ introduce\ un\ email\ valido"{}},\ Toast.LENGTH\_SHORT).show();}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!contrasenya.matches(repetirContrasenya))\{}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(\textcolor{keyword}{this},\textcolor{stringliteral}{"{}Por\ favor,\ repita\ correctamente\ la\ contraseña"{}},\ Toast.LENGTH\_SHORT).show();}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!contrasenya.matches(regexTieneMasDe8Caracteres)||!contrasenya.matches(regexTieneNumeros)||!contrasenya.matches(regexTieneMayuscula)||!contrasenya.matches(regexTieneSimbologia))\{}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Por\ favor,\ introduce\ una\ contraseña\ segura"{}},\ Toast.LENGTH\_SHORT).show();}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ PostRegistro(Usuario.getText().toString(),Apellidos.getText().toString(),Email.getText().toString(),Contrasenya.getText().toString(),\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00090}00090\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ verificarContrasenya()\{}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ Contrasenya.addTextChangedListener(\textcolor{keyword}{new}\ TextWatcher()\ \{}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ beforeTextChanged(CharSequence\ s,\ \textcolor{keywordtype}{int}\ start,\ \textcolor{keywordtype}{int}\ count,\ \textcolor{keywordtype}{int}\ after)\ \{}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ onTextChanged(CharSequence\ s,\ \textcolor{keywordtype}{int}\ start,\ \textcolor{keywordtype}{int}\ before,\ \textcolor{keywordtype}{int}\ count)\ \{}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Contrasenya.getText().toString().matches(regexTieneMayuscula))\{}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Log.d(\textcolor{stringliteral}{"{}Regex"{}},\textcolor{stringliteral}{"{}Tiene\ mayusculas"{}});}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Contrasenya.getText().toString().matches(regexTieneNumeros))\{}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Log.d(\textcolor{stringliteral}{"{}Regex"{}},\textcolor{stringliteral}{"{}Tiene\ numeros"{}});}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Contrasenya.getText().toString().matches(regexTieneMasDe8Caracteres))\{}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Log.d(\textcolor{stringliteral}{"{}Regex"{}},\textcolor{stringliteral}{"{}Tiene\ mas\ de\ 8\ caracteres"{}});}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Contrasenya.getText().toString().matches(regexTieneSimbologia))\{}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Log.d(\textcolor{stringliteral}{"{}Regex"{}},\textcolor{stringliteral}{"{}Tiene\ simbologia"{}});}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ afterTextChanged(Editable\ s)\ \{}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_activity_8java_source_l00119}00119\ \}}
+
+\end{DoxyCode}

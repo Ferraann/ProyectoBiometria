@@ -1,0 +1,57 @@
+\doxysection{OAuth\+Token\+Provider Interface Reference}
+\hypertarget{interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider}{}\label{interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider}\index{OAuthTokenProvider@{OAuthTokenProvider}}
+Inheritance diagram for OAuth\+Token\+Provider\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider_abf4e9198e70e0adf39a7a9a8bcdafa94}{get\+Oauth64}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+OAuth\+Token\+Provider -\/ OAuth2 token provider interface. Provides base64 encoded OAuth2 auth strings for SMTP authentication.
+
+\begin{DoxySeeAlso}{See also}
+OAuth 
+
+SMTP\+::authenticate()
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Peter Scopes (pdscopes) 
+
+Marcus Bointon (Synchro/coolbru) \href{mailto:phpmailer@synchromedia.co.uk}{\texttt{phpmailer@synchromedia.\+co.\+uk}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_o_auth_token_provider_8php_source_l00034}{34}} of file \mbox{\hyperlink{_o_auth_token_provider_8php_source}{OAuth\+Token\+Provider.\+php}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider_abf4e9198e70e0adf39a7a9a8bcdafa94}\index{OAuthTokenProvider@{OAuthTokenProvider}!getOauth64@{getOauth64}}
+\index{getOauth64@{getOauth64}!OAuthTokenProvider@{OAuthTokenProvider}}
+\doxysubsubsection{\texorpdfstring{getOauth64()}{getOauth64()}}
+{\footnotesize\ttfamily \label{interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider_abf4e9198e70e0adf39a7a9a8bcdafa94} 
+get\+Oauth64 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Generate a base64-\/encoded OAuth token ensuring that the access token has not expired. The string to be base 64 encoded should be in the form\+: "{}user=$<$user\+\_\+email\+\_\+address$>$\textbackslash{}001auth=\+Bearer $<$access\+\_\+token$>$\textbackslash{}001\textbackslash{}001"{}
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_abf4e9198e70e0adf39a7a9a8bcdafa94}{OAuth}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/\+PHPMailer-\/7.\+0.\+0/src/OAuth\+Token\+Provider.\+php\end{DoxyCompactItemize}

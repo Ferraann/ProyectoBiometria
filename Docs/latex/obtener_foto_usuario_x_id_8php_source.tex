@@ -1,0 +1,29 @@
+\doxysection{obtener\+Foto\+Usuario\+XId.\+php}
+\hypertarget{obtener_foto_usuario_x_id_8php_source}{}\label{obtener_foto_usuario_x_id_8php_source}\index{src/api/logicaNegocio/obtenerFotoUsuarioXId.php@{src/api/logicaNegocio/obtenerFotoUsuarioXId.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00003}00003\ \textcolor{comment}{//\ Fichero:\ obtenerFotosIncidencias.php}}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00004}00004\ \textcolor{comment}{//\ Autor:\ Manuel}}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00005}00005\ \textcolor{comment}{//\ Fecha:\ 7/12/2025}}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00006}00006\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00007}00007\ \textcolor{comment}{//\ Descripción:}}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00008}00008\ \textcolor{comment}{//\ \ Función\ para\ obtener\ la\ foto\ asociadas\ a\ un\ usuario.}}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00009}00009\ \textcolor{comment}{//\ \ Devuelve\ la\ foto\ en\ formato\ base64\ codificado.}}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00010}00010\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00012}00012\ \textcolor{keyword}{function}\ obtenerFotoPerfil(\$conn,\ \$usuario\_id)\ \{}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00013}00013\ \ \ \ \ \$sql\ =\ \textcolor{stringliteral}{"{}SELECT\ foto\ FROM\ fotos\_perfil\_usuario\ WHERE\ usuario\_id\ =\ ?"{}};}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00014}00014\ \ \ \ \ \$stmt\ =\ \$conn-\/>prepare(\$sql);}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00015}00015\ \ \ \ \ \$stmt-\/>bind\_param(\textcolor{stringliteral}{"{}i"{}},\ \$usuario\_id);}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00016}00016\ \ \ \ \ \$stmt-\/>execute();}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00017}00017\ \ \ \ \ \$res\ =\ \$stmt-\/>get\_result();}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00018}00018\ \ \ \ \ \$fotos\ =\ [];}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{while}\ (\$row\ =\ \$res-\/>fetch\_assoc())\ \{}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00020}00020\ \ \ \ \ \ \ \ \ \$fotos[]\ =\ [\textcolor{stringliteral}{"{}foto"{}}\ =>\ base64\_encode(\$row[\textcolor{stringliteral}{'foto'}])];}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}ok"{}},\ \textcolor{stringliteral}{"{}fotos"{}}\ =>\ \$fotos];}
+\DoxyCodeLine{\Hypertarget{obtener_foto_usuario_x_id_8php_source_l00023}00023\ \}}
+
+\end{DoxyCode}

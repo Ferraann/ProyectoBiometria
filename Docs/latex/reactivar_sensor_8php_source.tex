@@ -1,0 +1,32 @@
+\doxysection{reactivar\+Sensor.\+php}
+\hypertarget{reactivar_sensor_8php_source}{}\label{reactivar_sensor_8php_source}\index{src/api/logicaNegocio/reactivarSensor.php@{src/api/logicaNegocio/reactivarSensor.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00002}00002\ \textcolor{keyword}{function}\ reactivarSensor(\$conn,\ \$data)}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00003}00003\ \{}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00004}00004\ \ \ \ \ \textcolor{keywordflow}{if}\ (!isset(\$data[\textcolor{stringliteral}{'sensor\_id'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00005}00005\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Falta\ el\ parámetro\ sensor\_id."{}}];}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00006}00006\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00008}00008\ \ \ \ \ \$sensor\_id\ =\ \$data[\textcolor{stringliteral}{'sensor\_id'}];}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00010}00010\ \ \ \ \ \$sql\ =\ \textcolor{stringliteral}{"{}UPDATE\ sensor\ SET\ problema\ =\ 0\ WHERE\ id\ =\ ?"{}};}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00011}00011\ \ \ \ \ \$stmt\ =\ \$conn-\/>prepare(\$sql);}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\$stmt)\ \{}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Error\ en\ la\ preparación\ de\ la\ consulta:\ "{}}\ .\ \$conn-\/>error];}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00017}00017\ \ \ \ \ \$stmt-\/>bind\_param(\textcolor{stringliteral}{"{}i"{}},\ \$sensor\_id);}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (\$stmt-\/>execute())\ \{}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00020}00020\ \ \ \ \ \ \ \ \ \$stmt-\/>close();\ \textcolor{comment}{//\ Cerrar\ la\ declaración}}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}ok"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Sensor\ reactivado\ correctamente."{}}];}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00022}00022\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Error\ al\ reactivar\ sensor:\ "{}}\ .\ \$conn-\/>error];}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{reactivar_sensor_8php_source_l00026}00026\ ?>}
+
+\end{DoxyCode}

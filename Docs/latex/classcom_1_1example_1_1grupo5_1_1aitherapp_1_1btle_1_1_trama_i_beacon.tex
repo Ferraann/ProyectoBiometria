@@ -1,0 +1,271 @@
+\doxysection{Trama\+IBeacon Class Reference}
+\hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon}{}\label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon}\index{TramaIBeacon@{TramaIBeacon}}
+
+
+Clase que representa y descompone una trama i\+Beacon a partir de un array de bytes.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a36240776316e5e68a2f07c99550aa21b}{get\+Prefijo}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el prefijo del paquete i\+Beacon. \end{DoxyCompactList}\item 
+byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a8cf1bbab8911d1e9a75749cab5ef0ab6}{get\+UUID}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el UUID del beacon. \end{DoxyCompactList}\item 
+byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ab30da4812e766395dbb8d8165fd6ae3c}{get\+Major}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el valor Major. \end{DoxyCompactList}\item 
+byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a521dc6ade096dad454a8f17fa8a54e50}{get\+Minor}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el valor Minor. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_aa03c2787773cd19f3c86c3bf383745a6}{get\+Tx\+Power}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve la potencia TX del beacon. \end{DoxyCompactList}\item 
+byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ab9f907590373f6d3e94b67fd442309a1}{get\+Los\+Bytes}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la trama completa recibida. \end{DoxyCompactList}\item 
+byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_abd74345656deef7568b89ed209338b8c}{get\+Adv\+Flags}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene los flags de advertising. \end{DoxyCompactList}\item 
+byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a16941b85433442efefcef71843c02d73}{get\+Adv\+Header}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la cabecera de advertising. \end{DoxyCompactList}\item 
+byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_aba2115c01d1166048a96e99f8a868367}{get\+Company\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el identificador de la compañía (Apple\+: 0x004C). \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ae3cd86e76b29ecca490bb6b96a730e33}{geti\+Beacon\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el tipo de i\+Beacon. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ab6949c43fcd7fd762cd662bd655800b7}{geti\+Beacon\+Length}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve la longitud de la estructura i\+Beacon. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a4c7c571f9c63215f3845ab24db4eda08}{Trama\+IBeacon}} (byte\mbox{[}$\,$\mbox{]} bytes)
+\begin{DoxyCompactList}\small\item\em Constructor que interpreta una trama i\+Beacon y separa sus campos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que representa y descompone una trama i\+Beacon a partir de un array de bytes. 
+
+Permite obtener el prefijo, UUID, major, minor, Tx\+Power y demás campos de la trama publicitaria recibida por BLE.
+
+\begin{DoxyAuthor}{Author}
+Jordi Bataller 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_trama_i_beacon_8java_source_l00012}{12}} of file \mbox{\hyperlink{_trama_i_beacon_8java_source}{Trama\+IBeacon.\+java}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a4c7c571f9c63215f3845ab24db4eda08}\index{TramaIBeacon@{TramaIBeacon}!TramaIBeacon@{TramaIBeacon}}
+\index{TramaIBeacon@{TramaIBeacon}!TramaIBeacon@{TramaIBeacon}}
+\doxysubsubsection{\texorpdfstring{TramaIBeacon()}{TramaIBeacon()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a4c7c571f9c63215f3845ab24db4eda08} 
+Trama\+IBeacon (\begin{DoxyParamCaption}\item[{byte\mbox{[}$\,$\mbox{]}}]{bytes}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor que interpreta una trama i\+Beacon y separa sus campos. 
+
+Extrae automáticamente el prefijo, UUID, major, minor, Tx\+Power y otros parámetros necesarios para identificar correctamente un i\+Beacon.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bytes} & Array completo de la trama BLE recibida (mínimo 30 bytes). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_trama_i_beacon_8java_source_l00124}{124}} of file \mbox{\hyperlink{_trama_i_beacon_8java_source}{Trama\+IBeacon.\+java}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_abd74345656deef7568b89ed209338b8c}\index{TramaIBeacon@{TramaIBeacon}!getAdvFlags@{getAdvFlags}}
+\index{getAdvFlags@{getAdvFlags}!TramaIBeacon@{TramaIBeacon}}
+\doxysubsubsection{\texorpdfstring{getAdvFlags()}{getAdvFlags()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_abd74345656deef7568b89ed209338b8c} 
+byte\mbox{[}$\,$\mbox{]} get\+Adv\+Flags (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene los flags de advertising. 
+
+\begin{DoxyReturn}{Returns}
+Array de 3 bytes con los flags. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_trama_i_beacon_8java_source_l00080}{80}} of file \mbox{\hyperlink{_trama_i_beacon_8java_source}{Trama\+IBeacon.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a16941b85433442efefcef71843c02d73}\index{TramaIBeacon@{TramaIBeacon}!getAdvHeader@{getAdvHeader}}
+\index{getAdvHeader@{getAdvHeader}!TramaIBeacon@{TramaIBeacon}}
+\doxysubsubsection{\texorpdfstring{getAdvHeader()}{getAdvHeader()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a16941b85433442efefcef71843c02d73} 
+byte\mbox{[}$\,$\mbox{]} get\+Adv\+Header (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene la cabecera de advertising. 
+
+\begin{DoxyReturn}{Returns}
+Array de 2 bytes con la cabecera. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_trama_i_beacon_8java_source_l00088}{88}} of file \mbox{\hyperlink{_trama_i_beacon_8java_source}{Trama\+IBeacon.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_aba2115c01d1166048a96e99f8a868367}\index{TramaIBeacon@{TramaIBeacon}!getCompanyID@{getCompanyID}}
+\index{getCompanyID@{getCompanyID}!TramaIBeacon@{TramaIBeacon}}
+\doxysubsubsection{\texorpdfstring{getCompanyID()}{getCompanyID()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_aba2115c01d1166048a96e99f8a868367} 
+byte\mbox{[}$\,$\mbox{]} get\+Company\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene el identificador de la compañía (Apple\+: 0x004C). 
+
+\begin{DoxyReturn}{Returns}
+Array de 2 bytes con el Company ID. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_trama_i_beacon_8java_source_l00096}{96}} of file \mbox{\hyperlink{_trama_i_beacon_8java_source}{Trama\+IBeacon.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ab6949c43fcd7fd762cd662bd655800b7}\index{TramaIBeacon@{TramaIBeacon}!getiBeaconLength@{getiBeaconLength}}
+\index{getiBeaconLength@{getiBeaconLength}!TramaIBeacon@{TramaIBeacon}}
+\doxysubsubsection{\texorpdfstring{getiBeaconLength()}{getiBeaconLength()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ab6949c43fcd7fd762cd662bd655800b7} 
+byte geti\+Beacon\+Length (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve la longitud de la estructura i\+Beacon. 
+
+\begin{DoxyReturn}{Returns}
+Byte con la longitud. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_trama_i_beacon_8java_source_l00112}{112}} of file \mbox{\hyperlink{_trama_i_beacon_8java_source}{Trama\+IBeacon.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ae3cd86e76b29ecca490bb6b96a730e33}\index{TramaIBeacon@{TramaIBeacon}!getiBeaconType@{getiBeaconType}}
+\index{getiBeaconType@{getiBeaconType}!TramaIBeacon@{TramaIBeacon}}
+\doxysubsubsection{\texorpdfstring{getiBeaconType()}{getiBeaconType()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ae3cd86e76b29ecca490bb6b96a730e33} 
+byte geti\+Beacon\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el tipo de i\+Beacon. 
+
+\begin{DoxyReturn}{Returns}
+Byte que indica el tipo de frame. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_trama_i_beacon_8java_source_l00104}{104}} of file \mbox{\hyperlink{_trama_i_beacon_8java_source}{Trama\+IBeacon.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ab9f907590373f6d3e94b67fd442309a1}\index{TramaIBeacon@{TramaIBeacon}!getLosBytes@{getLosBytes}}
+\index{getLosBytes@{getLosBytes}!TramaIBeacon@{TramaIBeacon}}
+\doxysubsubsection{\texorpdfstring{getLosBytes()}{getLosBytes()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ab9f907590373f6d3e94b67fd442309a1} 
+byte\mbox{[}$\,$\mbox{]} get\+Los\+Bytes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene la trama completa recibida. 
+
+\begin{DoxyReturn}{Returns}
+Array con todos los bytes de la trama. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_trama_i_beacon_8java_source_l00072}{72}} of file \mbox{\hyperlink{_trama_i_beacon_8java_source}{Trama\+IBeacon.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ab30da4812e766395dbb8d8165fd6ae3c}\index{TramaIBeacon@{TramaIBeacon}!getMajor@{getMajor}}
+\index{getMajor@{getMajor}!TramaIBeacon@{TramaIBeacon}}
+\doxysubsubsection{\texorpdfstring{getMajor()}{getMajor()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ab30da4812e766395dbb8d8165fd6ae3c} 
+byte\mbox{[}$\,$\mbox{]} get\+Major (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene el valor Major. 
+
+\begin{DoxyReturn}{Returns}
+Array de 2 bytes del Major. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_trama_i_beacon_8java_source_l00048}{48}} of file \mbox{\hyperlink{_trama_i_beacon_8java_source}{Trama\+IBeacon.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a521dc6ade096dad454a8f17fa8a54e50}\index{TramaIBeacon@{TramaIBeacon}!getMinor@{getMinor}}
+\index{getMinor@{getMinor}!TramaIBeacon@{TramaIBeacon}}
+\doxysubsubsection{\texorpdfstring{getMinor()}{getMinor()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a521dc6ade096dad454a8f17fa8a54e50} 
+byte\mbox{[}$\,$\mbox{]} get\+Minor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene el valor Minor. 
+
+\begin{DoxyReturn}{Returns}
+Array de 2 bytes del Minor. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_trama_i_beacon_8java_source_l00056}{56}} of file \mbox{\hyperlink{_trama_i_beacon_8java_source}{Trama\+IBeacon.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a36240776316e5e68a2f07c99550aa21b}\index{TramaIBeacon@{TramaIBeacon}!getPrefijo@{getPrefijo}}
+\index{getPrefijo@{getPrefijo}!TramaIBeacon@{TramaIBeacon}}
+\doxysubsubsection{\texorpdfstring{getPrefijo()}{getPrefijo()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a36240776316e5e68a2f07c99550aa21b} 
+byte\mbox{[}$\,$\mbox{]} get\+Prefijo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene el prefijo del paquete i\+Beacon. 
+
+\begin{DoxyReturn}{Returns}
+Array de 9 bytes correspondientes al prefijo. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_trama_i_beacon_8java_source_l00032}{32}} of file \mbox{\hyperlink{_trama_i_beacon_8java_source}{Trama\+IBeacon.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_aa03c2787773cd19f3c86c3bf383745a6}\index{TramaIBeacon@{TramaIBeacon}!getTxPower@{getTxPower}}
+\index{getTxPower@{getTxPower}!TramaIBeacon@{TramaIBeacon}}
+\doxysubsubsection{\texorpdfstring{getTxPower()}{getTxPower()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_aa03c2787773cd19f3c86c3bf383745a6} 
+byte get\+Tx\+Power (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve la potencia TX del beacon. 
+
+\begin{DoxyReturn}{Returns}
+Byte que representa el Tx\+Power. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_trama_i_beacon_8java_source_l00064}{64}} of file \mbox{\hyperlink{_trama_i_beacon_8java_source}{Trama\+IBeacon.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a8cf1bbab8911d1e9a75749cab5ef0ab6}\index{TramaIBeacon@{TramaIBeacon}!getUUID@{getUUID}}
+\index{getUUID@{getUUID}!TramaIBeacon@{TramaIBeacon}}
+\doxysubsubsection{\texorpdfstring{getUUID()}{getUUID()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a8cf1bbab8911d1e9a75749cab5ef0ab6} 
+byte\mbox{[}$\,$\mbox{]} get\+UUID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene el UUID del beacon. 
+
+\begin{DoxyReturn}{Returns}
+Array de 16 bytes correspondientes al UUID. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_trama_i_beacon_8java_source_l00040}{40}} of file \mbox{\hyperlink{_trama_i_beacon_8java_source}{Trama\+IBeacon.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Trama\+IBeacon.\+java\end{DoxyCompactItemize}

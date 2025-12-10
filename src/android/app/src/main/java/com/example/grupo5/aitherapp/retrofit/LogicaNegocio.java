@@ -10,6 +10,9 @@ import com.example.grupo5.aitherapp.activitysApp.HomeActivity;
 import com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor;
 import com.example.grupo5.aitherapp.pojos.PojoSensor;
 import com.example.grupo5.aitherapp.pojos.PojoUsuario;
+import com.google.android.gms.common.api.Api;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -208,7 +211,56 @@ public class LogicaNegocio {
         });
     }
 
+    /**
+     *
+     */
+    // En LogicaNegocio.java
 
+    public static void getListaSensores(PojoUsuario usuario, Context contexto){
+        ApiService api = ApiCliente.getApiService();
+
+        // La llamada sigue igual, pero ahora ApiService enviará "usuario_id" en la URL
+        Call<PojoRespuestaServidor> call = api.obtenerSensoresUsuario(usuario.getAction(), usuario.getId());
+
+        call.enqueue(new Callback<PojoRespuestaServidor>() {
+            @Override
+            public void onResponse(Call<PojoRespuestaServidor> call, Response<PojoRespuestaServidor> response) {
+                // Validación robusta
+                if(!response.isSuccessful() || response.body() == null){
+                    Log.e("API_ERROR", "Error: " + response.code());
+                    Toast.makeText(contexto, "Error al obtener datos del servidor", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                PojoRespuestaServidor respuesta = response.body();
+
+                // Verificar si el status es "ok" antes de intentar leer la lista
+                if("ok".equalsIgnoreCase(respuesta.getStatus())){
+                    List<PojoSensor> lista = respuesta.getListaSensores();
+
+                    if(lista != null && !lista.isEmpty()){
+                        Log.d("API_EXITO", "Sensores encontrados: " + lista.size());
+
+                        // AQUÍ DEBERÍAS HACER ALGO CON LA LISTA
+                        // Por ejemplo: enviarla a un RecyclerView o actualizar la UI
+                        // Toast.makeText(contexto, "Sensores: " + lista.size(), Toast.LENGTH_LONG).show();
+                    } else {
+                        Log.d("API_INFO", "El usuario no tiene sensores.");
+                        Toast.makeText(contexto, "No tienes sensores vinculados", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Log.e("API_FAIL", "Status error: " + respuesta.getMensaje());
+                    Toast.makeText(contexto, respuesta.getMensaje(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PojoRespuestaServidor> call, Throwable t) {
+                Log.e("API_CRASH", "Fallo de red: " + t.getMessage());
+                Toast.makeText(contexto, "Error de conexión", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }
 //---------------------------------------------------------------
 //---------------------------------------------------------------

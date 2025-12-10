@@ -64,6 +64,11 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, NotificacionesActivity.class);
         startActivity(intent);
     }
+
+    public void botonIrSensores(View v) {
+        Intent intent = new Intent(this, SensoresActivity.class);
+        startActivity(intent);
+    }
 //
 //    private void showFingerprintReminder() {
 //        SharedPreferences sharedPref = getSharedPreferences("USER_PREFS", MODE_PRIVATE);

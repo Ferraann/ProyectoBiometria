@@ -1,0 +1,198 @@
+\doxysection{OAuth Class Reference}
+\hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth}{}\label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth}\index{OAuth@{OAuth}}
+Inheritance diagram for OAuth\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_ae8b8e1144b807ac13f20a916fd073b32}{\+\_\+\+\_\+construct}} (\$options)
+\item 
+\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_abf4e9198e70e0adf39a7a9a8bcdafa94}{get\+Oauth64}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a8fe9a4826bf27c54d6775782912e9d03}{get\+Grant}} ()
+\item 
+\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a211a2979c22afcd7d9056a2bb55aa449}{get\+Token}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a934c4a71069a9e3bf15bcb8206884031}{\$provider}}
+\item 
+\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a4384216d22db3a9652486d6883d2a9c0}{\$oauth\+Token}}
+\item 
+\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a3359ff56ce05eb78c59e8355ac364b3c}{\$oauth\+User\+Email}} = \textquotesingle{}\textquotesingle{}
+\item 
+\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a4308b5fcbfbf6506bc9d4037ef209fe3}{\$oauth\+Client\+Secret}} = \textquotesingle{}\textquotesingle{}
+\item 
+\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_aa1a35bb757295be723ce1b8abef0a6e1}{\$oauth\+Client\+Id}} = \textquotesingle{}\textquotesingle{}
+\item 
+\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_af5bf1523fe6ca4a42d2aa59a253182f2}{\$oauth\+Refresh\+Token}} = \textquotesingle{}\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+OAuth -\/ OAuth2 authentication wrapper class. Uses the oauth2-\/client package from the League of Extraordinary Packages.
+
+\begin{DoxySeeAlso}{See also}
+\href{https://oauth2-client.thephpleague.com}{\texttt{https\+://oauth2-\/client.\+thephpleague.\+com}}
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Marcus Bointon (Synchro/coolbru) \href{mailto:phpmailer@synchromedia.co.uk}{\texttt{phpmailer@synchromedia.\+co.\+uk}} 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_o_auth_8php_source_l00036}{36}} of file \mbox{\hyperlink{_o_auth_8php_source}{OAuth.\+php}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_ae8b8e1144b807ac13f20a916fd073b32}\index{OAuth@{OAuth}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!OAuth@{OAuth}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_ae8b8e1144b807ac13f20a916fd073b32} 
+\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$options}{}\end{DoxyParamCaption})}
+
+OAuth constructor.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$options} & Associative array containing {\ttfamily provider}, {\ttfamily user\+Name}, {\ttfamily client\+Secret}, {\ttfamily client\+Id} and {\ttfamily refresh\+Token} elements \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_o_auth_8php_source_l00087}{87}} of file \mbox{\hyperlink{_o_auth_8php_source}{OAuth.\+php}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a8fe9a4826bf27c54d6775782912e9d03}\index{OAuth@{OAuth}!getGrant@{getGrant}}
+\index{getGrant@{getGrant}!OAuth@{OAuth}}
+\doxysubsubsection{\texorpdfstring{getGrant()}{getGrant()}}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a8fe9a4826bf27c54d6775782912e9d03} 
+get\+Grant (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Get a new Refresh\+Token.
+
+\begin{DoxyReturn}{Returns}
+Refresh\+Token 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_o_auth_8php_source_l00101}{101}} of file \mbox{\hyperlink{_o_auth_8php_source}{OAuth.\+php}}.
+
+\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_abf4e9198e70e0adf39a7a9a8bcdafa94}\index{OAuth@{OAuth}!getOauth64@{getOauth64}}
+\index{getOauth64@{getOauth64}!OAuth@{OAuth}}
+\doxysubsubsection{\texorpdfstring{getOauth64()}{getOauth64()}}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_abf4e9198e70e0adf39a7a9a8bcdafa94} 
+get\+Oauth64 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Generate a base64-\/encoded OAuth token.
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider_abf4e9198e70e0adf39a7a9a8bcdafa94}{OAuth\+Token\+Provider}}.
+
+
+
+Definition at line \mbox{\hyperlink{_o_auth_8php_source_l00124}{124}} of file \mbox{\hyperlink{_o_auth_8php_source}{OAuth.\+php}}.
+
+\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a211a2979c22afcd7d9056a2bb55aa449}\index{OAuth@{OAuth}!getToken@{getToken}}
+\index{getToken@{getToken}!OAuth@{OAuth}}
+\doxysubsubsection{\texorpdfstring{getToken()}{getToken()}}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a211a2979c22afcd7d9056a2bb55aa449} 
+get\+Token (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Get a new Access\+Token.
+
+\begin{DoxyReturn}{Returns}
+Access\+Token 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_o_auth_8php_source_l00111}{111}} of file \mbox{\hyperlink{_o_auth_8php_source}{OAuth.\+php}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_doc-variable-members}
+\doxysubsection{Field Documentation}
+\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_aa1a35bb757295be723ce1b8abef0a6e1}\index{OAuth@{OAuth}!\$oauthClientId@{\$oauthClientId}}
+\index{\$oauthClientId@{\$oauthClientId}!OAuth@{OAuth}}
+\doxysubsubsection{\texorpdfstring{\$oauthClientId}{\$oauthClientId}}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_aa1a35bb757295be723ce1b8abef0a6e1} 
+\$oauth\+Client\+Id = \textquotesingle{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_o_auth_8php_source_l00072}{72}} of file \mbox{\hyperlink{_o_auth_8php_source}{OAuth.\+php}}.
+
+\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a4308b5fcbfbf6506bc9d4037ef209fe3}\index{OAuth@{OAuth}!\$oauthClientSecret@{\$oauthClientSecret}}
+\index{\$oauthClientSecret@{\$oauthClientSecret}!OAuth@{OAuth}}
+\doxysubsubsection{\texorpdfstring{\$oauthClientSecret}{\$oauthClientSecret}}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a4308b5fcbfbf6506bc9d4037ef209fe3} 
+\$oauth\+Client\+Secret = \textquotesingle{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_o_auth_8php_source_l00065}{65}} of file \mbox{\hyperlink{_o_auth_8php_source}{OAuth.\+php}}.
+
+\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_af5bf1523fe6ca4a42d2aa59a253182f2}\index{OAuth@{OAuth}!\$oauthRefreshToken@{\$oauthRefreshToken}}
+\index{\$oauthRefreshToken@{\$oauthRefreshToken}!OAuth@{OAuth}}
+\doxysubsubsection{\texorpdfstring{\$oauthRefreshToken}{\$oauthRefreshToken}}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_af5bf1523fe6ca4a42d2aa59a253182f2} 
+\$oauth\+Refresh\+Token = \textquotesingle{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_o_auth_8php_source_l00079}{79}} of file \mbox{\hyperlink{_o_auth_8php_source}{OAuth.\+php}}.
+
+\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a4384216d22db3a9652486d6883d2a9c0}\index{OAuth@{OAuth}!\$oauthToken@{\$oauthToken}}
+\index{\$oauthToken@{\$oauthToken}!OAuth@{OAuth}}
+\doxysubsubsection{\texorpdfstring{\$oauthToken}{\$oauthToken}}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a4384216d22db3a9652486d6883d2a9c0} 
+\$oauth\+Token\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_o_auth_8php_source_l00050}{50}} of file \mbox{\hyperlink{_o_auth_8php_source}{OAuth.\+php}}.
+
+\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a3359ff56ce05eb78c59e8355ac364b3c}\index{OAuth@{OAuth}!\$oauthUserEmail@{\$oauthUserEmail}}
+\index{\$oauthUserEmail@{\$oauthUserEmail}!OAuth@{OAuth}}
+\doxysubsubsection{\texorpdfstring{\$oauthUserEmail}{\$oauthUserEmail}}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a3359ff56ce05eb78c59e8355ac364b3c} 
+\$oauth\+User\+Email = \textquotesingle{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_o_auth_8php_source_l00058}{58}} of file \mbox{\hyperlink{_o_auth_8php_source}{OAuth.\+php}}.
+
+\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a934c4a71069a9e3bf15bcb8206884031}\index{OAuth@{OAuth}!\$provider@{\$provider}}
+\index{\$provider@{\$provider}!OAuth@{OAuth}}
+\doxysubsubsection{\texorpdfstring{\$provider}{\$provider}}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a934c4a71069a9e3bf15bcb8206884031} 
+\$provider\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_o_auth_8php_source_l00043}{43}} of file \mbox{\hyperlink{_o_auth_8php_source}{OAuth.\+php}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/\+PHPMailer-\/7.\+0.\+0/src/OAuth.\+php\end{DoxyCompactItemize}

@@ -1,0 +1,37 @@
+\doxysection{obtener\+Medicion.\+php}
+\hypertarget{obtener_medicion_8php_source}{}\label{obtener_medicion_8php_source}\index{src/api/logicaNegocio/obtenerMedicion.php@{src/api/logicaNegocio/obtenerMedicion.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00003}00003\ \textcolor{comment}{//\ Fichero:\ obtenerMedicion.php}}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00004}00004\ \textcolor{comment}{//\ Autor:\ Manuel}}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00005}00005\ \textcolor{comment}{//\ Fecha:\ 5/12/2025}}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00006}00006\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00007}00007\ \textcolor{comment}{//\ Descripción:}}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00008}00008\ \textcolor{comment}{//\ \ Este\ archivo\ se\ encarga\ de\ obtener\ las\ mediciones\ desde\ la\ base\ de\ datos}}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00009}00009\ \textcolor{comment}{//\ \ y\ devolverlas\ en\ formato\ JSON\ para\ su\ uso\ en\ la\ API.}}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00010}00010\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00012}00012\ \textcolor{keyword}{function}\ obtenerMediciones(\$conn)}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00014}00014\ \ \ \ \ \$sql\ =\ \textcolor{stringliteral}{"{}SELECT\ m.id,\ tm.medida,\ tm.unidad,\ m.valor,\ m.hora,\ m.localizacion,\ s.mac}}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00015}00015\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ FROM\ medicion\ m}}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00016}00016\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ INNER\ JOIN\ tipo\_medicion\ tm\ ON\ m.tipo\_medicion\_id\ =\ tm.id}}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00017}00017\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ INNER\ JOIN\ sensor\ s\ ON\ m.sensor\_id\ =\ s.id}}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00018}00018\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ ORDER\ BY\ m.hora\ DESC"{}};}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00020}00020\ \ \ \ \ \$result\ =\ \$conn-\/>query(\$sql);}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00021}00021\ \ \ \ \ \$datos\ =\ [];}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (\$result\ \&\&\ \$result-\/>num\_rows\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\$row\ =\ \$result-\/>fetch\_assoc())\ \{}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \$datos[]\ =\ \$row;}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00026}00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{return}\ \$datos;}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{obtener_medicion_8php_source_l00031}00031\ ?>}
+
+\end{DoxyCode}
