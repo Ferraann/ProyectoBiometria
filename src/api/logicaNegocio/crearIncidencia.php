@@ -1,16 +1,4 @@
 <?php
-// ------------------------------------------------------------------
-// Fichero: crearIncidencia.php
-// Autor: Manuel
-// Fecha: 5/12/2025
-// ------------------------------------------------------------------
-// Descripción:
-//  Función para crear una nueva incidencia en el sistema.
-//  Valida los parámetros, obtiene el estado inicial "Abierta" 
-//  de forma dinámica e inserta el registro en la base de datos,
-//  incluyendo opcionalmente el sensor al que pertenece.
-// ------------------------------------------------------------------
-
 function crearIncidencia($conn, $data)
 {
     // Validar parámetros obligatorios
@@ -18,9 +6,9 @@ function crearIncidencia($conn, $data)
         return ["status" => "error", "mensaje" => "Faltan parámetros."];
     }
 
-    // Validar/normalizar sensor_id (si no se envía, quedará en NULL)
+    // Normalizar sensor_id: si no se envía, será NULL
     $sensor_id = isset($data['sensor_id']) && $data['sensor_id'] !== "" 
-                 ? $data['sensor_id'] 
+                 ? (int)$data['sensor_id'] 
                  : null;
 
     // Obtener dinámicamente el estado "Abierta"
@@ -29,20 +17,33 @@ function crearIncidencia($conn, $data)
     $estadoRow = $resEstado ? $resEstado->fetch_assoc() : null;
     $estadoInicial = $estadoRow ? $estadoRow['id'] : 1;
 
-    // Insertar la incidencia (con o sin sensor_id)
-    $sql = "INSERT INTO incidencias (id_user, titulo, descripcion, estado_id, sensor_id) 
-            VALUES (?, ?, ?, ?, ?)";
-
-    $stmt = $conn->prepare($sql);
-
-    // Tipos: i = int, s = string, i = int (NULL se admite como NULL)
-    $stmt->bind_param("issii", 
-        $data['id_user'], 
-        $data['titulo'], 
-        $data['descripcion'], 
-        $estadoInicial, 
-        $sensor_id
-    );
+    // Insertar la incidencia
+    if ($sensor_id !== null) {
+        // Si hay sensor, usamos bind_param normal
+        $sql = "INSERT INTO incidencias (id_user, titulo, descripcion, estado_id, sensor_id) 
+                VALUES (?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param(
+            "issii",
+            $data['id_user'],
+            $data['titulo'],
+            $data['descripcion'],
+            $estadoInicial,
+            $sensor_id
+        );
+    } else {
+        // Si no hay sensor, ponemos NULL directamente en SQL
+        $sql = "INSERT INTO incidencias (id_user, titulo, descripcion, estado_id, sensor_id) 
+                VALUES (?, ?, ?, ?, NULL)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param(
+            "issi",
+            $data['id_user'],
+            $data['titulo'],
+            $data['descripcion'],
+            $estadoInicial
+        );
+    }
 
     if ($stmt->execute()) {
         return [
