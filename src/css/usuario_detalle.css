@@ -1,0 +1,24 @@
+/* usuario_detalle.css */
+body{font-family:'Montserrat',sans-serif;background:#f5f6fa;margin:0;color:#333}
+header{background:#152D9A;color:#fff;display:flex;align-items:center;padding:.5rem 1rem}
+header img{height:40px}
+header ul{list-style:none;display:flex;gap:1rem;margin:0}
+header a{color:#fff;text-decoration:none}
+main{max-width:900px;margin:2rem auto;padding:0 1rem}
+h1{margin-bottom:1.5rem}
+.card{background:#fff;border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.user-info{display:flex;gap:1.5rem;align-items:center}
+.avatar img{width:100px;height:100px;border-radius:50%;object-fit:cover}
+.datos p{margin:.3rem 0}
+.permisos h2{margin-top:0}
+.switch-label{display:flex;align-items:center;gap:.7rem;margin:.8rem 0;cursor:pointer}
+.switch-label input{display:none}
+.slider{width:40px;height:20px;background:#ccc;border-radius:20px;position:relative}
+.slider::after{content:'';width:16px;height:16px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:.2s}
+input:checked+.slider{background:#152D9A}
+input:checked+.slider::after{left:22px}
+.btn-primary{background:#152D9A;color:#fff;border:none;padding:.6rem 1.2rem;border-radius:4px;cursor:pointer;margin-top:1rem}
+.btn-primary:hover{background:#0f1e6d}
+.sensor-list{list-style:none;padding:0;margin:0}
+.sensor-list li{padding:.4rem 0;border-bottom:1px solid #eee}
+.sensor-list li.empty{color:#777;font-style:italic}

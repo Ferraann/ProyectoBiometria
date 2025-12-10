@@ -218,12 +218,20 @@ switch ($method) {
                 $id = intval($_GET['id'] ?? 0);
                 echo json_encode(["es_admin" => esAdministrador($conn, $id)]);
                 break;
+                
             case "getEstadosIncidencia":
                 echo json_encode(obtenerEstadosIncidencia($conn));
                 break;
+
             case "getFotoPerfil":
                 echo json_encode(obtenerFotoPerfil($conn, $input['usuario_id']));
                 break;
+
+            case "getSensoresDeUsuario":
+                $id = intval($_GET['id'] ?? 0);
+                echo json_encode(obtenerSensoresDeUsuario($conn, $id));
+                break;
+
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]);
                 break;
