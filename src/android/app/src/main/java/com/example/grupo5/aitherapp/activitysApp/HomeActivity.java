@@ -25,11 +25,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        TextView bienvenida = findViewById(R.id.textoBienvenida);
-        String emailUsuario = getIntent().getStringExtra("email_usuario");
-        if (emailUsuario != null) {
-            bienvenida.setText("¡Bienvenido, " + emailUsuario + "!");
-        }
+
 
         findViewById(R.id.btnVincularQR).setOnClickListener(v ->
                 startActivity(new Intent(HomeActivity.this, VincularQRActivity.class))
