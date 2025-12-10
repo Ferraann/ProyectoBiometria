@@ -20,8 +20,8 @@ function crearIncidencia($conn, $data)
     // Insertar la incidencia
     if ($sensor_id !== null) {
         // Si hay sensor, usamos bind_param normal
-        $sql = "INSERT INTO incidencias (id_user, titulo, descripcion, estado_id, sensor_id) 
-                VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO incidencias (id_user, titulo, descripcion, estado_id, id_sensor) 
+        VALUES (?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param(
             "issii",
@@ -33,8 +33,8 @@ function crearIncidencia($conn, $data)
         );
     } else {
         // Si no hay sensor, ponemos NULL directamente en SQL
-        $sql = "INSERT INTO incidencias (id_user, titulo, descripcion, estado_id, sensor_id) 
-                VALUES (?, ?, ?, ?, NULL)";
+        $sql = "INSERT INTO incidencias (id_user, titulo, descripcion, estado_id, id_sensor) 
+        VALUES (?, ?, ?, ?, NULL)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param(
             "issi",
