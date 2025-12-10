@@ -147,6 +147,10 @@ function renderIncidencias(datos) {
   <div class="incidencia" data-id="${inc.id}">
     <!-- TÍTULO → detalle de la incidencia -->
     <h2><a href="incidencia_detalle.html?id=${inc.id}" class="titulo-incidencia">${inc.titulo}</a></h2>
+    
+    <!-- SENSOR opcional -->
+    ${inc.id_sensor ? `<p class="meta"><strong>Sensor:</strong> <a href="sensor_detalle.html?id=${inc.id_sensor}">${inc.nombre_sensor}</a> (ID ${inc.id_sensor})</p>` : ''}
+
 
     <p><strong>Descripción:</strong> ${inc.descripcion}</p>
 
