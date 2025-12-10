@@ -76,20 +76,26 @@ btnSave.addEventListener('click', async () => {
 
   if (nuevoAdmin !== esAdmin) {
     const acc = nuevoAdmin ? 'asignarAdministrador' : 'quitarAdministrador';
-    await fetch('../api/index.php', {
+    const r = await fetch('../api/index.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ accion: acc, usuario_id: idUsuario })
     });
+    const res = await r.json();
+    if (res.status !== 'ok') { alert('Error admin: ' + res.mensaje); return; }
   }
+
   if (nuevoTec !== esTec) {
     const acc = nuevoTec ? 'asignarTecnico' : 'quitarTecnico';
-    await fetch('../api/index.php', {
+    const r = await fetch('../api/index.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ accion: acc, usuario_id: idUsuario })
     });
+    const res = await r.json();
+    if (res.status !== 'ok') { alert('Error técnico: ' + res.mensaje); return; }
   }
+
   alert('Cambios guardados');
   location.reload();
 });

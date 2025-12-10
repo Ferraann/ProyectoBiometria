@@ -148,6 +148,22 @@ switch ($method) {
                 echo json_encode(guardarFotoPerfil($conn, $input));
                 break;
             
+            case "asignarTecnico":
+                echo json_encode(asignarTecnico($conn, $input['usuario_id']));
+                break;
+
+            case "quitarTecnico":
+                echo json_encode(quitarTecnico($conn, $input['usuario_id']));
+                break;
+
+            case "asignarAdministrador":
+                echo json_encode(asignarAdministrador($conn, $input['usuario_id']));
+                break;
+
+            case "quitarAdministrador":
+                echo json_encode(quitarAdministrador($conn, $input['usuario_id']));
+                break;
+                
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción POST no reconocida."]);
                 break;
@@ -218,7 +234,7 @@ switch ($method) {
                 $id = intval($_GET['id'] ?? 0);
                 echo json_encode(["es_admin" => esAdministrador($conn, $id)]);
                 break;
-                
+
             case "getEstadosIncidencia":
                 echo json_encode(obtenerEstadosIncidencia($conn));
                 break;
