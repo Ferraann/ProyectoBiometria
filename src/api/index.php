@@ -221,6 +221,11 @@ switch ($method) {
 
             case "getUsuarioXId":
                 $id = intval($_GET['id'] ?? 0);
+                if ($id === 0) {
+                    http_response_code(400);
+                    echo json_encode(["status" => "error", "mensaje" => "ID de usuario no válido"]);
+                    exit;
+                }
                 $row = obtenerUsuarioXId($conn, $id); 
                 echo json_encode($row ?: ["status" => "error", "mensaje" => "Usuario no encontrado"]);
                 break;
