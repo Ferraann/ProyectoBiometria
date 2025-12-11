@@ -163,6 +163,16 @@ switch ($method) {
             case "quitarAdministrador":
                 echo json_encode(quitarAdministrador($conn, $input['usuario_id']));
                 break;
+                
+            case "sumarPuntos": 
+                // Ejemplo de cómo llamar la función con los datos del body
+                echo json_encode(sumarPuntosUsuario($conn, $input));
+                break;
+
+            case "canjearRecompensa": 
+                // Necesitas tener la función 'canjearRecompensa' incluida
+                echo json_encode(canjearRecompensa($conn, $input));
+                break;
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción POST no reconocida."]);
                 break;

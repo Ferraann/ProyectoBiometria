@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('user-nombre').textContent = user.nombre;
             document.getElementById('user-apellidos').textContent = user.apellidos || '-';
             document.getElementById('user-gmail').textContent = user.gmail;
+            document.getElementById('user-puntos').textContent = user.puntos || 0;
 
             // Cargar foto de perfil
             const fotoPerfilElement = document.getElementById('foto-perfil');

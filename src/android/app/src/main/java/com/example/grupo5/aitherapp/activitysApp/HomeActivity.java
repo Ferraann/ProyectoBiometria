@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,7 +36,27 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // ------------------ COINS ------------------
+        // funcionamento del toolbar
+
+        ImageView btnHome = findViewById(R.id.nav_home);
+
+        if (btnHome != null) {
+            btnHome.setSelected(true);
+
+            overridePendingTransition(0, 0);
+        }
+
+        ImageView btnNotificaciones = findViewById(R.id.nav_bell);
+
+        if (btnNotificaciones != null) {
+            btnNotificaciones.setOnClickListener(v -> {
+                Intent intent = new Intent(HomeActivity.this, NotificacionesActivity.class);
+                startActivity(intent);
+
+                overridePendingTransition(0, 0);
+            });
+        }
+
         SharedPreferences prefs = getSharedPreferences("MiAppPrefs", MODE_PRIVATE);
 
         int coinsUsuario = prefs.getInt("coinsUsuario", 0);
@@ -47,12 +68,13 @@ public class HomeActivity extends AppCompatActivity {
             tvCoins.setText(String.valueOf(coinsUsuario));
         }
 
-        // ------------------ BOTONES ------------------
-        findViewById(R.id.btnVincularQR).setOnClickListener(v ->
+        // Botón Añadir Sensor (Ahora es un CardView)
+        findViewById(R.id.btnVincularQR_card).setOnClickListener(v ->
                 startActivity(new Intent(HomeActivity.this, VincularQRActivity.class))
         );
 
-        findViewById(R.id.Btncoins).setOnClickListener(v ->
+        // Botón AithWallet (Ahora es un CardView)
+        findViewById(R.id.Btncoins_card).setOnClickListener(v ->
                 startActivity(new Intent(HomeActivity.this, AithWalletActivity.class))
         );
 
