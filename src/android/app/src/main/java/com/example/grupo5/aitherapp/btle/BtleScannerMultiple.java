@@ -15,90 +15,102 @@ import android.util.Log;
 import androidx.core.app.ActivityCompat;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
+/**
+ * Escáner BLE múltiple diseñado para detectar varios sensores afiliados por MAC.
+ * Incluye:
+ *  - Distancia aproximada suavizada (EMA)
+ *  - Detección de desconexión (sin señal prolongada)
+ *  - Callbacks para Activities
+ */
 public class BtleScannerMultiple {
-    private static final String TAG = "MULTI_BLE_SCANNER";
+
+    private static final String TAG = "BtleScannerMultiple";
+
+    // Tiempo que debe pasar sin recibir señal para considerar desconexión (ej: 20s)
+    private static final long TIEMPO_DESCONEXION_MS = 20000;
 
     private final Context context;
-    private final List<String> macsABuscar;
+    private final List<String> macsObjetivo;
     private final Listener listener;
 
     private BluetoothLeScanner scanner;
     private ScanCallback callback;
 
-    /**
-     * Interfaz de comunicación con quien use este escáner.
-     * Cada vez que se detecta un sensor afiliado, se llamará a onSensorDetectado()
-     */
+    // Distancias suavizadas por sensor
+    private final HashMap<String, Double> distanciasSuavizadas = new HashMap<>();
+
+    // Timestamp de la última vez que vimos cada sensor
+    private final HashMap<String, Long> ultimoVisto = new HashMap<>();
+
+    // Estado de conexión por MAC (true = conectado / false = desconectado)
+    private final HashMap<String, Boolean> estadoConexion = new HashMap<>();
+
+
+    // =======================================================
+    //      LISTENER PARA ENVIAR DATOS A ACTIVITIES
+    // =======================================================
     public interface Listener {
-        /**
-         * @param mac       MAC del sensor detectado
-         * @param rssi      Intensidad de señal recibida
-         * @param distancia Distancia aproximada en metros
-         */
-        void onSensorDetectado(String mac, int rssi, double distancia);
+
+        /** Se llama cada vez que un sensor afiliado es detectado */
+        void onSensorDetectado(String mac, int rssi, double distanciaAprox);
+
+        /** Se llama cuando un sensor lleva un tiempo prolongado sin emitir señal */
+        void onSensorDesconectado(String mac);
     }
 
-    /**
-     * Constructor del escáner.
-     *
-     * @param context     Contexto Android (Activity o Application)
-     * @param macsABuscar Lista de direcciones MAC de sensores afiliados al usuario
-     * @param listener    Callback para recibir eventos de detección
-     */
-    public BtleScannerMultiple(Context context, List<String> macsABuscar, Listener listener) {
-        this.context = context.getApplicationContext(); // guardamos el application context
-        this.macsABuscar = macsABuscar;
+
+    // =======================================================
+    //                      CONSTRUCTOR
+    // =======================================================
+    public BtleScannerMultiple(Context context, List<String> macs, Listener listener) {
+
+        this.context = context.getApplicationContext();
+        this.macsObjetivo = macs != null ? macs : new ArrayList<>();
         this.listener = listener;
 
         BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
+
         if (adapter != null) {
             this.scanner = adapter.getBluetoothLeScanner();
-        } else {
-            Log.e(TAG, "BluetoothAdapter es null: ¿el dispositivo tiene Bluetooth?");
         }
     }
 
-    /**
-     * Inicia el escaneo BLE filtrando solo los dispositivos cuyas MAC
-     * están en la lista macsABuscar.
-     */
+
+    // =======================================================
+    //                  INICIAR ESCANEO BLE
+    // =======================================================
     public void iniciarEscaneo() {
 
         if (scanner == null) {
-            Log.e(TAG, "No se ha podido obtener el BluetoothLeScanner");
+            Log.e(TAG, "ERROR: Escáner BLE no disponible.");
             return;
         }
 
-        if (macsABuscar == null || macsABuscar.isEmpty()) {
-            Log.w(TAG, "No hay MACs configuradas para buscar");
+        if (macsObjetivo.isEmpty()) {
+            Log.w(TAG, "⚠ No hay sensores afiliados para escanear.");
             return;
         }
 
-        // 1) Creamos un filtro por cada MAC afiliada
+        // Crear ScanFilters para cada MAC
         List<ScanFilter> filtros = new ArrayList<>();
-        for (String mac : macsABuscar) {
-            if (mac == null || mac.trim().isEmpty()) continue;
 
-            ScanFilter filtro = new ScanFilter.Builder()
+        for (String mac : macsObjetivo) {
+            if (mac == null || mac.isEmpty()) continue;
+
+            filtros.add(new ScanFilter.Builder()
                     .setDeviceAddress(mac)
-                    .build();
-            filtros.add(filtro);
+                    .build());
         }
 
-        if (filtros.isEmpty()) {
-            Log.w(TAG, "No se han podido crear filtros de escaneo (MACs vacías)");
-            return;
-        }
-
-        // 2) Configuramos el escaneo: modo alta frecuencia (más rápido, más consumo)
         ScanSettings settings = new ScanSettings.Builder()
                 .setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY)
                 .build();
 
-        // 3) Definimos el callback que recibirá los resultados
         callback = new ScanCallback() {
+
             @Override
             public void onScanResult(int callbackType, ScanResult result) {
 
@@ -106,66 +118,144 @@ public class BtleScannerMultiple {
                 if (device == null) return;
 
                 String macDetectada = device.getAddress();
+
+                if (!macsObjetivo.contains(macDetectada)) return;
+
                 int rssi = result.getRssi();
-                double distancia = calcularDistancia(rssi);
 
-                Log.d(TAG, "Detectado sensor afiliado -> MAC=" + macDetectada +
-                        " RSSI=" + rssi +
-                        " distancia=" + distancia + " m");
+                // Registrar timestamp de detección
+                long ahora = System.currentTimeMillis();
+                ultimoVisto.put(macDetectada, ahora);
 
+                // Marcar como conectado
+                estadoConexion.put(macDetectada, true);
+
+                // Al volver a ver el sensor, rearmamos el notificador
+                Notificador.resetearEstado();
+
+                // Calcular distancia suavizada
+                double distancia = calcularDistanciaAprox(macDetectada, rssi);
+
+                // Enviar datos a la Activity
                 if (listener != null) {
                     listener.onSensorDetectado(macDetectada, rssi, distancia);
                 }
+
+                Log.d(TAG, "Detectado -> MAC=" + macDetectada +
+                        " RSSI=" + rssi +
+                        " Distancia=" + distancia);
             }
 
             @Override
             public void onScanFailed(int errorCode) {
-                Log.e(TAG, "Error en escaneo BLE, código=" + errorCode);
+                Log.e(TAG, "Escaneo BLE falló. Código=" + errorCode);
             }
         };
 
-        // 4) Comprobamos permisos en tiempo de ejecución
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_SCAN)
                 != PackageManager.PERMISSION_GRANTED) {
-            Log.e(TAG, "Falta permiso BLUETOOTH_SCAN en tiempo de ejecución");
+            Log.e(TAG, "Falta permiso BLUETOOTH_SCAN.");
             return;
         }
 
-        // 5) Arrancamos el escaneo con filtros y configuración
         scanner.startScan(filtros, settings, callback);
-        Log.d(TAG, "Escaneo BLE iniciado para " + filtros.size() + " sensores afiliados");
+
+        Log.i(TAG, "Escaneo BLE iniciado.");
+
+        // Iniciar supervisor de desconexión
+        iniciarSupervisorDesconexion();
     }
 
-    /**
-     * Detiene el escaneo si está en curso.
-     * Debe llamarse, por ejemplo, al cerrar sesión o al cerrar la app.
-     */
+
+    // =======================================================
+    //                  DETENER ESCANEO BLE
+    // =======================================================
     public void detenerEscaneo() {
+
         if (scanner != null && callback != null) {
 
             if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_SCAN)
                     != PackageManager.PERMISSION_GRANTED) {
-                Log.e(TAG, "Falta permiso BLUETOOTH_SCAN para detener escaneo");
                 return;
             }
 
             scanner.stopScan(callback);
-            callback = null;
-
-            Log.d(TAG, "Escaneo BLE detenido");
+            Log.i(TAG, "Escaneo BLE detenido.");
         }
+
+        callback = null;
     }
 
-    /**
-     * Convierte un valor RSSI en una distancia aproximada en metros.
-     * Es una estimación (aprox), no una medida exacta.
-     *
-     * @param rssi Intensidad de la señal (negativa, por ejemplo -60)
-     * @return distancia en metros aproximada
-     */
-    private double calcularDistancia(int rssi) {
-        int txPower = -59; // Potencia de emisión calibrada (valor típico si no se conoce)
-        // Fórmula logarítmica típica para BLE
-        return Math.pow(10d, ((double) txPower - rssi) / 20.0);
+
+    // =======================================================
+    //      DISTANCIA SUAVIZADA (EMA) — MÉTODO PROFESIONAL
+    // =======================================================
+    private double calcularDistanciaAprox(String mac, int rssi) {
+
+        final int txPower = -59;    // Valor típico si no está calibrado
+        final double n = 2.2;       // Coeficiente ambiental interior
+        final double alfa = 0.25;   // Suavizado EMA
+
+        // Distancia inmediata (RUIDOSA)
+        double distanciaInst =
+                Math.pow(10d, ((double) txPower - rssi) / (10 * n));
+
+        double anterior = distanciasSuavizadas.getOrDefault(mac, distanciaInst);
+
+        // Suavizado
+        double suavizada =
+                alfa * distanciaInst +
+                        (1 - alfa) * anterior;
+
+        // Límite a valores sensatos
+        if (suavizada < 0.3) suavizada = 0.3;
+        if (suavizada > 25)  suavizada = 25;
+
+        distanciasSuavizadas.put(mac, suavizada);
+
+        return suavizada;
     }
+
+
+    // =======================================================
+    //              SUPERVISAR SENSORES DESCONECTADOS
+    // =======================================================
+    private void iniciarSupervisorDesconexion() {
+
+        new Thread(() -> {
+
+            while (callback != null) { // Activo mientras haya escaneo
+
+                long ahora = System.currentTimeMillis();
+
+                for (String mac : macsObjetivo) {
+
+                    Long ultimo = ultimoVisto.get(mac);
+                    if (ultimo == null) continue;
+
+                    Boolean conectado = estadoConexion.get(mac);
+                    if (conectado == null) conectado = false;
+
+                    // Si estaba marcado como conectado y llevamos mucho sin verlo → desconectado
+                    if (conectado && (ahora - ultimo > TIEMPO_DESCONEXION_MS)) {
+
+                        Log.w(TAG, "Desconectado -> MAC=" + mac);
+
+                        // Cambiamos el estado a desconectado (para no repetir evento)
+                        estadoConexion.put(mac, false);
+
+                        if (listener != null) {
+                            listener.onSensorDesconectado(mac);
+                        }
+                    }
+                }
+
+                try {
+                    Thread.sleep(2000);  // Revisar cada 2s
+                } catch (InterruptedException ignored) {}
+            }
+
+        }).start();
+    }
+
 }

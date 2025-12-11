@@ -15,29 +15,39 @@ import androidx.biometric.BiometricPrompt;
 import androidx.core.content.ContextCompat;
 
 import com.example.grupo5.aitherapp.R;
+import com.example.grupo5.aitherapp.btle.BtleScannerMultiple;
+import com.example.grupo5.aitherapp.btle.Notificador;
+import com.example.grupo5.aitherapp.pojos.PojoSensor;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Executor;
 
 public class HomeActivity extends AppCompatActivity {
+
+    private BtleScannerMultiple bleScanner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        // ------------------ COINS ------------------
         SharedPreferences prefs = getSharedPreferences("MiAppPrefs", MODE_PRIVATE);
 
-        // Sumar 10 coins al iniciar la app
         int coinsUsuario = prefs.getInt("coinsUsuario", 0);
         coinsUsuario += 10;
         prefs.edit().putInt("coinsUsuario", coinsUsuario).apply();
 
-        // Mostrar en la UI si tienes TextView
         TextView tvCoins = findViewById(R.id.coinNumber);
-        if(tvCoins != null) {
+        if (tvCoins != null) {
             tvCoins.setText(String.valueOf(coinsUsuario));
         }
 
+        // ------------------ BOTONES ------------------
         findViewById(R.id.btnVincularQR).setOnClickListener(v ->
                 startActivity(new Intent(HomeActivity.this, VincularQRActivity.class))
         );
@@ -46,12 +56,78 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, AithWalletActivity.class))
         );
 
-
-
-        // Mostrar popup de huella solo si aún no se activó ni se rechazó
+        // Popup huella (solo si procede)
         mostrarPopupHuella();
+
+        // Primer arranque de escaneo BLE silencioso
+        configurarEscaneoBleSilencioso();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Al volver a Home (por ejemplo tras escanear un QR), recargamos sensores y escaneo
+        configurarEscaneoBleSilencioso();
+    }
+
+    // -------------------------------------------------------------
+    // Configura e inicia el escaneo BLE silencioso según sensores afiliados
+    // -------------------------------------------------------------
+    private void configurarEscaneoBleSilencioso() {
+
+        // Si ya había un escáner activo, lo detenemos antes de reconfigurar
+        if (bleScanner != null) {
+            bleScanner.detenerEscaneo();
+            bleScanner = null;
+        }
+
+        // 1. Recuperar sensores afiliados guardados en sesión
+        SharedPreferences prefsSesion = getSharedPreferences("SesionUsuario", MODE_PRIVATE);
+        String jsonLista = prefsSesion.getString("ListaSensores", "[]");
+
+        // 2. Convertir JSON → Lista de sensores
+        Gson gson = new Gson();
+        Type tipoLista = new TypeToken<List<PojoSensor>>() {}.getType();
+        List<PojoSensor> sensoresAfiliados = gson.fromJson(jsonLista, tipoLista);
+
+        // 3. Extraer la MAC de cada sensor
+        List<String> macs = new ArrayList<>();
+        if (sensoresAfiliados != null) {
+            for (PojoSensor sensor : sensoresAfiliados) {
+                if (sensor.getMac() != null && !sensor.getMac().isEmpty()) {
+                    macs.add(sensor.getMac());
+                }
+            }
+        }
+
+        // Si no hay sensores afiliados, no iniciamos escaneo (usuario recién registrado sin QR)
+        if (macs.isEmpty()) {
+            return;
+        }
+
+        // 4. Crear escáner BLE
+        bleScanner = new BtleScannerMultiple(this, macs, new BtleScannerMultiple.Listener() {
+
+            @Override
+            public void onSensorDetectado(String mac, int rssi, double distanciaAprox) {
+                // Escaneo silencioso:
+                // Aquí podrías guardar estado, loguear, etc., si lo necesitas.
+            }
+
+            @Override
+            public void onSensorDesconectado(String mac) {
+                // Notificación controlada (solo una vez por desconexión)
+                Notificador.enviarNotificacion(HomeActivity.this, mac);
+            }
+        });
+
+        // 5. Iniciar escaneo
+        bleScanner.iniciarEscaneo();
+    }
+
+    // -------------------------------------------------------------
+    // Navegación
+    // -------------------------------------------------------------
     public void botonEditarPerfil(View v) {
         startActivity(new Intent(this, EditarPerfilActivity.class));
     }
@@ -60,9 +136,13 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(new Intent(this, NotificacionesActivity.class));
     }
 
+    public void botonIrSensores(View v) {
+        startActivity(new Intent(this, SensoresActivity.class));
+    }
 
-
-
+    // -------------------------------------------------------------
+    // Huella / Biometría
+    // -------------------------------------------------------------
     private void mostrarPopupHuella() {
         SharedPreferences prefs = getSharedPreferences("USER_PREFS", MODE_PRIVATE);
         boolean fingerprintEnabled = prefs.getBoolean("fingerprint_enabled", false);
@@ -127,5 +207,14 @@ public class HomeActivity extends AppCompatActivity {
                 .build();
 
         biometricPrompt.authenticate(promptInfo);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (bleScanner != null) {
+            bleScanner.detenerEscaneo();
+        }
     }
 }

@@ -58,6 +58,7 @@ public interface ApiService {
     Call<JsonObject> crearSensorYRelacion(
             @Query("accion") String accion,
             @Body JsonObject body);
+
     @POST("index.php")
     Call<PojoRespuestaServidor> historialDistancias(@Body PojoUsuario usuario);
     @POST("index.php")
