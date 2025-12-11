@@ -4,20 +4,60 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blanco">
+    android:background="@color/blanco"
+    android:fitsSystemWindows="true">
 
-    <TextView
-        android:id="@+id/tvTituloLista"
+    <ImageView
+        android:id="@+id/logoApp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/logo_aither"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/headerLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Premios disponibles"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="@color/azul_ToolBar"
-        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
         android:layout_marginStart="24dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoApp">
+
+        <ImageView
+            android:id="@+id/imgBackArrow"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_arrowleft"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/azulOscuro_Principal"
+            android:contentDescription="Volver atrás"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RECOMPESAS"
+            android:textColor="@color/azulOscuro_Principal"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/lineaTitulo"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/azulOscuro_Principal"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/headerLayout"
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout" />
     <!-- Número de coins del usuario -->
     <TextView
         android:id="@+id/coinNumber"
@@ -28,7 +68,7 @@
         android:textStyle="bold"
         android:textColor="@color/azul_ToolBar"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/tvTituloLista"
+        app:layout_constraintTop_toBottomOf="@id/lineaTitulo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -54,11 +94,13 @@
         android:progress="0"
         android:max="50"
         android:progressTint="@color/azul_ToolBar"
-        android:backgroundTint="#D0D8F0"
+        android:backgroundTint="@color/blanco"
         app:layout_constraintTop_toBottomOf="@id/coinText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerPremios"
@@ -68,6 +110,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
