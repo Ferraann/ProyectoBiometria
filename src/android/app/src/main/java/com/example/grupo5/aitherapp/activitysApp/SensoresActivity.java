@@ -1,13 +1,12 @@
 package com.example.grupo5.aitherapp.activitysApp;
 
-import static com.example.grupo5.aitherapp.retrofit.LogicaNegocio.getListaSensores;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,9 +28,10 @@ public class SensoresActivity extends AppCompatActivity {
     private List<PojoSensor> listaSensores;
     private List<String> nombresSpinner = new ArrayList<>();
 
-    private Spinner spinner;
-    private TextView infoSensor;
-    private TextView dondeEstaSensor;
+    private Spinner spinnerSensores;
+    private TextView tvDistanciaNodo;
+    private TextView tvEstadoNodo;
+    private Button btnActualizarDistancia;
 
     private PojoSensor sensorSeleccionado;
     private BtleScannerMultiple bleScanner;
@@ -39,12 +39,12 @@ public class SensoresActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sensores_afiliados);
+        setContentView(R.layout.fragment_sensores); // PON AQUÍ EL NOMBRE REAL DEL LAYOUT
 
-        // Referencias a vistas
-        spinner = findViewById(R.id.listaDeSensores);
-        infoSensor = findViewById(R.id.infoSensor);
-        dondeEstaSensor = findViewById(R.id.dondeEstaSensor);
+        spinnerSensores = findViewById(R.id.spinnerSensores);
+        tvDistanciaNodo = findViewById(R.id.tvDistanciaNodo);
+        tvEstadoNodo = findViewById(R.id.tvEstadoNodo);
+        btnActualizarDistancia = findViewById(R.id.btnActualizarDistancia);
 
         // 1. Recuperar lista de sensores guardada
         SharedPreferences prefs = getSharedPreferences("SesionUsuario", MODE_PRIVATE);
@@ -63,30 +63,32 @@ public class SensoresActivity extends AppCompatActivity {
             nombresSpinner.add("Sensor " + (i + 1));
         }
 
-        // 3. Vincular Spinner del layout
+        // 3. Configurar Spinner
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_item,
                 nombresSpinner
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        spinnerSensores.setAdapter(adapter);
 
-        // 4. Listener para saber qué sensor selecciona el usuario
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        // 4. Listener del Spinner
+        spinnerSensores.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                if (listaSensores.isEmpty()) return;
+                if (listaSensores.isEmpty()) {
+                    sensorSeleccionado = null;
+                    return;
+                }
 
                 sensorSeleccionado = listaSensores.get(position);
 
                 Log.d("SensoresActivity", "Seleccionado: MAC=" + sensorSeleccionado.getMac());
 
-                infoSensor.setText(
-                        "Sensor seleccionado:\n" +
-                                "MAC: " + sensorSeleccionado.getMac()
-                );
+                // Cada vez que cambias de sensor, reseteamos la info de distancia/estado
+                tvDistanciaNodo.setText("-- m");
+                tvEstadoNodo.setText("Desconocido");
 
                 Toast.makeText(SensoresActivity.this,
                         "Seleccionado " + nombresSpinner.get(position),
@@ -94,22 +96,23 @@ public class SensoresActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {}
+            public void onNothingSelected(AdapterView<?> parent) {
+                sensorSeleccionado = null;
+            }
         });
+
+        // 5. Botón ACTUALIZAR DISTANCIA
+        btnActualizarDistancia.setOnClickListener(v -> actualizarDistancia());
     }
 
-    /**
-     * Pulsar botón "buscarSensor" → empezar a escanear
-     * y mostrar la distancia en el TextView dondeEstaSensor.
-     */
-    public void buscarSensor(View v){
+    private void actualizarDistancia() {
 
         if (sensorSeleccionado == null) {
             Toast.makeText(this, "Primero selecciona un sensor", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Si ya había un escaneo activo en esta activity, lo detenemos
+        // Detener escaneo anterior si lo hubiera
         if (bleScanner != null) {
             bleScanner.detenerEscaneo();
             bleScanner = null;
@@ -118,36 +121,44 @@ public class SensoresActivity extends AppCompatActivity {
         List<String> macs = new ArrayList<>();
         macs.add(sensorSeleccionado.getMac());
 
+        // Crear escáner para SOLO el sensor seleccionado
         bleScanner = new BtleScannerMultiple(this, macs, new BtleScannerMultiple.Listener() {
             @Override
             public void onSensorDetectado(String mac, int rssi, double distanciaAprox) {
 
                 runOnUiThread(() -> {
-                    String texto = String.format(
-                            "Distancia aproximada al sensor:\n%.2f metros (RSSI: %d)",
-                            distanciaAprox, rssi
-                    );
-                    dondeEstaSensor.setText(texto);
+                    tvEstadoNodo.setText("Conectado ✓");
+
+                    String texto = String.format("%.2f m", distanciaAprox);
+                    tvDistanciaNodo.setText(texto);
                 });
             }
 
             @Override
             public void onSensorDesconectado(String mac) {
                 runOnUiThread(() -> {
-                    dondeEstaSensor.setText("El sensor " + mac + " se ha desconectado.");
+                    tvEstadoNodo.setText("Desconectado ✗");
+                    tvDistanciaNodo.setText("-- m");
                 });
             }
         });
 
         bleScanner.iniciarEscaneo();
 
-        Toast.makeText(this, "Buscando el sensor seleccionado...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Buscando el nodo seleccionado...", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (bleScanner != null) {
+            bleScanner.detenerEscaneo();
+        }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
         if (bleScanner != null) {
             bleScanner.detenerEscaneo();
         }
