@@ -1,8 +1,8 @@
 <?php
 function abrirServidor() {
     $servername = "localhost";
-    $username   = "root";
-    $password   = "";
+    $username   = "aitherdb";
+    $password   = "Sansaloni330.";
     $dbname     = "aither";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
