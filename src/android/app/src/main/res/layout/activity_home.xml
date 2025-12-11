@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blanco">
+    android:background="@color/blanco"
+    android:fitsSystemWindows="true">
 
     <ImageView
         android:id="@+id/logoHome"
@@ -101,21 +102,19 @@
                 android:layout_marginBottom="10dp"/>
 
             <Button
-                android:id="@+id/notificaciones"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="botonIrNotificaciones"
-                android:text="Notificaciones"
-                android:backgroundTint="@color/azulOscuro_Principal"
-                android:layout_marginBottom="10dp"/>
-
-            <Button
                 android:id="@+id/button5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="botonVerSensoresAfiliados"
                 android:text="Ver Sensores Afiliados"
                 android:backgroundTint="@color/azulOscuro_Principal"/>
+            <Button
+                android:id="@+id/Btncoins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AithWallet"
+                android:backgroundTint="@color/azulOscuro_Principal"
+                android:layout_marginBottom="10dp"/>
 
             <Button
                 android:id="@+id/button2"

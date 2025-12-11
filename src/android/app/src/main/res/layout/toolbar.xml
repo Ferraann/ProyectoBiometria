@@ -19,6 +19,7 @@
         android:clickable="true"
         app:tint="@color/blanco" />
     <ImageView
+        android:id="@+id/nav_walk"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_weight="1"
@@ -26,6 +27,7 @@
         android:clickable="true"
         app:tint="@color/blanco" />
     <ImageView
+        android:id="@+id/nav_bell"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_weight="1"
@@ -33,6 +35,7 @@
         android:clickable="true"
         app:tint="@color/blanco" />
     <ImageView
+        android:id="@+id/nav_profile"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_weight="1"

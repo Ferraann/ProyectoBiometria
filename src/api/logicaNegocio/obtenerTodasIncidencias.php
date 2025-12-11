@@ -19,16 +19,22 @@ function obtenerTodasIncidencias($conn)
             i.fecha_creacion,
             i.fecha_finalizacion,
             i.id_user,
-            u.nombre                      AS usuario,
+            u.nombre AS usuario,
             i.id_tecnico,
             COALESCE(tu.nombre, 'Sin asignar') AS tecnico,
             i.estado_id,
-            e.nombre                      AS estado
+            e.nombre AS estado,
+            i.id_sensor,
+            COALESCE(s.nombre, CONCAT('Sensor #', i.id_sensor)) AS nombre_sensor,
+            s.mac AS mac_sensor,
+            s.problema AS sensor_con_problema
+
         FROM incidencias i
-        LEFT JOIN usuario u  ON i.id_user     = u.id
-        LEFT JOIN tecnicos t ON i.id_tecnico = t.usuario_id
-        LEFT JOIN usuario tu ON t.usuario_id = tu.id
+        LEFT JOIN usuario u           ON i.id_user = u.id
+        LEFT JOIN tecnicos t          ON i.id_tecnico = t.usuario_id
+        LEFT JOIN usuario tu          ON t.usuario_id = tu.id
         LEFT JOIN estado_incidencia e ON i.estado_id = e.id
+        LEFT JOIN sensor s            ON i.id_sensor = s.id
         ORDER BY i.fecha_creacion DESC
     ";
 

@@ -147,7 +147,7 @@ function renderIncidencias(datos) {
   <div class="incidencia" data-id="${inc.id}">
     <!-- TÍTULO → detalle de la incidencia -->
     <h2><a href="incidencia_detalle.html?id=${inc.id}" class="titulo-incidencia">${inc.titulo}</a></h2>
-
+    
     <p><strong>Descripción:</strong> ${inc.descripcion}</p>
 
     <!-- USUARIO → perfil del usuario creador -->
@@ -155,6 +155,9 @@ function renderIncidencias(datos) {
       <strong>Usuario:</strong>
       <a href="usuario_detalle.html?id=${inc.id_user}&perfil=usuario" class="enlace-usuario">${inc.usuario || 'Anónimo'}</a>
     </p>
+
+    <!-- SENSOR opcional -->
+    ${inc.id_sensor ? `<p class="meta"><strong>Sensor:</strong> <a href="sensor_detalle.html?id=${inc.id_sensor}">${inc.nombre_sensor}</a> (ID ${inc.id_sensor})</p>` : ''}
 
     <!-- TÉCNICO → perfil del técnico asignado -->
     <p class="meta">

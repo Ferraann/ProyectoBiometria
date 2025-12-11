@@ -55,13 +55,14 @@ if (!idIncidencia) {
 
     // 5. Rellenar select de estados
     const select = document.getElementById('select-estados');
+    select.innerHTML = ''; // limpia por si acaso
     estados.forEach(e => {
       const opt = document.createElement('option');
       opt.value = e.id;
       opt.textContent = e.nombre;
-      if (e.nombre === inc.estado) opt.selected = true;
       select.appendChild(opt);
     });
+    select.value = inc.estado_id;
 
     // 6. Guardar estado
     document.getElementById('btn-guardar-estado').addEventListener('click', async () => {

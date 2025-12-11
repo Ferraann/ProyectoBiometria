@@ -58,12 +58,21 @@ public interface ApiService {
     Call<JsonObject> crearSensorYRelacion(
             @Query("accion") String accion,
             @Body JsonObject body);
+    @POST("index.php")
+    Call<PojoRespuestaServidor> historialDistancias(@Body PojoUsuario usuario);
+    @POST("index.php")
+    Call<PojoRespuestaServidor> distanciaFecha(@Body PojoUsuario usuario);
 
 
-    @GET("index.php")
+    @POST("index.php")
+    Call<PojoRespuestaServidor> guardarDistancia(@Body PojoUsuario usuario);
+
+    @POST("index.php")
+    Call<JsonObject> obtenerSensoresUsuario(@Body JsonObject body);
+
+        @GET("index.php")
     Call<PojoRespuestaServidor> obtenerSensoresUsuario(
             @Query("accion") String accion,
             @Query("usuario_id") String idUsuario
     );
-
 }

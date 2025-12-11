@@ -1,29 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:fitsSystemWindows="true">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="crearNotificacionPeligroExtremo"
-        android:text="Notificación peligro maximo"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+    <ImageView
+        android:id="@+id/logoNotif"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/logo_aither"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button4"
+    <TextView
+        android:id="@+id/txtTituloNotif"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NotificacionCuidado"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="NOTIFICACIONES"
+        android:textColor="@color/azulOscuro_Principal"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoNotif" />
+
+    <View
+        android:id="@+id/lineaSeparadora"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/azulOscuro_Principal"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtTituloNotif"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloNotif" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:alpha="0.7"
+        app:layout_constraintBottom_toTopOf="@+id/layoutBotonesPrueba"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/lineaSeparadora">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_bell"
+            app:tint="@color/azulOscuro_Principal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No tienes notificaciones nuevas"
+            android:textColor="@color/azulOscuro_Principal"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutBotonesPrueba"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="#10000000"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/toolbar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HERRAMIENTAS DE DESARROLLADOR"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="crearNotificacionPeligroExtremo"
+            android:text="Simular Peligro Extremo"
+            android:backgroundTint="@color/azulOscuro_Principal"/>
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Simular Aviso Cuidado"
+            android:backgroundTint="@color/azulOscuro_Principal"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -147,6 +147,22 @@ switch ($method) {
             case "guardarFotoPerfil":
                 echo json_encode(guardarFotoPerfil($conn, $input));
                 break;
+            
+            case "asignarTecnico":
+                echo json_encode(asignarTecnico($conn, $input['usuario_id']));
+                break;
+
+            case "quitarTecnico":
+                echo json_encode(quitarTecnico($conn, $input['usuario_id']));
+                break;
+
+            case "asignarAdministrador":
+                echo json_encode(asignarAdministrador($conn, $input['usuario_id']));
+                break;
+
+            case "quitarAdministrador":
+                echo json_encode(quitarAdministrador($conn, $input['usuario_id']));
+                break;
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción POST no reconocida."]);
                 break;
@@ -204,6 +220,11 @@ switch ($method) {
 
             case "getUsuarioXId":
                 $id = intval($_GET['id'] ?? 0);
+                if ($id === 0) {
+                    http_response_code(400);
+                    echo json_encode(["status" => "error", "mensaje" => "ID de usuario no válido"]);
+                    exit;
+                }
                 $row = obtenerUsuarioXId($conn, $id); 
                 echo json_encode($row ?: ["status" => "error", "mensaje" => "Usuario no encontrado"]);
                 break;
@@ -217,12 +238,28 @@ switch ($method) {
                 $id = intval($_GET['id'] ?? 0);
                 echo json_encode(["es_admin" => esAdministrador($conn, $id)]);
                 break;
+
             case "getEstadosIncidencia":
                 echo json_encode(obtenerEstadosIncidencia($conn));
                 break;
+
             case "getFotoPerfil":
                 echo json_encode(obtenerFotoPerfil($conn, $input['usuario_id']));
                 break;
+            case "getSensoresDeUsuario":
+                $id = intval($_GET['id'] ?? 0);
+                echo json_encode(obtenerSensoresDeUsuario($conn, $id));
+                break;
+
+            case "getSensorXId": 
+                $id = intval($_GET['id'] ?? 0);
+                if ($id === 0) {
+                    http_response_code(400);
+                    echo json_encode(["status" => "error", "mensaje" => "ID de sensor no válido"]);
+                    exit;
+                }
+                $row = obtenerSensorXId($conn, $id); 
+                echo json_encode($row ?: ["status" => "error", "mensaje" => "Sensor no encontrado"]);
 
             case "getObtenerSensoresUsuario":
                 echo json_encode(obtenerListaSensores($conn, $_GET['usuario_id']));
