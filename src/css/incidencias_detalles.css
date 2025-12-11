@@ -15,6 +15,17 @@
     --semibold: 600;
     --normal: 400;
 
+     --color-fondo: #f5f7fa;
+  --color-principal: #0052cc;
+  --color-secundario: #00c2ff;
+  --color-exito: #36b37e;
+  --color-peligro: #ff5630;
+  --color-texto: #172b4d;
+  --color-borde: #dfe1e6;
+  --color-boton-texto: #ffffff;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --radio: 8px;
+
 }
 /* ---------------------------- */
 /* ---------------------------- */
@@ -163,8 +174,9 @@ nav a:hover{
 /*-------------------------------------------------------------------------------------*/
 
 h1 {
-  color: var(--color-principal);
+  color: var(--Principal_1);
   font-size: 2rem;
+  margin-top: 25px;
   margin-bottom: 25px;
   text-align: center;
 }
@@ -175,6 +187,9 @@ h1 {
   padding: 25px;
   border-radius: var(--radio);
   box-shadow: var(--sombra);
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 15px 20px;
 }
 
 #contenido-detalle h2 {
@@ -307,4 +322,10 @@ h1 {
 
 #fila-finalizacion.visible {
   display: flex;
+}
+
+hr{
+  margin: 20px 0; 
+  border: 0; 
+  border-top: 1px solid #eee
 }

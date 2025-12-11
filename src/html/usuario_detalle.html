@@ -1,66 +1,83 @@
-<!-- ------------------------------------------------------------------
--- Fichero: usuario_detalle.html
--- Autor: Manuel
--- Fecha: 11/12/2025
--- ------------------------------------------------------------------
--- Descripción:
---  Pantalla de ficha de usuario. Muestra datos personales, foto de perfil,
---  permisos (administrador/técnico) y listado de sensores asignados.
---  Consume la API vía JavaScript modular.
--- ------------------------------------------------------------------ -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil – Aither</title>
+  <title>Usuario  – Aither</title>
   <link rel="stylesheet" href="../css/usuario_detalle.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 
 <body>
   <header>
-    <a href="javascript:history.back()"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+    <a href="incidencias.html"><img src="../img/logo_Aither_web.png" alt="Logo Aither"></a>
+    
+    <nav>
+      <ul>
+        <li><a href="#">Panel <br> Técnico</a></li>
+        <li><a href="#">Soporte <br> Interno</a></li>
+        <li class="profile-dropdown-container">
+          <a href="#" class="nav-perfil" id="profile-toggle-button">
+            <i class="fa-solid fa-circle-user"></i><span>NOMBRE A.P.</span>
+          </a>
+          <div class="profile-menu" id="profile-menu">
+            <div class="menu-header">
+              <i class="fa-solid fa-circle-user profile-icon-large"></i>
+              <span class="profile-name">NOMBRE A.P.</span>
+              <i class="fa-solid fa-xmark close-menu-btn" id="close-menu-button"></i>
+            </div>
+            <a href="#" class="menu-item">CONFIGURACIÓN</a>
+            <a href="#" class="menu-item logout-item">CERRAR SESIÓN</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
   </header>
 
   <main>
     <h1 id="titulo-perfil">Cargando…</h1>
 
-    <section id="datos-usuario">
-      <!-- Avatar -->
-      <div class="avatar">
-        <img id="foto-perfil" src="../img/imagen-icono.webp" alt="Avatar">
+    <section id="datos-usuario" class="card">
+      
+      <div class="user-info">
+          <div class="avatar">
+            <img id="foto-perfil" src="../img/imagen-icono.webp" alt="Avatar">
+          </div>
+    
+          <div class="datos">
+            <p><strong>Nombre:</strong> <span id="user-nombre"></span></p>
+            <p><strong>Apellidos:</strong> <span id="user-apellidos"></span></p>
+            <p><strong>Correo:</strong> <span id="user-gmail"></span></p>
+            <p><strong>Puntos:</strong> <span id="user-puntos"></span></p>
+          </div>
       </div>
 
-      <!-- Datos básicos -->
-      <div class="datos">
-        <p><strong>Nombre:</strong> <span id="user-nombre"></span></p>
-        <p><strong>Apellidos:</strong> <span id="user-apellidos"></span></p>
-        <p><strong>Correo:</strong> <span id="user-gmail"></span></p>
-        <p><strong>Puntos:</strong> <span id="user-puntos"></span></p>
-      </div>
+      <hr>
 
-      <!-- Permisos -->
       <div class="permisos">
         <h2>Permisos</h2>
-
-        <label class="switch-label">
-          <input type="checkbox" id="chk-admin">
-          <span class="slider"></span>
-          <span class="label-text">Administrador</span>
-        </label>
-
-        <label class="switch-label">
-          <input type="checkbox" id="chk-tecnico">
-          <span class="slider"></span>
-          <span class="label-text">Técnico</span>
-        </label>
-
-        <button id="btn-guardar" class="btn-primary">Guardar cambios</button>
+        <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+            <label class="switch-label">
+              <input type="checkbox" id="chk-admin">
+              <span class="slider"></span>
+              <span class="label-text">Administrador</span>
+            </label>
+    
+            <label class="switch-label">
+              <input type="checkbox" id="chk-tecnico">
+              <span class="slider"></span>
+              <span class="label-text">Técnico</span>
+            </label>
+            
+            <button id="btn-guardar" class="btn-primary">Guardar cambios</button>
+        </div>
       </div>
 
-      <!-- Sensores -->
+      <hr>
+
       <div class="sensores">
         <h2>Sensores asignados</h2>
         <ul id="lista-sensores" class="sensor-list"></ul>
@@ -68,7 +85,6 @@
     </section>
   </main>
 
-  <script type="module" src="../js/usuario_detalle.js"></script>
-</body>
-
+  <script src="../js/Fun_icono_perfil.js"></script>
+  </body>
 </html>
