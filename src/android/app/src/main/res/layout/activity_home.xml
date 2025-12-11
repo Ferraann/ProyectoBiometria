@@ -85,6 +85,205 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/azul_Paneles"
+                app:cardElevation="0dp"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:text="Distancia recorrida de hoy:"
+                        android:textColor="@color/blanco"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtDistanciaHoy"
+                        android:text="0km"
+                        android:textColor="@color/blanco"
+                        android:textStyle="bold"
+                        android:textSize="34sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/azul_Paneles"
+                app:cardElevation="0dp"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:text="Total:"
+                            android:textSize="20sp"
+                            android:textColor="@color/blanco"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="bottom">
+                            <TextView
+                                android:id="@+id/coinNumber"
+                                android:text="26"
+                                android:textColor="@color/blanco"
+                                android:textStyle="bold"
+                                android:textSize="34sp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                            <TextView
+                                android:text=" AithCoins"
+                                android:textColor="@color/blanco"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="end">
+                        <TextView
+                            android:text="Recompensa:"
+                            android:textColor="@color/blanco"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <ProgressBar
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="100dp"
+                                android:layout_height="8dp"
+                                android:progress="26"
+                                android:max="50"
+                                android:progressTint="@color/azulOscuro_Principal"
+                                android:progressBackgroundTint="#D0D8F0"/>
+
+                            <TextView
+                                android:text="50"
+                                android:textColor="@color/blanco"
+                                android:textStyle="bold"
+                                android:layout_marginStart="8dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Btncoins_card"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="10dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardBackgroundColor="@color/azul_Paneles"
+                    app:cardElevation="0dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_aithwallet"
+                            app:tint="@color/azulOscuro_Principal"/>
+                        <TextView
+                            android:text="AithWallet"
+                            android:textColor="@color/blanco"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:layout_marginStart="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnVincularQR_card"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardBackgroundColor="@color/azul_Paneles"
+                    app:cardElevation="0dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_sensor"
+                            app:tint="@color/azulOscuro_Principal"/>
+                        <TextView
+                            android:text="Añadir\nSensor"
+                            android:textColor="@color/blanco"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:layout_marginStart="10dp"
+                            android:gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -94,27 +293,12 @@
                 android:layout_marginBottom="10dp"/>
 
             <Button
-                android:id="@+id/btnVincularQR"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Vincular por QR"
-                android:backgroundTint="@color/azulOscuro_Principal"
-                android:layout_marginBottom="10dp"/>
-
-            <Button
                 android:id="@+id/button5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="botonVerSensoresAfiliados"
                 android:text="Ver Sensores Afiliados"
                 android:backgroundTint="@color/azulOscuro_Principal"/>
-            <Button
-                android:id="@+id/Btncoins"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="AithWallet"
-                android:backgroundTint="@color/azulOscuro_Principal"
-                android:layout_marginBottom="10dp"/>
 
         </LinearLayout>
     </ScrollView>

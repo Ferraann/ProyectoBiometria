@@ -5,200 +5,301 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true">
 
-    <!-- Flecha y título -->
-    <LinearLayout
-        android:id="@+id/header"
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <ImageView
-            android:id="@+id/arrowBack"
-            android:layout_width="377dp"
-            android:layout_height="42dp"
-            android:src="@drawable/logo_aither" />
-
-    </LinearLayout>
-
-    <!-- Número de AithCoins -->
-    <TextView
-        android:id="@+id/coinNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="26"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        android:textColor="#1A3C92"
-        app:layout_constraintTop_toBottomOf="@id/header"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
-
-    <!-- Texto "AithCoins totales" -->
-    <TextView
-        android:id="@+id/coinText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="AithCoins totales"
-        android:textSize="14sp"
-        android:textColor="#1A3C92"
-        app:layout_constraintTop_toBottomOf="@id/coinNumber"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent">
 
-    <!-- Barra de progreso -->
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="200dp"
-        android:layout_height="10dp"
-        android:progress="26"
-        android:max="50"
-        android:progressTint="#1A3C92"
-        android:backgroundTint="#D0D8F0"
-        app:layout_constraintTop_toBottomOf="@id/coinText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <!-- Meta 50 -->
+            <ImageView
+                android:id="@+id/logoApp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/logo_aither"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Tarjeta de misiones -->
-    <TextView
-        android:id="@+id/goal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="85dp"
-        android:text="50"
-        android:textColor="#1A3C92"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/progressBar"
-        app:layout_constraintTop_toTopOf="@+id/progressBar" />
+            <LinearLayout
+                android:id="@+id/headerLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logoApp">
 
-    <LinearLayout
-        android:id="@+id/cardMissions"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:background="#E8EFFF"
-        android:elevation="4dp"
-        android:layout_margin="20dp"
-        android:clipToOutline="true"
-        app:layout_constraintTop_toBottomOf="@id/goal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+                <ImageView
+                    android:id="@+id/imgBackArrow"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:contentDescription="Volver atrás"
+                    android:src="@drawable/ic_arrowleft"
+                    app:tint="@color/azulOscuro_Principal" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gana AithCoins:"
-            android:textStyle="bold"
-            android:textColor="#1A3C92"
-            android:textSize="16sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AITHWALLET"
+                    android:textColor="@color/azulOscuro_Principal"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="⭐ Completa 15 mins de actividad en la app con AITHER.\n+ 5 AithCoins"
-            android:textColor="#1A3C92"
-            android:textSize="14sp"/>
+            <View
+                android:id="@+id/lineaTitulo"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="24dp"
+                android:background="@color/azulOscuro_Principal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/headerLayout"
+                app:layout_constraintTop_toBottomOf="@+id/headerLayout" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Recorre distancias desafiantes:"
-            android:textStyle="bold"
-            android:textColor="#1A3C92"
-            android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/coinNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="26"
+                android:textColor="@color/azulOscuro_Principal"
+                android:textSize="60sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lineaTitulo" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="⭐ 1Km → +2 AithCoins\n⭐ 2.5Km → +5 AithCoins\n⭐ 5Km → +10 AithCoins"
-            android:layout_marginTop="8dp"
-            android:textColor="#1A3C92"
-            android:textSize="14sp"/>
+            <TextView
+                android:id="@+id/coinText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AithCoins totales"
+                android:textColor="@color/azulOscuro_Principal"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/coinNumber" />
 
-        <TextView
-            android:layout_width="347dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Una vez desbloqueadas estas misiones,\nse generarán otras nuevas."
-            android:textColor="#1A3C92"
-            android:textSize="12sp" />
-    </LinearLayout>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="180dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="10dp"
+                android:max="50"
+                android:progress="26"
+                android:progressBackgroundTint="#D0D8F0"
+                android:progressTint="@color/azulOscuro_Principal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/coinText" />
 
-    <!-- 🔵 TU TOOLBAR EXACTA AQUÍ ABAJO (sin modificar nada!!) -->
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/bottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@color/azul_ToolBar"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:weightSum="4"
-        app:layout_constraintBottom_toBottomOf="parent">
+            <TextView
+                android:id="@+id/goal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="50"
+                android:textColor="@color/azulOscuro_Principal"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+                app:layout_constraintStart_toEndOf="@+id/progressBar"
+                app:layout_constraintTop_toTopOf="@+id/progressBar" />
 
-        <ImageView
-            android:id="@+id/nav_home"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:src="@drawable/selector_home"
-            android:clickable="true"
-            app:tint="@color/blanco" />
+            <Button
+                android:id="@+id/btnListaPremios"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="24dp"
+                android:backgroundTint="@color/azulOscuro_Principal"
+                android:text="OBTÉN TUS RECOMEPENSAS"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/progressBar" />
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:src="@drawable/selector_walk"
-            android:clickable="true"
-            app:tint="@color/blanco" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardMissions"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="24dp"
+                app:cardBackgroundColor="#B5C0E5"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnListaPremios">
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:src="@drawable/selector_bell"
-            android:clickable="true"
-            app:tint="@color/blanco" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:src="@drawable/seletor_profile"
-            android:clickable="true"
-            app:tint="@color/blanco"
-            android:onClick="botonEditarPerfil" />
-    </LinearLayout>
-    <Button
-        android:id="@+id/btnListaPremios"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="Lista de Premios"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        android:textColor="@android:color/white"
-        android:background="@color/azul_ToolBar"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/cardMissions"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottomNav"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gana AithCoins:"
+                        android:textColor="@color/azulOscuro_Principal"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="2dp"
+                            android:src="@drawable/ic_star_filled"
+                            app:tint="@color/azulOscuro_Principal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Accede a Aither con tus datos biometricos. \n+ 10 AithCoins"
+                            android:textColor="@color/azulOscuro_Principal"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="2dp"
+                            android:src="@drawable/ic_star"
+                            app:tint="@color/azulOscuro_Principal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Completa 15 mins de actividad en la app con AITHER.\n+ 5 AithCoins"
+                            android:textColor="@color/azulOscuro_Principal"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="Recorre distancias desafiantes:"
+                        android:textColor="@color/azulOscuro_Principal"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_star"
+                            app:tint="@color/azulOscuro_Principal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="1Km   + 2 AithCoins"
+                            android:textColor="@color/azulOscuro_Principal"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_star"
+                            app:tint="@color/azulOscuro_Principal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="2.5Km + 5 AithCoins"
+                            android:textColor="@color/azulOscuro_Principal"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_star"
+                            app:tint="@color/azulOscuro_Principal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="5Km   + 10 AithCoins"
+                            android:textColor="@color/azulOscuro_Principal"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="Una vez desbloqueadas estas misiones,\nse generarán otras nuevas"
+                        android:textColor="@color/azulOscuro_Principal"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

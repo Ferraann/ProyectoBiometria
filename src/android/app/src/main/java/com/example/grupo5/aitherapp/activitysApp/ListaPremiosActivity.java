@@ -2,6 +2,8 @@ package com.example.grupo5.aitherapp.activitysApp;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -31,10 +33,18 @@ public class ListaPremiosActivity extends AppCompatActivity {
 
         SharedPreferences prefs = getSharedPreferences("MiAppPrefs", MODE_PRIVATE);
 
-// Sumar 10 coins cada vez que se entra
+        ImageView backArrow = findViewById(R.id.imgBackArrow);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        // Sumar 10 coins cada vez que se entra
         int coinsUsuario = prefs.getInt("coinsUsuario", 0); // 0 si no existe
 
-// Actualizar UI
+        // Actualizar UI
         tvCoins = findViewById(R.id.coinNumber);
         progressBar = findViewById(R.id.progressBar);
         tvCoins.setText(String.valueOf(coinsUsuario));
@@ -55,8 +65,7 @@ public class ListaPremiosActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         premios = new ArrayList<>();
-        premios.add(new PojoPremio("Viaje en Transporte Público", 10, R.drawable.img));
-        premios.add(new PojoPremio("Botella Aither", 30, R.drawable.img_1));
+        premios.add(new PojoPremio("Viaje en Transporte Público", 50, R.drawable.ic_transport));
 
         adapter = new PremioAdapter(premios, this);
         recyclerView.setAdapter(adapter);
