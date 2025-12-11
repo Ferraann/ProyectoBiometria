@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    /* 1. Cargar datos básicos del sensor ----------------------------- */
-    const cargarDatosSensor = async () => {
+    /* 1. Cargar datos básicos del sensor (IIFE Asíncrono) --------- */
+    (async () => {
         try {
             const resSensor = await fetch(`${API_URL}?accion=getSensorXId&id=${idSensor}`);
             
@@ -62,15 +62,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const conProblema = sensor.problema == 1; 
 
             chkProblema.checked = conProblema;
-            // No guardamos estado inicial, el evento 'change' lo maneja
-
             actualizarVistaProblema(conProblema); // Inicializar la UI
 
         } catch (e) {
             alert('Error al cargar la ficha del sensor: ' + e.message);
             location.href = 'dashboard.php';
         }
-    }
+    })(); // Se ejecuta automáticamente al cargar el DOM
     
     /* 2. Guardar cambios del switch (Problema/Reparado) ---------------- */
     chkProblema.addEventListener('change', async () => {
@@ -86,6 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
             chkProblema.checked = !nuevoEstado; 
             return;
         }
+
+        // Deshabilitar el switch para evitar clics dobles mientras espera la API
+        chkProblema.disabled = true;
 
         try {
             const r = await fetch(API_URL, {
@@ -111,9 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
             // Revertir el estado del switch en caso de error de la API/Red
             chkProblema.checked = !nuevoEstado; 
             actualizarVistaProblema(!nuevoEstado);
+        } finally {
+            // Rehabilitar el switch
+            chkProblema.disabled = false;
         }
     });
-
-    // Iniciar la carga de datos al cargar la página
-    cargarDatosSensor();
 });
