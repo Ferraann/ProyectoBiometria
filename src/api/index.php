@@ -278,6 +278,7 @@ switch ($method) {
                 }
                 $row = obtenerSensorXId($conn, $id); 
                 echo json_encode($row ?: ["status" => "error", "mensaje" => "Sensor no encontrado"]);
+                break;
 
             case "getObtenerSensoresUsuario":
                 echo json_encode(obtenerListaSensores($conn, $_GET['usuario_id']));
