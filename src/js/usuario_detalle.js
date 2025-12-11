@@ -22,6 +22,9 @@ const chkAdmin = document.getElementById('chk-admin');
 const chkTec = document.getElementById('chk-tecnico');
 const btnSave = document.getElementById('btn-guardar');
 
+let esAdmin;
+let esTec;
+
 /* 1. Cargar datos básicos + foto ----------------------------- */
 (async () => {
     try {
@@ -51,11 +54,12 @@ const btnSave = document.getElementById('btn-guardar');
         ]);
         const { es: admin } = await resAdm.json();
         const { es: tec } = await resTec.json();
+        
         chkAdmin.checked = admin;
         chkTec.checked = tec;
 
-        const esAdmin = admin;
-        const esTec = tec;
+        esAdmin = admin;
+        esTec = tec;
 
         /* 3. Cargar sensores actuales -------------------------- */
         const resSens = await fetch(`${API_URL}?accion=getSensoresDeUsuario&id=${idUsuario}`);
