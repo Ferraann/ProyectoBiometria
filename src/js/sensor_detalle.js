@@ -4,8 +4,8 @@
 // Fecha: 11/12/2025
 // ------------------------------------------------------------------
 // Descripción:
-//  Script modular que carga la ficha completa de un sensor
-//  y muestra su estado.
+//  Script modular que carga la ficha completa de un sensor,
+//  muestra su estado y permite modificar el campo 'problema' vía API.
 // ------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -15,22 +15,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!idSensor) {
         alert('No se indicó ID de sensor');
-        location.href = 'dashboard.php'; // Redirige a una página principal
+        location.href = 'dashboard.php'; 
         return;
     }
 
     const chkProblema = document.getElementById('chk-problema');
     const labelProblema = document.getElementById('label-problema');
     const notaProblema = document.getElementById('nota-problema');
-    const btnReparado = document.getElementById('btn-marcar-reparado');
+
+    /* Función auxiliar para actualizar la vista (colores, textos) */
+    const actualizarVistaProblema = (conProblema) => {
+        if (conProblema) {
+            labelProblema.textContent = 'Estado: ¡Requiere Revisión!';
+            labelProblema.style.color = 'red';
+            notaProblema.textContent = 'Este sensor está marcado como defectuoso.';
+        } else {
+            labelProblema.textContent = 'Estado: Funcionando correctamente';
+            labelProblema.style.color = '#333';
+            notaProblema.textContent = '';
+        }
+    }
 
     /* 1. Cargar datos básicos del sensor ----------------------------- */
-    (async () => {
+    const cargarDatosSensor = async () => {
         try {
             const resSensor = await fetch(`${API_URL}?accion=getSensorXId&id=${idSensor}`);
             
             if (!resSensor.ok) {
-                // Si el servidor devuelve un error HTTP (ej. 404), lanzamos error
                 throw new Error(`Error HTTP: ${resSensor.status}`);
             }
 
@@ -47,56 +58,61 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('sensor-modelo').textContent = sensor.modelo || 'N/A';
             document.getElementById('sensor-nombre').textContent = sensor.nombre || 'Sin nombre asignado';
 
-            // B. Cargar estado de problema
-            const conProblema = sensor.problema == 1; // La base de datos guarda 0 o 1
+            // B. Cargar estado de problema (Estado inicial)
+            const conProblema = sensor.problema == 1; 
 
             chkProblema.checked = conProblema;
-            chkProblema.disabled = !conProblema; // Desactivamos el switch si no hay problema
+            // No guardamos estado inicial, el evento 'change' lo maneja
 
-            if (conProblema) {
-                labelProblema.textContent = 'Estado: ¡Requiere Revisión!';
-                labelProblema.style.color = 'red';
-                notaProblema.textContent = 'Este sensor está marcado como defectuoso y necesita atención técnica.';
-                btnReparado.style.display = 'block'; // Mostrar botón para marcar como reparado
-            } else {
-                labelProblema.textContent = 'Estado: Funcionando correctamente';
-                labelProblema.style.color = '#333';
-                notaProblema.textContent = '';
-                btnReparado.style.display = 'none';
-            }
+            actualizarVistaProblema(conProblema); // Inicializar la UI
 
         } catch (e) {
             alert('Error al cargar la ficha del sensor: ' + e.message);
             location.href = 'dashboard.php';
         }
-    })();
+    }
+    
+    /* 2. Guardar cambios del switch (Problema/Reparado) ---------------- */
+    chkProblema.addEventListener('change', async () => {
+        const nuevoEstado = chkProblema.checked;
+        
+        // Define la acción de la API y el mensaje de confirmación
+        const API_ACTION = nuevoEstado ? 'marcarSensorConProblemas' : 'marcarSensorSinProblemas';
+        const accionTexto = nuevoEstado ? 'marcarlo como defectuoso' : 'marcarlo como reparado';
 
-    /* 2. Manejar la acción de 'Marcar como Reparado' ---------------- */
-    btnReparado.addEventListener('click', async () => {
-        if (!confirm('¿Estás seguro de que quieres marcar este sensor como reparado?')) {
+        if (!confirm(`¿Estás seguro de que quieres ${accionTexto}?`)) {
+            // Revertir el estado del switch si el usuario cancela
+            chkProblema.checked = !nuevoEstado; 
             return;
         }
 
         try {
-            // Asumimos que tienes una acción 'reactivarSensor' en tu API (index.php)
             const r = await fetch(API_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
-                    accion: 'reactivarSensor', 
+                    accion: API_ACTION, 
                     sensor_id: idSensor 
                 })
             });
             const res = JSON.parse(await r.text());
 
             if (res.status !== 'ok') {
-                throw new Error(res.mensaje || 'Error al reactivar el sensor');
+                throw new Error(res.mensaje || 'Error al actualizar el estado del sensor');
             }
 
-            alert('Sensor marcado como reparado con éxito.');
-            location.reload(); // Recargar la página para ver el nuevo estado
+            // Si tiene éxito, actualizar la UI
+            actualizarVistaProblema(nuevoEstado);
+            alert(`Sensor actualizado correctamente: ${accionTexto}.`);
+
         } catch (e) {
-            alert('Error al reactivar: ' + e.message);
+            alert('Error al guardar: ' + e.message);
+            // Revertir el estado del switch en caso de error de la API/Red
+            chkProblema.checked = !nuevoEstado; 
+            actualizarVistaProblema(!nuevoEstado);
         }
     });
+
+    // Iniciar la carga de datos al cargar la página
+    cargarDatosSensor();
 });
