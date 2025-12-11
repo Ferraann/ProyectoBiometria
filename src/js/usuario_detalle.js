@@ -9,7 +9,7 @@
 //  permisos de administrador/técnico en tiempo real.
 // ------------------------------------------------------------------
 
-const API_URL = '../api/index.php';   // <-- faltaba
+const API_URL = '../api/index.php';
 const params = new URLSearchParams(location.search);
 const idUsuario = params.get('id');
 
@@ -51,9 +51,11 @@ const btnSave = document.getElementById('btn-guardar');
         ]);
         const { es: admin } = await resAdm.json();
         const { es: tec } = await resTec.json();
-        esAdmin = admin; esTec = tec;
         chkAdmin.checked = admin;
         chkTec.checked = tec;
+
+        const esAdmin = admin;
+        const esTec = tec;
 
         /* 3. Cargar sensores actuales -------------------------- */
         const resSens = await fetch(`${API_URL}?accion=getSensoresDeUsuario&id=${idUsuario}`);
