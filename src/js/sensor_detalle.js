@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     /* 2. Guardar cambios del switch (Problema/Reparado) ---------------- */
     chkProblema.addEventListener('change', async () => {
+        console.log("¡SWITCH CLICKEADO! Estado actual:", chkProblema.checked);
         const nuevoEstado = chkProblema.checked;
         
         // Define la acción de la API y el mensaje de confirmación
