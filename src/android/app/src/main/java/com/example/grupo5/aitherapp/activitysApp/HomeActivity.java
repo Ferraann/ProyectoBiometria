@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,53 +27,48 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // funcionamento del toolbar
-
-        ImageView btnHome = findViewById(R.id.nav_home);
-
-        if (btnHome != null) {
-            btnHome.setSelected(true);
-
-            overridePendingTransition(0, 0);
-        }
-
-        ImageView btnNotificaciones = findViewById(R.id.nav_bell);
-
-        if (btnNotificaciones != null) {
-            btnNotificaciones.setOnClickListener(v -> {
-                Intent intent = new Intent(HomeActivity.this, NotificacionesActivity.class);
-                startActivity(intent);
-
-                overridePendingTransition(0, 0);
-            });
-        }
-
+        // === OBTENER PREFERENCIAS ===
         SharedPreferences prefs = getSharedPreferences("MiAppPrefs", MODE_PRIVATE);
 
-        // Sumar 10 coins al iniciar la app
+        // === SUMAR 10 COINS AL ENTRAR A LA APP ===
         int coinsUsuario = prefs.getInt("coinsUsuario", 0);
         coinsUsuario += 10;
         prefs.edit().putInt("coinsUsuario", coinsUsuario).apply();
 
-        // Mostrar en la UI si tienes TextView
+        // === ACTUALIZAR UI ===
         TextView tvCoins = findViewById(R.id.coinNumber);
-        if(tvCoins != null) {
-            tvCoins.setText(String.valueOf(coinsUsuario));
+        ProgressBar progressBar = findViewById(R.id.progressBar);
+
+        tvCoins.setText(String.valueOf(coinsUsuario));
+        progressBar.setMax(50);
+        progressBar.setProgress(coinsUsuario);
+
+        // NAVBAR
+        ImageView btnHome = findViewById(R.id.nav_home);
+        if (btnHome != null) {
+            btnHome.setSelected(true);
+            overridePendingTransition(0, 0);
         }
 
-        // Botón Añadir Sensor (Ahora es un CardView)
+        ImageView btnNotificaciones = findViewById(R.id.nav_bell);
+        if (btnNotificaciones != null) {
+            btnNotificaciones.setOnClickListener(v -> {
+                Intent intent = new Intent(HomeActivity.this, NotificacionesActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            });
+        }
+
+        // BOTONES (CardViews)
         findViewById(R.id.btnVincularQR_card).setOnClickListener(v ->
                 startActivity(new Intent(HomeActivity.this, VincularQRActivity.class))
         );
 
-        // Botón AithWallet (Ahora es un CardView)
         findViewById(R.id.Btncoins_card).setOnClickListener(v ->
                 startActivity(new Intent(HomeActivity.this, AithWalletActivity.class))
         );
 
-
-
-        // Mostrar popup de huella solo si aún no se activó ni se rechazó
+        // Popup huella si no está activada
         mostrarPopupHuella();
     }
 
@@ -84,13 +80,12 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(new Intent(this, NotificacionesActivity.class));
     }
 
-
+    // ===== HUELLAS =====
     private void mostrarPopupHuella() {
         SharedPreferences prefs = getSharedPreferences("USER_PREFS", MODE_PRIVATE);
         boolean fingerprintEnabled = prefs.getBoolean("fingerprint_enabled", false);
         boolean fingerprintDeclined = prefs.getBoolean("fingerprint_declined", false);
 
-        // Si ya activó o rechazó, no mostrar popup
         if (fingerprintEnabled || fingerprintDeclined) return;
 
         new AlertDialog.Builder(this)

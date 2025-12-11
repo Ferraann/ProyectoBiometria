@@ -150,14 +150,16 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:gravity="bottom">
+
                             <TextView
                                 android:id="@+id/coinNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:text="26"
                                 android:textColor="@color/blanco"
-                                android:textStyle="bold"
                                 android:textSize="34sp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:textStyle="bold" />
+
                             <TextView
                                 android:text=" AithCoins"
                                 android:textColor="@color/blanco"
