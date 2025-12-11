@@ -22,9 +22,6 @@ const chkAdmin = document.getElementById('chk-admin');
 const chkTec = document.getElementById('chk-tecnico');
 const btnSave = document.getElementById('btn-guardar');
 
-let esAdmin = false;
-let esTec = false;
-
 /* 1. Cargar datos básicos + foto ----------------------------- */
 (async () => {
     try {
@@ -36,11 +33,13 @@ let esTec = false;
         if (!user || user.status === 'error') throw new Error('Usuario no encontrado');
 
         document.getElementById('titulo-perfil').textContent = `Perfil de ${user.nombre}`;
-        document.getElementById('user-nombre').textContent   = user.nombre;
+        document.getElementById('user-nombre').textContent = user.nombre;
         document.getElementById('user-apellidos').textContent = user.apellidos || '-';
         document.getElementById('user-gmail').textContent = user.gmail;
 
-        if (resFoto.ok) {
+        if (!resFoto.ok) {
+            document.querySelector('.avatar').style.display = 'none';
+        } else {
             const blob = await resFoto.blob();
             document.getElementById('foto-perfil').src = URL.createObjectURL(blob);
         }
@@ -51,10 +50,10 @@ let esTec = false;
             fetch(`${API_URL}?accion=esTecnico&id=${idUsuario}`)
         ]);
         const { es: admin } = await resAdm.json();
-        const { es: tec }   = await resTec.json();
+        const { es: tec } = await resTec.json();
         esAdmin = admin; esTec = tec;
         chkAdmin.checked = admin;
-        chkTec.checked   = tec;
+        chkTec.checked = tec;
 
         /* 3. Cargar sensores actuales -------------------------- */
         const resSens = await fetch(`${API_URL}?accion=getSensoresDeUsuario&id=${idUsuario}`);
@@ -72,7 +71,7 @@ let esTec = false;
 /* 4. Guardar cambios de roles ------------------------------- */
 btnSave.addEventListener('click', async () => {
     const nuevoAdmin = chkAdmin.checked;
-    const nuevoTec   = chkTec.checked;
+    const nuevoTec = chkTec.checked;
 
     try {
         if (nuevoAdmin !== esAdmin) {
