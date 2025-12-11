@@ -79,6 +79,7 @@ public class SensoresActivity extends AppCompatActivity {
         });
     }
 
+
     public void buscarSensor(){
 
     }
