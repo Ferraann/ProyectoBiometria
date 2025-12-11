@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Sensor – Aither</title>
+    <link rel="stylesheet" href="../css/usuario_detalle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <a href="javascript:history.back()"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+    </header>
+
+    <main>
+        <h1 id="titulo-sensor">Cargando…</h1>
+
+        <section id="datos-sensor" class="card">
+            <div class="datos">
+                <h2>Información Básica</h2>
+                <p><strong>ID:</strong> <span id="sensor-id"></span></p>
+                <p><strong>MAC:</strong> <span id="sensor-mac"></span></p>
+                <p><strong>Modelo:</strong> <span id="sensor-modelo"></span></p>
+                <p><strong>Nombre:</strong> <span id="sensor-nombre"></span></p>
+            </div>
+
+            <hr>
+
+            <div class="estado">
+                <h2>Estado</h2>
+
+                <label class="switch-label">
+                    <input type="checkbox" id="chk-problema" disabled>
+                    <span class="slider"></span>
+                    <span class="label-text" id="label-problema">Estado: Sin problemas</span>
+                </label>
+
+                <p class="nota-problema" id="nota-problema"></p>
+
+                <button id="btn-marcar-reparado" class="btn-primary" style="display:none;">
+                    Marcar como Reparado
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <script type="module" src="../js/sensor_detalle.js"></script>
+</body>
+
+</html>

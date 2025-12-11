@@ -253,6 +253,17 @@ switch ($method) {
                 echo json_encode(obtenerSensoresDeUsuario($conn, $id));
                 break;
 
+            case "getSensorXId": 
+                $id = intval($_GET['id'] ?? 0);
+                if ($id === 0) {
+                    http_response_code(400);
+                    echo json_encode(["status" => "error", "mensaje" => "ID de sensor no válido"]);
+                    exit;
+                }
+                $row = obtenerSensorXId($conn, $id); 
+                echo json_encode($row ?: ["status" => "error", "mensaje" => "Sensor no encontrado"]);
+                break;
+
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]);
                 break;

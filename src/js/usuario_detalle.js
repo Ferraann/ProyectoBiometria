@@ -41,12 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('user-apellidos').textContent = user.apellidos || '-';
             document.getElementById('user-gmail').textContent = user.gmail;
 
-            if (!resFoto.ok) {
-                document.querySelector('.avatar').style.display = 'none';
-            } else {
-                const blob = await resFoto.blob();
-                document.getElementById('foto-perfil').src = URL.createObjectURL(blob);
-            }
+            // Cargar foto de perfil
+            const fotoPerfilElement = document.getElementById('foto-perfil');
+            if (resFoto.ok) {
+            const blob = await resFoto.blob();
+            // Esto sustituye la imagen predefinida
+            fotoPerfilElement.src = URL.createObjectURL(blob);
+        }
 
             /* 2. Cargar roles actuales ---------------------------------- */
             const [resAdm, resTec] = await Promise.all([
