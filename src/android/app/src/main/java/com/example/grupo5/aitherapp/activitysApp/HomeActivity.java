@@ -31,6 +31,12 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, VincularQRActivity.class))
         );
 
+        findViewById(R.id.Btncoins).setOnClickListener(v ->
+                startActivity(new Intent(HomeActivity.this, AithWalletActivity.class))
+        );
+
+
+
         // Mostrar popup de huella solo si aún no se activó ni se rechazó
         mostrarPopupHuella();
     }
@@ -42,6 +48,9 @@ public class HomeActivity extends AppCompatActivity {
     public void botonIrNotificaciones(View v) {
         startActivity(new Intent(this, NotificacionesActivity.class));
     }
+
+
+
 
     private void mostrarPopupHuella() {
         SharedPreferences prefs = getSharedPreferences("USER_PREFS", MODE_PRIVATE);
