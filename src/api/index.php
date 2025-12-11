@@ -173,6 +173,14 @@ switch ($method) {
                 // Necesitas tener la función 'canjearRecompensa' incluida
                 echo json_encode(canjearRecompensa($conn, $input));
                 break;
+            case "marcarSensorSinProblemas":
+                echo json_encode(reactivarSensor($conn, $input));
+                break;
+
+            case "marcarSensorConProblemas":
+                echo json_encode(marcarSensorConProblemas($conn, $input));
+                break;
+                
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción POST no reconocida."]);
                 break;
