@@ -27,19 +27,25 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // === OBTENER PREFERENCIAS ===
         SharedPreferences prefs = getSharedPreferences("MiAppPrefs", MODE_PRIVATE);
 
-        // === SUMAR 10 COINS AL ENTRAR A LA APP ===
+        // === SUMAR 10 COINS AL ABRIR APP ===
+        boolean opened = prefs.getBoolean("opened_once", false);
+        if (!opened) {
+            int coins = prefs.getInt("coinsUsuario", 0);
+            coins += 10;
+            prefs.edit()
+                    .putInt("coinsUsuario", coins)
+                    .putBoolean("opened_once", true)
+                    .apply();
+        }
+
+        // === MOSTRAR COINS ===
         int coinsUsuario = prefs.getInt("coinsUsuario", 0);
-        coinsUsuario += 10;
-        prefs.edit().putInt("coinsUsuario", coinsUsuario).apply();
-
-        // === ACTUALIZAR UI ===
         TextView tvCoins = findViewById(R.id.coinNumber);
-        ProgressBar progressBar = findViewById(R.id.progressBar);
-
         tvCoins.setText(String.valueOf(coinsUsuario));
+
+        ProgressBar progressBar = findViewById(R.id.progressBar);
         progressBar.setMax(50);
         progressBar.setProgress(coinsUsuario);
 
@@ -53,13 +59,12 @@ public class HomeActivity extends AppCompatActivity {
         ImageView btnNotificaciones = findViewById(R.id.nav_bell);
         if (btnNotificaciones != null) {
             btnNotificaciones.setOnClickListener(v -> {
-                Intent intent = new Intent(HomeActivity.this, NotificacionesActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(HomeActivity.this, NotificacionesActivity.class));
                 overridePendingTransition(0, 0);
             });
         }
 
-        // BOTONES (CardViews)
+        // BOTONES
         findViewById(R.id.btnVincularQR_card).setOnClickListener(v ->
                 startActivity(new Intent(HomeActivity.this, VincularQRActivity.class))
         );
@@ -68,16 +73,18 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, AithWalletActivity.class))
         );
 
-        // Popup huella si no está activada
         mostrarPopupHuella();
     }
 
-    public void botonEditarPerfil(View v) {
-        startActivity(new Intent(this, EditarPerfilActivity.class));
-    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
 
-    public void botonIrNotificaciones(View v) {
-        startActivity(new Intent(this, NotificacionesActivity.class));
+        // Permite que vuelva a sumar 10 al abrir la app de nuevo
+        getSharedPreferences("MiAppPrefs", MODE_PRIVATE)
+                .edit()
+                .putBoolean("opened_once", false)
+                .apply();
     }
 
     // ===== HUELLAS =====

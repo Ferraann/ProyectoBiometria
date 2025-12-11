@@ -1,4 +1,5 @@
 package com.example.grupo5.aitherapp;
+
 import com.example.grupo5.aitherapp.pojos.PojoPremio;
 import android.content.Context;
 import android.content.Intent;
@@ -60,30 +61,26 @@ public class PremioAdapter extends RecyclerView.Adapter<PremioAdapter.PremioView
         holder.itemView.setOnClickListener(v -> {
             SharedPreferences prefs = context.getSharedPreferences("MiAppPrefs", Context.MODE_PRIVATE);
             int coinsUsuario = prefs.getInt("coinsUsuario", 0);
-            String email = prefs.getString("emailUsuario", "correo_por_defecto@example.com");
+            String email = prefs.getString("emailUsuario", "usuario@ejemplo.com");
 
             if (coinsUsuario >= premio.getCoins()) {
-                // Descontar coins
-                coinsUsuario -= premio.getCoins();
-                prefs.edit().putInt("coinsUsuario", coinsUsuario).apply();
 
-                // Actualizar UI mediante callback
+                int nuevosCoins = coinsUsuario - premio.getCoins();
+                prefs.edit().putInt("coinsUsuario", nuevosCoins).apply();
+
+                // Notificar a la activity
                 if (coinsListener != null) {
-                    coinsListener.onCoinsChanged(coinsUsuario);
+                    coinsListener.onCoinsChanged(nuevosCoins);
                 }
 
                 Toast.makeText(context, "Elemento canjeado", Toast.LENGTH_SHORT).show();
 
-                // Enviar correo con QR solo si es "Viaje en Transporte Público"
+                // Si es el viaje => enviar QR
                 if (premio.getNombre().equals("Viaje en Transporte Público")) {
-                    Bitmap qr = generarQR("ID_USUARIO_" + System.currentTimeMillis());
-                    if (qr != null) {
-                        enviarCorreoConQR(email, premio.getNombre(), qr);
-                    } else {
-                        enviarCorreoConfirmacion(email, premio.getNombre());
-                    }
+                    Bitmap qr = generarQR("QR_" + System.currentTimeMillis());
+                    if (qr != null) enviarCorreoConQR(email, premio.getNombre(), qr);
+                    else enviarCorreoConfirmacion(email, premio.getNombre());
                 } else {
-                    // Para otros premios normales
                     enviarCorreoConfirmacion(email, premio.getNombre());
                 }
 
@@ -122,7 +119,6 @@ public class PremioAdapter extends RecyclerView.Adapter<PremioAdapter.PremioView
         }
     }
 
-    // Enviar correo normal
     private void enviarCorreoConfirmacion(String email, String nombrePremio) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("message/rfc822");
@@ -132,7 +128,6 @@ public class PremioAdapter extends RecyclerView.Adapter<PremioAdapter.PremioView
         context.startActivity(Intent.createChooser(intent, "Enviar correo..."));
     }
 
-    // Enviar correo con QR
     private void enviarCorreoConQR(String email, String nombrePremio, Bitmap qrBitmap) {
         try {
             File qrFile = new File(context.getCacheDir(), "qr.png");
@@ -144,8 +139,8 @@ public class PremioAdapter extends RecyclerView.Adapter<PremioAdapter.PremioView
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("image/png");
             intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
-            intent.putExtra(Intent.EXTRA_SUBJECT, "Confirmación de canje");
-            intent.putExtra(Intent.EXTRA_TEXT, "Has canjeado el premio: " + nombrePremio);
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Tu QR de transporte público");
+            intent.putExtra(Intent.EXTRA_TEXT, "Aquí tienes tu QR del premio: " + nombrePremio);
             intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(qrFile));
 
             context.startActivity(Intent.createChooser(intent, "Enviar correo..."));
