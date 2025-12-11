@@ -25,11 +25,28 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        SharedPreferences prefs = getSharedPreferences("MiAppPrefs", MODE_PRIVATE);
 
+        // Sumar 10 coins al iniciar la app
+        int coinsUsuario = prefs.getInt("coinsUsuario", 0);
+        coinsUsuario += 10;
+        prefs.edit().putInt("coinsUsuario", coinsUsuario).apply();
+
+        // Mostrar en la UI si tienes TextView
+        TextView tvCoins = findViewById(R.id.coinNumber);
+        if(tvCoins != null) {
+            tvCoins.setText(String.valueOf(coinsUsuario));
+        }
 
         findViewById(R.id.btnVincularQR).setOnClickListener(v ->
                 startActivity(new Intent(HomeActivity.this, VincularQRActivity.class))
         );
+
+        findViewById(R.id.Btncoins).setOnClickListener(v ->
+                startActivity(new Intent(HomeActivity.this, AithWalletActivity.class))
+        );
+
+
 
         // Mostrar popup de huella solo si aún no se activó ni se rechazó
         mostrarPopupHuella();
@@ -42,6 +59,9 @@ public class HomeActivity extends AppCompatActivity {
     public void botonIrNotificaciones(View v) {
         startActivity(new Intent(this, NotificacionesActivity.class));
     }
+
+
+
 
     private void mostrarPopupHuella() {
         SharedPreferences prefs = getSharedPreferences("USER_PREFS", MODE_PRIVATE);

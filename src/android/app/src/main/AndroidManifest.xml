@@ -47,6 +47,10 @@
         <activity android:name="com.example.grupo5.aitherapp.activitysApp.EditarPerfilActivity" />
         <activity android:name="com.example.grupo5.aitherapp.activitysApp.VincularQRActivity" />
         <activity android:name="com.example.grupo5.aitherapp.activitysApp.NotificacionesActivity" />
+        <activity android:name="com.example.grupo5.aitherapp.activitysApp.AithWalletActivity" />
+        <activity android:name="com.example.grupo5.aitherapp.activitysApp.ListaPremiosActivity" />
+
+
 
     </application>
 

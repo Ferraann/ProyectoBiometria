@@ -108,6 +108,13 @@
                 android:onClick="botonVerSensoresAfiliados"
                 android:text="Ver Sensores Afiliados"
                 android:backgroundTint="@color/azulOscuro_Principal"/>
+            <Button
+                android:id="@+id/Btncoins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AithWallet"
+                android:backgroundTint="@color/azulOscuro_Principal"
+                android:layout_marginBottom="10dp"/>
 
         </LinearLayout>
     </ScrollView>
