@@ -3,11 +3,13 @@ package com.example.grupo5.aitherapp.retrofit;
 import com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor;
 import com.example.grupo5.aitherapp.pojos.PojoSensor;
 import com.example.grupo5.aitherapp.pojos.PojoUsuario;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -41,7 +43,7 @@ public interface ApiService {
 
     //Metodo post para hacer login del usuario
     @POST("index.php")
-    Call<PojoRespuestaServidor> loginUsuario(@Body PojoUsuario usuario);
+    Call<PojoRespuestaServidor> loginUsuario(@Body PojoUsuario usuario );
 
     //Metodo post para modificar datos
     @POST("index.php") // Cambia al endpoint real en tu servidor
@@ -56,6 +58,7 @@ public interface ApiService {
     Call<JsonObject> crearSensorYRelacion(
             @Query("accion") String accion,
             @Body JsonObject body);
+
     @POST("index.php")
     Call<PojoRespuestaServidor> historialDistancias(@Body PojoUsuario usuario);
     @POST("index.php")
@@ -67,4 +70,10 @@ public interface ApiService {
 
     @POST("index.php")
     Call<JsonObject> obtenerSensoresUsuario(@Body JsonObject body);
+
+        @GET("index.php")
+    Call<PojoRespuestaServidor> obtenerSensoresUsuario(
+            @Query("accion") String accion,
+            @Query("usuario_id") String idUsuario
+    );
 }

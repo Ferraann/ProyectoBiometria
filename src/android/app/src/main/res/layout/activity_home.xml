@@ -300,6 +300,14 @@
                 android:text="Ver Sensores Afiliados"
                 android:backgroundTint="@color/azulOscuro_Principal"/>
 
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/azulOscuro_Principal"
+                android:onClick="botonIrSensores"
+                android:text="activity sensores" />
+
         </LinearLayout>
     </ScrollView>
 

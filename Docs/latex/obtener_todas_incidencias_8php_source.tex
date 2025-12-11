@@ -1,0 +1,54 @@
+\doxysection{obtener\+Todas\+Incidencias.\+php}
+\hypertarget{obtener_todas_incidencias_8php_source}{}\label{obtener_todas_incidencias_8php_source}\index{src/api/logicaNegocio/obtenerTodasIncidencias.php@{src/api/logicaNegocio/obtenerTodasIncidencias.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00003}00003\ \textcolor{comment}{//\ Fichero:\ obtenerTodasIncidencias.php}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00004}00004\ \textcolor{comment}{//\ Autor:\ Manuel}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00005}00005\ \textcolor{comment}{//\ Fecha:\ 5/12/2025}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00006}00006\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00007}00007\ \textcolor{comment}{//\ Descripción:}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00008}00008\ \textcolor{comment}{//\ \ Función\ para\ obtener\ todas\ las\ incidencias\ con\ información}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00009}00009\ \textcolor{comment}{//\ \ completa:\ descripción,\ IDs,\ nombres\ de\ usuario/técnico/estado.}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00010}00010\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00012}00012\ \textcolor{keyword}{function}\ obtenerTodasIncidencias(\$conn)}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00014}00014\ \ \ \ \ \$sql\ =\ \textcolor{stringliteral}{"{}}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00015}00015\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ SELECT\ }}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00016}00016\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ i.id,}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00017}00017\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ i.titulo,}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00018}00018\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ i.descripcion,}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00019}00019\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ i.fecha\_creacion,}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00020}00020\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ i.fecha\_finalizacion,}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00021}00021\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ i.id\_user,}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00022}00022\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ u.nombre\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AS\ usuario,}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00023}00023\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ i.id\_tecnico,}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00024}00024\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ COALESCE(tu.nombre,\ 'Sin\ asignar')\ AS\ tecnico,}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00025}00025\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ i.estado\_id,}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00026}00026\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ e.nombre\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AS\ estado}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00027}00027\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ FROM\ incidencias\ i}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00028}00028\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ LEFT\ JOIN\ usuario\ u\ \ ON\ i.id\_user\ \ \ \ \ =\ u.id}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00029}00029\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ LEFT\ JOIN\ tecnicos\ t\ ON\ i.id\_tecnico\ =\ t.usuario\_id}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00030}00030\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ LEFT\ JOIN\ usuario\ tu\ ON\ t.usuario\_id\ =\ tu.id}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00031}00031\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ LEFT\ JOIN\ estado\_incidencia\ e\ ON\ i.estado\_id\ =\ e.id}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00032}00032\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ ORDER\ BY\ i.fecha\_creacion\ DESC}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00033}00033\ \textcolor{stringliteral}{\ \ \ \ "{}};}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00035}00035\ \ \ \ \ \$result\ =\ \$conn-\/>query(\$sql);}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00036}00036\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\$result)\ \{}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [];}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00040}00040\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00041}00041\ \ \ \ \ \$incidencias\ =\ [];}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{while}\ (\$row\ =\ \$result-\/>fetch\_assoc())\ \{}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00043}00043\ \ \ \ \ \ \ \ \ \$incidencias[]\ =\ \$row;}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00045}00045\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{return}\ \$incidencias;}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{obtener_todas_incidencias_8php_source_l00048}00048\ ?>}
+
+\end{DoxyCode}

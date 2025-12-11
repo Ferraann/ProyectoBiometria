@@ -1,0 +1,63 @@
+\doxysection{guardar\+Medicion.\+php}
+\hypertarget{guardar_medicion_8php_source}{}\label{guardar_medicion_8php_source}\index{src/api/logicaNegocio/guardarMedicion.php@{src/api/logicaNegocio/guardarMedicion.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00003}00003\ \textcolor{comment}{//\ Fichero:\ guardarMedicion.php}}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00004}00004\ \textcolor{comment}{//\ Autor:\ Manuel}}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00005}00005\ \textcolor{comment}{//\ Fecha:\ 5/12/2025}}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00006}00006\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00007}00007\ \textcolor{comment}{//\ Descripción:}}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00008}00008\ \textcolor{comment}{//\ \ Este\ archivo\ contiene\ la\ función\ para\ guardar\ una\ nueva\ medición}}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00009}00009\ \textcolor{comment}{//\ \ en\ la\ base\ de\ datos,\ verificando\ relaciones\ y\ parámetros\ necesarios.}}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00010}00010\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00012}00012\ \textcolor{keyword}{function}\ guardarMedicion(\$conn,\ \$data)}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00014}00014\ \ \ \ \ \textcolor{comment}{//\ 1\ Verificar\ parámetros\ obligatorios}}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{if}\ (!isset(\$data[\textcolor{stringliteral}{'tipo\_medicion\_id'}],\ \$data[\textcolor{stringliteral}{'valor'}],\ \$data[\textcolor{stringliteral}{'sensor\_id'}],\ \$data[\textcolor{stringliteral}{'localizacion'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Faltan\ parámetros\ obligatorios."{}}];}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00017}00017\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00019}00019\ \ \ \ \ \$sensor\_id\ =\ \$data[\textcolor{stringliteral}{'sensor\_id'}];}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//\ 2\ Comprobar\ si\ existe\ una\ relación\ activa\ usuario-\/sensor\ con\ ese\ sensor}}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00022}00022\ \ \ \ \ \$sqlCheck\ =\ \textcolor{stringliteral}{"{}SELECT\ COUNT(*)\ as\ count\ FROM\ usuario\_sensor\ WHERE\ sensor\_id\ =\ ?\ AND\ actual\ =\ 1"{}};}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00023}00023\ \ \ \ \ \$stmtCheck\ =\ \$conn-\/>prepare(\$sqlCheck);}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00024}00024\ \ \ \ \ \$stmtCheck-\/>bind\_param(\textcolor{stringliteral}{"{}i"{}},\ \$sensor\_id);}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00025}00025\ \ \ \ \ \$stmtCheck-\/>execute();}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00026}00026\ \ \ \ \ \$result\ =\ \$stmtCheck-\/>get\_result();}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00027}00027\ \ \ \ \ \$row\ =\ \$result-\/>fetch\_assoc();}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00028}00028\ \ \ \ \ \$existeRelacion\ =\ \$row[\textcolor{stringliteral}{'count'}];}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00029}00029\ \ \ \ \ \$stmtCheck-\/>close();}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ 3\ Si\ no\ hay\ relación\ activa,\ no\ permitir\ guardar\ la\ medición}}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{if}\ (\$existeRelacion\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}No\ existe\ una\ relación\ activa\ entre\ el\ sensor\ y\ un\ usuario."{}}}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00036}00036\ \ \ \ \ \ \ \ \ ];}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//\ 4\ Insertar\ la\ medición\ si\ la\ relación\ es\ válida}}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00040}00040\ \ \ \ \ \$sql\ =\ \textcolor{stringliteral}{"{}INSERT\ INTO\ medicion\ (tipo\_medicion\_id,\ valor,\ sensor\_id,\ localizacion)}}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00041}00041\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ VALUES\ (?,\ ?,\ ?,\ ?)"{}};}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00043}00043\ \ \ \ \ \$stmt\ =\ \$conn-\/>prepare(\$sql);}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00044}00044\ \ \ \ \ \$stmt-\/>bind\_param(}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}idis"{}},}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00046}00046\ \ \ \ \ \ \ \ \ \$data[\textcolor{stringliteral}{'tipo\_medicion\_id'}],}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00047}00047\ \ \ \ \ \ \ \ \ \$data[\textcolor{stringliteral}{'valor'}],}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00048}00048\ \ \ \ \ \ \ \ \ \$data[\textcolor{stringliteral}{'sensor\_id'}],}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00049}00049\ \ \ \ \ \ \ \ \ \$data[\textcolor{stringliteral}{'localizacion'}]}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00050}00050\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{if}\ (\$stmt-\/>execute())\ \{}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}ok"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Medición\ guardada\ correctamente."{}}];}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00054}00054\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Error\ al\ guardar\ medición:\ "{}}\ .\ \$conn-\/>error];}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guardar_medicion_8php_source_l00057}00057\ \}}
+
+\end{DoxyCode}

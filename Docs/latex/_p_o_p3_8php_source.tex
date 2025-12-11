@@ -1,0 +1,267 @@
+\doxysection{POP3.\+php}
+\hypertarget{_p_o_p3_8php_source}{}\label{_p_o_p3_8php_source}\index{src/libs/PHPMailer-\/7.0.0/src/POP3.php@{src/libs/PHPMailer-\/7.0.0/src/POP3.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00022}00022\ \textcolor{keyword}{namespace\ }PHPMailer\(\backslash\)PHPMailer;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00042}\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3}{00042}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3}{POP3}}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00043}00043\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{const}\ VERSION\ =\ \textcolor{stringliteral}{'7.0.0'};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{const}\ DEFAULT\_PORT\ =\ 110;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{const}\ DEFAULT\_TIMEOUT\ =\ 30;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00075}00075\ \ \ \ \ \textcolor{keyword}{public}\ \$do\_debug\ =\ self::DEBUG\_OFF;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00082}00082\ \ \ \ \ \textcolor{keyword}{public}\ \$host;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00089}00089\ \ \ \ \ \textcolor{keyword}{public}\ \$port;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00096}00096\ \ \ \ \ \textcolor{keyword}{public}\ \$tval;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00103}00103\ \ \ \ \ \textcolor{keyword}{public}\ \$username;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00110}00110\ \ \ \ \ \textcolor{keyword}{public}\ \$password;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00117}00117\ \ \ \ \ \textcolor{keyword}{protected}\ \$pop\_conn;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00124}00124\ \ \ \ \ \textcolor{keyword}{protected}\ \$connected\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00131}00131\ \ \ \ \ \textcolor{keyword}{protected}\ \$errors\ =\ [];}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00136}\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_afa2c3d8a05f37e1aac11b9789aab2d4e}{00136}}\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_afa2c3d8a05f37e1aac11b9789aab2d4e}{LE}}\ =\ \textcolor{stringliteral}{"{}\(\backslash\)r\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00143}00143\ \ \ \ \ \textcolor{keyword}{const}\ DEBUG\_OFF\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00151}00151\ \ \ \ \ \textcolor{keyword}{const}\ DEBUG\_SERVER\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00158}00158\ \ \ \ \ \textcolor{keyword}{const}\ DEBUG\_CLIENT\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00172}\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_a3e0490147786f4128309fa01cc9be935}{00172}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_a3e0490147786f4128309fa01cc9be935}{popBeforeSmtp}}(}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00173}00173\ \ \ \ \ \ \ \ \ \$host,}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00174}00174\ \ \ \ \ \ \ \ \ \$port\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00175}00175\ \ \ \ \ \ \ \ \ \$timeout\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00176}00176\ \ \ \ \ \ \ \ \ \$username\ =\ \textcolor{stringliteral}{''},}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00177}00177\ \ \ \ \ \ \ \ \ \$password\ =\ \textcolor{stringliteral}{''},}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00178}00178\ \ \ \ \ \ \ \ \ \$debug\_level\ =\ 0}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00179}00179\ \ \ \ \ )\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00180}00180\ \ \ \ \ \ \ \ \ \$pop\ =\ \textcolor{keyword}{new}\ \textcolor{keyword}{self}();}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$pop-\/>authorise(\$host,\ \$port,\ \$timeout,\ \$username,\ \$password,\ \$debug\_level);}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00183}00183\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00199}00199\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ authorise(\$host,\ \$port\ =\ \textcolor{keyword}{false},\ \$timeout\ =\ \textcolor{keyword}{false},\ \$username\ =\ \textcolor{stringliteral}{''},\ \$password\ =\ \textcolor{stringliteral}{''},\ \$debug\_level\ =\ 0)}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00200}00200\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00201}00201\ \ \ \ \ \ \ \ \ \$this-\/>host\ =\ \$host;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{comment}{//If\ no\ port\ value\ provided,\ use\ default}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00203}00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{false}\ ===\ \$port)\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>port\ =\ static::DEFAULT\_PORT;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00205}00205\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>port\ =\ (int)\ \$port;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00207}00207\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00208}00208\ \ \ \ \ \ \ \ \ \textcolor{comment}{//If\ no\ timeout\ value\ provided,\ use\ default}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00209}00209\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{false}\ ===\ \$timeout)\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>tval\ =\ static::DEFAULT\_TIMEOUT;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00211}00211\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>tval\ =\ (int)\ \$timeout;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00213}00213\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00214}00214\ \ \ \ \ \ \ \ \ \$this-\/>do\_debug\ =\ \$debug\_level;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00215}00215\ \ \ \ \ \ \ \ \ \$this-\/>username\ =\ \$username;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00216}00216\ \ \ \ \ \ \ \ \ \$this-\/>password\ =\ \$password;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00217}00217\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Reset\ the\ error\ log}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00218}00218\ \ \ \ \ \ \ \ \ \$this-\/>errors\ =\ [];}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00219}00219\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Connect}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00220}00220\ \ \ \ \ \ \ \ \ \$result\ =\ \$this-\/>connect(\$this-\/>host,\ \$this-\/>port,\ \$this-\/>tval);}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00221}00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$result)\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \$login\_result\ =\ \$this-\/>login(\$this-\/>username,\ \$this-\/>password);}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$login\_result)\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>disconnect();}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00228}00228\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00229}00229\ \ \ \ \ \ \ \ \ \textcolor{comment}{//We\ need\ to\ disconnect\ regardless\ of\ whether\ the\ login\ succeeded}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00230}00230\ \ \ \ \ \ \ \ \ \$this-\/>disconnect();}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00232}00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00233}00233\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00244}00244\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ connect(\$host,\ \$port\ =\ \textcolor{keyword}{false},\ \$tval\ =\ 30)}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00245}00245\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00246}00246\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Are\ we\ already\ connected?}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00247}00247\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$this-\/>connected)\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00249}00249\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00251}00251\ \ \ \ \ \ \ \ \ \textcolor{comment}{//On\ Windows\ this\ will\ raise\ a\ PHP\ Warning\ error\ if\ the\ hostname\ doesn't\ exist.}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00252}00252\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Rather\ than\ suppress\ it\ with\ @fsockopen,\ capture\ it\ cleanly\ instead}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00253}00253\ \ \ \ \ \ \ \ \ set\_error\_handler(\textcolor{keyword}{function}\ ()\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ call\_user\_func\_array([\$this,\ \textcolor{stringliteral}{'catchWarning'}],\ func\_get\_args());}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00255}00255\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00256}00256\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00257}00257\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{false}\ ===\ \$port)\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \$port\ =\ static::DEFAULT\_PORT;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00259}00259\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00260}00260\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00261}00261\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Connect\ to\ the\ POP3\ server}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00262}00262\ \ \ \ \ \ \ \ \ \$errno\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00263}00263\ \ \ \ \ \ \ \ \ \$errstr\ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00264}00264\ \ \ \ \ \ \ \ \ \$this-\/>pop\_conn\ =\ fsockopen(}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \$host,\ \textcolor{comment}{//POP3\ Host}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \$port,\ \textcolor{comment}{//Port\ \#}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \$errno,\ \textcolor{comment}{//Error\ Number}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \$errstr,\ \textcolor{comment}{//Error\ Message}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \$tval}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00270}00270\ \ \ \ \ \ \ \ \ );\ \textcolor{comment}{//Timeout\ (seconds)}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00271}00271\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Restore\ the\ error\ handler}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00272}00272\ \ \ \ \ \ \ \ \ restore\_error\_handler();}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00273}00273\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00274}00274\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Did\ we\ connect?}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00275}00275\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{false}\ ===\ \$this-\/>pop\_conn)\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//It\ would\ appear\ not...}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>setError(}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ connect\ to\ server\ \$host\ on\ port\ \$port.\ errno:\ \$errno;\ errstr:\ \$errstr"{}}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00282}00282\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00283}00283\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00284}00284\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Increase\ the\ stream\ time-\/out}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00285}00285\ \ \ \ \ \ \ \ \ stream\_set\_timeout(\$this-\/>pop\_conn,\ \$tval,\ 0);}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00287}00287\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Get\ the\ POP3\ server\ response}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00288}00288\ \ \ \ \ \ \ \ \ \$pop3\_response\ =\ \$this-\/>getResponse();}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00289}00289\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Check\ for\ the\ +OK}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00290}00290\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$this-\/>checkResponse(\$pop3\_response))\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//The\ connection\ is\ established\ and\ the\ POP3\ server\ is\ talking}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>connected\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00293}00293\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00295}00295\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00296}00296\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00297}00297\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00298}00298\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00299}00299\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00309}00309\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ login(\$username\ =\ \textcolor{stringliteral}{''},\ \$password\ =\ \textcolor{stringliteral}{''})}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00310}00310\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00311}00311\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\$this-\/>connected)\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>setError(\textcolor{stringliteral}{'Not\ connected\ to\ POP3\ server'});}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00314}00314\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00315}00315\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (empty(\$username))\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \$username\ =\ \$this-\/>username;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00317}00317\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00318}00318\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (empty(\$password))\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \$password\ =\ \$this-\/>password;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00320}00320\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00321}00321\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00322}00322\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Send\ the\ Username}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00323}00323\ \ \ \ \ \ \ \ \ \$this-\/>sendString(\textcolor{stringliteral}{"{}USER\ \$username"{}}\ .\ static::LE);}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00324}00324\ \ \ \ \ \ \ \ \ \$pop3\_response\ =\ \$this-\/>getResponse();}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00325}00325\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$this-\/>checkResponse(\$pop3\_response))\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Send\ the\ Password}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>sendString(\textcolor{stringliteral}{"{}PASS\ \$password"{}}\ .\ static::LE);}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \$pop3\_response\ =\ \$this-\/>getResponse();}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$this-\/>checkResponse(\$pop3\_response))\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00332}00332\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00333}00333\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00334}00334\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00335}00335\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00336}00336\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00340}00340\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ disconnect()}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00341}00341\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00342}00342\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ could\ not\ connect\ at\ all,\ no\ need\ to\ disconnect}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00343}00343\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$this-\/>pop\_conn\ ===\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00345}00345\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00346}00346\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00347}00347\ \ \ \ \ \ \ \ \ \$this-\/>sendString(\textcolor{stringliteral}{'QUIT'}\ .\ static::LE);}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00348}00348\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00349}00349\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ RFC\ 1939\ shows\ POP3\ server\ sending\ a\ +OK\ response\ to\ the\ QUIT\ command.}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00350}00350\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Try\ to\ get\ it.\ \ Ignore\ any\ failures\ here.}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00351}00351\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>getResponse();}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00353}00353\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ \$e)\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Do\ nothing}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00355}00355\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00356}00356\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00357}00357\ \ \ \ \ \ \ \ \ \textcolor{comment}{//The\ QUIT\ command\ may\ cause\ the\ daemon\ to\ exit,\ which\ will\ kill\ our\ connection}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00358}00358\ \ \ \ \ \ \ \ \ \textcolor{comment}{//So\ ignore\ errors\ here}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00359}00359\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ @fclose(\$this-\/>pop\_conn);}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00361}00361\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ \$e)\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Do\ nothing}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00363}00363\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00364}00364\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00365}00365\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Clean\ up\ attributes.}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00366}00366\ \ \ \ \ \ \ \ \ \$this-\/>connected\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00367}00367\ \ \ \ \ \ \ \ \ \$this-\/>pop\_conn\ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00368}00368\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00369}00369\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00377}00377\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{function}\ getResponse(\$size\ =\ 128)}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00378}00378\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00379}00379\ \ \ \ \ \ \ \ \ \$response\ =\ fgets(\$this-\/>pop\_conn,\ \$size);}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00380}00380\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$this-\/>do\_debug\ >=\ self::DEBUG\_SERVER)\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'Server\ -\/>\ Client:\ '},\ \$response;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00382}00382\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00383}00383\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00384}00384\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$response;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00385}00385\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00386}00386\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00394}00394\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{function}\ sendString(\$string)}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00395}00395\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00396}00396\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$this-\/>pop\_conn)\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$this-\/>do\_debug\ >=\ self::DEBUG\_CLIENT)\ \{\ \textcolor{comment}{//Show\ client\ messages\ when\ debug\ >=\ 2}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'Client\ -\/>\ Server:\ '},\ \$string;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00400}00400\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ fwrite(\$this-\/>pop\_conn,\ \$string,\ strlen(\$string));}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00402}00402\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00403}00403\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00404}00404\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00405}00405\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00406}00406\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00415}00415\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{function}\ checkResponse(\$string)}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00416}00416\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00417}00417\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strpos(\$string,\ \textcolor{stringliteral}{'+OK'})\ !==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>setError(\textcolor{stringliteral}{"{}Server\ reported\ an\ error:\ \$string"{}});}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00419}00419\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00421}00421\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00422}00422\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00423}00423\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00424}00424\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00425}00425\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00432}00432\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{function}\ setError(\$error)}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00433}00433\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00434}00434\ \ \ \ \ \ \ \ \ \$this-\/>errors[]\ =\ \$error;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00435}00435\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$this-\/>do\_debug\ >=\ self::DEBUG\_SERVER)\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<pre>'};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\$this-\/>errors\ as\ \$e)\ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print\_r(\$e);}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'</pre>'};}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00441}00441\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00442}00442\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00443}00443\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00449}00449\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ getErrors()}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00450}00450\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00451}00451\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>errors;}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00452}00452\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00453}00453\ }
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00462}00462\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{function}\ catchWarning(\$errno,\ \$errstr,\ \$errfile,\ \$errline)}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00463}00463\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00464}00464\ \ \ \ \ \ \ \ \ \$this-\/>setError(}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'Connecting\ to\ the\ POP3\ server\ raised\ a\ PHP\ warning:'}\ .}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}errno:\ \$errno\ errstr:\ \$errstr;\ errfile:\ \$errfile;\ errline:\ \$errline"{}}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00467}00467\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00468}00468\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_p_o_p3_8php_source_l00469}00469\ \}}
+
+\end{DoxyCode}

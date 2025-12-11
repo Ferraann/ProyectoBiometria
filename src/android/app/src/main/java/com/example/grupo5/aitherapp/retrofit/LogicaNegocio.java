@@ -10,6 +10,10 @@ import com.example.grupo5.aitherapp.activitysApp.HomeActivity;
 import com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor;
 import com.example.grupo5.aitherapp.pojos.PojoSensor;
 import com.example.grupo5.aitherapp.pojos.PojoUsuario;
+import com.google.android.gms.common.api.Api;
+import com.google.gson.Gson;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -106,8 +110,8 @@ public class LogicaNegocio {
                         .putString("correo", usuarioServidor.getCorreo())
                         .apply();
 
-                Intent intent = new Intent(contexto, HomeActivity.class);
-                contexto.startActivity(intent);
+                usuarioServidor.setAction("getObtenerSensoresUsuario");
+                getListaSensores(usuarioServidor, contexto);
             }
 
             @Override
@@ -167,8 +171,12 @@ public class LogicaNegocio {
                     PojoRespuestaServidor r = response.body();
                     String mensaje = (r.getStatus() != null) ? r.getStatus() : "Añadido tu sensor";
                     Toast.makeText(contexto, mensaje, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(contexto, HomeActivity.class);
-                    contexto.startActivity(intent);
+
+
+                    PojoUsuario usuario = new PojoUsuario();
+                    usuario.setId(sensor.getUsuario_id());
+                    getListaSensores(usuario,contexto);
+
                 } else {
                     Toast.makeText(contexto, "Error HTTP: " + response.code(), Toast.LENGTH_SHORT).show();
                 }
@@ -264,4 +272,39 @@ public class LogicaNegocio {
         call.enqueue(callback);
     }
 
+    /**
+     *
+     */
+    public static void getListaSensores(PojoUsuario usuario, Context contexto) {
+        ApiService api = ApiCliente.getApiService();
+        Call<PojoRespuestaServidor> call = api.obtenerSensoresUsuario(usuario.getAction(), usuario.getId());
+
+        call.enqueue(new Callback<PojoRespuestaServidor>() {
+            @Override
+            public void onResponse(Call<PojoRespuestaServidor> call, Response<PojoRespuestaServidor> response) {
+                if (!response.isSuccessful() || response.body() == null) {
+                    Log.d("Error","Algo ha fallado");
+                    return;
+                }
+
+                PojoRespuestaServidor respuesta = response.body();
+                List<PojoSensor> sensores = respuesta.getListaSensores();
+
+                SharedPreferences prefs = contexto.getSharedPreferences("SesionUsuario", Context.MODE_PRIVATE);
+
+                Gson gson = new Gson();
+                String jsonSensores = gson.toJson(sensores);
+
+                prefs.edit().putString("ListaSensores", jsonSensores).apply();
+
+                Intent intent = new Intent(contexto, HomeActivity.class);
+                contexto.startActivity(intent);
+            }
+
+            @Override
+            public void onFailure(Call<PojoRespuestaServidor> call, Throwable t) {
+                Log.e("Obtener lista", "Error en conexión: " + t.getMessage());
+            }
+        });
+    }
 }

@@ -264,7 +264,6 @@ switch ($method) {
             case "getFotoPerfil":
                 echo json_encode(obtenerFotoPerfil($conn, $input['usuario_id']));
                 break;
-
             case "getSensoresDeUsuario":
                 $id = intval($_GET['id'] ?? 0);
                 echo json_encode(obtenerSensoresDeUsuario($conn, $id));
@@ -279,6 +278,9 @@ switch ($method) {
                 }
                 $row = obtenerSensorXId($conn, $id); 
                 echo json_encode($row ?: ["status" => "error", "mensaje" => "Sensor no encontrado"]);
+
+            case "getObtenerSensoresUsuario":
+                echo json_encode(obtenerListaSensores($conn, $_GET['usuario_id']));
                 break;
 
             default:
@@ -297,3 +299,4 @@ switch ($method) {
 
 // Cerramos conexión
 $conn->close();
+?>

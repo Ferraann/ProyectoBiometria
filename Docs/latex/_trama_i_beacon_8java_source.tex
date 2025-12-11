@@ -1,0 +1,85 @@
+\doxysection{Trama\+IBeacon.\+java}
+\hypertarget{_trama_i_beacon_8java_source}{}\label{_trama_i_beacon_8java_source}\index{src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java@{src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.example.grupo5.aitherapp.btle;}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00002}00002\ \textcolor{keyword}{import}\ java.util.Arrays;}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00012}\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon}{00012}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a4c7c571f9c63215f3845ab24db4eda08}{TramaIBeacon}}\ \{}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{byte}[]\ prefijo\ =\ \textcolor{keyword}{null};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{byte}[]\ uuid\ =\ \textcolor{keyword}{null};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{byte}[]\ major\ =\ \textcolor{keyword}{null};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{byte}[]\ minor\ =\ \textcolor{keyword}{null};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{byte}\ \ \ txPower\ =\ 0;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{byte}[]\ losBytes;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{byte}[]\ advFlags\ =\ \textcolor{keyword}{null};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{byte}[]\ advHeader\ =\ \textcolor{keyword}{null};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{byte}[]\ companyID\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{byte}[2];\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{byte}\ \ \ iBeaconType\ =\ 0;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{byte}\ \ \ iBeaconLength\ =\ 0;\ \ \ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00032}\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a36240776316e5e68a2f07c99550aa21b}{00032}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{byte}[]\ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a36240776316e5e68a2f07c99550aa21b}{getPrefijo}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ prefijo;}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00040}\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a8cf1bbab8911d1e9a75749cab5ef0ab6}{00040}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{byte}[]\ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a8cf1bbab8911d1e9a75749cab5ef0ab6}{getUUID}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ uuid;}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00048}\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ab30da4812e766395dbb8d8165fd6ae3c}{00048}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{byte}[]\ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ab30da4812e766395dbb8d8165fd6ae3c}{getMajor}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ major;}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00056}\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a521dc6ade096dad454a8f17fa8a54e50}{00056}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{byte}[]\ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a521dc6ade096dad454a8f17fa8a54e50}{getMinor}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ minor;}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00064}\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_aa03c2787773cd19f3c86c3bf383745a6}{00064}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{byte}\ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_aa03c2787773cd19f3c86c3bf383745a6}{getTxPower}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ txPower;}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00072}\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ab9f907590373f6d3e94b67fd442309a1}{00072}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{byte}[]\ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ab9f907590373f6d3e94b67fd442309a1}{getLosBytes}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ losBytes;}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00080}\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_abd74345656deef7568b89ed209338b8c}{00080}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{byte}[]\ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_abd74345656deef7568b89ed209338b8c}{getAdvFlags}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ advFlags;}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00088}\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a16941b85433442efefcef71843c02d73}{00088}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{byte}[]\ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a16941b85433442efefcef71843c02d73}{getAdvHeader}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ advHeader;}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00096}\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_aba2115c01d1166048a96e99f8a868367}{00096}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{byte}[]\ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_aba2115c01d1166048a96e99f8a868367}{getCompanyID}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ companyID;}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00104}\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ae3cd86e76b29ecca490bb6b96a730e33}{00104}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{byte}\ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ae3cd86e76b29ecca490bb6b96a730e33}{getiBeaconType}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iBeaconType;}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00112}\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ab6949c43fcd7fd762cd662bd655800b7}{00112}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{byte}\ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_ab6949c43fcd7fd762cd662bd655800b7}{getiBeaconLength}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iBeaconLength;}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00114}00114\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00124}\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a4c7c571f9c63215f3845ab24db4eda08}{00124}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_a4c7c571f9c63215f3845ab24db4eda08}{TramaIBeacon}}(\textcolor{keywordtype}{byte}[]\ bytes\ )\ \{}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ this.losBytes\ =\ bytes;}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00127}00127\ \ \ \ \ \ \ \ \ prefijo\ =\ Arrays.copyOfRange(losBytes,\ 0,\ 8+1\ );\ \ \textcolor{comment}{//\ 9\ bytes}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00128}00128\ \ \ \ \ \ \ \ \ uuid\ \ \ \ =\ Arrays.copyOfRange(losBytes,\ 9,\ 24+1\ );\ \textcolor{comment}{//\ 16\ bytes}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00129}00129\ \ \ \ \ \ \ \ \ major\ \ \ =\ Arrays.copyOfRange(losBytes,\ 25,\ 26+1\ );\ \textcolor{comment}{//\ 2\ bytes}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ minor\ \ \ =\ Arrays.copyOfRange(losBytes,\ 27,\ 28+1\ );\ \textcolor{comment}{//\ 2\ bytes}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00131}00131\ \ \ \ \ \ \ \ \ txPower\ =\ losBytes[29];\ \textcolor{comment}{//\ 1\ byte}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00133}00133\ \ \ \ \ \ \ \ \ advFlags\ \ \ \ \ \ =\ Arrays.copyOfRange(prefijo,\ 0,\ 2+1);\ \textcolor{comment}{//\ 3\ bytes}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00134}00134\ \ \ \ \ \ \ \ \ advHeader\ \ \ \ \ =\ Arrays.copyOfRange(prefijo,\ 3,\ 4+1);\ \textcolor{comment}{//\ 2\ bytes}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00135}00135\ \ \ \ \ \ \ \ \ companyID\ \ \ \ \ =\ Arrays.copyOfRange(prefijo,\ 5,\ 6+1);\ \textcolor{comment}{//\ 2\ bytes}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00136}00136\ \ \ \ \ \ \ \ \ iBeaconType\ \ \ =\ prefijo[7];\ \textcolor{comment}{//\ 1\ byte}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00137}00137\ \ \ \ \ \ \ \ \ iBeaconLength\ =\ prefijo[8];\ \textcolor{comment}{//\ 1\ byte}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00138}00138\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_trama_i_beacon_8java_source_l00139}00139\ \}}
+
+\end{DoxyCode}

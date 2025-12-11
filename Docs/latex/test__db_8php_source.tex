@@ -1,0 +1,34 @@
+\doxysection{test\+\_\+db.\+php}
+\hypertarget{test__db_8php_source}{}\label{test__db_8php_source}\index{src/api/test\_db.php@{src/api/test\_db.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00002}00002\ \$servername\ =\ \textcolor{stringliteral}{"{}localhost"{}};}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00003}00003\ \$username\ \ \ =\ \textcolor{stringliteral}{"{}aitherdb"{}};}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00004}00004\ \$password\ \ \ =\ \textcolor{stringliteral}{"{}Sansaloni330."{}};}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00005}00005\ \$dbname\ \ \ \ \ =\ \textcolor{stringliteral}{"{}aither"{}};}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00006}00006\ \$port\ \ \ \ \ \ \ =\ 3306;}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00008}00008\ \$conn\ =\ \textcolor{keyword}{new}\ mysqli(\$servername,\ \$username,\ \$password,\ \$dbname,\ \$port);}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00010}00010\ \textcolor{keywordflow}{if}\ (\$conn-\/>connect\_errno)\ \{}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00011}00011\ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<h3>ERROR\ de\ conexión</h3>"{}};}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00012}00012\ \ \ \ \ echo\ \textcolor{stringliteral}{"{}Código:\ "{}}\ .\ \$conn-\/>connect\_errno\ .\ \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00013}00013\ \ \ \ \ echo\ \textcolor{stringliteral}{"{}Mensaje:\ "{}}\ .\ \$conn-\/>connect\_error\ .\ \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00014}00014\ \ \ \ \ die();}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00017}00017\ echo\ \textcolor{stringliteral}{"{}<h3>Conexión\ exitosa</h3>"{}};}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00019}00019\ \$result\ =\ \$conn-\/>query(\textcolor{stringliteral}{"{}SHOW\ TABLES;"{}});}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00020}00020\ \textcolor{keywordflow}{if}\ (\$result)\ \{}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00021}00021\ \ \ \ \ echo\ \textcolor{stringliteral}{"{}Tablas\ encontradas\ en\ '\$dbname':<br>"{}};}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{while}\ (\$row\ =\ \$result-\/>fetch\_array())\ \{}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00023}00023\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}-\/\ "{}}\ .\ \$row[0]\ .\ \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00025}00025\ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00026}00026\ \ \ \ \ echo\ \textcolor{stringliteral}{"{}⚠\ Conectó,\ pero\ no\ pudo\ listar\ tablas:\ "{}}\ .\ \$conn-\/>error;}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00027}00027\ \}}
+\DoxyCodeLine{\Hypertarget{test__db_8php_source_l00028}00028\ ?>}
+
+\end{DoxyCode}
