@@ -25,7 +25,18 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        SharedPreferences prefs = getSharedPreferences("MiAppPrefs", MODE_PRIVATE);
 
+        // Sumar 10 coins al iniciar la app
+        int coinsUsuario = prefs.getInt("coinsUsuario", 0);
+        coinsUsuario += 10;
+        prefs.edit().putInt("coinsUsuario", coinsUsuario).apply();
+
+        // Mostrar en la UI si tienes TextView
+        TextView tvCoins = findViewById(R.id.coinNumber);
+        if(tvCoins != null) {
+            tvCoins.setText(String.valueOf(coinsUsuario));
+        }
 
         findViewById(R.id.btnVincularQR).setOnClickListener(v ->
                 startActivity(new Intent(HomeActivity.this, VincularQRActivity.class))

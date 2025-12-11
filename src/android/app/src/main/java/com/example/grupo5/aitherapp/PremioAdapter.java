@@ -15,7 +15,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.grupo5.aitherapp.pojos.PojoPremio;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
@@ -24,14 +23,24 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.List;
 
+
 public class PremioAdapter extends RecyclerView.Adapter<PremioAdapter.PremioViewHolder> {
 
     private List<PojoPremio> premios;
     private Context context;
+    private OnCoinsChangedListener coinsListener;
 
     public PremioAdapter(List<PojoPremio> premios, Context context) {
         this.premios = premios;
         this.context = context;
+    }
+
+    public interface OnCoinsChangedListener {
+        void onCoinsChanged(int nuevoCoins);
+    }
+
+    public void setOnCoinsChangedListener(OnCoinsChangedListener listener) {
+        this.coinsListener = listener;
     }
 
     @NonNull
@@ -54,13 +63,19 @@ public class PremioAdapter extends RecyclerView.Adapter<PremioAdapter.PremioView
             String email = prefs.getString("emailUsuario", "correo_por_defecto@example.com");
 
             if (coinsUsuario >= premio.getCoins()) {
+                // Descontar coins
                 coinsUsuario -= premio.getCoins();
                 prefs.edit().putInt("coinsUsuario", coinsUsuario).apply();
 
+                // Actualizar UI mediante callback
+                if (coinsListener != null) {
+                    coinsListener.onCoinsChanged(coinsUsuario);
+                }
+
                 Toast.makeText(context, "Elemento canjeado", Toast.LENGTH_SHORT).show();
 
-                // Premios de 50 o más coins envían QR
-                if (premio.getCoins() >= 50) {
+                // Enviar correo con QR solo si es "Viaje en Transporte Público"
+                if (premio.getNombre().equals("Viaje en Transporte Público")) {
                     Bitmap qr = generarQR("ID_USUARIO_" + System.currentTimeMillis());
                     if (qr != null) {
                         enviarCorreoConQR(email, premio.getNombre(), qr);
@@ -68,6 +83,7 @@ public class PremioAdapter extends RecyclerView.Adapter<PremioAdapter.PremioView
                         enviarCorreoConfirmacion(email, premio.getNombre());
                     }
                 } else {
+                    // Para otros premios normales
                     enviarCorreoConfirmacion(email, premio.getNombre());
                 }
 
@@ -75,6 +91,7 @@ public class PremioAdapter extends RecyclerView.Adapter<PremioAdapter.PremioView
                 Toast.makeText(context, "No tienes suficientes AithCoins", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
     @Override
@@ -118,7 +135,6 @@ public class PremioAdapter extends RecyclerView.Adapter<PremioAdapter.PremioView
     // Enviar correo con QR
     private void enviarCorreoConQR(String email, String nombrePremio, Bitmap qrBitmap) {
         try {
-            // Guardar QR temporalmente
             File qrFile = new File(context.getCacheDir(), "qr.png");
             FileOutputStream fos = new FileOutputStream(qrFile);
             qrBitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
