@@ -1,33 +1,166 @@
 /* ----------------------------- */
-/* Detalle Incidencia - CSS Renovado */
-/* ----------------------------- */
-
+/* ---------- Colores ---------- */
 :root {
-  --color-fondo: #f5f7fa;
-  --color-principal: #0052cc;
-  --color-secundario: #00c2ff;
-  --color-exito: #36b37e;
-  --color-peligro: #ff5630;
-  --color-texto: #172b4d;
-  --color-borde: #dfe1e6;
-  --color-boton-texto: #ffffff;
-  --sombra: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --radio: 8px;
+    /* Colores principales */
+    --Principal_1: #152D9A;
+    --Principal_1_RGB: 21, 45, 154;
+    --Principal_2: #B1BEF9;
+    --Principal_2_RGB: 177, 190, 249;
+    /* Colores secundarios */
+    --Secundario_Blanco: #FFFFFF;
+    --Secundario_Negro: #000000;
+    --Secundario_Azul: #587DBD;
+    --Secundario_Azul_RGB: 88, 125, 189;
+    --bold: 700;
+    --semibold: 600;
+    --normal: 400;
+
+}
+/* ---------------------------- */
+/* ---------------------------- */
+
+/* --- Reseteo Básico y Estilos Globales --- */
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: var(--color-fondo);
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
+    min-height: 100vh;
+    /* tipografia temporal */
+    font-family: 'Montserrat', sans-serif;
+    
+}
+/* ---------------------------- */
+/* ---------- Header ---------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--Secundario_Azul);
 }
 
-main {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
+header a > img {
+    width: 160px;
+    height: auto;
 }
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    list-style: none;
+}
+nav ul li{
+    text-align: center;
+}
+
+nav a {
+    color: var(--Principal_1);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+nav a.nav-perfil {
+    flex-direction: column;  /* Cambia la dirección de flex (para apilar) */
+    align-items: center;     /* Centra el contenido horizontalmente */
+    gap: 4px;                /* Añade un pequeño espacio entre icono y texto */
+}
+
+
+nav a.nav-perfil i {
+    font-size: 2.5rem; /* Un 50% más grande que el texto (puedes ajustarlo) */
+}
+nav a:hover{
+    color: var(--Secundario_Blanco);
+}
+/* --- 1. Contenedor para posicionamiento relativo --- */
+.profile-dropdown-container {
+    /* Necesitamos que el <li> de la navegación sea el punto de referencia
+       para posicionar el menú de forma absoluta. */
+    position: relative;
+    /* Aseguramos que el logo y el nombre estén apilados verticalmente */
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+/* --- 2. Estilos del Menú Pop-up --- */
+.profile-menu {
+    /* POSICIONAMIENTO CLAVE */
+    position: absolute;
+    top: -15px; /* Ajusta para que el borde superior toque el borde del header */
+    right: -30px; /* Alinea el menú con el borde derecho de la pantalla (compensando el padding del header) */
+    z-index: 100; /* Asegura que esté por encima de todo */
+
+    /* DISEÑO */
+    width: 250px;
+    background-color: var(--Principal_1); /* El azul oscuro de la imagen */
+    color: var(--Secundario_Blanco);
+    border-radius: 0 0 10px 10px; /* Solo las esquinas inferiores redondeadas */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Importante para el radio de las esquinas */
+    
+    /* CONTROL JAVASCRIPT: oculto por defecto */
+    display: none; 
+}
+
+.profile-menu.show {
+    display: block; /* Clase añadida por JS para mostrarlo */
+}
+
+/* --- 3. Cabecera del Menú (Icono + Nombre + X) --- */
+.menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 10px;
+    background-color: rgba(255, 255, 255, 0.1); /* Ligero fondo para destacar */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-icon-large {
+    font-size: 2.5rem; /* Icono grande */
+}
+
+.profile-name {
+    font-weight: var(--semibold);
+    font-size: 1.1rem;
+    line-height: 1.1;
+    text-align: right;
+}
+
+.close-menu-btn {
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px; /* Área de clic más grande */
+}
+
+/* --- 4. Botones/Opciones del Menú --- */
+.menu-item {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    text-align: left;
+    text-decoration: none;
+    color: var(--Secundario_Blanco);
+    font-weight: var(--semibold);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s;
+}
+
+.menu-item:hover {
+    background-color: var(--Principal_2); /* Color más claro al pasar el ratón */
+    color: var(--Principal_1);
+}
+
+/*-------------------------------------------------------------------------------------*/
 
 h1 {
   color: var(--color-principal);
