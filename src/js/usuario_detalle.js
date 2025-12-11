@@ -9,7 +9,7 @@
 //  permisos de administrador/técnico en tiempo real.
 // ------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     const API_URL = '../api/index.php';
     const params = new URLSearchParams(location.search);
     const idUsuario = params.get('id');
@@ -53,8 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 fetch(`${API_URL}?accion=esAdministrador&id=${idUsuario}`),
                 fetch(`${API_URL}?accion=esTecnico&id=${idUsuario}`)
             ]);
-            const { es: admin } = await resAdm.json();
-            const { es: tec } = await resTec.json();
+            const { es_admin: admin } = await resAdm.json();
+            const { es_tecnico: tec } = await resTec.json();
 
             chkAdmin.checked = admin;
             chkTec.checked = tec;
