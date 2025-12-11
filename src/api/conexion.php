@@ -1,9 +1,9 @@
 <?php
 function abrirServidor() {
     // Parámetros de conexión (correctos para Plesk)
-    $servername = "localhost";
-    $username   = "root";
-    $password   = "";
+    $servername = "localhost";    
+    $username   = "aitherdb";
+    $password   = "Sansaloni330.";
     $dbname     = "aither";
     //$port       = 3306;
 
