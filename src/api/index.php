@@ -75,8 +75,6 @@ switch ($method) {
             case "crearTipoMedicion":         echo json_encode(crearTipoMedicion($conn, $input)); break;
             case "crearSensorYRelacion":      echo json_encode(crearSensorYRelacion($conn, $input)); break;
             case "activarUsuario":            echo json_encode(activarUsuario($conn, $input['token'])); break;
-            case "finalizarRelacionSensor":   echo json_encode(marcarSensorConProblemas($conn, $input)); break;
-            case "reactivarSensor":           echo json_encode(reactivarSensor($conn, $input)); break;
             case "actualizarUsuario":         echo json_encode(actualizarUsuario($conn, $input)); break;
             case "cerrarIncidencia":          echo json_encode(cerrarIncidencia($conn, $input)); break;
             case "crearIncidencia":           echo json_encode(crearIncidencia($conn, $input)); break;
