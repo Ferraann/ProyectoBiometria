@@ -4,9 +4,24 @@
 // Fecha: 11/12/2025
 // ------------------------------------------------------------------
 // Descripción:
-//  Script modular que carga la ficha completa de un sensor,
-//  muestra su estado y permite modificar el campo 'problema' vía API.
+//  Script de detalle que proporciona una vista completa de un sensor
+//  específico y permite la gestión de su estado operativo.
+//  
+// Funcionalidad:
+//  - Carga el objeto de roles del usuario activo para futuras comprobaciones de permiso.
+//  - Muestra datos técnicos del sensor (ID, MAC, Modelo, Nombre).
+//  - Visualiza el estado operativo actual (Problema/Reparado) con indicadores visuales (colores/texto).
+//  - Permite al usuario con permisos (ej: Técnico) alternar el switch
+//    para marcar el sensor con o sin problemas, interactuando con la API
+//    (`marcarSensorConProblemas` / `marcarSensorSinProblemas`).
+//  - Incluye manejo de errores y confirmación de la acción antes de enviar la petición.
 // ------------------------------------------------------------------
+
+//Permisos
+import { obtenerRoles } from "./permisos.js";
+const idUsuarioActivo = parseInt(window.sessionStorage.getItem("idUsuario") || "0");
+let roles = null;
+
 document.addEventListener("DOMContentLoaded", () => {
     
     const API_URL = '../api/index.php';
@@ -39,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* 1. Cargar datos básicos del sensor (IIFE Asíncrono) --------- */
     (async () => {
         try {
+            roles = await obtenerRoles(idUsuarioActivo);
             const resSensor = await fetch(`${API_URL}?accion=getSensorXId&id=${idSensor}`);
             
             if (!resSensor.ok) {

@@ -1,7 +1,24 @@
 <?php
-/**
- * FUNCIÓN 17: Obtener una lista de sensores asociados al usuario
- */
+// ------------------------------------------------------------------
+// Fichero: obtenerListaSensores.php
+// Autor: Manuel
+// Fecha: 11/12/2025
+// ------------------------------------------------------------------
+// Descripción:
+//  Función de API (Lógica de Negocio) para recuperar la lista de sensores
+//  que están actualmente asignados y activos para un usuario específico.
+//  
+// Funcionalidad:
+//  - Función 'obtenerListaSensores' que requiere el `usuario_id` como parámetro.
+//  - Ejecuta una consulta JOIN entre las tablas `sensor` (s) y la tabla intermedia 
+//    `usuario_sensor` (us).
+//  - Filtra la lista para incluir solo las asignaciones donde `us.usuario_id` coincide
+//    con el ID proporcionado.
+//  - **Punto clave:** Filtra la relación con la condición `us.actual = 1`, asegurando 
+//    que solo se devuelvan los sensores que el usuario está gestionando en este momento.
+//  - Devuelve un array de objetos JSON con el `id` y la `mac` de cada sensor asociado.
+// ------------------------------------------------------------------
+
 function obtenerListaSensores($conn, $usuario_id){
 
     if (empty($usuario_id)) {

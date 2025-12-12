@@ -5,9 +5,15 @@
 // Fecha: 5/12/2025
 // ------------------------------------------------------------------
 // Descripción:
-//  Aquí se definen todas las funciones lógicas que maneja la API.
-//  Cada función se encarga de interactuar con la base de datos y
-//  devolver los resultados al archivo index.php.
+//  Define la lógica de negocio para la activación de cuentas de usuario
+//  mediante un token de seguridad enviado por correo electrónico.
+//  
+// Funcionalidad:
+//  - Función 'activarUsuario' que recibe la conexión a DB y un token único.
+//  - Realiza la validación del token buscando su existencia en la tabla 'usuario'.
+//  - Comprueba la caducidad del token ('token_expira') contra la hora actual del sistema.
+//  - Si es válido y no ha expirado, actualiza el campo 'activo' a 1.
+//  - Limpia los campos de token de seguridad y de expiración tras la activación exitosa.
 // ------------------------------------------------------------------
 
 function activarUsuario($conn, $token)

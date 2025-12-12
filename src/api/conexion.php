@@ -1,14 +1,29 @@
 <?php
-function abrirServidor() {
-    // Parámetros de conexión (correctos para Plesk)
-    $servername = "localhost";    
-    $username   = "root";
-    $password   = "";
+// ------------------------------------------------------------------
+// Fichero: abrirServidor.php
+// Autor: Manuel
+// Fecha: 11/12/2025
+// ------------------------------------------------------------------
+// Descripción:
+//  Función esencial para establecer la conexión con la base de datos
+//  MySQL utilizando la extensión `mysqli`.
+// ------------------------------------------------------------------
+
+function abrirServidor()
+{
+    // Parámetros de conexión
+    //Plesk
+    $servername = "localhost";
+    $username   = "aitherdb";
+    $password   = "Sansaloni330.";
+    //local
+    //$username   = "root";
+    //$password   = "";
     $dbname     = "aither";
     //$port       = 3306;
 
     // Crear conexión con MySQL
-$conn = new mysqli($servername, $username, $password, $dbname /*$port*/);
+    $conn = new mysqli($servername, $username, $password, $dbname /*$port*/);
 
     // Verificar conexión
     if ($conn->connect_error) {
@@ -23,4 +38,3 @@ $conn = new mysqli($servername, $username, $password, $dbname /*$port*/);
 
     return $conn;
 }
-?>
