@@ -68,6 +68,16 @@ public class HomeActivity extends AppCompatActivity {
             });
         }
 
+        ImageView btnWalk = findViewById(R.id.nav_walk);
+
+        if (btnWalk != null) {
+            btnWalk.setOnClickListener(v -> {
+                Intent intent = new Intent(HomeActivity.this, WalkActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            });
+        }
+
         SharedPreferences prefs = getSharedPreferences("MiAppPrefs", MODE_PRIVATE);
 
         int coinsUsuario = prefs.getInt("coinsUsuario", 0);
