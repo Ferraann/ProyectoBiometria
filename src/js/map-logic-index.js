@@ -1,6 +1,6 @@
 // Contenido para js/map-logic.js
 
-'use strict';
+    'use strict';
 
 // ==============================================
 // 1. CONFIGURACIÓN DE GASES Y DATOS GLOBALES
