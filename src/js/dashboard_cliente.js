@@ -106,3 +106,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 400);
     }
 });
+
+
+
+
+
+
+// --- Lógica del Modal de Información ---
+document.addEventListener('DOMContentLoaded', () => {
+    const infoModal = document.getElementById('gas-info-panel');
+    const openInfoBtn = document.getElementById('open-info-btn');
+    const closeInfoBtn = document.getElementById('close-info-btn');
+
+    // Función para abrir
+    if (openInfoBtn) {
+        openInfoBtn.addEventListener('click', () => {
+            infoModal.style.display = 'block';
+        });
+    }
+
+    // Función para cerrar
+    if (closeInfoBtn) {
+        closeInfoBtn.addEventListener('click', () => {
+            infoModal.style.display = 'none';
+        });
+    }
+
+    // Cerrar si se hace clic fuera del contenido blanco
+    window.addEventListener('click', (event) => {
+        if (event.target === infoModal) {
+            infoModal.style.display = 'none';
+        }
+    });
+
+    // Cerrar con la tecla Escape
+    window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && infoModal.style.display === 'block') {
+            infoModal.style.display = 'none';
+        }
+    });
+});
