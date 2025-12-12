@@ -79,7 +79,7 @@ switch ($method) {
             case "cerrarIncidencia":          echo json_encode(cerrarIncidencia($conn, $input)); break;
             case "crearIncidencia":           echo json_encode(crearIncidencia($conn, $input)); break;
             case "guardarFotoIncidencia":     echo json_encode(guardarFotoIncidencia($conn, $input)); break;
-            case "modificarDatos":            echo json_encode(modificarDatos($conn, $input)); break;
+            //case "modificarDatos":            echo json_encode(modificarDatos($conn, $input)); break;
             case "guardarDistanciaHoy":       echo json_encode(guardarDistanciaHoy($conn, $input)); break;
             case "actualizarEstadoIncidencia": echo json_encode(actualizarEstadoIncidencia($conn, $input)); break;
             case "asignarmeTecnicoIncidencia": echo json_encode(asignarTecnicoIncidencia($conn, $input)); break;
