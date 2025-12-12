@@ -14,8 +14,8 @@ function abrirServidor()
     // Parámetros de conexión
     //Plesk
     $servername = "localhost";
-    $username   = "aitherdb";
-    $password   = "Sansaloni330.";
+    $username   = "root";
+    $password   = "";
     //local
     //$username   = "root";
     //$password   = "";
