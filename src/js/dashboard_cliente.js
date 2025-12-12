@@ -70,19 +70,47 @@ document.addEventListener('click', function(event) {
 });
 
 
-/* --- 3. LÓGICA DEL SISTEMA DE PESTAÑAS --- */
-
 const tabLinks = document.querySelectorAll('.sensores-nav a');
-const tabContents = document.querySelectorAll('.tab-content');
 
 tabLinks.forEach(link => {
     link.addEventListener('click', function(event) {
-        event.preventDefault(); 
+        event.preventDefault();
         const tabId = this.dataset.tab;
+
+        // Visualización de pestañas
         tabLinks.forEach(l => l.classList.remove('active'));
-        tabContents.forEach(c => c.classList.remove('active-tab-content'));
         this.classList.add('active');
-        const activeContent = document.querySelector(`.tab-content[data-tab-content="${tabId}"]`);
-        activeContent.classList.add('active-tab-content');
+
+        const tabContents = document.querySelectorAll('.tab-content');
+        tabContents.forEach(content => {
+            if (content.getAttribute('data-tab-content') === tabId) {
+                content.classList.add('active-tab-content');
+            } else {
+                content.classList.remove('active-tab-content');
+            }
+        });
+
+        // Solo llamamos al mapa si la pestaña es "mapas"
+        if (tabId === 'mapas') {
+            // El retraso permite que el contenedor se vuelva visible antes de inicializar
+            setTimeout(() => {
+                if (typeof initializeDashboardMap === 'function') {
+                    initializeDashboardMap();
+                }
+            }, 150);
+        }
     });
+});
+
+// Inicialización controlada al cargar el DOM
+document.addEventListener('DOMContentLoaded', () => {
+    const activeTab = document.querySelector('.sensores-nav a.active');
+    if (activeTab && activeTab.dataset.tab === 'mapas') {
+        // Un solo temporizador para la carga inicial
+        setTimeout(() => {
+            if (typeof initializeDashboardMap === 'function') {
+                initializeDashboardMap();
+            }
+        }, 400);
+    }
 });

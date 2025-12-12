@@ -174,11 +174,11 @@ switch ($method) {
                 echo json_encode(canjearRecompensa($conn, $input));
                 break;
             case "marcarSensorSinProblemas":
-                echo json_encode(reactivarSensor($conn, $input));
+                echo json_encode(sensorSinProblemas($conn, $input));
                 break;
 
             case "marcarSensorConProblemas":
-                echo json_encode(marcarSensorConProblemas($conn, $input));
+                echo json_encode(sensorConProblemas($conn, $input));
                 break;
                 
             default:
@@ -278,6 +278,7 @@ switch ($method) {
                 }
                 $row = obtenerSensorXId($conn, $id); 
                 echo json_encode($row ?: ["status" => "error", "mensaje" => "Sensor no encontrado"]);
+                break;
 
             case "getObtenerSensoresUsuario":
                 echo json_encode(obtenerListaSensores($conn, $_GET['usuario_id']));

@@ -1,0 +1,7405 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.34243,
+          39.4838
+        ]
+      },
+      "properties": {
+        "id_sensor": "10037001",
+        "descripcion": "CÁCERES",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 5.62,
+        "valor_O3": 36.84,
+        "valor_CO": 0.17,
+        "valor_SO2": 0.44,
+        "valor_PM10": 10.81
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.08481,
+          40.04374
+        ]
+      },
+      "properties": {
+        "id_sensor": "10148001",
+        "descripcion": "PLASENCIA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 9.74,
+        "valor_O3": 40.13,
+        "valor_CO": 0.17,
+        "valor_SO2": 0.0,
+        "valor_PM10": 11.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.94301,
+          39.84375
+        ]
+      },
+      "properties": {
+        "id_sensor": "10182001",
+        "descripcion": "MONFRAGÜE",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 3.37,
+        "valor_O3": 33.04,
+        "valor_CO": 0.1,
+        "valor_SO2": 0.0,
+        "valor_PM10": 7.58
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.4426,
+          36.1617
+        ]
+      },
+      "properties": {
+        "id_sensor": "11004006",
+        "descripcion": "E4:RINCONCILLO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 21.11,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.54,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.45343,
+          36.13623
+        ]
+      },
+      "properties": {
+        "id_sensor": "11004007",
+        "descripcion": "ALGECIRAS EPS",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 24.5,
+        "valor_O3": 44.19,
+        "valor_CO": 0.53,
+        "valor_SO2": 3.11,
+        "valor_PM10": 17.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.74372,
+          36.73975
+        ]
+      },
+      "properties": {
+        "id_sensor": "11006001",
+        "descripcion": "ARCOS",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 8.49,
+        "valor_O3": 67.46,
+        "valor_CO": 0.27,
+        "valor_SO2": 3.36,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.48083,
+          36.17538
+        ]
+      },
+      "properties": {
+        "id_sensor": "11008001",
+        "descripcion": "LOS BARRIOS",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 12.07,
+        "valor_O3": 60.81,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.61,
+        "valor_PM10": 25.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.48893,
+          36.18562
+        ]
+      },
+      "properties": {
+        "id_sensor": "11008003",
+        "descripcion": "COLEGIO (S1)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 15.45,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 4.79,
+        "valor_PM10": 27.13
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.43277,
+          36.1747
+        ]
+      },
+      "properties": {
+        "id_sensor": "11008006",
+        "descripcion": "PALMONES (S5)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 24.4,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 6.17,
+        "valor_PM10": 25.58
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.43576,
+          36.19048
+        ]
+      },
+      "properties": {
+        "id_sensor": "11008008",
+        "descripcion": "CORTIJILLOS",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 14.37,
+        "valor_O3": 52.22,
+        "valor_CO": 0.57,
+        "valor_SO2": 5.63,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.6635,
+          36.23386
+        ]
+      },
+      "properties": {
+        "id_sensor": "11008009",
+        "descripcion": "E2: ALCORNOCALES",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 4.88,
+        "valor_O3": 56.02,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.13,
+        "valor_PM10": 25.18
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.26857,
+          36.50602
+        ]
+      },
+      "properties": {
+        "id_sensor": "11012002",
+        "descripcion": "AVDA. MARCONI",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 15.16,
+        "valor_O3": 55.68,
+        "valor_CO": 0.67,
+        "valor_SO2": 1.83,
+        "valor_PM10": 24.27
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.11449,
+          36.66086
+        ]
+      },
+      "properties": {
+        "id_sensor": "11020003",
+        "descripcion": "CARTUJA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 11.33,
+        "valor_O3": 41.64,
+        "valor_CO": 0.17,
+        "valor_SO2": 7.15,
+        "valor_PM10": 19.34
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.11724,
+          36.68855
+        ]
+      },
+      "properties": {
+        "id_sensor": "11020004",
+        "descripcion": "JEREZ-CHAPMN",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 16.29,
+        "valor_O3": 46.14,
+        "valor_CO": 0.19,
+        "valor_SO2": 2.84,
+        "valor_PM10": 22.1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.34836,
+          36.15937
+        ]
+      },
+      "properties": {
+        "id_sensor": "11022005",
+        "descripcion": "LA LÍNEA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 18.34,
+        "valor_O3": 56.93,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.76,
+        "valor_PM10": 18.24
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.34194,
+          36.17315
+        ]
+      },
+      "properties": {
+        "id_sensor": "11022007",
+        "descripcion": "E7:EL ZABAL",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 15.58,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 6.33,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.53162,
+          36.79449
+        ]
+      },
+      "properties": {
+        "id_sensor": "11026001",
+        "descripcion": "PRADO REY",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 2.71,
+        "valor_O3": 72.34,
+        "valor_CO": 0.24,
+        "valor_SO2": 1.12,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.22517,
+          36.52283
+        ]
+      },
+      "properties": {
+        "id_sensor": "11028001",
+        "descripcion": "RIO SAN PEDRO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 13.56,
+        "valor_O3": 50.67,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 20.46
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.20307,
+          36.46059
+        ]
+      },
+      "properties": {
+        "id_sensor": "11031001",
+        "descripcion": "SAN FERNANDO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 13.2,
+        "valor_O3": 59.0,
+        "valor_CO": 0.91,
+        "valor_SO2": 4.67,
+        "valor_PM10": 16.71
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.43027,
+          36.21204
+        ]
+      },
+      "properties": {
+        "id_sensor": "11033003",
+        "descripcion": "SAN ROQUE (S6)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 9.37,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.92,
+        "valor_PM10": 19.07
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.39138,
+          36.20879
+        ]
+      },
+      "properties": {
+        "id_sensor": "11033004",
+        "descripcion": "CARTEYA (S9)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 11.48,
+        "valor_O3": 58.52,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.41,
+        "valor_PM10": 16.06
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.37697,
+          36.17943
+        ]
+      },
+      "properties": {
+        "id_sensor": "11033005",
+        "descripcion": "CAMPAMENTO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 15.47,
+        "valor_O3": 56.74,
+        "valor_CO": 0.3,
+        "valor_SO2": 3.71,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.3808,
+          36.1862
+        ]
+      },
+      "properties": {
+        "id_sensor": "11033006",
+        "descripcion": "ECONOMATO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 9.84,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 5.54,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.41141,
+          36.1821
+        ]
+      },
+      "properties": {
+        "id_sensor": "11033007",
+        "descripcion": "GUADARRANQUE",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 11.4,
+        "valor_O3": 45.04,
+        "valor_CO": 0.57,
+        "valor_SO2": 5.22,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.40471,
+          36.20442
+        ]
+      },
+      "properties": {
+        "id_sensor": "11033008",
+        "descripcion": "MADREVIEJA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 6.4,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.78,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.38371,
+          36.20388
+        ]
+      },
+      "properties": {
+        "id_sensor": "11033009",
+        "descripcion": "HOSTELERÍA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 14.7,
+        "valor_O3": 0.0,
+        "valor_CO": 0.66,
+        "valor_SO2": 4.24,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.3825,
+          36.1801
+        ]
+      },
+      "properties": {
+        "id_sensor": "11033010",
+        "descripcion": "PUENTE MAYORGA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 0.0,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 7.42,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.18972,
+          40.05194
+        ]
+      },
+      "properties": {
+        "id_sensor": "12005005",
+        "descripcion": "ALCORA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 8.56,
+        "valor_O3": 40.11,
+        "valor_CO": 0.16,
+        "valor_SO2": 7.21,
+        "valor_PM10": 19.23
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.05639,
+          39.94528
+        ]
+      },
+      "properties": {
+        "id_sensor": "12009007",
+        "descripcion": "ALMASSORA-C. P. OCHANDO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 31.5,
+        "valor_O3": 32.56,
+        "valor_CO": 0.32,
+        "valor_SO2": 27.11,
+        "valor_PM10": 24.87
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.07278,
+          40.06222
+        ]
+      },
+      "properties": {
+        "id_sensor": "12028001",
+        "descripcion": "BENICASSIM",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 18.17,
+        "valor_O3": 41.52,
+        "valor_CO": 0.25,
+        "valor_SO2": 4.99,
+        "valor_PM10": 7.86
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.065,
+          39.89222
+        ]
+      },
+      "properties": {
+        "id_sensor": "12032001",
+        "descripcion": "BURRIANA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 18.42,
+        "valor_O3": 30.25,
+        "valor_CO": 0.28,
+        "valor_SO2": 6.16,
+        "valor_PM10": 5.63
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.05722,
+          40.01278
+        ]
+      },
+      "properties": {
+        "id_sensor": "12040008",
+        "descripcion": "CASTELLÓ-PENYETA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 9.45,
+        "valor_O3": 49.9,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 4.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.03611,
+          39.95917
+        ]
+      },
+      "properties": {
+        "id_sensor": "12040009",
+        "descripcion": "CASTELLÓ-ERMITA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 34.72,
+        "valor_O3": 24.5,
+        "valor_CO": 0.0,
+        "valor_SO2": 5.48,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.01056,
+          39.98194
+        ]
+      },
+      "properties": {
+        "id_sensor": "12040010",
+        "descripcion": "CASTELLÓ-GRAU",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 17.78,
+        "valor_O3": 27.36,
+        "valor_CO": 0.0,
+        "valor_SO2": 5.19,
+        "valor_PM10": 8.01
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.02611,
+          39.98889
+        ]
+      },
+      "properties": {
+        "id_sensor": "12040015",
+        "descripcion": "CASTELLÓ-PATRONAT D'ESPORTS",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 20.75,
+        "valor_O3": 31.21,
+        "valor_CO": 0.13,
+        "valor_SO2": 4.41,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0089,
+          39.9694
+        ]
+      },
+      "properties": {
+        "id_sensor": "12040020",
+        "descripcion": "CASTELLO CEIP LA MARINA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 23.7,
+        "valor_O3": 31.48,
+        "valor_CO": 0.0,
+        "valor_SO2": 8.23,
+        "valor_PM10": 8.28
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.46833,
+          40.05417
+        ]
+      },
+      "properties": {
+        "id_sensor": "12046001",
+        "descripcion": "CIRAT",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 5.87,
+        "valor_O3": 47.43,
+        "valor_CO": 0.11,
+        "valor_SO2": 3.2,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.09111,
+          40.63722
+        ]
+      },
+      "properties": {
+        "id_sensor": "12080007",
+        "descripcion": "MORELLA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 3.73,
+        "valor_O3": 67.63,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.05,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.23333,
+          39.96278
+        ]
+      },
+      "properties": {
+        "id_sensor": "12084003",
+        "descripcion": "ONDA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 11.1,
+        "valor_O3": 46.16,
+        "valor_CO": 0.0,
+        "valor_SO2": 5.69,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.08472,
+          40.69167
+        ]
+      },
+      "properties": {
+        "id_sensor": "12093004",
+        "descripcion": "CORATXAR",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 2.5,
+        "valor_O3": 68.55,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.37278,
+          40.55472
+        ]
+      },
+      "properties": {
+        "id_sensor": "12099001",
+        "descripcion": "SANT JORDI",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 9.74,
+        "valor_O3": 44.61,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.09,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.07889,
+          40.26944
+        ]
+      },
+      "properties": {
+        "id_sensor": "12120001",
+        "descripcion": "TORRE ENDOMENECH",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 0.0,
+        "valor_O3": 27.85,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.24444,
+          39.82361
+        ]
+      },
+      "properties": {
+        "id_sensor": "12126003",
+        "descripcion": "LA VALL D'UIXÓ",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 0.0,
+        "valor_O3": 47.07,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.24917,
+          40.41667
+        ]
+      },
+      "properties": {
+        "id_sensor": "12129001",
+        "descripcion": "VILAFRANCA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 5.58,
+        "valor_O3": 55.01,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.01,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.60333,
+          39.93056
+        ]
+      },
+      "properties": {
+        "id_sensor": "12140002",
+        "descripcion": "VIVER",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 2.62,
+        "valor_O3": 50.34,
+        "valor_CO": 0.1,
+        "valor_SO2": 3.3,
+        "valor_PM10": 7.88
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.16944,
+          40.735
+        ]
+      },
+      "properties": {
+        "id_sensor": "12141002",
+        "descripcion": "ZORITA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 4.39,
+        "valor_O3": 38.97,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.0,
+        "valor_PM10": 4.34
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.9378,
+          38.9939
+        ]
+      },
+      "properties": {
+        "id_sensor": "13034002",
+        "descripcion": "CIUDAD REAL",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 8.66,
+        "valor_O3": 37.02,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.12,
+        "valor_PM10": 25.14
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.0886,
+          38.682
+        ]
+      },
+      "properties": {
+        "id_sensor": "13071015",
+        "descripcion": "CAMPO DE FÚTBOL",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 12.6,
+        "valor_O3": 45.24,
+        "valor_CO": 0.28,
+        "valor_SO2": 4.89,
+        "valor_PM10": 22.26
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.112,
+          38.7027
+        ]
+      },
+      "properties": {
+        "id_sensor": "13071017",
+        "descripcion": "BARRIO 630",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 14.68,
+        "valor_O3": 37.62,
+        "valor_CO": 0.0,
+        "valor_SO2": 4.58,
+        "valor_PM10": 22.45
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.1134,
+          38.69
+        ]
+      },
+      "properties": {
+        "id_sensor": "13071018",
+        "descripcion": "RAMPAS MECÁNICAS",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 20.82,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 7.25,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.1078,
+          38.6791
+        ]
+      },
+      "properties": {
+        "id_sensor": "13071019",
+        "descripcion": "ALMACÉN MUNICIPAL",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 13.95,
+        "valor_O3": 26.61,
+        "valor_CO": 0.0,
+        "valor_SO2": 5.16,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.77958,
+          37.90274
+        ]
+      },
+      "properties": {
+        "id_sensor": "14021006",
+        "descripcion": "ASOMADILLA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 12.39,
+        "valor_O3": 34.76,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.11,
+        "valor_PM10": 19.02
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.76234,
+          37.89261
+        ]
+      },
+      "properties": {
+        "id_sensor": "14021007",
+        "descripcion": "LEPANTO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 20.63,
+        "valor_O3": 26.97,
+        "valor_CO": 0.56,
+        "valor_SO2": 3.41,
+        "valor_PM10": 23.02
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.7801,
+          37.8926
+        ]
+      },
+      "properties": {
+        "id_sensor": "14021009",
+        "descripcion": "AVDA. AL-NASIR",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 28.57,
+        "valor_O3": 0.0,
+        "valor_CO": 0.46,
+        "valor_SO2": 3.0,
+        "valor_PM10": 26.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.472,
+          43.3353
+        ]
+      },
+      "properties": {
+        "id_sensor": "15005011",
+        "descripcion": "PASTORIZA-REPSOL",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 13.12,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 5.17,
+        "valor_PM10": 15.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.506,
+          43.3023
+        ]
+      },
+      "properties": {
+        "id_sensor": "15005012",
+        "descripcion": "CENTRO CIVICO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 10.34,
+        "valor_O3": 35.25,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.57,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.4997,
+          43.3223
+        ]
+      },
+      "properties": {
+        "id_sensor": "15005014",
+        "descripcion": "SABÓN-EMBALSE",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 0.0,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 20.61
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.44914,
+          43.34305
+        ]
+      },
+      "properties": {
+        "id_sensor": "15005015",
+        "descripcion": "PARQUE DA CEGA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 17.48,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 5.08,
+        "valor_PM10": 15.26
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.1861,
+          42.9536
+        ]
+      },
+      "properties": {
+        "id_sensor": "15023004",
+        "descripcion": "CEE",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 11.51,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.0,
+        "valor_PM10": 14.84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.545,
+          43.1478
+        ]
+      },
+      "properties": {
+        "id_sensor": "15024005",
+        "descripcion": "RODÍS",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 3.54,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.71,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.41414,
+          43.20364
+        ]
+      },
+      "properties": {
+        "id_sensor": "15024006",
+        "descripcion": "Monte Xalo",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 2.96,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.23,
+        "valor_PM10": 10.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.4206,
+          43.3671
+        ]
+      },
+      "properties": {
+        "id_sensor": "15030001",
+        "descripcion": "CORLAB 1",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 12.15,
+        "valor_O3": 38.5,
+        "valor_CO": 0.17,
+        "valor_SO2": 2.09,
+        "valor_PM10": 16.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.4249,
+          43.3542
+        ]
+      },
+      "properties": {
+        "id_sensor": "15030021",
+        "descripcion": "LA GRELA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 28.22,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.61,
+        "valor_PM10": 20.05
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.4092,
+          43.3828
+        ]
+      },
+      "properties": {
+        "id_sensor": "15030027",
+        "descripcion": "TORRE DE HÉRCULES",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 14.96,
+        "valor_O3": 43.1,
+        "valor_CO": 0.11,
+        "valor_SO2": 10.88,
+        "valor_PM10": 36.3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.4369,
+          43.3774
+        ]
+      },
+      "properties": {
+        "id_sensor": "15030028",
+        "descripcion": "SAN PEDRO (AIR LIQUIDE)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 9.94,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 4.23,
+        "valor_PM10": 13.93
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.0331,
+          43.1407
+        ]
+      },
+      "properties": {
+        "id_sensor": "15032001",
+        "descripcion": "TEIXEIRO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 5.71,
+        "valor_O3": 0.0,
+        "valor_CO": 0.2,
+        "valor_SO2": 0.0,
+        "valor_PM10": 11.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.1189,
+          43.0089
+        ]
+      },
+      "properties": {
+        "id_sensor": "15034008",
+        "descripcion": "DUMBRIA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 2.99,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.0,
+        "valor_PM10": 15.14
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.24312,
+          43.4815
+        ]
+      },
+      "properties": {
+        "id_sensor": "15036003",
+        "descripcion": "FERROL",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 13.97,
+        "valor_O3": 40.82,
+        "valor_CO": 0.32,
+        "valor_SO2": 1.45,
+        "valor_PM10": 14.38
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.2522,
+          43.4916
+        ]
+      },
+      "properties": {
+        "id_sensor": "15036004",
+        "descripcion": "A CABANA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 11.6,
+        "valor_O3": 52.26,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.5,
+        "valor_PM10": 15.07
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.555,
+          43.2597
+        ]
+      },
+      "properties": {
+        "id_sensor": "15041001",
+        "descripcion": "PAIOSACO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 7.84,
+        "valor_O3": 47.61,
+        "valor_CO": 0.1,
+        "valor_SO2": 3.46,
+        "valor_PM10": 12.19
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.24423,
+          43.45921
+        ]
+      },
+      "properties": {
+        "id_sensor": "15051001",
+        "descripcion": "PENEDO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 15.59,
+        "valor_O3": 0.0,
+        "valor_CO": 0.27,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.1502,
+          43.5197
+        ]
+      },
+      "properties": {
+        "id_sensor": "15055003",
+        "descripcion": "XUBIA (MEGASA)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 0.0,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 14.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.92347,
+          42.72081
+        ]
+      },
+      "properties": {
+        "id_sensor": "15057999",
+        "descripcion": "NOIA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 1.52,
+        "valor_O3": 61.27,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.12,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.3513,
+          43.116
+        ]
+      },
+      "properties": {
+        "id_sensor": "15059004",
+        "descripcion": "BUSCÁS",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 3.54,
+        "valor_O3": 60.8,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.31,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.8478,
+          43.4539
+        ]
+      },
+      "properties": {
+        "id_sensor": "15070002",
+        "descripcion": "MAGDALENA (B-1)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 6.26,
+        "valor_O3": 47.04,
+        "valor_CO": 0.65,
+        "valor_SO2": 3.05,
+        "valor_PM10": 9.37
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.9886,
+          43.4054
+        ]
+      },
+      "properties": {
+        "id_sensor": "15070006",
+        "descripcion": "FRAGA REDONDA (F-2)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 1.52,
+        "valor_O3": 64.18,
+        "valor_CO": 0.2,
+        "valor_SO2": 2.81,
+        "valor_PM10": 9.39
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.9181,
+          43.4454
+        ]
+      },
+      "properties": {
+        "id_sensor": "15070010",
+        "descripcion": "MACIÑEIRA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 3.44,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.24,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.5068,
+          42.9092
+        ]
+      },
+      "properties": {
+        "id_sensor": "15078005",
+        "descripcion": "CAMPO DE FÚTBOL",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 0.0,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 12.13
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.5591,
+          42.876
+        ]
+      },
+      "properties": {
+        "id_sensor": "15078007",
+        "descripcion": "COMPOSTELA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 10.83,
+        "valor_O3": 46.77,
+        "valor_CO": 0.35,
+        "valor_SO2": 4.51,
+        "valor_PM10": 16.17
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.5311,
+          42.8878
+        ]
+      },
+      "properties": {
+        "id_sensor": "15078008",
+        "descripcion": "SAN CAETANO",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 15.06,
+        "valor_O3": 47.61,
+        "valor_CO": 0.18,
+        "valor_SO2": 1.04,
+        "valor_PM10": 16.34
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.1297,
+          40.0619
+        ]
+      },
+      "properties": {
+        "id_sensor": "16078001",
+        "descripcion": "CUENCA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 23.57,
+        "valor_O3": 17.98,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.11,
+        "valor_PM10": 22.23
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.84214,
+          42.39198
+        ]
+      },
+      "properties": {
+        "id_sensor": "17001002",
+        "descripcion": "AGULLANA (DIPÒSITS D'AIGUA)",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 0.0,
+        "valor_O3": 57.53,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.21285,
+          41.95868
+        ]
+      },
+      "properties": {
+        "id_sensor": "17013001",
+        "descripcion": "BEGUR (CENTRE D'ESTUDIS DEL MAR)",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 4.7,
+        "valor_O3": 63.84,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.31556,
+          42.31917
+        ]
+      },
+      "properties": {
+        "id_sensor": "17032999",
+        "descripcion": "CABO DE CREUS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 3.3,
+        "valor_O3": 63.5,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.55,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.81655,
+          41.97639
+        ]
+      },
+      "properties": {
+        "id_sensor": "17079003",
+        "descripcion": "GIRONA (ESCOLA DE MÚSICA)",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 29.09,
+        "valor_O3": 0.0,
+        "valor_CO": 0.53,
+        "valor_SO2": 3.41,
+        "valor_PM10": 23.64
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.213,
+          42.3121
+        ]
+      },
+      "properties": {
+        "id_sensor": "17125001",
+        "descripcion": "PARDINES (AJUNTAMENT)",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 0.0,
+        "valor_O3": 66.45,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.51021,
+          42.14326
+        ]
+      },
+      "properties": {
+        "id_sensor": "17184001",
+        "descripcion": "SANTA PAU (CAN JORDÀ)",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 3.97,
+        "valor_O3": 37.89,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6193,
+          37.1356
+        ]
+      },
+      "properties": {
+        "id_sensor": "18021001",
+        "descripcion": "CIUDAD DEPORTIVA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 22.28,
+        "valor_O3": 26.42,
+        "valor_CO": 0.29,
+        "valor_SO2": 3.05,
+        "valor_PM10": 35.59
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.61266,
+          37.1961
+        ]
+      },
+      "properties": {
+        "id_sensor": "18087007",
+        "descripcion": "GRANADA - NORTE",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 48.96,
+        "valor_O3": 0.0,
+        "valor_CO": 0.58,
+        "valor_SO2": 6.39,
+        "valor_PM10": 27.59
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6001,
+          37.16568
+        ]
+      },
+      "properties": {
+        "id_sensor": "18087010",
+        "descripcion": "PALACIO CONGRESOS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 30.49,
+        "valor_O3": 31.13,
+        "valor_CO": 0.28,
+        "valor_SO2": 5.63,
+        "valor_PM10": 22.59
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.5173,
+          36.74312
+        ]
+      },
+      "properties": {
+        "id_sensor": "18140001",
+        "descripcion": "MOTRIL",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 8.75,
+        "valor_O3": 53.43,
+        "valor_CO": 0.39,
+        "valor_SO2": 2.05,
+        "valor_PM10": 17.46
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.55056,
+          37.23694
+        ]
+      },
+      "properties": {
+        "id_sensor": "18189999",
+        "descripcion": "VÍZNAR",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 4.95,
+        "valor_O3": 43.47,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.12,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.2702,
+          40.5684
+        ]
+      },
+      "properties": {
+        "id_sensor": "19046002",
+        "descripcion": "AZUQUECA - IES",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 20.77,
+        "valor_O3": 27.39,
+        "valor_CO": 0.0,
+        "valor_SO2": 4.83,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1425,
+          41.27417
+        ]
+      },
+      "properties": {
+        "id_sensor": "19061999",
+        "descripcion": "CAMPISÁBALOS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 1.57,
+        "valor_O3": 62.05,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.79,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1716,
+          40.6298
+        ]
+      },
+      "properties": {
+        "id_sensor": "19130001",
+        "descripcion": "GUADALAJARA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 24.76,
+        "valor_O3": 32.84,
+        "valor_CO": 0.29,
+        "valor_SO2": 0.0,
+        "valor_PM10": 16.22
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.02328,
+          43.2213
+        ]
+      },
+      "properties": {
+        "id_sensor": "20009001",
+        "descripcion": "ANDOAIN",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 23.87,
+        "valor_O3": 36.26,
+        "valor_CO": 0.0,
+        "valor_SO2": 5.08,
+        "valor_PM10": 14.64
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.155,
+          43.25056
+        ]
+      },
+      "properties": {
+        "id_sensor": "20016001",
+        "descripcion": "PAGOETA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 6.04,
+        "valor_O3": 63.53,
+        "valor_CO": 0.34,
+        "valor_SO2": 0.0,
+        "valor_PM10": 6.91
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.2682,
+          43.1804
+        ]
+      },
+      "properties": {
+        "id_sensor": "20018001",
+        "descripcion": "AZPEITIA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 16.72,
+        "valor_O3": 32.08,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 16.52
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.19138,
+          43.04811
+        ]
+      },
+      "properties": {
+        "id_sensor": "20019001",
+        "descripcion": "BEASAIN",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 21.85,
+        "valor_O3": 0.0,
+        "valor_CO": 0.28,
+        "valor_SO2": 3.16,
+        "valor_PM10": 16.23
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.85943,
+          43.34289
+        ]
+      },
+      "properties": {
+        "id_sensor": "20036001",
+        "descripcion": "JAIZKIBEL",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 0.0,
+        "valor_O3": 66.65,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9777,
+          43.2675
+        ]
+      },
+      "properties": {
+        "id_sensor": "20040001",
+        "descripcion": "HERNANI",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 22.08,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.78,
+        "valor_PM10": 17.38
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.4904,
+          43.0642
+        ]
+      },
+      "properties": {
+        "id_sensor": "20055001",
+        "descripcion": "ARRASATE",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 21.85,
+        "valor_O3": 0.0,
+        "valor_CO": 0.35,
+        "valor_SO2": 0.0,
+        "valor_PM10": 22.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.9607,
+          43.322
+        ]
+      },
+      "properties": {
+        "id_sensor": "20069002",
+        "descripcion": "ATEGORRIETA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 25.95,
+        "valor_O3": 0.0,
+        "valor_CO": 0.36,
+        "valor_SO2": 0.0,
+        "valor_PM10": 23.15
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.98444,
+          43.30278
+        ]
+      },
+      "properties": {
+        "id_sensor": "20069004",
+        "descripcion": "PUYO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 16.61,
+        "valor_O3": 46.33,
+        "valor_CO": 0.0,
+        "valor_SO2": 4.87,
+        "valor_PM10": 10.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.0109,
+          43.3094
+        ]
+      },
+      "properties": {
+        "id_sensor": "20069005",
+        "descripcion": "AVENIDA TOLOSA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 14.88,
+        "valor_O3": 37.95,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.19,
+        "valor_PM10": 12.78
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.98083,
+          43.31217
+        ]
+      },
+      "properties": {
+        "id_sensor": "20069006",
+        "descripcion": "EASO",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 30.16,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 17.46
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.03131,
+          43.27209
+        ]
+      },
+      "properties": {
+        "id_sensor": "20069007",
+        "descripcion": "ZUBIETA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 13.43,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 15.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.078,
+          43.1308
+        ]
+      },
+      "properties": {
+        "id_sensor": "20071001",
+        "descripcion": "TOLOSA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 22.39,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 15.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.05051,
+          43.27379
+        ]
+      },
+      "properties": {
+        "id_sensor": "20073001",
+        "descripcion": "USURBIL",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 13.88,
+        "valor_O3": 46.32,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.77,
+        "valor_PM10": 17.59
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.31811,
+          43.12518
+        ]
+      },
+      "properties": {
+        "id_sensor": "20080001",
+        "descripcion": "ZUMARRAGA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 16.9,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 15.35
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.01913,
+          43.26874
+        ]
+      },
+      "properties": {
+        "id_sensor": "20902001",
+        "descripcion": "LASARTE-ORIA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 19.2,
+        "valor_O3": 43.88,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.77,
+        "valor_PM10": 15.34
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.57042,
+          37.0161
+        ]
+      },
+      "properties": {
+        "id_sensor": "21005002",
+        "descripcion": "MATALASCAÑAS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 5.35,
+        "valor_O3": 34.54,
+        "valor_CO": 0.0,
+        "valor_SO2": 4.35,
+        "valor_PM10": 17.95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.555,
+          37.05194
+        ]
+      },
+      "properties": {
+        "id_sensor": "21005999",
+        "descripcion": "DOÑANA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 1.96,
+        "valor_O3": 38.58,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.44,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.93807,
+          37.27964
+        ]
+      },
+      "properties": {
+        "id_sensor": "21041008",
+        "descripcion": "LA ORDEN",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 1.83,
+        "valor_O3": 36.99,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.33,
+        "valor_PM10": 31.3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.9255,
+          37.2602
+        ]
+      },
+      "properties": {
+        "id_sensor": "21041010",
+        "descripcion": "LOS ROSALES",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 1.52,
+        "valor_O3": 0.0,
+        "valor_CO": 0.2,
+        "valor_SO2": 6.09,
+        "valor_PM10": 30.48
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.91905,
+          37.26725
+        ]
+      },
+      "properties": {
+        "id_sensor": "21041012",
+        "descripcion": "ROMERALEJO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 0.0,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 9.91,
+        "valor_PM10": 39.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.94219,
+          37.25258
+        ]
+      },
+      "properties": {
+        "id_sensor": "21041015",
+        "descripcion": "MARISMAS DEL TITÁN",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 18.49,
+        "valor_O3": 0.0,
+        "valor_CO": 0.54,
+        "valor_SO2": 5.75,
+        "valor_PM10": 22.22
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.93514,
+          37.25336
+        ]
+      },
+      "properties": {
+        "id_sensor": "21041016",
+        "descripcion": "POZO DULCE",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 18.43,
+        "valor_O3": 0.0,
+        "valor_CO": 0.27,
+        "valor_SO2": 3.9,
+        "valor_PM10": 31.66
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.92529,
+          37.27168
+        ]
+      },
+      "properties": {
+        "id_sensor": "21041017",
+        "descripcion": "CAMPUS DEL CARMEN",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 8.34,
+        "valor_O3": 33.53,
+        "valor_CO": 0.31,
+        "valor_SO2": 2.47,
+        "valor_PM10": 20.38
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.83384,
+          37.28156
+        ]
+      },
+      "properties": {
+        "id_sensor": "21050001",
+        "descripcion": "MOGUER",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 12.96,
+        "valor_O3": 42.99,
+        "valor_CO": 0.0,
+        "valor_SO2": 5.08,
+        "valor_PM10": 25.19
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.7341,
+          37.1041
+        ]
+      },
+      "properties": {
+        "id_sensor": "21050002",
+        "descripcion": "EL ARENOSILLO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 0.0,
+        "valor_O3": 50.95,
+        "valor_CO": 0.61,
+        "valor_SO2": 4.5,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.80745,
+          37.13379
+        ]
+      },
+      "properties": {
+        "id_sensor": "21050003",
+        "descripcion": "MAZAGON",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 10.41,
+        "valor_O3": 53.85,
+        "valor_CO": 0.63,
+        "valor_SO2": 1.27,
+        "valor_PM10": 24.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.6769,
+          37.3613
+        ]
+      },
+      "properties": {
+        "id_sensor": "21053003",
+        "descripcion": "NIEBLA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 8.46,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 4.96,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.92027,
+          37.19977
+        ]
+      },
+      "properties": {
+        "id_sensor": "21055004",
+        "descripcion": "LA RÁBIDA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 5.69,
+        "valor_O3": 48.93,
+        "valor_CO": 0.0,
+        "valor_SO2": 4.61,
+        "valor_PM10": 19.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.88858,
+          37.21925
+        ]
+      },
+      "properties": {
+        "id_sensor": "21055005",
+        "descripcion": "PALOS",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 8.37,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 4.37,
+        "valor_PM10": 25.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.90453,
+          37.19033
+        ]
+      },
+      "properties": {
+        "id_sensor": "21055007",
+        "descripcion": "TORREARENILLA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 11.82,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 4.87,
+        "valor_PM10": 18.45
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.96414,
+          37.18568
+        ]
+      },
+      "properties": {
+        "id_sensor": "21060002",
+        "descripcion": "PUNTA UMBRÍA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 13.03,
+        "valor_O3": 41.49,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.28,
+        "valor_PM10": 19.57
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.84463,
+          37.3154
+        ]
+      },
+      "properties": {
+        "id_sensor": "21064002",
+        "descripcion": "SAN JUÁN DEL PUERTO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 14.23,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 8.19,
+        "valor_PM10": 18.91
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.40389,
+          42.13611
+        ]
+      },
+      "properties": {
+        "id_sensor": "22125001",
+        "descripcion": "HUESCA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 30.22,
+        "valor_O3": 28.98,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.83,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1911,
+          41.91614
+        ]
+      },
+      "properties": {
+        "id_sensor": "22158002",
+        "descripcion": "MONZÓN CENTRO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 13.25,
+        "valor_O3": 20.77,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.25,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1819,
+          42.4578
+        ]
+      },
+      "properties": {
+        "id_sensor": "22190001",
+        "descripcion": "TORRELISA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 1.79,
+        "valor_O3": 54.08,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.86,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.78392,
+          38.09293
+        ]
+      },
+      "properties": {
+        "id_sensor": "23010002",
+        "descripcion": "BAILÉN",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 19.82,
+        "valor_O3": 30.16,
+        "valor_CO": 0.51,
+        "valor_SO2": 5.15,
+        "valor_PM10": 27.88
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.78157,
+          37.78255
+        ]
+      },
+      "properties": {
+        "id_sensor": "23050003",
+        "descripcion": "RONDA DEL VALLE",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 25.16,
+        "valor_O3": 41.59,
+        "valor_CO": 0.53,
+        "valor_SO2": 5.07,
+        "valor_PM10": 20.14
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.81032,
+          37.78444
+        ]
+      },
+      "properties": {
+        "id_sensor": "23050004",
+        "descripcion": "LAS FUENTEZUELAS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 16.32,
+        "valor_O3": 51.31,
+        "valor_CO": 0.39,
+        "valor_SO2": 5.16,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.01022,
+          38.1744
+        ]
+      },
+      "properties": {
+        "id_sensor": "23097001",
+        "descripcion": "VILLANUEVA DEL ARZOBISPO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 19.72,
+        "valor_O3": 44.58,
+        "valor_CO": 0.81,
+        "valor_SO2": 0.0,
+        "valor_PM10": 37.33
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.0897,
+          43.0414
+        ]
+      },
+      "properties": {
+        "id_sensor": "24025001",
+        "descripcion": "LARIO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 2.13,
+        "valor_O3": 51.75,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.78,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.7256,
+          42.5586
+        ]
+      },
+      "properties": {
+        "id_sensor": "24038001",
+        "descripcion": "CARRACEDELO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 7.91,
+        "valor_O3": 17.85,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.25,
+        "valor_PM10": 15.83
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.56827,
+          42.61797
+        ]
+      },
+      "properties": {
+        "id_sensor": "24064001",
+        "descripcion": "CUBILLOS DEL SIL-FESE",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 0.0,
+        "valor_O3": 29.74,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.5872,
+          42.6039
+        ]
+      },
+      "properties": {
+        "id_sensor": "24089006",
+        "descripcion": "BARRIO PINILLA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 21.03,
+        "valor_O3": 0.0,
+        "valor_CO": 0.81,
+        "valor_SO2": 2.75,
+        "valor_PM10": 22.01
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.5664,
+          42.5753
+        ]
+      },
+      "properties": {
+        "id_sensor": "24089010",
+        "descripcion": "LEÓN 4",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 15.42,
+        "valor_O3": 29.75,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.04,
+        "valor_PM10": 14.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.6036,
+          42.5507
+        ]
+      },
+      "properties": {
+        "id_sensor": "24115017",
+        "descripcion": "PONFERRADA 6",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 26.95,
+        "valor_O3": 0.0,
+        "valor_CO": 0.38,
+        "valor_SO2": 5.96,
+        "valor_PM10": 28.57
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.6236,
+          42.8028
+        ]
+      },
+      "properties": {
+        "id_sensor": "24134006",
+        "descripcion": "LA ROBLA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 7.47,
+        "valor_O3": 34.5,
+        "valor_CO": 0.0,
+        "valor_SO2": 21.61,
+        "valor_PM10": 18.03
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.4489,
+          42.0797
+        ]
+      },
+      "properties": {
+        "id_sensor": "24181001",
+        "descripcion": "VALDERAS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 3.23,
+        "valor_O3": 46.8,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.25,
+        "valor_PM10": 9.31
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.82993,
+          41.5441
+        ]
+      },
+      "properties": {
+        "id_sensor": "25119002",
+        "descripcion": "JUNEDA (PLA DEL MOLÍ)",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 13.96,
+        "valor_O3": 22.89,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.6157,
+          41.6158
+        ]
+      },
+      "properties": {
+        "id_sensor": "25120001",
+        "descripcion": "LLEIDA (IRURITA - PIUS XII)",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 26.48,
+        "valor_O3": 0.0,
+        "valor_CO": 0.34,
+        "valor_SO2": 1.81,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.19297,
+          41.90665
+        ]
+      },
+      "properties": {
+        "id_sensor": "25172001",
+        "descripcion": "PONTS (PONENT)",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 0.0,
+        "valor_O3": 22.04,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.72956,
+          42.05134
+        ]
+      },
+      "properties": {
+        "id_sensor": "25196001",
+        "descripcion": "MONTSEC (OAM)",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 1.04,
+        "valor_O3": 83.3,
+        "valor_CO": 0.1,
+        "valor_SO2": 2.03,
+        "valor_PM10": 4.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.13,
+          42.40538
+        ]
+      },
+      "properties": {
+        "id_sensor": "25209001",
+        "descripcion": "SORT (ESCOLA DE CAIAC)",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 0.0,
+        "valor_O3": 25.07,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 8.34
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.73417,
+          41.39333
+        ]
+      },
+      "properties": {
+        "id_sensor": "25224999",
+        "descripcion": "ELS TORMS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 4.23,
+        "valor_O3": 51.71,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.63,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.744,
+          42.176
+        ]
+      },
+      "properties": {
+        "id_sensor": "26011001",
+        "descripcion": "ALFARO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 11.69,
+        "valor_O3": 33.52,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 15.39
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.239,
+          42.44
+        ]
+      },
+      "properties": {
+        "id_sensor": "26019001",
+        "descripcion": "ARRÚBAL",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 10.65,
+        "valor_O3": 33.36,
+        "valor_CO": 0.24,
+        "valor_SO2": 1.04,
+        "valor_PM10": 11.79
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.232,
+          42.341
+        ]
+      },
+      "properties": {
+        "id_sensor": "26066001",
+        "descripcion": "GALILEA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 5.92,
+        "valor_O3": 34.26,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.93,
+        "valor_PM10": 11.29
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.428,
+          42.464
+        ]
+      },
+      "properties": {
+        "id_sensor": "26089001",
+        "descripcion": "LA CIGÜEÑA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 26.23,
+        "valor_O3": 21.89,
+        "valor_CO": 0.71,
+        "valor_SO2": 2.18,
+        "valor_PM10": 20.49
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.059,
+          42.34
+        ]
+      },
+      "properties": {
+        "id_sensor": "26117001",
+        "descripcion": "PRADEJÓN",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 7.58,
+        "valor_O3": 40.36,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.25,
+        "valor_PM10": 16.24
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.4319,
+          43.6844
+        ]
+      },
+      "properties": {
+        "id_sensor": "27013002",
+        "descripcion": "RIO COBO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 0.0,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.13,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.50778,
+          43.68627
+        ]
+      },
+      "properties": {
+        "id_sensor": "27025015",
+        "descripcion": "XOVE",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 6.42,
+        "valor_O3": 44.91,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.1,
+        "valor_PM10": 14.03
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.5509,
+          42.9979
+        ]
+      },
+      "properties": {
+        "id_sensor": "27028005",
+        "descripcion": "LUGO-FINGOY",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 15.27,
+        "valor_O3": 33.8,
+        "valor_CO": 0.28,
+        "valor_SO2": 4.34,
+        "valor_PM10": 16.81
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.5047,
+          42.9573
+        ]
+      },
+      "properties": {
+        "id_sensor": "27028006",
+        "descripcion": "Cuíña",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 0.0,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 12.39
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.4456,
+          42.7172
+        ]
+      },
+      "properties": {
+        "id_sensor": "27057001",
+        "descripcion": "EST-OU",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 7.26,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 16.47,
+        "valor_PM10": 16.63
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.44944,
+          42.71528
+        ]
+      },
+      "properties": {
+        "id_sensor": "27057002",
+        "descripcion": "SUR",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 20.06,
+        "valor_O3": 26.59,
+        "valor_CO": 0.0,
+        "valor_SO2": 29.01,
+        "valor_PM10": 15.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.70458,
+          42.63472
+        ]
+      },
+      "properties": {
+        "id_sensor": "27058999",
+        "descripcion": "O SAVIÑAO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 2.4,
+        "valor_O3": 56.61,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.59,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.6937,
+          43.313
+        ]
+      },
+      "properties": {
+        "id_sensor": "27065004",
+        "descripcion": "MOURENCE (C-9)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 4.69,
+        "valor_O3": 43.57,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.06,
+        "valor_PM10": 9.54
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.3632,
+          43.6591
+        ]
+      },
+      "properties": {
+        "id_sensor": "27902002",
+        "descripcion": "ESCOLA DE MÚSICA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 0.0,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.24,
+        "valor_PM10": 12.56
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.37795,
+          40.47933
+        ]
+      },
+      "properties": {
+        "id_sensor": "28005002",
+        "descripcion": "ALCALÁ DE HENARES",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 29.49,
+        "valor_O3": 25.32,
+        "valor_CO": 0.58,
+        "valor_SO2": 1.47,
+        "valor_PM10": 19.08
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.64525,
+          40.54035
+        ]
+      },
+      "properties": {
+        "id_sensor": "28006004",
+        "descripcion": "ALCOBENDAS",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 32.04,
+        "valor_O3": 28.35,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 15.01
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.8337,
+          40.3419
+        ]
+      },
+      "properties": {
+        "id_sensor": "28007004",
+        "descripcion": "ALCORCÓN",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 34.12,
+        "valor_O3": 28.93,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.5033,
+          40.5997
+        ]
+      },
+      "properties": {
+        "id_sensor": "28009001",
+        "descripcion": "ALGETE",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 18.68,
+        "valor_O3": 43.77,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.5914,
+          40.03327
+        ]
+      },
+      "properties": {
+        "id_sensor": "28013002",
+        "descripcion": "ARANJUEZ",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 16.62,
+        "valor_O3": 24.46,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 13.42
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.45883,
+          40.30069
+        ]
+      },
+      "properties": {
+        "id_sensor": "28014002",
+        "descripcion": "ARGANDA DEL REY",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 21.89,
+        "valor_O3": 29.94,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 18.69
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.4679,
+          40.909
+        ]
+      },
+      "properties": {
+        "id_sensor": "28016001",
+        "descripcion": "EL ATAZAR",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 5.48,
+        "valor_O3": 55.52,
+        "valor_CO": 0.44,
+        "valor_SO2": 2.06,
+        "valor_PM10": 5.18
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7739,
+          40.6646
+        ]
+      },
+      "properties": {
+        "id_sensor": "28045002",
+        "descripcion": "COLMENAR VIEJO",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 25.96,
+        "valor_O3": 40.88,
+        "valor_CO": 1.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 14.59
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.01425,
+          40.6339
+        ]
+      },
+      "properties": {
+        "id_sensor": "28047002",
+        "descripcion": "COLLADO VILLALBA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 28.83,
+        "valor_O3": 24.27,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.48,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.5424,
+          40.4306
+        ]
+      },
+      "properties": {
+        "id_sensor": "28049003",
+        "descripcion": "COSLADA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 35.32,
+        "valor_O3": 20.12,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 18.85
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.80095,
+          40.28151
+        ]
+      },
+      "properties": {
+        "id_sensor": "28058004",
+        "descripcion": "FUENLABRADA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 36.27,
+        "valor_O3": 30.35,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 19.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.71687,
+          40.31452
+        ]
+      },
+      "properties": {
+        "id_sensor": "28065014",
+        "descripcion": "GETAFE",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 37.78,
+        "valor_O3": 26.81,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 22.89
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.70215,
+          40.78063
+        ]
+      },
+      "properties": {
+        "id_sensor": "28067001",
+        "descripcion": "GUADALIX DE LA SIERRA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 13.05,
+        "valor_O3": 30.68,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 15.41
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7545,
+          40.3397
+        ]
+      },
+      "properties": {
+        "id_sensor": "28074007",
+        "descripcion": "LEGANÉS",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 40.12,
+        "valor_O3": 25.7,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 18.14
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.71222,
+          40.42417
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079004",
+        "descripcion": "PLAZA DE ESPAÑA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 33.46,
+        "valor_O3": 0.0,
+        "valor_CO": 0.52,
+        "valor_SO2": 2.79,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68222,
+          40.42167
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079008",
+        "descripcion": "ESCUELAS AGUIRRE",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 36.32,
+        "valor_O3": 26.64,
+        "valor_CO": 0.46,
+        "valor_SO2": 1.71,
+        "valor_PM10": 17.66
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.67722,
+          40.45167
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079011",
+        "descripcion": "RAMÓN Y CAJAL",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 40.26,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.63917,
+          40.44
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079016",
+        "descripcion": "ARTURO SORIA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 36.43,
+        "valor_O3": 26.22,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.705,
+          40.34694
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079017",
+        "descripcion": "VILLAVERDE",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 38.46,
+        "valor_O3": 27.82,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.73194,
+          40.39472
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079018",
+        "descripcion": "FAROLILLO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 41.75,
+        "valor_O3": 22.86,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 21.55
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.74917,
+          40.42
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079024",
+        "descripcion": "CASA DE CAMPO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 25.73,
+        "valor_O3": 27.12,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 13.07
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.575,
+          40.47472
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079027",
+        "descripcion": "BARAJAS - PUEBLO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 39.56,
+        "valor_O3": 22.32,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.70333,
+          40.41917
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079035",
+        "descripcion": "PLAZA DEL CARMEN",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 35.79,
+        "valor_O3": 26.34,
+        "valor_CO": 0.44,
+        "valor_SO2": 1.35,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.64528,
+          40.40806
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079036",
+        "descripcion": "MORATALAZ",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 40.64,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.67,
+        "valor_PM10": 19.15
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.70639,
+          40.44528
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079038",
+        "descripcion": "CUATRO CAMINOS-PABLO IGLESIAS",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 46.04,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 19.28
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.71139,
+          40.47833
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079039",
+        "descripcion": "BARRIO DEL PILAR",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 41.51,
+        "valor_O3": 25.31,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.65139,
+          40.38806
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079040",
+        "descripcion": "PUENTE DE VALLECAS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 40.24,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 19.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68667,
+          40.39806
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079047",
+        "descripcion": "MENDEZ ALVARO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 33.68,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 18.68
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.69028,
+          40.43972
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079048",
+        "descripcion": "CASTELLANA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 36.0,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 18.72
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68556,
+          40.40972
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079049",
+        "descripcion": "RETIRO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 26.54,
+        "valor_O3": 26.36,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68833,
+          40.46583
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079050",
+        "descripcion": "PLAZA CASTILLA-CANAL",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 38.58,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 20.29
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.61194,
+          40.37278
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079054",
+        "descripcion": "ENSANCHE DE VALLECAS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 37.63,
+        "valor_O3": 25.9,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.58056,
+          40.4625
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079055",
+        "descripcion": "URBANIZACION EMBAJADA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 28.89,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 23.24
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7186,
+          40.3847
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079056",
+        "descripcion": "PLAZA ELÍPTICA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 36.25,
+        "valor_O3": 0.0,
+        "valor_CO": 0.42,
+        "valor_SO2": 0.0,
+        "valor_PM10": 21.42
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.66028,
+          40.49417
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079057",
+        "descripcion": "SANCHINARRO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 35.86,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 14.82
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.77444,
+          40.51806
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079058",
+        "descripcion": "EL PARDO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 17.15,
+        "valor_O3": 26.42,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.60889,
+          40.465
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079059",
+        "descripcion": "JUAN CARLOS I",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 31.9,
+        "valor_O3": 29.22,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68972,
+          40.50056
+        ]
+      },
+      "properties": {
+        "id_sensor": "28079060",
+        "descripcion": "TRES OLIVOS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 34.02,
+        "valor_O3": 33.41,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 12.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.8689,
+          40.4461
+        ]
+      },
+      "properties": {
+        "id_sensor": "28080003",
+        "descripcion": "MAJADAHONDA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 25.74,
+        "valor_O3": 31.42,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 11.58
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.87677,
+          40.3242
+        ]
+      },
+      "properties": {
+        "id_sensor": "28092005",
+        "descripcion": "MÓSTOLES",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 31.71,
+        "valor_O3": 29.75,
+        "valor_CO": 0.52,
+        "valor_SO2": 2.8,
+        "valor_PM10": 15.79
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.2211,
+          40.2876
+        ]
+      },
+      "properties": {
+        "id_sensor": "28102001",
+        "descripcion": "ORUSCO DE TAJUÑA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 5.38,
+        "valor_O3": 56.33,
+        "valor_CO": 0.15,
+        "valor_SO2": 3.83,
+        "valor_PM10": 6.41
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7694,
+          40.23356
+        ]
+      },
+      "properties": {
+        "id_sensor": "28106001",
+        "descripcion": "PARLA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 33.61,
+        "valor_O3": 24.1,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.8037,
+          40.4491
+        ]
+      },
+      "properties": {
+        "id_sensor": "28115003",
+        "descripcion": "POZUELO DE ALARCÓN",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 27.13,
+        "valor_O3": 22.5,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.9612,
+          40.8251
+        ]
+      },
+      "properties": {
+        "id_sensor": "28120001",
+        "descripcion": "PUERTO DE COTOS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 1.27,
+        "valor_O3": 75.67,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 3.85
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.5429,
+          40.3597
+        ]
+      },
+      "properties": {
+        "id_sensor": "28123002",
+        "descripcion": "RIVAS-VACIAMADRID ",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 28.78,
+        "valor_O3": 28.61,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 17.57
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.8862,
+          40.5014
+        ]
+      },
+      "properties": {
+        "id_sensor": "28127004",
+        "descripcion": "LAS ROZAS",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 27.04,
+        "valor_O3": 25.01,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 10.04
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.3981,
+          40.3677
+        ]
+      },
+      "properties": {
+        "id_sensor": "28133002",
+        "descripcion": "SAN MARTIN DE VALDEIGLESIAS ",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 8.57,
+        "valor_O3": 45.84,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 13.22
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.62562,
+          40.56067
+        ]
+      },
+      "properties": {
+        "id_sensor": "28134002",
+        "descripcion": "SAN SEBASTIAN DE LOS REYES",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 14.74,
+        "valor_O3": 24.62,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 11.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.4776,
+          40.4495
+        ]
+      },
+      "properties": {
+        "id_sensor": "28148004",
+        "descripcion": "TORREJON DE ARDOZ ",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 27.77,
+        "valor_O3": 23.56,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 17.34
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68027,
+          40.18524
+        ]
+      },
+      "properties": {
+        "id_sensor": "28161001",
+        "descripcion": "VALDEMORO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 25.24,
+        "valor_O3": 28.39,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.2752,
+          40.2479
+        ]
+      },
+      "properties": {
+        "id_sensor": "28171001",
+        "descripcion": "VILLA DEL PRADO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 6.67,
+        "valor_O3": 38.13,
+        "valor_CO": 0.18,
+        "valor_SO2": 2.91,
+        "valor_PM10": 9.29
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.2766,
+          40.1672
+        ]
+      },
+      "properties": {
+        "id_sensor": "28180001",
+        "descripcion": "VILLAREJO DE SALVANES",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 17.11,
+        "valor_O3": 41.08,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.84483,
+          36.9623
+        ]
+      },
+      "properties": {
+        "id_sensor": "29032001",
+        "descripcion": "CAMPILLOS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 3.09,
+        "valor_O3": 63.42,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.46553,
+          36.72956
+        ]
+      },
+      "properties": {
+        "id_sensor": "29067005",
+        "descripcion": "EL ATABAL",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 21.23,
+        "valor_O3": 52.92,
+        "valor_CO": 0.7,
+        "valor_SO2": 3.19,
+        "valor_PM10": 17.54
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.4475,
+          36.71964
+        ]
+      },
+      "properties": {
+        "id_sensor": "29067006",
+        "descripcion": "CARRANQUE",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 32.79,
+        "valor_O3": 38.44,
+        "valor_CO": 0.6,
+        "valor_SO2": 3.3,
+        "valor_PM10": 22.04
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.56095,
+          36.72785
+        ]
+      },
+      "properties": {
+        "id_sensor": "29067007",
+        "descripcion": "CAMPANILLAS CIFA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 14.65,
+        "valor_O3": 56.86,
+        "valor_CO": 0.44,
+        "valor_SO2": 5.88,
+        "valor_PM10": 23.13
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.446,
+          36.7073
+        ]
+      },
+      "properties": {
+        "id_sensor": "29067008",
+        "descripcion": "AVENIDA JUAN XXIII",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 39.62,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 30.01
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.35573,
+          36.7261
+        ]
+      },
+      "properties": {
+        "id_sensor": "29067009",
+        "descripcion": "MÁLAGA-ESTE",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 15.78,
+        "valor_O3": 54.65,
+        "valor_CO": 0.59,
+        "valor_SO2": 3.72,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.863,
+          36.511
+        ]
+      },
+      "properties": {
+        "id_sensor": "29069002",
+        "descripcion": "MARBELLA ARCO",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 25.12,
+        "valor_O3": 47.01,
+        "valor_CO": 0.74,
+        "valor_SO2": 4.54,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.2321,
+          37.9745
+        ]
+      },
+      "properties": {
+        "id_sensor": "30005002",
+        "descripcion": "ALCANTARILLA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 28.03,
+        "valor_O3": 33.54,
+        "valor_CO": 0.0,
+        "valor_SO2": 5.75,
+        "valor_PM10": 30.95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.8687,
+          38.1147
+        ]
+      },
+      "properties": {
+        "id_sensor": "30015001",
+        "descripcion": "CARAVACA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 4.35,
+        "valor_O3": 59.36,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 22.42
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.91436,
+          37.60203
+        ]
+      },
+      "properties": {
+        "id_sensor": "30016001",
+        "descripcion": "ALUMBRES",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 23.6,
+        "valor_O3": 50.93,
+        "valor_CO": 0.54,
+        "valor_SO2": 5.65,
+        "valor_PM10": 19.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.0659,
+          37.6925
+        ]
+      },
+      "properties": {
+        "id_sensor": "30016018",
+        "descripcion": "LA ALJORRA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 13.44,
+        "valor_O3": 49.47,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.46,
+        "valor_PM10": 29.91
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.9762,
+          37.6018
+        ]
+      },
+      "properties": {
+        "id_sensor": "30016020",
+        "descripcion": "MOMPEAN",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 25.73,
+        "valor_O3": 36.3,
+        "valor_CO": 0.33,
+        "valor_SO2": 4.64,
+        "valor_PM10": 24.58
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.92654,
+          37.5744
+        ]
+      },
+      "properties": {
+        "id_sensor": "30016021",
+        "descripcion": "VALLE DE ESCOMBRERAS",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 21.45,
+        "valor_O3": 50.85,
+        "valor_CO": 0.22,
+        "valor_SO2": 4.75,
+        "valor_PM10": 26.14
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.70278,
+          37.68784
+        ]
+      },
+      "properties": {
+        "id_sensor": "30024002",
+        "descripcion": "LORCA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 12.84,
+        "valor_O3": 52.41,
+        "valor_CO": 0.15,
+        "valor_SO2": 6.74,
+        "valor_PM10": 25.19
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.20481,
+          38.05737
+        ]
+      },
+      "properties": {
+        "id_sensor": "30027002",
+        "descripcion": "MOLINA DE SEGURA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 29.76,
+        "valor_O3": 34.19,
+        "valor_CO": 0.45,
+        "valor_SO2": 5.51,
+        "valor_PM10": 37.45
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.1459,
+          37.9923
+        ]
+      },
+      "properties": {
+        "id_sensor": "30030007",
+        "descripcion": "SAN BASILIO",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 43.3,
+        "valor_O3": 25.73,
+        "valor_CO": 0.24,
+        "valor_SO2": 2.25,
+        "valor_PM10": 38.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.1277,
+          37.9701
+        ]
+      },
+      "properties": {
+        "id_sensor": "30030015",
+        "descripcion": "RONDA SUR",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 0.0,
+        "valor_O3": 30.7,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 46.38
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.173,
+          42.898
+        ]
+      },
+      "properties": {
+        "id_sensor": "31010001",
+        "descripcion": "ALTSASU",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 17.36,
+        "valor_O3": 36.22,
+        "valor_CO": 0.62,
+        "valor_SO2": 3.02,
+        "valor_PM10": 15.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.81,
+          42.307
+        ]
+      },
+      "properties": {
+        "id_sensor": "31107001",
+        "descripcion": "FUNES",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 6.78,
+        "valor_O3": 50.0,
+        "valor_CO": 0.12,
+        "valor_SO2": 0.0,
+        "valor_PM10": 14.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.913,
+          43.082
+        ]
+      },
+      "properties": {
+        "id_sensor": "31149002",
+        "descripcion": "LEITZA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 5.08,
+        "valor_O3": 46.58,
+        "valor_CO": 0.45,
+        "valor_SO2": 2.62,
+        "valor_PM10": 7.54
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.656,
+          42.49
+        ]
+      },
+      "properties": {
+        "id_sensor": "31191001",
+        "descripcion": "OLITE",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 10.04,
+        "valor_O3": 26.51,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 13.28
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.653,
+          42.806
+        ]
+      },
+      "properties": {
+        "id_sensor": "31201012",
+        "descripcion": "PAMPLONA - ITURRAMA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 31.3,
+        "valor_O3": 24.69,
+        "valor_CO": 0.3,
+        "valor_SO2": 6.66,
+        "valor_PM10": 16.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.651,
+          42.826
+        ]
+      },
+      "properties": {
+        "id_sensor": "31201014",
+        "descripcion": "PAMPLONA - ROCHAPEA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 30.9,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 19.19
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.644,
+          42.807
+        ]
+      },
+      "properties": {
+        "id_sensor": "31201015",
+        "descripcion": "PAMPLONA - MILAGROSA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 41.36,
+        "valor_O3": 20.99,
+        "valor_CO": 0.55,
+        "valor_SO2": 2.31,
+        "valor_PM10": 18.29
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.63,
+          42.792
+        ]
+      },
+      "properties": {
+        "id_sensor": "31201016",
+        "descripcion": "PAMPLONA - UPNA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 24.39,
+        "valor_O3": 27.81,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.284,
+          42.579
+        ]
+      },
+      "properties": {
+        "id_sensor": "31216001",
+        "descripcion": "SANGÜESA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 9.83,
+        "valor_O3": 33.26,
+        "valor_CO": 0.0,
+        "valor_SO2": 8.66,
+        "valor_PM10": 12.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.628,
+          42.074
+        ]
+      },
+      "properties": {
+        "id_sensor": "31232002",
+        "descripcion": "TUDELA - CANRASO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 12.01,
+        "valor_O3": 45.88,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.82,
+        "valor_PM10": 10.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.601,
+          42.06
+        ]
+      },
+      "properties": {
+        "id_sensor": "31232003",
+        "descripcion": "TUDELA - CENTRO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 20.16,
+        "valor_O3": 24.74,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 15.21
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.7299,
+          42.0607
+        ]
+      },
+      "properties": {
+        "id_sensor": "32032001",
+        "descripcion": "XINZO DE LIMIA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 5.87,
+        "valor_O3": 46.96,
+        "valor_CO": 0.12,
+        "valor_SO2": 1.05,
+        "valor_PM10": 10.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.4089,
+          42.0616
+        ]
+      },
+      "properties": {
+        "id_sensor": "32039001",
+        "descripcion": "LAZA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 1.09,
+        "valor_O3": 51.01,
+        "valor_CO": 0.11,
+        "valor_SO2": 1.0,
+        "valor_PM10": 8.76
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.8779,
+          42.353
+        ]
+      },
+      "properties": {
+        "id_sensor": "32054004",
+        "descripcion": "GOMEZ FRANQUEIRA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 26.17,
+        "valor_O3": 18.03,
+        "valor_CO": 0.24,
+        "valor_SO2": 4.08,
+        "valor_PM10": 31.69
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.8989,
+          43.5503
+        ]
+      },
+      "properties": {
+        "id_sensor": "33004020",
+        "descripcion": "LLARANES",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 16.69,
+        "valor_O3": 24.04,
+        "valor_CO": 0.0,
+        "valor_SO2": 4.29,
+        "valor_PM10": 26.93
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.9197,
+          43.5512
+        ]
+      },
+      "properties": {
+        "id_sensor": "33004021",
+        "descripcion": "LLANOPONTE",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 20.59,
+        "valor_O3": 33.71,
+        "valor_CO": 0.0,
+        "valor_SO2": 6.83,
+        "valor_PM10": 21.82
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.9273,
+          43.5792
+        ]
+      },
+      "properties": {
+        "id_sensor": "33004048",
+        "descripcion": "MATADERO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 0.0,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 46.88
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.9275,
+          43.5589
+        ]
+      },
+      "properties": {
+        "id_sensor": "33004049",
+        "descripcion": "PLAZA DE LA GUITARRA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 24.03,
+        "valor_O3": 34.06,
+        "valor_CO": 0.78,
+        "valor_SO2": 0.0,
+        "valor_PM10": 25.91
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.9583,
+          43.5705
+        ]
+      },
+      "properties": {
+        "id_sensor": "33004052",
+        "descripcion": "SALINAS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 12.97,
+        "valor_O3": 19.64,
+        "valor_CO": 0.16,
+        "valor_SO2": 0.0,
+        "valor_PM10": 21.29
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.5527,
+          43.1788
+        ]
+      },
+      "properties": {
+        "id_sensor": "33011001",
+        "descripcion": "CANGAS DEL NARCEA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 12.12,
+        "valor_O3": 31.69,
+        "valor_CO": 0.65,
+        "valor_SO2": 4.36,
+        "valor_PM10": 19.07
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.6989,
+          43.5388
+        ]
+      },
+      "properties": {
+        "id_sensor": "33024024",
+        "descripcion": "ARGENTINA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 28.51,
+        "valor_O3": 30.54,
+        "valor_CO": 0.4,
+        "valor_SO2": 6.05,
+        "valor_PM10": 40.22
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.6735,
+          43.5299
+        ]
+      },
+      "properties": {
+        "id_sensor": "33024025",
+        "descripcion": "CONSTITUCIÓN",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 32.66,
+        "valor_O3": 42.5,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.43,
+        "valor_PM10": 35.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.6461,
+          43.5378
+        ]
+      },
+      "properties": {
+        "id_sensor": "33024027",
+        "descripcion": "AVENIDA DE CASTILLA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 20.4,
+        "valor_O3": 18.87,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.38,
+        "valor_PM10": 29.56
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.6707,
+          43.5166
+        ]
+      },
+      "properties": {
+        "id_sensor": "33024031",
+        "descripcion": "MONTEVIL",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 21.72,
+        "valor_O3": 34.94,
+        "valor_CO": 0.0,
+        "valor_SO2": 5.2,
+        "valor_PM10": 20.57
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.6895,
+          43.5229
+        ]
+      },
+      "properties": {
+        "id_sensor": "33024032",
+        "descripcion": "SANTA BÁRBARA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 20.18,
+        "valor_O3": 0.0,
+        "valor_CO": 0.52,
+        "valor_SO2": 0.0,
+        "valor_PM10": 27.04
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.7093,
+          43.5427
+        ]
+      },
+      "properties": {
+        "id_sensor": "33024099",
+        "descripcion": "EL LAUREDAL",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 18.65,
+        "valor_O3": 28.61,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.56,
+        "valor_PM10": 41.95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.7057,
+          43.3069
+        ]
+      },
+      "properties": {
+        "id_sensor": "33031029",
+        "descripcion": "MERIÑÁN",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 16.01,
+        "valor_O3": 25.61,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.81,
+        "valor_PM10": 21.89
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.6897,
+          43.3067
+        ]
+      },
+      "properties": {
+        "id_sensor": "33031030",
+        "descripcion": "LA FELGUERA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 17.36,
+        "valor_O3": 24.04,
+        "valor_CO": 0.85,
+        "valor_SO2": 5.82,
+        "valor_PM10": 23.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.6796,
+          43.2941
+        ]
+      },
+      "properties": {
+        "id_sensor": "33031032",
+        "descripcion": "SAMA I",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 21.48,
+        "valor_O3": 32.33,
+        "valor_CO": 0.34,
+        "valor_SO2": 3.21,
+        "valor_PM10": 20.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.84972,
+          43.43917
+        ]
+      },
+      "properties": {
+        "id_sensor": "33036999",
+        "descripcion": "NIEMBRO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 2.6,
+        "valor_O3": 64.85,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.81,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.7759,
+          43.2561
+        ]
+      },
+      "properties": {
+        "id_sensor": "33037012",
+        "descripcion": "JARDINES DE JUAN XXIII",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 5.13,
+        "valor_O3": 24.6,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.54,
+        "valor_PM10": 17.45
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.8664,
+          43.3583
+        ]
+      },
+      "properties": {
+        "id_sensor": "33044029",
+        "descripcion": "PLAZA DE TOROS",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 31.24,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 21.3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.833,
+          43.3665
+        ]
+      },
+      "properties": {
+        "id_sensor": "33044030",
+        "descripcion": "PALACIO DE DEPORTES",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 38.65,
+        "valor_O3": 13.6,
+        "valor_CO": 0.69,
+        "valor_SO2": 2.39,
+        "valor_PM10": 39.53
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.8728,
+          43.3727
+        ]
+      },
+      "properties": {
+        "id_sensor": "33044032",
+        "descripcion": "PURIFICACIÓN TOMÁS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 13.79,
+        "valor_O3": 28.08,
+        "valor_CO": 0.73,
+        "valor_SO2": 4.82,
+        "valor_PM10": 14.06
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.9697,
+          43.3457
+        ]
+      },
+      "properties": {
+        "id_sensor": "33044033",
+        "descripcion": "TRUBIA PISCINAS",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 15.49,
+        "valor_O3": 14.76,
+        "valor_CO": 0.39,
+        "valor_SO2": 5.85,
+        "valor_PM10": 28.58
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.596,
+          43.2757
+        ]
+      },
+      "properties": {
+        "id_sensor": "33060003",
+        "descripcion": "BLIMEA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 13.26,
+        "valor_O3": 42.99,
+        "valor_CO": 0.28,
+        "valor_SO2": 1.77,
+        "valor_PM10": 14.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.8028,
+          43.4015
+        ]
+      },
+      "properties": {
+        "id_sensor": "33066004",
+        "descripcion": "LUGONES INSTITUTO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 26.16,
+        "valor_O3": 23.28,
+        "valor_CO": 0.9,
+        "valor_SO2": 5.07,
+        "valor_PM10": 22.31
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1926,
+          43.0696
+        ]
+      },
+      "properties": {
+        "id_sensor": "33068001",
+        "descripcion": "SOMIEDO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 0.0,
+        "valor_O3": 79.95,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.47,
+          41.93278
+        ]
+      },
+      "properties": {
+        "id_sensor": "34023003",
+        "descripcion": "CEMENTOS PORTLAND 1",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 7.79,
+        "valor_O3": 39.58,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.22,
+        "valor_PM10": 8.63
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.46583,
+          41.94806
+        ]
+      },
+      "properties": {
+        "id_sensor": "34023004",
+        "descripcion": "CEMENTOS PORTLAND 2",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 0.0,
+        "valor_O3": 37.73,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.84083,
+          42.79528
+        ]
+      },
+      "properties": {
+        "id_sensor": "34080004",
+        "descripcion": "GUARDO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 10.7,
+        "valor_O3": 37.55,
+        "valor_CO": 0.0,
+        "valor_SO2": 10.64,
+        "valor_PM10": 12.13
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.5383,
+          42.0194
+        ]
+      },
+      "properties": {
+        "id_sensor": "34120008",
+        "descripcion": "PALENCIA 3",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 9.15,
+        "valor_O3": 31.93,
+        "valor_CO": 0.79,
+        "valor_SO2": 2.57,
+        "valor_PM10": 9.88
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.4944,
+          41.9614
+        ]
+      },
+      "properties": {
+        "id_sensor": "34225001",
+        "descripcion": "RENAULT 4",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 0.0,
+        "valor_O3": 38.93,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.1071,
+          42.6563
+        ]
+      },
+      "properties": {
+        "id_sensor": "36024001",
+        "descripcion": "LALÍN",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 10.46,
+        "valor_O3": 0.0,
+        "valor_CO": 0.46,
+        "valor_SO2": 0.27,
+        "valor_PM10": 19.71
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.6703,
+          42.4047
+        ]
+      },
+      "properties": {
+        "id_sensor": "36038008",
+        "descripcion": "AREEIRO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 11.49,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.38,
+        "valor_PM10": 16.31
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.644,
+          42.42593
+        ]
+      },
+      "properties": {
+        "id_sensor": "36038010",
+        "descripcion": "CAMPOLONGO",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 10.42,
+        "valor_O3": 47.18,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.89,
+        "valor_PM10": 13.06
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.6769,
+          42.4275
+        ]
+      },
+      "properties": {
+        "id_sensor": "36041001",
+        "descripcion": "CAMPELO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 15.66,
+        "valor_O3": 38.24,
+        "valor_CO": 0.43,
+        "valor_SO2": 2.92,
+        "valor_PM10": 22.51
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.5239,
+          42.1814
+        ]
+      },
+      "properties": {
+        "id_sensor": "36042001",
+        "descripcion": "PONTEAREAS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 0.0,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 24.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.7421,
+          42.219
+        ]
+      },
+      "properties": {
+        "id_sensor": "36057019",
+        "descripcion": "ARENAL",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 20.3,
+        "valor_O3": 30.4,
+        "valor_CO": 0.43,
+        "valor_SO2": 1.97,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.73694,
+          42.21028
+        ]
+      },
+      "properties": {
+        "id_sensor": "36057021",
+        "descripcion": "ESTACION 1 (ESTE)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 9.34,
+        "valor_O3": 31.87,
+        "valor_CO": 0.15,
+        "valor_SO2": 3.04,
+        "valor_PM10": 11.17
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.747,
+          42.2029
+        ]
+      },
+      "properties": {
+        "id_sensor": "36057022",
+        "descripcion": "ESTACION 2 (OESTE)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 15.94,
+        "valor_O3": 34.38,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.98,
+        "valor_PM10": 20.17
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.7111,
+          42.2224
+        ]
+      },
+      "properties": {
+        "id_sensor": "36057026",
+        "descripcion": "LOPE DE VEGA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 2.95,
+        "valor_O3": 45.59,
+        "valor_CO": 0.0,
+        "valor_SO2": 6.29,
+        "valor_PM10": 10.62
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.22389,
+          40.56972
+        ]
+      },
+      "properties": {
+        "id_sensor": "37177001",
+        "descripcion": "EL MAILLO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 24.26,
+        "valor_O3": 24.46,
+        "valor_CO": 0.47,
+        "valor_SO2": 5.49,
+        "valor_PM10": 27.26
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.6653,
+          40.9792
+        ]
+      },
+      "properties": {
+        "id_sensor": "37274010",
+        "descripcion": "SALAMANCA 5",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 28.25,
+        "valor_O3": 0.0,
+        "valor_CO": 0.51,
+        "valor_SO2": 4.41,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.63972,
+          40.96083
+        ]
+      },
+      "properties": {
+        "id_sensor": "37274011",
+        "descripcion": "SALAMANCA 6",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 20.18,
+        "valor_O3": 29.72,
+        "valor_CO": 0.5,
+        "valor_SO2": 0.0,
+        "valor_PM10": 25.39
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.84111,
+          43.42083
+        ]
+      },
+      "properties": {
+        "id_sensor": "39016003",
+        "descripcion": "PARQUE DE CROSS",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 0.0,
+        "valor_O3": 41.44,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.22056,
+          43.3825
+        ]
+      },
+      "properties": {
+        "id_sensor": "39020001",
+        "descripcion": "CASTRO URDIALES",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 14.05,
+        "valor_O3": 37.9,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.93,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.06278,
+          43.26444
+        ]
+      },
+      "properties": {
+        "id_sensor": "39025001",
+        "descripcion": "LOS CORRALES DE BUELNA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 22.41,
+        "valor_O3": 28.21,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.52,
+        "valor_PM10": 18.28
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.13556,
+          43.01194
+        ]
+      },
+      "properties": {
+        "id_sensor": "39059001",
+        "descripcion": "REINOSA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 1.17,
+        "valor_O3": 63.38,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.45,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.79028,
+          43.46778
+        ]
+      },
+      "properties": {
+        "id_sensor": "39075005",
+        "descripcion": "TETUÁN",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 27.06,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.58,
+        "valor_PM10": 23.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.80861,
+          43.46056
+        ]
+      },
+      "properties": {
+        "id_sensor": "39075006",
+        "descripcion": "SANTANDER CENTRO",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 7.15,
+        "valor_O3": 26.58,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.68,
+        "valor_PM10": 20.09
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.25306,
+          43.15333
+        ]
+      },
+      "properties": {
+        "id_sensor": "39086001",
+        "descripcion": "LOS TOJOS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 8.03,
+        "valor_O3": 54.38,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 12.21
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.06417,
+          43.34639
+        ]
+      },
+      "properties": {
+        "id_sensor": "39087003",
+        "descripcion": "ZAPATÓN",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 12.1,
+        "valor_O3": 41.99,
+        "valor_CO": 0.14,
+        "valor_SO2": 3.12,
+        "valor_PM10": 11.49
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.04278,
+          43.3675
+        ]
+      },
+      "properties": {
+        "id_sensor": "39087004",
+        "descripcion": "BARREDA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 9.1,
+        "valor_O3": 46.46,
+        "valor_CO": 0.11,
+        "valor_SO2": 3.11,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.06361,
+          43.35583
+        ]
+      },
+      "properties": {
+        "id_sensor": "39087005",
+        "descripcion": "ESCUELA DE MINAS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 6.06,
+        "valor_O3": 43.77,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.05,
+        "valor_PM10": 7.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.11056,
+          40.95556
+        ]
+      },
+      "properties": {
+        "id_sensor": "40194002",
+        "descripcion": "SEGOVIA 2",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 4.15,
+        "valor_O3": 46.32,
+        "valor_CO": 0.1,
+        "valor_SO2": 3.05,
+        "valor_PM10": 3.53
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.83372,
+          37.34246
+        ]
+      },
+      "properties": {
+        "id_sensor": "41004006",
+        "descripcion": "ALCALÁ DE GUADAIRA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 9.7,
+        "valor_O3": 48.47,
+        "valor_CO": 0.1,
+        "valor_SO2": 4.25,
+        "valor_PM10": 7.76
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.86911,
+          37.35944
+        ]
+      },
+      "properties": {
+        "id_sensor": "41004007",
+        "descripcion": "LA LIEBRE 2",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 12.94,
+        "valor_O3": 41.51,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.25,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.91384,
+          37.28449
+        ]
+      },
+      "properties": {
+        "id_sensor": "41038001",
+        "descripcion": "DOS HERMANAS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 3.66,
+        "valor_O3": 44.57,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.0,
+        "valor_PM10": 5.87
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.03616,
+          37.55502
+        ]
+      },
+      "properties": {
+        "id_sensor": "41049001",
+        "descripcion": "COBRE LAS CRUCES",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 0.0,
+        "valor_O3": 52.24,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.04246,
+          37.34075
+        ]
+      },
+      "properties": {
+        "id_sensor": "41059001",
+        "descripcion": "ALJARAFE",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 22.98,
+        "valor_O3": 39.97,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.63,
+        "valor_PM10": 34.27
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.66687,
+          37.99435
+        ]
+      },
+      "properties": {
+        "id_sensor": "41088001",
+        "descripcion": "SIERRA NORTE",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 12.45,
+        "valor_O3": 45.84,
+        "valor_CO": 0.1,
+        "valor_SO2": 3.08,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.0031,
+          37.39452
+        ]
+      },
+      "properties": {
+        "id_sensor": "41091009",
+        "descripcion": "TORNEO",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 1.84,
+        "valor_O3": 62.77,
+        "valor_CO": 0.1,
+        "valor_SO2": 3.07,
+        "valor_PM10": 3.49
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.95962,
+          37.38425
+        ]
+      },
+      "properties": {
+        "id_sensor": "41091010",
+        "descripcion": "LA RANILLA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 8.71,
+        "valor_O3": 43.39,
+        "valor_CO": 0.11,
+        "valor_SO2": 4.14,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.95165,
+          37.39831
+        ]
+      },
+      "properties": {
+        "id_sensor": "41091015",
+        "descripcion": "SANTA CLARA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 15.29,
+        "valor_O3": 43.99,
+        "valor_CO": 0.13,
+        "valor_SO2": 3.07,
+        "valor_PM10": 7.29
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.00558,
+          37.37525
+        ]
+      },
+      "properties": {
+        "id_sensor": "41091016",
+        "descripcion": "PRINCIPES",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 9.67,
+        "valor_O3": 44.08,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.98039,
+          37.42986
+        ]
+      },
+      "properties": {
+        "id_sensor": "41091017",
+        "descripcion": "SAN JERÓNIMO",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 9.09,
+        "valor_O3": 44.12,
+        "valor_CO": 0.11,
+        "valor_SO2": 3.66,
+        "valor_PM10": 18.49
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.97963,
+          37.34719
+        ]
+      },
+      "properties": {
+        "id_sensor": "41091018",
+        "descripcion": "BERMEJALES",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 5.05,
+        "valor_O3": 40.44,
+        "valor_CO": 0.1,
+        "valor_SO2": 3.01,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.99149,
+          37.38808
+        ]
+      },
+      "properties": {
+        "id_sensor": "41091019",
+        "descripcion": "CENTRO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 0.0,
+        "valor_O3": 39.83,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.5266,
+          41.48311
+        ]
+      },
+      "properties": {
+        "id_sensor": "42020001",
+        "descripcion": "ALMAZAN",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 26.37,
+        "valor_O3": 31.9,
+        "valor_CO": 0.22,
+        "valor_SO2": 3.53,
+        "valor_PM10": 17.14
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.85694,
+          41.72361
+        ]
+      },
+      "properties": {
+        "id_sensor": "42124001",
+        "descripcion": "MURIEL DE LA FUENTE",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 14.98,
+        "valor_O3": 36.63,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.7,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.4667,
+          41.7667
+        ]
+      },
+      "properties": {
+        "id_sensor": "42173001",
+        "descripcion": "SORIA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 12.85,
+        "valor_O3": 34.25,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.49,
+        "valor_PM10": 14.14
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.52998,
+          40.55282
+        ]
+      },
+      "properties": {
+        "id_sensor": "43004005",
+        "descripcion": "ALCANAR (LLAR DE JUBILATS)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 23.75,
+        "valor_O3": 33.87,
+        "valor_CO": 0.18,
+        "valor_SO2": 3.3,
+        "valor_PM10": 20.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.55352,
+          40.57987
+        ]
+      },
+      "properties": {
+        "id_sensor": "43004006",
+        "descripcion": "ALCANAR (EB04 - MONTECARLO)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 23.63,
+        "valor_O3": 34.94,
+        "valor_CO": 0.12,
+        "valor_SO2": 3.75,
+        "valor_PM10": 14.48
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.17992,
+          41.27838
+        ]
+      },
+      "properties": {
+        "id_sensor": "43005002",
+        "descripcion": "ALCOVER (MESTRAL)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 22.99,
+        "valor_O3": 33.11,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.37,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.79918,
+          40.88066
+        ]
+      },
+      "properties": {
+        "id_sensor": "43013001",
+        "descripcion": "L'AMETLLA DE MAR (ESCOLA NÀUTICA)",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 31.94,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 21.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.8098,
+          40.90269
+        ]
+      },
+      "properties": {
+        "id_sensor": "43013002",
+        "descripcion": "L'AMETLLA DE MAR (DEIXALLERIA)",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 37.96,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 31.58
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.5817,
+          40.7067
+        ]
+      },
+      "properties": {
+        "id_sensor": "43014001",
+        "descripcion": "AMPOSTA (SANT DOMÈNEC - ITÀLIA)",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 0.0,
+        "valor_O3": 38.95,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.28845,
+          40.643
+        ]
+      },
+      "properties": {
+        "id_sensor": "43044003",
+        "descripcion": "LA SÉNIA (REPETIDOR)",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 3.33,
+        "valor_O3": 51.06,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.08,
+        "valor_PM10": 8.1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.21772,
+          41.15492
+        ]
+      },
+      "properties": {
+        "id_sensor": "43047001",
+        "descripcion": "CONSTANTÍ (GAUDÍ)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 1.25,
+        "valor_O3": 63.15,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.54,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.7551,
+          41.10069
+        ]
+      },
+      "properties": {
+        "id_sensor": "43070001",
+        "descripcion": "ELS GUIAMETS (CAMP DE FUTBOL)",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 3.24,
+        "valor_O3": 35.36,
+        "valor_CO": 0.0,
+        "valor_SO2": 4.44,
+        "valor_PM10": 10.4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.2367,
+          41.19359
+        ]
+      },
+      "properties": {
+        "id_sensor": "43103001",
+        "descripcion": "PERAFORT (PUIGDELFÍ)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 15.05,
+        "valor_O3": 33.15,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.12017,
+          41.15078
+        ]
+      },
+      "properties": {
+        "id_sensor": "43123005",
+        "descripcion": "REUS (EL TALLAPEDRA)",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 14.37,
+        "valor_O3": 29.3,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.2397,
+          41.15945
+        ]
+      },
+      "properties": {
+        "id_sensor": "43148001",
+        "descripcion": "TARRAGONA (SANT SALVADOR)",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 12.38,
+        "valor_O3": 34.93,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.19198,
+          41.11588
+        ]
+      },
+      "properties": {
+        "id_sensor": "43148003",
+        "descripcion": "TARRAGONA (BONAVISTA)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 26.84,
+        "valor_O3": 0.0,
+        "valor_CO": 0.64,
+        "valor_SO2": 0.0,
+        "valor_PM10": 17.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.20077,
+          41.10368
+        ]
+      },
+      "properties": {
+        "id_sensor": "43148022",
+        "descripcion": "TARRAGONA (UNIVERSITAT LABORAL)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 20.79,
+        "valor_O3": 31.59,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 17.66
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.24165,
+          41.11739
+        ]
+      },
+      "properties": {
+        "id_sensor": "43148028",
+        "descripcion": "TARRAGONA (PARC DE LA CIUTAT)",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 20.87,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 14.18
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.25447,
+          41.12006
+        ]
+      },
+      "properties": {
+        "id_sensor": "43148030",
+        "descripcion": "TARRAGONA (SALUT)",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 25.27,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.69,
+        "valor_PM10": 16.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.83108,
+          41.00821
+        ]
+      },
+      "properties": {
+        "id_sensor": "43162001",
+        "descripcion": "VANDELLÒS I L'HOSPITALET DE L'INFANT (ELS DEDALTS)",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 18.49,
+        "valor_O3": 25.67,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.91288,
+          41.00951
+        ]
+      },
+      "properties": {
+        "id_sensor": "43162002",
+        "descripcion": "VANDELLÒS I L'HOSPITALET DE L'INFANT (VIVER)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 18.71,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 4.0,
+        "valor_PM10": 8.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.83134,
+          40.93955
+        ]
+      },
+      "properties": {
+        "id_sensor": "43162005",
+        "descripcion": "VANDELLÒS I L'HOSPITALET DE L'INFANT (BARRANC DEL TERME)",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 16.13,
+        "valor_O3": 51.69,
+        "valor_CO": 0.0,
+        "valor_SO2": 6.99,
+        "valor_PM10": 15.76
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.14955,
+          41.10243
+        ]
+      },
+      "properties": {
+        "id_sensor": "43171002",
+        "descripcion": "VILA-SECA (IES VILA-SECA)",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 20.8,
+        "valor_O3": 0.0,
+        "valor_CO": 0.35,
+        "valor_SO2": 5.62,
+        "valor_PM10": 20.28
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.13889,
+          41.05417
+        ]
+      },
+      "properties": {
+        "id_sensor": "44013007",
+        "descripcion": "ALCAÑIZ CAPUCHINOS",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 25.26,
+        "valor_O3": 0.0,
+        "valor_CO": 0.24,
+        "valor_SO2": 5.63,
+        "valor_PM10": 17.43
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.29083,
+          40.94667
+        ]
+      },
+      "properties": {
+        "id_sensor": "44051002",
+        "descripcion": "MONAGREGA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 0.0,
+        "valor_O3": 40.27,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.29083,
+          40.94667
+        ]
+      },
+      "properties": {
+        "id_sensor": "44051005",
+        "descripcion": "MONAGREGAGRAV",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 23.61,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.08,
+        "valor_PM10": 16.64
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.36472,
+          41.22528
+        ]
+      },
+      "properties": {
+        "id_sensor": "44067001",
+        "descripcion": "CASTELNOU",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 20.87,
+        "valor_O3": 36.83,
+        "valor_CO": 0.0,
+        "valor_SO2": 5.62,
+        "valor_PM10": 14.01
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.10667,
+          40.33639
+        ]
+      },
+      "properties": {
+        "id_sensor": "44216001",
+        "descripcion": "TERUEL",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 33.37,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 14.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.8328,
+          40.1192
+        ]
+      },
+      "properties": {
+        "id_sensor": "45081004",
+        "descripcion": "ESTACIÓN DE LA SAGRA (ILLESCAS)",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 27.65,
+        "valor_O3": 0.0,
+        "valor_CO": 0.27,
+        "valor_SO2": 5.86,
+        "valor_PM10": 15.04
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.35042,
+          39.54633
+        ]
+      },
+      "properties": {
+        "id_sensor": "45153999",
+        "descripcion": "SAN PABLO DE LOS MONTES",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 7.26,
+        "valor_O3": 53.88,
+        "valor_CO": 0.0,
+        "valor_SO2": 5.72,
+        "valor_PM10": 8.27
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.8257,
+          39.9638
+        ]
+      },
+      "properties": {
+        "id_sensor": "45165004",
+        "descripcion": "TALAVERA DE LA REINA - PÍO XII",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 21.08,
+        "valor_O3": 32.23,
+        "valor_CO": 0.0,
+        "valor_SO2": 4.25,
+        "valor_PM10": 17.93
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.0208,
+          39.8681
+        ]
+      },
+      "properties": {
+        "id_sensor": "45168002",
+        "descripcion": "TOLEDO2",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 19.33,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 19.37
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.8652,
+          39.5769
+        ]
+      },
+      "properties": {
+        "id_sensor": "45200001",
+        "descripcion": "LOS YÉBENES",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 0.0,
+        "valor_O3": 59.75,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.33667,
+          39.70528
+        ]
+      },
+      "properties": {
+        "id_sensor": "46010001",
+        "descripcion": "ALBALAT DELS TARONGERS",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 4.54,
+        "valor_O3": 52.75,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 7.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.45778,
+          39.15
+        ]
+      },
+      "properties": {
+        "id_sensor": "46017002",
+        "descripcion": "ALZIRA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 7.98,
+        "valor_O3": 49.85,
+        "valor_CO": 0.0,
+        "valor_SO2": 5.42,
+        "valor_PM10": 9.57
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.35917,
+          39.78222
+        ]
+      },
+      "properties": {
+        "id_sensor": "46028001",
+        "descripcion": "ALGAR DE PALÀNCIA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 9.19,
+        "valor_O3": 53.18,
+        "valor_CO": 0.0,
+        "valor_SO2": 4.56,
+        "valor_PM10": 20.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.44139,
+          38.93472
+        ]
+      },
+      "properties": {
+        "id_sensor": "46062001",
+        "descripcion": "BENIGANIM",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 7.35,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.78389,
+          39.42722
+        ]
+      },
+      "properties": {
+        "id_sensor": "46077006",
+        "descripcion": "BUÑOL CEMEX",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 16.95,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 11.66
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.41778,
+          39.50944
+        ]
+      },
+      "properties": {
+        "id_sensor": "46078004",
+        "descripcion": "BURJASSOT - FACULTATS",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 21.78,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.28139,
+          39.55861
+        ]
+      },
+      "properties": {
+        "id_sensor": "46095001",
+        "descripcion": "CAUDETE DE LAS FUENTES",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 14.21,
+        "valor_O3": 27.92,
+        "valor_CO": 0.0,
+        "valor_SO2": 3.84,
+        "valor_PM10": 18.57
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.93444,
+          39.26083
+        ]
+      },
+      "properties": {
+        "id_sensor": "46099001",
+        "descripcion": "CORTES DE PALLÁS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 23.76,
+        "valor_O3": 0.0,
+        "valor_CO": 0.25,
+        "valor_SO2": 6.01,
+        "valor_PM10": 15.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.19,
+          38.96667
+        ]
+      },
+      "properties": {
+        "id_sensor": "46131002",
+        "descripcion": "GANDÍA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 21.71,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 14.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.69722,
+          38.78806
+        ]
+      },
+      "properties": {
+        "id_sensor": "46184002",
+        "descripcion": "ONTINYENT",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 6.94,
+        "valor_O3": 0.0,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 11.01
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.46083,
+          39.55139
+        ]
+      },
+      "properties": {
+        "id_sensor": "46190005",
+        "descripcion": "PATERNA-CEAM",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 0.83,
+        "valor_O3": 58.28,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.46,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.23472,
+          39.66722
+        ]
+      },
+      "properties": {
+        "id_sensor": "46220003",
+        "descripcion": "SAGUNT PORT",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 12.67,
+        "valor_O3": 33.06,
+        "valor_CO": 0.0,
+        "valor_SO2": 1.07,
+        "valor_PM10": 9.92
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.27889,
+          39.68472
+        ]
+      },
+      "properties": {
+        "id_sensor": "46220009",
+        "descripcion": "SAGUNT-NORD",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 20.53,
+        "valor_O3": 28.79,
+        "valor_CO": 0.36,
+        "valor_SO2": 5.32,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.26583,
+          39.63417
+        ]
+      },
+      "properties": {
+        "id_sensor": "46220010",
+        "descripcion": "SAGUNT CEA",
+        "tipo_estacion": "INDUSTRIAL",
+        "valor_NO2": 8.35,
+        "valor_O3": 38.12,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.25389,
+          40.09944
+        ]
+      },
+      "properties": {
+        "id_sensor": "46242001",
+        "descripcion": "TORREBAJA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 7.12,
+        "valor_O3": 44.27,
+        "valor_CO": 0.0,
+        "valor_SO2": 2.98,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.37583,
+          39.45611
+        ]
+      },
+      "properties": {
+        "id_sensor": "46250030",
+        "descripcion": "VALÈNCIA-PISTA DE SILLA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 31.24,
+        "valor_O3": 18.38,
+        "valor_CO": 0.24,
+        "valor_SO2": 0.0,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.36833,
+          39.47806
+        ]
+      },
+      "properties": {
+        "id_sensor": "46250043",
+        "descripcion": "VALÈNCIA-VIVERS",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 18.14,
+        "valor_O3": 20.77,
+        "valor_CO": 0.34,
+        "valor_SO2": 3.34,
+        "valor_PM10": 11.15
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3364,
+          39.4803
+        ]
+      },
+      "properties": {
+        "id_sensor": "46250046",
+        "descripcion": "VALÈNCIA-POLITÈCNIC",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 12.97,
+        "valor_O3": 24.17,
+        "valor_CO": 0.21,
+        "valor_SO2": 6.53,
+        "valor_PM10": 21.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.34278,
+          39.4575
+        ]
+      },
+      "properties": {
+        "id_sensor": "46250047",
+        "descripcion": "VALÈNCIA - AVD. FRANCIA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 19.71,
+        "valor_O3": 24.86,
+        "valor_CO": 0.17,
+        "valor_SO2": 4.2,
+        "valor_PM10": 21.66
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4083,
+          39.4811
+        ]
+      },
+      "properties": {
+        "id_sensor": "46250048",
+        "descripcion": "VALÈNCIA - MOLÍ DEL SOL",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 25.05,
+        "valor_O3": 21.51,
+        "valor_CO": 0.24,
+        "valor_SO2": 4.95,
+        "valor_PM10": 16.79
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.39639,
+          39.45028
+        ]
+      },
+      "properties": {
+        "id_sensor": "46250050",
+        "descripcion": "VALÈNCIA - BULEVARD SUD",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 33.46,
+        "valor_O3": 21.71,
+        "valor_CO": 0.32,
+        "valor_SO2": 6.39,
+        "valor_PM10": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.37647,
+          39.44833
+        ]
+      },
+      "properties": {
+        "id_sensor": "46250054",
+        "descripcion": "VALÈNCIA-CENTRE",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 14.92,
+        "valor_O3": 23.27,
+        "valor_CO": 0.26,
+        "valor_SO2": 6.1,
+        "valor_PM10": 19.95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.40605,
+          39.46922
+        ]
+      },
+      "properties": {
+        "id_sensor": "46250055",
+        "descripcion": "VALÈNCIA OLIVERETA",
+        "tipo_estacion": "TRAFICO",
+        "valor_NO2": 24.73,
+        "valor_O3": 24.54,
+        "valor_CO": 0.0,
+        "valor_SO2": 0.0,
+        "valor_PM10": 20.09
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.62556,
+          39.56472
+        ]
+      },
+      "properties": {
+        "id_sensor": "46256001",
+        "descripcion": "VILAMARXANT",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 19.54,
+        "valor_O3": 63.9,
+        "valor_CO": 0.21,
+        "valor_SO2": 8.13,
+        "valor_PM10": 17.34
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.83194,
+          39.70806
+        ]
+      },
+      "properties": {
+        "id_sensor": "46258001",
+        "descripcion": "VILLAR DEL ARZOBISPO",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 21.36,
+        "valor_O3": 60.82,
+        "valor_CO": 0.18,
+        "valor_SO2": 2.64,
+        "valor_PM10": 30.85
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.10083,
+          39.08278
+        ]
+      },
+      "properties": {
+        "id_sensor": "46263999",
+        "descripcion": "ZARRA",
+        "tipo_estacion": "FONDO",
+        "valor_NO2": 9.12,
+        "valor_O3": 62.65,
+        "valor_CO": 0.15,
+        "valor_SO2": 4.24,
+        "valor_PM10": 21.02
+      }
+    }
+  ]
+}

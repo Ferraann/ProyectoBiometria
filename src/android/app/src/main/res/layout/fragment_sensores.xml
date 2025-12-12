@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:text="Nodo activo desde:   10/11/2015"
             android:background="@drawable/boton_principal"
-            android:backgroundTint="#9FA8DA"
+            android:backgroundTint="@color/azul_Paneles"
             android:textColor="@color/azulOscuro_Principal"
             android:textStyle="bold"
             android:gravity="center"

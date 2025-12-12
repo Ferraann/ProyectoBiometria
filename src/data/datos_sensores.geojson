@@ -1,0 +1,31 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.1600, 38.9955] },
+      "properties": {
+        "id_sensor": 901,
+        "descripcion": "Sensor Local 1 (Puerto)",
+        "valor_NO2": 25.0,
+        "valor_O3": 30.0,
+        "valor_CO": 1.2,
+        "valor_SO2": 2.0,
+        "valor_PM10": 31.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.1550, 39.0010] },
+      "properties": {
+        "id_sensor": 902,
+        "descripcion": "Sensor Local 2 (Playa)",
+        "valor_NO2": 12.0,
+        "valor_O3": 20.0,
+        "valor_CO": 0.5,
+        "valor_SO2": 0.8,
+        "valor_PM10": 18.0
+      }
+    }
+  ]
+}

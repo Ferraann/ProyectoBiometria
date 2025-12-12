@@ -21,6 +21,9 @@ APORTACIÓN: Estructura completa de la página HTML para el inicio de sesión
         <link rel="stylesheet" href="./css/landing.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+              integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+        <link rel="stylesheet" href="css/mapa.css">
     </head>
     <body>
         <!--
@@ -64,12 +67,7 @@ APORTACIÓN: Estructura completa de la página HTML para el inicio de sesión
                         <a href="#descargar" class="btn-arrow"><i class="fa-solid fa-chevron-down"></i></a>
                     </div>
                     <div class="hero-visual">
-                        <div class="map-widget-placeholder">
-                            <p>MAPA CALIDAD DEL AIRE</p>
-                            <span>...</span>
-                            <div class="map-data">17°</div>
-                            <span>...</span>
-                        </div>
+                        <div id="map"></div>
                     </div>
                 </div>
             </section>
@@ -184,4 +182,11 @@ APORTACIÓN: Estructura completa de la página HTML para el inicio de sesión
             }
         });
     </script>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+            integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+    <script src="js/leaflet-heat.js"></script>
+
+    <script src="js/map-logic-index.js"></script>
 </html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="¿Tienes dudas o problemas? Envíanos tu mensaje y te ayudamos."
+            android:textColor="@color/negro"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Los apartados con (*) son obligatorios."
+            android:textColor="@color/negro"
+            android:textSize="15sp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*Asunto:"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/negro"/>
+
+        <EditText
+            android:id="@+id/etAsunto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/borde_caja"
+            android:padding="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp"
+            android:hint="Escribe aquí..."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*Problema:"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/negro"/>
+
+        <EditText
+            android:id="@+id/etProblema"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/borde_caja"
+            android:padding="12dp"
+            android:layout_marginTop="5dp"
+            android:gravity="top"
+            android:hint="Describe el problema..."/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/botonRegistrarse"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="ENVIAR"
+            android:textColor="@color/blanco"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:background="@drawable/boton_principal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -39,9 +39,13 @@ $gmail = $_SESSION['usuario_correo'];
         <link rel="stylesheet" href="../css/dashboard_cliente.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+              integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+        <link rel="stylesheet" href="../css/mapa.css">
+
     </head>
     <body>
         <!--
@@ -116,21 +120,9 @@ $gmail = $_SESSION['usuario_correo'];
                         </div>
                     </div>
                     <!--Sitio del mapa interactivo-->
-                    <div class="map-container">
-                        <div class="map-placeholder">
-                            <h2>Aquí irá el mapa interactivo</h2>
-                        </div>
-                        <div class="leyenda">
-                            <!--Leyenda por ahora orientativa-->
-                            <h4>Leyenda</h4>
-                            <ul>
-                                <li><span class="color-box bueno"></span> Bueno</li>
-                                <li><span class="color-box moderado"></span> Moderado</li>
-                                <li><span class="color-box insalubre"></span> Insalubre</li>
-                            </ul>
-                        </div>
-                        <p class="actualizacion">Última actualización 20:34</p>
-                    </div>
+                <div class="mapa-dashboard">
+                    <div id="mapa"></div>
+                </div>
                 </div>
                 <!--Seccion de las estadisticas-->
                 <div class="tab-content" id="estadisticas-content" data-tab-content="estadisticas">
@@ -171,6 +163,11 @@ $gmail = $_SESSION['usuario_correo'];
             </div>
         </main>
     </body>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+            integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="../js/leaflet-heat.js"></script>
+    <script src="../js/map-logic.js"></script>
+
     <script src="../js/dashboard_cliente.js"></script>
     <script src="../js/Fun_icono_perfil.js"></script>
 </html>

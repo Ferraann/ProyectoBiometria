@@ -51,6 +51,9 @@
         <activity android:name="com.example.grupo5.aitherapp.activitysApp.AithWalletActivity" />
         <activity android:name="com.example.grupo5.aitherapp.activitysApp.ListaPremiosActivity" />
         <activity android:name="com.example.grupo5.aitherapp.activitysApp.SensoresActivity" />
+        <activity
+            android:name="com.example.grupo5.aitherapp.activitysApp.SoporteActivity"
+            android:exported="false" />
 
     </application>
 

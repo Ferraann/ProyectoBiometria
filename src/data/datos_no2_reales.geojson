@@ -1,0 +1,75 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.3708, 39.4819] },
+      "properties": {
+        "id_sensor": "46250050",
+        "descripcion": "Valencia-Centro",
+        "tipo_estacion": "Tráfico Urbano",
+        "valor_NO2": 45.2,
+        "valor_O3": 35.0,
+        "valor_CO": 0.8,
+        "valor_SO2": 4.5,
+        "valor_PM10": 28.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.3662, 39.4716] },
+      "properties": {
+        "id_sensor": "46250043",
+        "descripcion": "Valencia-Av. Puerto",
+        "tipo_estacion": "Tráfico Urbano",
+        "valor_NO2": 38.5,
+        "valor_O3": 32.0,
+        "valor_CO": 0.6,
+        "valor_SO2": 3.0,
+        "valor_PM10": 25.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.3340, 39.4678] },
+      "properties": {
+        "id_sensor": "46250008",
+        "descripcion": "Valencia-Grao",
+        "tipo_estacion": "Fondo Urbano",
+        "valor_NO2": 22.8,
+        "valor_O3": 45.0,
+        "valor_CO": 0.4,
+        "valor_SO2": 1.5,
+        "valor_PM10": 18.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.4072, 39.4975] },
+      "properties": {
+        "id_sensor": "46250012",
+        "descripcion": "VLC-Pista Silla",
+        "tipo_estacion": "Fondo Suburbano",
+        "valor_NO2": 15.0,
+        "valor_O3": 55.0,
+        "valor_CO": 0.2,
+        "valor_SO2": 0.5,
+        "valor_PM10": 12.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.1560, 38.9950] },
+      "properties": {
+        "id_sensor": "46134001",
+        "descripcion": "Gandía-Grao",
+        "tipo_estacion": "Fondo Urbano",
+        "valor_NO2": 18.3,
+        "valor_O3": 60.0,
+        "valor_CO": 0.3,
+        "valor_SO2": 0.8,
+        "valor_PM10": 15.0
+      }
+    }
+  ]
+}
