@@ -51,5 +51,5 @@ function obtenerListaSensores($conn, $usuario_id){
     }
 
     return ["status" => "ok", "listaSensores" => $sensores];
-}
+}}
 ?>
