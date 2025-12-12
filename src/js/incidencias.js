@@ -12,12 +12,12 @@
 //  - Aplica filtros dinámicos (texto, estado, técnico, fotos) y ordenación.
 //  - Implementa la lógica de permisos para restringir la vista (ej: Técnico solo ve sus asignadas).
 //  - Renderiza las tarjetas de incidencia con enlaces a los detalles.
-// ------------------------------------------------------------------
-//Permisos
-//roles = await obtenerRoles(userId); //añadir esta linea en una carga inicial await
-import { obtenerRoles } from "./permisos.js";
-const idUsuarioActivo = parseInt(window.sessionStorage.getItem("idUsuario") || "0");
-let roles = null;
+// // ------------------------------------------------------------------
+// //Permisos
+// //roles = await obtenerRoles(userId); //añadir esta linea en una carga inicial await
+// import { obtenerRoles } from "./permisos.js";
+// const idUsuarioActivo = parseInt(window.sessionStorage.getItem("idUsuario") || "0");
+// let roles = null;
 
 /* ---------- DOM ---------- */
 const lista = document.getElementById("lista-incidencias");
@@ -51,7 +51,7 @@ const mostrarMensaje = (texto, dur = 3000) => {
 window.addEventListener("DOMContentLoaded", async () => {
   try {
     /* 1. Incidencias */
-    roles = await obtenerRoles(idUsuarioActivo);
+    //roles = await obtenerRoles(idUsuarioActivo);
     const res = await fetch(`${API_URL}?accion=getTodasIncidencias`);
     const textoCrudo = await res.text();
 
