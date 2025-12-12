@@ -13,14 +13,17 @@ const GAS_CONFIG = {
 };
 
 let currentGas = 'MAX_GAS';
-let gasDataDashoard = null;
-let heatLayer = null;
+let currentView = 'general'; // 'general' o 'personal'
+let peninsulaDataGlobal = [];
+let localDataGlobal = [];
+
 let mapaInstance = null;
 let heatmapLayerGroup = L.layerGroup();
+let heatLayer = null;
 let legend = L.control({position: 'bottomright'});
 
 // ==============================================
-// 2. LÓGICA DEL HEATMAP Y VISUALIZACIÓN
+// 2. LÓGICA DE CÁLCULO Y FILTRADO
 // ==============================================
 
 function getColor(valor, thresholds) {
@@ -46,29 +49,31 @@ function getMaxGasIntensity(station) {
 }
 
 function getHeatmapPoints(gasKey) {
-    if (!gasDataDashoard) return [];
+    // FILTRADO VITAL: Selecciona qué datos mostrar según la vista actual
+    let dataToUse = (currentView === 'personal') ? localDataGlobal : peninsulaDataGlobal.concat(localDataGlobal);
 
     if (gasKey === 'MAX_GAS') {
-        return gasDataDashoard.map(station => {
+        return dataToUse.map(station => {
             const { intensity } = getMaxGasIntensity(station);
             return intensity > 0 ? [station.lat, station.lng, intensity] : null;
         }).filter(point => point !== null);
     } else {
         const config = GAS_CONFIG[gasKey];
-        const property = config.property;
-        const maxVal = config.maxVal;
-
-        return gasDataDashoard
-            .filter(station => station[property] > 0)
+        return dataToUse
+            .filter(station => station[config.property] > 0)
             .map(station => {
-                const intensity = Math.min(station[property] / maxVal, 1.0);
+                const intensity = Math.min(station[config.property] / config.maxVal, 1.0);
                 return [station.lat, station.lng, intensity];
             });
     }
 }
 
+// ==============================================
+// 3. RENDERIZADO Y CONTROL DE VISTA
+// ==============================================
+
 function drawHeatmap(gasKey) {
-    if (!gasDataDashoard || !mapaInstance) return;
+    if (!mapaInstance) return;
 
     const heatPoints = getHeatmapPoints(gasKey);
 
@@ -78,8 +83,8 @@ function drawHeatmap(gasKey) {
 
     const heatOptions = {
         minOpacity: 0.15,
-        maxZoom: 10,
-        radius: 30,
+        maxZoom: (currentView === 'personal') ? 15 : 10,
+        radius: (currentView === 'personal') ? 45 : 30, // Puntos más grandes en vista personal
         blur: 30,
         max: 1.0,
         gradient: { 0.0: 'green', 0.25: 'lime', 0.5: 'yellow', 1.0: 'red' }
@@ -94,48 +99,54 @@ function drawHeatmap(gasKey) {
     legend.addTo(mapaInstance);
 }
 
-// Definición de la leyenda dinámica
+// Esta función es llamada desde dashboard_cliente.js
+function switchMapView(viewType) {
+    currentView = viewType;
+
+    if (viewType === 'personal') {
+        // Enfoque en Gandía (ajusta si tus sensores están en otra zona)
+        mapaInstance.flyTo([38.968, -0.186], 13);
+    } else {
+        // Enfoque general
+        mapaInstance.flyTo([39.228493, -0.529656], 9);
+    }
+
+    drawHeatmap(currentGas);
+}
+
 legend.onAdd = function () {
     const config = GAS_CONFIG[currentGas];
     var div = L.DomUtil.create('div', 'info legend'),
         thresholds = config.thresholds,
         labels = [];
 
-    div.innerHTML += `<h4>${config.name} (${config.units})</h4>`;
-
+    div.innerHTML += `<h4>${config.name}</h4>`;
     if (currentGas === 'MAX_GAS') {
-        labels.push('<i style="background:' + getColor(thresholds[0] - 0.1, thresholds) + '"></i> Bajo Riesgo (< 50%)');
-        labels.push('<i style="background:' + getColor(thresholds[0] + 0.1, thresholds) + '"></i> Riesgo Medio (50% - 80%)');
-        labels.push('<i style="background:' + getColor(thresholds[1] + 0.1, thresholds) + '"></i> Alto Riesgo (> 80%)');
+        labels.push('<i style="background:' + getColor(thresholds[0] - 0.1, thresholds) + '"></i> Bajo (< 50%)');
+        labels.push('<i style="background:' + getColor(thresholds[0] + 0.1, thresholds) + '"></i> Medio (50%-80%)');
+        labels.push('<i style="background:' + getColor(thresholds[1] + 0.1, thresholds) + '"></i> Alto (> 80%)');
     } else {
-        labels.push('<i style="background:' + getColor(thresholds[0] - 1, thresholds) + '"></i> 0 &ndash; ' + thresholds[0] + ' (Bueno)');
-        labels.push('<i style="background:' + getColor(thresholds[0] + 1, thresholds) + '"></i> ' + (thresholds[0] + 1) + ' &ndash; ' + thresholds[1] + ' (Medio)');
-        labels.push('<i style="background:' + getColor(thresholds[1] + 1, thresholds) + '"></i> ' + (thresholds[1] + 1) + '+ (Alto)');
+        labels.push('<i style="background:' + getColor(thresholds[0] - 1, thresholds) + '"></i> Bueno');
+        labels.push('<i style="background:' + getColor(thresholds[0] + 1, thresholds) + '"></i> Medio');
+        labels.push('<i style="background:' + getColor(thresholds[1] + 1, thresholds) + '"></i> Alto');
     }
-
     div.innerHTML += labels.join('<br>');
     return div;
 };
 
 // ==============================================
-// 3. FUNCIÓN DE INICIALIZACIÓN (Adaptada a IDs)
+// 4. INICIALIZACIÓN PRINCIPAL
 // ==============================================
 
 function initializeDashboardMap() {
-    // Evitar duplicados
     if (mapaInstance) {
         setTimeout(() => mapaInstance.invalidateSize(), 100);
         return;
     }
 
-    // Buscar el contenedor 'mapa' (ID del HTML)
     const container = document.getElementById('mapa');
-    if (!container) {
-        console.error("Contenedor 'mapa' no encontrado en el DOM.");
-        return;
-    }
+    if (!container) return;
 
-    // Inicialización del mapa (Botones + y - activados por defecto)
     mapaInstance = L.map('mapa').setView([39.228493, -0.529656], 9);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -143,14 +154,14 @@ function initializeDashboardMap() {
         crossOrigin: true
     }).addTo(mapaInstance);
 
-    // Carga de datos
     Promise.all([
         fetch('../data/datos_config_gases.json').then(r => r.json()),
         fetch('../data/datos_sensores.geojson').then(r => r.json())
     ])
         .then(([dataConfig, dataLocal]) => {
-            let peninsulaData = dataConfig.gas_station_data;
-            const localData = dataLocal.features.map(feature => ({
+            // Guardamos los datos globalmente para poder filtrar sin volver a hacer fetch
+            peninsulaDataGlobal = dataConfig.gas_station_data;
+            localDataGlobal = dataLocal.features.map(feature => ({
                 id_sensor: feature.properties.id_sensor,
                 lat: feature.geometry.coordinates[1],
                 lng: feature.geometry.coordinates[0],
@@ -161,9 +172,7 @@ function initializeDashboardMap() {
                 valor_PM10: feature.properties.valor_PM10,
             }));
 
-            gasDataDashoard = peninsulaData.concat(localData);
-
-            // Control de Capas (Layouts de Gases)
+            // Crear controles de "Layouts" (Capas Base de gases)
             var gasLayersControl = {};
             for (const key in GAS_CONFIG) {
                 gasLayersControl[GAS_CONFIG[key].name] = L.layerGroup();
@@ -171,19 +180,14 @@ function initializeDashboardMap() {
 
             heatmapLayerGroup.addTo(mapaInstance);
 
-            var overlayLayersControl = {
-                "Mapa de Calor (Gases)": heatmapLayerGroup
-            };
+            L.control.layers(gasLayersControl, {"Mapa Calor": heatmapLayerGroup}, { collapsed: false }).addTo(mapaInstance);
 
-            // Crear el control de capas (collapsed: false para que se vea la tabla)
-            L.control.layers(gasLayersControl, overlayLayersControl, { collapsed: false }).addTo(mapaInstance);
-
-            // Iniciar con MAX_GAS
+            // Estado inicial
             currentGas = 'MAX_GAS';
             mapaInstance.addLayer(gasLayersControl[GAS_CONFIG['MAX_GAS'].name]);
             drawHeatmap(currentGas);
 
-            // Manejar el cambio de "Layout" de gas
+            // Evento cambio de gas en el selector de Leaflet
             mapaInstance.on('baselayerchange', function (e) {
                 for (const key in GAS_CONFIG) {
                     if (GAS_CONFIG[key].name === e.name) {
@@ -194,7 +198,7 @@ function initializeDashboardMap() {
                 }
             });
 
-            setTimeout(() => mapaInstance.invalidateSize(), 200);
+            setTimeout(() => mapaInstance.invalidateSize(), 300);
         })
-        .catch(error => console.error('Error al cargar datos del mapa:', error));
+        .catch(error => console.error('Error al cargar datos:', error));
 }

@@ -105,12 +105,12 @@ $gmail = $_SESSION['usuario_correo'];
                         <div class="dropdown-container"> 
                             <!--Seleccionar ver el mapa que quieras-->
                             <div class="dropdown-mapa" id="dropdown-button">
-                                <span>Mis sensores personales</span>
+                                <span>Contaminación del aire - Mapa general</span>
                                 <i class="fa-solid fa-chevron-down"></i>
                             </div>
                             <div class="dropdown-menu" >
-                                <a href="#" class="dropdown-item">Mis sensores personales</a>
                                 <a href="#" class="dropdown-item">Contaminación del aire - Mapa general</a>
+                                <a href="#" class="dropdown-item">Mis sensores personales</a>
                             </div>
                         </div>
                         <!--Selecctor de fecha-->
