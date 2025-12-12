@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 require_once(__DIR__ . '/conexion.php');     
 
 // Lógica general
-require_once(__DIR__ . '/logicaNegocio.php'); 
+//require_once(__DIR__ . '/logicaNegocio.php'); 
 
 // Funciones individuales dentro del directorio logicaNegocio/
 foreach (glob(__DIR__ . "/logicaNegocio/*.php") as $file) {
