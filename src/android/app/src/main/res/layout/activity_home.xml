@@ -285,21 +285,6 @@
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Acciones Rápidas:"
-                android:textStyle="bold"
-                android:layout_marginBottom="10dp"/>
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="botonVerSensoresAfiliados"
-                android:text="Ver Sensores Afiliados"
-                android:backgroundTint="@color/azulOscuro_Principal"/>
-
         </LinearLayout>
     </ScrollView>
 

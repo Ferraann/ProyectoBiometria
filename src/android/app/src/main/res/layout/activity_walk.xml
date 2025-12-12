@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/logoWalk"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/logo_aither"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtMiCaminata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MI TRAYECTO"
+        android:textColor="@color/azulOscuro_Principal"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoWalk" />
+
+    <View
+        android:id="@+id/lineaSeparadora"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/azulOscuro_Principal"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtMiCaminata"
+        app:layout_constraintTop_toBottomOf="@+id/txtMiCaminata" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineaSeparadora">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/azul_Paneles"
+                app:cardElevation="0dp"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@android:drawable/ic_menu_compass"
+                        app:tint="@color/azulOscuro_Principal"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ruta en tiempo real en obras"
+                        android:textColor="@color/azulOscuro_Principal"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/azul_Paneles"
+                app:cardElevation="0dp"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:animateLayoutChanges="true">
+                    <LinearLayout
+                    android:id="@+id/layoutLeyendaHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <TextView
+                        android:text="Leyenda de Gases"
+                        android:textColor="@color/blanco"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:id="@+id/imgFlechaLeyenda"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_arrowdown"
+                        app:tint="@color/blanco"/>
+                </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layoutLeyendaContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:paddingBottom="20dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:text="• O3 (Ozono)"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="@color/blanco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="GENERACIÓN:\nReacción fotoquímica compleja (no se emite de forma directa).\n\nFUENTES PRINCIPALES:\nTráfico rodado, industrias, refinerías, vapores de gasolina, disolventes y productos de limpieza (especialmente en días soleados).\n\nEFECTOS NOCIVOS:\n- Baja exposición: Irritación, dolor de garganta y pecho, tos y falta de aire.\n- Alta exposición: Reducción pulmonar, asma, bronquitis, enfisema y riesgo de infecciones. La exposición crónica puede causar daño permanente.\n\nUMBRALES:\nUE: Máx 120 µg/m³ (8h).\nOMS: Máx 100 µg/m³ (8h)."
+                            android:textColor="#E0E0E0"
+                            android:textSize="14sp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="• NO2 (Dióxido de Nitrógeno)"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="@color/blanco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="GENERACIÓN:\nCombustión a altas temperaturas.\n\nFUENTES PRINCIPALES:\nTráfico, centrales eléctricas, industria y fuentes interiores (estufas/calentadores).\n\nEFECTOS NOCIVOS:\n- Baja/Moderada: Irritación de ojos/nariz/garganta, tos, flema y disnea.\n- Alta: Inflamación de vías, bronquitis y edema pulmonar.\n\nUMBRALES:\nUE: Máx 40 µg/m³ (anual) / 200 µg/m³ (1h).\nOMS: Máx 10 µg/m³ (anual) / 25 µg/m³ (24h).\n\nOTROS LÍMITES:\nSuperior: 70% VL (7 mg/m³).\nMínimo: 50% VL (5 mg/m³)."
+                            android:textColor="#E0E0E0"
+                            android:textSize="14sp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="• SO2 (Dióxido de Azufre)"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="@color/blanco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="EFECTOS EN LA SALUD:\n- Sistema Respiratorio: Irritación, inflamación, tos, asma, broncoconstricción. Casos graves: edema, neumonía.\n- Ojos y Piel: Irritación severa, lagrimeo y quemaduras.\n- Otros: Dolor de cabeza, náuseas, ansiedad. A largo plazo: problemas cardiovasculares, diabetes y cáncer.\n\nUMBRALES:\nOMS: 40 µg/m³ (24h) / 500 µg/m³ (10min).\nMáximos: 60% VLD (75 μg/m³).\nMínimos: 40% VLD (50 μg/m³)."
+                            android:textColor="#E0E0E0"
+                            android:textSize="14sp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="• CO (Monóxido de Carbono)"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="@color/blanco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="GENERACIÓN:\nGas incoloro producido por la combustión incompleta.\n\nEFECTOS:\nReduce la capacidad de la sangre para transportar oxígeno. Puede causar dolor de cabeza, fatiga y problemas cardíacos.\n\nUMBRALES OMS:\n4000 µg/m³ (24h).\n25 ppm (1h) / 9 ppm (8h).\n\nUMBRALES DE EVALUACIÓN:\nSuperior: 70% del VL (7 mg/m³).\nInferior: 50% del VL (5 mg/m³)."
+                            android:textColor="#E0E0E0"
+                            android:textSize="14sp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
