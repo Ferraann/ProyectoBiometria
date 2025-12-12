@@ -1,0 +1,57 @@
+\doxysection{Pojo\+Sensor.\+java}
+\hypertarget{_pojo_sensor_8java_source}{}\label{_pojo_sensor_8java_source}\index{src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoSensor.java@{src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoSensor.java}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.example.grupo5.aitherapp.pojos;}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00003}00003\ \textcolor{comment}{//\ Fichero:\ PojoSensor.java}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00004}00004\ \textcolor{comment}{//\ Autor:\ Pablo\ Chasi}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00005}00005\ \textcolor{comment}{//\ Fecha:\ 28/10/2025}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00006}00006\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00007}00007\ \textcolor{comment}{//\ Descripción:}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00008}00008\ \textcolor{comment}{//\ Clase\ POJO\ utilizada\ para\ representar\ un\ sensor\ dentro\ de\ la}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00009}00009\ \textcolor{comment}{//\ aplicación.\ Este\ objeto\ se\ usa\ para\ enviar\ datos\ a\ la\ API\ cuando}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00010}00010\ \textcolor{comment}{//\ se\ vincula\ un\ sensor\ a\ un\ usuario.\ Contiene\ la\ acción\ a\ realizar,}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00011}00011\ \textcolor{comment}{//\ la\ dirección\ MAC\ del\ sensor,\ el\ modelo\ y\ el\ ID\ del\ usuario\ que}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00012}00012\ \textcolor{comment}{//\ realiza\ la\ vinculación.}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00013}00013\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00014}\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor}{00014}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor}{PojoSensor}}\ \{}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{private}\ String\ accion;}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{private}\ String\ mac;}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ String\ modelo;}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}\ String\ usuario\_id;}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{public}\ String\ getAccion()\ \{}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ accion;}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ setAccion(String\ accion)\ \{}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ this.accion\ =\ accion;}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ String\ getMac()\ \{}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mac;}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ setMac(String\ mac)\ \{}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ this.mac\ =\ mac;}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{public}\ String\ getModelo()\ \{}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ modelo;}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ setModelo(String\ modelo)\ \{}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ this.modelo\ =\ modelo;}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{public}\ String\ getUsuario\_id()\ \{}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ usuario\_id;}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ setUsuario\_id(String\ usuario\_id)\ \{}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ this.usuario\_id\ =\ usuario\_id;}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pojo_sensor_8java_source_l00051}00051\ \}}
+
+\end{DoxyCode}

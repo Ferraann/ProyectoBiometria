@@ -1,150 +1,247 @@
-/* usuario_detalle.css */
-body {
-    font-family: 'Montserrat', sans-serif;
-    background: #f5f6fa;
-    margin: 0;
-    color: #333
+/* ----------------------------- */
+/* ---------- Colores ---------- */
+:root {
+    /* Colores principales */
+    --Principal_1: #152D9A;
+    --Principal_2: #B1BEF9;
+    /* Colores secundarios */
+    --Secundario_Blanco: #FFFFFF;
+    --Secundario_Negro: #000000;
+    --Secundario_Azul: #587DBD;
+    
+    --bold: 700;
+    --semibold: 600;
+    --normal: 400;
+
+    --color-fondo: #f5f7fa;
 }
 
+/* --- Reseteo Básico --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Importante para el padding */
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-fondo); /* Color de fondo gris claro para toda la web */
+}
+
+/* ---------------------------- */
+/* ---------- Header ---------- */
 header {
-    background: #152D9A;
-    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--Secundario_Azul);
+}
+
+header a > img {
+    width: 160px;
+    height: auto;
+}
+
+nav ul {
     display: flex;
     align-items: center;
-    padding: .5rem 1rem
-}
-
-header img {
-    height: 40px
-}
-
-header ul {
+    gap: 80px;
     list-style: none;
+}
+
+nav a {
+    color: var(--Principal_1);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
     display: flex;
-    gap: 1rem;
-    margin: 0
+    justify-content: center;
+    text-align: center;
 }
 
-header a {
-    color: #fff;
-    text-decoration: none
+nav a.nav-perfil {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
 }
 
+nav a.nav-perfil i {
+    font-size: 2.5rem;
+}
+
+nav a:hover {
+    color: var(--Secundario_Blanco);
+}
+
+/* --- Perfil Dropdown --- */
+.profile-dropdown-container {
+    position: relative;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.profile-menu {
+    position: absolute;
+    top: 50px; /* Ajustado para que no tape el icono */
+    right: -20px;
+    z-index: 100;
+    width: 250px;
+    background-color: var(--Principal_1);
+    color: var(--Secundario_Blanco);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: none; 
+}
+
+.profile-menu.show {
+    display: block;
+}
+
+.menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-icon-large { font-size: 2.5rem; }
+
+.close-menu-btn {
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+.menu-item {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: var(--Secundario_Blanco);
+    font-weight: var(--semibold);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s;
+}
+
+.menu-item:hover {
+    background-color: var(--Principal_2);
+    color: var(--Principal_1);
+}
+
+/* ---------------------------- */
+/* ---------- Main ------------ */
 main {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 h1 {
-    margin-bottom: 1.5rem
+    margin-bottom: 1.5rem;
+    color: var(--Principal_1);
 }
 
+/* Tarjeta Blanca Principal */
 .card {
     background: #fff;
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: 2rem;
     margin-bottom: 1.5rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .08)
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* Información de Usuario (Flexbox) */
 .user-info {
     display: flex;
-    gap: 1.5rem;
-    align-items: center
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 .avatar img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    object-fit: cover
+    object-fit: cover;
+    border: 4px solid var(--Principal_2);
 }
 
 .datos p {
-    margin: .3rem 0
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
 }
 
-.permisos h2 {
-    margin-top: 0
-}
-
+/* Switch Toggle */
 .switch-label {
     display: flex;
     align-items: center;
-    gap: .7rem;
-    margin: .8rem 0;
+    gap: 0.7rem;
+    margin: 0.8rem 0;
     cursor: pointer;
     position: relative;
 }
 
 .switch-label input {
     opacity: 0;
-    width: 100%; 
-    height: 100%;
+    width: 0;
+    height: 0;
     position: absolute;
-    top: 0;
-    left: 0;
-    margin: 0;
-    z-index: 2;
 }
 
-
 .slider {
-    width: 40px;
-    height: 20px;
+    width: 50px;
+    height: 26px;
     background: #ccc;
-    border-radius: 20px;
+    border-radius: 34px;
     position: relative;
-    z-index: 1;
+    transition: .4s;
 }
 
 .slider::after {
-    content: '';
-    width: 16px;
-    height: 16px;
-    background: #fff;
-    border-radius: 50%;
+    content: "";
     position: absolute;
-    top: 2px;
-    left: 2px;
-    transition: .2s
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
 }
 
-input:checked+.slider {
-    background: #152D9A
+input:checked + .slider {
+    background-color: var(--Principal_1);
 }
 
-input:checked+.slider::after {
-    left: 22px
+input:checked + .slider::after {
+    transform: translateX(24px);
 }
 
+/* Botones */
 .btn-primary {
-    background: #152D9A;
+    background: var(--Principal_1);
     color: #fff;
     border: none;
-    padding: .6rem 1.2rem;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 20px;
     cursor: pointer;
-    margin-top: 1rem
+    font-weight: 600;
+    margin-left: auto; /* Empuja el botón a la derecha */
 }
 
 .btn-primary:hover {
-    background: #0f1e6d
+    background: var(--Secundario_Azul);
 }
 
-.sensor-list {
-    list-style: none;
-    padding: 0;
-    margin: 0
-}
-
+/* Lista Sensores */
 .sensor-list li {
-    padding: .4rem 0;
-    border-bottom: 1px solid #eee
-}
-
-.sensor-list li.empty {
-    color: #777;
-    font-style: italic
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    font-weight: 500;
 }

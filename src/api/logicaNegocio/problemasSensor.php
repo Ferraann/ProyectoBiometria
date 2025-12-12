@@ -1,15 +1,15 @@
 <?php
 // ------------------------------------------------------------------
-// Fichero: marcarSensorConProblema.php
+// Fichero: problemas_sensor.php
 // Autor: Manuel
-// Fecha: 30/10/2025
+// Fecha: 11/12/2025
 // ------------------------------------------------------------------
 // Descripción:
-//  Función para terminar la relación de un sensor y marcarlo con problema.
-//  Finaliza todas las relaciones activas y actualiza el estado del sensor.
+//  Conjunto de funciones para gestionar el estado de problema (problema=0/1) del sensor
+//  SIN afectar las relaciones activas con usuarios.
 // ------------------------------------------------------------------
 
-function marcarSensorConProblemas($conn, $data)
+function sensorConProblemas($conn, $data)
 {
     if (!isset($data['sensor_id'])) {
         return ["status" => "error", "mensaje" => "Falta el parámetro sensor_id."];
@@ -17,26 +17,54 @@ function marcarSensorConProblemas($conn, $data)
 
     $sensor_id = $data['sensor_id'];
 
-    // 1. Finalizar relaciones activas del sensor
-    $sqlFinalizar = "UPDATE usuario_sensor 
-                     SET actual = 0, fin_relacion = NOW() 
-                     WHERE sensor_id = ? AND actual = 1";
-    $stmtFin = $conn->prepare($sqlFinalizar);
-    $stmtFin->bind_param("i", $sensor_id);
-    $stmtFin->execute();
-
-    // 2. Marcar el sensor como con problema
+    // Se marca el sensor como con problema (problema = 1)
     $sqlProblema = "UPDATE sensor SET problema = 1 WHERE id = ?";
     $stmtProb = $conn->prepare($sqlProblema);
+    
+    if (!$stmtProb) {
+        return ["status" => "error", "mensaje" => "Error al preparar la consulta: " . $conn->error];
+    }
+    
     $stmtProb->bind_param("i", $sensor_id);
 
     if ($stmtProb->execute()) {
+        $stmtProb->close();
         return [
             "status" => "ok",
-            "mensaje" => "Sensor marcado con problema y relación finalizada.",
-            "filas_relaciones_finalizadas" => $stmtFin->affected_rows
+            "mensaje" => "Sensor marcado con problema."
         ];
     } else {
-        return ["status" => "error", "mensaje" => "Error al actualizar sensor: " . $conn->error];
+        $error = $stmtProb->error;
+        $stmtProb->close();
+        return ["status" => "error", "mensaje" => "Error al actualizar sensor: " . $error];
     }
 }
+
+function sensorSinProblemas($conn, $data)
+{
+    if (!isset($data['sensor_id'])) {
+        return ["status" => "error", "mensaje" => "Falta el parámetro sensor_id."];
+    }
+
+    $sensor_id = $data['sensor_id'];
+
+    // Se marca el sensor como reactivado (problema = 0)
+    $sql = "UPDATE sensor SET problema = 0 WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+
+    if (!$stmt) {
+        return ["status" => "error", "mensaje" => "Error en la preparación de la consulta: " . $conn->error];
+    }
+
+    $stmt->bind_param("i", $sensor_id);
+
+    if ($stmt->execute()) {
+        $stmt->close(); 
+        return ["status" => "ok", "mensaje" => "Sensor reactivado correctamente."];
+    } else {
+        $error = $stmt->error;
+        $stmt->close();
+        return ["status" => "error", "mensaje" => "Error al reactivar sensor: " . $error];
+    }
+}
+?>

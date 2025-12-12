@@ -1,0 +1,32 @@
+\doxysection{conexion.\+php}
+\hypertarget{conexion_8php_source}{}\label{conexion_8php_source}\index{src/api/conexion.php@{src/api/conexion.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00002}00002\ \textcolor{keyword}{function}\ abrirServidor()\ \{}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00003}00003\ \ \ \ \ \textcolor{comment}{//\ Parámetros\ de\ conexión\ (correctos\ para\ Plesk)}}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00004}00004\ \ \ \ \ \$servername\ =\ \textcolor{stringliteral}{"{}localhost"{}};}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00005}00005\ \ \ \ \ \$username\ \ \ =\ \textcolor{stringliteral}{"{}aitherdb"{}};}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00006}00006\ \ \ \ \ \$password\ \ \ =\ \textcolor{stringliteral}{"{}Sansaloni330."{}};}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00007}00007\ \ \ \ \ \$dbname\ \ \ \ \ =\ \textcolor{stringliteral}{"{}aither"{}};}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00008}00008\ \ \ \ \ \$port\ \ \ \ \ \ \ =\ 3306;}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00010}00010\ \ \ \ \ \textcolor{comment}{//\ Crear\ conexión\ con\ MySQL}}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00011}00011\ \ \ \ \ \$conn\ =\ \textcolor{keyword}{new}\ mysqli(\$servername,\ \$username,\ \$password,\ \$dbname,\ \$port);}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00013}00013\ \ \ \ \ \textcolor{comment}{//\ Verificar\ conexión}}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{if}\ (\$conn-\/>connect\_error)\ \{}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00015}00015\ \ \ \ \ \ \ \ \ die(json\_encode([}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}message"{}}\ =>\ \textcolor{stringliteral}{"{}Error\ de\ conexión:\ "{}}\ .\ \$conn-\/>connect\_error}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00018}00018\ \ \ \ \ \ \ \ \ ]));}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//\ UTF-\/8}}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00022}00022\ \ \ \ \ \$conn-\/>set\_charset(\textcolor{stringliteral}{"{}utf8mb4"{}});}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{return}\ \$conn;}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{conexion_8php_source_l00026}00026\ ?>}
+
+\end{DoxyCode}

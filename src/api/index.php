@@ -164,6 +164,23 @@ switch ($method) {
                 echo json_encode(quitarAdministrador($conn, $input['usuario_id']));
                 break;
                 
+            case "sumarPuntos": 
+                // Ejemplo de cómo llamar la función con los datos del body
+                echo json_encode(sumarPuntosUsuario($conn, $input));
+                break;
+
+            case "canjearRecompensa": 
+                // Necesitas tener la función 'canjearRecompensa' incluida
+                echo json_encode(canjearRecompensa($conn, $input));
+                break;
+            case "marcarSensorSinProblemas":
+                echo json_encode(sensorSinProblemas($conn, $input));
+                break;
+
+            case "marcarSensorConProblemas":
+                echo json_encode(sensorConProblemas($conn, $input));
+                break;
+                
             default:
                 echo json_encode(["status" => "error", "mensaje" => "Acción POST no reconocida."]);
                 break;
@@ -247,7 +264,6 @@ switch ($method) {
             case "getFotoPerfil":
                 echo json_encode(obtenerFotoPerfil($conn, $input['usuario_id']));
                 break;
-
             case "getSensoresDeUsuario":
                 $id = intval($_GET['id'] ?? 0);
                 echo json_encode(obtenerSensoresDeUsuario($conn, $id));
@@ -262,6 +278,10 @@ switch ($method) {
                 }
                 $row = obtenerSensorXId($conn, $id); 
                 echo json_encode($row ?: ["status" => "error", "mensaje" => "Sensor no encontrado"]);
+                break;
+
+            case "getObtenerSensoresUsuario":
+                echo json_encode(obtenerListaSensores($conn, $_GET['usuario_id']));
                 break;
 
             default:
@@ -280,3 +300,4 @@ switch ($method) {
 
 // Cerramos conexión
 $conn->close();
+?>

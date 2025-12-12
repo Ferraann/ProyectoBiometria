@@ -1,0 +1,53 @@
+\doxysection{guardar\+Foto\+Incidencia.\+php}
+\hypertarget{guardar_foto_incidencia_8php_source}{}\label{guardar_foto_incidencia_8php_source}\index{src/api/logicaNegocio/guardarFotoIncidencia.php@{src/api/logicaNegocio/guardarFotoIncidencia.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00003}00003\ \textcolor{comment}{//\ Fichero:\ guardarFotoIncidencia.php}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00004}00004\ \textcolor{comment}{//\ Autor:\ Manuel}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00005}00005\ \textcolor{comment}{//\ Fecha:\ 5/12/2025}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00006}00006\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00007}00007\ \textcolor{comment}{//\ Descripción:}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00008}00008\ \textcolor{comment}{//\ \ Función\ para\ guardar\ fotos\ de\ incidencias\ en\ la\ base\ de\ datos.}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00009}00009\ \textcolor{comment}{//\ \ Procesa\ imágenes\ en\ formato\ base64\ y\ las\ almacena\ como\ BLOB.}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00010}00010\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00012}00012\ \textcolor{keyword}{function}\ guardarFotoIncidencia(\$conn,\ \$data)}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{if}\ (empty(\$data[\textcolor{stringliteral}{'incidencia\_id'}])\ ||\ empty(\$data[\textcolor{stringliteral}{'fotos'}])\ ||\ !is\_array(\$data[\textcolor{stringliteral}{'fotos'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Faltan\ parámetros:\ incidencia\_id\ o\ fotos."{}}];}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00016}00016\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00018}00018\ \ \ \ \ \$incidencia\_id\ =\ (int)\$data[\textcolor{stringliteral}{'incidencia\_id'}];}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00019}00019\ \ \ \ \ \$fotos\ =\ \$data[\textcolor{stringliteral}{'fotos'}];}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00021}00021\ \ \ \ \ \$stmt\ =\ \$conn-\/>prepare(\textcolor{stringliteral}{"{}INSERT\ INTO\ fotos\_incidencia\ (incidencia\_id,\ foto)\ VALUES\ (?,\ ?)"{}});}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00022}00022\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\$stmt)\ \{}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Error\ en\ la\ preparación\ de\ la\ consulta."{}}];}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\$fotos\ as\ \$base64)\ \{}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00028}00028\ \ \ \ \ \ \ \ \ \$base64\ =\ preg\_replace(\textcolor{stringliteral}{'/\string^data:image\(\backslash\)/\(\backslash\)w+;base64,/'},\ \textcolor{stringliteral}{''},\ \$base64);}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00029}00029\ \ \ \ \ \ \ \ \ \$blob\ =\ base64\_decode(\$base64,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00030}00030\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$blob\ ===\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \$stmt-\/>close();}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Una\ de\ las\ imágenes\ no\ es\ válida."{}}];}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00036}00036\ \ \ \ \ \ \ \ \ \$stmt-\/>bind\_param(\textcolor{stringliteral}{"{}ib"{}},\ \$incidencia\_id,\ \$blob);}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00037}00037\ \ \ \ \ \ \ \ \ \$stmt-\/>send\_long\_data(1,\ \$blob);}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00038}00038\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\$stmt-\/>execute())\ \{}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \$stmt-\/>close();}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Error\ al\ guardar\ la\ foto."{}}];}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00045}00045\ \ \ \ \ \$stmt-\/>close();}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}ok"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Fotos\ guardadas\ correctamente."{}}];}
+\DoxyCodeLine{\Hypertarget{guardar_foto_incidencia_8php_source_l00047}00047\ \}}
+
+\end{DoxyCode}

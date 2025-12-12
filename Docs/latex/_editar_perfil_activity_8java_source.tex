@@ -1,0 +1,219 @@
+\doxysection{Editar\+Perfil\+Activity.\+java}
+\hypertarget{_editar_perfil_activity_8java_source}{}\label{_editar_perfil_activity_8java_source}\index{src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/EditarPerfilActivity.java@{src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/EditarPerfilActivity.java}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.example.grupo5.aitherapp.activitysApp;}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ com.example.grupo5.aitherapp.retrofit.LogicaNegocio.putModificarDatos;}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00005}00005\ \textcolor{keyword}{import}\ android.content.SharedPreferences;}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00006}00006\ \textcolor{keyword}{import}\ android.os.Bundle;}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00007}00007\ \textcolor{keyword}{import}\ android.view.View;}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00008}00008\ \textcolor{keyword}{import}\ android.widget.Button;}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00009}00009\ \textcolor{keyword}{import}\ android.widget.EditText;}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00010}00010\ \textcolor{keyword}{import}\ android.widget.Toast;}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00012}00012\ \textcolor{keyword}{import}\ androidx.appcompat.app.AppCompatActivity;}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00014}00014\ \textcolor{keyword}{import}\ com.example.grupo5.aitherapp.R;}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00015}00015\ \textcolor{keyword}{import}\ com.example.grupo5.aitherapp.pojos.PojoUsuario;}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00017}00017\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00018}00018\ \textcolor{comment}{//\ Fichero:\ MainActivity.java}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00019}00019\ \textcolor{comment}{//\ Autor:\ Pablo\ Chasi}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00020}00020\ \textcolor{comment}{//\ Fecha:\ 28/10/2025}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00021}00021\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00022}00022\ \textcolor{comment}{//\ Descripción:}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00023}00023\ \textcolor{comment}{//\ Clase\ que\ se\ hara\ la\ función\ de\ la\ página\ \ editar\ perfil}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00024}00024\ \textcolor{comment}{//\ su\ función\ principal\ es\ que\ mediante\ un\ boton\ puedas\ seleccionar}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00025}00025\ \textcolor{comment}{//\ uno\ de\ los\ datos\ que\ quieres\ modificar,\ cuando\ edita\ es\ información}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00026}00026\ \textcolor{comment}{//\ y\ quiere\ guardalor\ lo\ que\ se\ hara\ es\ modificar\ las\ base\ de\ datos}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00027}00027\ \textcolor{comment}{//\ cambiando\ aquellos\ que\ hemos\ cambiado.}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00028}00028\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00029}\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_editar_perfil_activity}{00029}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_editar_perfil_activity}{EditarPerfilActivity}}\ \textcolor{keyword}{extends}\ AppCompatActivity\ \{}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00030}00030\ \ \ \ \ EditText\ nombre,\ apellidos,\ contrasenyaAntigua,contrasenyaNueva,repetirContrasenyaNueva,correoNuevo,repetirCorreoNuevo;}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00031}00031\ \ \ \ \ Button\ botonModificarNombre,botonModificarApellido,botonModificarCorreo,botonModificarContrasenya,botonGuardarDatos;}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{boolean}\ modificaNombre,modificaApellido,modificaCorreo,modificaContrasenya;}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario}{PojoUsuario}}\ usuario\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario}{PojoUsuario}}();}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//Regex\ que\ me\ permite\ confirma\ que\ la\ contraseña\ es\ segura.}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00035}00035\ \ \ \ \ String\ regexTieneMayuscula\ =\ \textcolor{stringliteral}{"{}\string^(?=.*[A-\/Z]).+\$"{}};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00036}00036\ \ \ \ \ String\ regexTieneNumeros\ =\ \textcolor{stringliteral}{"{}\string^(?=.*\(\backslash\)\(\backslash\)d).+\$"{}};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00037}00037\ \ \ \ \ String\ regexTieneSimbologia\ =\ \textcolor{stringliteral}{"{}\string^(?=.*[\$@€!\%*?\&]).+\$"{}};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00038}00038\ \ \ \ \ String\ regexTieneMasDe8Caracteres\ =\ \textcolor{stringliteral}{"{}\string^.\{8,\}\$"{}};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{void}\ onCreate(Bundle\ savedInstanceState)\{}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_editar\_perfil);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Obtengo\ los\ edit\ text.}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ nombre\ =\ findViewById(R.id.editarNombre);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ apellidos=findViewById(R.id.editarApellidos);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ contrasenyaAntigua\ =\ findViewById(R.id.editarContrasenyaActual);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ contrasenyaNueva\ =\ findViewById(R.id.editarContrasenyaNueva);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ repetirContrasenyaNueva\ =\ findViewById(R.id.editarRepetirContrasenyaNueva);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ correoNuevo\ =\ findViewById(R.id.editarCorreoNuevo);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ repetirCorreoNuevo\ =\ findViewById(R.id.editarRepetirCorreoNuevo);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ botonModificarNombre\ =\ findViewById(R.id.modificarNombre);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ botonModificarApellido\ =\ findViewById(R.id.modificarApellidos);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ botonModificarCorreo\ =\ findViewById(R.id.modificarCorreo);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ botonModificarContrasenya\ =\ findViewById(R.id.modificarContrasenyaAntigua);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ botonGuardarDatos\ =\ findViewById(R.id.guardarDatos);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ modificaNombre\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ modificaContrasenya\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ modificaCorreo\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ modificaApellido\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Recuperar\ datos\ del\ usuario\ desde\ SharedPreferences}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ SharedPreferences\ prefs\ =\ getSharedPreferences(\textcolor{stringliteral}{"{}SesionUsuario"{}},\ MODE\_PRIVATE);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ String\ nombreUsuario\ =\ prefs.getString(\textcolor{stringliteral}{"{}nombre"{}},\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ String\ apellidosUsuario\ =\ prefs.getString(\textcolor{stringliteral}{"{}apellidos"{}},\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mostrar\ los\ datos\ en\ los\ EditText}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ nombre.setText(nombreUsuario);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ apellidos.setText(apellidosUsuario);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ botonActivarModificarNombre(View\ v)\{}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ nombre.setEnabled(!nombre.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ botonModificarContrasenya.setEnabled(!botonModificarContrasenya.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ botonModificarApellido.setEnabled(!botonModificarApellido.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ botonModificarCorreo.setEnabled(!botonModificarCorreo.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ botonGuardarDatos.setEnabled(!botonGuardarDatos.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ modificaNombre\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00085}00085\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ botonActivarModificarApellidos(View\ v)\{}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ apellidos.setEnabled(!apellidos.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ botonModificarContrasenya.setEnabled(!botonModificarContrasenya.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ botonModificarNombre.setEnabled(!botonModificarNombre.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ botonModificarCorreo.setEnabled(!botonModificarCorreo.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ botonGuardarDatos.setEnabled(!botonGuardarDatos.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ modificaApellido\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00095}00095\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00097}00097\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ botonActivarModificarContrasenya(View\ v)\{}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ contrasenyaAntigua.setEnabled(!contrasenyaAntigua.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ contrasenyaNueva.setEnabled(!contrasenyaNueva.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ repetirContrasenyaNueva.setEnabled(!repetirContrasenyaNueva.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ botonModificarApellido.setEnabled(!botonModificarApellido.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ botonModificarNombre.setEnabled(!botonModificarNombre.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ botonModificarCorreo.setEnabled(!botonModificarCorreo.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ botonGuardarDatos.setEnabled(!botonGuardarDatos.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ modificaContrasenya\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00111}00111\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ botonActivarModificarCorreo(View\ v)\{}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ correoNuevo.setEnabled(!correoNuevo.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ repetirCorreoNuevo.setEnabled(!repetirCorreoNuevo.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ botonModificarApellido.setEnabled(!botonModificarApellido.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ botonModificarNombre.setEnabled(!botonModificarNombre.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ botonModificarContrasenya.setEnabled(!botonModificarContrasenya.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ botonGuardarDatos.setEnabled(!botonGuardarDatos.isEnabled());}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00120}00120\ \ \ \ \ \ \ \ \ modificaCorreo\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00121}00121\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00123}00123\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ botonGuardarModificaciones(View\ v)\{}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00124}00124\ \ \ \ \ \ \ \ \ SharedPreferences\ prefs\ =\ getSharedPreferences(\textcolor{stringliteral}{"{}SesionUsuario"{}},\ MODE\_PRIVATE);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ String\ idUsuario\ =\ prefs.getString(\textcolor{stringliteral}{"{}id"{}},\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00127}00127\ \ \ \ \ \ \ \ \ usuario.setId(idUsuario);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00128}00128\ \ \ \ \ \ \ \ \ usuario.setAction(\textcolor{stringliteral}{"{}modificarDatos"{}});}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ VALIDAR\ Y\ AÑADIR\ NOMBRE}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (modificaNombre)\ \{}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ String\ nuevoNombre\ =\ nombre.getText().toString().trim();}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nuevoNombre.isEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}El\ nombre\ no\ puede\ estar\ vacío"{}},\ Toast.LENGTH\_SHORT).show();}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ usuario.setNombre(nuevoNombre);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00140}00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ VALIDAR\ Y\ AÑADIR\ APELLIDOS}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (modificaApellido)\ \{}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ String\ nuevosApellidos\ =\ apellidos.getText().toString().trim();}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nuevosApellidos.isEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Los\ apellidos\ no\ pueden\ estar\ vacíos"{}},\ Toast.LENGTH\_SHORT).show();}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ usuario.setApellidos(nuevosApellidos);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00152}00152\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00155}00155\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ VALIDAR\ Y\ AÑADIR\ CORREO}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (modificaCorreo)\ \{}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ String\ correo1\ =\ correoNuevo.getText().toString().trim();}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ String\ correo2\ =\ repetirCorreoNuevo.getText().toString().trim();}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!correo1.equals(correo2))\ \{}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Los\ correos\ no\ coinciden"{}},\ Toast.LENGTH\_SHORT).show();}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ usuario.setCorreo(correo1);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00169}00169\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00171}00171\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ VALIDAR\ Y\ AÑADIR\ CONTRASEÑA}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00173}00173\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00174}00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (modificaContrasenya)\ \{}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ String\ pass1\ =\ contrasenyaNueva.getText().toString().trim();}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ String\ pass2\ =\ repetirContrasenyaNueva.getText().toString().trim();}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!pass1.matches(regexTieneMasDe8Caracteres)||!pass1.matches(regexTieneNumeros)||!pass1.matches(regexTieneMayuscula)||!pass1.matches(regexTieneSimbologia))\{}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Por\ favor,\ introduce\ una\ contraseña\ segura"{}},\ Toast.LENGTH\_SHORT).show();}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!pass1.equals(pass2))\ \{}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Las\ contraseñas\ no\ coinciden"{}},\ Toast.LENGTH\_SHORT).show();}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ usuario.setContrasenya(pass1);}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00189}00189\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00192}00192\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ LLAMADA\ FINAL\ A\ LA\ API}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00194}00194\ \ \ \ \ \ \ \ \ putModificarDatos(usuario,\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00196}00196\ \ \ \ \ \ \ \ \ Toast.makeText(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Datos\ enviados\ para\ modificar"{}},\ Toast.LENGTH\_SHORT).show();}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ LIMPIAR\ BANDERAS}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00199}00199\ \ \ \ \ \ \ \ \ modificaNombre\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00200}00200\ \ \ \ \ \ \ \ \ modificaApellido\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00201}00201\ \ \ \ \ \ \ \ \ modificaCorreo\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00202}00202\ \ \ \ \ \ \ \ \ modificaContrasenya\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00204}00204\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ DESHABILITAR\ CAMPOS\ DESPUÉS\ DE\ GUARDAR}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00205}00205\ \ \ \ \ \ \ \ \ nombre.setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00206}00206\ \ \ \ \ \ \ \ \ apellidos.setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00207}00207\ \ \ \ \ \ \ \ \ correoNuevo.setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00208}00208\ \ \ \ \ \ \ \ \ repetirCorreoNuevo.setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00209}00209\ \ \ \ \ \ \ \ \ contrasenyaNueva.setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00210}00210\ \ \ \ \ \ \ \ \ repetirContrasenyaNueva.setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00211}00211\ \ \ \ \ \ \ \ \ contrasenyaAntigua.setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00212}00212\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_editar_perfil_activity_8java_source_l00213}00213\ \}}
+
+\end{DoxyCode}

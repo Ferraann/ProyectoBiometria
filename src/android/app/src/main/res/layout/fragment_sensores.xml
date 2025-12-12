@@ -19,12 +19,14 @@
             android:background="@drawable/boton_principal"
             android:backgroundTint="#F0F0F0"
             android:minWidth="150dp" />
+
         <TextView
+            android:id="@+id/tvNodoActivoDesde"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nodo activo desde:   10/11/2015"
             android:background="@drawable/boton_principal"
-            android:backgroundTint="#9FA8DA"
+            android:backgroundTint="@color/azul_Paneles"
             android:textColor="@color/azulOscuro_Principal"
             android:textStyle="bold"
             android:gravity="center"
@@ -51,14 +53,17 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:gravity="center">
+
                     <TextView
                         android:text="Estado del nodo:"
                         android:textColor="@color/blanco"
                         android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
+
                     <TextView
-                        android:text="Conectado ✓"
+                        android:id="@+id/tvEstadoNodo"
+                        android:text="Desconocido"
                         android:textColor="@color/azulOscuro_Principal"
                         android:textStyle="bold"
                         android:textSize="18sp"
@@ -79,12 +84,15 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:gravity="center">
+
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:src="@drawable/ic_battery"
                         app:tint="@color/azulOscuro_Principal"/>
+
                     <TextView
+                        android:id="@+id/tvBateriaNodo"
                         android:text="86%"
                         android:textColor="@color/blanco"
                         android:textStyle="bold"
@@ -121,9 +129,10 @@
                     android:textSize="16sp"/>
 
                 <TextView
+                    android:id="@+id/tvDistanciaNodo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2m"
+                    android:text="-- m"
                     android:textColor="@color/blanco"
                     android:textSize="24sp"
                     android:textStyle="bold"/>

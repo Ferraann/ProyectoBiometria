@@ -6,13 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detalle de Incidencia – Aither</title>
   <link rel="stylesheet" href="../css/incidencias_detalles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 
 <body>
   <header>
-    <a href="incidencias.html"><i class="fa-solid fa-arrow-left"></i> Volver</a>
-  </header>
+            <!-- Logo de Aither | Al hacer clic tiene que llevar a la landing -->
+            <a href="incidencias.html"><img src="../img/logo_Aither_web.png" alt="Este es el logo de nuestro Proyecto: Aither"></a>
+            <nav>
+                <!--Mis sensores, soporte tecnico y perfil (configuracion y cerrar sesion)-->
+                <ul>
+                    <li><a href="#">Panel <br> Técnico</a></li>
+                    <li>
+                        <a href="#">Soporte <br> Interno</a>
+                    </li>
+                    <li class="profile-dropdown-container">
+                        <a href="#" class="nav-perfil" id="profile-toggle-button"><i class="fa-solid fa-circle-user"></i><span>NOMBRE A.P.</span></a>
+                        <div class="profile-menu" id="profile-menu">
+                            <div class="menu-header">
+                                <i class="fa-solid fa-circle-user profile-icon-large"></i>
+                                <span class="profile-name">NOMBRE A.P.</span>
+                                <i class="fa-solid fa-xmark close-menu-btn" id="close-menu-button"></i>
+                            </div>
+                            <a href="#" class="menu-item">CONFIGURACIÓN</a>
+                            <a href="#" class="menu-item logout-item">CERRAR SESIÓN</a>
+                        </div>
+                    </li>
+                </ul>
+          </nav>
+      </header>
 
   <main>
     <h1>Detalles de Incidencia</h1>
@@ -65,6 +91,6 @@
   </main>
 
   <script type="module" src="../js/incidencia_detalle.js"></script>
+  <script src="../js/Fun_icono_perfil.js"></script>
 </body>
-
 </html>

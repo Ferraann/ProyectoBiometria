@@ -1,0 +1,119 @@
+\doxysection{main\+Test1.\+php}
+\hypertarget{main_test1_8php_source}{}\label{main_test1_8php_source}\index{src/tests/mainTest1.php@{src/tests/mainTest1.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00003}00003\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00004}00004\ \textcolor{comment}{//\ Fichero:\ mainTest1.php\ (CORREGIDO)}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00005}00005\ \textcolor{comment}{//\ Autor:\ Ferran\ Sansaloni\ Prats}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00006}00006\ \textcolor{comment}{//\ Fecha:\ 30/10/2025}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00007}00007\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00008}00008\ \textcolor{comment}{//\ Descripción:}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00009}00009\ \textcolor{comment}{//\ \ \ Script\ para\ probar\ la\ lógica\ de\ negocio\ con\ la\ función\ registrarUsuario.}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00010}00010\ \textcolor{comment}{//\ \ \ \ \ 1.\ Inserta\ un\ usuario\ de\ prueba\ pasando\ un\ array\ de\ datos.}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00011}00011\ \textcolor{comment}{//\ \ \ \ \ 2.\ Recupera\ los\ usuarios\ con\ el\ correo\ de\ prueba.}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00012}00012\ \textcolor{comment}{//\ \ \ \ \ 3.\ Muestra\ el\ contenido\ recuperado\ en\ formato\ JSON.}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00013}00013\ \textcolor{comment}{//\ \ \ \ \ 4.\ Limpieza:\ elimina\ el\ usuario\ de\ prueba\ para\ mantener\ la\ idempotencia.}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00014}00014\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00016}00016\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00017}00017\ \textcolor{comment}{//\ INCLUDES\ NECESARIOS}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00018}00018\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00019}00019\ require\_once(\textcolor{stringliteral}{'../api/conexion.php'});}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00021}00021\ \textcolor{keywordflow}{foreach}\ (glob(\_\_DIR\_\_\ .\ \textcolor{stringliteral}{"{}/../api/logicaNegocio/*.php"{}})\ as\ \$file)\ \{}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00022}00022\ \ \ \ \ require\_once\ \$file;}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00025}00025\ \$conn\ =\ abrirServidor();}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00027}00027\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00028}00028\ \textcolor{comment}{//\ TEST\ 1:\ Insertar\ usuario}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00029}00029\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00030}00030\ echo\ \textcolor{stringliteral}{"{}Test\ 1:\ Guardar\ usuario\ -\/-\/>\ \(\backslash\)t"{}};}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00032}00032\ \textcolor{comment}{//\ email\ que\ usamos\ para\ el\ test}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00033}00033\ \$emailTest\ =\ \textcolor{stringliteral}{"{}esteeselcorreoparaeltest@gmail.com"{}};}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00035}00035\ \$datosUsuario\ =\ [}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00036}00036\ \ \ \ \ \textcolor{stringliteral}{'nombre'}\ \ \ \ =>\ \textcolor{stringliteral}{'NombreTest'},}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00037}00037\ \ \ \ \ \textcolor{stringliteral}{'apellidos'}\ =>\ \textcolor{stringliteral}{'ApellidosTest'},}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00038}00038\ \ \ \ \ \textcolor{stringliteral}{'gmail'}\ \ \ \ \ =>\ \$emailTest,}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00039}00039\ \ \ \ \ \textcolor{stringliteral}{'password'}\ \ =>\ \textcolor{stringliteral}{'1234PruebaSegura'},}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00040}00040\ ];}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00042}00042\ \textcolor{comment}{//\ **2.\ Llamamos\ al\ metodo\ registrarUsuario\ con\ los\ 2\ parámetros\ correctos:\ \$conn\ y\ \$datosUsuario**}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00043}00043\ \textcolor{comment}{//\ La\ función\ devuelve\ un\ array\ ['status'\ =>\ 'ok'/'error',\ 'mensaje'\ =>\ '...']}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00044}00044\ \$resultado\ =\ registrarUsuario(\$conn,\ \$datosUsuario);}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00046}00046\ \textcolor{keywordflow}{if}\ (\$resultado[\textcolor{stringliteral}{'status'}]\ ===\ \textcolor{stringliteral}{'ok'})\ \{}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00047}00047\ \ \ \ \ \textcolor{comment}{//\ Todo\ bien}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00048}00048\ \ \ \ \ echo\ \textcolor{stringliteral}{"{}Usuario\ insertado\ correctamente.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00049}00049\ \ \ \ \ echo\ \textcolor{stringliteral}{"{}Mensaje:\ **"{}}\ .\ \$resultado[\textcolor{stringliteral}{'mensaje'}]\ .\ \textcolor{stringliteral}{"{}**\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00050}00050\ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//\ Error}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00052}00052\ \ \ \ \ die(\textcolor{stringliteral}{"{}Error\ al\ insertar\ el\ usuario.\(\backslash\)nMensaje:\ **"{}}\ .\ \$resultado[\textcolor{stringliteral}{'mensaje'}]\ .\ \textcolor{stringliteral}{"{}**\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00055}00055\ \textcolor{comment}{//\ =========================}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00056}00056\ \textcolor{comment}{//\ TEST\ 2:\ Leer\ datos\ del\ usuario}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00057}00057\ \textcolor{comment}{//\ =========================}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00058}00058\ echo\ \textcolor{stringliteral}{"{}Test\ 2:\ Recoger\ datos\ del\ usuario\ -\/-\/>\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00060}00060\ \textcolor{comment}{//\ Ejecutamos\ la\ consulta}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00061}00061\ \$stmt\ =\ \$conn-\/>prepare(\textcolor{stringliteral}{"{}SELECT\ *\ FROM\ usuario\ WHERE\ gmail\ =\ ?"{}});}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00062}00062\ \$stmt-\/>bind\_param(\textcolor{stringliteral}{"{}s"{}},\ \$emailTest);}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00063}00063\ \$stmt-\/>execute();}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00064}00064\ \$result\ =\ \$stmt-\/>get\_result();}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00066}00066\ \textcolor{comment}{//\ Lista\ para\ los\ usuarios\ con\ el\ correo\ de\ prueba}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00067}00067\ \$usuarios\ =\ [];}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00069}00069\ \textcolor{keywordflow}{if}\ (\$result\ \&\&\ \$result-\/>num\_rows\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{while}\ (\$row\ =\ \$result-\/>fetch\_assoc())\ \{}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Añadimos\ los\ usuarios\ encontrados\ en\ la\ lista}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00072}00072\ \ \ \ \ \ \ \ \ \$usuarios[]\ =\ \$row;}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00074}00074\ \ \ \ \ \textcolor{comment}{//\ Todo\ bien}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00075}00075\ \ \ \ \ echo\ \textcolor{stringliteral}{"{}Usuario(s)\ recuperado(s):\ **"{}}\ .\ count(\$usuarios)\ .\ \textcolor{stringliteral}{"{}**\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00076}00076\ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00077}00077\ \ \ \ \ \textcolor{comment}{//\ Error}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00078}00078\ \ \ \ \ echo\ \textcolor{stringliteral}{"{}No\ se\ han\ recuperado\ usuarios.\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00079}00079\ \}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00081}00081\ \textcolor{comment}{//\ =========================}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00082}00082\ \textcolor{comment}{//\ TEST\ 3:\ Mostrar\ contenido}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00083}00083\ \textcolor{comment}{//\ =========================}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00084}00084\ \textcolor{comment}{//\ Mostramos\ los\ datos}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00085}00085\ echo\ \textcolor{stringliteral}{"{}Test\ 3:\ Mostrar\ datos\ -\/-\/>\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00086}00086\ echo\ json\_encode(\$usuarios,\ JSON\_PRETTY\_PRINT);}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00088}00088\ echo\ \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00089}00089\ \textcolor{comment}{//\ =========================}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00090}00090\ \textcolor{comment}{//\ TEST\ 4:\ Limpieza}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00091}00091\ \textcolor{comment}{//\ =========================}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00092}00092\ echo\ \textcolor{stringliteral}{"{}Test\ 4:\ Eliminar\ el\ dato\ insertado\ (idempotente)\ -\/-\/>\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00093}00093\ \textcolor{comment}{//\ Si\ hay\ alguna\ usuario\ con\ ese\ correo\ electrónico\ que\ se\ elimine}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00094}00094\ \textcolor{keywordflow}{if}\ (!empty(\$usuarios))\ \{}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00095}00095\ \ \ \ \ \$delStmt\ =\ \$conn-\/>prepare(\textcolor{stringliteral}{"{}DELETE\ FROM\ usuario\ WHERE\ gmail\ =\ ?"{}});}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00096}00096\ \ \ \ \ \$delStmt-\/>bind\_param(\textcolor{stringliteral}{"{}s"{}},\ \$emailTest);}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00098}00098\ \ \ \ \ \textcolor{keywordflow}{if}\ (\$delStmt-\/>execute())\ \{}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00099}00099\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}Usuario\ eliminado\ correctamente.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00100}00100\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00101}00101\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}Error\ al\ eliminar\ usuario:\ "{}}\ .\ \$conn-\/>error\ .\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00102}00102\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00103}00103\ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00104}00104\ \ \ \ \ echo\ \textcolor{stringliteral}{"{}No\ hay\ usuario\ para\ eliminar.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00105}00105\ \}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00107}00107\ \$conn-\/>close();}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00109}00109\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00110}00110\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00111}00111\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00112}00112\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{main_test1_8php_source_l00113}00113\ ?>}
+
+\end{DoxyCode}

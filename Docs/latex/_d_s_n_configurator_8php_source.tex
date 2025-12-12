@@ -1,0 +1,171 @@
+\doxysection{DSNConfigurator.\+php}
+\hypertarget{_d_s_n_configurator_8php_source}{}\label{_d_s_n_configurator_8php_source}\index{src/libs/PHPMailer-\/7.0.0/src/DSNConfigurator.php@{src/libs/PHPMailer-\/7.0.0/src/DSNConfigurator.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00022}00022\ \textcolor{keyword}{namespace\ }PHPMailer\(\backslash\)PHPMailer;}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00031}\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_d_s_n_configurator}{00031}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_d_s_n_configurator}{DSNConfigurator}}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00032}00032\ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00041}\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_d_s_n_configurator_a805e71e2fdb239ff519b1e0237affb65}{00041}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_d_s_n_configurator_a805e71e2fdb239ff519b1e0237affb65}{mailer}}(\$dsn,\ \$exceptions\ =\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \$configurator\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{null}\ ===\ \$configurator)\ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \$configurator\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_d_s_n_configurator}{DSNConfigurator}}();}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00047}00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$configurator-\/>configure(\textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}}(\$exceptions),\ \$dsn);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00060}\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_d_s_n_configurator_ad05e3f5256eb07e3c470a1f6c46f6c4b}{00060}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_d_s_n_configurator_ad05e3f5256eb07e3c470a1f6c46f6c4b}{configure}}(\mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}}\ \$mailer,\ \$dsn)}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00062}00062\ \ \ \ \ \ \ \ \ \$config\ =\ \$this-\/>parseDSN(\$dsn);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00064}00064\ \ \ \ \ \ \ \ \ \$this-\/>applyConfig(\$mailer,\ \$config);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$mailer;}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{function}\ parseDSN(\$dsn)}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00079}00079\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00080}00080\ \ \ \ \ \ \ \ \ \$config\ =\ \$this-\/>\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_d_s_n_configurator_a6147fe97c0be7e217e24dc2ec97fda27}{parseUrl}}(\$dsn);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{false}\ ===\ \$config\ ||\ !isset(\$config[\textcolor{stringliteral}{'scheme'}])\ ||\ !isset(\$config[\textcolor{stringliteral}{'host'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_exception}{Exception}}(\textcolor{stringliteral}{'Malformed\ DSN'});}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isset(\$config[\textcolor{stringliteral}{'query'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ parse\_str(\$config[\textcolor{stringliteral}{'query'}],\ \$config[\textcolor{stringliteral}{'query'}]);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00088}00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$config;}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00101}00101\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{function}\ applyConfig(PHPMailer\ \$mailer,\ \$config)}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00102}00102\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\$config[\textcolor{stringliteral}{'scheme'}])\ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'mail'}:}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mailer-\/>isMail();}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'sendmail'}:}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mailer-\/>isSendmail();}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'qmail'}:}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mailer-\/>isQmail();}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'smtp'}:}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'smtps'}:}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mailer-\/>isSMTP();}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>configureSMTP(\$mailer,\ \$config);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sprintf(}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'Invalid\ scheme:\ "{}\%s"{}.\ Allowed\ values:\ "{}mail"{},\ "{}sendmail"{},\ "{}qmail"{},\ "{}smtp"{},\ "{}smtps"{}.'},}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$config[\textcolor{stringliteral}{'scheme'}]}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isset(\$config[\textcolor{stringliteral}{'query'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>configureOptions(\$mailer,\ \$config[\textcolor{stringliteral}{'query'}]);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00129}00129\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00130}00130\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00138}00138\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{function}\ configureSMTP(\$mailer,\ \$config)}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00139}00139\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00140}00140\ \ \ \ \ \ \ \ \ \$isSMTPS\ =\ \textcolor{stringliteral}{'smtps'}\ ===\ \$config[\textcolor{stringliteral}{'scheme'}];}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$isSMTPS)\ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \$mailer-\/>SMTPSecure\ =\ PHPMailer::ENCRYPTION\_STARTTLS;}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00146}00146\ \ \ \ \ \ \ \ \ \$mailer-\/>Host\ =\ \$config[\textcolor{stringliteral}{'host'}];}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isset(\$config[\textcolor{stringliteral}{'port'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \$mailer-\/>Port\ =\ \$config[\textcolor{stringliteral}{'port'}];}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00150}00150\ \ \ \ \ \ \ \ \ \}\ elseif\ (\$isSMTPS)\ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \$mailer-\/>Port\ =\ SMTP::DEFAULT\_SECURE\_PORT;}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00152}00152\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00154}00154\ \ \ \ \ \ \ \ \ \$mailer-\/>SMTPAuth\ =\ isset(\$config[\textcolor{stringliteral}{'user'}])\ ||\ isset(\$config[\textcolor{stringliteral}{'pass'}]);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isset(\$config[\textcolor{stringliteral}{'user'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \$mailer-\/>Username\ =\ \$config[\textcolor{stringliteral}{'user'}];}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00158}00158\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00160}00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isset(\$config[\textcolor{stringliteral}{'pass'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \$mailer-\/>Password\ =\ \$config[\textcolor{stringliteral}{'pass'}];}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00162}00162\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00163}00163\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00173}00173\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{function}\ configureOptions(PHPMailer\ \$mailer,\ \$options)}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00174}00174\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00175}00175\ \ \ \ \ \ \ \ \ \$allowedOptions\ =\ get\_object\_vars(\$mailer);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00177}00177\ \ \ \ \ \ \ \ \ unset(\$allowedOptions[\textcolor{stringliteral}{'Mailer'}]);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00178}00178\ \ \ \ \ \ \ \ \ unset(\$allowedOptions[\textcolor{stringliteral}{'SMTPAuth'}]);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00179}00179\ \ \ \ \ \ \ \ \ unset(\$allowedOptions[\textcolor{stringliteral}{'Username'}]);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00180}00180\ \ \ \ \ \ \ \ \ unset(\$allowedOptions[\textcolor{stringliteral}{'Password'}]);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00181}00181\ \ \ \ \ \ \ \ \ unset(\$allowedOptions[\textcolor{stringliteral}{'Hostname'}]);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00182}00182\ \ \ \ \ \ \ \ \ unset(\$allowedOptions[\textcolor{stringliteral}{'Port'}]);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00183}00183\ \ \ \ \ \ \ \ \ unset(\$allowedOptions[\textcolor{stringliteral}{'ErrorInfo'}]);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00185}00185\ \ \ \ \ \ \ \ \ \$allowedOptions\ =\ \(\backslash\)array\_keys(\$allowedOptions);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00187}00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\$options\ as\ \$key\ =>\ \$value)\ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!in\_array(\$key,\ \$allowedOptions))\ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sprintf(}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'Unknown\ option:\ "{}\%s"{}.\ Allowed\ values:\ "{}\%s"{}'},}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$key,}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implode(\textcolor{stringliteral}{'"{},\ "{}'},\ \$allowedOptions)}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\$key)\ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'AllowEmpty'}:}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'SMTPAutoTLS'}:}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'SMTPKeepAlive'}:}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'SingleTo'}:}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'UseSendmailOptions'}:}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'do\_verp'}:}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'DKIM\_copyHeaderFields'}:}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mailer-\/>\$key\ =\ (bool)\ \$value;}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'Priority'}:}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'SMTPDebug'}:}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'WordWrap'}:}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mailer-\/>\$key\ =\ (int)\ \$value;}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$mailer-\/>\$key\ =\ \$value;}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00217}00217\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00218}00218\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00228}\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_d_s_n_configurator_a6147fe97c0be7e217e24dc2ec97fda27}{00228}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_d_s_n_configurator_a6147fe97c0be7e217e24dc2ec97fda27}{parseUrl}}(\$url)}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00229}00229\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00230}00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\(\backslash\)PHP\_VERSION\_ID\ >=\ 50600\ ||\ \textcolor{keyword}{false}\ ===\ strpos(\$url,\ \textcolor{charliteral}{'?'}))\ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ parse\_url(\$url);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00232}00232\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00234}00234\ \ \ \ \ \ \ \ \ \$chunks\ =\ explode(\textcolor{charliteral}{'?'},\ \$url);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00235}00235\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_array(\$chunks))\ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \$result\ =\ parse\_url(\$chunks[0]);}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_array(\$result))\ \{}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$result[\textcolor{stringliteral}{'query'}]\ =\ \$chunks[1];}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$result;}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00241}00241\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00243}00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00244}00244\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_d_s_n_configurator_8php_source_l00245}00245\ \}}
+
+\end{DoxyCode}

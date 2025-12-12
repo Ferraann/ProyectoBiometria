@@ -1,0 +1,111 @@
+\doxysection{registrar\+Usuario.\+php}
+\hypertarget{registrar_usuario_8php_source}{}\label{registrar_usuario_8php_source}\index{src/api/logicaNegocio/registrarUsuario.php@{src/api/logicaNegocio/registrarUsuario.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00003}00003\ \textcolor{comment}{//\ Fichero:\ registrarUsuario.php}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00004}00004\ \textcolor{comment}{//\ Autor:\ Manuel}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00005}00005\ \textcolor{comment}{//\ Fecha:\ 5/12/2025}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00006}00006\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00007}00007\ \textcolor{comment}{//\ Descripción:}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00008}00008\ \textcolor{comment}{//\ \ Función\ responsable\ del\ registro\ de\ usuarios.\ Valida\ datos,}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00009}00009\ \textcolor{comment}{//\ \ verifica\ el\ correo,\ genera\ token\ y\ envía\ email\ de\ activación.}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00010}00010\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00012}00012\ require\_once\ \_\_DIR\_\_\ .\ \textcolor{stringliteral}{'/mailer.php'};}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00013}00013\ use\ PHPMailer\(\backslash\)PHPMailer\(\backslash\)PHPMailer;}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00014}00014\ use\ PHPMailer\(\backslash\)PHPMailer\(\backslash\)Exception;}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00016}00016\ \textcolor{keyword}{function}\ registrarUsuario(\$conn,\ \$data)}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00018}00018\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ 1.\ Validaciones\ y\ saneado\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (!isset(\$data[\textcolor{stringliteral}{'nombre'}],\ \$data[\textcolor{stringliteral}{'apellidos'}],\ \$data[\textcolor{stringliteral}{'gmail'}],\ \$data[\textcolor{stringliteral}{'password'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Faltan\ datos\ obligatorios\ para\ el\ registro."{}}];}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00023}00023\ \ \ \ \ \$nombre\ \ \ \ =\ trim(\$data[\textcolor{stringliteral}{'nombre'}]);}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00024}00024\ \ \ \ \ \$apellidos\ =\ trim(\$data[\textcolor{stringliteral}{'apellidos'}]);}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00025}00025\ \ \ \ \ \$gmail\ \ \ \ \ =\ trim(\$data[\textcolor{stringliteral}{'gmail'}]);}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00026}00026\ \ \ \ \ \$password\ \ =\ trim(\$data[\textcolor{stringliteral}{'password'}]);}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00027}00027\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ Validar\ formato\ de\ correo}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (!filter\_var(\$gmail,\ FILTER\_VALIDATE\_EMAIL))\ \{}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}El\ formato\ del\ correo\ electrónico\ no\ es\ válido."{}}];}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00032}00032\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00033}00033\ \ \ \ \ \$hash\ \ \ \ \ \ =\ password\_hash(\$password,\ PASSWORD\_DEFAULT);}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00035}00035\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ 2.\ ¿Existe\ el\ correo?\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00036}00036\ \ \ \ \ \$stmt\ =\ \$conn-\/>prepare(\textcolor{stringliteral}{"{}SELECT\ id,\ activo\ FROM\ usuario\ WHERE\ gmail\ =\ ?"{}});}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00037}00037\ \ \ \ \ \$stmt-\/>bind\_param(\textcolor{stringliteral}{"{}s"{}},\ \$gmail);}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00038}00038\ \ \ \ \ \$stmt-\/>execute();}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00039}00039\ \ \ \ \ \$res\ =\ \$stmt-\/>get\_result();}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (\$res-\/>num\_rows)\ \{}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00042}00042\ \ \ \ \ \ \ \ \ \$usr\ =\ \$res-\/>fetch\_assoc();}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$usr[\textcolor{stringliteral}{'activo'}]\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}El\ correo\ ya\ está\ registrado\ y\ activado."{}}];}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ usuario\ inactivo\ →\ lo\ borramos\ */}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00049}00049\ \ \ \ \ \ \ \ \ \$del\ =\ \$conn-\/>prepare(\textcolor{stringliteral}{"{}DELETE\ FROM\ usuario\ WHERE\ id\ =\ ?"{}});}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00050}00050\ \ \ \ \ \ \ \ \ \$del-\/>bind\_param(\textcolor{stringliteral}{"{}i"{}},\ \$usr[\textcolor{stringliteral}{'id'}]);}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00051}00051\ \ \ \ \ \ \ \ \ \$del-\/>execute();}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00054}00054\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ 3.\ Crear\ token\ seguro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00055}00055\ \ \ \ \ \$token\ =\ bin2hex(random\_bytes(32));\ \textcolor{comment}{//\ 64\ caracteres}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00056}00056\ \ \ \ \ \$token\_expira\ =\ date(\textcolor{stringliteral}{"{}Y-\/m-\/d\ H:i:s"{}},\ time()\ +\ 900);\ \textcolor{comment}{//\ 15\ min\ de\ validez}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00058}00058\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ 4.\ Insertar\ nuevo\ usuario\ (inactivo\ +\ token\ +\ expiración)\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00059}00059\ \ \ \ \ \$ins\ =\ \$conn-\/>prepare(\textcolor{stringliteral}{"{}INSERT\ INTO\ usuario\ }}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00060}00060\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ (nombre,\ apellidos,\ gmail,\ password,\ activo,\ token,\ token\_expira)}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00061}00061\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ VALUES\ (?,\ ?,\ ?,\ ?,\ 0,\ ?,\ ?)"{}});}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00062}00062\ \ \ \ \ \$ins-\/>bind\_param(\textcolor{stringliteral}{"{}ssssss"{}},\ \$nombre,\ \$apellidos,\ \$gmail,\ \$hash,\ \$token,\ \$token\_expira);}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\$ins-\/>execute())\ \{}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Error\ al\ registrar\ el\ usuario:\ "{}}\ .\ \$conn-\/>error];}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00068}00068\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ 5.\ Enviar\ correo\ de\ activación\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00069}00069\ \ \ \ \ \$enlace\ =\ \textcolor{stringliteral}{"{}https://fsanpra.upv.edu.es/src/html/activacion.html?token="{}}\ .\ urlencode(\$token);}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00071}00071\ \ \ \ \ \$asunto\ \ =\ \textcolor{stringliteral}{"{}Activa\ tu\ cuenta\ en\ AITHER"{}};}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00072}00072\ \ \ \ \ \$cuerpo\ \ =\ \textcolor{stringliteral}{"{}<h2>¡Hola\ \$nombre!</h2>}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00073}00073\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ <p>Gracias\ por\ registrarte.\ Pulsa\ el\ botón\ para\ activar\ tu\ cuenta:</p>}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00074}00074\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ <p><a\ href='\$enlace'\ style='background:\#007bff;color:white;padding:10px\ 20px;text-\/decoration:none;border-\/radius:4px;'>Activar\ cuenta</a></p>}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00075}00075\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ <p>Si\ el\ botón\ no\ funciona,\ copia\ y\ pega\ esta\ dirección:<br>\$enlace</p>"{}};}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00077}00077\ \ \ \ \ \$enviado\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00080}00080\ \ \ \ \ \ \ \ \ \$mail\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00081}00081\ \ \ \ \ \ \ \ \ \$mail-\/>isSMTP();}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00082}00082\ \ \ \ \ \ \ \ \ \$mail-\/>Host\ \ \ \ \ \ \ =\ \textcolor{stringliteral}{'smtp.gmail.com'};}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00083}00083\ \ \ \ \ \ \ \ \ \$mail-\/>SMTPAuth\ \ \ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00084}00084\ \ \ \ \ \ \ \ \ \$mail-\/>Username\ \ \ =\ \textcolor{stringliteral}{'no.reply.aither@gmail.com'};}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00085}00085\ \ \ \ \ \ \ \ \ \$mail-\/>Password\ \ \ =\ \textcolor{stringliteral}{'esdf\ lkoc\ qprz\ rkum'};}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00086}00086\ \ \ \ \ \ \ \ \ \$mail-\/>SMTPSecure\ =\ PHPMailer::ENCRYPTION\_STARTTLS;}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00087}00087\ \ \ \ \ \ \ \ \ \$mail-\/>Port\ \ \ \ \ \ \ =\ 587;}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00089}00089\ \ \ \ \ \ \ \ \ \$mail-\/>setFrom(\textcolor{stringliteral}{'noreply@aither.com'},\ \textcolor{stringliteral}{'AITHER'});}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00090}00090\ \ \ \ \ \ \ \ \ \$mail-\/>addAddress(\$gmail);}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00091}00091\ \ \ \ \ \ \ \ \ \$mail-\/>isHTML(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00092}00092\ \ \ \ \ \ \ \ \ \$mail-\/>Subject\ =\ \$asunto;}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00093}00093\ \ \ \ \ \ \ \ \ \$mail-\/>Body\ \ \ \ =\ \$cuerpo;}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00095}00095\ \ \ \ \ \ \ \ \ \$mail-\/>send();}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00096}00096\ \ \ \ \ \ \ \ \ \$enviado\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00098}00098\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ \$e)\ \{}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00099}00099\ \ \ \ \ \ \ \ \ error\_log(\textcolor{stringliteral}{'PHPMailer\ error:\ '}\ .\ \$mail-\/>ErrorInfo);}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}ok"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Usuario\ registrado\ correctamente,\ pero\ no\ se\ pudo\ enviar\ el\ correo\ de\ activación.\ Contacta\ con\ soporte."{}}];}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00103}00103\ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}ok"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Usuario\ registrado\ correctamente.\ Revisa\ tu\ correo\ para\ activarlo."{}}];}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00104}00104\ \}}
+\DoxyCodeLine{\Hypertarget{registrar_usuario_8php_source_l00105}00105\ ?>}
+
+\end{DoxyCode}
