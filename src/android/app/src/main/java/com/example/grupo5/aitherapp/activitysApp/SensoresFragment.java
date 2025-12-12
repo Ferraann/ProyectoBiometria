@@ -109,9 +109,6 @@ public class SensoresFragment extends Fragment {
                 tvDistanciaNodo.setText("-- m");
                 tvEstadoNodo.setText("Desconocido");
 
-                Toast.makeText(requireContext(),
-                        "Seleccionado " + nombresSpinner.get(position),
-                        Toast.LENGTH_SHORT).show();
             }
 
             @Override
