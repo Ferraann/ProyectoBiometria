@@ -174,11 +174,11 @@ switch ($method) {
                 echo json_encode(canjearRecompensa($conn, $input));
                 break;
             case "marcarSensorSinProblemas":
-                echo json_encode(reactivarSensor($conn, $input));
+                echo json_encode(sensorSinProblemas($conn, $input));
                 break;
 
             case "marcarSensorConProblemas":
-                echo json_encode(marcarSensorConProblemas($conn, $input));
+                echo json_encode(sensorConProblemas($conn, $input));
                 break;
                 
             default:

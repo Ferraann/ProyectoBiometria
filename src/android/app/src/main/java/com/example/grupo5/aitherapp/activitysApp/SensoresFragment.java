@@ -1,6 +1,7 @@
 package com.example.grupo5.aitherapp.activitysApp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -122,6 +123,19 @@ public class SensoresFragment extends Fragment {
 
         // 5. Botón ACTUALIZAR DISTANCIA
         btnActualizarDistancia.setOnClickListener(v -> actualizarDistancia());
+
+
+
+        Button btnSoporte = view.findViewById(R.id.btnSoporte); // O view.findViewById si estás en un fragment
+
+        btnSoporte.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Iniciar la nueva Activity
+                Intent intent = new Intent(v.getContext(), SoporteActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void actualizarDistancia() {
