@@ -74,19 +74,5 @@ public class EditarPerfilActivity extends AppCompatActivity {
                 overridePendingTransition(0, 0);
             });
         }
-
-        ImageView btnWalk = findViewById(R.id.nav_walk); // Asegúrate de que el ID en tu XML sea nav_walk
-        if (btnWalk != null) {
-            btnWalk.setOnClickListener(v -> {
-                Intent intent = new Intent(EditarPerfilActivity.this, WalkActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                startActivity(intent);
-                overridePendingTransition(0, 0);
-            });
-        }
-
-
-
-
     }
 }
