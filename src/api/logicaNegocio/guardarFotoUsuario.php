@@ -1,4 +1,23 @@
 <?php
+// ------------------------------------------------------------------
+// Fichero: guardarFotoPerfil.php
+// Autor: Manuel
+// Fecha: 11/12/2025
+// ------------------------------------------------------------------
+// Descripción:
+//  Función de API (Lógica de Negocio) responsable de recibir una imagen
+//  de perfil codificada en Base64, procesarla y almacenarla como un
+//  objeto binario (BLOB) en la base de datos.
+//  
+// Funcionalidad:
+//  - Función 'guardarFotoPerfil' que requiere el `usuario_id` y la cadena Base64 (`foto`).
+//  - Limpia y decodifica la cadena Base64 para obtener el contenido binario (`BLOB`).
+//  - Comprueba si ya existe una foto para el `usuario_id` dado.
+//  - Ejecuta una operación **UPDATE** si ya existe la foto (sustitución).
+//  - Ejecuta una operación **INSERT** si no existe una foto (creación).
+//  - Utiliza `mysqli::send_long_data` para manejar eficientemente la transferencia de grandes objetos binarios (BLOB) al servidor de base de datos a través de consultas preparadas.
+// ------------------------------------------------------------------
+
 function guardarFotoPerfil($conn, $data)
 {
     // 1. Validaciones mínimas

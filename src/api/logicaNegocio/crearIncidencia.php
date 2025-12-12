@@ -1,4 +1,21 @@
 <?php
+// ------------------------------------------------------------------
+// Fichero: crearIncidencia.php
+// Autor: Manuel
+// Fecha: 11/12/2025
+// ------------------------------------------------------------------
+// Descripción:
+//  Función de API (Lógica de Negocio) para registrar una nueva incidencia
+//  generada por un usuario en el sistema.
+//  
+// Funcionalidad:
+//  - Función 'crearIncidencia' que valida la presencia de campos obligatorios (id_user, titulo, descripcion).
+//  - Normaliza el parámetro `sensor_id`, permitiendo que sea NULL si no se proporciona.
+//  - Consulta la base de datos para obtener el ID del estado predefinido 'Abierta' (o utiliza un fallback).
+//  - Construye dinámicamente la consulta INSERT utilizando consultas preparadas, adaptándose para manejar la diferencia entre asignar un valor entero (`?`) o `NULL` al campo `id_sensor`.
+//  - Tras la ejecución exitosa, devuelve el ID de la nueva incidencia creada.
+// ------------------------------------------------------------------
+
 function crearIncidencia($conn, $data)
 {
     // Validar parámetros obligatorios
