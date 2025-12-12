@@ -204,6 +204,11 @@ nav a:hover{
     border-bottom-color: var(--Principal_1); /* Borde azul activo */
 }
 
+.selector-gases-y-informacion {
+    display: flex;
+    gap: 30px;
+}
+
 /* --- Controles (Dropdown y Fecha) --- */
 .map-controls {
     display: flex;
@@ -212,6 +217,31 @@ nav a:hover{
     margin-bottom: 1.5rem;
     flex-wrap: wrap; /* Para móviles */
     gap: 1rem;
+}
+
+/* Estilo específico para el botón de información de gases */
+#open-info-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+}
+
+#open-info-btn:hover {
+    background-color: #d2d2d2;
+    color: #000;
+}
+
+#open-info-btn i {
+    color: var(--Principal_1);
+}
+
+.dropdown-mapa {
+    background-color: #f9f9f9;
+    color: #333;
+    border: none;
 }
 
 .dropdown-mapa, .date-picker {
@@ -331,4 +361,103 @@ nav a:hover{
     color: #aaa;
     padding: 1rem;
     box-sizing: border-box;
+}
+
+.gas-main-info h4 i {
+    color: var(--Principal_1);
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.gas-tag {
+    display: inline-block;
+    background: #f0f2f5;
+    padding: 2px 10px;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-size: 0.8rem;
+}
+
+/* --- Ventana Modal de Información --- */
+.gas-info-modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 3000; /* Asegura que esté sobre el mapa y el header */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.gas-info-content {
+    background-color: #fff;
+    margin: 3% auto;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    overflow: hidden;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+    background-color: var(--Principal_1);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-info {
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-body {
+    padding: 2rem;
+    max-height: 75vh;
+    overflow-y: auto;
+}
+
+.gas-card {
+    border: 1px solid #e1e1e1;
+    border-left: 8px solid #ccc;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    color: #333;
+}
+
+.gas-tag {
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+}
+
+.gas-grid {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 20px;
+    margin-top: 1rem;
+}
+
+/* Colores por gas */
+.no2 { border-left-color: #e74c3c; }
+.o3 { border-left-color: #f39c12; }
+.co { border-left-color: #2c3e50; }
+.so2 { border-left-color: #9b59b6; }
+
+@media (max-width: 768px) {
+    .gas-grid { grid-template-columns: 1fr; }
 }

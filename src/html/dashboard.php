@@ -102,17 +102,25 @@ $gmail = $_SESSION['usuario_correo'];
             <!--seccion de los mapas-->
             <div class="tab-content active-tab-content" id="mapas-content" data-tab-content="mapas">
                     <div class="map-controls">
-                        <div class="dropdown-container"> 
-                            <!--Seleccionar ver el mapa que quieras-->
-                            <div class="dropdown-mapa" id="dropdown-button">
-                                <span>Contaminación del aire - Mapa general</span>
-                                <i class="fa-solid fa-chevron-down"></i>
+                        <div class="selector-gases-y-informacion">
+                            <div class="dropdown-container">
+                                <!--Seleccionar ver el mapa que quieras-->
+                                <div class="dropdown-mapa" id="dropdown-button">
+                                    <span>Contaminación del aire - Mapa general</span>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div class="dropdown-menu" >
+                                    <a href="#" class="dropdown-item">Contaminación del aire - Mapa general</a>
+                                    <a href="#" class="dropdown-item">Mis sensores personales</a>
+                                </div>
                             </div>
-                            <div class="dropdown-menu" >
-                                <a href="#" class="dropdown-item">Contaminación del aire - Mapa general</a>
-                                <a href="#" class="dropdown-item">Mis sensores personales</a>
-                            </div>
+
+                            <button id="open-info-btn" class="dropdown-mapa">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <span>Información de Gases</span>
+                            </button>
                         </div>
+
                         <!--Selecctor de fecha-->
                         <div class="date-picker" id="date-picker-button">
                             <span>Fecha: 12/11/2025</span>
@@ -162,6 +170,97 @@ $gmail = $_SESSION['usuario_correo'];
                 </div>
             </div>
         </main>
+
+
+        <div id="gas-info-panel" class="gas-info-modal">
+            <div class="gas-info-content">
+                <header class="modal-header">
+                    <h2><i class="fa-solid fa-wind"></i> Guía de Salud y Contaminantes</h2>
+                    <span class="close-info" id="close-info-btn">&times;</span>
+                </header>
+
+                <div class="modal-body">
+                    <section id="info-no2" class="gas-card no2">
+                        <div class="gas-header">
+                            <h3>NO₂ - Dióxido de Nitrógeno</h3>
+                            <span class="gas-tag">Combustión a alta temperatura</span>
+                        </div>
+                        <div class="gas-grid">
+                            <div class="gas-main-info">
+                                <h4><i class="fa-solid fa-house-chimney"></i> Fuentes y Origen</h4>
+                                <p>Tráfico vehicular, centrales eléctricas e industria. En interiores: estufas y calentadores.</p>
+                                <h4><i class="fa-solid fa-lungs"></i> Efectos en la salud</h4>
+                                <p><strong>Baja:</strong> Irritación de ojos, nariz y garganta. Tos y dificultad respiratoria.</p>
+                                <p><strong>Alta:</strong> Bronquitis, inflamación de vías respiratorias y edema pulmonar.</p>
+                            </div>
+                            <div class="gas-limits">
+                                <div class="limit-box eu"><span>Límite UE:</span> 40 µg/m³ (Anual)</div>
+                                <div class="limit-box oms"><span>Guía OMS:</span> 10 µg/m³ (Anual)</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="info-o3" class="gas-card o3">
+                        <div class="gas-header">
+                            <h3>O₃ - Ozono Troposférico</h3>
+                            <span class="gas-tag">Reacción química con calor y sol</span>
+                        </div>
+                        <div class="gas-grid">
+                            <div class="gas-main-info">
+                                <h4><i class="fa-solid fa-sun"></i> Origen</h4>
+                                <p>No se emite directamente; se forma por la reacción de contaminantes con la radiación solar.</p>
+                                <h4><i class="fa-solid fa-mask-ventilator"></i> Salud</h4>
+                                <p>Reduce la función pulmonar y exacerba el asma. La exposición crónica daña el tejido pulmonar.</p>
+                            </div>
+                            <div class="gas-limits">
+                                <div class="limit-box eu"><span>Objetivo UE:</span> 120 µg/m³ (8h)</div>
+                                <div class="limit-box oms"><span>Recom. OMS:</span> 100 µg/m³ (8h)</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="info-co" class="gas-card co">
+                        <div class="gas-header">
+                            <h3>CO - Monóxido de Carbono</h3>
+                            <span class="gas-tag">Gas asfixiante invisible</span>
+                        </div>
+                        <div class="gas-grid">
+                            <div class="gas-main-info">
+                                <h4><i class="fa-solid fa-triangle-exclamation"></i> Peligro Crítico</h4>
+                                <p>Reemplaza el oxígeno en la sangre. Afecta principalmente al cerebro y al corazón.</p>
+                                <h4><i class="fa-solid fa-stethoscope"></i> Síntomas</h4>
+                                <p>Debilidad, mareos, náuseas, confusión y pérdida de control muscular.</p>
+                            </div>
+                            <div class="gas-limits">
+                                <div class="limit-box oms"><span>Límite 24h:</span> 4 mg/m³</div>
+                                <div class="limit-box alert"><span>Umbral Superior:</span> 7 mg/m³</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="info-so2" class="gas-card so2">
+                        <div class="gas-header">
+                            <h3>SO₂ - Dióxido de Azufre</h3>
+                            <span class="gas-tag">Gas altamente irritante</span>
+                        </div>
+                        <div class="gas-grid">
+                            <div class="gas-main-info">
+                                <h4><i class="fa-solid fa-eye"></i> Efectos inmediatos</h4>
+                                <p>Irritación severa de ojos (quemaduras) y sistema respiratorio (disnea y sibilancias).</p>
+                                <h4><i class="fa-solid fa-circle-exclamation"></i> Riesgo crónico</h4>
+                                <p>Vinculado a enfermedades cardiovasculares y daños en ecosistemas.</p>
+                            </div>
+                            <div class="gas-limits">
+                                <div class="limit-box oms"><span>Guía OMS:</span> 40 µg/m³ (24h)</div>
+                                <div class="limit-box alert"><span>Umbral Máx:</span> 75 μg/m³</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+
     </body>
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
             integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>

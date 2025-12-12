@@ -12,181 +12,181 @@ APORTACIÓN: Estructura completa de la página HTML para el inicio de sesión
 -->
 <!DOCTYPE html>
 <html lang="es">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AITHER | El aire que compartimos</title>
-        <link rel="icon" href="./img/logo_aither.png" type="image/png">
-        <link rel="stylesheet" href="./css/landing.css">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-              integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-        <link rel="stylesheet" href="css/mapa.css">
-    </head>
-    <body>
-        <!--
-        ----------------------------------------------------------------------------
-        BLOQUE: <header>
-        DISEÑO LÓGICO: Contiene el logotipo y la barra de navegación principal.
-        DESCRIPCIÓN: Proporciona acceso rápido a secciones informativas y
-        un botón para iniciar sesión.
-        ----------------------------------------------------------------------------
-        -->
-        <header>
-            <!-- Logo de Aither | Al hacer clic tiene que llevar a la landing -->
-            <a href="#"><img src="./img/logo_Aither_web.png" alt="Este es el logo de nuestro Proyecto: Aither"></a>
-            <nav>
-                <ul>
-                <!-- Saber mas, quienes somos, faq y boton de iniciar sesión -->
-                <li><a href="./html/saber_mas.html">SABER MÁS</a></li>
-                <li>
-                    <a href="./html/quienes_somos.html">¿QUIÉNES SOMOS?</a>
-                </li>
-                <li><a href="./html/faq.html">FAQ</a></li>
-                <li><a href="./html/login.html" class="btn btn-login">INICIAR SESIÓN</a></li>
-                </ul>
-            </nav>
-        </header>
-        <!--
-        ----------------------------------------------------------------------------
-        BLOQUE: <main>
-        DISEÑO LÓGICO: Contenedor principal dividido en dos seciones, la primera es el slogan 
-        con el mapa general sin información de los usuarios pero que puede acceder cualquier persona.
-        Y la segunda sección son los pasos para optener la app.
-        ----------------------------------------------------------------------------
-        -->
-        <main>
-            <!--Primera sección slogan y mapa-->
-            <section class="hero">
-                <div class="container">
-                    <div class="hero-content">
-                        <h1>HAZ VISIBLE LO INVISIBLE: EL AIRE QUE COMPARTIMOS.</h1>
-                        <p>En muchas ciudades, la gente no sabe qué aire respira. Ahora puedes verlo, entenderlo y actuar.</p>
-                        <a href="#descargar" class="btn-arrow"><i class="fa-solid fa-chevron-down"></i></a>
-                    </div>
-                    <div class="hero-visual">
-                        <div id="map"></div>
-                    </div>
-                </div>
-            </section>
-            <!--Segunda sección pasos para obtener la app-->
-            <section class="app-download" id="descargar">
-                <div class="container">
-                    <div class="app-info">
-                        <h2>LLEVA AITHER CONTIGO</h2>
-                        <p>Es una experiencia que empieza en tu Ayuntamiento, donde puedes solicitar tu sensor personal, funciona con dos partes muy simples: un pequeño dispositivo que puedes llevar contigo a donde vayas y una app en tu móvil, el dispositivo detecta el aire a tu alrededor y envía esa información a la app.</p>
-                        <p>En la app donde puedes ver esa información en mapas fáciles de entender. Así, puedes ver al instante cómo es la calidad del aire en tu casa, en tu paseo al trabajo o en el parque.</p>
-                        <div class="app-icon-placeholder">
-                            <img src="./img/logo_aither.png" alt="App en un móvil" class="icon_aither">
-                        </div>
-                    </div>
-                    <div class="app-visual">
-                        <img src="./img/mockup-movil.png" alt="App en un móvil" class="phone-mockup">
-                    </div>
-                </div>
-            </section>
-            <section class="instalar">
-                <h3>Empieza a medir en 4 pasos:</h3>
-                <div class="pasos-instalar">
-                    <div class="paso1">
-                    <h4>1</h4>
-                    <i class="fa-solid fa-file-lines"></i>
-                    <p>Para obtener el dispositivo sensor, debes realizar una solicitud gratuita desde la página del Ayuntamiento de tu localidad.</p>
-                </div>
-                <div class="paso2">
-                    <h4>2</h4>
-                    <i class="fa-solid fa-download"></i>
-                    <p>Una vez ya tengas el dispositivo sensor, descárgate la app, puedes  búscala como 'AITHER' en la App Store o Google Play o haciendo clic en los links de abajo. Es gratuita y es la plataforma donde verás todos tus datos.</p>
-                    <div class="apps">
-                        <i class="fa-brands fa-app-store"></i>
-                        <i class="fa-brands fa-google-play"></i>
-                    </div>
-                </div>
-                <div class="paso3">
-                    <h4>3</h4>
-                    <i class="fa-solid fa-address-card"></i>
-                    <p>Una vez instalada, ábrela y completa el proceso de registro para crear tu perfil personal. ¡Es rápido y seguro!</p>
-                </div>
-                <div class="paso4">
-                    <h4>4</h4>
-                    <i class="fa-solid fa-qrcode"></i>
-                    <p>Cuando terminas el proceso de registro, la app te llevará a una pagina para que puedas vincular tu sensor. Es importante que tengas el sensor encendido y a través de una lectura del QR del sensor se conectará de manera automática.</p>
-                </div>
-                </div>
-                
-            </section>
-        </main>
-        <!--
-        ----------------------------------------------------------------------------
-        BLOQUE: <footer>
-        DISEÑO LÓGICO: Derechos reservados por copyright, logo y slogan, links que tambien
-        estan en el header y links a las redes sociales que aun no estan activas.  
-        ----------------------------------------------------------------------------
-        -->
-        <footer>
-            <div class="footer-container">
-                <div class="footer-top">
-                    <div class="footer-brand">
-                        <h3>AITHER</h3>
-                        <p>El aire que compartimos.</p>
-                    </div>
 
-                    <div class="footer-links">
-                        <h4>Enlaces</h4>
-                        <ul>
-                            <li><a href="./html/saber_mas.html">Saber Más</a></li>
-                            <li><a href="./html/quienes_somos.html">¿Quiénes Somos?</a></li>
-                            <li><a href="./html/faq.html">FAQ</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-social">
-                        <h4>Síguenos</h4>
-                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-bottom">
-                    <p>&copy; 2025 AITHER. Todos los derechos reservados.</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AITHER | El aire que compartimos</title>
+    <link rel="icon" href="./img/logo_aither.png" type="image/png">
+    <link rel="stylesheet" href="./css/landing.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+          integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <link rel="stylesheet" href="css/mapa.css">
+</head>
+<body>
+<!--
+----------------------------------------------------------------------------
+BLOQUE: <header>
+DISEÑO LÓGICO: Contiene el logotipo y la barra de navegación principal.
+DESCRIPCIÓN: Proporciona acceso rápido a secciones informativas y
+un botón para iniciar sesión.
+----------------------------------------------------------------------------
+-->
+<header>
+    <!-- Logo de Aither | Al hacer clic tiene que llevar a la landing -->
+    <a href="#"><img src="./img/logo_Aither_web.png" alt="Este es el logo de nuestro Proyecto: Aither"></a>
+    <nav>
+        <ul>
+            <!-- Saber mas, quienes somos, faq y boton de iniciar sesión -->
+            <li><a href="./html/saber_mas.html">SABER MÁS</a></li>
+            <li>
+                <a href="./html/quienes_somos.html">¿QUIÉNES SOMOS?</a>
+            </li>
+            <li><a href="./html/faq.html">FAQ</a></li>
+            <li><a href="./html/login.html" class="btn btn-login">INICIAR SESIÓN</a></li>
+        </ul>
+    </nav>
+</header>
+<!--
+----------------------------------------------------------------------------
+BLOQUE: <main>
+DISEÑO LÓGICO: Contenedor principal dividido en dos seciones, la primera es el slogan
+con el mapa general sin información de los usuarios pero que puede acceder cualquier persona.
+Y la segunda sección son los pasos para optener la app.
+----------------------------------------------------------------------------
+-->
+<main>
+    <!--Primera sección slogan y mapa-->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>HAZ VISIBLE LO INVISIBLE: EL AIRE QUE COMPARTIMOS.</h1>
+                <p>En muchas ciudades, la gente no sabe qué aire respira. Ahora puedes verlo, entenderlo y actuar.</p>
+                <a href="#descargar" class="btn-arrow"><i class="fa-solid fa-chevron-down"></i></a>
+            </div>
+            <div class="hero-visual">
+                <div id="map"></div>
+            </div>
+        </div>
+    </section>
+    <!--Segunda sección pasos para obtener la app-->
+    <section class="app-download" id="descargar">
+        <div class="container">
+            <div class="app-info">
+                <h2>LLEVA AITHER CONTIGO</h2>
+                <p>Es una experiencia que empieza en tu Ayuntamiento, donde puedes solicitar tu sensor personal, funciona con dos partes muy simples: un pequeño dispositivo que puedes llevar contigo a donde vayas y una app en tu móvil, el dispositivo detecta el aire a tu alrededor y envía esa información a la app.</p>
+                <p>En la app donde puedes ver esa información en mapas fáciles de entender. Así, puedes ver al instante cómo es la calidad del aire en tu casa, en tu paseo al trabajo o en el parque.</p>
+                <div class="app-icon-placeholder">
+                    <img src="./img/logo_aither.png" alt="App en un móvil" class="icon_aither">
                 </div>
             </div>
-        </footer>
-    </body>
-    <!--Script para que cuando se recarge la pagina manualmente te lleve siempre al incio de esta-->
-    <script>
-        // Esto le dice al navegador que NO intente restaurar la posición de scroll cuando se recarga la página.
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-        //Espera a que toda la página esté cargada
-        document.addEventListener('DOMContentLoaded', () => {
-            //Busca tu flecha-botón
-            const arrowButton = document.querySelector('.btn-arrow');
-            //Busca la sección a la que quieres bajar
-            const targetSection = document.getElementById('descargar');
-            //Asegúrate de que ambos existan antes de hacer nada
-            if (arrowButton && targetSection) {
-                //Añade un "escuchador" para el clic
-                arrowButton.addEventListener('click', (event) => {
-                    //Previene el comportamiento por defecto
-                    event.preventDefault();
-                    //muestra la sección en la vista, con animación suave
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+            <div class="app-visual">
+                <img src="./img/mockup-movil.png" alt="App en un móvil" class="phone-mockup">
+            </div>
+        </div>
+    </section>
+    <section class="instalar">
+        <h3>Empieza a medir en 4 pasos:</h3>
+        <div class="pasos-instalar">
+            <div class="paso1">
+                <h4>1</h4>
+                <i class="fa-solid fa-file-lines"></i>
+                <p>Para obtener el dispositivo sensor, debes realizar una solicitud gratuita desde la página del Ayuntamiento de tu localidad.</p>
+            </div>
+            <div class="paso2">
+                <h4>2</h4>
+                <i class="fa-solid fa-download"></i>
+                <p>Una vez ya tengas el dispositivo sensor, descárgate la app, puedes  búscala como 'AITHER' en la App Store o Google Play o haciendo clic en los links de abajo. Es gratuita y es la plataforma donde verás todos tus datos.</p>
+                <div class="apps">
+                    <i class="fa-brands fa-app-store"></i>
+                    <i class="fa-brands fa-google-play"></i>
+                </div>
+            </div>
+            <div class="paso3">
+                <h4>3</h4>
+                <i class="fa-solid fa-address-card"></i>
+                <p>Una vez instalada, ábrela y completa el proceso de registro para crear tu perfil personal. ¡Es rápido y seguro!</p>
+            </div>
+            <div class="paso4">
+                <h4>4</h4>
+                <i class="fa-solid fa-qrcode"></i>
+                <p>Cuando terminas el proceso de registro, la app te llevará a una pagina para que puedas vincular tu sensor. Es importante que tengas el sensor encendido y a través de una lectura del QR del sensor se conectará de manera automática.</p>
+            </div>
+        </div>
+
+    </section>
+</main>
+<!--
+----------------------------------------------------------------------------
+BLOQUE: <footer>
+DISEÑO LÓGICO: Derechos reservados por copyright, logo y slogan, links que tambien
+estan en el header y links a las redes sociales que aun no estan activas.
+----------------------------------------------------------------------------
+-->
+<footer>
+    <div class="footer-container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h3>AITHER</h3>
+                <p>El aire que compartimos.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="./html/saber_mas.html">Saber Más</a></li>
+                    <li><a href="./html/quienes_somos.html">¿Quiénes Somos?</a></li>
+                    <li><a href="./html/faq.html">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 AITHER. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+</body>
+<!--Script para que cuando se recarge la pagina manualmente te lleve siempre al incio de esta-->
+<script>
+    // Esto le dice al navegador que NO intente restaurar la posición de scroll cuando se recarga la página.
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    //Espera a que toda la página esté cargada
+    document.addEventListener('DOMContentLoaded', () => {
+        //Busca tu flecha-botón
+        const arrowButton = document.querySelector('.btn-arrow');
+        //Busca la sección a la que quieres bajar
+        const targetSection = document.getElementById('descargar');
+        //Asegúrate de que ambos existan antes de hacer nada
+        if (arrowButton && targetSection) {
+            //Añade un "escuchador" para el clic
+            arrowButton.addEventListener('click', (event) => {
+                //Previene el comportamiento por defecto
+                event.preventDefault();
+                //muestra la sección en la vista, con animación suave
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
                 });
-            }
-        });
-    </script>
+            });
+        }
+    });
+</script>
 
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-            integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 
-    <script src="js/leaflet-heat.js"></script>
+<script src="js/leaflet-heat.js"></script>
 
-    <script src="js/map-logic-index.js"></script>
+<script src="js/map-logic-index.js"></script>
 </html>

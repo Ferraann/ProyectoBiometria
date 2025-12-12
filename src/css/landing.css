@@ -27,14 +27,14 @@ body {
     /* tipografia temporal */
     font-family: 'Montserrat', sans-serif;
     background-image: url(../img/landing.jpg);
-    
+
     background-attachment: fixed;/*fijar la imagen.*/
     background-size: cover; /*cubrir todo el espacio de la pantalla*/
     background-repeat: no-repeat; /*para que LA imagen no se repita*/
     font-family: 'Montserrat', sans-serif;
     color: #ffffff;
 
-    position: relative; 
+    position: relative;
     z-index: 1;
 }
 body::before {
@@ -46,9 +46,9 @@ body::before {
     width: 100%;
     height: 100%;
     /* Color de fondo negro (rgb(0, 0, 0)) con 0.6 de opacidad (60%) */
-    background-color: rgba(160, 160, 160, 0.35); 
+    background-color: rgba(160, 160, 160, 0.35);
     /* Lo pone detrás del contenido (z-index: 1) pero encima del fondo */
-    z-index: -1; 
+    z-index: -1;
 }
 /* ---------------------------- */
 /* ---------- Header ---------- */
@@ -101,17 +101,17 @@ nav a:hover{
     color: var(--Principal_1);
 }
 .btn-arrow {
-    /* Color azul/púrpura del botón (aproximado) */ 
+    /* Color azul/púrpura del botón (aproximado) */
     color: #fff;
     font-size: 4rem;
     border: none;
     transition: transform 0.2s ease-out;
     display: inline-block;
-    
+
 }
 .btn-arrow:hover {
     transform: translateY(15px);
-    
+
 }
 
 /*body*/
@@ -132,7 +132,7 @@ nav a:hover{
     flex: 1; /* Ocupa la mitad del espacio */
     margin-left: 35px;
     text-align: center;
-    
+
 }
 
 .hero-content h1 {
@@ -249,7 +249,7 @@ nav a:hover{
 
 .phone-mockup {
     /* Ajusta el tamaño de la imagen de tu móvil */
-    max-width: 250px; 
+    max-width: 250px;
     border-radius: 45px;
 }
 .instalar{
@@ -264,14 +264,14 @@ nav a:hover{
     gap: 50px;
 }
 .pasos-instalar h4{
-    width: 50px;  
-    height: 50px; 
-    border-radius: 50%; 
-    background-color:var(--Principal_2); 
-    color: var(--Principal_1); 
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color:var(--Principal_2);
+    color: var(--Principal_1);
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1.5rem; 
+    margin-bottom: 1.5rem;
 
     /* Centrar el número DENTRO del círculo */
     display: flex;
@@ -284,23 +284,23 @@ nav a:hover{
     text-align: center;
 }
 .pasos-instalar > div > i {
-  font-size: 2rem; /* Tamaño del icono */
-  color: var(--Principal_1); /* Color del icono */
-  margin-bottom: 1.5rem; /* Espacio debajo del icono */
+    font-size: 2rem; /* Tamaño del icono */
+    color: var(--Principal_1); /* Color del icono */
+    margin-bottom: 1.5rem; /* Espacio debajo del icono */
 }
 .paso2 .apps {
-  display: flex;
-  justify-content: center; /* Centra los dos iconos */
-  gap: 2rem; /* Espacio entre ellos */
-  font-size: 2.5rem; /* Tamaño */
-  color: var(--Principal_1);
-  margin-top: 1rem; /* Espacio extra arriba */
+    display: flex;
+    justify-content: center; /* Centra los dos iconos */
+    gap: 2rem; /* Espacio entre ellos */
+    font-size: 2.5rem; /* Tamaño */
+    color: var(--Principal_1);
+    margin-top: 1rem; /* Espacio extra arriba */
 }
 
 
 /* --- 4. Estilos del Footer --- */
 footer {
-    background-color: #3a4a5f; 
+    background-color: #3a4a5f;
     color: #ccc;
     padding: 50px 0 20px 0;
     margin-top: 4rem; /
@@ -310,27 +310,27 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
 }.footer-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    margin-bottom: 30px; 
-}.footer-brand, .footer-links, .footer-social {
-    flex: 1;
-    min-width: 200px; 
-}.footer-brand h3 {
-    font-size: 2rem;
-    color: var(--Secundario_Blanco); 
-    margin-bottom: 10px;
-}footer h4 {
-    font-size: 1.2rem;
-    color: var(--Secundario_Blanco); 
-    margin-bottom: 15px;
-}footer ul {
-    list-style: none;
-    padding: 0;
-}footer ul li {
-    margin-bottom: 10px;
-}
+     display: flex;
+     justify-content: space-between;
+     gap: 40px;
+     margin-bottom: 30px;
+ }.footer-brand, .footer-links, .footer-social {
+      flex: 1;
+      min-width: 200px;
+  }.footer-brand h3 {
+       font-size: 2rem;
+       color: var(--Secundario_Blanco);
+       margin-bottom: 10px;
+   }footer h4 {
+        font-size: 1.2rem;
+        color: var(--Secundario_Blanco);
+        margin-bottom: 15px;
+    }footer ul {
+         list-style: none;
+         padding: 0;
+     }footer ul li {
+          margin-bottom: 10px;
+      }
 footer a {
     color: #ccc;
     text-decoration: none;
@@ -340,8 +340,8 @@ footer a {
     font-size: 1.5rem;
     margin-right: 15px;
 }.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #556; 
-    font-size: 0.9rem;
-}
+     text-align: center;
+     padding-top: 20px;
+     border-top: 1px solid #556;
+     font-size: 0.9rem;
+ }
