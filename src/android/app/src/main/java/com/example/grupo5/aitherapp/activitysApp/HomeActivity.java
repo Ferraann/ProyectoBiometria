@@ -57,6 +57,17 @@ public class HomeActivity extends AppCompatActivity {
             });
         }
 
+        ImageView btnPerfil = findViewById(R.id.nav_profile);
+
+        if (btnPerfil != null) {
+            btnPerfil.setOnClickListener(v -> {
+                Intent intent = new Intent(HomeActivity.this, EditarPerfilActivity.class);
+                startActivity(intent);
+
+                overridePendingTransition(0, 0);
+            });
+        }
+
         SharedPreferences prefs = getSharedPreferences("MiAppPrefs", MODE_PRIVATE);
 
         int coinsUsuario = prefs.getInt("coinsUsuario", 0);
