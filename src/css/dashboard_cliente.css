@@ -234,84 +234,24 @@ nav a:hover{
 /* --- Contenedor del Mapa (Borde redondeado) --- */
 .map-container {
     width: 100%;
+    height: 600px; /* Usa height fijo en lugar de max-height para asegurar el renderizado */
     border: 1px solid #ccc;
-    border-radius: 20px; /* Bordes redondeados como en la imagen */
+    border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    overflow: hidden; /* Oculta lo que se salga (esquinas del mapa) */
-    
-    /* ¡Importante! Para superponer la leyenda y el texto */
-    position: relative; 
+    overflow: hidden;
+    position: relative;
 }
 
-/* * --- ESTE ES EL TRUCO ---
- * * Aquí es donde "guardas el espacio" para el mapa.
- */
-.map-placeholder {
+.mapa-dashboard {
     width: 100%;
-    min-height: 600px; /* <-- Dale la altura que necesites */
-    
-    /* Solo para que se vea que es un placeholder */
-    background-color: #EBF0F5; /* Un gris azulado claro */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #aaa;
+    height: 600px; /* Asegúrate de que el padre tenga altura */
+    position: relative;
 }
 
-
-/* --- Leyenda (Superpuesta) --- */
-.leyenda {
-    position: absolute;
-    bottom: 50px; /* A 50px del fondo */
-    right: 20px; /* A 20px de la derecha */
-    
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco traslúcido */
-    backdrop-filter: blur(4px);
-    border-radius: 10px;
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.leyenda h4 {
-    margin-bottom: 0.75rem;
-    color: #333;
-}
-
-.leyenda ul {
-    list-style: none;
-}
-
-.leyenda li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.leyenda li:last-child {
-    margin-bottom: 0;
-}
-
-.color-box {
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
-    margin-right: 10px;
-}
-
-.color-box.bueno { background-color: #3EAF3A; } /* Verde */
-.color-box.moderado { background-color: #FCDA0D; } /* Amarillo */
-.color-box.insalubre { background-color: #E5212E; } /* Rojo */
-
-
-/* --- Texto de Actualización (Superpuesto) --- */
-.actualizacion {
-    position: absolute;
-    bottom: 20px; /* Más abajo que la leyenda */
-    right: 20px; /* A 20px de la derecha */
-    color: #444; /* Color de texto oscuro para ver sobre el mar */
-    font-weight: var(--semibold);
-    font-size: 0.9rem;
+#mapa {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
 }
 
 /* --- Estilos para el Dropdown funcional --- */
