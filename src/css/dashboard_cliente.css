@@ -279,6 +279,7 @@ nav a:hover{
 
 /* Clase que mostrará el menú (la añade/quita JS) */
 .dropdown-menu.show {
+    z-index: 2000;
     display: block;
 }
 
