@@ -15,9 +15,9 @@
 
 //Permisos
 //roles = await obtenerRoles(userId); //añadir esta linea en una carga inicial await
-import { obtenerRoles } from "./permisos.js";
-const idUsuarioActivo = parseInt(sessionStorage.getItem("idUsuario") || "0");
-let roles = null;
+// import { obtenerRoles } from "./permisos.js";
+// const idUsuarioActivo = parseInt(sessionStorage.getItem("idUsuario") || "0");
+// let roles = null;
 
 const params = new URLSearchParams(location.search);
 const idIncidencia = params.get("id");
@@ -31,7 +31,7 @@ if (!idIncidencia) {
 (async () => {
   try {
     // Obtener roles
-    roles = await obtenerRoles(userId);
+    //roles = await obtenerRoles(userId);
 
     // 1. Cargar incidencia
     const resInc = await fetch(

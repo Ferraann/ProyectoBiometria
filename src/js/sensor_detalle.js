@@ -18,9 +18,9 @@
 // ------------------------------------------------------------------
 
 //Permisos
-import { obtenerRoles } from "./permisos.js";
-const idUsuarioActivo = parseInt(window.sessionStorage.getItem("idUsuario") || "0");
-let roles = null;
+// import { obtenerRoles } from "./permisos.js";
+// const idUsuarioActivo = parseInt(window.sessionStorage.getItem("idUsuario") || "0");
+// let roles = null;
 
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* 1. Cargar datos básicos del sensor (IIFE Asíncrono) --------- */
     (async () => {
         try {
-            roles = await obtenerRoles(idUsuarioActivo);
+            // roles = await obtenerRoles(idUsuarioActivo);
             const resSensor = await fetch(`${API_URL}?accion=getSensorXId&id=${idSensor}`);
             
             if (!resSensor.ok) {

@@ -12,13 +12,13 @@
 //  - Muestra los roles actuales (Administrador/Técnico).
 //  - Permite a los Administradores modificar los roles del usuario a través de switches (funcionalidad restringida por permisos).
 // ------------------------------------------------------------------
-import { obtenerRoles } from "./permisos.js";
+//import { obtenerRoles } from "./permisos.js";
 
 // ID del usuario logueado (quien usa la página)
-const idUsuarioActivo = parseInt(
-  window.sessionStorage.getItem("idUsuario") || "0"
-);
-let roles = null; // Almacenará los roles del usuario activo
+// const idUsuarioActivo = parseInt(
+//   window.sessionStorage.getItem("idUsuario") || "0"
+// );
+// let roles = null; // Almacenará los roles del usuario activo
 
 document.addEventListener("DOMContentLoaded", () => {
   const API_URL = "../api/index.php";
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   (async () => {
     try {
       // Obtener roles del usuario ACTIVO
-      roles = await obtenerRoles(idUsuarioActivo);
+      //roles = await obtenerRoles(idUsuarioActivo);
 
       // 1.1 Cargar datos del usuario que se está viendo
       const [resUser, resFoto] = await Promise.all([
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
       esTec = tec;
 
       // Aplicar lógica de permisos: Deshabilita los switches si no es Admin
-      aplicarLogicaPermisos(roles, chkAdmin, chkTec, btnSave);
+      //aplicarLogicaPermisos(roles, chkAdmin, chkTec, btnSave);
 
       /* 3. Cargar sensores actuales -------------------------- */
       const resSens = await fetch(
@@ -172,16 +172,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-function aplicarLogicaPermisos(roles, chkAdmin, chkTec, btnSave) {
-  if (roles && roles.esAdmin) {
-    // Es Administrador: switches habilitados, botón visible
-    chkAdmin.disabled = false;
-    chkTec.disabled = false;
-    if (btnSave) btnSave.style.display = "block";
-  } else {
-    // No es Administrador: switches deshabilitados, botón oculto
-    chkAdmin.disabled = true; // Se ve, pero no se puede interactuar
-    chkTec.disabled = true;
-    if (btnSave) btnSave.style.display = "none"; // Ocultar el botón de guardar
-  }
-}
+// function aplicarLogicaPermisos(roles, chkAdmin, chkTec, btnSave) {
+//   if (roles && roles.esAdmin) {
+//     // Es Administrador: switches habilitados, botón visible
+//     chkAdmin.disabled = false;
+//     chkTec.disabled = false;
+//     if (btnSave) btnSave.style.display = "block";
+//   } else {
+//     // No es Administrador: switches deshabilitados, botón oculto
+//     chkAdmin.disabled = true; // Se ve, pero no se puede interactuar
+//     chkTec.disabled = true;
+//     if (btnSave) btnSave.style.display = "none"; // Ocultar el botón de guardar
+//   }
+// }
