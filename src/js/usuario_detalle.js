@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
               .join("");
     } catch (e) {
       alert(e.message);
-      location.href = "dashboard.php";
+      location.href = "incidencias.html";
     }
   })();
 

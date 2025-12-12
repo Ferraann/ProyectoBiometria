@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!idSensor) {
         alert('No se indicó ID de sensor');
-        location.href = 'dashboard.php'; 
+        location.href = 'incidencias.html'; 
         return;
     }
 
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         } catch (e) {
             alert('Error al cargar la ficha del sensor: ' + e.message);
-            location.href = 'dashboard.php';
+            location.href = 'incidencias.html';
         }
     })(); // Se ejecuta automáticamente al cargar el DOM
     
