@@ -11,12 +11,26 @@
 
 function abrirServidor()
 {
-    // Parámetros de conexión
-    //Plesk
+ // Parámetros de conexión
     $servername = "localhost";
-    $username   = "root";
-    $password   = "";
-    //local
+
+//PORFAVOR NO BORRAR ESTO, ES IMPORTANTE, MONENTAD O DESCOMENTAD SEGUN SEA NECESARIO
+
+// ██████╗ ██╗     ███████╗███████╗██╗  ██╗
+// ██╔══██╗██║     ██╔════╝██╔════╝██║ ██╔╝
+// ██████╔╝██║     █████╗  ███████╗█████╔╝ 
+// ██╔═══╝ ██║     ██╔══╝  ╚════██║██╔═██╗ 
+// ██║     ███████╗███████╗███████║██║  ██╗
+// ╚═╝     ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝
+    $username   = "aitherdb";
+    $password   = "Sansaloni330.";
+// ██╗      ██████╗  ██████╗ █████╗ ██╗
+// ██║     ██╔═══██╗██╔════╝██╔══██╗██║
+// ██║     ██║   ██║██║     ███████║██║
+// ██║     ██║   ██║██║     ██╔══██║██║
+// ███████╗╚██████╔╝╚██████╗██║  ██║███████╗
+// ╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝╚══════╝
+
     //$username   = "root";
     //$password   = "";
     $dbname     = "aither";
