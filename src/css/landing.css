@@ -116,6 +116,7 @@ nav a:hover{
 
 /*body*/
 .hero {
+    min-height: 80vh;
     margin: 12rem 0;
 }
 
@@ -123,6 +124,8 @@ nav a:hover{
     display: flex;
     align-items: center;
     gap: 40px; /* Espacio entre las dos columnas */
+
+    min-height: 70vh;
 }
 
 .hero-content {
@@ -149,6 +152,10 @@ nav a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+
+    height: 450px; /* <--- Altura fija para el contenedor Leaflet */
+    max-width: 450px;
+    margin-right: 35px;
 }
 
 /* Placeholder para el widget del mapa */
