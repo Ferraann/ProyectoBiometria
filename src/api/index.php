@@ -104,14 +104,6 @@ switch ($method) {
                 echo json_encode(activarUsuario($conn, $input['token']));
                 break;
 
-            case "finalizarRelacionSensor":   // marcar sensor con problema, hay que añadir que cree incidencia sin terminar relacion con usuario
-                echo json_encode(marcarSensorConProblemas($conn, $input));
-                break;
-
-            case "reactivarSensor":            // reactivar sensor reparado
-                echo json_encode(reactivarSensor($conn, $input));
-                break;
-
             case "actualizarUsuario":
                 echo json_encode(actualizarUsuario($conn, $input));
                 break;

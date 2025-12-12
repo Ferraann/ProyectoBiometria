@@ -54,7 +54,8 @@
         <activity
             android:name="com.example.grupo5.aitherapp.activitysApp.SoporteActivity"
             android:exported="false" />
-
+        <activity android:name=".activitysApp.WalkActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

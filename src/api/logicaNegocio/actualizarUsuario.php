@@ -5,8 +5,15 @@
 // Fecha: 5/12/2025
 // ------------------------------------------------------------------
 // Descripción:
-//  Función para actualizar datos de un usuario en la base de datos.
-//  Permite actualizar nombre, apellidos, gmail, password y estado activo.
+//  Función de API (Lógica de Negocio) diseñada para actualizar datos
+//  selectivos de un usuario existente en la base de datos.
+//  
+// Funcionalidad:
+//  - Función 'actualizarUsuario' que acepta la conexión DB y un array $data con los campos a modificar.
+//  - Requiere obligatoriamente el campo 'id' para identificar al usuario.
+//  - Construye dinámicamente la cláusula SET de la consulta UPDATE, incluyendo solo los campos presentes en $data y permitidos ('nombre', 'apellidos', 'gmail', 'password', 'activo').
+//  - Utiliza consultas preparadas y `bind_param` para inyectar los valores, garantizando la seguridad (prevención de inyección SQL).
+//  - Devuelve un estado 'ok' o 'error' según el resultado de la ejecución.
 // ------------------------------------------------------------------
 
 function actualizarUsuario($conn, $data)
