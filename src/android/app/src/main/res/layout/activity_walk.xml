@@ -82,7 +82,8 @@
                         android:layout_height="wrap_content"
                         android:text="Ruta en tiempo real en obras"
                         android:textColor="@color/azulOscuro_Principal"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -99,33 +100,34 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:animateLayoutChanges="true">
+
                     <LinearLayout
-                    android:id="@+id/layoutLeyendaHeader"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:padding="20dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?attr/selectableItemBackground">
+                        android:id="@+id/layoutLeyendaHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="20dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground">
 
-                    <TextView
-                        android:text="Leyenda de Gases"
-                        android:textColor="@color/blanco"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"/>
+                        <TextView
+                            android:text="Leyenda de Gases"
+                            android:textColor="@color/blanco"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
 
-                    <ImageView
-                        android:id="@+id/imgFlechaLeyenda"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/ic_arrowdown"
-                        app:tint="@color/blanco"/>
-                </LinearLayout>
+                        <ImageView
+                            android:id="@+id/imgFlechaLeyenda"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_arrowdown"
+                            app:tint="@color/blanco"/>
+                    </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/layoutLeyendaContent"
@@ -205,11 +207,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 
-                    </LinearLayout>
-
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                    </LinearLayout> </LinearLayout> </androidx.cardview.widget.CardView>
 
         </LinearLayout>
     </ScrollView>
