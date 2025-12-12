@@ -99,19 +99,40 @@ function drawHeatmap(gasKey) {
     legend.addTo(mapaInstance);
 }
 
-// Esta función es llamada desde dashboard_cliente.js
+/**
+ * Función para cambiar la vista con efecto de desaparición de puntos
+ */
 function switchMapView(viewType) {
     currentView = viewType;
 
-    if (viewType === 'personal') {
-        // Enfoque en Gandía (ajusta si tus sensores están en otra zona)
-        mapaInstance.flyTo([38.968, -0.186], 13);
-    } else {
-        // Enfoque general
-        mapaInstance.flyTo([39.228493, -0.529656], 9);
+    // 1. DESACTIVAR VISUALIZACIÓN: Limpiamos la capa de calor antes de que empiece el movimiento
+    if (heatLayer) {
+        heatmapLayerGroup.removeLayer(heatLayer);
     }
 
-    drawHeatmap(currentGas);
+    // Opcional: También podemos ocultar la leyenda durante el viaje
+    if (legend.getContainer()) {
+        legend.remove();
+    }
+
+    // 2. EJECUTAR EL VUELO (Transición)
+    if (viewType === 'personal') {
+        // Enfoque en Gandía
+        mapaInstance.flyTo([38.968, -0.186], 13, {
+            duration: 1.5 // Duración en segundos
+        });
+    } else {
+        // Enfoque general
+        mapaInstance.flyTo([39.228493, -0.529656], 9, {
+            duration: 1.5
+        });
+    }
+
+    // 3. REACTIVAR VISUALIZACIÓN: Escuchamos cuando el mapa termina de moverse
+    // Usamos .once para que el evento se dispare solo una vez al terminar el flyTo
+    mapaInstance.once('moveend', function() {
+        drawHeatmap(currentGas); // Esto vuelve a calcular los puntos y los dibuja
+    });
 }
 
 legend.onAdd = function () {
