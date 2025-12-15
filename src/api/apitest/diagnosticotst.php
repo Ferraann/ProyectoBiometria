@@ -1,6 +1,6 @@
 <?php
 // ------------------------------------------------------------------
-// Fichero: diagnostico.php
+// Fichero: diagnosticotst.php
 // Autor: Manuel
 // Fecha: 15/12/2025
 // ------------------------------------------------------------------
@@ -17,7 +17,7 @@ ini_set('log_errors', 0); // No queremos que llene el log principal
 echo "<h1>Diagnóstico de Archivos en logicaNegocio/</h1>";
 echo "<pre>";
 
-$logicaNegocioDir = dirname(__FILE__) . '/logicaNegocio/';
+$logicaNegocioDir = dirname(__DIR__) . '/logicaNegocio/';
 $archivosConError = [];
 $archivos = glob($logicaNegocioDir . "*.php");
 
@@ -113,13 +113,12 @@ foreach ($archivos as $file) {
 // Restaurar el manejador de errores predeterminado de PHP
 restore_error_handler(); 
 
-echo "\n\n## 📋 Resumen de Resultados ##\n";
+echo "\n\n##  Resumen de Resultados ##\n";
+    echo "-----------------------------\n";
 
 if (empty($archivosConError)) {
     echo "\n**¡ÉXITO!**\n";
     echo "Todos los " . count($archivos) . " archivos de 'logicaNegocio/' se incluyeron correctamente.\n";
-    echo "El problema original podría estar en otra parte de 'index.php' o en el archivo 'conexion.php'.\n";
-    echo "Puedes volver a descomentar el bucle 'foreach' en 'index.php'.\n";
 } else {
     echo "\n **ATENCIÓN: Se encontraron problemas en los siguientes archivos:**\n";
     foreach ($archivosConError as $archivo => $errores) {
