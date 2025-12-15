@@ -17,7 +17,7 @@ ini_set('log_errors', 0); // No queremos que llene el log principal
 echo "<h1>Diagnóstico de Archivos en logicaNegocio/</h1>";
 echo "<pre>";
 
-$logicaNegocioDir = __DIR__ . '/logicaNegocio';
+$logicaNegocioDir = dirname(__FILE__) . '/logicaNegocio/';
 $archivosConError = [];
 $archivos = glob($logicaNegocioDir . "*.php");
 
