@@ -32,9 +32,9 @@ require_once(__DIR__ . '/conexion.php');
 
 
 // Funciones individuales dentro del directorio logicaNegocio/
-foreach (glob(__DIR__ . "/logicaNegocio/*.php") as $file) {
-    require_once($file);
-}
+// foreach (glob(__DIR__ . "/logicaNegocio/*.php") as $file) {
+//     require_once($file);
+// }
 
 // Abrimos conexión
 $conn = abrirServidor();
