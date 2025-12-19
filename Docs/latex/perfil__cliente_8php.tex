@@ -1,0 +1,133 @@
+\doxysection{C\+:/xampp/htdocs/\+Proyecto\+Biometria\+\_\+2/src/html/perfil\+\_\+cliente.php File Reference}
+\label{perfil__cliente_8php}\index{C:/xampp/htdocs/ProyectoBiometria\_2/src/html/perfil\_cliente.php@{C:/xampp/htdocs/ProyectoBiometria\_2/src/html/perfil\_cliente.php}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+foreach(glob(\+\_\+\+\_\+\+DIR\+\_\+\+\_\+ . "{}/../api/logica\+Negocio/$\ast$.php"{}) as \$file \textbf{ \$conn} ) = abrir\+Servidor()
+\item 
+\textbf{ if} (!isset(\$\+\_\+\+SESSION[\textquotesingle{}
+\item 
+\textbf{ \$\+DEFAULT\+\_\+\+IMAGE\+\_\+\+PATH} = "{}../img/imagen-\/icono.\+webp"{}
+\item 
+\textbf{ \$foto\+\_\+a\+\_\+mostrar} = \$DEFAULT\+\_\+\+IMAGE\+\_\+\+PATH
+\item 
+\textbf{ \$resultado\+\_\+foto} = obtener\+Foto\+Perfil(\$conn, \$id\+\_\+usuario)
+\item 
+\textbf{ if} (\$resultado\+\_\+foto[\textquotesingle{}
+\item 
+\textbf{ \$nombre\+Completo} = \$\+\_\+\+SESSION[\textquotesingle{}usuario\+\_\+nombre\textquotesingle{}] . "{} "{} . \$\+\_\+\+SESSION[\textquotesingle{}usuario\+\_\+apellidos\textquotesingle{}]
+\item 
+\textbf{ \$gmail} = \$\+\_\+\+SESSION[\textquotesingle{}usuario\+\_\+correo\textquotesingle{}]]
+\item 
+\textbf{ if} (isset(\$\+\_\+\+SESSION[\textquotesingle{} ))\+:
+\item 
+\textbf{ unset} (\$\+\_\+\+SESSION[\textquotesingle{}
+\item 
+\textbf{ endif}
+\item 
+\textbf{ if} (isset(\$\+\_\+\+SESSION[\textquotesingle{}
+\item 
+\textbf{ unset} (\$\+\_\+\+SESSION[\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\label{doc-var-members}
+\doxysubsection{Variable Documentation}
+\index{perfil\_cliente.php@{perfil\_cliente.php}!\$conn@{\$conn}}
+\index{\$conn@{\$conn}!perfil\_cliente.php@{perfil\_cliente.php}}
+\doxysubsubsection{\$conn}
+{\footnotesize\ttfamily \label{perfil__cliente_8php_a7004b00e16d01d2a629e125e180c91e0} 
+foreach (glob(\+\_\+\+\_\+\+DIR\+\_\+\+\_\+ . "{}/../api/logica\+Negocio/$\ast$.php"{}) as \$file \$conn)  = abrir\+Servidor()}
+
+\index{perfil\_cliente.php@{perfil\_cliente.php}!\$DEFAULT\_IMAGE\_PATH@{\$DEFAULT\_IMAGE\_PATH}}
+\index{\$DEFAULT\_IMAGE\_PATH@{\$DEFAULT\_IMAGE\_PATH}!perfil\_cliente.php@{perfil\_cliente.php}}
+\doxysubsubsection{\$DEFAULT\_IMAGE\_PATH}
+{\footnotesize\ttfamily \label{perfil__cliente_8php_aee3b454e89e80106e73ee4978444f2da} 
+\$DEFAULT\+\_\+\+IMAGE\+\_\+\+PATH = "{}../img/imagen-\/icono.\+webp"{}}
+
+\index{perfil\_cliente.php@{perfil\_cliente.php}!\$foto\_a\_mostrar@{\$foto\_a\_mostrar}}
+\index{\$foto\_a\_mostrar@{\$foto\_a\_mostrar}!perfil\_cliente.php@{perfil\_cliente.php}}
+\doxysubsubsection{\$foto\_a\_mostrar}
+{\footnotesize\ttfamily \label{perfil__cliente_8php_ab7e0d93bad5f4fbce6761cc8a93ab09b} 
+\$foto\+\_\+a\+\_\+mostrar = \$DEFAULT\+\_\+\+IMAGE\+\_\+\+PATH}
+
+\index{perfil\_cliente.php@{perfil\_cliente.php}!\$gmail@{\$gmail}}
+\index{\$gmail@{\$gmail}!perfil\_cliente.php@{perfil\_cliente.php}}
+\doxysubsubsection{\$gmail}
+{\footnotesize\ttfamily \label{perfil__cliente_8php_a27f8add3c7237d28b80571218cb42824} 
+\$gmail = \$\+\_\+\+SESSION[\textquotesingle{}usuario\+\_\+correo\textquotesingle{}]]}
+
+\index{perfil\_cliente.php@{perfil\_cliente.php}!\$nombreCompleto@{\$nombreCompleto}}
+\index{\$nombreCompleto@{\$nombreCompleto}!perfil\_cliente.php@{perfil\_cliente.php}}
+\doxysubsubsection{\$nombreCompleto}
+{\footnotesize\ttfamily \label{perfil__cliente_8php_af33be8f6de543997b3a23371142c034c} 
+\$nombre\+Completo = \$\+\_\+\+SESSION[\textquotesingle{}usuario\+\_\+nombre\textquotesingle{}] . "{} "{} . \$\+\_\+\+SESSION[\textquotesingle{}usuario\+\_\+apellidos\textquotesingle{}]}
+
+\index{perfil\_cliente.php@{perfil\_cliente.php}!\$resultado\_foto@{\$resultado\_foto}}
+\index{\$resultado\_foto@{\$resultado\_foto}!perfil\_cliente.php@{perfil\_cliente.php}}
+\doxysubsubsection{\$resultado\_foto}
+{\footnotesize\ttfamily \label{perfil__cliente_8php_af2317aab379c0be403615d09e71d1250} 
+\$resultado\+\_\+foto = obtener\+Foto\+Perfil(\$conn, \$id\+\_\+usuario)}
+
+\index{perfil\_cliente.php@{perfil\_cliente.php}!endif@{endif}}
+\index{endif@{endif}!perfil\_cliente.php@{perfil\_cliente.php}}
+\doxysubsubsection{endif}
+{\footnotesize\ttfamily \label{perfil__cliente_8php_a82cd33ca97ff99f2fcc5e9c81d65251b} 
+endif}
+
+\index{perfil\_cliente.php@{perfil\_cliente.php}!if@{if}}
+\index{if@{if}!perfil\_cliente.php@{perfil\_cliente.php}}
+\doxysubsubsection{if\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{perfil__cliente_8php_a52bb14d6056cde1360c7716cb9996849} 
+if(!isset( \$\+\_\+\+SESSION[\textquotesingle{}}
+
+\index{perfil\_cliente.php@{perfil\_cliente.php}!if@{if}}
+\index{if@{if}!perfil\_cliente.php@{perfil\_cliente.php}}
+\doxysubsubsection{if\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{perfil__cliente_8php_a78da83a029ca715b7655cafb97759f19} 
+if( \$resultado\+\_\+foto[\textquotesingle{}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{]\ ===\ \textcolor{stringliteral}{'ok'}\ \&\&}
+\DoxyCodeLine{\ \ \ \ !empty(\$resultado\_foto[\textcolor{stringliteral}{'fotos'}][0][\textcolor{stringliteral}{'foto'}]))\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$base64\_img\ =\ \$resultado\_foto[\textcolor{stringliteral}{'fotos'}][0][\textcolor{stringliteral}{'foto'}];}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$foto\_a\_mostrar\ =\ \textcolor{stringliteral}{'data:image/jpeg;base64,'}\ .\ \$base64\_img;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$nombre\ =\ \$\_SESSION[\textcolor{stringliteral}{'usuario\_nombre'}]}
+
+\end{DoxyCode}
+\index{perfil\_cliente.php@{perfil\_cliente.php}!if@{if}}
+\index{if@{if}!perfil\_cliente.php@{perfil\_cliente.php}}
+\doxysubsubsection{if\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{perfil__cliente_8php_a0cbfa59c5d6e69e7d66925e9e1db85ad} 
+if(isset( \$\+\_\+\+SESSION[\textquotesingle{}}
+
+\index{perfil\_cliente.php@{perfil\_cliente.php}!if@{if}}
+\index{if@{if}!perfil\_cliente.php@{perfil\_cliente.php}}
+\doxysubsubsection{if\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{perfil__cliente_8php_a0cbfa59c5d6e69e7d66925e9e1db85ad} 
+if(isset( \$\+\_\+\+SESSION[\textquotesingle{} ))\+:}
+
+\index{perfil\_cliente.php@{perfil\_cliente.php}!unset@{unset}}
+\index{unset@{unset}!perfil\_cliente.php@{perfil\_cliente.php}}
+\doxysubsubsection{unset\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{perfil__cliente_8php_a339ba3314beaf7f2fd098c5fd9d97b6d} 
+unset( \$\+\_\+\+SESSION[\textquotesingle{}}
+
+\index{perfil\_cliente.php@{perfil\_cliente.php}!unset@{unset}}
+\index{unset@{unset}!perfil\_cliente.php@{perfil\_cliente.php}}
+\doxysubsubsection{unset\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{perfil__cliente_8php_a339ba3314beaf7f2fd098c5fd9d97b6d} 
+unset( \$\+\_\+\+SESSION[\textquotesingle{}}
+

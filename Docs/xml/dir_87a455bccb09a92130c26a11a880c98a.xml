@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="dir_87a455bccb09a92130c26a11a880c98a" kind="dir">
+    <compoundname>C:/xampp/htdocs/ProyectoBiometria_2/src/libs</compoundname>
+    <innerdir refid="dir_b7aa11e20ecc50f796b1517dbf512153">C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/"/>
+  </compounddef>
+</doxygen>

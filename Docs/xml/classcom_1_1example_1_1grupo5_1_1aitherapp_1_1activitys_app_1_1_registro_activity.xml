@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::activitysApp::RegistroActivity</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AppCompatActivity</basecompoundref>
+    <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1aaafb547426375d634780256792c0df95" prot="package" static="no" mutable="no">
+        <type>EditText</type>
+        <definition>EditText com.example.grupo5.aitherapp.activitysApp.RegistroActivity.Usuario</definition>
+        <argsstring></argsstring>
+        <name>Usuario</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.RegistroActivity.Usuario</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" line="21" column="14" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1a5a64566ed30fd8b57fddcf36ab19b403" prot="package" static="no" mutable="no">
+        <type>EditText</type>
+        <definition>EditText com.example.grupo5.aitherapp.activitysApp.RegistroActivity.Apellidos</definition>
+        <argsstring></argsstring>
+        <name>Apellidos</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.RegistroActivity.Apellidos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" line="21" column="22" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1a729ce28f950acaef3396bdec903e8bde" prot="package" static="no" mutable="no">
+        <type>EditText</type>
+        <definition>EditText com.example.grupo5.aitherapp.activitysApp.RegistroActivity.Email</definition>
+        <argsstring></argsstring>
+        <name>Email</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.RegistroActivity.Email</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" line="21" column="32" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1a95b8f0ee35c21df3cf680e0345537762" prot="package" static="no" mutable="no">
+        <type>EditText</type>
+        <definition>EditText com.example.grupo5.aitherapp.activitysApp.RegistroActivity.Contrasenya</definition>
+        <argsstring></argsstring>
+        <name>Contrasenya</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.RegistroActivity.Contrasenya</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" line="21" column="38" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1aea3a28b1ccd227b59c86676f92dc85f5" prot="package" static="no" mutable="no">
+        <type>EditText</type>
+        <definition>EditText com.example.grupo5.aitherapp.activitysApp.RegistroActivity.RepetirContrasenya</definition>
+        <argsstring></argsstring>
+        <name>RepetirContrasenya</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.RegistroActivity.RepetirContrasenya</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" line="21" column="50" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1a6d9d8f44ce9003b7ffd29f1bb4792804" prot="package" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.activitysApp.RegistroActivity.regexTieneMayuscula</definition>
+        <argsstring></argsstring>
+        <name>regexTieneMayuscula</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.RegistroActivity.regexTieneMayuscula</qualifiedname>
+        <initializer>= &quot;^(?=.*[A-Z]).+$&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" line="23" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1a930171564fef90bcbe5ed37aab8f6146" prot="package" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.activitysApp.RegistroActivity.regexTieneNumeros</definition>
+        <argsstring></argsstring>
+        <name>regexTieneNumeros</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.RegistroActivity.regexTieneNumeros</qualifiedname>
+        <initializer>= &quot;^(?=.*\\d).+$&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" line="24" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1a561c05f48a53d30da4f404e2e12b2bbb" prot="package" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.activitysApp.RegistroActivity.regexTieneSimbologia</definition>
+        <argsstring></argsstring>
+        <name>regexTieneSimbologia</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.RegistroActivity.regexTieneSimbologia</qualifiedname>
+        <initializer>= &quot;^(?=.*[$@€!%*?&amp;]).+$&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" line="25" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1a3a156a5bf7aa13cab805912970796559" prot="package" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.activitysApp.RegistroActivity.regexTieneMasDe8Caracteres</definition>
+        <argsstring></argsstring>
+        <name>regexTieneMasDe8Caracteres</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.RegistroActivity.regexTieneMasDe8Caracteres</qualifiedname>
+        <initializer>= &quot;^.{8,}$&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" line="26" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" bodystart="26" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1ac075fe280529a18c6894881e21d0e6e4" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.RegistroActivity.onCreate</definition>
+        <argsstring>(Bundle savedInstanceState)</argsstring>
+        <name>onCreate</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.RegistroActivity.onCreate</qualifiedname>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" line="29" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" bodystart="29" bodyend="40"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1a25287fed94176e49c14ade6f53d61437" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.RegistroActivity.botonEnviarDatos</definition>
+        <argsstring>(View v)</argsstring>
+        <name>botonEnviarDatos</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.RegistroActivity.botonEnviarDatos</qualifiedname>
+        <param>
+          <type>View</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" line="42" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" bodystart="42" bodyend="87"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1aeec4f55f3f87f7b0fa14fa26edc3fbbe" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.RegistroActivity.verificarContrasenya</definition>
+        <argsstring>()</argsstring>
+        <name>verificarContrasenya</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.RegistroActivity.verificarContrasenya</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" line="90" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" bodystart="90" bodyend="102"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>AppCompatActivity</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.RegistroActivity</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>AppCompatActivity</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.RegistroActivity</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" line="20" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/RegistroActivity.java" bodystart="20" bodyend="103"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1a5a64566ed30fd8b57fddcf36ab19b403" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::RegistroActivity</scope><name>Apellidos</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1a25287fed94176e49c14ade6f53d61437" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::RegistroActivity</scope><name>botonEnviarDatos</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1a95b8f0ee35c21df3cf680e0345537762" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::RegistroActivity</scope><name>Contrasenya</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1a729ce28f950acaef3396bdec903e8bde" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::RegistroActivity</scope><name>Email</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1ac075fe280529a18c6894881e21d0e6e4" prot="protected" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::RegistroActivity</scope><name>onCreate</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1a3a156a5bf7aa13cab805912970796559" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::RegistroActivity</scope><name>regexTieneMasDe8Caracteres</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1a6d9d8f44ce9003b7ffd29f1bb4792804" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::RegistroActivity</scope><name>regexTieneMayuscula</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1a930171564fef90bcbe5ed37aab8f6146" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::RegistroActivity</scope><name>regexTieneNumeros</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1a561c05f48a53d30da4f404e2e12b2bbb" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::RegistroActivity</scope><name>regexTieneSimbologia</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1aea3a28b1ccd227b59c86676f92dc85f5" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::RegistroActivity</scope><name>RepetirContrasenya</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1aaafb547426375d634780256792c0df95" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::RegistroActivity</scope><name>Usuario</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity_1aeec4f55f3f87f7b0fa14fa26edc3fbbe" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::RegistroActivity</scope><name>verificarContrasenya</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

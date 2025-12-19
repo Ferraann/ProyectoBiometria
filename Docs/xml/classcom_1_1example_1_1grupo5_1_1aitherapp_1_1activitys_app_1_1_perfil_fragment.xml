@@ -1,0 +1,444 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Fragment</basecompoundref>
+    <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1ad2723d4770635f4abf98b2886d5e8568" prot="package" static="no" mutable="no">
+        <type>EditText</type>
+        <definition>EditText com.example.grupo5.aitherapp.activitysApp.PerfilFragment.nombre</definition>
+        <argsstring></argsstring>
+        <name>nombre</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.nombre</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="25" column="14" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1acf91577fdbda5cb1ca605e8711ef39a1" prot="package" static="no" mutable="no">
+        <type>EditText</type>
+        <definition>EditText com.example.grupo5.aitherapp.activitysApp.PerfilFragment.contrasenyaAntigua</definition>
+        <argsstring></argsstring>
+        <name>contrasenyaAntigua</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.contrasenyaAntigua</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="25" column="21" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1aa634750bed9a61de3964db1890af49ae" prot="package" static="no" mutable="no">
+        <type>EditText</type>
+        <definition>EditText com.example.grupo5.aitherapp.activitysApp.PerfilFragment.contrasenyaNueva</definition>
+        <argsstring></argsstring>
+        <name>contrasenyaNueva</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.contrasenyaNueva</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="25" column="40" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a46007cf29bb6cdd3f0eac6fc0faf8679" prot="package" static="no" mutable="no">
+        <type>EditText</type>
+        <definition>EditText com.example.grupo5.aitherapp.activitysApp.PerfilFragment.repetirContrasenyaNueva</definition>
+        <argsstring></argsstring>
+        <name>repetirContrasenyaNueva</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.repetirContrasenyaNueva</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="25" column="57" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a93d1c62e7040651ad053306cd02fa1f3" prot="package" static="no" mutable="no">
+        <type>EditText</type>
+        <definition>EditText com.example.grupo5.aitherapp.activitysApp.PerfilFragment.correoNuevo</definition>
+        <argsstring></argsstring>
+        <name>correoNuevo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.correoNuevo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="25" column="81" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a7ff4b1d88579e32ac49d1328dab5e679" prot="package" static="no" mutable="no">
+        <type>EditText</type>
+        <definition>EditText com.example.grupo5.aitherapp.activitysApp.PerfilFragment.repetirCorreoNuevo</definition>
+        <argsstring></argsstring>
+        <name>repetirCorreoNuevo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.repetirCorreoNuevo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="25" column="93" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1aab4e80b665c7b3c0c6f7c380f3a757d9" prot="package" static="no" mutable="no">
+        <type>ImageView</type>
+        <definition>ImageView com.example.grupo5.aitherapp.activitysApp.PerfilFragment.botonModificarNombre</definition>
+        <argsstring></argsstring>
+        <name>botonModificarNombre</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.botonModificarNombre</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="26" column="15" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a2b03be9d3665d342d9d7843c09d07b7a" prot="package" static="no" mutable="no">
+        <type>ImageView</type>
+        <definition>ImageView com.example.grupo5.aitherapp.activitysApp.PerfilFragment.botonModificarCorreo</definition>
+        <argsstring></argsstring>
+        <name>botonModificarCorreo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.botonModificarCorreo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="26" column="36" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1ad20d8a3ce0d8e9e664379147f95d6d99" prot="package" static="no" mutable="no">
+        <type>ImageView</type>
+        <definition>ImageView com.example.grupo5.aitherapp.activitysApp.PerfilFragment.botonModificarContrasenya</definition>
+        <argsstring></argsstring>
+        <name>botonModificarContrasenya</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.botonModificarContrasenya</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="26" column="57" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a4e953330a49cfac5cb716dbc631fdfa3" prot="package" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button com.example.grupo5.aitherapp.activitysApp.PerfilFragment.botonGuardarDatos</definition>
+        <argsstring></argsstring>
+        <name>botonGuardarDatos</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.botonGuardarDatos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="27" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1aaba0abb9b0818b1ef978b3253c386d5e" prot="package" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean com.example.grupo5.aitherapp.activitysApp.PerfilFragment.modificaNombre</definition>
+        <argsstring></argsstring>
+        <name>modificaNombre</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.modificaNombre</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="29" column="13" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1af77895527858e89155992215c123b1d6" prot="package" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean com.example.grupo5.aitherapp.activitysApp.PerfilFragment.modificaCorreo</definition>
+        <argsstring></argsstring>
+        <name>modificaCorreo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.modificaCorreo</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="30" column="13" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a390e2ea4e1868ebdac5e3676000769e6" prot="package" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean com.example.grupo5.aitherapp.activitysApp.PerfilFragment.modificaContrasenya</definition>
+        <argsstring></argsstring>
+        <name>modificaContrasenya</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.modificaContrasenya</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="31" column="13" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a04a7b4667240f90a84608c91f7853c30" prot="package" static="no" mutable="no">
+        <type><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref></type>
+        <definition>PojoUsuario com.example.grupo5.aitherapp.activitysApp.PerfilFragment.usuario</definition>
+        <argsstring></argsstring>
+        <name>usuario</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.usuario</qualifiedname>
+        <initializer>= new <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="33" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a79891b74bea8534be2b2be3acc94bc3b" prot="package" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.activitysApp.PerfilFragment.regexTieneMayuscula</definition>
+        <argsstring></argsstring>
+        <name>regexTieneMayuscula</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.regexTieneMayuscula</qualifiedname>
+        <initializer>= &quot;^(?=.*[A-Z]).+$&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="36" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a12b0e6dd13fc8aed3422c1c54c13c3b9" prot="package" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.activitysApp.PerfilFragment.regexTieneNumeros</definition>
+        <argsstring></argsstring>
+        <name>regexTieneNumeros</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.regexTieneNumeros</qualifiedname>
+        <initializer>= &quot;^(?=.*\\d).+$&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="37" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1ae53fbdeed6d86f60e04b3647ece9196e" prot="package" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.activitysApp.PerfilFragment.regexTieneSimbologia</definition>
+        <argsstring></argsstring>
+        <name>regexTieneSimbologia</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.regexTieneSimbologia</qualifiedname>
+        <initializer>= &quot;^(?=.*[$@€!%*?&amp;]).+$&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="38" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a642fbf14110985a67acc92ad760bd557" prot="package" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.activitysApp.PerfilFragment.regexTieneMasDe8Caracteres</definition>
+        <argsstring></argsstring>
+        <name>regexTieneMasDe8Caracteres</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.regexTieneMasDe8Caracteres</qualifiedname>
+        <initializer>= &quot;^.{8,}$&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="39" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="39" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a63954208ae62313b7e58c5702d8c1cdc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>View</type>
+        <definition>View com.example.grupo5.aitherapp.activitysApp.PerfilFragment.onCreateView</definition>
+        <argsstring>(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)</argsstring>
+        <name>onCreateView</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.onCreateView</qualifiedname>
+        <param>
+          <type>@NonNull LayoutInflater</type>
+          <declname>inflater</declname>
+        </param>
+        <param>
+          <type>@Nullable ViewGroup</type>
+          <declname>container</declname>
+        </param>
+        <param>
+          <type>@Nullable Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="43" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="43" bodyend="74"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a5609bc49357ce8ba5822b24aeb03debf" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.PerfilFragment.activarModificarNombre</definition>
+        <argsstring>()</argsstring>
+        <name>activarModificarNombre</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.activarModificarNombre</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="78" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="78" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a6bc91b6cb114226ccb1cf145af6b835d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.PerfilFragment.activarModificarCorreo</definition>
+        <argsstring>()</argsstring>
+        <name>activarModificarCorreo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.activarModificarCorreo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="84" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="84" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a16784ada5173454ba06ee7078a6f21e0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.PerfilFragment.activarModificarContrasenya</definition>
+        <argsstring>()</argsstring>
+        <name>activarModificarContrasenya</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.activarModificarContrasenya</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="91" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="91" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1ab636acf8be35a6e5d644c9a38993441d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.PerfilFragment.habilitarGuardar</definition>
+        <argsstring>()</argsstring>
+        <name>habilitarGuardar</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.habilitarGuardar</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="99" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="99" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a217f4a9e4475bd314716f92a929187af" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.PerfilFragment.guardarModificaciones</definition>
+        <argsstring>()</argsstring>
+        <name>guardarModificaciones</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.guardarModificaciones</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="103" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="103" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a34f66ec2f3002ae3f2816b9c47d80a7f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.PerfilFragment.deshabilitarTodo</definition>
+        <argsstring>()</argsstring>
+        <name>deshabilitarTodo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.PerfilFragment.deshabilitarTodo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="187" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="187" bodyend="200"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Fragment</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.PerfilFragment</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Fragment</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.PerfilFragment</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>usuario</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>com.example.grupo5.aitherapp.pojos.PojoUsuario</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" line="23" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/PerfilFragment.java" bodystart="23" bodyend="201"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a16784ada5173454ba06ee7078a6f21e0" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>activarModificarContrasenya</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a6bc91b6cb114226ccb1cf145af6b835d" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>activarModificarCorreo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a5609bc49357ce8ba5822b24aeb03debf" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>activarModificarNombre</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a4e953330a49cfac5cb716dbc631fdfa3" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>botonGuardarDatos</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1ad20d8a3ce0d8e9e664379147f95d6d99" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>botonModificarContrasenya</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a2b03be9d3665d342d9d7843c09d07b7a" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>botonModificarCorreo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1aab4e80b665c7b3c0c6f7c380f3a757d9" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>botonModificarNombre</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1acf91577fdbda5cb1ca605e8711ef39a1" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>contrasenyaAntigua</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1aa634750bed9a61de3964db1890af49ae" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>contrasenyaNueva</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a93d1c62e7040651ad053306cd02fa1f3" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>correoNuevo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a34f66ec2f3002ae3f2816b9c47d80a7f" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>deshabilitarTodo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a217f4a9e4475bd314716f92a929187af" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>guardarModificaciones</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1ab636acf8be35a6e5d644c9a38993441d" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>habilitarGuardar</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a390e2ea4e1868ebdac5e3676000769e6" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>modificaContrasenya</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1af77895527858e89155992215c123b1d6" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>modificaCorreo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1aaba0abb9b0818b1ef978b3253c386d5e" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>modificaNombre</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1ad2723d4770635f4abf98b2886d5e8568" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>nombre</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a63954208ae62313b7e58c5702d8c1cdc" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>onCreateView</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a642fbf14110985a67acc92ad760bd557" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>regexTieneMasDe8Caracteres</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a79891b74bea8534be2b2be3acc94bc3b" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>regexTieneMayuscula</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a12b0e6dd13fc8aed3422c1c54c13c3b9" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>regexTieneNumeros</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1ae53fbdeed6d86f60e04b3647ece9196e" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>regexTieneSimbologia</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a46007cf29bb6cdd3f0eac6fc0faf8679" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>repetirContrasenyaNueva</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a7ff4b1d88579e32ac49d1328dab5e679" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>repetirCorreoNuevo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment_1a04a7b4667240f90a84608c91f7853c30" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::PerfilFragment</scope><name>usuario</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

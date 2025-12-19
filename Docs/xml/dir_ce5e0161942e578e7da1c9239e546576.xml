@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="dir_ce5e0161942e578e7da1c9239e546576" kind="dir">
+    <compoundname>C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos</compoundname>
+    <innerfile refid="_pojo_premio_8java">PojoPremio.java</innerfile>
+    <innerfile refid="_pojo_respuesta_servidor_8java">PojoRespuestaServidor.java</innerfile>
+    <innerfile refid="_pojo_sensor_8java">PojoSensor.java</innerfile>
+    <innerfile refid="_pojo_usuario_8java">PojoUsuario.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/"/>
+  </compounddef>
+</doxygen>

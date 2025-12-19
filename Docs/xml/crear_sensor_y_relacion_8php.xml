@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="crear_sensor_y_relacion_8php" kind="file" language="PHP">
+    <compoundname>crearSensorYRelacion.php</compoundname>
+    <briefdescription>
+<para>Lógica de negocio para el registro de hardware y vinculación con usuarios. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Gestiona el aprovisionamiento de dispositivos en el sistema. Si el sensor no existe, lo crea; si ya existe, garantiza que la nueva vinculación sea la única activa (&apos;actual&apos;). <simplesect kind="author"><para>Manuel </para>
+</simplesect>
+<simplesect kind="date"><para>05/12/2025 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>crearSensorYRelacion(<ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>,<sp/><ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1.<sp/>VALIDACIÓN<sp/>DE<sp/>PARÁMETROS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!isset(<ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;mac&apos;</highlight><highlight class="normal">])<sp/>||<sp/>!isset(<ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;usuario_id&apos;</highlight><highlight class="normal">]))<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;error&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Faltan<sp/>parámetros:<sp/>mac<sp/>y<sp/>usuario_id<sp/>son<sp/>obligatorios.&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>$mac<sp/>=<sp/><ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;mac&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>$usuario_id<sp/>=<sp/>(int)<ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;usuario_id&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2.<sp/>GESTIÓN<sp/>DE<sp/>LA<sp/>ENTIDAD<sp/>SENSOR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>$sqlBuscarSensor<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SELECT<sp/>id<sp/>FROM<sp/>sensor<sp/>WHERE<sp/>mac<sp/>=<sp/>?&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>$stmtBuscar<sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare($sqlBuscarSensor);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>$stmtBuscar-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;s&quot;</highlight><highlight class="normal">,<sp/>$mac);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>$stmtBuscar-&gt;execute();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref><sp/>=<sp/>$stmtBuscar-&gt;get_result();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($row<sp/>=<sp/><ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref>-&gt;fetch_assoc())<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$sensor_id<sp/>=<sp/>$row[</highlight><highlight class="stringliteral">&apos;id&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$sqlInsertarSensor<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;INSERT<sp/>INTO<sp/>sensor<sp/>(mac,<sp/>problema)<sp/>VALUES<sp/>(?,<sp/>0)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$stmtInsertar<sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare($sqlInsertarSensor);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$stmtInsertar-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;s&quot;</highlight><highlight class="normal">,<sp/>$mac);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($stmtInsertar-&gt;execute())<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$sensor_id<sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;insert_id;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;error&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>al<sp/>crear<sp/>el<sp/>sensor:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;error];</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>3.<sp/>CONTROL<sp/>DE<sp/>HISTORIAL<sp/>Y<sp/>EXCLUSIVIDAD</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>$sqlCerrarRelaciones<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;UPDATE<sp/>usuario_sensor<sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SET<sp/>actual<sp/>=<sp/>0,<sp/>fin_relacion<sp/>=<sp/>NOW()<sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>WHERE<sp/>sensor_id<sp/>=<sp/>?<sp/>AND<sp/>actual<sp/>=<sp/>1&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>$stmtCerrar<sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare($sqlCerrarRelaciones);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>$stmtCerrar-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;i&quot;</highlight><highlight class="normal">,<sp/>$sensor_id);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>$stmtCerrar-&gt;execute();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>4.<sp/>CREACIÓN<sp/>DE<sp/>VÍNCULO<sp/>ACTIVO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>$sqlNuevaRelacion<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;INSERT<sp/>INTO<sp/>usuario_sensor<sp/>(usuario_id,<sp/>sensor_id,<sp/>actual,<sp/>inicio_relacion)</highlight></codeline>
+<codeline lineno="93"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VALUES<sp/>(?,<sp/>?,<sp/>1,<sp/>NOW())&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>$stmtRelacion<sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare($sqlNuevaRelacion);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>$stmtRelacion-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;ii&quot;</highlight><highlight class="normal">,<sp/>$usuario_id,<sp/>$sensor_id);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($stmtRelacion-&gt;execute())<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>[</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;ok&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Sensor<sp/>asignado<sp/>correctamente.&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;sensor_id&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$sensor_id,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;id_relacion&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;insert_id</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>];</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;error&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>al<sp/>crear<sp/>la<sp/>relación<sp/>usuario-sensor:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;error];</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/crearSensorYRelacion.php"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_soporte_activity" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::activitysApp::SoporteActivity</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AppCompatActivity</basecompoundref>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_soporte_activity_1_1_soporte_pager_adapter" prot="private">com::example::grupo5::aitherapp::activitysApp::SoporteActivity::SoportePagerAdapter</innerclass>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_soporte_activity_1ac841c059bc1260fa14dc599a333703b6" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.SoporteActivity.onCreate</definition>
+        <argsstring>(Bundle savedInstanceState)</argsstring>
+        <name>onCreate</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.SoporteActivity.onCreate</qualifiedname>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SoporteActivity.java" line="18" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SoporteActivity.java" bodystart="18" bodyend="41"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>AppCompatActivity</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.SoporteActivity</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_soporte_activity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>AppCompatActivity</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.SoporteActivity</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_soporte_activity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SoporteActivity.java" line="15" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SoporteActivity.java" bodystart="15" bodyend="67"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_soporte_activity_1ac841c059bc1260fa14dc599a333703b6" prot="protected" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::SoporteActivity</scope><name>onCreate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

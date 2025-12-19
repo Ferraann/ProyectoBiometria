@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['hmac_0',['hmac',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p.html#ab64534872ef0e960ac18d1a383781830',1,'PHPMailer::PHPMailer::SMTP']]]
+  ['fetch_5fassoc_0',['fetch_assoc',['../class_mock_result.html#a55123e6ec0243ed8cc51900ae997925f',1,'MockResult']]],
+  ['fetch_5fcolumn_1',['fetch_column',['../class_mock_result.html#ad89cb58a339d034deebdf7f8df8650a6',1,'MockResult']]]
 ];

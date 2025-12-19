@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_formulario_fragment" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::activitysApp::FormularioFragment</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Fragment</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_formulario_fragment_1a4e2751fedb849b6ef3cb6d99f46e3e24" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>View</type>
+        <definition>View com.example.grupo5.aitherapp.activitysApp.FormularioFragment.onCreateView</definition>
+        <argsstring>(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)</argsstring>
+        <name>onCreateView</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.FormularioFragment.onCreateView</qualifiedname>
+        <param>
+          <type>LayoutInflater</type>
+          <declname>inflater</declname>
+        </param>
+        <param>
+          <type>ViewGroup</type>
+          <declname>container</declname>
+        </param>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/FormularioFragment.java" line="13" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/FormularioFragment.java" bodystart="13" bodyend="16"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Fragment</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.FormularioFragment</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_formulario_fragment"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Fragment</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.FormularioFragment</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_formulario_fragment"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/FormularioFragment.java" line="11" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/FormularioFragment.java" bodystart="11" bodyend="17"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_formulario_fragment_1a4e2751fedb849b6ef3cb6d99f46e3e24" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::FormularioFragment</scope><name>onCreateView</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

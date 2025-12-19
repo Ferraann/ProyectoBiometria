@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider" kind="interface" language="PHP" prot="public">
+    <compoundname>PHPMailer::PHPMailer::OAuthTokenProvider</compoundname>
+    <derivedcompoundref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth" prot="public" virt="non-virtual">PHPMailer\PHPMailer\OAuth</derivedcompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider_1a697711271ad79acf84ad9d62c45e6706" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\OAuthTokenProvider::getOauth64</definition>
+        <argsstring>()</argsstring>
+        <name>getOauth64</name>
+        <qualifiedname>PHPMailer\PHPMailer\OAuthTokenProvider\getOauth64</qualifiedname>
+        <reimplementedby refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a4a3f424167a7c1c4eb99068432045d5e">getOauth64</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a base64-encoded OAuth token ensuring that the access token has not expired. The string to be base 64 encoded should be in the form: &quot;user=&lt;user_email_address&gt;\001auth=Bearer &lt;access_token&gt;\001\001&quot;</para>
+<para><simplesect kind="return"><para>string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuthTokenProvider.php" line="43" column="21"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>OAuthTokenProvider - OAuth2 token provider interface. Provides base64 encoded OAuth2 auth strings for SMTP authentication.</para>
+<para><simplesect kind="see"><para>OAuth </para>
+</simplesect>
+<simplesect kind="see"><para>SMTP::authenticate()</para>
+</simplesect>
+<simplesect kind="author"><para>Peter Scopes (pdscopes) </para>
+</simplesect>
+<simplesect kind="author"><para>Marcus Bointon (Synchro/coolbru) <ulink url="mailto:phpmailer@synchromedia.co.uk">phpmailer@synchromedia.co.uk</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>PHPMailer\PHPMailer\OAuth</label>
+        <link refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>PHPMailer\PHPMailer\OAuthTokenProvider</label>
+        <link refid="interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider"/>
+      </node>
+    </inheritancegraph>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuthTokenProvider.php" line="34" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuthTokenProvider.php" bodystart="35" bodyend="44"/>
+    <listofallmembers>
+      <member refid="interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider_1a697711271ad79acf84ad9d62c45e6706" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::OAuthTokenProvider</scope><name>getOauth64</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

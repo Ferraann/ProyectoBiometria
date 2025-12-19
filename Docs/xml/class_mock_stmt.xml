@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="class_mock_stmt" kind="class" language="PHP" prot="public">
+    <compoundname>MockStmt</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_mock_stmt_1a0ed13abcfe550370609535c277b3f229" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>MockStmt::$affected_rows</definition>
+        <argsstring></argsstring>
+        <name>$affected_rows</name>
+        <qualifiedname>MockStmt\$affected_rows</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/MockDatabase.php" line="17" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/MockDatabase.php" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mock_stmt_1a3f123ae52c15cb6d58feaa318d3f5173" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>MockStmt::$error</definition>
+        <argsstring></argsstring>
+        <name>$error</name>
+        <qualifiedname>MockStmt\$error</qualifiedname>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/MockDatabase.php" line="19" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/MockDatabase.php" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_mock_stmt_1a1a9ca01039bd8b4dc4e87990e9811b6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MockStmt::bind_param</definition>
+        <argsstring>(... $args)</argsstring>
+        <name>bind_param</name>
+        <qualifiedname>MockStmt\bind_param</qualifiedname>
+        <param>
+          <type>...</type>
+          <declname>$args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/MockDatabase.php" line="21" column="21" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/MockDatabase.php" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mock_stmt_1a30d744329743392a38ad55d8592231bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MockStmt::execute</definition>
+        <argsstring>()</argsstring>
+        <name>execute</name>
+        <qualifiedname>MockStmt\execute</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/MockDatabase.php" line="22" column="21" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/MockDatabase.php" bodystart="22" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mock_stmt_1a884f78b5b25145c582190cf988db3cf5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MockStmt::close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <qualifiedname>MockStmt\close</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/MockDatabase.php" line="23" column="21" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/MockDatabase.php" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mock_stmt_1a6c6226b06f2803f6dea51fede60f64b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MockStmt::get_result</definition>
+        <argsstring>()</argsstring>
+        <name>get_result</name>
+        <qualifiedname>MockStmt\get_result</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="class_mock_result" kindref="compound">MockResult</ref> Devuelve un objeto de resultados simulado. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/MockDatabase.php" line="25" column="21" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/MockDatabase.php" bodystart="25" bodyend="25"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Simula una sentencia preparada (Statement). </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/MockDatabase.php" line="15" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/MockDatabase.php" bodystart="15" bodyend="26"/>
+    <listofallmembers>
+      <member refid="class_mock_stmt_1a0ed13abcfe550370609535c277b3f229" prot="public" virt="non-virtual"><scope>MockStmt</scope><name>$affected_rows</name></member>
+      <member refid="class_mock_stmt_1a3f123ae52c15cb6d58feaa318d3f5173" prot="public" virt="non-virtual"><scope>MockStmt</scope><name>$error</name></member>
+      <member refid="class_mock_stmt_1a1a9ca01039bd8b4dc4e87990e9811b6e" prot="public" virt="non-virtual"><scope>MockStmt</scope><name>bind_param</name></member>
+      <member refid="class_mock_stmt_1a884f78b5b25145c582190cf988db3cf5" prot="public" virt="non-virtual"><scope>MockStmt</scope><name>close</name></member>
+      <member refid="class_mock_stmt_1a30d744329743392a38ad55d8592231bd" prot="public" virt="non-virtual"><scope>MockStmt</scope><name>execute</name></member>
+      <member refid="class_mock_stmt_1a6c6226b06f2803f6dea51fede60f64b1" prot="public" virt="non-virtual"><scope>MockStmt</scope><name>get_result</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

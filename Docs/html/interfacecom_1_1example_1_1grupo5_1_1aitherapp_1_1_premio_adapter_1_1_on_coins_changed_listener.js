@@ -1,0 +1,4 @@
+var interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1_1_on_coins_changed_listener =
+[
+    [ "onCoinsChanged", "interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1_1_on_coins_changed_listener.html#a2e89c43868bb7bfc29b5a6798c2754e3", null ]
+];

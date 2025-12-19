@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="dir_37b77d267ac1aa5b11fe1db22c388acc" kind="dir">
+    <compoundname>C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle</compoundname>
+    <innerfile refid="_btle_scanner_multiple_8java">BtleScannerMultiple.java</innerfile>
+    <innerfile refid="_notificador_8java">Notificador.java</innerfile>
+    <innerfile refid="_trama_i_beacon_8java">TramaIBeacon.java</innerfile>
+    <innerfile refid="_utilidades_8java">Utilidades.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/"/>
+  </compounddef>
+</doxygen>

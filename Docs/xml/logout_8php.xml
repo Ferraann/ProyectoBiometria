@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="logout_8php" kind="file" language="PHP">
+    <compoundname>logout.php</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>exit</definition>
+        <argsstring></argsstring>
+        <name>exit</name>
+        <briefdescription>
+<para>Finaliza la ejecución del script para asegurar la redirección. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem></listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/php/logout.php" line="29" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/php/logout.php" bodystart="29" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Script para el cierre de sesión del usuario. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Este script se encarga de limpiar todas las variables de sesión, destruir la sesión activa en el servidor y redirigir al usuario a la página de inicio de sesión. <simplesect kind="author"><para>Ferran </para>
+</simplesect>
+<simplesect kind="date"><para>19/12/2025 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">session_start();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">session_unset();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">session_destroy();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">header(</highlight><highlight class="stringliteral">&quot;Location:<sp/>../html/login.html&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/php/logout.php"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="diagnosticotst_8php" kind="file" language="PHP">
+    <compoundname>diagnosticotst.php</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Fichero:<sp/>diagnosticotst.php</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Autor:<sp/>Manuel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Fecha:<sp/>15/12/2025</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Descripción:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>Script<sp/>para<sp/>diagnosticar<sp/>errores<sp/>de<sp/>inclusión<sp/>o<sp/>sintaxis</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>en<sp/>los<sp/>archivos<sp/>dentro<sp/>del<sp/>directorio<sp/>&apos;logicaNegocio/&apos;.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Configuración<sp/>de<sp/>errores<sp/>para<sp/>el<sp/>script<sp/>de<sp/>diagnóstico</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">error_reporting(E_ALL);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">ini_set(</highlight><highlight class="stringliteral">&apos;display_errors&apos;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">ini_set(</highlight><highlight class="stringliteral">&apos;log_errors&apos;</highlight><highlight class="normal">,<sp/>0);<sp/></highlight><highlight class="comment">//<sp/>No<sp/>queremos<sp/>que<sp/>llene<sp/>el<sp/>log<sp/>principal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;h1&gt;Diagnóstico<sp/>de<sp/>Archivos<sp/>en<sp/>logicaNegocio/&lt;/h1&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;pre&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><ref refid="logtotxt_8php_1ab07ad3f5348ea4b66a4ae48803b2c991" kindref="member">$logicaNegocioDir</ref><sp/>=<sp/>dirname(__DIR__)<sp/>.<sp/></highlight><highlight class="stringliteral">&apos;/logicaNegocio/&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">$archivosConError<sp/>=<sp/>[];</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">$archivos<sp/>=<sp/>glob(<ref refid="logtotxt_8php_1ab07ad3f5348ea4b66a4ae48803b2c991" kindref="member">$logicaNegocioDir</ref><sp/>.<sp/></highlight><highlight class="stringliteral">&quot;*.php&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(empty($archivos))<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;ERROR:<sp/>No<sp/>se<sp/>encontraron<sp/>archivos<sp/>PHP<sp/>en<sp/>el<sp/>directorio:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/><ref refid="logtotxt_8php_1ab07ad3f5348ea4b66a4ae48803b2c991" kindref="member">$logicaNegocioDir</ref><sp/>.<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">//<sp/>1.<sp/>Definición<sp/>de<sp/>la<sp/>función<sp/>de<sp/>manejo<sp/>de<sp/>errores</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>manejarErrorDeInclusion($errno,<sp/>$errstr,<sp/>$errfile,<sp/>$errline)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>global<sp/>$archivosConError,<sp/>$archivoActual;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Solo<sp/>nos<sp/>interesa<sp/>capturar<sp/>errores<sp/>que<sp/>rompan<sp/>la<sp/>ejecución</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(E_ERROR,<sp/>E_PARSE,<sp/>E_WARNING,<sp/>E_NOTICE,<sp/>E_COMPILE_ERROR,<sp/>etc.)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Marcamos<sp/>el<sp/>archivo<sp/>actual<sp/>como<sp/>problemático</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!isset($archivosConError[$archivoActual]))<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$archivosConError[$archivoActual]<sp/>=<sp/>[];</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>$archivosConError[$archivoActual][]<sp/>=<sp/>[</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;tipo&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;ERROR_PHP_NO_FATAL&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="comment">//<sp/>Podría<sp/>ser<sp/>un<sp/>Warning<sp/>o<sp/>Notice</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;codigo&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$errno,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$errstr,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;fichero&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$errfile,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;linea&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$errline</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>];</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Si<sp/>es<sp/>un<sp/>error<sp/>fatal,<sp/>detenemos<sp/>el<sp/>manejador<sp/>predeterminado</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Establecer<sp/>el<sp/>manejador<sp/>de<sp/>errores<sp/>personalizado</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">set_error_handler(</highlight><highlight class="stringliteral">&quot;manejarErrorDeInclusion&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment">//<sp/>2.<sp/>Iteración<sp/>y<sp/>Prueba<sp/>de<sp/>Inclusión<sp/>Individual</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;Archivos<sp/>a<sp/>probar:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/>count($archivos)<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal"><sp/>($archivos<sp/>as<sp/>$file)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>$nombreArchivo<sp/>=<sp/>basename($file);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;Probando<sp/>archivo:<sp/>**&quot;</highlight><highlight class="normal"><sp/>.<sp/>$nombreArchivo<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;**...\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Almacenamos<sp/>el<sp/>nombre<sp/>del<sp/>archivo<sp/>actual<sp/>para<sp/>el<sp/>manejador<sp/>de<sp/>errores</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>$archivoActual<sp/>=<sp/>$nombreArchivo;<sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Intentamos<sp/>la<sp/>inclusión,<sp/>envuelta<sp/>en<sp/>un<sp/>control<sp/>de<sp/>salida<sp/>para<sp/>errores<sp/>fatales.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Aunque<sp/>el<sp/>set_error_handler<sp/>captura<sp/>muchos,<sp/>un<sp/>error<sp/>de<sp/>Parse<sp/>(E_PARSE)<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>podría<sp/>seguir<sp/>causando<sp/>problemas.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Usamos<sp/>include_once<sp/>en<sp/>lugar<sp/>de<sp/>require_once<sp/>para<sp/>intentar<sp/>continuar<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>después<sp/>de<sp/>un<sp/>error<sp/>menos<sp/>grave,<sp/>aunque<sp/>un<sp/>error<sp/>de<sp/>sintaxis<sp/>grave<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(E_PARSE<sp/>o<sp/>E_ERROR)<sp/>puede<sp/>seguir<sp/>deteniendo<sp/>la<sp/>ejecución.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>include_once($file);<sp/></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Si<sp/>la<sp/>ejecución<sp/>llega<sp/>hasta<sp/>aquí,<sp/>el<sp/>archivo<sp/>no<sp/>causó<sp/>un<sp/>fallo<sp/>fatal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!isset($archivosConError[$nombreArchivo]))<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>**OK**.<sp/>Incluido<sp/>sin<sp/>errores<sp/>fatales<sp/>ni<sp/>advertencias.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>**ADVERTENCIAS/NOTICES**.<sp/>Incluido,<sp/>pero<sp/>se<sp/>detectaron<sp/>problemas<sp/>leves.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(Throwable<sp/>$e)<sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Capturamos<sp/>cualquier<sp/>excepción<sp/>(aunque<sp/>en<sp/>PHP<sp/>viejo<sp/>los<sp/>fatales<sp/>no<sp/>son<sp/>Throwable)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>**FALLO<sp/>FATAL/EXCEPCIÓN**:\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/>Mensaje:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/>$e-&gt;getMessage()<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/>Fichero:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/>$e-&gt;getFile()<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;<sp/>(Línea:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/>$e-&gt;getLine()<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;)\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$archivosConError[$nombreArchivo][]<sp/>=<sp/>[</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;tipo&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;EXCEPCION_FATAL&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$e-&gt;getMessage(),</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;fichero&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$e-&gt;getFile(),</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;linea&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$e-&gt;getLine()</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>];</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;---------------------------------------------------------\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment">//<sp/>3.<sp/>Restauración<sp/>del<sp/>Manejador<sp/>de<sp/>Errores<sp/>y<sp/>Resultados<sp/>Finales</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Restaurar<sp/>el<sp/>manejador<sp/>de<sp/>errores<sp/>predeterminado<sp/>de<sp/>PHP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal">restore_error_handler();<sp/></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;\n\n##<sp/><sp/>Resumen<sp/>de<sp/>Resultados<sp/>##\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;-----------------------------\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(empty($archivosConError))<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\n**¡ÉXITO!**\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;Todos<sp/>los<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/>count($archivos)<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;<sp/>archivos<sp/>de<sp/>&apos;logicaNegocio/&apos;<sp/>se<sp/>incluyeron<sp/>correctamente.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/>**ATENCIÓN:<sp/>Se<sp/>encontraron<sp/>problemas<sp/>en<sp/>los<sp/>siguientes<sp/>archivos:**\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal"><sp/>($archivosConError<sp/>as<sp/>$archivo<sp/>=&gt;<sp/>$errores)<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\n###<sp/><sp/>Archivo:<sp/>**&quot;</highlight><highlight class="normal"><sp/>.<sp/>$archivo<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;**\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal"><sp/>($errores<sp/>as<sp/>$error)<sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;*<sp/>**&quot;</highlight><highlight class="normal"><sp/>.<sp/>$error[</highlight><highlight class="stringliteral">&apos;tipo&apos;</highlight><highlight class="normal">]<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;**\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>&gt;<sp/>Mensaje:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/>$error[</highlight><highlight class="stringliteral">&apos;mensaje&apos;</highlight><highlight class="normal">]<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>&gt;<sp/>Fichero:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/>$error[</highlight><highlight class="stringliteral">&apos;fichero&apos;</highlight><highlight class="normal">]<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>&gt;<sp/>Línea:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/>$error[</highlight><highlight class="stringliteral">&apos;linea&apos;</highlight><highlight class="normal">]<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\n\n**Acción<sp/>Recomendada:**<sp/>Revisa<sp/>el<sp/>archivo<sp/>marcado<sp/>con<sp/>el<sp/>error<sp/>más<sp/>grave<sp/>(probablemente<sp/>un<sp/>`E_PARSE`<sp/>o<sp/>`E_ERROR`)<sp/>para<sp/>corregir<sp/>la<sp/>sintaxis<sp/>o<sp/>la<sp/>lógica<sp/>que<sp/>está<sp/>causando<sp/>el<sp/>fallo<sp/>fatal.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;/pre&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/diagnosticotst.php"/>
+  </compounddef>
+</doxygen>

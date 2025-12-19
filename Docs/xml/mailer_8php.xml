@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="mailer_8php" kind="file" language="PHP">
+    <compoundname>mailer.php</compoundname>
+    <briefdescription>
+<para>Cargador de dependencias para el sistema de mensajería. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Este archivo centraliza la inclusión de las librerías de <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref>, facilitando el envío de correos electrónicos a través del protocolo SMTP. Es fundamental para procesos como la activación de cuenta y el canje de recompensas. <simplesect kind="author"><para>Manuel </para>
+</simplesect>
+<simplesect kind="date"><para>05/12/2025 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">require<sp/>__DIR__<sp/>.<sp/></highlight><highlight class="stringliteral">&apos;/../../libs/PHPMailer-7.0.0/src/Exception.php&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">require<sp/>__DIR__<sp/>.<sp/></highlight><highlight class="stringliteral">&apos;/../../libs/PHPMailer-7.0.0/src/PHPMailer.php&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">require<sp/>__DIR__<sp/>.<sp/></highlight><highlight class="stringliteral">&apos;/../../libs/PHPMailer-7.0.0/src/SMTP.php&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/mailer.php"/>
+  </compounddef>
+</doxygen>

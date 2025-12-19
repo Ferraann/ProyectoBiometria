@@ -1,0 +1,409 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="phpmailer_8lang-ro_8php" kind="file" language="PHP">
+    <compoundname>phpmailer.lang-ro.php</compoundname>
+    <innernamespace refid="namespace_p_h_p_mailer">PHPMailer</innernamespace>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1a9941c17a5eabafa36ac3b0859476a4fb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;authenticate&apos;]</definition>
+        <argsstring>[&apos;authenticate&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Eroare SMTP: Autentificarea a eșuat.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="8" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1ac4b95e4f2f4cfa70daf54de9dd118355" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;buggy_php&apos;]</definition>
+        <argsstring>[&apos;buggy_php&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Versiunea instalată de PHP este afectată de o problemă care poate duce la coruperea mesajelor Pentru a preveni această problemă, folosiți SMTP, dezactivați opțiunea mail.add_x_header din php.ini, folosiți MacOS/Linux sau actualizați versiunea de PHP la 7.0.17+ sau 7.1.3+.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="9" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1a440a455b3b54a1c64c347ebe77cfad69" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;connect_host&apos;]</definition>
+        <argsstring>[&apos;connect_host&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Eroare SMTP: Conectarea la serverul SMTP a eșuat.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="10" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1afe3883d1634dca642e14d301ffaaa952" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;data_not_accepted&apos;]</definition>
+        <argsstring>[&apos;data_not_accepted&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Eroare SMTP: Datele nu au fost acceptate.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="11" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1a4438aaac30813894b1b04e75a2e0de98" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;empty_message&apos;]</definition>
+        <argsstring>[&apos;empty_message&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Mesajul este gol.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="12" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1a8b9939d40805387acf622ec4f543af50" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;encoding&apos;]</definition>
+        <argsstring>[&apos;encoding&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Encodare necunoscută: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="13" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1a4ce303a3e848c4e95a193d1db9719998" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;execute&apos;]</definition>
+        <argsstring>[&apos;execute&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Nu se poate executa următoarea comandă:  &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="14" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1a74fde728a807ad6886041cb2be6dadc5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;extension_missing&apos;]</definition>
+        <argsstring>[&apos;extension_missing&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Lipsește extensia: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="15" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1a9f10ce2f2b3bbd0e80d9a56ce05f72ba" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;file_access&apos;]</definition>
+        <argsstring>[&apos;file_access&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Nu se poate accesa următorul fișier: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="16" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1ae7db8a216f9a035e2f331350bc7ee105" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;file_open&apos;]</definition>
+        <argsstring>[&apos;file_open&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Eroare fișier: Nu se poate deschide următorul fișier: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="17" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1aabfcfe6a66dc36821d7014bdc5a3b6f9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;from_failed&apos;]</definition>
+        <argsstring>[&apos;from_failed&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Următoarele adrese From au dat eroare: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="18" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1a3a317f3e32c3246ff68ed968ddcf4774" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;instantiate&apos;]</definition>
+        <argsstring>[&apos;instantiate&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Funcția mail nu a putut fi inițializată.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="19" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1a5139862f86824b503222c7066bf5a4e6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;invalid_address&apos;]</definition>
+        <argsstring>[&apos;invalid_address&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Adresa de email nu este validă: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="20" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1af1a19af625656a691901499d5e167c2f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;invalid_header&apos;]</definition>
+        <argsstring>[&apos;invalid_header&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Numele sau valoarea header-ului nu este validă: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="21" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1a9751d08dfc4a0fa31ccfb0c7c9bb946e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;invalid_hostentry&apos;]</definition>
+        <argsstring>[&apos;invalid_hostentry&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Hostentry invalid: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="22" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1a319b92254c00dd2d36433533f68f2a99" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;invalid_host&apos;]</definition>
+        <argsstring>[&apos;invalid_host&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Host invalid: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="23" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1a53b73fedc58a3e9084bd6de0f3f1e4e1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;mailer_not_supported&apos;]</definition>
+        <argsstring>[&apos;mailer_not_supported&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos; mailer nu este suportat.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="24" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1a957c4c5cc80342ca5a19ba145f85daa9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;provide_address&apos;]</definition>
+        <argsstring>[&apos;provide_address&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Trebuie să adăugați cel puțin o adresă de email.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="25" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1ae9940d910460e388276ce1a4c02081f7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;recipients_failed&apos;]</definition>
+        <argsstring>[&apos;recipients_failed&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Eroare SMTP: Următoarele adrese de email au eșuat: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="26" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1a59c4260e366f69d573d10355e2e2d820" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;signing&apos;]</definition>
+        <argsstring>[&apos;signing&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;A aparut o problemă la semnarea emailului. &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="27" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1a182e53ceae4baa432cd8e461dac95ce7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;smtp_code&apos;]</definition>
+        <argsstring>[&apos;smtp_code&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Cod SMTP: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="28" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1af7740b34a480b5237ca34c4b0b117fe2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;smtp_code_ex&apos;]</definition>
+        <argsstring>[&apos;smtp_code_ex&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Informații SMTP adiționale: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="29" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1a83c3b0c6679b3878c71606ed753c5f2d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;smtp_connect_failed&apos;]</definition>
+        <argsstring>[&apos;smtp_connect_failed&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Conectarea la serverul SMTP a eșuat.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="30" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1ac802af07f952308bc24473131684c21a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;smtp_detail&apos;]</definition>
+        <argsstring>[&apos;smtp_detail&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Detalii SMTP: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="31" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1a9f53f2e12f4f1445bccf30b1e6a76538" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;smtp_error&apos;]</definition>
+        <argsstring>[&apos;smtp_error&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Eroare server SMTP: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="32" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ro_8php_1a941459734cab977ccbc502e2cfad2b5f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;variable_set&apos;]</definition>
+        <argsstring>[&apos;variable_set&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Nu se poate seta/reseta variabila. &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" line="33" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php" bodystart="33" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;authenticate&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Eroare<sp/>SMTP:<sp/>Autentificarea<sp/>a<sp/>eșuat.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;buggy_php&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Versiunea<sp/>instalată<sp/>de<sp/>PHP<sp/>este<sp/>afectată<sp/>de<sp/>o<sp/>problemă<sp/>care<sp/>poate<sp/>duce<sp/>la<sp/>coruperea<sp/>mesajelor<sp/>Pentru<sp/>a<sp/>preveni<sp/>această<sp/>problemă,<sp/>folosiți<sp/>SMTP,<sp/>dezactivați<sp/>opțiunea<sp/>mail.add_x_header<sp/>din<sp/>php.ini,<sp/>folosiți<sp/>MacOS/Linux<sp/>sau<sp/>actualizați<sp/>versiunea<sp/>de<sp/>PHP<sp/>la<sp/>7.0.17+<sp/>sau<sp/>7.1.3+.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;connect_host&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Eroare<sp/>SMTP:<sp/>Conectarea<sp/>la<sp/>serverul<sp/>SMTP<sp/>a<sp/>eșuat.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;data_not_accepted&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Eroare<sp/>SMTP:<sp/>Datele<sp/>nu<sp/>au<sp/>fost<sp/>acceptate.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;empty_message&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Mesajul<sp/>este<sp/>gol.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;encoding&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Encodare<sp/>necunoscută:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;execute&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Nu<sp/>se<sp/>poate<sp/>executa<sp/>următoarea<sp/>comandă:<sp/><sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;extension_missing&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Lipsește<sp/>extensia:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;file_access&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Nu<sp/>se<sp/>poate<sp/>accesa<sp/>următorul<sp/>fișier:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;file_open&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Eroare<sp/>fișier:<sp/>Nu<sp/>se<sp/>poate<sp/>deschide<sp/>următorul<sp/>fișier:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;from_failed&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Următoarele<sp/>adrese<sp/>From<sp/>au<sp/>dat<sp/>eroare:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;instantiate&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Funcția<sp/>mail<sp/>nu<sp/>a<sp/>putut<sp/>fi<sp/>inițializată.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;invalid_address&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Adresa<sp/>de<sp/>email<sp/>nu<sp/>este<sp/>validă:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;invalid_header&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Numele<sp/>sau<sp/>valoarea<sp/>header-ului<sp/>nu<sp/>este<sp/>validă:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;invalid_hostentry&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Hostentry<sp/>invalid:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;invalid_host&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Host<sp/>invalid:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;mailer_not_supported&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;<sp/>mailer<sp/>nu<sp/>este<sp/>suportat.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;provide_address&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Trebuie<sp/>să<sp/>adăugați<sp/>cel<sp/>puțin<sp/>o<sp/>adresă<sp/>de<sp/>email.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;recipients_failed&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Eroare<sp/>SMTP:<sp/>Următoarele<sp/>adrese<sp/>de<sp/>email<sp/>au<sp/>eșuat:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;signing&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;A<sp/>aparut<sp/>o<sp/>problemă<sp/>la<sp/>semnarea<sp/>emailului.<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;smtp_code&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Cod<sp/>SMTP:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;smtp_code_ex&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Informații<sp/>SMTP<sp/>adiționale:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;smtp_connect_failed&apos;</highlight><highlight class="normal">]<sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Conectarea<sp/>la<sp/>serverul<sp/>SMTP<sp/>a<sp/>eșuat.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;smtp_detail&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Detalii<sp/>SMTP:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;smtp_error&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Eroare<sp/>server<sp/>SMTP:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;variable_set&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Nu<sp/>se<sp/>poate<sp/>seta/reseta<sp/>variabila.<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ro.php"/>
+  </compounddef>
+</doxygen>

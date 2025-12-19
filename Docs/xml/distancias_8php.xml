@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="distancias_8php" kind="file" language="PHP">
+    <compoundname>distancias.php</compoundname>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="distancias_8php_1a6383278feb555bafc8e094934289b489" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getHistorialDistancias</definition>
+        <argsstring>($conn, $data)</argsstring>
+        <name>getHistorialDistancias</name>
+        <param>
+          <declname>$conn</declname>
+        </param>
+        <param>
+          <declname>$data</declname>
+        </param>
+        <briefdescription>
+<para>Recupera todos los registros de distancia de un usuario. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>mysqli</parametertype>
+<parametername>$conn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Conexión a DB. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>array</parametertype>
+<parametername>$data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Contiene &apos;usuario_id&apos;. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>array Historial ordenado cronológicamente de forma descendente. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<sect1 id="distancias_8php_1ConsultaHistorial">
+<title>ConsultaHistorial</title></sect1>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/distancias.php" line="101" column="10" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/distancias.php" bodystart="101" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="distancias_8php_1a060cfe7ec806aac2e63dedd1b0472eaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getDistanciaFecha</definition>
+        <argsstring>($conn, $data)</argsstring>
+        <name>getDistanciaFecha</name>
+        <param>
+          <declname>$conn</declname>
+        </param>
+        <param>
+          <declname>$data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<sect1 id="distancias_8php_1ConsultaPuntual">
+<title>ConsultaPuntual</title><para><simplesect kind="note"><para>Si no se encuentra el registro, se asume actividad nula (0.0).</para>
+</simplesect>
+</para>
+</sect1>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/distancias.php" line="146" column="10" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/distancias.php" bodystart="146" bodyend="171"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Gestión de métricas de actividad física (distancias recorridas). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Proporciona funciones para el registro diario acumulativo de distancias y la recuperación de datos históricos por usuario. <simplesect kind="author"><para>Manuel </para>
+</simplesect>
+<simplesect kind="date"><para>05/12/2025 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>guardarDistanciaHoy(<ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>,<sp/><ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1.<sp/>VALIDACIÓN<sp/>DE<sp/>ENTRADA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(empty(<ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;usuario_id&apos;</highlight><highlight class="normal">])<sp/>||<sp/>!isset(<ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;distancia&apos;</highlight><highlight class="normal">]))<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;error&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Faltan<sp/>parámetros:<sp/>usuario_id<sp/>o<sp/>distancia.&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>$usuario_id<sp/>=<sp/>(int)<ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;usuario_id&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>$distancia<sp/>=<sp/>(float)<ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;distancia&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>$hoy<sp/>=<sp/>date(</highlight><highlight class="stringliteral">&quot;Y-m-d&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2.<sp/>VERIFICACIÓN<sp/>DE<sp/>EXISTENCIA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>SQL:</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Seleccionamos<sp/>distancia<sp/>para<sp/>comprobar<sp/>si<sp/>debemos<sp/>hacer<sp/>INSERT<sp/>o<sp/>UPDATE.</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>El<sp/>filtro<sp/>combina<sp/>usuario<sp/>y<sp/>fecha<sp/>(clave<sp/>candidata<sp/>lógica).</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref><sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare(</highlight><highlight class="stringliteral">&quot;SELECT<sp/>id,<sp/>distancia<sp/>FROM<sp/>distancias_diarias<sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>WHERE<sp/>usuario_id<sp/>=<sp/>?<sp/>AND<sp/>fecha<sp/>=<sp/>?&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;is&quot;</highlight><highlight class="normal">,<sp/>$usuario_id,<sp/>$hoy);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;execute();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref><sp/>=<sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;get_result();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>3.<sp/>ACTUALIZACIÓN<sp/>O<sp/>CREACIÓN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($row<sp/>=<sp/><ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref>-&gt;fetch_assoc())<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$nuevaDistancia<sp/>=<sp/>$row[</highlight><highlight class="stringliteral">&apos;distancia&apos;</highlight><highlight class="normal">]<sp/>+<sp/>$distancia;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>SQL:</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Actualiza<sp/>el<sp/>registro<sp/>existente<sp/>sumando<sp/>la<sp/>nueva<sp/>medición.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Se<sp/>identifica<sp/>por<sp/>&apos;id&apos;<sp/>(Primary<sp/>Key)<sp/>para<sp/>máxima<sp/>eficiencia.</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$stmt2<sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare(</highlight><highlight class="stringliteral">&quot;UPDATE<sp/>distancias_diarias<sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SET<sp/>distancia<sp/>=<sp/>?<sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>WHERE<sp/>id<sp/>=<sp/>?&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$stmt2-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;di&quot;</highlight><highlight class="normal">,<sp/>$nuevaDistancia,<sp/>$row[</highlight><highlight class="stringliteral">&apos;id&apos;</highlight><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$stmt2-&gt;execute();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$stmt2-&gt;close();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>[</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;ok&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Distancia<sp/>actualizada.&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;distancia_total&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$nuevaDistancia</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>];</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>SQL:</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Inserta<sp/>una<sp/>nueva<sp/>fila<sp/>vinculando<sp/>al<sp/>usuario<sp/>con<sp/>la<sp/>fecha<sp/>actual<sp/>del<sp/>sistema.</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>$stmt2<sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare(</highlight><highlight class="stringliteral">&quot;INSERT<sp/>INTO<sp/>distancias_diarias<sp/>(usuario_id,<sp/>fecha,<sp/>distancia)<sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VALUES<sp/>(?,<sp/>?,<sp/>?)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>$stmt2-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;isd&quot;</highlight><highlight class="normal">,<sp/>$usuario_id,<sp/>$hoy,<sp/>$distancia);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>$stmt2-&gt;execute();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>$stmt2-&gt;close();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>[</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;ok&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Distancia<sp/>guardada<sp/>correctamente.&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;distancia_total&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$distancia</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>];</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="distancias_8php_1a6383278feb555bafc8e094934289b489" kindref="member">getHistorialDistancias</ref>(<ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>,<sp/><ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(empty(<ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;usuario_id&apos;</highlight><highlight class="normal">]))<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;error&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Falta<sp/>parámetro:<sp/>usuario_id.&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>$usuario_id<sp/>=<sp/>(int)<ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;usuario_id&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>SQL:</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Selecciona<sp/>fecha<sp/>y<sp/>distancia<sp/>filtrando<sp/>por<sp/>usuario.</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>&apos;ORDER<sp/>BY<sp/>fecha<sp/>DESC&apos;<sp/>garantiza<sp/>que<sp/>los<sp/>datos<sp/>más<sp/>recientes<sp/>aparezcan<sp/>primero.</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref><sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare(</highlight><highlight class="stringliteral">&quot;SELECT<sp/>fecha,<sp/>distancia<sp/></highlight></codeline>
+<codeline lineno="115"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FROM<sp/>distancias_diarias<sp/></highlight></codeline>
+<codeline lineno="116"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>WHERE<sp/>usuario_id<sp/>=<sp/>?</highlight></codeline>
+<codeline lineno="117"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ORDER<sp/>BY<sp/>fecha<sp/>DESC&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;i&quot;</highlight><highlight class="normal">,<sp/>$usuario_id);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;execute();</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref><sp/>=<sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;get_result();</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>$historial<sp/>=<sp/>[];</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>($row<sp/>=<sp/><ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref>-&gt;fetch_assoc())<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$historial[]<sp/>=<sp/>[</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;fecha&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$row[</highlight><highlight class="stringliteral">&apos;fecha&apos;</highlight><highlight class="normal">],</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;distancia&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>(float)$row[</highlight><highlight class="stringliteral">&apos;distancia&apos;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>];</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>[</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;ok&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;historial&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$historial</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>];</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="distancias_8php_1a060cfe7ec806aac2e63dedd1b0472eaa" kindref="member">getDistanciaFecha</ref>(<ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>,<sp/><ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(empty(<ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;usuario_id&apos;</highlight><highlight class="normal">])<sp/>||<sp/>empty(<ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;fecha&apos;</highlight><highlight class="normal">]))<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;error&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Faltan<sp/>parámetros:<sp/>usuario_id<sp/>o<sp/>fecha.&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>$usuario_id<sp/>=<sp/>(int)<ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;usuario_id&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>$fecha<sp/>=<sp/><ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;fecha&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>SQL:</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Busca<sp/>la<sp/>coincidencia<sp/>exacta<sp/>de<sp/>fecha<sp/>para<sp/>un<sp/>usuario<sp/>determinado.</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref><sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare(</highlight><highlight class="stringliteral">&quot;SELECT<sp/>distancia<sp/>FROM<sp/>distancias_diarias<sp/></highlight></codeline>
+<codeline lineno="160"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>WHERE<sp/>usuario_id<sp/>=<sp/>?<sp/>AND<sp/>fecha<sp/>=<sp/>?&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;is&quot;</highlight><highlight class="normal">,<sp/>$usuario_id,<sp/>$fecha);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;execute();</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref><sp/>=<sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;get_result();</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($row<sp/>=<sp/><ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref>-&gt;fetch_assoc())<sp/>{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;ok&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;distancia&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>(float)$row[</highlight><highlight class="stringliteral">&apos;distancia&apos;</highlight><highlight class="normal">]];</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;ok&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;distancia&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>0];</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/distancias.php"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_cliente" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::retrofit::ApiCliente</compoundname>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_cliente_1a4a1aaf40dba135569ddf9aa1e1dca6bf" prot="private" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String com.example.grupo5.aitherapp.retrofit.ApiCliente.urlLocal</definition>
+        <argsstring></argsstring>
+        <name>urlLocal</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.ApiCliente.urlLocal</qualifiedname>
+        <initializer>= &quot;http://10.225.160.115/ProyectoBiometria/ProyectoBiometria/src/api/&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiCliente.java" line="23" column="33" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiCliente.java" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_cliente_1a5c27d64d5ecd2a0290fdc3ac4f4d8909" prot="private" static="yes" mutable="no">
+        <type>Retrofit</type>
+        <definition>Retrofit com.example.grupo5.aitherapp.retrofit.ApiCliente.retrofit</definition>
+        <argsstring></argsstring>
+        <name>retrofit</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.ApiCliente.retrofit</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiCliente.java" line="27" column="29" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiCliente.java" bodystart="27" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_cliente_1a365544bd5cfc60360ac6dac9a718b675" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service" kindref="compound">ApiService</ref></type>
+        <definition>static ApiService com.example.grupo5.aitherapp.retrofit.ApiCliente.getApiService</definition>
+        <argsstring>()</argsstring>
+        <name>getApiService</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.ApiCliente.getApiService</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiCliente.java" line="32" column="30" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiCliente.java" bodystart="32" bodyend="49"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiCliente.java" line="21" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiCliente.java" bodystart="21" bodyend="51"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_cliente_1a365544bd5cfc60360ac6dac9a718b675" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::ApiCliente</scope><name>getApiService</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_cliente_1a5c27d64d5ecd2a0290fdc3ac4f4d8909" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::ApiCliente</scope><name>retrofit</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_cliente_1a4a1aaf40dba135569ddf9aa1e1dca6bf" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::ApiCliente</scope><name>urlLocal</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

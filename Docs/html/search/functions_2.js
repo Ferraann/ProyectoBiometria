@@ -1,7 +1,20 @@
 var searchData=
 [
-  ['close_0',['close',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p.html#aa69c8bf1f1dcf4e72552efff1fe3e87e',1,'PHPMailer::PHPMailer::SMTP']]],
-  ['configure_1',['configure',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_d_s_n_configurator.html#ad05e3f5256eb07e3c470a1f6c46f6c4b',1,'PHPMailer::PHPMailer::DSNConfigurator']]],
-  ['connect_2',['connect',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p.html#a8ba3e5680f88f2675bf0fe988aecd3cd',1,'PHPMailer::PHPMailer::SMTP']]],
-  ['connected_3',['connected',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p.html#a166cb1f72761ff7c95d5d24055fe03f5',1,'PHPMailer::PHPMailer::SMTP']]]
+  ['bind_5fparam_0',['bind_param',['../class_mock_stmt.html#a1a9ca01039bd8b4dc4e87990e9811b6e',1,'MockStmt']]],
+  ['botonbuscardispositivosbtlepulsado_1',['botonBuscarDispositivosBTLEPulsado',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity.html#abd02b1ab9bfd1edbd1e71ff0db014ba2',1,'com::example::grupo5::aitherapp::activitysApp::BTLEActivity']]],
+  ['botonbuscarnuestrodispositivobtlepulsado_2',['botonBuscarNuestroDispositivoBTLEPulsado',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity.html#a503c729f9848632554324935883306ab',1,'com::example::grupo5::aitherapp::activitysApp::BTLEActivity']]],
+  ['botondetenerbusquedadispositivosbtlepulsado_3',['botonDetenerBusquedaDispositivosBTLEPulsado',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity.html#ab27dd0f79a6007af6b561216a1f8faa1',1,'com::example::grupo5::aitherapp::activitysApp::BTLEActivity']]],
+  ['botoneditarperfil_4',['botonEditarPerfil',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity.html#a9299ac4a59825a847d7692669694c67e',1,'com::example::grupo5::aitherapp::activitysApp::HomeActivity']]],
+  ['botonenviardatos_5',['botonEnviarDatos',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity.html#a25287fed94176e49c14ade6f53d61437',1,'com::example::grupo5::aitherapp::activitysApp::RegistroActivity']]],
+  ['botonirnotificaciones_6',['botonIrNotificaciones',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity.html#a11120d3e0b5cfb01557f460dd77cccb3',1,'com::example::grupo5::aitherapp::activitysApp::HomeActivity']]],
+  ['botonirsensores_7',['botonIrSensores',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity.html#a55188123cf3148088a1ccb1118deeb70',1,'com::example::grupo5::aitherapp::activitysApp::HomeActivity']]],
+  ['botonlogin_8',['botonLogin',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity.html#abcec2ea6414652b3302766dc26a1cd1e',1,'com::example::grupo5::aitherapp::MainActivity']]],
+  ['botonolvidarcontrasenya_9',['botonOlvidarContrasenya',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity.html#ae0a383d130c453dec923b86bfff641a0',1,'com::example::grupo5::aitherapp::MainActivity']]],
+  ['botonregistrarse_10',['botonRegistrarse',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity.html#a538c092f0e2a4e52fe9ce76290aad001',1,'com::example::grupo5::aitherapp::MainActivity']]],
+  ['btlescannermultiple_11',['BtleScannerMultiple',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple.html#a8034474b758e424736d823aba586b06f',1,'com::example::grupo5::aitherapp::btle::BtleScannerMultiple']]],
+  ['bytestohexstring_12',['bytesToHexString',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades.html#a026202663e3a0c2949b37b71b8c65001',1,'com::example::grupo5::aitherapp::btle::Utilidades']]],
+  ['bytestoint_13',['bytesToInt',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades.html#acda6a37fbfc7237d6381791f6bad4e99',1,'com::example::grupo5::aitherapp::btle::Utilidades']]],
+  ['bytestointok_14',['bytesToIntOK',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades.html#a8a2606ca6b331bcffcc5aabaeddd5e9a',1,'com::example::grupo5::aitherapp::btle::Utilidades']]],
+  ['bytestolong_15',['bytesToLong',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades.html#a4fb2a375cc6c8952eabf4e4eeeaab3c1',1,'com::example::grupo5::aitherapp::btle::Utilidades']]],
+  ['bytestostring_16',['bytesToString',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades.html#a98f1092b762992509665bde16bd873f0',1,'com::example::grupo5::aitherapp::btle::Utilidades']]]
 ];

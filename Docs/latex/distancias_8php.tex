@@ -1,0 +1,60 @@
+\doxysection{C\+:/xampp/htdocs/\+Proyecto\+Biometria\+\_\+2/src/api/logica\+Negocio/distancias.php File Reference}
+\label{distancias_8php}\index{C:/xampp/htdocs/ProyectoBiometria\_2/src/api/logicaNegocio/distancias.php@{C:/xampp/htdocs/ProyectoBiometria\_2/src/api/logicaNegocio/distancias.php}}
+
+
+Gestión de métricas de actividad física (distancias recorridas).  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ get\+Historial\+Distancias} (\$conn, \$data)
+\begin{DoxyCompactList}\small\item\em Recupera todos los registros de distancia de un usuario. \end{DoxyCompactList}\item 
+\textbf{ get\+Distancia\+Fecha} (\$conn, \$data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestión de métricas de actividad física (distancias recorridas). 
+
+Proporciona funciones para el registro diario acumulativo de distancias y la recuperación de datos históricos por usuario. \begin{DoxyAuthor}{Author}
+Manuel 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+05/12/2025 
+\end{DoxyDate}
+
+
+\label{doc-func-members}
+\doxysubsection{Function Documentation}
+\index{distancias.php@{distancias.php}!getDistanciaFecha@{getDistanciaFecha}}
+\index{getDistanciaFecha@{getDistanciaFecha}!distancias.php@{distancias.php}}
+\doxysubsubsection{getDistanciaFecha()}
+{\footnotesize\ttfamily \label{distancias_8php_a060cfe7ec806aac2e63dedd1b0472eaa} 
+get\+Distancia\+Fecha (\begin{DoxyParamCaption}\item[{}]{\$conn}{, }\item[{}]{\$data}{}\end{DoxyParamCaption})}
+
+\doxysubsection{Consulta\+Puntual}\label{distancias_8php_ConsultaPuntual}
+\begin{DoxyNote}{Note}
+Si no se encuentra el registro, se asume actividad nula (0.\+0).
+\end{DoxyNote}
+\index{distancias.php@{distancias.php}!getHistorialDistancias@{getHistorialDistancias}}
+\index{getHistorialDistancias@{getHistorialDistancias}!distancias.php@{distancias.php}}
+\doxysubsubsection{getHistorialDistancias()}
+{\footnotesize\ttfamily \label{distancias_8php_a6383278feb555bafc8e094934289b489} 
+get\+Historial\+Distancias (\begin{DoxyParamCaption}\item[{}]{\$conn}{, }\item[{}]{\$data}{}\end{DoxyParamCaption})}
+
+
+
+Recupera todos los registros de distancia de un usuario. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+mysqli & {\em \$conn} & Conexión a DB. \\
+\hline
+array & {\em \$data} & Contiene \textquotesingle{}usuario\+\_\+id\textquotesingle{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Historial ordenado cronológicamente de forma descendente. 
+\end{DoxyReturn}
+\doxysubsection{Consulta\+Historial}\label{distancias_8php_ConsultaHistorial}

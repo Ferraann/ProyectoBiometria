@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1_1_qr_data" kind="class" language="Java" prot="private">
+    <compoundname>com::example::grupo5::aitherapp::activitysApp::VincularQRActivity::QrData</compoundname>
+    <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1_1_qr_data_1a43ef83b6ca11afacb6ba08cd944a89e1" prot="package" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.QrData.mac</definition>
+        <argsstring></argsstring>
+        <name>mac</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.QrData.mac</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" line="196" column="16" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1_1_qr_data_1a1126b5dd1cd53627c513a8e140192e9a" prot="package" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.QrData.modelo</definition>
+        <argsstring></argsstring>
+        <name>modelo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.QrData.modelo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" line="197" column="16" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" bodystart="197" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" line="195" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" bodystart="195" bodyend="198"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1_1_qr_data_1a43ef83b6ca11afacb6ba08cd944a89e1" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::VincularQRActivity::QrData</scope><name>mac</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1_1_qr_data_1a1126b5dd1cd53627c513a8e140192e9a" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::VincularQRActivity::QrData</scope><name>modelo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

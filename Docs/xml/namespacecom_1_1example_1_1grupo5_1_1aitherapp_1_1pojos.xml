@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="namespacecom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos" kind="namespace" language="Java">
+    <compoundname>com::example::grupo5::aitherapp::pojos</compoundname>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_premio" prot="public">com::example::grupo5::aitherapp::pojos::PojoPremio</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor" prot="public">com::example::grupo5::aitherapp::pojos::PojoRespuestaServidor</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor" prot="public">com::example::grupo5::aitherapp::pojos::PojoSensor</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" prot="public">com::example::grupo5::aitherapp::pojos::PojoUsuario</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoPremio.java" line="1" column="15"/>
+  </compounddef>
+</doxygen>

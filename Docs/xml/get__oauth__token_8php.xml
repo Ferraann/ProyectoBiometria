@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="get__oauth__token_8php" kind="file" language="PHP">
+    <compoundname>get_oauth_token.php</compoundname>
+    <innernamespace refid="namespace_p_h_p_mailer">PHPMailer</innernamespace>
+    <innernamespace refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer">PHPMailer::PHPMailer</innernamespace>
+    <innernamespace refid="namespace_league_1_1_o_auth2_1_1_client_1_1_provider_1_1_google">League::OAuth2::Client::Provider::Google</innernamespace>
+    <innernamespace refid="namespace_hayageek_1_1_o_auth2_1_1_client_1_1_provider_1_1_yahoo">Hayageek::OAuth2::Client::Provider::Yahoo</innernamespace>
+    <innernamespace refid="namespace_stevenmaguire_1_1_o_auth2_1_1_client_1_1_provider_1_1_microsoft">Stevenmaguire::OAuth2::Client::Provider::Microsoft</innernamespace>
+    <innernamespace refid="namespace_greew_1_1_o_auth2_1_1_client_1_1_provider_1_1_azure">Greew::OAuth2::Client::Provider::Azure</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer\PHPMailer</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">//@see<sp/>https://github.com/thephpleague/oauth2-google</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">use<sp/>League\OAuth2\Client\Provider\Google;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//@see<sp/>https://packagist.org/packages/hayageek/oauth2-yahoo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">use<sp/>Hayageek\OAuth2\Client\Provider\Yahoo;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">//@see<sp/>https://github.com/stevenmaguire/oauth2-microsoft</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">use<sp/>Stevenmaguire\OAuth2\Client\Provider\Microsoft;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//@see<sp/>https://github.com/greew/oauth2-azure-provider</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">use<sp/>Greew\OAuth2\Client\Provider\Azure;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!isset($_GET[</highlight><highlight class="stringliteral">&apos;code&apos;</highlight><highlight class="normal">])<sp/>&amp;&amp;<sp/>!isset($_POST[</highlight><highlight class="stringliteral">&apos;provider&apos;</highlight><highlight class="normal">]))<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>?&gt;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">&lt;html&gt;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">&lt;body&gt;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">&lt;form<sp/>method=</highlight><highlight class="stringliteral">&quot;post&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;h1&gt;Select<sp/>Provider&lt;/h1&gt;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;input<sp/>type=</highlight><highlight class="stringliteral">&quot;radio&quot;</highlight><highlight class="normal"><sp/>name=</highlight><highlight class="stringliteral">&quot;provider&quot;</highlight><highlight class="normal"><sp/>value=</highlight><highlight class="stringliteral">&quot;Google&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;providerGoogle&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;label<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;providerGoogle&quot;</highlight><highlight class="normal">&gt;Google&lt;/label&gt;&lt;br&gt;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;input<sp/>type=</highlight><highlight class="stringliteral">&quot;radio&quot;</highlight><highlight class="normal"><sp/>name=</highlight><highlight class="stringliteral">&quot;provider&quot;</highlight><highlight class="normal"><sp/>value=</highlight><highlight class="stringliteral">&quot;Yahoo&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;providerYahoo&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;label<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;providerYahoo&quot;</highlight><highlight class="normal">&gt;Yahoo&lt;/label&gt;&lt;br&gt;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;input<sp/>type=</highlight><highlight class="stringliteral">&quot;radio&quot;</highlight><highlight class="normal"><sp/>name=</highlight><highlight class="stringliteral">&quot;provider&quot;</highlight><highlight class="normal"><sp/>value=</highlight><highlight class="stringliteral">&quot;Microsoft&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;providerMicrosoft&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;label<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;providerMicrosoft&quot;</highlight><highlight class="normal">&gt;Microsoft&lt;/label&gt;&lt;br&gt;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;input<sp/>type=</highlight><highlight class="stringliteral">&quot;radio&quot;</highlight><highlight class="normal"><sp/>name=</highlight><highlight class="stringliteral">&quot;provider&quot;</highlight><highlight class="normal"><sp/>value=</highlight><highlight class="stringliteral">&quot;Azure&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;providerAzure&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;label<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;providerAzure&quot;</highlight><highlight class="normal">&gt;Azure&lt;/label&gt;&lt;br&gt;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;h1&gt;Enter<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>and<sp/>secret&lt;/h1&gt;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;p&gt;These<sp/>details<sp/>are<sp/>obtained<sp/>by<sp/>setting<sp/>up<sp/>an<sp/>app<sp/>in<sp/>your<sp/>provider</highlight><highlight class="stringliteral">&apos;s<sp/>developer<sp/>console.</highlight></codeline>
+<codeline lineno="66"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&lt;/p&gt;</highlight></codeline>
+<codeline lineno="67"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&lt;p&gt;ClientId:<sp/>&lt;input<sp/>type=&quot;text&quot;<sp/>name=&quot;clientId&quot;&gt;&lt;p&gt;</highlight></codeline>
+<codeline lineno="68"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&lt;p&gt;ClientSecret:<sp/>&lt;input<sp/>type=&quot;text&quot;<sp/>name=&quot;clientSecret&quot;&gt;&lt;/p&gt;</highlight></codeline>
+<codeline lineno="69"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&lt;p&gt;TenantID<sp/>(only<sp/>relevant<sp/>for<sp/>Azure):<sp/>&lt;input<sp/>type=&quot;text&quot;<sp/>name=&quot;tenantId&quot;&gt;&lt;/p&gt;</highlight></codeline>
+<codeline lineno="70"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&lt;input<sp/>type=&quot;submit&quot;<sp/>value=&quot;Continue&quot;&gt;</highlight></codeline>
+<codeline lineno="71"><highlight class="stringliteral">&lt;/form&gt;</highlight></codeline>
+<codeline lineno="72"><highlight class="stringliteral">&lt;/body&gt;</highlight></codeline>
+<codeline lineno="73"><highlight class="stringliteral">&lt;/html&gt;</highlight></codeline>
+<codeline lineno="74"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&lt;?php</highlight></codeline>
+<codeline lineno="75"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>exit;</highlight></codeline>
+<codeline lineno="76"><highlight class="stringliteral">}</highlight></codeline>
+<codeline lineno="77"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="78"><highlight class="stringliteral">require<sp/>&apos;</highlight><highlight class="normal">vendor/autoload.php</highlight><highlight class="stringliteral">&apos;;</highlight></codeline>
+<codeline lineno="79"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="80"><highlight class="stringliteral">session_start();</highlight></codeline>
+<codeline lineno="81"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="82"><highlight class="stringliteral">$providerName<sp/>=<sp/>&apos;</highlight><highlight class="stringliteral">&apos;;</highlight></codeline>
+<codeline lineno="83"><highlight class="stringliteral">$clientId<sp/>=<sp/>&apos;</highlight><highlight class="stringliteral">&apos;;</highlight></codeline>
+<codeline lineno="84"><highlight class="stringliteral">$clientSecret<sp/>=<sp/>&apos;</highlight><highlight class="stringliteral">&apos;;</highlight></codeline>
+<codeline lineno="85"><highlight class="stringliteral">$tenantId<sp/>=<sp/>&apos;</highlight><highlight class="stringliteral">&apos;;</highlight></codeline>
+<codeline lineno="86"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="87"><highlight class="stringliteral">if<sp/>(array_key_exists(&apos;</highlight><highlight class="normal">provider</highlight><highlight class="stringliteral">&apos;,<sp/>$_POST))<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>$providerName<sp/>=<sp/>$_POST[&apos;</highlight><highlight class="normal">provider</highlight><highlight class="stringliteral">&apos;];</highlight></codeline>
+<codeline lineno="89"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>$clientId<sp/>=<sp/>$_POST[&apos;</highlight><highlight class="normal">clientId</highlight><highlight class="stringliteral">&apos;];</highlight></codeline>
+<codeline lineno="90"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>$clientSecret<sp/>=<sp/>$_POST[&apos;</highlight><highlight class="normal">clientSecret</highlight><highlight class="stringliteral">&apos;];</highlight></codeline>
+<codeline lineno="91"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>$tenantId<sp/>=<sp/>$_POST[&apos;</highlight><highlight class="normal">tenantId</highlight><highlight class="stringliteral">&apos;];</highlight></codeline>
+<codeline lineno="92"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>$_SESSION[&apos;</highlight><highlight class="normal">provider</highlight><highlight class="stringliteral">&apos;]<sp/>=<sp/>$providerName;</highlight></codeline>
+<codeline lineno="93"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>$_SESSION[&apos;</highlight><highlight class="normal">clientId</highlight><highlight class="stringliteral">&apos;]<sp/>=<sp/>$clientId;</highlight></codeline>
+<codeline lineno="94"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>$_SESSION[&apos;</highlight><highlight class="normal">clientSecret</highlight><highlight class="stringliteral">&apos;]<sp/>=<sp/>$clientSecret;</highlight></codeline>
+<codeline lineno="95"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>$_SESSION[&apos;</highlight><highlight class="normal">tenantId</highlight><highlight class="stringliteral">&apos;]<sp/>=<sp/>$tenantId;</highlight></codeline>
+<codeline lineno="96"><highlight class="stringliteral">}<sp/>elseif<sp/>(array_key_exists(&apos;</highlight><highlight class="normal">provider</highlight><highlight class="stringliteral">&apos;,<sp/>$_SESSION))<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>$providerName<sp/>=<sp/>$_SESSION[&apos;</highlight><highlight class="normal">provider</highlight><highlight class="stringliteral">&apos;];</highlight></codeline>
+<codeline lineno="98"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>$clientId<sp/>=<sp/>$_SESSION[&apos;</highlight><highlight class="normal">clientId</highlight><highlight class="stringliteral">&apos;];</highlight></codeline>
+<codeline lineno="99"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>$clientSecret<sp/>=<sp/>$_SESSION[&apos;</highlight><highlight class="normal">clientSecret</highlight><highlight class="stringliteral">&apos;];</highlight></codeline>
+<codeline lineno="100"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>$tenantId<sp/>=<sp/>$_SESSION[&apos;</highlight><highlight class="normal">tenantId</highlight><highlight class="stringliteral">&apos;];</highlight></codeline>
+<codeline lineno="101"><highlight class="stringliteral">}</highlight></codeline>
+<codeline lineno="102"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="103"><highlight class="stringliteral">//If<sp/>you<sp/>don&apos;</highlight><highlight class="normal">t<sp/>want<sp/>to<sp/>use<sp/>the<sp/>built-in<sp/>form,<sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal"><sp/>your<sp/>client<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>and<sp/>secret<sp/>here</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="comment">//$clientId<sp/>=<sp/>&apos;RANDOMCHARS-----duv1n2.apps.googleusercontent.com&apos;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment">//$clientSecret<sp/>=<sp/>&apos;RANDOMCHARS-----lGyjPcRtvP&apos;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">//If<sp/>this<sp/>automatic<sp/>URL<sp/>doesn&apos;t<sp/>work,<sp/>set<sp/>it<sp/>yourself<sp/>manually<sp/>to<sp/>the<sp/>URL<sp/>of<sp/>this<sp/>script</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal">$redirectUri<sp/>=<sp/>(isset($_SERVER[</highlight><highlight class="stringliteral">&apos;HTTPS&apos;</highlight><highlight class="normal">])<sp/>?<sp/></highlight><highlight class="stringliteral">&apos;https://&apos;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&apos;http://&apos;</highlight><highlight class="normal">)<sp/>.<sp/>$_SERVER[</highlight><highlight class="stringliteral">&apos;HTTP_HOST&apos;</highlight><highlight class="normal">]<sp/>.<sp/>$_SERVER[</highlight><highlight class="stringliteral">&apos;PHP_SELF&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="comment">//$redirectUri<sp/>=<sp/>&apos;http://localhost/PHPMailer/redirect&apos;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">$params<sp/>=<sp/>[</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;clientId&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$clientId,</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;clientSecret&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$clientSecret,</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;redirectUri&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$redirectUri,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;accessType&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&apos;offline&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">];</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal">$options<sp/>=<sp/>[];</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">$provider<sp/>=<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>($providerName)<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&apos;Google&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$provider<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Google($params);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$options<sp/>=<sp/>[</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;scope&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>[</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;https://mail.google.com/&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>]</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>];</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&apos;Yahoo&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$provider<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Yahoo($params);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&apos;Microsoft&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$provider<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Microsoft($params);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$options<sp/>=<sp/>[</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;scope&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>[</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;wl.imap&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;wl.offline_access&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>]</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>];</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&apos;Azure&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$params[</highlight><highlight class="stringliteral">&apos;tenantId&apos;</highlight><highlight class="normal">]<sp/>=<sp/>$tenantId;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$provider<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Azure($params);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$options<sp/>=<sp/>[</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;scope&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>[</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;https://outlook.office.com/SMTP.Send&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;offline_access&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>]</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>];</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">null</highlight><highlight class="normal"><sp/>===<sp/>$provider)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>(</highlight><highlight class="stringliteral">&apos;Provider<sp/>missing&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!isset($_GET[</highlight><highlight class="stringliteral">&apos;code&apos;</highlight><highlight class="normal">]))<sp/>{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//If<sp/>we<sp/>don&apos;t<sp/>have<sp/>an<sp/>authorization<sp/>code<sp/>then<sp/>get<sp/>one</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>$authUrl<sp/>=<sp/>$provider-&gt;getAuthorizationUrl($options);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;oauth2state&apos;</highlight><highlight class="normal">]<sp/>=<sp/>$provider-&gt;getState();</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>header(</highlight><highlight class="stringliteral">&apos;Location:<sp/>&apos;</highlight><highlight class="normal"><sp/>.<sp/>$authUrl);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Check<sp/>given<sp/>state<sp/>against<sp/>previously<sp/>stored<sp/>one<sp/>to<sp/>mitigate<sp/>CSRF<sp/>attack</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal">}<sp/>elseif<sp/>(empty($_GET[</highlight><highlight class="stringliteral">&apos;state&apos;</highlight><highlight class="normal">])<sp/>||<sp/>($_GET[</highlight><highlight class="stringliteral">&apos;state&apos;</highlight><highlight class="normal">]<sp/>!==<sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;oauth2state&apos;</highlight><highlight class="normal">]))<sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="perfil__cliente_8php_1a339ba3314beaf7f2fd098c5fd9d97b6d" kindref="member">unset</ref>($_SESSION[</highlight><highlight class="stringliteral">&apos;oauth2state&apos;</highlight><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="perfil__cliente_8php_1a339ba3314beaf7f2fd098c5fd9d97b6d" kindref="member">unset</ref>($_SESSION[</highlight><highlight class="stringliteral">&apos;provider&apos;</highlight><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>(</highlight><highlight class="stringliteral">&apos;Invalid<sp/>state&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="perfil__cliente_8php_1a339ba3314beaf7f2fd098c5fd9d97b6d" kindref="member">unset</ref>($_SESSION[</highlight><highlight class="stringliteral">&apos;provider&apos;</highlight><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Try<sp/>to<sp/>get<sp/>an<sp/>access<sp/>token<sp/>(using<sp/>the<sp/>authorization<sp/>code<sp/>grant)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>$token<sp/>=<sp/>$provider-&gt;getAccessToken(</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;authorization_code&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;code&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$_GET[</highlight><highlight class="stringliteral">&apos;code&apos;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>]</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Use<sp/>this<sp/>to<sp/>interact<sp/>with<sp/>an<sp/>API<sp/>on<sp/>the<sp/>users<sp/>behalf</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Use<sp/>this<sp/>to<sp/>get<sp/>a<sp/>new<sp/>access<sp/>token<sp/>if<sp/>the<sp/>old<sp/>one<sp/>expires</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&apos;Refresh<sp/>Token:<sp/>&apos;</highlight><highlight class="normal">,<sp/>htmlspecialchars($token-&gt;getRefreshToken());</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/get_oauth_token.php"/>
+  </compounddef>
+</doxygen>

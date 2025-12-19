@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_editar_perfil_activity" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::activitysApp::EditarPerfilActivity</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AppCompatActivity</basecompoundref>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_editar_perfil_activity_1aa7a856f1c5d543b35d09302428b5651c" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.EditarPerfilActivity.onCreate</definition>
+        <argsstring>(Bundle savedInstanceState)</argsstring>
+        <name>onCreate</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.EditarPerfilActivity.onCreate</qualifiedname>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/EditarPerfilActivity.java" line="20" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/EditarPerfilActivity.java" bodystart="20" bodyend="52"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_editar_perfil_activity_1a083d288091aad8a4e6275cfa6ab83e53" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.EditarPerfilActivity.configurarToolbar</definition>
+        <argsstring>()</argsstring>
+        <name>configurarToolbar</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.EditarPerfilActivity.configurarToolbar</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/EditarPerfilActivity.java" line="54" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/EditarPerfilActivity.java" bodystart="54" bodyend="77"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>AppCompatActivity</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.EditarPerfilActivity</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_editar_perfil_activity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>AppCompatActivity</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.EditarPerfilActivity</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_editar_perfil_activity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/EditarPerfilActivity.java" line="17" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/EditarPerfilActivity.java" bodystart="17" bodyend="78"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_editar_perfil_activity_1a083d288091aad8a4e6275cfa6ab83e53" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::EditarPerfilActivity</scope><name>configurarToolbar</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_editar_perfil_activity_1aa7a856f1c5d543b35d09302428b5651c" prot="protected" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::EditarPerfilActivity</scope><name>onCreate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

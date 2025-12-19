@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>C:/xampp/htdocs/ProyectoBiometria_2/src</compoundname>
+    <innerdir refid="dir_e6a0c564333ae2aa489c52fa70c1e9c9">C:/xampp/htdocs/ProyectoBiometria_2/src/android</innerdir>
+    <innerdir refid="dir_da61e3e9a357748887e3ca8d7c5a0c16">C:/xampp/htdocs/ProyectoBiometria_2/src/api</innerdir>
+    <innerdir refid="dir_dbc64af3de50f21dd0d1af95d9f4e946">C:/xampp/htdocs/ProyectoBiometria_2/src/html</innerdir>
+    <innerdir refid="dir_87a455bccb09a92130c26a11a880c98a">C:/xampp/htdocs/ProyectoBiometria_2/src/libs</innerdir>
+    <innerdir refid="dir_85cc22d3a09b5748bc25e61ded676657">C:/xampp/htdocs/ProyectoBiometria_2/src/php</innerdir>
+    <innerdir refid="dir_d93a1d4020dea85bb71b237545b5e722">C:/xampp/htdocs/ProyectoBiometria_2/src/tests</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/"/>
+  </compounddef>
+</doxygen>

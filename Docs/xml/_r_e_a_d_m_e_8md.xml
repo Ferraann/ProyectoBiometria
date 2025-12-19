@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>🌬️<sp/>PROYECTO<sp/>AITHER</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**AITHER**<sp/>es<sp/>un<sp/>proyecto<sp/>de<sp/>innovación<sp/>ciudadana<sp/>que<sp/>busca<sp/>mejorar<sp/>la<sp/>**calidad<sp/>del<sp/>aire<sp/>urbano**<sp/>mediante<sp/>el<sp/>uso<sp/>de<sp/>**sensores<sp/>ambientales<sp/>conectados<sp/>por<sp/>Bluetooth<sp/>Low<sp/>Energy<sp/>(BLE)**,<sp/>una<sp/>**app<sp/>móvil**<sp/>y<sp/>una<sp/>**plataforma<sp/>web**.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">El<sp/>sistema<sp/>permite<sp/>recopilar<sp/>y<sp/>visualizar<sp/>datos<sp/>sobre<sp/>**gases<sp/>nocivos**,<sp/>como<sp/>el<sp/>ozono,<sp/>CO2,...<sp/>Promoviendo<sp/>la<sp/>concienciación<sp/>ambiental<sp/>y<sp/>la<sp/>participación<sp/>ciudadana.<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">Cada<sp/>ayuntamiento<sp/>gestiona<sp/>los<sp/>sensores<sp/>de<sp/>su<sp/>zona<sp/>y<sp/>los<sp/>datos<sp/>locales,<sp/>garantizando<sp/>la<sp/>**privacidad**<sp/>y<sp/>el<sp/>**uso<sp/>responsable<sp/>de<sp/>la<sp/>información**.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&gt;<sp/>*“AITHER:<sp/>Haz<sp/>visible<sp/>lo<sp/>invisible,<sp/>el<sp/>aire<sp/>que<sp/>compartimos.”*</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>🔗<sp/>Enlaces</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>🎨<sp/>**Diseño<sp/>en<sp/>Figma:**<sp/>[AITHER<sp/>UI/UX](https://www.figma.com/design/KpfFKl7ect6Y3GxxlvYcKh/AITHER?node-id=5-253&amp;t=XlFJfDxGVBi3DCMN-1)<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">-<sp/>🌐<sp/>**Web<sp/>del<sp/>proyecto:**<sp/>Proximamente.<sp/></highlight></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>💡<sp/>Desarrollado<sp/>por</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Equipo<sp/>5<sp/>del<sp/>**Grado<sp/>en<sp/>Tecnologías<sp/>Interactivas<sp/>(UPV)**<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">Proyecto<sp/>académico<sp/>de<sp/>innovación,<sp/>sostenibilidad<sp/>y<sp/>participación<sp/>ciudadana.<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">2025<sp/>©<sp/>AITHER</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/README.md"/>
+  </compounddef>
+</doxygen>

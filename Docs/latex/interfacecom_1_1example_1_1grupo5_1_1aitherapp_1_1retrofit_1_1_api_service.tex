@@ -1,38 +1,102 @@
-\doxysection{Api\+Service Interface Reference}
-\hypertarget{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service}{}\label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service}\index{ApiService@{ApiService}}
+\doxysection{com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Api\+Service Interface Reference}
+\label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service}\index{com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_ae9cd33d66fb8d8356fd8cff24f34199b}\label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_ae9cd33d66fb8d8356fd8cff24f34199b} 
-Call$<$ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor}{Pojo\+Respuesta\+Servidor}} $>$ {\bfseries datos\+Registro} ( @Body \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario}{Pojo\+Usuario}} usuario)
+Call$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$ \textbf{ datos\+Registro} ( @Body \textbf{ Pojo\+Usuario} usuario)
 \item 
-\Hypertarget{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_a1e2d402f0d7c4666e095a121dd3b7ecf}\label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_a1e2d402f0d7c4666e095a121dd3b7ecf} 
-Call$<$ Void $>$ {\bfseries enviar\+Datos} ( @Field("{}CO2"{}) float co2, @Field("{}Temperatura"{}) float temperatura)
+Call$<$ Void $>$ \textbf{ enviar\+Datos} ( @Field("{}CO2"{}) float co2, @Field("{}Temperatura"{}) float temperatura)
 \item 
-\Hypertarget{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_a952f33551b0089654b95562a22702141}\label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_a952f33551b0089654b95562a22702141} 
-Call$<$ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor}{Pojo\+Respuesta\+Servidor}} $>$ {\bfseries login\+Usuario} (@Body \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario}{Pojo\+Usuario}} usuario)
+Call$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$ \textbf{ login\+Usuario} (@Body \textbf{ Pojo\+Usuario} usuario)
 \item 
-\Hypertarget{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_a565f716023e4200468151ddb749cf23b}\label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_a565f716023e4200468151ddb749cf23b} 
-Call$<$ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor}{Pojo\+Respuesta\+Servidor}} $>$ {\bfseries modificar\+Datos} (@Body \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario}{Pojo\+Usuario}} usuario)
+Call$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$ \textbf{ modificar\+Datos} (@Body \textbf{ Pojo\+Usuario} usuario)
 \item 
-\Hypertarget{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_afa3e8b376f10bc6fc775fed0c2c966dc}\label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_afa3e8b376f10bc6fc775fed0c2c966dc} 
-Call$<$ \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor}{Pojo\+Respuesta\+Servidor}} $>$ {\bfseries vincular\+Sensor} (@Body \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor}{Pojo\+Sensor}} sensor)
+Call$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$ \textbf{ vincular\+Sensor} (@Body \textbf{ Pojo\+Sensor} sensor)
 \item 
-\Hypertarget{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_a899d760361cb43142ca0957c866be694}\label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_a899d760361cb43142ca0957c866be694} 
-Call$<$ Json\+Object $>$ {\bfseries crear\+Sensor\+YRelacion} ( @Query("{}accion"{}) String accion, @Body Json\+Object body)
+Call$<$ Json\+Object $>$ \textbf{ crear\+Sensor\+YRelacion} ( @Query("{}accion"{}) String accion, @Body Json\+Object body)
 \item 
-\Hypertarget{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_a9a1b14e88ee5fdaff1c01ecf4fca1825}\label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_a9a1b14e88ee5fdaff1c01ecf4fca1825} 
-Call$<$ Json\+Object $>$ {\bfseries obtener\+Sensores\+Usuario} (@Body Json\+Object body)
+Call$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$ \textbf{ historial\+Distancias} (@Body \textbf{ Pojo\+Usuario} usuario)
+\item 
+Call$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$ \textbf{ distancia\+Fecha} (@Body \textbf{ Pojo\+Usuario} usuario)
+\item 
+Call$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$ \textbf{ guardar\+Distancia} (@Body \textbf{ Pojo\+Usuario} usuario)
+\item 
+Call$<$ Json\+Object $>$ \textbf{ obtener\+Sensores\+Usuario} (@Body Json\+Object body)
+\item 
+Call$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$ \textbf{ obtener\+Sensores\+Usuario} ( @Query("{}accion"{}) String accion, @Query("{}usuario\+\_\+id"{}) String id\+Usuario)
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\label{doc-func-members}
+\doxysubsection{Member Function Documentation}
+\index{com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}!crearSensorYRelacion@{crearSensorYRelacion}}
+\index{crearSensorYRelacion@{crearSensorYRelacion}!com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}}
+\doxysubsubsection{crearSensorYRelacion()}
+{\footnotesize\ttfamily \label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_a0573ab7e447d4fabd7394c2817c2e7b7} 
+Call$<$ Json\+Object $>$ com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Api\+Service.\+crear\+Sensor\+YRelacion (\begin{DoxyParamCaption}\item[{@Query("{}accion"{}) String}]{accion}{, }\item[{@Body Json\+Object}]{body}{}\end{DoxyParamCaption})}
 
+\index{com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}!datosRegistro@{datosRegistro}}
+\index{datosRegistro@{datosRegistro}!com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}}
+\doxysubsubsection{datosRegistro()}
+{\footnotesize\ttfamily \label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_a818e9d57c7b3f12eacda6d5fcf760ead} 
+Call$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$ com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Api\+Service.\+datos\+Registro (\begin{DoxyParamCaption}\item[{@Body \textbf{ Pojo\+Usuario}}]{usuario}{}\end{DoxyParamCaption})}
 
-Definition at line \mbox{\hyperlink{_api_service_8java_source_l00025}{25}} of file \mbox{\hyperlink{_api_service_8java_source}{Api\+Service.\+java}}.
+\index{com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}!distanciaFecha@{distanciaFecha}}
+\index{distanciaFecha@{distanciaFecha}!com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}}
+\doxysubsubsection{distanciaFecha()}
+{\footnotesize\ttfamily \label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_a3998326e460028470352128e8a89e6bb} 
+Call$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$ com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Api\+Service.\+distancia\+Fecha (\begin{DoxyParamCaption}\item[{@Body \textbf{ Pojo\+Usuario}}]{usuario}{}\end{DoxyParamCaption})}
+
+\index{com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}!enviarDatos@{enviarDatos}}
+\index{enviarDatos@{enviarDatos}!com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}}
+\doxysubsubsection{enviarDatos()}
+{\footnotesize\ttfamily \label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_a6db8019c344eff0d07a4d653dea0fb9b} 
+Call$<$ Void $>$ com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Api\+Service.\+enviar\+Datos (\begin{DoxyParamCaption}\item[{@Field("{}CO2"{}) float}]{co2}{, }\item[{@Field("{}Temperatura"{}) float}]{temperatura}{}\end{DoxyParamCaption})}
+
+\index{com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}!guardarDistancia@{guardarDistancia}}
+\index{guardarDistancia@{guardarDistancia}!com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}}
+\doxysubsubsection{guardarDistancia()}
+{\footnotesize\ttfamily \label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_a14e90c182836777e1e7fe1d11ffc0d6c} 
+Call$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$ com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Api\+Service.\+guardar\+Distancia (\begin{DoxyParamCaption}\item[{@Body \textbf{ Pojo\+Usuario}}]{usuario}{}\end{DoxyParamCaption})}
+
+\index{com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}!historialDistancias@{historialDistancias}}
+\index{historialDistancias@{historialDistancias}!com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}}
+\doxysubsubsection{historialDistancias()}
+{\footnotesize\ttfamily \label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_ab7438a0546c4934fcf9c3655fb562049} 
+Call$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$ com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Api\+Service.\+historial\+Distancias (\begin{DoxyParamCaption}\item[{@Body \textbf{ Pojo\+Usuario}}]{usuario}{}\end{DoxyParamCaption})}
+
+\index{com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}!loginUsuario@{loginUsuario}}
+\index{loginUsuario@{loginUsuario}!com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}}
+\doxysubsubsection{loginUsuario()}
+{\footnotesize\ttfamily \label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_af9dadd420853953102515ccd5881abe1} 
+Call$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$ com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Api\+Service.\+login\+Usuario (\begin{DoxyParamCaption}\item[{@Body \textbf{ Pojo\+Usuario}}]{usuario}{}\end{DoxyParamCaption})}
+
+\index{com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}!modificarDatos@{modificarDatos}}
+\index{modificarDatos@{modificarDatos}!com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}}
+\doxysubsubsection{modificarDatos()}
+{\footnotesize\ttfamily \label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_a28be13e92c5c9126549c6d611446f882} 
+Call$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$ com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Api\+Service.\+modificar\+Datos (\begin{DoxyParamCaption}\item[{@Body \textbf{ Pojo\+Usuario}}]{usuario}{}\end{DoxyParamCaption})}
+
+\index{com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}!obtenerSensoresUsuario@{obtenerSensoresUsuario}}
+\index{obtenerSensoresUsuario@{obtenerSensoresUsuario}!com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}}
+\doxysubsubsection{obtenerSensoresUsuario()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_aa404b3ea508e7feee4344210dec4ddba} 
+Call$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$ com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Api\+Service.\+obtener\+Sensores\+Usuario (\begin{DoxyParamCaption}\item[{@Query("{}accion"{}) String}]{accion}{, }\item[{@Query("{}usuario\+\_\+id"{}) String}]{id\+Usuario}{}\end{DoxyParamCaption})}
+
+\index{com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}!obtenerSensoresUsuario@{obtenerSensoresUsuario}}
+\index{obtenerSensoresUsuario@{obtenerSensoresUsuario}!com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}}
+\doxysubsubsection{obtenerSensoresUsuario()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_a341026bd11eb52a4cd24913522ac8d0b} 
+Call$<$ Json\+Object $>$ com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Api\+Service.\+obtener\+Sensores\+Usuario (\begin{DoxyParamCaption}\item[{@Body Json\+Object}]{body}{}\end{DoxyParamCaption})}
+
+\index{com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}!vincularSensor@{vincularSensor}}
+\index{vincularSensor@{vincularSensor}!com.example.grupo5.aitherapp.retrofit.ApiService@{com.example.grupo5.aitherapp.retrofit.ApiService}}
+\doxysubsubsection{vincularSensor()}
+{\footnotesize\ttfamily \label{interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_aec7ff4f6c6bdfbc13d93b7b81e5b465e} 
+Call$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$ com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Api\+Service.\+vincular\+Sensor (\begin{DoxyParamCaption}\item[{@Body \textbf{ Pojo\+Sensor}}]{sensor}{}\end{DoxyParamCaption})}
 
 
 
 The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/Api\+Service.\+java\end{DoxyCompactItemize}
+C\+:/xampp/htdocs/\+Proyecto\+Biometria\+\_\+2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/\textbf{ Api\+Service.\+java}\end{DoxyCompactItemize}

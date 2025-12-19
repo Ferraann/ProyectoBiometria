@@ -1,0 +1,304 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="phpmailer_8lang-it_8php" kind="file" language="PHP">
+    <compoundname>phpmailer.lang-it.php</compoundname>
+    <innernamespace refid="namespace_p_h_p_mailer">PHPMailer</innernamespace>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1a9941c17a5eabafa36ac3b0859476a4fb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;authenticate&apos;]</definition>
+        <argsstring>[&apos;authenticate&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP Error: Impossibile autenticarsi.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="10" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1a440a455b3b54a1c64c347ebe77cfad69" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;connect_host&apos;]</definition>
+        <argsstring>[&apos;connect_host&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP Error: Impossibile connettersi all\&apos;host SMTP.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="11" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1afe3883d1634dca642e14d301ffaaa952" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;data_not_accepted&apos;]</definition>
+        <argsstring>[&apos;data_not_accepted&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP Error: Dati non accettati dal server.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="12" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1a4438aaac30813894b1b04e75a2e0de98" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;empty_message&apos;]</definition>
+        <argsstring>[&apos;empty_message&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Il corpo del messaggio è vuoto&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="13" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1a8b9939d40805387acf622ec4f543af50" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;encoding&apos;]</definition>
+        <argsstring>[&apos;encoding&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Codifica dei caratteri sconosciuta: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="14" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1a4ce303a3e848c4e95a193d1db9719998" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;execute&apos;]</definition>
+        <argsstring>[&apos;execute&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Impossibile eseguire l\&apos;operazione: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="15" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1a9f10ce2f2b3bbd0e80d9a56ce05f72ba" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;file_access&apos;]</definition>
+        <argsstring>[&apos;file_access&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Impossibile accedere al file: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="16" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1ae7db8a216f9a035e2f331350bc7ee105" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;file_open&apos;]</definition>
+        <argsstring>[&apos;file_open&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;File Error: Impossibile aprire il file: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="17" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1aabfcfe6a66dc36821d7014bdc5a3b6f9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;from_failed&apos;]</definition>
+        <argsstring>[&apos;from_failed&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;I seguenti indirizzi mittenti hanno generato errore: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="18" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1a3a317f3e32c3246ff68ed968ddcf4774" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;instantiate&apos;]</definition>
+        <argsstring>[&apos;instantiate&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Impossibile istanziare la funzione mail&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="19" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1a5139862f86824b503222c7066bf5a4e6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;invalid_address&apos;]</definition>
+        <argsstring>[&apos;invalid_address&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Impossibile inviare, l\&apos;indirizzo email non è valido: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="20" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1a957c4c5cc80342ca5a19ba145f85daa9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;provide_address&apos;]</definition>
+        <argsstring>[&apos;provide_address&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Deve essere fornito almeno un indirizzo ricevente&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="21" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1a53b73fedc58a3e9084bd6de0f3f1e4e1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;mailer_not_supported&apos;]</definition>
+        <argsstring>[&apos;mailer_not_supported&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Mailer non supportato&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="22" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1ae9940d910460e388276ce1a4c02081f7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;recipients_failed&apos;]</definition>
+        <argsstring>[&apos;recipients_failed&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP Error: I seguenti indirizzi destinatari hanno generato un errore: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="23" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1a59c4260e366f69d573d10355e2e2d820" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;signing&apos;]</definition>
+        <argsstring>[&apos;signing&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Errore nella firma: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="24" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1a83c3b0c6679b3878c71606ed753c5f2d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;smtp_connect_failed&apos;]</definition>
+        <argsstring>[&apos;smtp_connect_failed&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP Connect() fallita.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="25" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1a9f53f2e12f4f1445bccf30b1e6a76538" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;smtp_error&apos;]</definition>
+        <argsstring>[&apos;smtp_error&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Errore del server SMTP: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="26" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1a941459734cab977ccbc502e2cfad2b5f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;variable_set&apos;]</definition>
+        <argsstring>[&apos;variable_set&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Impossibile impostare o resettare la variabile: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="27" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-it_8php_1a74fde728a807ad6886041cb2be6dadc5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;extension_missing&apos;]</definition>
+        <argsstring>[&apos;extension_missing&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;Estensione mancante: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" line="28" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php" bodystart="28" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;authenticate&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>Error:<sp/>Impossibile<sp/>autenticarsi.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;connect_host&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>Error:<sp/>Impossibile<sp/>connettersi<sp/>all\&apos;host<sp/>SMTP.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;data_not_accepted&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>Error:<sp/>Dati<sp/>non<sp/>accettati<sp/>dal<sp/>server.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;empty_message&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Il<sp/>corpo<sp/>del<sp/>messaggio<sp/>è<sp/>vuoto&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;encoding&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Codifica<sp/>dei<sp/>caratteri<sp/>sconosciuta:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;execute&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Impossibile<sp/>eseguire<sp/>l\&apos;operazione:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;file_access&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Impossibile<sp/>accedere<sp/>al<sp/>file:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;file_open&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;File<sp/>Error:<sp/>Impossibile<sp/>aprire<sp/>il<sp/>file:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;from_failed&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;I<sp/>seguenti<sp/>indirizzi<sp/>mittenti<sp/>hanno<sp/>generato<sp/>errore:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;instantiate&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Impossibile<sp/>istanziare<sp/>la<sp/>funzione<sp/>mail&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;invalid_address&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Impossibile<sp/>inviare,<sp/>l\&apos;indirizzo<sp/>email<sp/>non<sp/>è<sp/>valido:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;provide_address&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Deve<sp/>essere<sp/>fornito<sp/>almeno<sp/>un<sp/>indirizzo<sp/>ricevente&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;mailer_not_supported&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Mailer<sp/>non<sp/>supportato&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;recipients_failed&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>Error:<sp/>I<sp/>seguenti<sp/>indirizzi<sp/>destinatari<sp/>hanno<sp/>generato<sp/>un<sp/>errore:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;signing&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Errore<sp/>nella<sp/>firma:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;smtp_connect_failed&apos;</highlight><highlight class="normal">]<sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>Connect()<sp/>fallita.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;smtp_error&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Errore<sp/>del<sp/>server<sp/>SMTP:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;variable_set&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Impossibile<sp/>impostare<sp/>o<sp/>resettare<sp/>la<sp/>variabile:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;extension_missing&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Estensione<sp/>mancante:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-it.php"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="lognegtest_8php" kind="file" language="PHP">
+    <compoundname>lognegtest.php</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="lognegtest_8php_1aabc116f78d1636863e2f402f84d2c37a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$BASE_URL</definition>
+        <argsstring></argsstring>
+        <name>$BASE_URL</name>
+        <initializer>= &quot;https://fsanpra.upv.edu.es/src/php/index.php&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/lognegtest.php" line="11" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/lognegtest.php" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$res</definition>
+        <argsstring></argsstring>
+        <name>$res</name>
+        <initializer>= <ref refid="lognegtest_8php_1a77562c30cee72829da35082ba5ce19ec" kindref="member">post</ref>(&quot;registrarUsuario&quot;, [
+    &quot;nombre&quot; =&gt; &quot;Test&quot;,
+    &quot;apellidos&quot; =&gt; &quot;Usuario&quot;,
+    &quot;gmail&quot; =&gt; &quot;test&quot; . rand(1000,9999) . &quot;@gmail.com&quot;,
+    &quot;password&quot; =&gt; &quot;123456&quot;
+])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/lognegtest.php" line="50" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/lognegtest.php" bodystart="50" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="lognegtest_8php_1a77562c30cee72829da35082ba5ce19ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>post</definition>
+        <argsstring>($accion, $data=[])</argsstring>
+        <name>post</name>
+        <param>
+          <declname>$accion</declname>
+        </param>
+        <param>
+          <declname>$data</declname>
+          <defval>[]</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/lognegtest.php" line="17" column="10" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/lognegtest.php" bodystart="17" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="lognegtest_8php_1a8afebe7d437c40080a31baf547b2e113" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>get</definition>
+        <argsstring>($params=[])</argsstring>
+        <name>get</name>
+        <param>
+          <declname>$params</declname>
+          <defval>[]</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/lognegtest.php" line="35" column="10" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/lognegtest.php" bodystart="35" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="lognegtest_8php_1a9dd4747f759832a5d2b2e7529ed9320d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>titulo</definition>
+        <argsstring>($txt)</argsstring>
+        <name>titulo</name>
+        <param>
+          <declname>$txt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/lognegtest.php" line="41" column="10" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/lognegtest.php" bodystart="41" bodyend="43"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Fichero:<sp/>lognegtest.php</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Autor:<sp/>Manuel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Fecha:<sp/>15/12/2025</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Descripción:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>Script<sp/>para<sp/>testear<sp/>las<sp/>funciones<sp/>de<sp/>Lógica<sp/>de<sp/>Negocio<sp/>de<sp/>la<sp/>API<sp/>REST.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>Realiza<sp/>llamadas<sp/>a<sp/>varias<sp/>funciones<sp/>y<sp/>muestra<sp/>los<sp/>resultados.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><ref refid="lognegtest_8php_1aabc116f78d1636863e2f402f84d2c37a" kindref="member">$BASE_URL</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;https://fsanpra.upv.edu.es/src/php/index.php&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>==============================</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/>FUNCIONES<sp/>AUXILIARES</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">==============================<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="lognegtest_8php_1a77562c30cee72829da35082ba5ce19ec" kindref="member">post</ref>($accion,<sp/><ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref><sp/>=<sp/>[])<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>global<sp/><ref refid="lognegtest_8php_1aabc116f78d1636863e2f402f84d2c37a" kindref="member">$BASE_URL</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>$payload<sp/>=<sp/>array_merge([</highlight><highlight class="stringliteral">&quot;accion&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$accion],<sp/><ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>$ch<sp/>=<sp/>curl_init(<ref refid="lognegtest_8php_1aabc116f78d1636863e2f402f84d2c37a" kindref="member">$BASE_URL</ref>);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>curl_setopt_array($ch,<sp/>[</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CURLOPT_RETURNTRANSFER<sp/>=&gt;<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CURLOPT_POST<sp/>=&gt;<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CURLOPT_HTTPHEADER<sp/>=&gt;<sp/>[</highlight><highlight class="stringliteral">&apos;Content-Type:<sp/>application/json&apos;</highlight><highlight class="normal">],</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CURLOPT_POSTFIELDS<sp/>=&gt;<sp/>json_encode($payload)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>]);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>$response<sp/>=<sp/>curl_exec($ch);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>curl_close($ch);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>json_decode($response,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">($params<sp/>=<sp/>[])<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>global<sp/><ref refid="lognegtest_8php_1aabc116f78d1636863e2f402f84d2c37a" kindref="member">$BASE_URL</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>$url<sp/>=<sp/><ref refid="lognegtest_8php_1aabc116f78d1636863e2f402f84d2c37a" kindref="member">$BASE_URL</ref><sp/>.<sp/></highlight><highlight class="stringliteral">&quot;?&quot;</highlight><highlight class="normal"><sp/>.<sp/>http_build_query($params);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>json_decode(file_get_contents($url),<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="lognegtest_8php_1a9dd4747f759832a5d2b2e7529ed9320d" kindref="member">titulo</ref>($txt)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;\n================<sp/>$txt<sp/>================\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>==============================</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/><sp/><sp/>TESTS</highlight></codeline>
+<codeline lineno="47"><highlight class="comment">==============================<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><ref refid="lognegtest_8php_1a9dd4747f759832a5d2b2e7529ed9320d" kindref="member">titulo</ref>(</highlight><highlight class="stringliteral">&quot;Registrar<sp/>usuario&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref><sp/>=<sp/><ref refid="lognegtest_8php_1a77562c30cee72829da35082ba5ce19ec" kindref="member">post</ref>(</highlight><highlight class="stringliteral">&quot;registrarUsuario&quot;</highlight><highlight class="normal">,<sp/>[</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;nombre&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Test&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;apellidos&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Usuario&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;gmail&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal"><sp/>.<sp/>rand(1000,9999)<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;@gmail.com&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;password&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;123456&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">print_r(<ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><ref refid="lognegtest_8php_1a9dd4747f759832a5d2b2e7529ed9320d" kindref="member">titulo</ref>(</highlight><highlight class="stringliteral">&quot;Login<sp/>usuario&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref><sp/>=<sp/><ref refid="lognegtest_8php_1a77562c30cee72829da35082ba5ce19ec" kindref="member">post</ref>(</highlight><highlight class="stringliteral">&quot;login&quot;</highlight><highlight class="normal">,<sp/>[</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;gmail&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;test@gmail.com&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;password&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;123456&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">print_r(<ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref>);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><ref refid="lognegtest_8php_1a9dd4747f759832a5d2b2e7529ed9320d" kindref="member">titulo</ref>(</highlight><highlight class="stringliteral">&quot;Crear<sp/>tipo<sp/>medición&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref><sp/>=<sp/><ref refid="lognegtest_8php_1a77562c30cee72829da35082ba5ce19ec" kindref="member">post</ref>(</highlight><highlight class="stringliteral">&quot;crearTipoMedicion&quot;</highlight><highlight class="normal">,<sp/>[</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;medida&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Temperatura&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;unidad&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;ºC&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;txt&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Sensor<sp/>térmico&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">print_r(<ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref>);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><ref refid="lognegtest_8php_1a9dd4747f759832a5d2b2e7529ed9320d" kindref="member">titulo</ref>(</highlight><highlight class="stringliteral">&quot;Crear<sp/>sensor<sp/>y<sp/>relacion&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref><sp/>=<sp/><ref refid="lognegtest_8php_1a77562c30cee72829da35082ba5ce19ec" kindref="member">post</ref>(</highlight><highlight class="stringliteral">&quot;crearSensorYRelacion&quot;</highlight><highlight class="normal">,<sp/>[</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;mac&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;AA:BB:CC:&quot;</highlight><highlight class="normal"><sp/>.<sp/>rand(10,99),</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;usuario_id&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>1</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">print_r(<ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><ref refid="lognegtest_8php_1a9dd4747f759832a5d2b2e7529ed9320d" kindref="member">titulo</ref>(</highlight><highlight class="stringliteral">&quot;Guardar<sp/>medición&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref><sp/>=<sp/><ref refid="lognegtest_8php_1a77562c30cee72829da35082ba5ce19ec" kindref="member">post</ref>(</highlight><highlight class="stringliteral">&quot;guardarMedicion&quot;</highlight><highlight class="normal">,<sp/>[</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;tipo_medicion_id&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>1,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;valor&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>23.5,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;sensor_id&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>1,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;localizacion&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Valencia&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">print_r(<ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref>);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><ref refid="lognegtest_8php_1a9dd4747f759832a5d2b2e7529ed9320d" kindref="member">titulo</ref>(</highlight><highlight class="stringliteral">&quot;Crear<sp/>incidencia&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref><sp/>=<sp/><ref refid="lognegtest_8php_1a77562c30cee72829da35082ba5ce19ec" kindref="member">post</ref>(</highlight><highlight class="stringliteral">&quot;crearIncidencia&quot;</highlight><highlight class="normal">,<sp/>[</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;id_user&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>1,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;titulo&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Sensor<sp/>roto&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;descripcion&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>envía<sp/>datos&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;sensor_id&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>1</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">print_r(<ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><ref refid="lognegtest_8php_1a9dd4747f759832a5d2b2e7529ed9320d" kindref="member">titulo</ref>(</highlight><highlight class="stringliteral">&quot;Cerrar<sp/>incidencia&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref><sp/>=<sp/><ref refid="lognegtest_8php_1a77562c30cee72829da35082ba5ce19ec" kindref="member">post</ref>(</highlight><highlight class="stringliteral">&quot;cerrarIncidencia&quot;</highlight><highlight class="normal">,<sp/>[</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;incidencia_id&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>1</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">print_r(<ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref>);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><ref refid="lognegtest_8php_1a9dd4747f759832a5d2b2e7529ed9320d" kindref="member">titulo</ref>(</highlight><highlight class="stringliteral">&quot;Sumar<sp/>puntos&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref><sp/>=<sp/><ref refid="lognegtest_8php_1a77562c30cee72829da35082ba5ce19ec" kindref="member">post</ref>(</highlight><highlight class="stringliteral">&quot;sumarPuntos&quot;</highlight><highlight class="normal">,<sp/>[</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;id_usuario&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>1,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;puntos_a_sumar&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>50</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">print_r(<ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref>);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><ref refid="lognegtest_8php_1a9dd4747f759832a5d2b2e7529ed9320d" kindref="member">titulo</ref>(</highlight><highlight class="stringliteral">&quot;Canjear<sp/>recompensa&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref><sp/>=<sp/><ref refid="lognegtest_8php_1a77562c30cee72829da35082ba5ce19ec" kindref="member">post</ref>(</highlight><highlight class="stringliteral">&quot;canjearRecompensa&quot;</highlight><highlight class="normal">,<sp/>[</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;id_usuario&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>1,</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;costo_puntos&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>10,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;nombre_recompensa&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Descuento<sp/>10%&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">print_r(<ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref>);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>==============================</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/><sp/><sp/>GETs</highlight></codeline>
+<codeline lineno="121"><highlight class="comment">==============================<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><ref refid="lognegtest_8php_1a9dd4747f759832a5d2b2e7529ed9320d" kindref="member">titulo</ref>(</highlight><highlight class="stringliteral">&quot;Get<sp/>mediciones&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">print_r(</highlight><highlight class="keyword">get</highlight><highlight class="normal">([</highlight><highlight class="stringliteral">&quot;accion&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;getMediciones&quot;</highlight><highlight class="normal">]));</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><ref refid="lognegtest_8php_1a9dd4747f759832a5d2b2e7529ed9320d" kindref="member">titulo</ref>(</highlight><highlight class="stringliteral">&quot;Get<sp/>incidencias<sp/>activas&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">print_r(</highlight><highlight class="keyword">get</highlight><highlight class="normal">([</highlight><highlight class="stringliteral">&quot;accion&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;getIncidenciasActivas&quot;</highlight><highlight class="normal">]));</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><ref refid="lognegtest_8php_1a9dd4747f759832a5d2b2e7529ed9320d" kindref="member">titulo</ref>(</highlight><highlight class="stringliteral">&quot;Get<sp/>usuario<sp/>por<sp/>ID&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">print_r(</highlight><highlight class="keyword">get</highlight><highlight class="normal">([</highlight><highlight class="stringliteral">&quot;accion&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;getUsuarioXId&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;id&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>1]));</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><ref refid="lognegtest_8php_1a9dd4747f759832a5d2b2e7529ed9320d" kindref="member">titulo</ref>(</highlight><highlight class="stringliteral">&quot;Es<sp/>técnico&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">print_r(</highlight><highlight class="keyword">get</highlight><highlight class="normal">([</highlight><highlight class="stringliteral">&quot;accion&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;esTecnico&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;id&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>1]));</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><ref refid="lognegtest_8php_1a9dd4747f759832a5d2b2e7529ed9320d" kindref="member">titulo</ref>(</highlight><highlight class="stringliteral">&quot;Es<sp/>administrador&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">print_r(</highlight><highlight class="keyword">get</highlight><highlight class="normal">([</highlight><highlight class="stringliteral">&quot;accion&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;esAdministrador&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;id&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>1]));</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><ref refid="lognegtest_8php_1a9dd4747f759832a5d2b2e7529ed9320d" kindref="member">titulo</ref>(</highlight><highlight class="stringliteral">&quot;Get<sp/>sensores<sp/>usuario&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">print_r(</highlight><highlight class="keyword">get</highlight><highlight class="normal">([</highlight><highlight class="stringliteral">&quot;accion&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;getSensoresDeUsuario&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;id&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>1]));</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;\n✅<sp/>TEST<sp/>FINALIZADO\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/lognegtest.php"/>
+  </compounddef>
+</doxygen>

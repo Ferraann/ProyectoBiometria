@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="namespacecom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app" kind="namespace" language="Java">
+    <compoundname>com::example::grupo5::aitherapp::activitysApp</compoundname>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_aith_wallet_activity" prot="public">com::example::grupo5::aitherapp::activitysApp::AithWalletActivity</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity" prot="public">com::example::grupo5::aitherapp::activitysApp::BTLEActivity</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_editar_perfil_activity" prot="public">com::example::grupo5::aitherapp::activitysApp::EditarPerfilActivity</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_formulario_fragment" prot="public">com::example::grupo5::aitherapp::activitysApp::FormularioFragment</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_guia_rapida_fragment" prot="public">com::example::grupo5::aitherapp::activitysApp::GuiaRapidaFragment</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity" prot="public">com::example::grupo5::aitherapp::activitysApp::HomeActivity</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_lista_premios_activity" prot="public">com::example::grupo5::aitherapp::activitysApp::ListaPremiosActivity</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_notificaciones_activity" prot="public">com::example::grupo5::aitherapp::activitysApp::NotificacionesActivity</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_perfil_fragment" prot="public">com::example::grupo5::aitherapp::activitysApp::PerfilFragment</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_registro_activity" prot="public">com::example::grupo5::aitherapp::activitysApp::RegistroActivity</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_activity" prot="public">com::example::grupo5::aitherapp::activitysApp::SensoresActivity</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment" prot="public">com::example::grupo5::aitherapp::activitysApp::SensoresFragment</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_soporte_activity" prot="public">com::example::grupo5::aitherapp::activitysApp::SoporteActivity</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity" prot="public">com::example::grupo5::aitherapp::activitysApp::VincularQRActivity</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_walk_activity" prot="public">com::example::grupo5::aitherapp::activitysApp::WalkActivity</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/AithWalletActivity.java" line="1" column="15"/>
+  </compounddef>
+</doxygen>

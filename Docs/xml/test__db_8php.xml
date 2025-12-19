@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="test__db_8php" kind="file" language="PHP">
+    <compoundname>test_db.php</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="test__db_8php_1ad79b54e31bd1050001133c4d70f850fe" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$servername</definition>
+        <argsstring></argsstring>
+        <name>$servername</name>
+        <initializer>= &quot;localhost&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php" line="2" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php" bodystart="2" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="test__db_8php_1a0eb82aa5f81cf845de4b36cd653c42cf" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$username</definition>
+        <argsstring></argsstring>
+        <name>$username</name>
+        <initializer>= &quot;aitherdb&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php" line="3" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="test__db_8php_1a607686ef9f99ea7c42f4f3dd3dbb2b0d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$password</definition>
+        <argsstring></argsstring>
+        <name>$password</name>
+        <initializer>= &quot;Sansaloni330.&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php" line="4" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="test__db_8php_1ac5111a571fffa2499732833bb7f0d8c1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$dbname</definition>
+        <argsstring></argsstring>
+        <name>$dbname</name>
+        <initializer>= &quot;aither&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php" line="5" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="test__db_8php_1aa0787efab4b22e8a212882f3409d4c77" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$port</definition>
+        <argsstring></argsstring>
+        <name>$port</name>
+        <initializer>= 3306</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php" line="6" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$conn</definition>
+        <argsstring></argsstring>
+        <name>$conn</name>
+        <initializer>= new mysqli($servername, $username, $password, $dbname, $port)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php" line="8" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="test__db_8php_1a2b15a06fce3b26e19d1653b8e2058fb5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>if</definition>
+        <argsstring>( $conn-&gt;connect_errno)</argsstring>
+        <name>if</name>
+        <initializer>{
+    echo &quot;No hay usuario para eliminar.\n&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php" line="10" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$result</definition>
+        <argsstring></argsstring>
+        <name>$result</name>
+        <initializer>= $conn-&gt;query(&quot;SHOW TABLES;&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php" line="19" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="test__db_8php_1a95321ad493869dffec303adcb3cdd9dd" prot="public" static="no" mutable="no">
+        <type><ref refid="test__db_8php_1a2b15a06fce3b26e19d1653b8e2058fb5" kindref="member">if</ref>($result)</type>
+        <definition>if ( $result) else</definition>
+        <argsstring></argsstring>
+        <name>else</name>
+        <initializer>{
+    echo &quot;⚠ Conectó, pero no pudo listar tablas: &quot; . $conn-&gt;error</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php" line="25" column="2" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php" bodystart="25" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"><ref refid="test__db_8php_1ad79b54e31bd1050001133c4d70f850fe" kindref="member">$servername</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;localhost&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><ref refid="test__db_8php_1a0eb82aa5f81cf845de4b36cd653c42cf" kindref="member">$username</ref><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;aitherdb&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><ref refid="test__db_8php_1a607686ef9f99ea7c42f4f3dd3dbb2b0d" kindref="member">$password</ref><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Sansaloni330.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><ref refid="test__db_8php_1ac5111a571fffa2499732833bb7f0d8c1" kindref="member">$dbname</ref><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;aither&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><ref refid="test__db_8php_1aa0787efab4b22e8a212882f3409d4c77" kindref="member">$port</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>3306;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>mysqli(<ref refid="test__db_8php_1ad79b54e31bd1050001133c4d70f850fe" kindref="member">$servername</ref>,<sp/><ref refid="test__db_8php_1a0eb82aa5f81cf845de4b36cd653c42cf" kindref="member">$username</ref>,<sp/><ref refid="test__db_8php_1a607686ef9f99ea7c42f4f3dd3dbb2b0d" kindref="member">$password</ref>,<sp/><ref refid="test__db_8php_1ac5111a571fffa2499732833bb7f0d8c1" kindref="member">$dbname</ref>,<sp/><ref refid="test__db_8php_1aa0787efab4b22e8a212882f3409d4c77" kindref="member">$port</ref>);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;connect_errno)<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;h3&gt;ERROR<sp/>de<sp/>conexión&lt;/h3&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;Código:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;connect_errno<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;&lt;br&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;Mensaje:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;connect_error<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;&lt;br&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>die();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;&lt;h3&gt;Conexión<sp/>exitosa&lt;/h3&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref><sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;query(</highlight><highlight class="stringliteral">&quot;SHOW<sp/>TABLES;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;Tablas<sp/>encontradas<sp/>en<sp/>&apos;$dbname&apos;:&lt;br&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>($row<sp/>=<sp/><ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref>-&gt;fetch_array())<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;-<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/>$row[0]<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;&lt;br&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;⚠<sp/>Conectó,<sp/>pero<sp/>no<sp/>pudo<sp/>listar<sp/>tablas:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;error;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/test_db.php"/>
+  </compounddef>
+</doxygen>

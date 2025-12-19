@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="dir_4858eed56690536f039a204bd16493ad" kind="dir">
+    <compoundname>C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp</compoundname>
+    <innerfile refid="_aith_wallet_activity_8java">AithWalletActivity.java</innerfile>
+    <innerfile refid="_b_t_l_e_activity_8java">BTLEActivity.java</innerfile>
+    <innerfile refid="_editar_perfil_activity_8java">EditarPerfilActivity.java</innerfile>
+    <innerfile refid="_formulario_fragment_8java">FormularioFragment.java</innerfile>
+    <innerfile refid="_guia_rapida_fragment_8java">GuiaRapidaFragment.java</innerfile>
+    <innerfile refid="_home_activity_8java">HomeActivity.java</innerfile>
+    <innerfile refid="_lista_premios_activity_8java">ListaPremiosActivity.java</innerfile>
+    <innerfile refid="_notificaciones_activity_8java">NotificacionesActivity.java</innerfile>
+    <innerfile refid="_perfil_fragment_8java">PerfilFragment.java</innerfile>
+    <innerfile refid="_registro_activity_8java">RegistroActivity.java</innerfile>
+    <innerfile refid="_sensores_activity_8java">SensoresActivity.java</innerfile>
+    <innerfile refid="_sensores_fragment_8java">SensoresFragment.java</innerfile>
+    <innerfile refid="_soporte_activity_8java">SoporteActivity.java</innerfile>
+    <innerfile refid="_vincular_q_r_activity_8java">VincularQRActivity.java</innerfile>
+    <innerfile refid="_walk_activity_8java">WalkActivity.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/"/>
+  </compounddef>
+</doxygen>

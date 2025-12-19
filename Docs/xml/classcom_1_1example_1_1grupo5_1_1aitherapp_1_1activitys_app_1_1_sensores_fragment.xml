@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::activitysApp::SensoresFragment</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Fragment</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1a1f18c59e727bbfb395b65644f32b6072" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor" kindref="compound">PojoSensor</ref> &gt;</type>
+        <definition>List&lt;PojoSensor&gt; com.example.grupo5.aitherapp.activitysApp.SensoresFragment.listaSensores</definition>
+        <argsstring></argsstring>
+        <name>listaSensores</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.SensoresFragment.listaSensores</qualifiedname>
+        <initializer>= new ArrayList&lt;&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" line="34" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1a385a05e8389ac91a9b302c4593e4ded1" prot="private" static="no" mutable="no">
+        <type>final List&lt; String &gt;</type>
+        <definition>final List&lt;String&gt; com.example.grupo5.aitherapp.activitysApp.SensoresFragment.nombresSpinner</definition>
+        <argsstring></argsstring>
+        <name>nombresSpinner</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.SensoresFragment.nombresSpinner</qualifiedname>
+        <initializer>= new ArrayList&lt;&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" line="35" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1a99e841f279aa3681c0a17cec35e205e1" prot="private" static="no" mutable="no">
+        <type>Spinner</type>
+        <definition>Spinner com.example.grupo5.aitherapp.activitysApp.SensoresFragment.spinnerSensores</definition>
+        <argsstring></argsstring>
+        <name>spinnerSensores</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.SensoresFragment.spinnerSensores</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" line="37" column="21" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1a473ad102701269de3472635da4b11871" prot="private" static="no" mutable="no">
+        <type>TextView</type>
+        <definition>TextView com.example.grupo5.aitherapp.activitysApp.SensoresFragment.tvDistanciaNodo</definition>
+        <argsstring></argsstring>
+        <name>tvDistanciaNodo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.SensoresFragment.tvDistanciaNodo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" line="38" column="22" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1afce133ceda9791a27c4bfa9afdf6e910" prot="private" static="no" mutable="no">
+        <type>TextView</type>
+        <definition>TextView com.example.grupo5.aitherapp.activitysApp.SensoresFragment.tvEstadoNodo</definition>
+        <argsstring></argsstring>
+        <name>tvEstadoNodo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.SensoresFragment.tvEstadoNodo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" line="39" column="22" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1ace2524681717e7083dc802a03b9fad18" prot="private" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button com.example.grupo5.aitherapp.activitysApp.SensoresFragment.btnActualizarDistancia</definition>
+        <argsstring></argsstring>
+        <name>btnActualizarDistancia</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.SensoresFragment.btnActualizarDistancia</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" line="40" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1af9c837b9e3adddeded5af63ac3196021" prot="private" static="no" mutable="no">
+        <type><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor" kindref="compound">PojoSensor</ref></type>
+        <definition>PojoSensor com.example.grupo5.aitherapp.activitysApp.SensoresFragment.sensorSeleccionado</definition>
+        <argsstring></argsstring>
+        <name>sensorSeleccionado</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.SensoresFragment.sensorSeleccionado</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" line="42" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1a9eb7dad48852ab7706d451309ab584c8" prot="private" static="no" mutable="no">
+        <type><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple" kindref="compound">BtleScannerMultiple</ref></type>
+        <definition>BtleScannerMultiple com.example.grupo5.aitherapp.activitysApp.SensoresFragment.bleScanner</definition>
+        <argsstring></argsstring>
+        <name>bleScanner</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.SensoresFragment.bleScanner</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" line="43" column="33" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" bodystart="43" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1ae80bd646915b2c9aa8f0cc5b391991ca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>View</type>
+        <definition>View com.example.grupo5.aitherapp.activitysApp.SensoresFragment.onCreateView</definition>
+        <argsstring>(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)</argsstring>
+        <name>onCreateView</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.SensoresFragment.onCreateView</qualifiedname>
+        <param>
+          <type>@NonNull LayoutInflater</type>
+          <declname>inflater</declname>
+        </param>
+        <param>
+          <type>@Nullable ViewGroup</type>
+          <declname>container</declname>
+        </param>
+        <param>
+          <type>@Nullable Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" line="47" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" bodystart="47" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1a7357b5dc296ed7980e9c7ce61234e636" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.SensoresFragment.onViewCreated</definition>
+        <argsstring>(@NonNull View view, @Nullable Bundle savedInstanceState)</argsstring>
+        <name>onViewCreated</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.SensoresFragment.onViewCreated</qualifiedname>
+        <param>
+          <type>@NonNull View</type>
+          <declname>view</declname>
+        </param>
+        <param>
+          <type>@Nullable Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" line="55" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" bodystart="55" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1a766e7ab72f2ba90988048ff5aea83aa9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.SensoresFragment.onPause</definition>
+        <argsstring>()</argsstring>
+        <name>onPause</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.SensoresFragment.onPause</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" line="194" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" bodystart="194" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1a55278fe32c1c46e96b26bf354976f28e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.SensoresFragment.onDestroyView</definition>
+        <argsstring>()</argsstring>
+        <name>onDestroyView</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.SensoresFragment.onDestroyView</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" line="202" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" bodystart="202" bodyend="208"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1ab595865120db8fcae37580305d5b182f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.SensoresFragment.actualizarDistancia</definition>
+        <argsstring>()</argsstring>
+        <name>actualizarDistancia</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.SensoresFragment.actualizarDistancia</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" line="141" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" bodystart="141" bodyend="191"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Fragment</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.SensoresFragment</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Fragment</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.SensoresFragment</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" line="32" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SensoresFragment.java" bodystart="32" bodyend="209"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1ab595865120db8fcae37580305d5b182f" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::SensoresFragment</scope><name>actualizarDistancia</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1a9eb7dad48852ab7706d451309ab584c8" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::SensoresFragment</scope><name>bleScanner</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1ace2524681717e7083dc802a03b9fad18" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::SensoresFragment</scope><name>btnActualizarDistancia</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1a1f18c59e727bbfb395b65644f32b6072" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::SensoresFragment</scope><name>listaSensores</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1a385a05e8389ac91a9b302c4593e4ded1" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::SensoresFragment</scope><name>nombresSpinner</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1ae80bd646915b2c9aa8f0cc5b391991ca" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::SensoresFragment</scope><name>onCreateView</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1a55278fe32c1c46e96b26bf354976f28e" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::SensoresFragment</scope><name>onDestroyView</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1a766e7ab72f2ba90988048ff5aea83aa9" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::SensoresFragment</scope><name>onPause</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1a7357b5dc296ed7980e9c7ce61234e636" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::SensoresFragment</scope><name>onViewCreated</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1af9c837b9e3adddeded5af63ac3196021" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::SensoresFragment</scope><name>sensorSeleccionado</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1a99e841f279aa3681c0a17cec35e205e1" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::SensoresFragment</scope><name>spinnerSensores</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1a473ad102701269de3472635da4b11871" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::SensoresFragment</scope><name>tvDistanciaNodo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_sensores_fragment_1afce133ceda9791a27c4bfa9afdf6e910" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::SensoresFragment</scope><name>tvEstadoNodo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

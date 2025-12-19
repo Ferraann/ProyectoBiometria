@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="obtener_medicion_8php" kind="file" language="PHP">
+    <compoundname>obtenerMedicion.php</compoundname>
+    <briefdescription>
+<para>Recuperación global de datos telemétricos procesados. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Extrae el historial completo de lecturas de sensores, integrando descripciones de magnitudes físicas y metadatos de hardware mediante consultas relacionales. <simplesect kind="author"><para>Manuel </para>
+</simplesect>
+<simplesect kind="date"><para>05/12/2025 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>obtenerMediciones(<ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1.<sp/>CONSULTA<sp/>RELACIONAL<sp/>COMPUESTA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>SQL:</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>-<sp/>m.id,<sp/>m.valor,<sp/>m.hora:<sp/>Datos<sp/>crudos<sp/>de<sp/>la<sp/>lectura.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>-<sp/>tm.medida,<sp/>tm.unidad:<sp/>Contexto<sp/>de<sp/>la<sp/>magnitud<sp/>(ej.<sp/>&apos;Temperatura&apos;,<sp/>&apos;°C&apos;).</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>-<sp/>s.mac:<sp/>Identificador<sp/>físico<sp/>del<sp/>sensor<sp/>que<sp/>originó<sp/>el<sp/>dato.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>-<sp/>INNER<sp/>JOIN:<sp/>Asegura<sp/>que<sp/>solo<sp/>se<sp/>devuelvan<sp/>mediciones<sp/>con<sp/>tipos<sp/>y<sp/>sensores<sp/>válidos.</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>-<sp/>ORDER<sp/>BY<sp/>m.hora<sp/>DESC:<sp/>Prioriza<sp/>las<sp/>lecturas<sp/>más<sp/>recientes<sp/>(Tiempo<sp/>Real).</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>$sql<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SELECT<sp/>m.id,<sp/>tm.medida,<sp/>tm.unidad,<sp/>m.valor,<sp/>m.hora,<sp/>m.localizacion,<sp/>s.mac</highlight></codeline>
+<codeline lineno="35"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FROM<sp/>medicion<sp/>m</highlight></codeline>
+<codeline lineno="36"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>INNER<sp/>JOIN<sp/>tipo_medicion<sp/>tm<sp/>ON<sp/>m.tipo_medicion_id<sp/>=<sp/>tm.id</highlight></codeline>
+<codeline lineno="37"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>INNER<sp/>JOIN<sp/>sensor<sp/>s<sp/>ON<sp/>m.sensor_id<sp/>=<sp/>s.id</highlight></codeline>
+<codeline lineno="38"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ORDER<sp/>BY<sp/>m.hora<sp/>DESC&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref><sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;query($sql);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>$datos<sp/>=<sp/>[];</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2.<sp/>PROCESAMIENTO<sp/>DE<sp/>RESULTADOS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref><sp/>&amp;&amp;<sp/><ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref>-&gt;num_rows<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>($row<sp/>=<sp/><ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref>-&gt;fetch_assoc())<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$datos[]<sp/>=<sp/>$row;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>$datos;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/obtenerMedicion.php"/>
+  </compounddef>
+</doxygen>

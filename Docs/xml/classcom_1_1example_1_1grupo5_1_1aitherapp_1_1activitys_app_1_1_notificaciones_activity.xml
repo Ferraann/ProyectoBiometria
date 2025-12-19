@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_notificaciones_activity" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::activitysApp::NotificacionesActivity</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AppCompatActivity</basecompoundref>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_notificaciones_activity_1ad747bbc9d3fb0372d0de9d192a10f821" prot="private" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String com.example.grupo5.aitherapp.activitysApp.NotificacionesActivity.MY_CHANNEL_ID</definition>
+        <argsstring></argsstring>
+        <name>MY_CHANNEL_ID</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.NotificacionesActivity.MY_CHANNEL_ID</qualifiedname>
+        <initializer>= &quot;Aither&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/NotificacionesActivity.java" line="39" column="33" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/NotificacionesActivity.java" bodystart="39" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_notificaciones_activity_1a23386c4ca41a1a1387005556f5e0db1b" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.NotificacionesActivity.onCreate</definition>
+        <argsstring>(Bundle savedInstanceState)</argsstring>
+        <name>onCreate</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.NotificacionesActivity.onCreate</qualifiedname>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/NotificacionesActivity.java" line="41" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/NotificacionesActivity.java" bodystart="41" bodyend="46"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_notificaciones_activity_1a8b11b9d31ea6f31c1e7bcbc87b7173d5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.NotificacionesActivity.configurarToolbar</definition>
+        <argsstring>()</argsstring>
+        <name>configurarToolbar</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.NotificacionesActivity.configurarToolbar</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/NotificacionesActivity.java" line="49" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/NotificacionesActivity.java" bodystart="49" bodyend="79"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_notificaciones_activity_1a11a57331848212670f0943fbbb56fa77" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.NotificacionesActivity.crearCanal</definition>
+        <argsstring>()</argsstring>
+        <name>crearCanal</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.NotificacionesActivity.crearCanal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/NotificacionesActivity.java" line="81" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/NotificacionesActivity.java" bodystart="81" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_notificaciones_activity_1a11ab4396819c6b4621a5e01ca8574def" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.NotificacionesActivity.crearNotificacionPeligroExtremo</definition>
+        <argsstring>(View v)</argsstring>
+        <name>crearNotificacionPeligroExtremo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.NotificacionesActivity.crearNotificacionPeligroExtremo</qualifiedname>
+        <param>
+          <type>View</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/NotificacionesActivity.java" line="90" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/NotificacionesActivity.java" bodystart="90" bodyend="136"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>AppCompatActivity</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.NotificacionesActivity</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_notificaciones_activity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>AppCompatActivity</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.NotificacionesActivity</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_notificaciones_activity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/NotificacionesActivity.java" line="38" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/NotificacionesActivity.java" bodystart="38" bodyend="175"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_notificaciones_activity_1a8b11b9d31ea6f31c1e7bcbc87b7173d5" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::NotificacionesActivity</scope><name>configurarToolbar</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_notificaciones_activity_1a11a57331848212670f0943fbbb56fa77" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::NotificacionesActivity</scope><name>crearCanal</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_notificaciones_activity_1a11ab4396819c6b4621a5e01ca8574def" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::NotificacionesActivity</scope><name>crearNotificacionPeligroExtremo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_notificaciones_activity_1ad747bbc9d3fb0372d0de9d192a10f821" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::NotificacionesActivity</scope><name>MY_CHANNEL_ID</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_notificaciones_activity_1a23386c4ca41a1a1387005556f5e0db1b" prot="protected" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::NotificacionesActivity</scope><name>onCreate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

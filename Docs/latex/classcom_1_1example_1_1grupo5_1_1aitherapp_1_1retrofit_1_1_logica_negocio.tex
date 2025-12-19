@@ -1,70 +1,78 @@
-\doxysection{Logica\+Negocio Class Reference}
-\hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio}{}\label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio}\index{LogicaNegocio@{LogicaNegocio}}
+\doxysection{com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Logica\+Negocio Class Reference}
+\label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio}\index{com.example.grupo5.aitherapp.retrofit.LogicaNegocio@{com.example.grupo5.aitherapp.retrofit.LogicaNegocio}}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static void \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_a829a1135a487d30f3565b194ceada167}{Post\+Registro}} (String Nombre, String Apellidos, String Correo, String Contrasenya, Context contexto)
+static void \textbf{ Post\+Registro} (String Nombre, String Apellidos, String Correo, String Contrasenya, Context contexto)
 \item 
-static void \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_adcba5c3fbd7e6b46958102612acbadcc}{Post\+Login}} (String correo, String contrasenya, Context contexto)
+static void \textbf{ Post\+Login} (String correo, String contrasenya, Context contexto)
 \item 
-static void \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_a6b98c20710cd34119366002459ae8b13}{put\+Modificar\+Datos}} (\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario}{Pojo\+Usuario}} usuario, Context contexto)
+static void \textbf{ put\+Modificar\+Datos} (\textbf{ Pojo\+Usuario} usuario, Context contexto)
 \item 
-static void \mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_aaef51c08b59aecc804fca5959a705630}{post\+Vincular\+Sensor}} (\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor}{Pojo\+Sensor}} sensor, Context contexto)
+static void \textbf{ post\+Vincular\+Sensor} (\textbf{ Pojo\+Sensor} sensor, Context contexto)
+\item 
+static void \textbf{ guardar\+Distancia\+Hoy} (float distancia, Context contexto)
+\item 
+static void \textbf{ get\+Historial\+Distancias} (Context contexto, Callback$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$ callback)
+\item 
+static void \textbf{ get\+Distancia\+Fecha} (String fecha, Context contexto, Callback$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$ callback)
+\item 
+static void \textbf{ get\+Lista\+Sensores} (\textbf{ Pojo\+Usuario} usuario, Context contexto)
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-
-
-Definition at line \mbox{\hyperlink{_logica_negocio_8java_source_l00029}{29}} of file \mbox{\hyperlink{_logica_negocio_8java_source}{Logica\+Negocio.\+java}}.
-
-
-
 \label{doc-func-members}
-\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_adcba5c3fbd7e6b46958102612acbadcc}\index{LogicaNegocio@{LogicaNegocio}!PostLogin@{PostLogin}}
-\index{PostLogin@{PostLogin}!LogicaNegocio@{LogicaNegocio}}
-\doxysubsubsection{\texorpdfstring{PostLogin()}{PostLogin()}}
-{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_adcba5c3fbd7e6b46958102612acbadcc} 
-void Post\+Login (\begin{DoxyParamCaption}\item[{String}]{correo}{, }\item[{String}]{contrasenya}{, }\item[{Context}]{contexto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+\index{com.example.grupo5.aitherapp.retrofit.LogicaNegocio@{com.example.grupo5.aitherapp.retrofit.LogicaNegocio}!getDistanciaFecha@{getDistanciaFecha}}
+\index{getDistanciaFecha@{getDistanciaFecha}!com.example.grupo5.aitherapp.retrofit.LogicaNegocio@{com.example.grupo5.aitherapp.retrofit.LogicaNegocio}}
+\doxysubsubsection{getDistanciaFecha()}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_a4f75b07b3104303bb27ca0b727c9e9a1} 
+void com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Logica\+Negocio.\+get\+Distancia\+Fecha (\begin{DoxyParamCaption}\item[{String}]{fecha}{, }\item[{Context}]{contexto}{, }\item[{Callback$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$}]{callback}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+\index{com.example.grupo5.aitherapp.retrofit.LogicaNegocio@{com.example.grupo5.aitherapp.retrofit.LogicaNegocio}!getHistorialDistancias@{getHistorialDistancias}}
+\index{getHistorialDistancias@{getHistorialDistancias}!com.example.grupo5.aitherapp.retrofit.LogicaNegocio@{com.example.grupo5.aitherapp.retrofit.LogicaNegocio}}
+\doxysubsubsection{getHistorialDistancias()}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_ade5325e081534bbfd0689ec9b1eb734a} 
+void com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Logica\+Negocio.\+get\+Historial\+Distancias (\begin{DoxyParamCaption}\item[{Context}]{contexto}{, }\item[{Callback$<$ \textbf{ Pojo\+Respuesta\+Servidor} $>$}]{callback}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+\index{com.example.grupo5.aitherapp.retrofit.LogicaNegocio@{com.example.grupo5.aitherapp.retrofit.LogicaNegocio}!getListaSensores@{getListaSensores}}
+\index{getListaSensores@{getListaSensores}!com.example.grupo5.aitherapp.retrofit.LogicaNegocio@{com.example.grupo5.aitherapp.retrofit.LogicaNegocio}}
+\doxysubsubsection{getListaSensores()}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_aacbdb0a878241f7fdcbff74e3b7f35f1} 
+void com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Logica\+Negocio.\+get\+Lista\+Sensores (\begin{DoxyParamCaption}\item[{\textbf{ Pojo\+Usuario}}]{usuario}{, }\item[{Context}]{contexto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Definition at line \mbox{\hyperlink{_logica_negocio_8java_source_l00096}{96}} of file \mbox{\hyperlink{_logica_negocio_8java_source}{Logica\+Negocio.\+java}}.
+\index{com.example.grupo5.aitherapp.retrofit.LogicaNegocio@{com.example.grupo5.aitherapp.retrofit.LogicaNegocio}!guardarDistanciaHoy@{guardarDistanciaHoy}}
+\index{guardarDistanciaHoy@{guardarDistanciaHoy}!com.example.grupo5.aitherapp.retrofit.LogicaNegocio@{com.example.grupo5.aitherapp.retrofit.LogicaNegocio}}
+\doxysubsubsection{guardarDistanciaHoy()}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_a160878ae2f35eeb81eee7cf7827b0bd5} 
+void com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Logica\+Negocio.\+guardar\+Distancia\+Hoy (\begin{DoxyParamCaption}\item[{float}]{distancia}{, }\item[{Context}]{contexto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_a829a1135a487d30f3565b194ceada167}\index{LogicaNegocio@{LogicaNegocio}!PostRegistro@{PostRegistro}}
-\index{PostRegistro@{PostRegistro}!LogicaNegocio@{LogicaNegocio}}
-\doxysubsubsection{\texorpdfstring{PostRegistro()}{PostRegistro()}}
-{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_a829a1135a487d30f3565b194ceada167} 
-void Post\+Registro (\begin{DoxyParamCaption}\item[{String}]{Nombre}{, }\item[{String}]{Apellidos}{, }\item[{String}]{Correo}{, }\item[{String}]{Contrasenya}{, }\item[{Context}]{contexto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+\index{com.example.grupo5.aitherapp.retrofit.LogicaNegocio@{com.example.grupo5.aitherapp.retrofit.LogicaNegocio}!PostLogin@{PostLogin}}
+\index{PostLogin@{PostLogin}!com.example.grupo5.aitherapp.retrofit.LogicaNegocio@{com.example.grupo5.aitherapp.retrofit.LogicaNegocio}}
+\doxysubsubsection{PostLogin()}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_ad793ceb58fee76cf3d67c2a2edee9f14} 
+void com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Logica\+Negocio.\+Post\+Login (\begin{DoxyParamCaption}\item[{String}]{correo}{, }\item[{String}]{contrasenya}{, }\item[{Context}]{contexto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+\index{com.example.grupo5.aitherapp.retrofit.LogicaNegocio@{com.example.grupo5.aitherapp.retrofit.LogicaNegocio}!PostRegistro@{PostRegistro}}
+\index{PostRegistro@{PostRegistro}!com.example.grupo5.aitherapp.retrofit.LogicaNegocio@{com.example.grupo5.aitherapp.retrofit.LogicaNegocio}}
+\doxysubsubsection{PostRegistro()}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_a3fde517e24c7639f9ffbe6798af03fe0} 
+void com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Logica\+Negocio.\+Post\+Registro (\begin{DoxyParamCaption}\item[{String}]{Nombre}{, }\item[{String}]{Apellidos}{, }\item[{String}]{Correo}{, }\item[{String}]{Contrasenya}{, }\item[{Context}]{contexto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+\index{com.example.grupo5.aitherapp.retrofit.LogicaNegocio@{com.example.grupo5.aitherapp.retrofit.LogicaNegocio}!postVincularSensor@{postVincularSensor}}
+\index{postVincularSensor@{postVincularSensor}!com.example.grupo5.aitherapp.retrofit.LogicaNegocio@{com.example.grupo5.aitherapp.retrofit.LogicaNegocio}}
+\doxysubsubsection{postVincularSensor()}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_a0cb2d1c9bbde44c229482a227e2d04ea} 
+void com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Logica\+Negocio.\+post\+Vincular\+Sensor (\begin{DoxyParamCaption}\item[{\textbf{ Pojo\+Sensor}}]{sensor}{, }\item[{Context}]{contexto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Definition at line \mbox{\hyperlink{_logica_negocio_8java_source_l00033}{33}} of file \mbox{\hyperlink{_logica_negocio_8java_source}{Logica\+Negocio.\+java}}.
-
-\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_aaef51c08b59aecc804fca5959a705630}\index{LogicaNegocio@{LogicaNegocio}!postVincularSensor@{postVincularSensor}}
-\index{postVincularSensor@{postVincularSensor}!LogicaNegocio@{LogicaNegocio}}
-\doxysubsubsection{\texorpdfstring{postVincularSensor()}{postVincularSensor()}}
-{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_aaef51c08b59aecc804fca5959a705630} 
-void post\+Vincular\+Sensor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor}{Pojo\+Sensor}}}]{sensor}{, }\item[{Context}]{contexto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line \mbox{\hyperlink{_logica_negocio_8java_source_l00184}{184}} of file \mbox{\hyperlink{_logica_negocio_8java_source}{Logica\+Negocio.\+java}}.
-
-\Hypertarget{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_a6b98c20710cd34119366002459ae8b13}\index{LogicaNegocio@{LogicaNegocio}!putModificarDatos@{putModificarDatos}}
-\index{putModificarDatos@{putModificarDatos}!LogicaNegocio@{LogicaNegocio}}
-\doxysubsubsection{\texorpdfstring{putModificarDatos()}{putModificarDatos()}}
-{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_a6b98c20710cd34119366002459ae8b13} 
-void put\+Modificar\+Datos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario}{Pojo\+Usuario}}}]{usuario}{, }\item[{Context}]{contexto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line \mbox{\hyperlink{_logica_negocio_8java_source_l00149}{149}} of file \mbox{\hyperlink{_logica_negocio_8java_source}{Logica\+Negocio.\+java}}.
+\index{com.example.grupo5.aitherapp.retrofit.LogicaNegocio@{com.example.grupo5.aitherapp.retrofit.LogicaNegocio}!putModificarDatos@{putModificarDatos}}
+\index{putModificarDatos@{putModificarDatos}!com.example.grupo5.aitherapp.retrofit.LogicaNegocio@{com.example.grupo5.aitherapp.retrofit.LogicaNegocio}}
+\doxysubsubsection{putModificarDatos()}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_af7e6a0f3a6f4760b65b92ad80ee0749a} 
+void com.\+example.\+grupo5.\+aitherapp.\+retrofit.\+Logica\+Negocio.\+put\+Modificar\+Datos (\begin{DoxyParamCaption}\item[{\textbf{ Pojo\+Usuario}}]{usuario}{, }\item[{Context}]{contexto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/Logica\+Negocio.\+java\end{DoxyCompactItemize}
+C\+:/xampp/htdocs/\+Proyecto\+Biometria\+\_\+2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/\textbf{ Logica\+Negocio.\+java}\end{DoxyCompactItemize}

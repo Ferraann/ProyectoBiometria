@@ -1,4 +1,28 @@
 var searchData=
 [
-  ['documentation_0',['Documentation',['../dir_b7aa11e20ecc50f796b1517dbf512153.html#autotoc_md10',1,'']]]
+  ['cambio_20en_20la_20fase_20del_20ticket_0',['Cambio en la fase del ticket.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/modificarIncidencia.php#UpdateEstado',1,'']]],
+  ['changed_20since_20moving_20from_20sourceforge_1',['What&apos;s changed since moving from SourceForge?',['../dir_b7aa11e20ecc50f796b1517dbf512153.html#autotoc_md23',1,'']]],
+  ['changelog_2',['Changelog',['../dir_b7aa11e20ecc50f796b1517dbf512153.html#autotoc_md21',1,'']]],
+  ['class_20for_20php_3',['PHPMailer – A full-featured email creation and transfer class for PHP',['../dir_b7aa11e20ecc50f796b1517dbf512153.html#autotoc_md5',1,'']]],
+  ['columna_20puntos_4',['Actualización de la columna &apos;puntos&apos;.',['../sumar_puntos_x_i_d_8php.html#IncrementoSQL',1,'']]],
+  ['comprobación_20de_20existencia_20del_20id_20de_20usuario_5',['Comprobación de existencia del ID de usuario.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/actualizarUsuario.php#ValidacionID',1,'']]],
+  ['comprobación_20de_20integridad_20de_20entrada_6',['Comprobación de integridad de entrada.',['../sumar_puntos_x_i_d_8php.html#ValidacionPuntos',1,'']]],
+  ['comprobación_20de_20integridad_20de_20los_20datos_20recibidos_7',['Comprobación de integridad de los datos recibidos.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/canjearRecompensa.php#ValidacionEntrada',1,'']]],
+  ['comprobación_20de_20integridad_20del_20array_20de_20fotos_8',['Comprobación de integridad del array de fotos.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/guardarFotoIncidencia.php#ValidacionEstructura',1,'']]],
+  ['comprobante_20mediante_20phpmailer_9',['Envío de comprobante mediante PHPMailer.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/canjearRecompensa.php#NotificacionEmail',1,'']]],
+  ['con_20estado_20activo_200_10',['Registro en la tabla &apos;usuario&apos; con estado &apos;activo=0&apos;.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/registrarUsuario.php#InsercionUsuario',1,'']]],
+  ['con_20servidor_20de_20correo_20externo_11',['Integración con servidor de correo externo.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/registrarUsuario.php#EnvioCorreo',1,'']]],
+  ['construcción_20del_20array_20asociativo_20de_20salida_12',['Construcción del array asociativo de salida.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/obtenerListaSensores.php#MapeoResultados',1,'']]],
+  ['consulta_20de_20existencia_20en_20tabla_20administrativa_13',['Consulta de existencia en tabla administrativa.',['../roles_8php.html#ValidarAdmin',1,'']]],
+  ['consulta_20de_20existencia_20en_20tabla_20técnica_14',['Consulta de existencia en tabla técnica.',['../roles_8php.html#ValidarTecnico',1,'']]],
+  ['consulta_20de_20puntos_20actuales_20y_20datos_20de_20contacto_15',['Consulta de puntos actuales y datos de contacto.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/canjearRecompensa.php#VerificacionSaldo',1,'']]],
+  ['consulta_20para_20verificar_20si_20el_20usuario_20ya_20tiene_20actividad_20hoy_16',['Consulta para verificar si el usuario ya tiene actividad hoy.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/distancias.php#BusquedaDiaria',1,'']]],
+  ['contacto_17',['Consulta de puntos actuales y datos de contacto.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/canjearRecompensa.php#VerificacionSaldo',1,'']]],
+  ['contributing_18',['Contributing',['../dir_b7aa11e20ecc50f796b1517dbf512153.html#autotoc_md18',1,'']]],
+  ['conversión_20a_20formato_20de_20transporte_20web_19',['Conversión a formato de transporte web.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/obtenerFotoUsuarioXId.php#ProcesamientoBinario',1,'']]],
+  ['conversión_20de_20formato_20',['Iteración y conversión de formato.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/obtenerFotosIncidencias.php#ProcesamientoBLOB',1,'']]],
+  ['correo_20externo_21',['Integración con servidor de correo externo.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/registrarUsuario.php#EnvioCorreo',1,'']]],
+  ['creación_20del_20primer_20registro_20del_20día_22',['Creación del primer registro del día.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/distancias.php#InsertDistancia',1,'']]],
+  ['creation_20and_20transfer_20class_20for_20php_23',['PHPMailer – A full-featured email creation and transfer class for PHP',['../dir_b7aa11e20ecc50f796b1517dbf512153.html#autotoc_md5',1,'']]],
+  ['cuentas_20y_20perfiles_24',['Pruebas de gestión de cuentas y perfiles.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/TestTotalAPI.php#TestsUsuarios',1,'']]]
 ];

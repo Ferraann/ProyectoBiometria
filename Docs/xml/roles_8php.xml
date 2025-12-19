@@ -1,0 +1,340 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="roles_8php" kind="file" language="PHP">
+    <compoundname>roles.php</compoundname>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="roles_8php_1a62468590f319a6b61029c3f43abd464c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>esTecnico</definition>
+        <argsstring>($conn, int $usuarioId)</argsstring>
+        <name>esTecnico</name>
+        <param>
+          <declname>$conn</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$usuarioId</declname>
+        </param>
+        <briefdescription>
+<para>Comprueba si un usuario tiene privilegios de técnico. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>mysqli</parametertype>
+<parametername>$conn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Instancia de conexión activa a la base de datos. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$usuarioId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID del usuario a consultar. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool Verdadero si el usuario existe en la tabla de técnicos. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<sect1 id="roles_8php_1ValidarTecnico">
+<title>Consulta de existencia en tabla técnica.</title><para><simplesect kind="note"><para>Se utiliza fetch_column() para obtener directamente el valor booleano de la existencia.</para>
+</simplesect>
+</para>
+</sect1>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/roles.php" line="21" column="10" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/roles.php" bodystart="21" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="roles_8php_1a7547c3d8c95922db15d9641673bdf48c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>esAdministrador</definition>
+        <argsstring>($conn, int $usuarioId)</argsstring>
+        <name>esAdministrador</name>
+        <param>
+          <declname>$conn</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$usuarioId</declname>
+        </param>
+        <briefdescription>
+<para>Comprueba si un usuario tiene privilegios de administrador. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>mysqli</parametertype>
+<parametername>$conn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Instancia de conexión activa a la base de datos. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$usuarioId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID del usuario a consultar. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool Verdadero si el usuario existe en la tabla de administradores. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<sect1 id="roles_8php_1ValidarAdmin">
+<title>Consulta de existencia en tabla administrativa.</title></sect1>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/roles.php" line="37" column="10" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/roles.php" bodystart="37" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="roles_8php_1a3ad6c0296c29d21a934668b3a06fded5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>asignarTecnico</definition>
+        <argsstring>($conn, int $usuarioId)</argsstring>
+        <name>asignarTecnico</name>
+        <param>
+          <declname>$conn</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$usuarioId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para><simplesect kind="note"><para>Se realiza una comprobación previa para evitar duplicados.</para>
+</simplesect>
+</para>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/roles.php" line="59" column="10" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/roles.php" bodystart="59" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="roles_8php_1a4a8d195454165630aeebfeb10067d738" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>quitarTecnico</definition>
+        <argsstring>($conn, int $usuarioId)</argsstring>
+        <name>quitarTecnico</name>
+        <param>
+          <declname>$conn</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$usuarioId</declname>
+        </param>
+        <briefdescription>
+<para>Revoca el rol de Técnico a un usuario. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>mysqli</parametertype>
+<parametername>$conn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Instancia de conexión. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$usuarioId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID del usuario. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>array Resultado de la operación de borrado. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/roles.php" line="79" column="10" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/roles.php" bodystart="79" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="roles_8php_1a91ce6d33b6d680d208da09b5c0cc883a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>asignarAdministrador</definition>
+        <argsstring>($conn, int $usuarioId)</argsstring>
+        <name>asignarAdministrador</name>
+        <param>
+          <declname>$conn</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$usuarioId</declname>
+        </param>
+        <briefdescription>
+<para>Promociona a un usuario al nivel de Administrador. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>mysqli</parametertype>
+<parametername>$conn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Instancia de conexión. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$usuarioId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID del usuario. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>array Resultado de la inserción. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/roles.php" line="98" column="10" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/roles.php" bodystart="98" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="roles_8php_1a920c4a460e8ec68c8e4e6869505a7fc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>quitarAdministrador</definition>
+        <argsstring>($conn, int $usuarioId)</argsstring>
+        <name>quitarAdministrador</name>
+        <param>
+          <declname>$conn</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>$usuarioId</declname>
+        </param>
+        <briefdescription>
+<para>Revoca los privilegios de Administrador a un usuario. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>mysqli</parametertype>
+<parametername>$conn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Instancia de conexión. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$usuarioId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID del usuario. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>array Resultado de la operación. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/roles.php" line="117" column="10" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/roles.php" bodystart="117" bodyend="124"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Sistema de control de acceso basado en roles (RBAC). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Proporciona una capa de abstracción para verificar privilegios y gestionar la promoción o degradación de usuarios en los niveles de Técnico y Administrador. <simplesect kind="author"><para>Manuel </para>
+</simplesect>
+<simplesect kind="date"><para>11/12/2025 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SECCIÓN:<sp/>VALIDACIÓN<sp/>DE<sp/>PRIVILEGIOS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="roles_8php_1a62468590f319a6b61029c3f43abd464c" kindref="member">esTecnico</ref>(<ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>$usuarioId):<sp/>bool</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref><sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare(</highlight><highlight class="stringliteral">&quot;SELECT<sp/>1<sp/>FROM<sp/>tecnicos<sp/>WHERE<sp/>usuario_id<sp/>=<sp/>?<sp/>LIMIT<sp/>1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;i&quot;</highlight><highlight class="normal">,<sp/>$usuarioId);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;execute();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">)<sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;get_result()-&gt;fetch_column();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="roles_8php_1a7547c3d8c95922db15d9641673bdf48c" kindref="member">esAdministrador</ref>(<ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>$usuarioId):<sp/>bool</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref><sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare(</highlight><highlight class="stringliteral">&quot;SELECT<sp/>1<sp/>FROM<sp/>administradores<sp/>WHERE<sp/>usuario_id<sp/>=<sp/>?<sp/>LIMIT<sp/>1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;i&quot;</highlight><highlight class="normal">,<sp/>$usuarioId);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;execute();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">)<sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;get_result()-&gt;fetch_column();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SECCIÓN:<sp/>GESTIÓN<sp/>DEL<sp/>ROL<sp/>TÉCNICO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="roles_8php_1a3ad6c0296c29d21a934668b3a06fded5" kindref="member">asignarTecnico</ref>(<ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>$usuarioId):<sp/>array</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="roles_8php_1a62468590f319a6b61029c3f43abd464c" kindref="member">esTecnico</ref>(<ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>,<sp/>$usuarioId))<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;ok&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;El<sp/>usuario<sp/>ya<sp/>posee<sp/>el<sp/>rol<sp/>de<sp/>técnico.&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref><sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare(</highlight><highlight class="stringliteral">&quot;INSERT<sp/>INTO<sp/>tecnicos<sp/>(usuario_id)<sp/>VALUES<sp/>(?)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;i&quot;</highlight><highlight class="normal">,<sp/>$usuarioId);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;execute()</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?<sp/>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;ok&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Rol<sp/>técnico<sp/>asignado<sp/>correctamente.&quot;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;error&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>al<sp/>asignar<sp/>rol:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;error];</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="roles_8php_1a4a8d195454165630aeebfeb10067d738" kindref="member">quitarTecnico</ref>(<ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>$usuarioId):<sp/>array</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref><sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare(</highlight><highlight class="stringliteral">&quot;DELETE<sp/>FROM<sp/>tecnicos<sp/>WHERE<sp/>usuario_id<sp/>=<sp/>?&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;i&quot;</highlight><highlight class="normal">,<sp/>$usuarioId);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;execute()</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?<sp/>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;ok&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Privilegios<sp/>técnicos<sp/>revocados.&quot;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;error&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>al<sp/>eliminar<sp/>rol:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;error];</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SECCIÓN:<sp/>GESTIÓN<sp/>DEL<sp/>ROL<sp/>ADMINISTRADOR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="roles_8php_1a91ce6d33b6d680d208da09b5c0cc883a" kindref="member">asignarAdministrador</ref>(<ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>$usuarioId):<sp/>array</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="roles_8php_1a7547c3d8c95922db15d9641673bdf48c" kindref="member">esAdministrador</ref>(<ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>,<sp/>$usuarioId))<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;ok&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;El<sp/>usuario<sp/>ya<sp/>posee<sp/>el<sp/>rol<sp/>de<sp/>administrador.&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref><sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare(</highlight><highlight class="stringliteral">&quot;INSERT<sp/>INTO<sp/>administradores<sp/>(usuario_id)<sp/>VALUES<sp/>(?)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;i&quot;</highlight><highlight class="normal">,<sp/>$usuarioId);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;execute()</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?<sp/>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;ok&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Rol<sp/>administrador<sp/>asignado<sp/>con<sp/>éxito.&quot;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;error&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>al<sp/>asignar<sp/>privilegios:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;error];</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="roles_8php_1a920c4a460e8ec68c8e4e6869505a7fc2" kindref="member">quitarAdministrador</ref>(<ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>$usuarioId):<sp/>array</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref><sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare(</highlight><highlight class="stringliteral">&quot;DELETE<sp/>FROM<sp/>administradores<sp/>WHERE<sp/>usuario_id<sp/>=<sp/>?&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;i&quot;</highlight><highlight class="normal">,<sp/>$usuarioId);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;execute()</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?<sp/>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;ok&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Privilegios<sp/>de<sp/>administrador<sp/>revocados.&quot;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;error&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;mensaje&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>al<sp/>eliminar<sp/>privilegios:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;error];</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/roles.php"/>
+  </compounddef>
+</doxygen>
