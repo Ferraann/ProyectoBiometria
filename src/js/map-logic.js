@@ -1,13 +1,9 @@
 'use strict';
 
-// ==============================================
-// 1. CONFIGURACIÓN DE GASES Y DATOS GLOBALES
-// ==============================================
-
 /**
  * @file map-logic.js
  * @brief Script para la visualización de datos de calidad del aire mediante con Leaflet.
- * @author Ferran Sansaloni Prats
+ * @author Ferran
  */
 
 /**
@@ -57,9 +53,9 @@ let heatLayer = null;
 /** @brief Instancia del control de leyenda de Leaflet. */
 let legend = L.control({position: 'bottomright'});
 
-// ==============================================
-// 2. LÓGICA DE CÁLCULO Y FILTRADO
-// ==============================================
+/**
+ * @section 1. LÓGICA DE CÁLCULO Y FILTRADO
+ */
 
 /**
  * @brief Determina un color basado en un valor y unos umbrales predefinidos.
@@ -109,7 +105,7 @@ function getMaxGasIntensity(station) {
  * @returns {Array.<number[]>} Array de puntos del mapa de calor.
  */
 function getHeatmapPoints(gasKey) {
-    // FILTRADO VITAL: Selecciona qué datos mostrar según la vista actual
+    /** @brief FILTRADO VITAL: Selecciona qué datos mostrar según la vista actual */
     let dataToUse = (currentView === 'personal') ? localDataGlobal : peninsulaDataGlobal.concat(localDataGlobal);
 
     if (gasKey === 'MAX_GAS') {
@@ -128,9 +124,9 @@ function getHeatmapPoints(gasKey) {
     }
 }
 
-// ==============================================
-// 3. RENDERIZADO Y CONTROL DE VISTA
-// ==============================================
+/**
+ * @section 2. RENDERIZADO Y CONTROL DE VISTA
+ */
 
 /**
  * @brief Dibuja o actualiza el mapa de calor en el mapa de Leaflet.
@@ -177,33 +173,34 @@ function drawHeatmap(gasKey) {
 function switchMapView(viewType) {
     currentView = viewType;
 
-    // 1. DESACTIVAR VISUALIZACIÓN: Limpiamos la capa de calor antes de que empiece el movimiento
+    /** @brief 1. DESACTIVAR VISUALIZACIÓN: Limpiamos la capa de calor antes de que empiece el movimiento */
     if (heatLayer) {
         heatmapLayerGroup.removeLayer(heatLayer);
     }
 
-    // Opcional: También podemos ocultar la leyenda durante el viaje
     if (legend.getContainer()) {
         legend.remove();
     }
 
-    // 2. EJECUTAR EL VUELO (Transición)
+    /** @brief 2. EJECUTAR EL VUELO (Transición) */
     if (viewType === 'personal') {
         // Enfoque en Gandía
         mapaInstance.flyTo([38.968, -0.186], 13, {
             duration: 1.5 // Duración en segundos
         });
     } else {
-        // Enfoque general
         mapaInstance.flyTo([39.228493, -0.529656], 9, {
             duration: 1.5
         });
     }
 
-    // 3. REACTIVAR VISUALIZACIÓN: Escuchamos cuando el mapa termina de moverse
-    // Usamos .once para que el evento se dispare solo una vez al terminar el flyTo
+    //
+    //
+    /**
+     * @brief 3. REACTIVAR VISUALIZACIÓN: Escuchamos cuando el mapa termina de moverse
+     * @details Usamos .once para que el evento se dispare solo una vez al terminar el flyTo */
     mapaInstance.once('moveend', function() {
-        drawHeatmap(currentGas); // Esto vuelve a calcular los puntos y los dibuja
+        drawHeatmap(currentGas);
     });
 }
 
@@ -234,9 +231,9 @@ legend.onAdd = function () {
     return div;
 };
 
-// ==============================================
-// 4. INICIALIZACIÓN PRINCIPAL
-// ==============================================
+/**
+ * @section 3. INICIALIZACIÓN PRINCIPAL
+ */
 
 /**
  * @brief Inicializa el mapa de Leaflet y carga los datos de calidad del aire.
@@ -267,7 +264,7 @@ function initializeDashboardMap() {
         fetch('../data/datos_sensores.geojson').then(r => r.json())
     ])
         .then(([dataConfig, dataLocal]) => {
-            // Guardamos los datos globalmente para poder filtrar sin volver a hacer fetch
+            /** @brief Guardamos los datos globalmente para poder filtrar sin volver a hacer fetch */
             peninsulaDataGlobal = dataConfig.gas_station_data;
             localDataGlobal = dataLocal.features.map(feature => ({
                 id_sensor: feature.properties.id_sensor,
@@ -280,7 +277,7 @@ function initializeDashboardMap() {
                 valor_PM10: feature.properties.valor_PM10,
             }));
 
-            // Crear controles de "Layouts" (Capas Base de gases)
+            /** @brief Crear controles de "Layouts" (Capas Base de gases) */
             var gasLayersControl = {};
             for (const key in GAS_CONFIG) {
                 gasLayersControl[GAS_CONFIG[key].name] = L.layerGroup();
@@ -290,12 +287,12 @@ function initializeDashboardMap() {
 
             L.control.layers(gasLayersControl, {"Mapa Calor": heatmapLayerGroup}, { collapsed: false }).addTo(mapaInstance);
 
-            // Estado inicial
+            /** @brief Estado inicial */
             currentGas = 'MAX_GAS';
             mapaInstance.addLayer(gasLayersControl[GAS_CONFIG['MAX_GAS'].name]);
             drawHeatmap(currentGas);
 
-            // Evento cambio de gas en el selector de Leaflet
+            /** @brief Evento cambio de gas en el selector de Leaflet */
             mapaInstance.on('baselayerchange', function (e) {
                 for (const key in GAS_CONFIG) {
                     if (GAS_CONFIG[key].name === e.name) {
@@ -307,6 +304,7 @@ function initializeDashboardMap() {
                     // si se asume que al cambiar de base layer (gas) solo se quiere
                     // actualizar el mapa de calor, que es una capa de superposición
                     // que siempre se muestra si la opción "Mapa Calor" está activa.
+
                 }
             });
 
