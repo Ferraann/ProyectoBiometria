@@ -1,127 +1,138 @@
-/* ======================================================
-   Manejo de editar campo y envío: toggle edición
-   ====================================================== */
+/**
+ * @file perfil_interactividad.js
+ * @brief Gestión de la interfaz de usuario para la edición del perfil de cliente.
+ * @details Proporciona funcionalidades para habilitar/deshabilitar campos de entrada,
+ * previsualización de imágenes de perfil mediante FileReader y gestión de alertas temporales.
+ * @author Ferran
+ * @date 19/12/2025
+ */
 
-// Selecciona todos los iconos de edición
+/**
+ * @name ManejoEdicionCampos
+ * @{
+ */
+
+/** * @brief Lista de iconos que activan la edición de los campos.
+ * @type {NodeListOf<Element>}
+ */
 const editIcons = document.querySelectorAll('.edit-icon');
+
+/** * @brief Referencia al formulario de perfil.
+ * @type {Element}
+ */
 const form = document.querySelector('.perfil-form');
 
-// Recorrer todos los iconos de edicion para saber cual es editable
+/**
+ * @brief Asigna eventos de clic a cada icono de edición para alternar el estado del campo.
+ * @details Si el campo está bloqueado, lo habilita, cambia el fondo y pone el foco.
+ * Si ya estaba en edición, lo bloquea y limpia los campos de confirmación asociados.
+ */
 editIcons.forEach(icon => {
-    // Cuando se hace clic en uno...
     icon.addEventListener('click', (e) => {
         e.preventDefault();
 
-        // 1. Identificar el campo de entrada (input) asociado
-        const row = icon.closest('.input-row'); // Encuentra la fila contenedora
-        if (!row) return;// Si no hay fila, salir
-        const input = row.querySelector('input'); // Encuentra el input dentro de la fila
-        if (!input) return; // Si no hay input, salir
+        /** @brief Fila contenedora del input actual. */
+        const row = icon.closest('.input-row');
+        if (!row) return;
 
-        // 2. Comprobar el estado actual: Toggle (activar/desactivar)
+        /** @brief El elemento input asociado al icono pulsado. */
+        const input = row.querySelector('input');
+        if (!input) return;
 
-        // Toggle: si ya estaba activo -> desactivar edición
+        /** @brief Comprueba el estado actual: Toogle (activar/desactivar)  */
         if (input.dataset.editing === "1") {
-            // --- DESACTIVAR EDICIÓN ---
-
-            // Marcar como no editable
+            /**
+             * @section DesactivarEdicion
+             * @brief Restablece el campo a su estado de solo lectura.
+             */
             input.dataset.editing = "0";
-            // Deshabilitar el campo (para que no se pueda escribir ni enviar si no se ha modificado)
             input.disabled = true;
-            // Limpiar el color de fondo
             input.style.backgroundColor = "";
-            // Eliminar la clase de estilo 'editing' de la fila
             row.classList.remove('editing');
 
-            // Desactivar campos de confirmación si aplica (gmail o contraseña)
+            /** @brief Lógica específica para Gmail */
             if (input.id === "gmail") {
                 const rep = document.getElementById('repetir-correo');
                 if (rep) {
                     rep.disabled = true;
                     rep.style.backgroundColor = "";
-                    rep.value = ""; // Limpiar el valor de confirmación
+                    rep.value = "";
                 }
             }
 
+            /** @brief Lógica específica para Contraseña */
             if (input.id === "contrasena") {
                 const corr = document.getElementById('contrasena');
                 const rep = document.getElementById('repetir-contrasena');
                 const ant = document.getElementById('contrasena-antigua');
 
-                // Ocultar los caracteres escritos (mostrar como 'password')
                 corr.type = "password";
                 rep.type = "password";
                 ant.type = "password";
 
                 if (rep && ant) {
-                    // Deshabilitar y limpiar 'repetir-contrasena'
                     rep.disabled = true;
                     rep.style.backgroundColor = "";
                     rep.value = "";
-
-                    // Deshabilitar y limpiar 'contrasena-antigua'
                     ant.disabled = true;
                     ant.style.backgroundColor = "";
                     ant.value = "";
                 }
             }
-
-            return; // salir porque se desactivó
+            return;
         }
 
-        // 3. Activar edición
-
-        // Marcar como editable
+        /**
+         * @section ActivarEdicion
+         * @brief Habilita el campo para la entrada del usuario.
+         */
         input.dataset.editing = "1";
-        // Habilitar el campo para edición (se enviará en el formulario)
         input.disabled = false;
-        // Poner el foco en el campo
         input.focus();
-        // Aplicar el color de fondo para indicar que está activo
         input.style.backgroundColor = "#f0f0f0";
-        // Añadir la clase de estilo 'editing' a la fila
         row.classList.add('editing');
 
-        // Activar campos de confirmación si aplica
+        /** @brief Activación de campos auxiliares para Gmail */
         if (input.id === "gmail") {
             const rep = document.getElementById('repetir-correo');
             if (rep) {
-                // Habilitar y aplicar color de fondo a 'repetir-correo'
                 rep.disabled = false;
                 rep.style.backgroundColor = "#f0f0f0";
             }
         }
 
+        /** @brief Activación de campos auxiliares para Contraseña */
         if (input.id === "contrasena") {
             const corr = document.getElementById('contrasena');
             const rep = document.getElementById('repetir-contrasena');
             const ant = document.getElementById('contrasena-antigua');
             if (corr && rep && ant) {
-                // Habilitar y aplicar color de fondo a 'repetir-contrasena'
                 rep.disabled = false;
                 rep.style.backgroundColor = "#f0f0f0";
 
-                // Mostrar los caracteres escritos (mostrar como 'text')
                 corr.type = "text";
                 rep.type = "text";
                 ant.type = "text";
 
-                // Habilitar y aplicar color de fondo a 'contrasena-antigua'
                 ant.disabled = false;
                 ant.style.backgroundColor = "#f0f0f0";
             }
         }
 
-        // Marcar como editado al cambiar el valor
-        // Esto es un listener que se activa si el usuario escribe algo en el campo
+        /** @brief Listener para detectar cambios manuales en el valor del input. */
         input.addEventListener('input', () => {
             input.dataset.edited = "1";
         });
     });
 });
+/** @} */
 
+/**
+ * @name GestionFotoPerfil
+ * @{
+ * @brief Funcionalidades para la carga y previsualización de la imagen de perfil.
+ */
 
-// 1. Obtener referencias de los nuevos elementos
 const editPhotoLink = document.getElementById('edit-photo-link');
 const fileInput = document.getElementById('profile-image-upload');
 const base64Input = document.getElementById('profile-image-base64');
@@ -129,70 +140,68 @@ const profileImageDisplay = document.getElementById('profile-image-display');
 
 if (editPhotoLink && fileInput && profileImageDisplay) {
 
-    // 2. Al hacer clic en el enlace "Editar", simular el clic en el input de archivo oculto
+    /**
+     * @brief Simula un clic en el input de archivo (oculto) al pulsar el enlace de "Editar".
+     */
     editPhotoLink.addEventListener('click', (e) => {
         e.preventDefault();
-        fileInput.click(); // Esto abre el administrador de archivos del sistema
+        fileInput.click();
     });
 
-    // 3. Escuchar cuando se selecciona un archivo (evento 'change' en el input)
+    /**
+     * @brief Maneja la selección de un archivo de imagen.
+     * @details Valida que sea una imagen, la lee como DataURL (Base64) y actualiza la previsualización.
+     */
     fileInput.addEventListener('change', function() {
-        // fileInput.files es una lista de archivos seleccionados
         if (this.files && this.files[0]) {
             const file = this.files[0];
-            // Marcamos el formulario como editado
             const form = document.querySelector('.perfil-form');
 
-            // Verificar si el archivo es una imagen
             if (file.type.startsWith('image/')) {
-
-                // Crea un objeto FileReader para leer el contenido del archivo
+                /** @brief Objeto para leer el archivo del cliente. */
                 const reader = new FileReader();
 
-                // Cuando el lector termina, guardamos el Base64 en el campo oculto
                 reader.onload = function(e) {
-                    // El resultado (e.target.result) es la cadena Base64
                     base64Input.value = e.target.result;
                     profileImageDisplay.src = e.target.result;
                 };
 
-                // Inicia la lectura del archivo como una URL de datos (Base64)
                 reader.readAsDataURL(file);
-                // Marca como editado
                 form.dataset.editedByFile = "1";
-
             } else {
                 alert("Por favor, selecciona un archivo de imagen válido.");
-                fileInput.value = ''; // Limpiar el input para permitir una nueva selección
+                fileInput.value = '';
             }
         }
     });
 }
+/** @} */
 
-
-// --- LÓGICA DE OCULTACIÓN AUTOMÁTICA DE ALERTAS ---
+/**
+ * @brief Oculta automáticamente los mensajes de alerta después de un tiempo definido.
+ * @details Busca elementos de éxito o error por ID y los oculta tras 5 segundos usando setTimeout.
+ * @returns {void}
+ */
 function ocultarAlertasAutomaticamente() {
+    /** @type {HTMLElement|null} */
     const alertaError = document.getElementById("js-alerta-error");
+    /** @type {HTMLElement|null} */
     const alertaExito = document.getElementById("js-alerta-exito");
 
-    // Verificar si existe el mensaje de error y ocultarlo
+    /** @brief Tras 5 segundos los mensajes de error desaparecen */
     if (alertaError) {
         setTimeout(() => {
             alertaError.style.display = "none";
-        }, 5000); // 5000 milisegundos = 5 segundos
+        }, 5000);
     }
 
-    // Verificar si existe el mensaje de éxito y ocultarlo
+    /** @brief Tras 5 segundos los mensajes de éxito desaparecen */
     if (alertaExito) {
         setTimeout(() => {
             alertaExito.style.display = "none";
-        }, 5000); // 5 segundos
+        }, 5000);
     }
 }
 
+/** @brief Inicialización de la ocultación de alertas */
 ocultarAlertasAutomaticamente();
-
-// ----------------------------------------------------------------------------------------
-// ----------------------------------------------------------------------------------------
-// ----------------------------------------------------------------------------------------
-// ----------------------------------------------------------------------------------------
