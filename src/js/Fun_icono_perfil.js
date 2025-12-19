@@ -1,5 +1,5 @@
 /**
- * @file menu_perfil.js
+ * @file Fun_icono_perfil.js
  * @brief Gestión del menú desplegable de perfil de usuario.
  * @details Controla la apertura, cierre y comportamiento del menú lateral de perfil,
  * incluyendo la lógica para cerrar el menú al hacer clic fuera de su contenedor.

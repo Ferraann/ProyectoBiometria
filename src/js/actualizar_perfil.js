@@ -1,5 +1,5 @@
 /**
- * @file perfil_interactividad.js
+ * @file actualizar_perfil.js
  * @brief Gestión de la interfaz de usuario para la edición del perfil de cliente.
  * @details Proporciona funcionalidades para habilitar/deshabilitar campos de entrada,
  * previsualización de imágenes de perfil mediante FileReader y gestión de alertas temporales.
