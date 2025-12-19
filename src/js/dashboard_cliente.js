@@ -1,10 +1,10 @@
 /**
- * @file dashboard_ui.js
+ * @file dashboard_cliente.js
  * @brief Gestión de componentes de interfaz de usuario del Dashboard.
  * @details Controla la lógica de calendarios dinámicos, menús desplegables de navegación,
  * el sistema de pestañas (Tabs) y paneles modales informativos.
  * @author Greysy
- * @date 19/12/2025
+ * @date 11/11/2025
  */
 
 /**

@@ -4,7 +4,7 @@
  * @details Proporciona funcionalidades para habilitar/deshabilitar campos de entrada,
  * previsualización de imágenes de perfil mediante FileReader y gestión de alertas temporales.
  * @author Ferran
- * @date 19/12/2025
+ * @date 3/12/2025
  */
 
 /**
