@@ -1,14 +1,14 @@
 <?php
 
 // ------------------------------------------------------------------
-// Fichero: mainTest1.php
+// Fichero: mainTest1.php (CORREGIDO)
 // Autor: Ferran Sansaloni Prats
 // Fecha: 30/10/2025
 // ------------------------------------------------------------------
 // Descripción:
-//   Script para probar la logica de negocio
-//     1. Inserta un usuario en la base de datos.
-//     2. Recupera los usuarios con el correo test.
+//   Script para probar la lógica de negocio con la función registrarUsuario.
+//     1. Inserta un usuario de prueba pasando un array de datos.
+//     2. Recupera los usuarios con el correo de prueba.
 //     3. Muestra el contenido recuperado en formato JSON.
 //     4. Limpieza: elimina el usuario de prueba para mantener la idempotencia.
 // ------------------------------------------------------------------
@@ -16,10 +16,12 @@
 // ------------------------------------------------------------------
 // INCLUDES NECESARIOS
 // ------------------------------------------------------------------
-include '../api/conexion.php';
-include '../logicaNegocio/index2.php';
+require_once('../api/conexion.php');
 
-// Abrimos la conexión
+foreach (glob(__DIR__ . "/../api/logicaNegocio/*.php") as $file) {
+    require_once $file;
+}
+
 $conn = abrirServidor();
 
 // -------------------------
@@ -30,13 +32,24 @@ echo "Test 1: Guardar usuario --> \t";
 // email que usamos para el test
 $emailTest = "esteeselcorreoparaeltest@gmail.com";
 
-// Llamamos al metodo registrarUsuari y le pasamos datos para el test con el corro de prueba
-if (registrarUsuari("NombreTest", "ApellidosTest", $emailTest, "1234", $conn)) {
+$datosUsuario = [
+    'nombre'    => 'NombreTest',
+    'apellidos' => 'ApellidosTest',
+    'gmail'     => $emailTest,
+    'password'  => '1234PruebaSegura',
+];
+
+// **2. Llamamos al metodo registrarUsuario con los 2 parámetros correctos: $conn y $datosUsuario**
+// La función devuelve un array ['status' => 'ok'/'error', 'mensaje' => '...']
+$resultado = registrarUsuario($conn, $datosUsuario);
+
+if ($resultado['status'] === 'ok') {
     // Todo bien
-    echo "Usuario insertado correctamente.\n\n";
+    echo "Usuario insertado correctamente.\n";
+    echo "Mensaje: **" . $resultado['mensaje'] . "**\n\n";
 } else {
     // Error
-    die("Error al insertar el usuario.\n\n");
+    die("Error al insertar el usuario.\nMensaje: **" . $resultado['mensaje'] . "**\n\n");
 }
 
 // =========================
@@ -59,7 +72,7 @@ if ($result && $result->num_rows > 0) {
         $usuarios[] = $row;
     }
     // Todo bien
-    echo "Usuario(s) recuperado(s): " . count($usuarios) . "\n\n";
+    echo "Usuario(s) recuperado(s): **" . count($usuarios) . "**\n\n";
 } else {
     // Error
     echo "No se han recuperado usuarios.\n\n";
@@ -76,11 +89,13 @@ echo "\n\n";
 // =========================
 // TEST 4: Limpieza
 // =========================
-echo "Test 4: Eliminar el dato insertado (imdepotente) --> \n";
+echo "Test 4: Eliminar el dato insertado (idempotente) --> \n";
 // Si hay alguna usuario con ese correo electrónico que se elimine
 if (!empty($usuarios)) {
-    $delete = $conn->query("DELETE FROM usuario WHERE gmail = '$emailTest'");
-    if ($delete) {
+    $delStmt = $conn->prepare("DELETE FROM usuario WHERE gmail = ?");
+    $delStmt->bind_param("s", $emailTest);
+
+    if ($delStmt->execute()) {
         echo "Usuario eliminado correctamente.\n";
     } else {
         echo "Error al eliminar usuario: " . $conn->error . "\n";
@@ -89,7 +104,6 @@ if (!empty($usuarios)) {
     echo "No hay usuario para eliminar.\n";
 }
 
-// Cerramos la conexión
 $conn->close();
 
 // ------------------------------------------------------------------

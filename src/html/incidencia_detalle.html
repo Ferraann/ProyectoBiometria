@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalle de Incidencia – Aither</title>
+  <link rel="stylesheet" href="../css/incidencias_detalles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+
+<body>
+  <header>
+            <!-- Logo de Aither | Al hacer clic tiene que llevar a la landing -->
+            <a href="incidencias.html"><img src="../img/logo_Aither_web.png" alt="Este es el logo de nuestro Proyecto: Aither"></a>
+            <nav>
+                <!--Mis sensores, soporte tecnico y perfil (configuracion y cerrar sesion)-->
+                <ul>
+                    <li><a href="#">Panel <br> Técnico</a></li>
+                    <li>
+                        <a href="#">Soporte <br> Interno</a>
+                    </li>
+                    <li class="profile-dropdown-container">
+                        <a href="#" class="nav-perfil" id="profile-toggle-button"><i class="fa-solid fa-circle-user"></i><span>NOMBRE A.P.</span></a>
+                        <div class="profile-menu" id="profile-menu">
+                            <div class="menu-header">
+                                <i class="fa-solid fa-circle-user profile-icon-large"></i>
+                                <span class="profile-name">NOMBRE A.P.</span>
+                                <i class="fa-solid fa-xmark close-menu-btn" id="close-menu-button"></i>
+                            </div>
+                            <a href="#" class="menu-item">CONFIGURACIÓN</a>
+                            <a href="#" class="menu-item logout-item">CERRAR SESIÓN</a>
+                        </div>
+                    </li>
+                </ul>
+          </nav>
+      </header>
+
+  <main>
+    <h1>Detalles de Incidencia</h1>
+
+    <div id="contenido-detalle">
+      <!-- Fila 1 -->
+      <div class="fila">
+        <strong>Incidencia:</strong>
+        <span id="incidencia-titulo-id">Cargando...</span>
+      </div>
+
+      <!-- Fila 2 -->
+      <div class="fila">
+        <strong>Descripción:</strong>
+        <span id="descripcion-texto">Cargando...</span>
+      </div>
+
+      <!-- Fila 3 -->
+      <div class="fila">
+        <strong>Usuario:</strong>
+        <a id="link-usuario" href="#">Cargando...</a>
+      </div>
+
+      <!-- Fila 4 -->
+      <div class="fila">
+        <strong>Técnico:</strong>
+        <a id="link-tecnico" href="#">Cargando...</a>
+        <button id="btn-asignarme" class="btn-accion">Asignarme incidencia</button>
+      </div>
+
+      <!-- Fila 5 -->
+      <div class="fila">
+        <strong>Estado:</strong>
+        <select id="select-estados"></select>
+        <button id="btn-guardar-estado" class="btn-accion">Guardar</button>
+      </div>
+
+      <!-- Fila 6 -->
+      <div class="fila">
+        <strong>Fecha de creación:</strong>
+        <span id="fecha-creacion">Cargando...</span>
+      </div>
+
+      <!-- Fila 7 -->
+      <div class="fila" id="fila-finalizacion" style="display: none;">
+        <strong>Fecha de finalización:</strong>
+        <span id="fecha-finalizacion">-</span>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="../js/incidencia_detalle.js"></script>
+  <script src="../js/Fun_icono_perfil.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+\doxysection{dashboard.\+php}
+\hypertarget{dashboard_8php_source}{}\label{dashboard_8php_source}\index{src/html/dashboard.php@{src/html/dashboard.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00001}00001\ <!-\/-\/}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00002}00002\ ===============================================================================}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00003}00003\ NOMBRE:\ dashboard\_cliente.html}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00004}00004\ DESCRIPCIÓN:\ dashboard\ o\ panel\ de\ control,\ esta\ pagina\ es\ la\ parte\ privada\ del\ usuario,}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00005}00005\ \ \ \ \ \ \ \ \ \ \ \ \ una\ vez\ hace\ login\ esto\ es\ lo\ primero\ que\ ve.\ En\ el\ podemos\ encontrar,\ con\ dos\ apartados\ }
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00006}00006\ \ \ \ \ \ \ \ \ \ \ \ \ principales\ que\ son\ los\ mapas\ y\ las\ estadisticas.\ Tambien\ podra\ acceder\ a\ el\ soporte\ tecnico\ }
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00007}00007\ \ \ \ \ \ \ \ \ \ \ \ \ y\ proximamente\ a\ su\ perfil,\ ...}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00008}00008\ COPYRIGHT:\ ©\ 2025\ AITHER.\ Todos\ los\ derechos\ reservados.}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00009}00009\ FECHA:\ 10/11/2025}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00010}00010\ AUTOR:\ Greysy\ Burgos\ Salazar}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00011}00011\ APORTACIÓN:\ Estructura\ completa\ de\ la\ página\ HTML\ para\ el\ inicio\ de\ sesión}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ con\ enlaces\ a\ recursos\ CSS\ y\ JavaScript\ externos.}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00013}00013\ ===============================================================================}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00014}00014\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00016}00016\ <?php}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00017}00017\ session\_start();}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00019}00019\ \textcolor{comment}{//\ Si\ NO\ hay\ un\ usuario\ logeado,\ redirigir\ al\ login}}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00020}00020\ \textcolor{keywordflow}{if}\ (!isset(\$\_SESSION[\textcolor{stringliteral}{'usuario\_id'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00021}00021\ \ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ login.html"{}});}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00022}00022\ \ \ \ \ exit;}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00025}00025\ \textcolor{comment}{//\ Construimos\ el\ nombre\ completo}}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00026}00026\ \$nombre\ =\ \$\_SESSION[\textcolor{stringliteral}{'usuario\_nombre'}];}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00027}00027\ \$nombreCompleto\ =\ \$\_SESSION[\textcolor{stringliteral}{'usuario\_nombre'}]\ .\ \textcolor{stringliteral}{"{}\ "{}}\ .\ \$\_SESSION[\textcolor{stringliteral}{'usuario\_apellidos'}];}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00028}00028\ \$gmail\ =\ \$\_SESSION[\textcolor{stringliteral}{'usuario\_correo'}];}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00029}00029\ ?>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00032}00032\ <!DOCTYPE\ html>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00033}00033\ <html\ lang=\textcolor{stringliteral}{"{}es"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00034}00034\ \ \ \ \ <head>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00035}00035\ \ \ \ \ \ \ \ \ <meta\ charset=\textcolor{stringliteral}{"{}UTF-\/8"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00036}00036\ \ \ \ \ \ \ \ \ <meta\ name=\textcolor{stringliteral}{"{}viewport"{}}\ content=\textcolor{stringliteral}{"{}width=device-\/width,\ initial-\/scale=1.0"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00037}00037\ \ \ \ \ \ \ \ \ <title>AITHER\ |\ Panel\ de\ control</title>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00038}00038\ \ \ \ \ \ \ \ \ <link\ rel=\textcolor{stringliteral}{"{}icon"{}}\ href=\textcolor{stringliteral}{"{}../img/logo\_aither.png"{}}\ type=\textcolor{stringliteral}{"{}image/png"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00039}00039\ \ \ \ \ \ \ \ \ <link\ rel=\textcolor{stringliteral}{"{}stylesheet"{}}\ href=\textcolor{stringliteral}{"{}../css/dashboard\_cliente.css"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00040}00040\ \ \ \ \ \ \ \ \ <link\ href=\textcolor{stringliteral}{"{}https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700\&display=swap"{}}\ rel=\textcolor{stringliteral}{"{}stylesheet"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00041}00041\ \ \ \ \ \ \ \ \ <link\ rel=\textcolor{stringliteral}{"{}stylesheet"{}}\ href=\textcolor{stringliteral}{"{}https://cdnjs.cloudflare.com/ajax/libs/font-\/awesome/6.5.2/css/all.min.css"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00043}00043\ \ \ \ \ \ \ \ \ <link\ rel=\textcolor{stringliteral}{"{}stylesheet"{}}\ href=\textcolor{stringliteral}{"{}https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00044}00044\ \ \ \ \ \ \ \ \ <script\ src=\textcolor{stringliteral}{"{}https://cdn.jsdelivr.net/npm/flatpickr"{}}></script>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00045}00045\ \ \ \ \ </head>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00046}00046\ \ \ \ \ <body>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00047}00047\ \ \ \ \ \ \ \ \ <!-\/-\/}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00048}00048\ \ \ \ \ \ \ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00049}00049\ \ \ \ \ \ \ \ \ BLOQUE:\ <header>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00050}00050\ \ \ \ \ \ \ \ \ DISEÑO\ LÓGICO:\ Contiene\ el\ logotipo\ y\ la\ barra\ de\ navegación\ principal.}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00051}00051\ \ \ \ \ \ \ \ \ DESCRIPCIÓN:\ Proporciona\ acceso\ rápido\ a\ secciones\ informativas\ y}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00052}00052\ \ \ \ \ \ \ \ \ un\ botón\ para\ iniciar\ sesión.}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00053}00053\ \ \ \ \ \ \ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00054}00054\ \ \ \ \ \ \ \ \ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00055}00055\ \ \ \ \ \ \ \ \ <header>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/\ Logo\ de\ Aither\ |\ Al\ hacer\ clic\ tiene\ que\ llevar\ a\ la\ landing\ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}\#"{}}><img\ src=\textcolor{stringliteral}{"{}../img/logo\_Aither\_web.png"{}}\ alt=\textcolor{stringliteral}{"{}Este\ es\ el\ logo\ de\ nuestro\ Proyecto:\ Aither"{}}></a>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ <nav>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/Mis\ sensores,\ soporte\ tecnico\ y\ perfil\ (configuracion\ y\ cerrar\ sesion)-\/-\/>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <ul>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li><a\ href=\textcolor{stringliteral}{"{}dashboard.php"{}}>Mis\ <br>\ sensores</a></li>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}soporte\_tecnico\_cliente.php"{}}>Soporte\ <br>\ técnico</a>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </li>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}profile-\/dropdown-\/container"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}\#"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}nav-\/perfil"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}profile-\/toggle-\/button"{}}><i\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}fa-\/solid\ fa-\/circle-\/user"{}}></i><span><?php\ echo\ htmlspecialchars(\$nombre);\ ?></span></a>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}profile-\/menu"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}profile-\/menu"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}menu-\/header"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <i\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}fa-\/solid\ fa-\/circle-\/user\ profile-\/icon-\/large"{}}></i>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}profile-\/name"{}}><?php\ echo\ htmlspecialchars(\$nombre);\ ?></span>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <i\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}fa-\/solid\ fa-\/xmark\ close-\/menu-\/btn"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}close-\/menu-\/button"{}}></i>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}perfil\_cliente.php"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}menu-\/item"{}}>CONFIGURACIÓN</a>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}../php/logout.php"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}menu-\/item\ logout-\/item"{}}>CERRAR\ SESIÓN</a>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </li>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </ul>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ </nav>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00079}00079\ \ \ \ \ \ \ \ \ </header>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00080}00080\ \ \ \ \ \ \ \ \ <!-\/-\/}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00081}00081\ \ \ \ \ \ \ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00082}00082\ \ \ \ \ \ \ \ \ BLOQUE:\ <main>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00083}00083\ \ \ \ \ \ \ \ \ DISEÑO\ LÓGICO:\ La\ parte\ principal\ del\ dashboard,\ esta\ compuesto\ por\ dos\ secciones}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00084}00084\ \ \ \ \ \ \ \ \ que\ dan\ diferente\ informacion\ pero\ la\ estructura\ es\ parecida.\ \ }
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00085}00085\ \ \ \ \ \ \ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00086}00086\ \ \ \ \ \ \ \ \ -\/-\/>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00087}00087\ \ \ \ \ \ \ \ \ <main>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}sensores-\/container"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/Titulo-\/-\/>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ <h1>MIS\ SENSORES</h1>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/pestañas\ de\ navegacion\ entre\ mapas\ y\ estadisticas-\/-\/>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ <nav\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}sensores-\/nav"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <ul>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li><a\ href=\textcolor{stringliteral}{"{}\#"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}active"{}}\ data-\/tab=\textcolor{stringliteral}{"{}mapas"{}}>Mapas</a></li>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li><a\ href=\textcolor{stringliteral}{"{}\#"{}}\ data-\/tab=\textcolor{stringliteral}{"{}estadisticas"{}}>Estadísticas</a></li>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </ul>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ </nav>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/seccion\ de\ los\ mapas-\/-\/>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}tab-\/content\ active-\/tab-\/content"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}mapas-\/content"{}}\ data-\/tab-\/content=\textcolor{stringliteral}{"{}mapas"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}map-\/controls"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}dropdown-\/container"{}}>\ }
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/Seleccionar\ ver\ el\ mapa\ que\ quieras-\/-\/>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}dropdown-\/mapa"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}dropdown-\/button"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <span>Mis\ sensores\ personales</span>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <i\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}fa-\/solid\ fa-\/chevron-\/down"{}}></i>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}dropdown-\/menu"{}}\ >}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}\#"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}dropdown-\/item"{}}>Mis\ sensores\ personales</a>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}\#"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}dropdown-\/item"{}}>Contaminación\ del\ aire\ -\/\ Mapa\ general</a>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/Selecctor\ de\ fecha-\/-\/>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}date-\/picker"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}date-\/picker-\/button"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <span>Fecha:\ 12/11/2025</span>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <i\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}fa-\/solid\ fa-\/calendar-\/days"{}}></i>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/Sitio\ del\ mapa\ interactivo-\/-\/>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}map-\/container"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}map-\/placeholder"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <h2>Aquí\ irá\ el\ mapa\ interactivo</h2>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}leyenda"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/Leyenda\ por\ ahora\ orientativa-\/-\/>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <h4>Leyenda</h4>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <ul>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li><span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}color-\/box\ bueno"{}}></span>\ Bueno</li>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li><span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}color-\/box\ moderado"{}}></span>\ Moderado</li>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <li><span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}color-\/box\ insalubre"{}}></span>\ Insalubre</li>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </ul>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <p\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}actualizacion"{}}>Última\ actualización\ 20:34</p>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/Seccion\ de\ las\ estadisticas-\/-\/>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}tab-\/content"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}estadisticas-\/content"{}}\ data-\/tab-\/content=\textcolor{stringliteral}{"{}estadisticas"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}map-\/controls"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}dropdown-\/container"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/seleccion\ de\ que\ mapa\ se\ quieren\ ver\ las\ estadisticas-\/-\/>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}dropdown-\/mapa"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}dropdown-\/stats-\/button"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <span>Contaminación\ del\ aire\ -\/\ Gráficos</span>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <i\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}fa-\/solid\ fa-\/chevron-\/down"{}}></i>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}dropdown-\/menu"{}}\ >}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}\#"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}dropdown-\/item"{}}>Mis\ sensores\ personales</a>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}\#"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}dropdown-\/item"{}}>Contaminación\ del\ aire\ -\/\ Mapa\ general</a>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/selecctor\ de\ fecha-\/-\/>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}date-\/picker"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}date-\/picker-\/stats-\/button"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <span>Fecha:\ 12/11/2025</span>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <i\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}fa-\/solid\ fa-\/calendar-\/days"{}}></i>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <!-\/-\/graficas-\/-\/>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}graph-\/grid"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}graph-\/placeholder"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <h3>Gráfico\ de\ evolución\ temporal</h3>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}graph-\/placeholder"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <h3>Niveles\ máximos\ y\ mínimos</h3>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}graph-\/placeholder"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <h3>Comparativa\ de\ sensores</h3>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}graph-\/placeholder"{}}>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <h3>Otro\ dato\ relevante</h3>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00172}00172\ \ \ \ \ \ \ \ \ </main>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00173}00173\ \ \ \ \ </body>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00174}00174\ \ \ \ \ <script\ src=\textcolor{stringliteral}{"{}../js/dashboard\_cliente.js"{}}></script>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00175}00175\ \ \ \ \ <script\ src=\textcolor{stringliteral}{"{}../js/Fun\_icono\_perfil.js"{}}></script>}
+\DoxyCodeLine{\Hypertarget{dashboard_8php_source_l00176}00176\ </html>}
+
+\end{DoxyCode}

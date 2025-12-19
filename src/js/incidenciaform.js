@@ -27,7 +27,8 @@ document.getElementById("incidenciaForm").addEventListener("submit", async e => 
         accion: "crearIncidencia",
         id_user: formData.get("id_user"),
         titulo: formData.get("titulo"),
-        descripcion: formData.get("descripcion")
+        descripcion: formData.get("descripcion"),
+        sensor_id: formData.get("sensor_id") || null
     };
 
     try {

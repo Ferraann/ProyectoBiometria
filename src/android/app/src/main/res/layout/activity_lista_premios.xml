@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/logoApp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/logo_aither"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoApp">
+
+        <ImageView
+            android:id="@+id/imgBackArrow"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_arrowleft"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/azulOscuro_Principal"
+            android:contentDescription="Volver atrás"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RECOMPESAS"
+            android:textColor="@color/azulOscuro_Principal"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/lineaTitulo"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/azulOscuro_Principal"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/headerLayout"
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout" />
+    <!-- Número de coins del usuario -->
+    <TextView
+        android:id="@+id/coinNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:textColor="@color/azul_ToolBar"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/lineaTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Texto descriptivo -->
+    <TextView
+        android:id="@+id/coinText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AithCoins totales"
+        android:textSize="14sp"
+        android:textColor="@color/azul_ToolBar"
+        app:layout_constraintTop_toBottomOf="@id/coinNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"/>
+
+    <!-- ProgressBar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:progress="0"
+        android:max="50"
+        android:progressTint="@color/azul_ToolBar"
+        android:backgroundTint="@color/blanco"
+        app:layout_constraintTop_toBottomOf="@id/coinText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerPremios"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

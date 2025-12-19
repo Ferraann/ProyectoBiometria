@@ -5,73 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestión de Incidencias - AITHER</title>
     <link rel="stylesheet" href="../css/incidencias.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   </head>
   <body>
     <header>
-            <!-- Logo de Aither | Al hacer clic tiene que llevar a la landing -->
-            <a href="#"><img src="../img/logo_Aither_web.png" alt="Este es el logo de nuestro Proyecto: Aither"></a>
-            <nav>
-                <!--Mis sensores, soporte tecnico y perfil (configuracion y cerrar sesion)-->
-                <ul>
-                    <li><a href="#">Panel <br> Técnico</a></li>
-                    <li>
-                        <a href="#">Soporte <br> Interno</a>
-                    </li>
-                    <li class="profile-dropdown-container">
-                        <a href="#" class="nav-perfil" id="profile-toggle-button"><i class="fa-solid fa-circle-user"></i><span>NOMBRE A.P.</span></a>
-                        <div class="profile-menu" id="profile-menu">
-                            <div class="menu-header">
-                                <i class="fa-solid fa-circle-user profile-icon-large"></i>
-                                <span class="profile-name">NOMBRE A.P.</span>
-                                <i class="fa-solid fa-xmark close-menu-btn" id="close-menu-button"></i>
-                            </div>
-                            <a href="#" class="menu-item">CONFIGURACIÓN</a>
-                            <a href="#" class="menu-item logout-item">CERRAR SESIÓN</a>
-                        </div>
-                    </li>
-                </ul>
-          </nav>
-      </header>
-  <main>
-    <h1 class="page-title">PANEL TÉCNICO</h1>
+      <!-- Logo de Aither | Al hacer clic tiene que llevar a la landing -->
+      <a href="#"
+        ><img
+          src="../img/logo_Aither_web.png"
+          alt="Este es el logo de nuestro Proyecto: Aither"
+      /></a>
+      <nav>
+        <!--Mis sensores, soporte tecnico y perfil (configuracion y cerrar sesion)-->
+        <ul>
+          <li>
+            <a href="#"
+              >Panel <br />
+              Técnico</a
+            >
+          </li>
+          <li>
+            <a href="#"
+              >Soporte <br />
+              Interno</a
+            >
+          </li>
+          <li class="profile-dropdown-container">
+            <a href="#" class="nav-perfil" id="profile-toggle-button"
+              ><i class="fa-solid fa-circle-user"></i
+              ><span>NOMBRE A.P.</span></a
+            >
+            <div class="profile-menu" id="profile-menu">
+              <div class="menu-header">
+                <i class="fa-solid fa-circle-user profile-icon-large"></i>
+                <span class="profile-name">NOMBRE A.P.</span>
+                <i
+                  class="fa-solid fa-xmark close-menu-btn"
+                  id="close-menu-button"
+                ></i>
+              </div>
+              <a href="#" class="menu-item">CONFIGURACIÓN</a>
+              <a href="#" class="menu-item logout-item">CERRAR SESIÓN</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1 class="page-title">PANEL TÉCNICO</h1>
 
-    <div class="tabs-container">
+      <div class="tabs-container">
         <a href="#" class="tab-link active">Incidencias usuarios</a>
         <span class="tab-separator">|</span>
         <a href="#" class="tab-link inactive">Lista de sensores</a>
-    </div>
-    <div class="filtros-row">
-      <div class="search-pill">
-        <input type="text" id="buscador" placeholder="Buscar por título, descripción, usuario o estado..."/>
-        <i class="fa-solid fa-magnifying-glass"></i>
       </div>
+      <div class="filtros-row">
+        <div class="search-pill">
+          <input
+            type="text"
+            id="buscador"
+            placeholder="Buscar por título, descripción, usuario o estado..."
+          />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
         <!-- Filtros avanzados -->
-         <div class="filter-group">
-            <span class="filter-label">Filtrar por:</span>
-            <div id="filtros">
-              <label> Técnico: <select id="filtroTecnico"> <option value="">-- Cualquiera --</option> </select> </label>
+        <div class="filter-group">
+          <span class="filter-label">Filtrar por:</span>
+          <div id="filtros">
+            <label>
+              Técnico:
+              <select id="filtroTecnico">
+                <option value="">-- Cualquiera --</option>
+              </select>
+            </label>
 
-              <label>Estado: <select id="filtroEstado"> <option value="">-- Cualquiera --</option> </select> </label>
+            <label
+              >Estado:
+              <select id="filtroEstado">
+                <option value="">-- Cualquiera --</option>
+              </select>
+            </label>
 
-              <label>Fotos: <select id="filtroFotos"> <option value="">-- Cualquiera --</option> <option value="con">Con fotos</option> <option value="sin">Sin fotos</option> </select> </label>
+            <label
+              >Fotos:
+              <select id="filtroFotos">
+                <option value="">-- Cualquiera --</option>
+                <option value="con">Con fotos</option>
+                <option value="sin">Sin fotos</option>
+              </select>
+            </label>
 
-              <label> Orden: <select id="ordenFecha"> <option value="desc">Más reciente primero</option> <option value="asc">Más antigua primero</option> </select> </label>
-            </div>
-         </div>
-    </div>
-      
-    <div id="lista-incidencias">
-      <p id="cargando">Cargando incidencias...</p>
-    </div>
-  </main>
-    
+            <label>
+              Orden:
+              <select id="ordenFecha">
+                <option value="desc">Más reciente primero</option>
+                <option value="asc">Más antigua primero</option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </div>
 
-    <script src="../js/incidencias.js"></script>
+      <div id="lista-incidencias">
+        <p id="cargando">Cargando incidencias...</p>
+      </div>
+    </main>
+
+    <script type="module" src="../js/incidencias.js"></script>
     <script src="../js/Fun_icono_perfil.js"></script>
   </body>
 </html>

@@ -20,12 +20,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 // ------------------------------------------------------------------
 public class ApiCliente {
     //Declaro mi ip
-    private static final String urlLocal = "http://172.25.181.250/ProyectoBiometria/src/api/";
+    private static final String urlLocal = "http://10.225.160.115/ProyectoBiometria/ProyectoBiometria/src/api/";
+
 
     //Pongo Retrofit en null para después comprobar si está o no funcional
     private static Retrofit retrofit = null;
 
-    //-------------------------------------------------
+    //----------------------------------    ---------------
     //      getApiService() --> retrofit
     //-------------------------------------------------
     public static ApiService getApiService(){

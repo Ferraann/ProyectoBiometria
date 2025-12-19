@@ -1,0 +1,68 @@
+\doxysection{guardar\+Foto\+Usuario.\+php}
+\hypertarget{guardar_foto_usuario_8php_source}{}\label{guardar_foto_usuario_8php_source}\index{src/api/logicaNegocio/guardarFotoUsuario.php@{src/api/logicaNegocio/guardarFotoUsuario.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00002}00002\ \textcolor{keyword}{function}\ guardarFotoPerfil(\$conn,\ \$data)}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00003}00003\ \{}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00004}00004\ \ \ \ \ \textcolor{comment}{//\ 1.\ Validaciones\ mínimas}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00005}00005\ \ \ \ \ \textcolor{keywordflow}{if}\ (empty(\$data[\textcolor{stringliteral}{'usuario\_id'}])\ ||\ empty(\$data[\textcolor{stringliteral}{'foto'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00006}00006\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Faltan\ parámetros:\ usuario\_id\ o\ foto."{}}];}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00007}00007\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00009}00009\ \ \ \ \ \$usuario\_id\ =\ (int)\$data[\textcolor{stringliteral}{'usuario\_id'}];}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00010}00010\ \ \ \ \ \$base64\ =\ \$data[\textcolor{stringliteral}{'foto'}];}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00012}00012\ \ \ \ \ \textcolor{comment}{//\ 2.\ Convertir\ Base64\ -\/>\ BLOB\ (sin\ cabecera)}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00013}00013\ \ \ \ \ \$base64\ =\ preg\_replace(\textcolor{stringliteral}{'/\string^data:image\(\backslash\)/\(\backslash\)w+;base64,/'},\ \textcolor{stringliteral}{''},\ \$base64);}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00014}00014\ \ \ \ \ \$blob\ =\ base64\_decode(\$base64,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (\$blob\ ===\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}La\ imagen\ no\ es\ válida."{}}];}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//\ 3.\ Verificar\ si\ el\ usuario\ ya\ tiene\ foto}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00021}00021\ \ \ \ \ \$check\ =\ \$conn-\/>prepare(\textcolor{stringliteral}{"{}SELECT\ id\ FROM\ fotos\_perfil\_usuario\ WHERE\ usuario\_id\ =\ ?"{}});}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00022}00022\ \ \ \ \ \$check-\/>bind\_param(\textcolor{stringliteral}{"{}i"{}},\ \$usuario\_id);}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00023}00023\ \ \ \ \ \$check-\/>execute();}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00024}00024\ \ \ \ \ \$check-\/>store\_result();\ \textcolor{comment}{//\ Obtiene\ número\ de\ filas}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00025}00025\ \ \ \ \ \$existe\ =\ \$check-\/>num\_rows\ >\ 0;}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00026}00026\ \ \ \ \ \$check-\/>close();}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ 4.\ Dependiendo\ si\ existe\ -\/>\ UPDATE\ o\ INSERT}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (\$existe)\ \{}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ UPDATE\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00031}00031\ \ \ \ \ \ \ \ \ \$stmt\ =\ \$conn-\/>prepare(\textcolor{stringliteral}{"{}UPDATE\ fotos\_perfil\_usuario\ SET\ foto\ =\ ?\ WHERE\ usuario\_id\ =\ ?"{}});}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\$stmt)\ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Error\ en\ la\ preparación\ del\ UPDATE."{}}];}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00034}00034\ \ \ \ \ \ \ \ \ \$stmt-\/>bind\_param(\textcolor{stringliteral}{"{}bi"{}},\ \$blob,\ \$usuario\_id);}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00035}00035\ \ \ \ \ \ \ \ \ \$stmt-\/>send\_long\_data(0,\ \$blob);}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\$stmt-\/>execute())\ \{}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \$stmt-\/>close();}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Error\ al\ actualizar\ la\ foto."{}}];}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00040}00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00042}00042\ \ \ \ \ \ \ \ \ \$stmt-\/>close();}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}ok"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Foto\ actualizada\ correctamente."{}}];}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00044}00044\ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ INSERT\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00047}00047\ \ \ \ \ \ \ \ \ \$stmt\ =\ \$conn-\/>prepare(\textcolor{stringliteral}{"{}INSERT\ INTO\ fotos\_perfil\_usuario\ (usuario\_id,\ foto)\ VALUES\ (?,\ ?)"{}});}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\$stmt)\ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Error\ en\ la\ preparación\ del\ INSERT."{}}];}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00050}00050\ \ \ \ \ \ \ \ \ \$stmt-\/>bind\_param(\textcolor{stringliteral}{"{}ib"{}},\ \$usuario\_id,\ \$blob);}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00051}00051\ \ \ \ \ \ \ \ \ \$stmt-\/>send\_long\_data(1,\ \$blob);}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\$stmt-\/>execute())\ \{}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \$stmt-\/>close();}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Error\ al\ guardar\ la\ foto."{}}];}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00056}00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00058}00058\ \ \ \ \ \ \ \ \ \$stmt-\/>close();}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\textcolor{stringliteral}{"{}status"{}}\ =>\ \textcolor{stringliteral}{"{}ok"{}},\ \textcolor{stringliteral}{"{}mensaje"{}}\ =>\ \textcolor{stringliteral}{"{}Foto\ guardada\ correctamente."{}}];}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00061}00061\ \}}
+\DoxyCodeLine{\Hypertarget{guardar_foto_usuario_8php_source_l00062}00062\ ?>}
+
+\end{DoxyCode}

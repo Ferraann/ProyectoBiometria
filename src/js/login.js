@@ -114,8 +114,8 @@ function mostrarMensaje(tipo, texto, duracion = 3000) {
   msg.classList.remove("fade-out");
 
   const ref = tipo === "login"
-      ? loginForm.querySelector(".forgot")
-      : registerForm.querySelector(".btn-primary");
+    ? loginForm.querySelector(".forgot")
+    : registerForm.querySelector(".btn-primary");
 
   ref.before(msg);
 
@@ -137,20 +137,51 @@ loginForm.addEventListener("submit", async e => {
   }
 
   try {
+    // PASO 1: Intentar iniciar sesión (POST)
     const response = await fetch("../api/index.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ accion: "login", gmail, password })
     });
 
-    const data = await response.json();
+    const dataLogin = await response.json();
 
-    if (data.status === "ok") {
-      // Guardar usuario en localStorage y redirigir
-      localStorage.setItem("user", JSON.stringify(data.usuario));
-      window.location.href = "dashboard.php"; // si el login es exitoso lleva aqui, cambiar
+    if (dataLogin.status === "ok") {
+
+      const usuario = dataLogin.usuario;
+      const usuarioId = usuario.id;
+
+      window.sessionStorage.setItem("idUsuario", usuarioId.toString());
+      localStorage.setItem("user", JSON.stringify(usuario));
+
+      // PASO 2: Verificar roles mediante llamadas GET
+      const urlTecnico = "https://fsanpra.upv.edu.es/src/html/incidencias.html";
+      const urlAdmin = "https://fsanpra.upv.edu.es/src/html/incidencias.html";
+      let redirectURL = "dashboard.php"; // URL por defecto si no es ni técnico ni administrador
+
+      const resTecnico = await fetch(`../api/index.php?accion=esTecnico&id=${usuarioId}`);
+      const dataTecnico = await resTecnico.json();
+      const esTecnico = dataTecnico.es_tecnico || false;
+
+      // Llamada 2b: ¿Es administrador?
+      const resAdmin = await fetch(`../api/index.php?accion=esAdministrador&id=${usuarioId}`);
+      const dataAdmin = await resAdmin.json();
+      const esAdministrador = dataAdmin.es_admin || false;
+
+      // PASO 3: Redirigir según el rol
+      if (esTecnico) {
+        redirectURL = urlTecnico;
+      }
+
+      if (esAdministrador) {
+        redirectURL = urlAdmin; //admin tiene prioridad sobre técnico, si va detras, se sobreescribe la url
+      } 
+
+      // Redirigir a la URL determinada
+      window.location.href = redirectURL;
+
     } else {
-      mostrarMensaje("login", data.message || "Credenciales incorrectas.");
+      mostrarMensaje("login", dataLogin.message || "Credenciales incorrectas.");
     }
   } catch (err) {
     console.error(err);
@@ -183,8 +214,8 @@ registerForm.addEventListener("submit", async e => {
   const tieneEsp = /[!@#$%^&*(),.?":{}|<>]/.test(password);
   if (password.length < 8 || !tieneNum || !tieneMay || !tieneEsp) {
     mostrarMensaje("register",
-        "La contraseña debe tener 8 o más caracteres , un número, una mayúscula y un carácter especial.",
-        5000);
+      "La contraseña debe tener 8 o más caracteres , un número, una mayúscula y un carácter especial.",
+      5000);
     return;
   }
 
@@ -237,7 +268,8 @@ const popup = document.getElementById("popup-politica");
 const btnAccept = document.getElementById("btnAccept");
 const popupText = document.getElementById("popupText");
 const closePopup = document.getElementById("closePopup");
-const checkmark = document.getElementById("checkmark");
+const inputCheckmark = document.getElementById("checkmark");
+const checkmarkSpan = registerForm.querySelector(".politica .checkmark");
 
 // Abrir popup al pulsar el texto
 popupLinks.forEach(link => {
@@ -246,6 +278,28 @@ popupLinks.forEach(link => {
     btnAccept.disabled = true; // Reiniciamos
     popupText.scrollTop = 0; // Scroll al inicio
   });
+});
+
+// ABRIR POPUP AL PULSAR LA CASILLA VISIBLE (SPAN)
+checkmarkSpan.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  // Si el checkbox real está deshabilitado, es porque necesita aceptar la política.
+  if (inputCheckmark.disabled) {
+    // Comportamiento 1: Abrir Popup
+    popup.style.display = "flex";
+    btnAccept.disabled = true; // Reiniciamos
+    popupText.scrollTop = 0; // Scroll al inicio
+
+  } else {
+    // Comportamiento 2: Simular clic en el checkbox real para marcar/desmarcar
+
+    // Invertimos el estado 'checked' del input invisible
+    inputCheckmark.checked = !inputCheckmark.checked;
+
+    // Nota: El CSS se encargará de actualizar la apariencia del SPAN
+    // dependiendo del estado del INPUT.
+  }
 });
 
 // Cerrar popup al pulsar la X
@@ -263,6 +317,6 @@ popupText.addEventListener("scroll", () => {
 // Al pulsar aceptar, cerrar popup y habilitar el checkbox
 btnAccept.addEventListener("click", () => {
   popup.style.display = "none";
-  checkmark.disabled = false; // Ahora sí se puede marcar
-  checkmark.checked = true;   // Marcamos automáticamente
+  inputCheckmark.disabled = false; // Ahora sí se puede marcar
+  inputCheckmark.checked = true;   // Marcamos automáticamente
 });

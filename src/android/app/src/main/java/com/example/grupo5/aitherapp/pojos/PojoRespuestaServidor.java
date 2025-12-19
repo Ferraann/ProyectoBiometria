@@ -10,10 +10,13 @@ package com.example.grupo5.aitherapp.pojos;
 //  a las diversa
 //------------------------------------------------------------------
 
+import java.util.List;
+
 public class PojoRespuestaServidor {
     private String status;
     private String mensaje;
     private PojoUsuario usuario;
+    private List<PojoSensor> listaSensores;
 
     public String getStatus() {
         return status;
@@ -37,5 +40,13 @@ public class PojoRespuestaServidor {
 
     public void setUsuario(PojoUsuario usuario) {
         this.usuario = usuario;
+    }
+
+    public List<PojoSensor> getListaSensores() {
+        return listaSensores;
+    }
+
+    public void setListaSensores(List<PojoSensor> listaSensores) {
+        this.listaSensores = listaSensores;
     }
 }

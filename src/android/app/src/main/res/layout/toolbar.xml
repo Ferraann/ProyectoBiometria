@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomNav"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:background="@color/azul_ToolBar"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:weightSum="4"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+    <ImageView
+        android:id="@+id/nav_home"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_weight="1"
+        android:src="@drawable/selector_home"
+        android:clickable="true"
+        app:tint="@color/blanco" />
+    <ImageView
+        android:id="@+id/nav_walk"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_weight="1"
+        android:src="@drawable/selector_walk"
+        android:clickable="true"
+        app:tint="@color/blanco" />
+    <ImageView
+        android:id="@+id/nav_bell"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_weight="1"
+        android:src="@drawable/selector_bell"
+        android:clickable="true"
+        app:tint="@color/blanco" />
+    <ImageView
+        android:id="@+id/nav_profile"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_weight="1"
+        android:src="@drawable/seletor_profile"
+        android:clickable="true"
+        app:tint="@color/blanco"
+        android:onClick="botonEditarPerfil"/>
+</LinearLayout>

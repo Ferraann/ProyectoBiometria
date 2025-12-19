@@ -29,7 +29,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
-
+// ------------------------------------------------------------------
+// Fichero: BTLEActivity.java
+// Autor: Pablo Chasi
+// Fecha: 28/10/2025
+// ------------------------------------------------------------------
+// Descripción:
+// Clase encargada de gestionar la detección de dispositivos Bluetooth
+// Low Energy (BTLE), especialmente iBeacons. Permite iniciar y detener
+// el escaneo, procesar la información recibida, extraer datos de tramas
+// iBeacon y enviarlas al servidor mediante Retrofit.
+// ------------------------------------------------------------------
 public class BTLEActivity extends AppCompatActivity {
     // --------------------------------------------------------------
     // --------------------------------------------------------------
@@ -44,6 +54,9 @@ public class BTLEActivity extends AppCompatActivity {
     private ScanCallback callbackDelEscaneo = null;
 
     List<ScanFilter> filtros = new ArrayList<>();
+
+    //--------------------------------
+    String DispositivoQueSeBusca = "";
 
     // --------------------------------------------------------------
     //Clase que sirve como ejemplo para encontrar Ibeacon
@@ -84,7 +97,7 @@ public class BTLEActivity extends AppCompatActivity {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-        this.elEscanner.startScan( this.callbackDelEscaneo);
+        this.elEscanner.startScan(this.callbackDelEscaneo);
 
     } // ()
 
@@ -182,8 +195,6 @@ public class BTLEActivity extends AppCompatActivity {
         filtros.add(sf);
 
         Log.d(ETIQUETA_LOG, "  buscarEsteDispositivoBTLE(): empezamos a escanear buscando: " + dispositivoBuscado );
-        //Log.d(ETIQUETA_LOG, "  buscarEsteDispositivoBTLE(): empezamos a escanear buscando: " + dispositivoBuscado
-        //      + " -> " + Utilidades.stringToUUID( dispositivoBuscado ) );
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
             return;
@@ -227,7 +238,7 @@ public class BTLEActivity extends AppCompatActivity {
         //this.buscarEsteDispositivoBTLE( Utilidades.stringToUUID( "EPSG-GTI-PROY-3A" ) );
 
         //this.buscarEsteDispositivoBTLE( "EPSG-GTI-PROY-3A" );
-        this.buscarEsteDispositivoBTLE( "Grupo 6" );
+        this.buscarEsteDispositivoBTLE( DispositivoQueSeBusca );
 
     } // ()
 
@@ -353,4 +364,6 @@ public class BTLEActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }

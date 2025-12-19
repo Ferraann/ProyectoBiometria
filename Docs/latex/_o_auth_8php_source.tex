@@ -1,0 +1,67 @@
+\doxysection{OAuth.\+php}
+\hypertarget{_o_auth_8php_source}{}\label{_o_auth_8php_source}\index{src/libs/PHPMailer-\/7.0.0/src/OAuth.php@{src/libs/PHPMailer-\/7.0.0/src/OAuth.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00022}00022\ \textcolor{keyword}{namespace\ }PHPMailer\(\backslash\)PHPMailer;}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00024}00024\ use\ League\(\backslash\)OAuth2\(\backslash\)Client\(\backslash\)Grant\(\backslash\)RefreshToken;}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00025}00025\ use\ League\(\backslash\)OAuth2\(\backslash\)Client\(\backslash\)Provider\(\backslash\)AbstractProvider;}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00026}00026\ use\ League\(\backslash\)OAuth2\(\backslash\)Client\(\backslash\)Token\(\backslash\)AccessToken;}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00036}\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth}{00036}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth}{OAuth}}\ \textcolor{keyword}{implements}\ \mbox{\hyperlink{interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider}{OAuthTokenProvider}}}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00037}00037\ \{}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{protected}\ \$provider;}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{protected}\ \$oauthToken;}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{protected}\ \$oauthUserEmail\ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{protected}\ \$oauthClientSecret\ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{protected}\ \$oauthClientId\ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00079}00079\ \ \ \ \ \textcolor{keyword}{protected}\ \$oauthRefreshToken\ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00087}\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_ae8b8e1144b807ac13f20a916fd073b32}{00087}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_ae8b8e1144b807ac13f20a916fd073b32}{\_\_construct}}(\$options)}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00088}00088\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00089}00089\ \ \ \ \ \ \ \ \ \$this-\/>provider\ =\ \$options[\textcolor{stringliteral}{'provider'}];}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00090}00090\ \ \ \ \ \ \ \ \ \$this-\/>oauthUserEmail\ =\ \$options[\textcolor{stringliteral}{'userName'}];}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00091}00091\ \ \ \ \ \ \ \ \ \$this-\/>oauthClientSecret\ =\ \$options[\textcolor{stringliteral}{'clientSecret'}];}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00092}00092\ \ \ \ \ \ \ \ \ \$this-\/>oauthClientId\ =\ \$options[\textcolor{stringliteral}{'clientId'}];}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00093}00093\ \ \ \ \ \ \ \ \ \$this-\/>oauthRefreshToken\ =\ \$options[\textcolor{stringliteral}{'refreshToken'}];}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00101}\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a8fe9a4826bf27c54d6775782912e9d03}{00101}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a8fe9a4826bf27c54d6775782912e9d03}{getGrant}}()}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00102}00102\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ RefreshToken();}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00111}\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a211a2979c22afcd7d9056a2bb55aa449}{00111}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a211a2979c22afcd7d9056a2bb55aa449}{getToken}}()}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00112}00112\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$this-\/>provider-\/>getAccessToken(}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a8fe9a4826bf27c54d6775782912e9d03}{getGrant}}(),}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{'refresh\_token'}\ =>\ \$this-\/>oauthRefreshToken]}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00116}00116\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00124}\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_abf4e9198e70e0adf39a7a9a8bcdafa94}{00124}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_abf4e9198e70e0adf39a7a9a8bcdafa94}{getOauth64}}()}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00125}00125\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Get\ a\ new\ token\ if\ it's\ not\ available\ or\ has\ expired}}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{null}\ ===\ \$this-\/>oauthToken\ ||\ \$this-\/>oauthToken-\/>hasExpired())\ \{}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>oauthToken\ =\ \$this-\/>\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_a211a2979c22afcd7d9056a2bb55aa449}{getToken}}();}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00129}00129\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ base64\_encode(}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'user='}\ .}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>oauthUserEmail\ .}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)001auth=Bearer\ "{}}\ .}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>oauthToken\ .}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)001\(\backslash\)001"{}}}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00137}00137\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00138}00138\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_o_auth_8php_source_l00139}00139\ \}}
+
+\end{DoxyCode}

@@ -18,43 +18,35 @@ allDatePickers.forEach(picker => {
 });
 
 /* --- 2. LÓGICA DEL DROPDOWN (REUTILIZABLE) --- */
-
-// Seleccionamos TODOS los botones de dropdown (los que tienen la clase .dropdown-mapa)
 const allDropdownButtons = document.querySelectorAll('.dropdown-mapa');
 
 allDropdownButtons.forEach(button => {
-    // Buscamos el menú que es su "hermano" (el que está justo después en el HTML)
     const menu = button.nextElementSibling;
-    
-    // Verificamos que sea un menú antes de seguir
-    if (!menu || !menu.classList.contains('dropdown-menu')) {
-        return; 
-    }
+    if (!menu || !menu.classList.contains('dropdown-menu')) return;
 
-    const items = menu.querySelectorAll('.dropdown-item');
+    const dropdownItems = menu.querySelectorAll('.dropdown-item'); // Cambiado el nombre para mayor claridad
     const span = button.querySelector('span');
 
-    // Abrir/Cerrar el menú al hacer clic en ESTE botón
     button.addEventListener('click', function(event) {
-        event.stopPropagation(); // Evita que el clic se propague al 'document'
-        
-        // Antes de abrir, cerramos todos los *otros* menús que estén abiertos
-        document.querySelectorAll('.dropdown-menu.show').forEach(openMenu => {
-            if (openMenu !== menu) {
-                openMenu.classList.remove('show');
-            }
-        });
-
-        // Ahora sí, abrimos o cerramos el menú actual
+        event.stopPropagation();
         menu.classList.toggle('show');
     });
 
-    // Actualizar el texto al hacer clic en un item
-    items.forEach(item => {
+    // AQUÍ ESTABA EL ERROR: Asegúrate de usar 'dropdownItem' dentro del forEach
+    dropdownItems.forEach(item => { // Asegúrate de llamar a la variable 'item' aquí
         item.addEventListener('click', function(event) {
-            event.preventDefault(); // Evita que el enlace '#' recargue la página
-            span.textContent = item.textContent; // Cambia el texto del botón
-            menu.classList.remove('show'); // Cierra el menú
+            event.preventDefault();
+            span.textContent = item.textContent.trim();
+
+            // Llamamos a la lógica del mapa
+            if (typeof switchMapView === 'function') {
+                if (item.textContent.includes("Mis sensores personales")) {
+                    switchMapView('personal');
+                } else {
+                    switchMapView('general');
+                }
+            }
+            menu.classList.remove('show');
         });
     });
 });
@@ -70,19 +62,87 @@ document.addEventListener('click', function(event) {
 });
 
 
-/* --- 3. LÓGICA DEL SISTEMA DE PESTAÑAS --- */
-
 const tabLinks = document.querySelectorAll('.sensores-nav a');
-const tabContents = document.querySelectorAll('.tab-content');
 
 tabLinks.forEach(link => {
     link.addEventListener('click', function(event) {
-        event.preventDefault(); 
+        event.preventDefault();
         const tabId = this.dataset.tab;
+
+        // Visualización de pestañas
         tabLinks.forEach(l => l.classList.remove('active'));
-        tabContents.forEach(c => c.classList.remove('active-tab-content'));
         this.classList.add('active');
-        const activeContent = document.querySelector(`.tab-content[data-tab-content="${tabId}"]`);
-        activeContent.classList.add('active-tab-content');
+
+        const tabContents = document.querySelectorAll('.tab-content');
+        tabContents.forEach(content => {
+            if (content.getAttribute('data-tab-content') === tabId) {
+                content.classList.add('active-tab-content');
+            } else {
+                content.classList.remove('active-tab-content');
+            }
+        });
+
+        // Solo llamamos al mapa si la pestaña es "mapas"
+        if (tabId === 'mapas') {
+            // El retraso permite que el contenedor se vuelva visible antes de inicializar
+            setTimeout(() => {
+                if (typeof initializeDashboardMap === 'function') {
+                    initializeDashboardMap();
+                }
+            }, 150);
+        }
+    });
+});
+
+// Inicialización controlada al cargar el DOM
+document.addEventListener('DOMContentLoaded', () => {
+    const activeTab = document.querySelector('.sensores-nav a.active');
+    if (activeTab && activeTab.dataset.tab === 'mapas') {
+        // Un solo temporizador para la carga inicial
+        setTimeout(() => {
+            if (typeof initializeDashboardMap === 'function') {
+                initializeDashboardMap();
+            }
+        }, 400);
+    }
+});
+
+
+
+
+
+
+// --- Lógica del Modal de Información ---
+document.addEventListener('DOMContentLoaded', () => {
+    const infoModal = document.getElementById('gas-info-panel');
+    const openInfoBtn = document.getElementById('open-info-btn');
+    const closeInfoBtn = document.getElementById('close-info-btn');
+
+    // Función para abrir
+    if (openInfoBtn) {
+        openInfoBtn.addEventListener('click', () => {
+            infoModal.style.display = 'block';
+        });
+    }
+
+    // Función para cerrar
+    if (closeInfoBtn) {
+        closeInfoBtn.addEventListener('click', () => {
+            infoModal.style.display = 'none';
+        });
+    }
+
+    // Cerrar si se hace clic fuera del contenido blanco
+    window.addEventListener('click', (event) => {
+        if (event.target === infoModal) {
+            infoModal.style.display = 'none';
+        }
+    });
+
+    // Cerrar con la tecla Escape
+    window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && infoModal.style.display === 'block') {
+            infoModal.style.display = 'none';
+        }
     });
 });

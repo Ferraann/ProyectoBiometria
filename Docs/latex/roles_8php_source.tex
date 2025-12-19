@@ -1,0 +1,33 @@
+\doxysection{roles.\+php}
+\hypertarget{roles_8php_source}{}\label{roles_8php_source}\index{src/api/logicaNegocio/roles.php@{src/api/logicaNegocio/roles.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00003}00003\ \textcolor{comment}{//\ Fichero:\ roles.php}}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00004}00004\ \textcolor{comment}{//\ Autor:\ Manuel}}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00005}00005\ \textcolor{comment}{//\ Fecha:\ 5/12/2025}}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00006}00006\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00007}00007\ \textcolor{comment}{//\ Descripción:}}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00008}00008\ \textcolor{comment}{//\ \ Funciones\ para\ validar\ roles\ de\ usuario\ (técnico,\ administrador)}}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00009}00009\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00011}00011\ \textcolor{comment}{/*\ Devuelve\ true\ si\ el\ usuario\ está\ en\ la\ tabla\ técnicos\ */}}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00012}00012\ \textcolor{keyword}{function}\ esTecnico(\$conn,\ \textcolor{keywordtype}{int}\ \$usuarioId):\ bool}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00014}00014\ \ \ \ \ \$stmt\ =\ \$conn-\/>prepare(\textcolor{stringliteral}{"{}SELECT\ 1\ FROM\ tecnicos\ WHERE\ usuario\_id\ =\ ?\ LIMIT\ 1"{}});}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00015}00015\ \ \ \ \ \$stmt-\/>bind\_param(\textcolor{stringliteral}{"{}i"{}},\ \$usuarioId);}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00016}00016\ \ \ \ \ \$stmt-\/>execute();}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{bool})\ \$stmt-\/>get\_result()-\/>fetch\_column();}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00020}00020\ \textcolor{keyword}{function}\ esAdministrador(\$conn,\ \textcolor{keywordtype}{int}\ \$usuarioId):\ bool}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00021}00021\ \{}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00022}00022\ \ \ \ \ \$stmt\ =\ \$conn-\/>prepare(\textcolor{stringliteral}{"{}SELECT\ 1\ FROM\ administradores\ WHERE\ usuario\_id\ =\ ?\ LIMIT\ 1"{}});}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00023}00023\ \ \ \ \ \$stmt-\/>bind\_param(\textcolor{stringliteral}{"{}i"{}},\ \$usuarioId);}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00024}00024\ \ \ \ \ \$stmt-\/>execute();}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{bool})\ \$stmt-\/>get\_result()-\/>fetch\_column();}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{roles_8php_source_l00027}00027\ ?>}
+
+\end{DoxyCode}

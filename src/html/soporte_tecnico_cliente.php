@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+// Si NO hay un usuario logeado, redirigir al login
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: login.html");
+    exit;
+}
+
+// Construimos el nombre completo
+$nombre = $_SESSION['usuario_nombre'];
+$nombreCompleto = $_SESSION['usuario_nombre'] . " " . $_SESSION['usuario_apellidos'];
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,54 +28,39 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
-<?php
-session_start();
-
-// Si NO hay un usuario logeado, redirigir al login
-if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.html");
-    exit;
-}
-
-// Construimos el nombre completo
-$nombre = $_SESSION['usuario_nombre'];
-$nombreCompleto = $_SESSION['usuario_nombre'] . " " . $_SESSION['usuario_apellidos'];
-?>
-
-        <!--
-        ----------------------------------------------------------------------------
-        BLOQUE: <header>
-        DISEÑO LÓGICO: Contiene el logotipo y la barra de navegación principal.
-        DESCRIPCIÓN: Proporciona acceso rápido a secciones informativas y
-        un botón para iniciar sesión.
-        ----------------------------------------------------------------------------
-        -->
-        <header>
-            <!-- Logo de Aither | Al hacer clic tiene que llevar a la landing -->
-            <a href="./dashboard.php"><img src="../img/logo_aitherTX.png" alt="Este es el logo de nuestro Proyecto: Aither"></a>
-            <nav>
-                <!--Mis sensores, soporte tecnico y perfil (configuracion y cerrar sesion)-->
-                <ul>
-                    <li><a href="dashboard.php">Mis <br> sensores</a></li>
-                    <li>
-                        <a href="soporte_tecnico_cliente.php">Soporte <br> técnico</a>
-                    </li>
-                    <li class="profile-dropdown-container">
-                        <a href="#" class="nav-perfil" id="profile-toggle-button"><i class="fa-solid fa-circle-user"></i><span><?php echo htmlspecialchars($nombre); ?></span></a>
-                        <div class="profile-menu" id="profile-menu">
-                            <div class="menu-header">
-                                <i class="fa-solid fa-circle-user profile-icon-large"></i>
-                                <span class="profile-name"><?php echo htmlspecialchars($nombre); ?></span>
-                                <i class="fa-solid fa-xmark close-menu-btn" id="close-menu-button"></i>
-                            </div>
-                            <a href="perfil_cliente.php" class="menu-item">CONFIGURACIÓN</a>
-                            <a href="../index.html" class="menu-item logout-item">CERRAR SESIÓN</a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+<!--
+----------------------------------------------------------------------------
+BLOQUE: <header>
+DISEÑO LÓGICO: Contiene el logotipo y la barra de navegación principal.
+DESCRIPCIÓN: Proporciona acceso rápido a secciones informativas y
+un botón para iniciar sesión.
+----------------------------------------------------------------------------
+-->
+<header>
+    <!-- Logo de Aither | Al hacer clic tiene que llevar a la landing -->
+    <a href="./dashboard.php"><img src="../img/logo_aitherTX.png" alt="Este es el logo de nuestro Proyecto: Aither"></a>
+    <nav>
+        <!--Mis sensores, soporte tecnico y perfil (configuracion y cerrar sesion)-->
+        <ul>
+            <li><a href="dashboard.php">Mis <br> sensores</a></li>
+            <li>
+                <a href="soporte_tecnico_cliente.php">Soporte <br> técnico</a>
+            </li>
+            <li class="profile-dropdown-container">
+                <a href="#" class="nav-perfil" id="profile-toggle-button"><i class="fa-solid fa-circle-user"></i><span><?php echo htmlspecialchars($nombre); ?></span></a>
+                <div class="profile-menu" id="profile-menu">
+                    <div class="menu-header">
+                        <i class="fa-solid fa-circle-user profile-icon-large"></i>
+                        <span class="profile-name"><?php echo htmlspecialchars($nombre); ?></span>
+                        <i class="fa-solid fa-xmark close-menu-btn" id="close-menu-button"></i>
+                    </div>
+                    <a href="perfil_cliente.php" class="menu-item">CONFIGURACIÓN</a>
+                    <a href="../index.html" class="menu-item logout-item">CERRAR SESIÓN</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
 
 <main class="soporte-container">
     <h1 class="page-title">SOPORTE TÉCNICO</h1>
@@ -110,6 +109,8 @@ $nombreCompleto = $_SESSION['usuario_nombre'] . " " . $_SESSION['usuario_apellid
             <label class="custom-label">Asunto: *</label>
             <input type="text" name="titulo" class="custom-input" maxlength="150" required>
             
+            <label class="custom-label">ID del Sensor (opcional):</label>
+            <input type="number" name="sensor_id" id="sensor_id" class="custom-input" maxlength="10">
 
             
             <label class="custom-label">Consulta: *</label>

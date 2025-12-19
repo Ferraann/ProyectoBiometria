@@ -1,0 +1,40 @@
+\doxysection{obtener\+Usuario\+XId.\+php}
+\hypertarget{obtener_usuario_x_id_8php_source}{}\label{obtener_usuario_x_id_8php_source}\index{src/api/logicaNegocio/obtenerUsuarioXId.php@{src/api/logicaNegocio/obtenerUsuarioXId.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00002}00002\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00003}00003\ \textcolor{comment}{//\ Fichero:\ obtenerUsuarioXId.php}}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00004}00004\ \textcolor{comment}{//\ Autor:\ Manuel}}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00005}00005\ \textcolor{comment}{//\ Fecha:\ 5/12/2025}}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00006}00006\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00007}00007\ \textcolor{comment}{//\ Descripción:}}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00008}00008\ \textcolor{comment}{//\ \ Función\ para\ obtener\ usuario\ a\ partir\ de\ su\ id}}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00009}00009\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00011}00011\ \textcolor{keyword}{function}\ obtenerUsuarioXId(\$conn,\ \$id)}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00013}00013\ \ \ \ \ \$sql\ =\ \textcolor{stringliteral}{"{}SELECT\ *\ FROM\ usuario\ WHERE\ id\ =\ ?"{}};}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00015}00015\ \ \ \ \ \$stmt\ =\ \$conn-\/>prepare(\$sql);}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00016}00016\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\$stmt)\ \{}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00020}00020\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00021}00021\ \ \ \ \ \$stmt-\/>bind\_param(\textcolor{stringliteral}{"{}i"{}},\ \$id);}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00022}00022\ \ \ \ \ \$stmt-\/>execute();}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00023}00023\ \ \ \ \ \$result\ =\ \$stmt-\/>get\_result();}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00024}00024\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\$result)\ \{}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00028}00028\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00029}00029\ \ \ \ \ \$usuario\ =\ \$result-\/>fetch\_assoc();}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00030}00030\ \ \ \ \ \$stmt-\/>close();}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00031}00031\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{return}\ \$usuario;}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{obtener_usuario_x_id_8php_source_l00034}00034\ ?>}
+
+\end{DoxyCode}
