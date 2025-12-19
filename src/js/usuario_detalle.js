@@ -171,17 +171,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-// function aplicarLogicaPermisos(roles, chkAdmin, chkTec, btnSave) {
-//   if (roles && roles.esAdmin) {
-//     // Es Administrador: switches habilitados, botón visible
-//     chkAdmin.disabled = false;
-//     chkTec.disabled = false;
-//     if (btnSave) btnSave.style.display = "block";
-//   } else {
-//     // No es Administrador: switches deshabilitados, botón oculto
-//     chkAdmin.disabled = true; // Se ve, pero no se puede interactuar
-//     chkTec.disabled = true;
-//     if (btnSave) btnSave.style.display = "none"; // Ocultar el botón de guardar
-//   }
-// }

@@ -1,57 +1,78 @@
-/* 
-===============================================================================
-NOMBRE: registro.js
-DESCRIPCIÓN: Script para gestionar el registro de nuevos usuarios en la 
-             plataforma AITHER. Valida los datos del formulario y 
-             envía la información al servidor mediante una petición asíncrona.
-COPYRIGHT: © 2025 AITHER. Todos los derechos reservados.
-FECHA: 04/11/2025
-AUTOR: Sergi y Manuel
-APORTACIÓN: Implementación de la lógica de validación de campos y comunicación 
-            con el backend PHP para registrar usuarios desde el formulario.
-===============================================================================
-*/
+/**
+ * @file registro.js
+ * @brief Gestión del registro de nuevos usuarios en la plataforma AITHER.
+ * @details Valida los datos introducidos en el formulario de registro y realiza
+ * el envío asíncrono hacia el backend PHP. Incluye manejo de respuestas y
+ * redirección automática.
+ * @author Sergi y Manuel
+ * @date 04/11/2025
+ * @copyright © 2025 AITHER. Todos los derechos reservados.
+ */
 
-// ------------------------------------------------------------------
-// DECLARACIÓN DE VARIABLES
-// ------------------------------------------------------------------
-// Captura de referencias a los elementos HTML del formulario y 
-// área donde se mostrarán los mensajes de error o éxito.
+/**
+ * @section DECLARACIÓN DE VARIABLES
+ */
+
+/** @name Elementos del DOM
+ * @{
+ */
+/** @brief Referencia al formulario de registro. @type {HTMLFormElement} */
 const form = document.getElementById("registreForm");
+/** @brief Contenedor para mostrar mensajes de estado al usuario. @type {HTMLElement} */
 const msg = document.getElementById("message");
+/** @} */
 
-// ------------------------------------------------------------------
-// FUNCIÓN: Evento 'submit' del formulario
-// ------------------------------------------------------------------
-// Se ejecuta al enviar el formulario, previene el comportamiento 
-// por defecto, valida los campos y realiza una petición asincrónica
-// al backend usando fetch.
+/**
+ * @section FUNCIÓN: Evento 'submit' del formulario
+ */
+
+/**
+ * @brief Manejador del evento de envío del formulario.
+ * @details Realiza las siguientes acciones:
+ * 1. Previene la recarga de la página.
+ * 2. Captura y sanea (trim) los valores de los inputs.
+ * 3. Valida la presencia de todos los campos obligatorios.
+ * 4. Envía los datos mediante una petición POST asíncrona a la API.
+ * 5. Gestiona la redirección a login.html en caso de éxito.
+ * * @param {Event} e Objeto del evento de envío.
+ * @async
+ * @returns {Promise<void>}
+ */
 form.addEventListener("submit", async (e) => {
-  e.preventDefault(); // Evita que el formulario recargue la página
-  msg.textContent = ""; // Limpia cualquier mensaje previo
+  e.preventDefault();
+  msg.textContent = "";
 
-  // ----------------------------------------------------------------
-  // Captura y limpieza de valores ingresados por el usuario
-  // ----------------------------------------------------------------
+  /**
+   * @section Captura y limpieza de valores ingresados por el usuario
+   */
+
+  /** @var {string} nombre Nombre del usuario. */
   const nombre = document.getElementById("nombre").value.trim();
+  /** @var {string} apellidos Apellidos del usuario. */
   const apellidos = document.getElementById("apellido").value.trim();
+  /** @var {string} gmail Correo electrónico (identificador). */
   const gmail = document.getElementById("gmail").value.trim();
+  /** @var {string} password Contraseña elegida. */
   const password = document.getElementById("password").value.trim();
 
-  // ----------------------------------------------------------------
-  // Validación básica de campos vacíos
-  // ----------------------------------------------------------------
-  if (!nombre || !apellidos || !email || !password) {
+  /**
+   * @section Validación básica de campos vacíos
+   */
+
+  /** @note Se verifica que todos los campos contengan información antes de proceder. */
+  if (!nombre || !apellidos || !gmail || !password) {
     msg.style.color = "#ff0000ff";
     msg.textContent = "Por favor, rellena todos los campos.";
     return; // Detiene la ejecución si hay campos vacíos
   }
 
-  // ----------------------------------------------------------------
-  // Preparación de datos para enviar al backend
-  // ----------------------------------------------------------------
-  // Se crea un objeto JSON que incluye la acción 'registrarUsuario' 
-  // que identifica la petición en el backend, y los datos del usuario.
+  /**
+   * @section Preparación de datos para enviar al backend
+   */
+
+  /** * @brief Objeto de datos (Payload) para la API.
+   * @property {string} accion Identificador de la operación en el backend.
+   */
   const payload = {
     accion: "registrarUsuario",
     nombre: nombre,
@@ -61,42 +82,44 @@ form.addEventListener("submit", async (e) => {
   };
 
   try {
-    // ----------------------------------------------------------------
-    // Petición asincrónica al servidor
-    // ----------------------------------------------------------------
-    // Se envía la información mediante POST como JSON, y se espera 
-    // la respuesta en formato JSON.
+    /**
+     * @section Petición asincrónica al servidor
+     */
+
+    /** @brief Realiza la llamada fetch al controlador principal de la API. */
     const response = await fetch("../api/index.php", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json" // Especifica que enviamos JSON
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify(payload) // Convertimos el objeto a JSON
+      body: JSON.stringify(payload)
     });
 
-    // ----------------------------------------------------------------
-    // Procesamiento de la respuesta del servidor
-    // ----------------------------------------------------------------
-    const data = await response.json(); // Convertimos la respuesta a JSON
+    /**
+     * @section Procesamiento de la respuesta del servidor
+     */
 
-    // Verificamos si la petición fue exitosa según la API
+    /** @var {Object} data Respuesta deserializada del servidor. */
+    const data = await response.json();
+
     if (data.status === "ok") {
       msg.style.color = "green";
       msg.textContent = data.message || "Registro exitoso.";
 
-      // Redirigimos al login tras 1.5 segundos
+      /** @brief Redirección retardada tras confirmar el éxito para mejorar la UX. */
       setTimeout(() => window.location.href = "login.html", 1500);
     } else {
-      // Mostramos mensaje de error si ocurrió algún problema
       msg.style.color = "#ff0000ff";
       msg.textContent = data.message || "Error en el registro.";
     }
 
   } catch (error) {
-    // ----------------------------------------------------------------
-    // Manejo de errores de conexión
-    // ----------------------------------------------------------------
-    console.error(error); // Loguea el error en consola
+    /**
+     * @section Manejo de errores de conexión
+     */
+
+    /** @note Captura fallos de red o errores críticos de ejecución. */
+    console.error(error);
     msg.style.color = "#ff0000ff";
     msg.textContent = "Error de conexión con el servidor.";
   }
