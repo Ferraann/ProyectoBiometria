@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth" kind="class" language="PHP" prot="public">
+    <compoundname>PHPMailer::PHPMailer::OAuth</compoundname>
+    <basecompoundref refid="interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider" prot="public" virt="non-virtual">PHPMailer\PHPMailer\OAuthTokenProvider</basecompoundref>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a15f2963f6283e29e91812e29ebcbe454" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\OAuth::$provider</definition>
+        <argsstring></argsstring>
+        <name>$provider</name>
+        <qualifiedname>PHPMailer\PHPMailer\OAuth\$provider</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" line="43" column="15" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1ad839c78824f7946f48c5f9c58f148ca5" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\OAuth::$oauthToken</definition>
+        <argsstring></argsstring>
+        <name>$oauthToken</name>
+        <qualifiedname>PHPMailer\PHPMailer\OAuth\$oauthToken</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" line="50" column="15" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a94fce4de59fbf69e28964144691f82dc" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\OAuth::$oauthUserEmail</definition>
+        <argsstring></argsstring>
+        <name>$oauthUserEmail</name>
+        <qualifiedname>PHPMailer\PHPMailer\OAuth\$oauthUserEmail</qualifiedname>
+        <initializer>= &apos;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" line="58" column="15" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a6aad19fe065250b5bd496ece9f414e2b" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\OAuth::$oauthClientSecret</definition>
+        <argsstring></argsstring>
+        <name>$oauthClientSecret</name>
+        <qualifiedname>PHPMailer\PHPMailer\OAuth\$oauthClientSecret</qualifiedname>
+        <initializer>= &apos;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" line="65" column="15" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1af3e5e31b8f85412de717c8ad27d91943" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\OAuth::$oauthClientId</definition>
+        <argsstring></argsstring>
+        <name>$oauthClientId</name>
+        <qualifiedname>PHPMailer\PHPMailer\OAuth\$oauthClientId</qualifiedname>
+        <initializer>= &apos;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" line="72" column="15" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a84dc2ab02eca2d0aafcbb178a5a778e9" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\OAuth::$oauthRefreshToken</definition>
+        <argsstring></argsstring>
+        <name>$oauthRefreshToken</name>
+        <qualifiedname>PHPMailer\PHPMailer\OAuth\$oauthRefreshToken</qualifiedname>
+        <initializer>= &apos;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" line="79" column="15" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" bodystart="79" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a58d10691ef6d5f8576b302ac11d39756" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\OAuth::__construct</definition>
+        <argsstring>($options)</argsstring>
+        <name>__construct</name>
+        <qualifiedname>PHPMailer\PHPMailer\OAuth\__construct</qualifiedname>
+        <param>
+          <declname>$options</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>OAuth constructor.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>array</parametertype>
+<parametername>$options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Associative array containing <computeroutput>provider</computeroutput>, <computeroutput>userName</computeroutput>, <computeroutput>clientSecret</computeroutput>, <computeroutput>clientId</computeroutput> and <computeroutput>refreshToken</computeroutput> elements </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" line="87" column="21" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" bodystart="87" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a4a3f424167a7c1c4eb99068432045d5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\OAuth::getOauth64</definition>
+        <argsstring>()</argsstring>
+        <name>getOauth64</name>
+        <qualifiedname>PHPMailer\PHPMailer\OAuth\getOauth64</qualifiedname>
+        <reimplements refid="interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider_1a697711271ad79acf84ad9d62c45e6706">getOauth64</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a base64-encoded OAuth token.</para>
+<para><simplesect kind="return"><para>string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" line="124" column="21" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" bodystart="124" bodyend="138"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a489d6e6f54e346e72b628be10863fd24" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\OAuth::getGrant</definition>
+        <argsstring>()</argsstring>
+        <name>getGrant</name>
+        <qualifiedname>PHPMailer\PHPMailer\OAuth\getGrant</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get a new RefreshToken.</para>
+<para><simplesect kind="return"><para>RefreshToken </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" line="101" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" bodystart="101" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1aca2254505ade7984c55d2fcdc1b2f44a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\OAuth::getToken</definition>
+        <argsstring>()</argsstring>
+        <name>getToken</name>
+        <qualifiedname>PHPMailer\PHPMailer\OAuth\getToken</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get a new AccessToken.</para>
+<para><simplesect kind="return"><para>AccessToken </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" line="111" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" bodystart="111" bodyend="117"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>OAuth - OAuth2 authentication wrapper class. Uses the oauth2-client package from the League of Extraordinary Packages.</para>
+<para><simplesect kind="see"><para><ulink url="https://oauth2-client.thephpleague.com">https://oauth2-client.thephpleague.com</ulink></para>
+</simplesect>
+<simplesect kind="author"><para>Marcus Bointon (Synchro/coolbru) <ulink url="mailto:phpmailer@synchromedia.co.uk">phpmailer@synchromedia.co.uk</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>PHPMailer\PHPMailer\OAuthTokenProvider</label>
+        <link refid="interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider"/>
+      </node>
+      <node id="1">
+        <label>PHPMailer\PHPMailer\OAuth</label>
+        <link refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>PHPMailer\PHPMailer\OAuthTokenProvider</label>
+        <link refid="interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider"/>
+      </node>
+      <node id="1">
+        <label>PHPMailer\PHPMailer\OAuth</label>
+        <link refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" line="36" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php" bodystart="37" bodyend="139"/>
+    <listofallmembers>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1af3e5e31b8f85412de717c8ad27d91943" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::OAuth</scope><name>$oauthClientId</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a6aad19fe065250b5bd496ece9f414e2b" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::OAuth</scope><name>$oauthClientSecret</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a84dc2ab02eca2d0aafcbb178a5a778e9" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::OAuth</scope><name>$oauthRefreshToken</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1ad839c78824f7946f48c5f9c58f148ca5" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::OAuth</scope><name>$oauthToken</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a94fce4de59fbf69e28964144691f82dc" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::OAuth</scope><name>$oauthUserEmail</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a15f2963f6283e29e91812e29ebcbe454" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::OAuth</scope><name>$provider</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a58d10691ef6d5f8576b302ac11d39756" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::OAuth</scope><name>__construct</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a489d6e6f54e346e72b628be10863fd24" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::OAuth</scope><name>getGrant</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a4a3f424167a7c1c4eb99068432045d5e" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::OAuth</scope><name>getOauth64</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1aca2254505ade7984c55d2fcdc1b2f44a" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::OAuth</scope><name>getToken</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,112 +1,107 @@
-\doxysection{SMTP Class Reference}
-\hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p}{}\label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p}\index{SMTP@{SMTP}}
+\doxysection{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP Class Reference}
+\label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p}\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a8ba3e5680f88f2675bf0fe988aecd3cd}{connect}} (\$host, \$port=null, \$timeout=30, \$options=\mbox{[}$\,$\mbox{]})
+\textbf{ connect} (\$host, \$port=null, \$timeout=30, \$options=[$\,$])
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a58d9443a0a1690565edae142b85e0e26}{start\+TLS}} ()
+\textbf{ start\+TLS} ()
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ac0f806c79c3e07aad4210ff0e36b2453}{authenticate}} ( \$username, \$password, \$authtype=null, \$\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth}{OAuth}}=null)
+\textbf{ authenticate} ( \$username, \$password, \$authtype=null, \$\textbf{ OAuth}=null)
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a166cb1f72761ff7c95d5d24055fe03f5}{connected}} ()
+\textbf{ connected} ()
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_aa69c8bf1f1dcf4e72552efff1fe3e87e}{close}} ()
+\textbf{ close} ()
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a3893229db738c613fc3f0914d73e989d}{data}} (\$msg\+\_\+data)
+\textbf{ data} (\$msg\+\_\+data)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Data Fields}
+\doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-const \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_af71005841ce53adac00581ab0ba24c1f}{VERSION}} = \textquotesingle{}7.\+0.\+0\textquotesingle{}
+const \textbf{ VERSION} = \textquotesingle{}7.\+0.\+0\textquotesingle{}
 \item 
-const \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_afa2c3d8a05f37e1aac11b9789aab2d4e}{LE}} = "{}\textbackslash{}r\textbackslash{}n"{}
+const \textbf{ LE} = "{}\textbackslash{}r\textbackslash{}n"{}
 \item 
-const \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_adbbe510a37f177c138ebb598c3fdb161}{DEFAULT\+\_\+\+PORT}} = 25
+const \textbf{ DEFAULT\+\_\+\+PORT} = 25
 \item 
-const \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ac1cf443bdb1fb9e54c9b76f7a369f8dd}{DEFAULT\+\_\+\+SECURE\+\_\+\+PORT}} = 465
+const \textbf{ DEFAULT\+\_\+\+SECURE\+\_\+\+PORT} = 465
 \item 
-const \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a466169b7248c947b2d0d468a955573e7}{MAX\+\_\+\+LINE\+\_\+\+LENGTH}} = 998
+const \textbf{ MAX\+\_\+\+LINE\+\_\+\+LENGTH} = 998
 \item 
-const \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a59dc88994da310e530d378c50b12870b}{MAX\+\_\+\+REPLY\+\_\+\+LENGTH}} = 512
+const \textbf{ MAX\+\_\+\+REPLY\+\_\+\+LENGTH} = 512
 \item 
-const \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ad36a2f0b30093f91a7b53bd815a0a143}{DEBUG\+\_\+\+OFF}} = 0
+const \textbf{ DEBUG\+\_\+\+OFF} = 0
 \item 
-const \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ae7eea3acb25b5a4367764bcd2f6da5ea}{DEBUG\+\_\+\+CLIENT}} = 1
+const \textbf{ DEBUG\+\_\+\+CLIENT} = 1
 \item 
-const \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a72dc4712d174a8bfd77415d88a9a2fb3}{DEBUG\+\_\+\+SERVER}} = 2
+const \textbf{ DEBUG\+\_\+\+SERVER} = 2
 \item 
-const \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a9a8bb8dbeb4eb52455545a52bbe35fa6}{DEBUG\+\_\+\+CONNECTION}} = 3
+const \textbf{ DEBUG\+\_\+\+CONNECTION} = 3
 \item 
-const \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a9a6a605b541c69171fd68f103e947458}{DEBUG\+\_\+\+LOWLEVEL}} = 4
+const \textbf{ DEBUG\+\_\+\+LOWLEVEL} = 4
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a09ca59ee83fba6c8137646a13f1664d1}{\$do\+\_\+debug}} = self\+::\+DEBUG\+\_\+\+OFF
+\textbf{ \$do\+\_\+debug} = self\+::\+DEBUG\+\_\+\+OFF
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a532f3412f3d97a106a36ff2b49409e42}{\$\+Debugoutput}} = \textquotesingle{}echo\textquotesingle{}
+\textbf{ \$\+Debugoutput} = \textquotesingle{}echo\textquotesingle{}
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_abf2ec34ae2e6abd0f598ea202a8fa807}{\$do\+\_\+verp}} = false
+\textbf{ \$do\+\_\+verp} = false
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a7552e4bf5c10bc5ce4f38ffb24da7914}{\$do\+\_\+smtputf8}} = false
+\textbf{ \$do\+\_\+smtputf8} = false
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_acaf3ec06f89f4024c5dbeb1a9ecf321c}{\$\+Timeout}} = 300
+\textbf{ \$\+Timeout} = 300
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a06202429705cff540be47481b453fef6}{\$\+Timelimit}} = 300
+\textbf{ \$\+Timelimit} = 300
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a16ef56e54ffac07cf6125369bf443b25}{\$xclient\+\_\+allowed\+\_\+attributes}}
+static \textbf{ \$xclient\+\_\+allowed\+\_\+attributes}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a946b64f536f4f3803f70603873590e71}{edebug}} (\$str, \$level=0)
+\textbf{ edebug} (\$str, \$level=0)
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a5091679decce8bf8002f63e19d2c8fc0}{get\+SMTPConnection}} (\$host, \$port=null, \$timeout=30, \$options=\mbox{[}$\,$\mbox{]})
+\textbf{ get\+SMTPConnection} (\$host, \$port=null, \$timeout=30, \$options=[$\,$])
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ab64534872ef0e960ac18d1a383781830}{hmac}} (\$\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a3893229db738c613fc3f0914d73e989d}{data}}, \$key)
+\textbf{ hmac} (\$\textbf{ data}, \$key)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a8a963ff3fd663a9a55ee15aa4386f09a}{\$smtp\+\_\+transaction\+\_\+id\+\_\+patterns}}
+\textbf{ \$smtp\+\_\+transaction\+\_\+id\+\_\+patterns}
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_aced5eaebf2a46f909fc56a5eb420c10a}{\$last\+\_\+smtp\+\_\+transaction\+\_\+id}}
+\textbf{ \$last\+\_\+smtp\+\_\+transaction\+\_\+id}
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a11fc42e903bf60dedd8cd6e06e84e419}{\$smtp\+\_\+conn}}
+\textbf{ \$smtp\+\_\+conn}
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_aeba2ab722cedda53dbb7ec1a59f45550}{\$error}}
+\textbf{ \$error}
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ab3ac5873d7f4a2cb378440532aec336e}{\$helo\+\_\+rply}}
+\textbf{ \$helo\+\_\+rply}
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ac93a6162b0ecb254be5fdcaa385b2c5c}{\$server\+\_\+caps}}
+\textbf{ \$server\+\_\+caps}
 \item 
-\mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a02b4360fc11497c217a66518ca6f09ff}{\$last\+\_\+reply}} = \textquotesingle{}\textquotesingle{}
+\textbf{ \$last\+\_\+reply} = \textquotesingle{}\textquotesingle{}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-\doxylink{namespace_p_h_p_mailer}{PHPMailer} RFC821 SMTP email transport class. Implements RFC 821 SMTP commands and provides some utility methods for sending mail to an SMTP server.
+\doxyref{PHPMailer}{p.}{namespace_p_h_p_mailer} RFC821 SMTP email transport class. Implements RFC 821 SMTP commands and provides some utility methods for sending mail to an SMTP server.
 
 \begin{DoxyAuthor}{Author}
 Chris Ryan 
 
-Marcus Bointon \href{mailto:phpmailer@synchromedia.co.uk}{\texttt{phpmailer@synchromedia.\+co.\+uk}} 
+Marcus Bointon {\texttt{phpmailer@synchromedia.\+co.\+uk}} 
 \end{DoxyAuthor}
 
 
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00031}{31}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-
-
 \label{doc-func-members}
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ac0f806c79c3e07aad4210ff0e36b2453}\index{SMTP@{SMTP}!authenticate@{authenticate}}
-\index{authenticate@{authenticate}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{authenticate()}{authenticate()}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ac0f806c79c3e07aad4210ff0e36b2453} 
-authenticate (\begin{DoxyParamCaption}\item[{}]{\$username}{, }\item[{}]{\$password}{, }\item[{}]{\$authtype}{ = {\ttfamily null}, }\item[{}]{\$\+OAuth}{ = {\ttfamily null}}\end{DoxyParamCaption})}
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!authenticate@{authenticate}}
+\index{authenticate@{authenticate}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{authenticate()}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a70ebff41266b8b64c44ea535f1afb8cd} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::authenticate (\begin{DoxyParamCaption}\item[{}]{\$username}{, }\item[{}]{\$password}{, }\item[{}]{\$authtype}{ = {\ttfamily null}, }\item[{}]{\$\+OAuth}{ = {\ttfamily null}}\end{DoxyParamCaption})}
 
 Perform SMTP authentication. Must be run after hello().
 
@@ -127,30 +122,22 @@ OAuth\+Token\+Provider & {\em \$\+OAuth} & An optional OAuth\+Token\+Provider in
 \begin{DoxyReturn}{Returns}
 bool True if successfully authenticated 
 \end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00528}{528}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_aa69c8bf1f1dcf4e72552efff1fe3e87e}\index{SMTP@{SMTP}!close@{close}}
-\index{close@{close}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{close()}{close()}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_aa69c8bf1f1dcf4e72552efff1fe3e87e} 
-close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!close@{close}}
+\index{close@{close}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{close()}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_aff2f3ac922cccee840cf0965bdfb92e0} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 Close the socket and clean up the state of the class. Don\textquotesingle{}t use this function without first trying to use QUIT.
 
 \begin{DoxySeeAlso}{See also}
 quit() 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00752}{752}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a8ba3e5680f88f2675bf0fe988aecd3cd}\index{SMTP@{SMTP}!connect@{connect}}
-\index{connect@{connect}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a8ba3e5680f88f2675bf0fe988aecd3cd} 
-connect (\begin{DoxyParamCaption}\item[{}]{\$host}{, }\item[{}]{\$port}{ = {\ttfamily null}, }\item[{}]{\$timeout}{ = {\ttfamily 30}, }\item[{}]{\$options}{ = {\ttfamily \mbox{[}\mbox{]}}}\end{DoxyParamCaption})}
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!connect@{connect}}
+\index{connect@{connect}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{connect()}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a67c7eef2c32d3ef26b6eb28afca3820b} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::connect (\begin{DoxyParamCaption}\item[{}]{\$host}{, }\item[{}]{\$port}{ = {\ttfamily null}, }\item[{}]{\$timeout}{ = {\ttfamily 30}, }\item[{}]{\$options}{ = {\ttfamily []}}\end{DoxyParamCaption})}
 
 Connect to an SMTP server.
 
@@ -168,30 +155,22 @@ array & {\em \$options} & An array of options for stream\+\_\+context\+\_\+creat
 \begin{DoxyReturn}{Returns}
 bool 
 \end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00347}{347}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a166cb1f72761ff7c95d5d24055fe03f5}\index{SMTP@{SMTP}!connected@{connected}}
-\index{connected@{connected}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{connected()}{connected()}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a166cb1f72761ff7c95d5d24055fe03f5} 
-connected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!connected@{connected}}
+\index{connected@{connected}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{connected()}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ad61de5eca48890f8d121a3b9c9df2824} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::connected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 Check connection state.
 
 \begin{DoxyReturn}{Returns}
 bool True if connected 
 \end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00725}{725}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a3893229db738c613fc3f0914d73e989d}\index{SMTP@{SMTP}!data@{data}}
-\index{data@{data}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{data()}{data()}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a3893229db738c613fc3f0914d73e989d} 
-data (\begin{DoxyParamCaption}\item[{}]{\$msg\+\_\+data}{}\end{DoxyParamCaption})}
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!data@{data}}
+\index{data@{data}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{data()}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a521b8dadc893ac68f1a3b27e54f7faaa} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::data (\begin{DoxyParamCaption}\item[{}]{\$msg\+\_\+data}{}\end{DoxyParamCaption})}
 
 Send an SMTP DATA command. Issues a data command and sends the msg\+\_\+data to the server, finalizing the mail transaction. \$msg\+\_\+data is the message that is to be sent with the headers. Each header needs to be on a single line followed by a $<$\+CRLF$>$ with the message headers and the message body being separated by an additional $<$\+CRLF$>$. Implements RFC 821\+: DATA $<$\+CRLF$>$.
 
@@ -225,11 +204,11 @@ Parse a reply to HELO/\+EHLO command to discover server extensions. In case of H
 string & {\em \$type} & {\ttfamily HELO} or {\ttfamily EHLO}\\
 \hline
 \end{DoxyParams}
-Send an SMTP MAIL command. Starts a mail transaction from the email address specified in \$from. Returns true if successful or false otherwise. If True the mail transaction is started and then one or more recipient commands may be called followed by a data command. Implements RFC 821\+: MAIL $<$\+SP$>$ FROM\+:\texorpdfstring{$<$}{<}reverse-\/path\texorpdfstring{$>$}{>} $<$\+CRLF$>$ and two extensions, namely XVERP and SMTPUTF8.
+Send an SMTP MAIL command. Starts a mail transaction from the email address specified in \$from. Returns true if successful or false otherwise. If True the mail transaction is started and then one or more recipient commands may be called followed by a data command. Implements RFC 821\+: MAIL $<$\+SP$>$ FROM\+:$<$reverse-\/path$>$ $<$\+CRLF$>$ and two extensions, namely XVERP and SMTPUTF8.
 
 The server\textquotesingle{}s EHLO response is not checked. If use of either extensions is enabled even though the server does not support that, mail submission will fail.
 
-XVERP is documented at \href{https://www.postfix.org/VERP_README.html}{\texttt{https\+://www.\+postfix.\+org/\+VERP\+\_\+\+README.\+html}} and SMTPUTF8 is specified in RFC 6531.
+XVERP is documented at {\texttt{https\+://www.\+postfix.\+org/\+VERP\+\_\+\+README.\+html}} and SMTPUTF8 is specified in RFC 6531.
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -249,7 +228,7 @@ bool & {\em \$close\+\_\+on\+\_\+error} & Should the connection close if an erro
 \begin{DoxyReturn}{Returns}
 bool
 \end{DoxyReturn}
-Send an SMTP RCPT command. Sets the TO argument to \$toaddr. Returns true if the recipient was accepted false if it was rejected. Implements from RFC 821\+: RCPT $<$\+SP$>$ TO\+:\texorpdfstring{$<$}{<}forward-\/path\texorpdfstring{$>$}{>} $<$\+CRLF$>$.
+Send an SMTP RCPT command. Sets the TO argument to \$toaddr. Returns true if the recipient was accepted false if it was rejected. Implements from RFC 821\+: RCPT $<$\+SP$>$ TO\+:$<$forward-\/path$>$ $<$\+CRLF$>$.
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -285,7 +264,7 @@ int | array & {\em \$expect} & One or more expected integer success codes\\
 \begin{DoxyReturn}{Returns}
 bool True on success
 \end{DoxyReturn}
-Send an SMTP SAML command. Starts a mail transaction from the email address specified in \$from. Returns true if successful or false otherwise. If True the mail transaction is started and then one or more recipient commands may be called followed by a data command. This command will send the message to the users terminal if they are logged in and send them an email. Implements RFC 821\+: SAML $<$\+SP$>$ FROM\+:\texorpdfstring{$<$}{<}reverse-\/path\texorpdfstring{$>$}{>} $<$\+CRLF$>$.
+Send an SMTP SAML command. Starts a mail transaction from the email address specified in \$from. Returns true if successful or false otherwise. If True the mail transaction is started and then one or more recipient commands may be called followed by a data command. This command will send the message to the users terminal if they are logged in and send them an email. Implements RFC 821\+: SAML $<$\+SP$>$ FROM\+:$<$reverse-\/path$>$ $<$\+CRLF$>$.
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -325,7 +304,7 @@ string & {\em \$command} & Optionally, the command this is part of, used only fo
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int\texorpdfstring{$\vert$}{|}bool The number of bytes sent to the server or false on error
+int$\vert$bool The number of bytes sent to the server or false on error
 \end{DoxyReturn}
 Get the latest error.
 
@@ -335,22 +314,22 @@ array
 Get SMTP extensions available on the server.
 
 \begin{DoxyReturn}{Returns}
-array\texorpdfstring{$\vert$}{|}null
+array$\vert$null
 \end{DoxyReturn}
 Get metadata about the SMTP server from its HELO/\+EHLO response. The method works in three ways, dependent on argument value and current state\+:
 \begin{DoxyEnumerate}
-\item HELO/\+EHLO has not been sent -\/ returns null and populates \$this-\/\texorpdfstring{$>$}{>}error.
-\item HELO has been sent -\/ \$name == \textquotesingle{}HELO\textquotesingle{}\+: returns server name \$name == \textquotesingle{}EHLO\textquotesingle{}\+: returns boolean false \$name == any other string\+: returns null and populates \$this-\/\texorpdfstring{$>$}{>}error
-\item EHLO has been sent -\/ \$name == \textquotesingle{}HELO\textquotesingle{}\texorpdfstring{$\vert$}{|}\textquotesingle{}EHLO\textquotesingle{}\+: returns the server name \$name == any other string\+: if extension \$name exists, returns True or its options (e.\+g. AUTH mechanisms supported). Otherwise returns False.
+\item HELO/\+EHLO has not been sent -\/ returns null and populates \$this-\/$>$error.
+\item HELO has been sent -\/ \$name == \textquotesingle{}HELO\textquotesingle{}\+: returns server name \$name == \textquotesingle{}EHLO\textquotesingle{}\+: returns boolean false \$name == any other string\+: returns null and populates \$this-\/$>$error
+\item EHLO has been sent -\/ \$name == \textquotesingle{}HELO\textquotesingle{}$\vert$\textquotesingle{}EHLO\textquotesingle{}\+: returns the server name \$name == any other string\+: if extension \$name exists, returns True or its options (e.\+g. AUTH mechanisms supported). Otherwise returns False.
 \end{DoxyEnumerate}
 
 
 \begin{DoxyParams}[1]{Parameters}
-string & {\em \$name} & Name of SMTP extension or \textquotesingle{}HELO\textquotesingle{}\texorpdfstring{$\vert$}{|}\textquotesingle{}EHLO\textquotesingle{}\\
+string & {\em \$name} & Name of SMTP extension or \textquotesingle{}HELO\textquotesingle{}$\vert$\textquotesingle{}EHLO\textquotesingle{}\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-string\texorpdfstring{$\vert$}{|}bool\texorpdfstring{$\vert$}{|}null
+string$\vert$bool$\vert$null
 \end{DoxyReturn}
 Get the last reply from the server.
 
@@ -451,25 +430,21 @@ int & {\em \$errline} & The line number the error occurred on\\
 Extract and return the ID of the last SMTP transaction based on a list of patterns provided in SMTP\+::\$smtp\+\_\+transaction\+\_\+id\+\_\+patterns. Relies on the host providing the ID in response to a DATA command. If no reply has been received yet, it will return null. If no pattern was matched, it will return false.
 
 \begin{DoxyReturn}{Returns}
-bool\texorpdfstring{$\vert$}{|}string\texorpdfstring{$\vert$}{|}null
+bool$\vert$string$\vert$null
 \end{DoxyReturn}
 Get the queue/transaction ID of the last SMTP transaction If no reply has been received yet, it will return null. If no pattern was matched, it will return false.
 
 \begin{DoxyReturn}{Returns}
-bool\texorpdfstring{$\vert$}{|}string\texorpdfstring{$\vert$}{|}null
+bool$\vert$string$\vert$null
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
 record\+Last\+Transaction\+ID()
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00777}{777}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a946b64f536f4f3803f70603873590e71}\index{SMTP@{SMTP}!edebug@{edebug}}
-\index{edebug@{edebug}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{edebug()}{edebug()}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a946b64f536f4f3803f70603873590e71} 
-edebug (\begin{DoxyParamCaption}\item[{}]{\$str}{, }\item[{}]{\$level}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!edebug@{edebug}}
+\index{edebug@{edebug}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{edebug()}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a428c75f1ab137d95c57567459f51e876} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::edebug (\begin{DoxyParamCaption}\item[{}]{\$str}{, }\item[{}]{\$level}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 Output debugging info via a user-\/selected method.
 
@@ -477,7 +452,7 @@ Output debugging info via a user-\/selected method.
 \begin{DoxyParams}[1]{Parameters}
 string & {\em \$str} & Debug string to output \\
 \hline
-int & {\em \$level} & The debug level of this message; see DEBUG\+\_\+\texorpdfstring{$\ast$}{*} constants\\
+int & {\em \$level} & The debug level of this message; see DEBUG\+\_\+$\ast$ constants\\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
@@ -485,15 +460,11 @@ SMTP\+::\$\+Debugoutput
 
 SMTP\+::\$do\+\_\+debug 
 \end{DoxySeeAlso}
-@noinspection Forgotten\+Debug\+Output\+Inspection
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00286}{286}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a5091679decce8bf8002f63e19d2c8fc0}\index{SMTP@{SMTP}!getSMTPConnection@{getSMTPConnection}}
-\index{getSMTPConnection@{getSMTPConnection}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{getSMTPConnection()}{getSMTPConnection()}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a5091679decce8bf8002f63e19d2c8fc0} 
-get\+SMTPConnection (\begin{DoxyParamCaption}\item[{}]{\$host}{, }\item[{}]{\$port}{ = {\ttfamily null}, }\item[{}]{\$timeout}{ = {\ttfamily 30}, }\item[{}]{\$options}{ = {\ttfamily \mbox{[}\mbox{]}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+@noinspection Forgotten\+Debug\+Output\+Inspection\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!getSMTPConnection@{getSMTPConnection}}
+\index{getSMTPConnection@{getSMTPConnection}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{getSMTPConnection()}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ac323a39de60b32fcd8182f2d499b3bd8} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::get\+SMTPConnection (\begin{DoxyParamCaption}\item[{}]{\$host}{, }\item[{}]{\$port}{ = {\ttfamily null}, }\item[{}]{\$timeout}{ = {\ttfamily 30}, }\item[{}]{\$options}{ = {\ttfamily []}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 Create connection to the SMTP server.
 
@@ -509,17 +480,13 @@ array & {\em \$options} & An array of options for stream\+\_\+context\+\_\+creat
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-false\texorpdfstring{$\vert$}{|}resource 
+false$\vert$resource 
 \end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00406}{406}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ab64534872ef0e960ac18d1a383781830}\index{SMTP@{SMTP}!hmac@{hmac}}
-\index{hmac@{hmac}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{hmac()}{hmac()}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ab64534872ef0e960ac18d1a383781830} 
-hmac (\begin{DoxyParamCaption}\item[{}]{\$data}{, }\item[{}]{\$key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!hmac@{hmac}}
+\index{hmac@{hmac}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{hmac()}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ae097c9420480708994efc030d1dddef1} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::hmac (\begin{DoxyParamCaption}\item[{}]{\$data}{, }\item[{}]{\$key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 Calculate an MD5 HMAC hash. Works like hash\+\_\+hmac(\textquotesingle{}md5\textquotesingle{}, \$data, \$key) in case that function is not available.
 
@@ -533,15 +500,11 @@ string & {\em \$key} & The key to hash with\\
 \begin{DoxyReturn}{Returns}
 string 
 \end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00693}{693}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a58d9443a0a1690565edae142b85e0e26}\index{SMTP@{SMTP}!startTLS@{startTLS}}
-\index{startTLS@{startTLS}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{startTLS()}{startTLS()}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a58d9443a0a1690565edae142b85e0e26} 
-start\+TLS (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!startTLS@{startTLS}}
+\index{startTLS@{startTLS}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{startTLS()}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_aaa8c1051e8ca80b381bf5667558074de} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::start\+TLS (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 Initiate a TLS (encrypted) session.
 
@@ -550,58 +513,37 @@ bool
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00485}{485}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-
-
 \label{doc-variable-members}
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_doc-variable-members}
-\doxysubsection{Field Documentation}
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a532f3412f3d97a106a36ff2b49409e42}\index{SMTP@{SMTP}!\$Debugoutput@{\$Debugoutput}}
-\index{\$Debugoutput@{\$Debugoutput}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{\$Debugoutput}{\$Debugoutput}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a532f3412f3d97a106a36ff2b49409e42} 
-\$Debugoutput = \textquotesingle{}echo\textquotesingle{}}
+\doxysubsection{Member Data Documentation}
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!\$Debugoutput@{\$Debugoutput}}
+\index{\$Debugoutput@{\$Debugoutput}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{\$Debugoutput}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ac2a5968345259a91691a44c6dc913edb} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\$\+Debugoutput = \textquotesingle{}echo\textquotesingle{}}
 
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!\$do\_debug@{\$do\_debug}}
+\index{\$do\_debug@{\$do\_debug}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{\$do\_debug}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a0e032b2173ed26c766dfe470df6eb319} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\$do\+\_\+debug = self\+::\+DEBUG\+\_\+\+OFF}
 
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!\$do\_smtputf8@{\$do\_smtputf8}}
+\index{\$do\_smtputf8@{\$do\_smtputf8}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{\$do\_smtputf8}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_aa314060411a7fff51e69f3c587767714} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\$do\+\_\+smtputf8 = false}
 
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00150}{150}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!\$do\_verp@{\$do\_verp}}
+\index{\$do\_verp@{\$do\_verp}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{\$do\_verp}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ab52b493d0c84a7e73f43bb3e92dc4128} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\$do\+\_\+verp = false}
 
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a09ca59ee83fba6c8137646a13f1664d1}\index{SMTP@{SMTP}!\$do\_debug@{\$do\_debug}}
-\index{\$do\_debug@{\$do\_debug}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{\$do\_debug}{\$do\_debug}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a09ca59ee83fba6c8137646a13f1664d1} 
-\$do\+\_\+debug = self\+::\+DEBUG\+\_\+\+OFF}
-
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00127}{127}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a7552e4bf5c10bc5ce4f38ffb24da7914}\index{SMTP@{SMTP}!\$do\_smtputf8@{\$do\_smtputf8}}
-\index{\$do\_smtputf8@{\$do\_smtputf8}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{\$do\_smtputf8}{\$do\_smtputf8}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a7552e4bf5c10bc5ce4f38ffb24da7914} 
-\$do\+\_\+smtputf8 = false}
-
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00169}{169}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_abf2ec34ae2e6abd0f598ea202a8fa807}\index{SMTP@{SMTP}!\$do\_verp@{\$do\_verp}}
-\index{\$do\_verp@{\$do\_verp}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{\$do\_verp}{\$do\_verp}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_abf2ec34ae2e6abd0f598ea202a8fa807} 
-\$do\+\_\+verp = false}
-
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00160}{160}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_aeba2ab722cedda53dbb7ec1a59f45550}\index{SMTP@{SMTP}!\$error@{\$error}}
-\index{\$error@{\$error}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{\$error}{\$error}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_aeba2ab722cedda53dbb7ec1a59f45550} 
-\$error\hspace{0.3cm}{\ttfamily [protected]}}
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!\$error@{\$error}}
+\index{\$error@{\$error}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{\$error}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a26a4595f6e451557cdb5c544ee590084} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\$error\hspace{0.3cm}{\ttfamily [protected]}}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
@@ -613,65 +555,41 @@ Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00160}{160}} of file \
 \DoxyCodeLine{\ \ \ \ ]}
 
 \end{DoxyCode}
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!\$helo\_rply@{\$helo\_rply}}
+\index{\$helo\_rply@{\$helo\_rply}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{\$helo\_rply}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_acc6db4b35fbcb4fe4d726654cdec5870} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\$helo\+\_\+rply\hspace{0.3cm}{\ttfamily [protected]}}
 
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!\$last\_reply@{\$last\_reply}}
+\index{\$last\_reply@{\$last\_reply}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{\$last\_reply}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a85c8f6d36dc8e00141f0b450fa754e2f} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\$last\+\_\+reply = \textquotesingle{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
 
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00243}{243}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!\$last\_smtp\_transaction\_id@{\$last\_smtp\_transaction\_id}}
+\index{\$last\_smtp\_transaction\_id@{\$last\_smtp\_transaction\_id}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{\$last\_smtp\_transaction\_id}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a153880c002bd516d6c148cee78d49d93} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\$last\+\_\+smtp\+\_\+transaction\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}
 
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ab3ac5873d7f4a2cb378440532aec336e}\index{SMTP@{SMTP}!\$helo\_rply@{\$helo\_rply}}
-\index{\$helo\_rply@{\$helo\_rply}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{\$helo\_rply}{\$helo\_rply}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ab3ac5873d7f4a2cb378440532aec336e} 
-\$helo\+\_\+rply\hspace{0.3cm}{\ttfamily [protected]}}
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!\$server\_caps@{\$server\_caps}}
+\index{\$server\_caps@{\$server\_caps}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{\$server\_caps}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a8b7b4ca3f7c75ef0b76a8f09bd87e8be} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\$server\+\_\+caps\hspace{0.3cm}{\ttfamily [protected]}}
 
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!\$smtp\_conn@{\$smtp\_conn}}
+\index{\$smtp\_conn@{\$smtp\_conn}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{\$smtp\_conn}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_abaa18a03893b06f7c6cdb8c8fdfe642c} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\$smtp\+\_\+conn\hspace{0.3cm}{\ttfamily [protected]}}
 
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00256}{256}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a02b4360fc11497c217a66518ca6f09ff}\index{SMTP@{SMTP}!\$last\_reply@{\$last\_reply}}
-\index{\$last\_reply@{\$last\_reply}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{\$last\_reply}{\$last\_reply}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a02b4360fc11497c217a66518ca6f09ff} 
-\$last\+\_\+reply = \textquotesingle{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00275}{275}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_aced5eaebf2a46f909fc56a5eb420c10a}\index{SMTP@{SMTP}!\$last\_smtp\_transaction\_id@{\$last\_smtp\_transaction\_id}}
-\index{\$last\_smtp\_transaction\_id@{\$last\_smtp\_transaction\_id}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{\$last\_smtp\_transaction\_id}{\$last\_smtp\_transaction\_id}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_aced5eaebf2a46f909fc56a5eb420c10a} 
-\$last\+\_\+smtp\+\_\+transaction\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00229}{229}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ac93a6162b0ecb254be5fdcaa385b2c5c}\index{SMTP@{SMTP}!\$server\_caps@{\$server\_caps}}
-\index{\$server\_caps@{\$server\_caps}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{\$server\_caps}{\$server\_caps}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ac93a6162b0ecb254be5fdcaa385b2c5c} 
-\$server\+\_\+caps\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00268}{268}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a11fc42e903bf60dedd8cd6e06e84e419}\index{SMTP@{SMTP}!\$smtp\_conn@{\$smtp\_conn}}
-\index{\$smtp\_conn@{\$smtp\_conn}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{\$smtp\_conn}{\$smtp\_conn}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a11fc42e903bf60dedd8cd6e06e84e419} 
-\$smtp\+\_\+conn\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00236}{236}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a8a963ff3fd663a9a55ee15aa4386f09a}\index{SMTP@{SMTP}!\$smtp\_transaction\_id\_patterns@{\$smtp\_transaction\_id\_patterns}}
-\index{\$smtp\_transaction\_id\_patterns@{\$smtp\_transaction\_id\_patterns}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{\$smtp\_transaction\_id\_patterns}{\$smtp\_transaction\_id\_patterns}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a8a963ff3fd663a9a55ee15aa4386f09a} 
-\$smtp\+\_\+transaction\+\_\+id\+\_\+patterns\hspace{0.3cm}{\ttfamily [protected]}}
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!\$smtp\_transaction\_id\_patterns@{\$smtp\_transaction\_id\_patterns}}
+\index{\$smtp\_transaction\_id\_patterns@{\$smtp\_transaction\_id\_patterns}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{\$smtp\_transaction\_id\_patterns}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a2fd7e9fddc80f7fe6fb156abd92176b2} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\$smtp\+\_\+transaction\+\_\+id\+\_\+patterns\hspace{0.3cm}{\ttfamily [protected]}}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
@@ -690,35 +608,23 @@ Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00236}{236}} of file \
 \DoxyCodeLine{\ \ \ \ ]}
 
 \end{DoxyCode}
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!\$Timelimit@{\$Timelimit}}
+\index{\$Timelimit@{\$Timelimit}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{\$Timelimit}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a7785030cd094811e338ee7dd0715f7e0} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\$\+Timelimit = 300}
 
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!\$Timeout@{\$Timeout}}
+\index{\$Timeout@{\$Timeout}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{\$Timeout}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a9febb57e836ef770eb8dd638f2b47143} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\$\+Timeout = 300}
 
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00197}{197}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a06202429705cff540be47481b453fef6}\index{SMTP@{SMTP}!\$Timelimit@{\$Timelimit}}
-\index{\$Timelimit@{\$Timelimit}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{\$Timelimit}{\$Timelimit}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a06202429705cff540be47481b453fef6} 
-\$Timelimit = 300}
-
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00188}{188}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_acaf3ec06f89f4024c5dbeb1a9ecf321c}\index{SMTP@{SMTP}!\$Timeout@{\$Timeout}}
-\index{\$Timeout@{\$Timeout}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{\$Timeout}{\$Timeout}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_acaf3ec06f89f4024c5dbeb1a9ecf321c} 
-\$Timeout = 300}
-
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00180}{180}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a16ef56e54ffac07cf6125369bf443b25}\index{SMTP@{SMTP}!\$xclient\_allowed\_attributes@{\$xclient\_allowed\_attributes}}
-\index{\$xclient\_allowed\_attributes@{\$xclient\_allowed\_attributes}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{\$xclient\_allowed\_attributes}{\$xclient\_allowed\_attributes}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a16ef56e54ffac07cf6125369bf443b25} 
-\$xclient\+\_\+allowed\+\_\+attributes\hspace{0.3cm}{\ttfamily [static]}}
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!\$xclient\_allowed\_attributes@{\$xclient\_allowed\_attributes}}
+\index{\$xclient\_allowed\_attributes@{\$xclient\_allowed\_attributes}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{\$xclient\_allowed\_attributes}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_abd6973a99b71d1b6a134a60e74f73d41} 
+PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\$xclient\+\_\+allowed\+\_\+attributes\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
@@ -727,122 +633,74 @@ Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00180}{180}} of file \
 \DoxyCodeLine{\ \ \ \ ]}
 
 \end{DoxyCode}
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!DEBUG\_CLIENT@{DEBUG\_CLIENT}}
+\index{DEBUG\_CLIENT@{DEBUG\_CLIENT}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{DEBUG\_CLIENT}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a3ecab0a4eccea9942cc2729bed531af6} 
+const PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\+DEBUG\+\_\+\+CLIENT = 1}
 
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!DEBUG\_CONNECTION@{DEBUG\_CONNECTION}}
+\index{DEBUG\_CONNECTION@{DEBUG\_CONNECTION}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{DEBUG\_CONNECTION}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a05072dd85e54971b267bc6b08dc05295} 
+const PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\+DEBUG\+\_\+\+CONNECTION = 3}
 
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00219}{219}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!DEBUG\_LOWLEVEL@{DEBUG\_LOWLEVEL}}
+\index{DEBUG\_LOWLEVEL@{DEBUG\_LOWLEVEL}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{DEBUG\_LOWLEVEL}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a04709c9b341fb27c20d62593b68fdb1a} 
+const PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\+DEBUG\+\_\+\+LOWLEVEL = 4}
 
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ae7eea3acb25b5a4367764bcd2f6da5ea}\index{SMTP@{SMTP}!DEBUG\_CLIENT@{DEBUG\_CLIENT}}
-\index{DEBUG\_CLIENT@{DEBUG\_CLIENT}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{DEBUG\_CLIENT}{DEBUG\_CLIENT}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ae7eea3acb25b5a4367764bcd2f6da5ea} 
-const DEBUG\+\_\+\+CLIENT = 1}
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!DEBUG\_OFF@{DEBUG\_OFF}}
+\index{DEBUG\_OFF@{DEBUG\_OFF}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{DEBUG\_OFF}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a8c5221cdb5224f8c67978e5a2da38b23} 
+const PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\+DEBUG\+\_\+\+OFF = 0}
 
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!DEBUG\_SERVER@{DEBUG\_SERVER}}
+\index{DEBUG\_SERVER@{DEBUG\_SERVER}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{DEBUG\_SERVER}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a45fa42c04676ab8e5e5a4dab9c2083a4} 
+const PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\+DEBUG\+\_\+\+SERVER = 2}
 
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!DEFAULT\_PORT@{DEFAULT\_PORT}}
+\index{DEFAULT\_PORT@{DEFAULT\_PORT}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{DEFAULT\_PORT}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_aef1068c15b9355ebf66e052745e4e0ca} 
+const PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\+DEFAULT\+\_\+\+PORT = 25}
 
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00093}{93}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!DEFAULT\_SECURE\_PORT@{DEFAULT\_SECURE\_PORT}}
+\index{DEFAULT\_SECURE\_PORT@{DEFAULT\_SECURE\_PORT}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{DEFAULT\_SECURE\_PORT}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ab32846b18249a9b98bf3ec78a28e968e} 
+const PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\+DEFAULT\+\_\+\+SECURE\+\_\+\+PORT = 465}
 
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a9a8bb8dbeb4eb52455545a52bbe35fa6}\index{SMTP@{SMTP}!DEBUG\_CONNECTION@{DEBUG\_CONNECTION}}
-\index{DEBUG\_CONNECTION@{DEBUG\_CONNECTION}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{DEBUG\_CONNECTION}{DEBUG\_CONNECTION}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a9a8bb8dbeb4eb52455545a52bbe35fa6} 
-const DEBUG\+\_\+\+CONNECTION = 3}
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!LE@{LE}}
+\index{LE@{LE}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{LE}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ab2bc171fd161519d12c7fd7b0a1d3176} 
+const PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\+LE = "{}\textbackslash{}r\textbackslash{}n"{}}
 
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!MAX\_LINE\_LENGTH@{MAX\_LINE\_LENGTH}}
+\index{MAX\_LINE\_LENGTH@{MAX\_LINE\_LENGTH}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{MAX\_LINE\_LENGTH}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a4c5eb9b22d600ffa5c214ed105128e73} 
+const PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\+MAX\+\_\+\+LINE\+\_\+\+LENGTH = 998}
 
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!MAX\_REPLY\_LENGTH@{MAX\_REPLY\_LENGTH}}
+\index{MAX\_REPLY\_LENGTH@{MAX\_REPLY\_LENGTH}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{MAX\_REPLY\_LENGTH}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a05b338f63fcd91f38215f43871a99580} 
+const PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\+MAX\+\_\+\+REPLY\+\_\+\+LENGTH = 512}
 
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00107}{107}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a9a6a605b541c69171fd68f103e947458}\index{SMTP@{SMTP}!DEBUG\_LOWLEVEL@{DEBUG\_LOWLEVEL}}
-\index{DEBUG\_LOWLEVEL@{DEBUG\_LOWLEVEL}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{DEBUG\_LOWLEVEL}{DEBUG\_LOWLEVEL}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a9a6a605b541c69171fd68f103e947458} 
-const DEBUG\+\_\+\+LOWLEVEL = 4}
-
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00114}{114}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ad36a2f0b30093f91a7b53bd815a0a143}\index{SMTP@{SMTP}!DEBUG\_OFF@{DEBUG\_OFF}}
-\index{DEBUG\_OFF@{DEBUG\_OFF}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{DEBUG\_OFF}{DEBUG\_OFF}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ad36a2f0b30093f91a7b53bd815a0a143} 
-const DEBUG\+\_\+\+OFF = 0}
-
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00086}{86}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a72dc4712d174a8bfd77415d88a9a2fb3}\index{SMTP@{SMTP}!DEBUG\_SERVER@{DEBUG\_SERVER}}
-\index{DEBUG\_SERVER@{DEBUG\_SERVER}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{DEBUG\_SERVER}{DEBUG\_SERVER}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a72dc4712d174a8bfd77415d88a9a2fb3} 
-const DEBUG\+\_\+\+SERVER = 2}
-
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00100}{100}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_adbbe510a37f177c138ebb598c3fdb161}\index{SMTP@{SMTP}!DEFAULT\_PORT@{DEFAULT\_PORT}}
-\index{DEFAULT\_PORT@{DEFAULT\_PORT}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{DEFAULT\_PORT}{DEFAULT\_PORT}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_adbbe510a37f177c138ebb598c3fdb161} 
-const DEFAULT\+\_\+\+PORT = 25}
-
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00052}{52}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ac1cf443bdb1fb9e54c9b76f7a369f8dd}\index{SMTP@{SMTP}!DEFAULT\_SECURE\_PORT@{DEFAULT\_SECURE\_PORT}}
-\index{DEFAULT\_SECURE\_PORT@{DEFAULT\_SECURE\_PORT}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{DEFAULT\_SECURE\_PORT}{DEFAULT\_SECURE\_PORT}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_ac1cf443bdb1fb9e54c9b76f7a369f8dd} 
-const DEFAULT\+\_\+\+SECURE\+\_\+\+PORT = 465}
-
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00059}{59}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_afa2c3d8a05f37e1aac11b9789aab2d4e}\index{SMTP@{SMTP}!LE@{LE}}
-\index{LE@{LE}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{LE}{LE}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_afa2c3d8a05f37e1aac11b9789aab2d4e} 
-const LE = "{}\textbackslash{}r\textbackslash{}n"{}}
-
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00045}{45}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a466169b7248c947b2d0d468a955573e7}\index{SMTP@{SMTP}!MAX\_LINE\_LENGTH@{MAX\_LINE\_LENGTH}}
-\index{MAX\_LINE\_LENGTH@{MAX\_LINE\_LENGTH}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{MAX\_LINE\_LENGTH}{MAX\_LINE\_LENGTH}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a466169b7248c947b2d0d468a955573e7} 
-const MAX\+\_\+\+LINE\+\_\+\+LENGTH = 998}
-
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00069}{69}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a59dc88994da310e530d378c50b12870b}\index{SMTP@{SMTP}!MAX\_REPLY\_LENGTH@{MAX\_REPLY\_LENGTH}}
-\index{MAX\_REPLY\_LENGTH@{MAX\_REPLY\_LENGTH}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{MAX\_REPLY\_LENGTH}{MAX\_REPLY\_LENGTH}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_a59dc88994da310e530d378c50b12870b} 
-const MAX\+\_\+\+REPLY\+\_\+\+LENGTH = 512}
-
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00079}{79}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
-
-\Hypertarget{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_af71005841ce53adac00581ab0ba24c1f}\index{SMTP@{SMTP}!VERSION@{VERSION}}
-\index{VERSION@{VERSION}!SMTP@{SMTP}}
-\doxysubsubsection{\texorpdfstring{VERSION}{VERSION}}
-{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_af71005841ce53adac00581ab0ba24c1f} 
-const VERSION = \textquotesingle{}7.\+0.\+0\textquotesingle{}}
-
-
-
-Definition at line \mbox{\hyperlink{_s_m_t_p_8php_source_l00038}{38}} of file \mbox{\hyperlink{_s_m_t_p_8php_source}{SMTP.\+php}}.
+\index{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}!VERSION@{VERSION}}
+\index{VERSION@{VERSION}!PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP@{PHPMailer\textbackslash{}PHPMailer\textbackslash{}SMTP}}
+\doxysubsubsection{VERSION}
+{\footnotesize\ttfamily \label{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_adb37dc6e8c061cbac377ab9ee88226e2} 
+const PHPMailer\textbackslash{}\+PHPMailer\textbackslash{}\+SMTP\+::\+VERSION = \textquotesingle{}7.\+0.\+0\textquotesingle{}}
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/libs/\+PHPMailer-\/7.\+0.\+0/src/SMTP.\+php\end{DoxyCompactItemize}
+C\+:/xampp/htdocs/\+Proyecto\+Biometria\+\_\+2/src/libs/\+PHPMailer-\/7.\+0.\+0/src/\textbf{ SMTP.\+php}\end{DoxyCompactItemize}

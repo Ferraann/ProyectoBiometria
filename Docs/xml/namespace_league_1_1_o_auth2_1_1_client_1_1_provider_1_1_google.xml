@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="namespace_league_1_1_o_auth2_1_1_client_1_1_provider_1_1_google" kind="namespace" language="PHP">
+    <compoundname>League::OAuth2::Client::Provider::Google</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Aliases for League Provider Classes Make sure you have added these to your composer.json and run <computeroutput>composer install</computeroutput> Plenty to choose from here: <simplesect kind="see"><para><ulink url="https://oauth2-client.thephpleague.com/providers/thirdparty/">https://oauth2-client.thephpleague.com/providers/thirdparty/</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/get_oauth_token.php" line="1" column="1"/>
+  </compounddef>
+</doxygen>

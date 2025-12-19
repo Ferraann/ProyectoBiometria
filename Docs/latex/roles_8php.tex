@@ -1,0 +1,151 @@
+\doxysection{C\+:/xampp/htdocs/\+Proyecto\+Biometria\+\_\+2/src/api/logica\+Negocio/roles.php File Reference}
+\label{roles_8php}\index{C:/xampp/htdocs/ProyectoBiometria\_2/src/api/logicaNegocio/roles.php@{C:/xampp/htdocs/ProyectoBiometria\_2/src/api/logicaNegocio/roles.php}}
+
+
+Sistema de control de acceso basado en roles (RBAC).  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ es\+Tecnico} (\$conn, int \$usuario\+Id)
+\begin{DoxyCompactList}\small\item\em Comprueba si un usuario tiene privilegios de técnico. \end{DoxyCompactList}\item 
+\textbf{ es\+Administrador} (\$conn, int \$usuario\+Id)
+\begin{DoxyCompactList}\small\item\em Comprueba si un usuario tiene privilegios de administrador. \end{DoxyCompactList}\item 
+\textbf{ asignar\+Tecnico} (\$conn, int \$usuario\+Id)
+\item 
+\textbf{ quitar\+Tecnico} (\$conn, int \$usuario\+Id)
+\begin{DoxyCompactList}\small\item\em Revoca el rol de Técnico a un usuario. \end{DoxyCompactList}\item 
+\textbf{ asignar\+Administrador} (\$conn, int \$usuario\+Id)
+\begin{DoxyCompactList}\small\item\em Promociona a un usuario al nivel de Administrador. \end{DoxyCompactList}\item 
+\textbf{ quitar\+Administrador} (\$conn, int \$usuario\+Id)
+\begin{DoxyCompactList}\small\item\em Revoca los privilegios de Administrador a un usuario. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sistema de control de acceso basado en roles (RBAC). 
+
+Proporciona una capa de abstracción para verificar privilegios y gestionar la promoción o degradación de usuarios en los niveles de Técnico y Administrador. \begin{DoxyAuthor}{Author}
+Manuel 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11/12/2025 
+\end{DoxyDate}
+
+
+\label{doc-func-members}
+\doxysubsection{Function Documentation}
+\index{roles.php@{roles.php}!asignarAdministrador@{asignarAdministrador}}
+\index{asignarAdministrador@{asignarAdministrador}!roles.php@{roles.php}}
+\doxysubsubsection{asignarAdministrador()}
+{\footnotesize\ttfamily \label{roles_8php_a91ce6d33b6d680d208da09b5c0cc883a} 
+asignar\+Administrador (\begin{DoxyParamCaption}\item[{}]{\$conn}{, }\item[{int}]{\$usuario\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Promociona a un usuario al nivel de Administrador. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+mysqli & {\em \$conn} & Instancia de conexión. \\
+\hline
+int & {\em \$usuario\+Id} & ID del usuario. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Resultado de la inserción. 
+\end{DoxyReturn}
+\index{roles.php@{roles.php}!asignarTecnico@{asignarTecnico}}
+\index{asignarTecnico@{asignarTecnico}!roles.php@{roles.php}}
+\doxysubsubsection{asignarTecnico()}
+{\footnotesize\ttfamily \label{roles_8php_a3ad6c0296c29d21a934668b3a06fded5} 
+asignar\+Tecnico (\begin{DoxyParamCaption}\item[{}]{\$conn}{, }\item[{int}]{\$usuario\+Id}{}\end{DoxyParamCaption})}
+
+\begin{DoxyNote}{Note}
+Se realiza una comprobación previa para evitar duplicados.
+\end{DoxyNote}
+\index{roles.php@{roles.php}!esAdministrador@{esAdministrador}}
+\index{esAdministrador@{esAdministrador}!roles.php@{roles.php}}
+\doxysubsubsection{esAdministrador()}
+{\footnotesize\ttfamily \label{roles_8php_a7547c3d8c95922db15d9641673bdf48c} 
+es\+Administrador (\begin{DoxyParamCaption}\item[{}]{\$conn}{, }\item[{int}]{\$usuario\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Comprueba si un usuario tiene privilegios de administrador. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+mysqli & {\em \$conn} & Instancia de conexión activa a la base de datos. \\
+\hline
+int & {\em \$usuario\+Id} & ID del usuario a consultar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Verdadero si el usuario existe en la tabla de administradores. 
+\end{DoxyReturn}
+\doxysubsection{Consulta de existencia en tabla administrativa.}\label{roles_8php_ValidarAdmin}
+\index{roles.php@{roles.php}!esTecnico@{esTecnico}}
+\index{esTecnico@{esTecnico}!roles.php@{roles.php}}
+\doxysubsubsection{esTecnico()}
+{\footnotesize\ttfamily \label{roles_8php_a62468590f319a6b61029c3f43abd464c} 
+es\+Tecnico (\begin{DoxyParamCaption}\item[{}]{\$conn}{, }\item[{int}]{\$usuario\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Comprueba si un usuario tiene privilegios de técnico. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+mysqli & {\em \$conn} & Instancia de conexión activa a la base de datos. \\
+\hline
+int & {\em \$usuario\+Id} & ID del usuario a consultar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Verdadero si el usuario existe en la tabla de técnicos. 
+\end{DoxyReturn}
+\doxysubsection{Consulta de existencia en tabla técnica.}\label{roles_8php_ValidarTecnico}
+\begin{DoxyNote}{Note}
+Se utiliza fetch\+\_\+column() para obtener directamente el valor booleano de la existencia.
+\end{DoxyNote}
+\index{roles.php@{roles.php}!quitarAdministrador@{quitarAdministrador}}
+\index{quitarAdministrador@{quitarAdministrador}!roles.php@{roles.php}}
+\doxysubsubsection{quitarAdministrador()}
+{\footnotesize\ttfamily \label{roles_8php_a920c4a460e8ec68c8e4e6869505a7fc2} 
+quitar\+Administrador (\begin{DoxyParamCaption}\item[{}]{\$conn}{, }\item[{int}]{\$usuario\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Revoca los privilegios de Administrador a un usuario. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+mysqli & {\em \$conn} & Instancia de conexión. \\
+\hline
+int & {\em \$usuario\+Id} & ID del usuario. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Resultado de la operación. 
+\end{DoxyReturn}
+\index{roles.php@{roles.php}!quitarTecnico@{quitarTecnico}}
+\index{quitarTecnico@{quitarTecnico}!roles.php@{roles.php}}
+\doxysubsubsection{quitarTecnico()}
+{\footnotesize\ttfamily \label{roles_8php_a4a8d195454165630aeebfeb10067d738} 
+quitar\+Tecnico (\begin{DoxyParamCaption}\item[{}]{\$conn}{, }\item[{int}]{\$usuario\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Revoca el rol de Técnico a un usuario. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+mysqli & {\em \$conn} & Instancia de conexión. \\
+\hline
+int & {\em \$usuario\+Id} & ID del usuario. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Resultado de la operación de borrado. 
+\end{DoxyReturn}

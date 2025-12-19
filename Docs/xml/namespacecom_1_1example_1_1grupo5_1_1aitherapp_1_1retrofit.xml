@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="namespacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit" kind="namespace" language="Java">
+    <compoundname>com::example::grupo5::aitherapp::retrofit</compoundname>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_cliente" prot="public">com::example::grupo5::aitherapp::retrofit::ApiCliente</innerclass>
+    <innerclass refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service" prot="public">com::example::grupo5::aitherapp::retrofit::ApiService</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio" prot="public">com::example::grupo5::aitherapp::retrofit::LogicaNegocio</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiCliente.java" line="1" column="15"/>
+  </compounddef>
+</doxygen>

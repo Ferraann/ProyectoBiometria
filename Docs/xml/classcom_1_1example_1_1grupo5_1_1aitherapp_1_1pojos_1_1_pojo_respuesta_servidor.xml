@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::pojos::PojoRespuestaServidor</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1aadb0257a745af03120bc886a99578ccc" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.status</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" line="16" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1a3c878348756925944c1b82c85db4db55" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.mensaje</definition>
+        <argsstring></argsstring>
+        <name>mensaje</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.mensaje</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" line="17" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1afad0bdf756ac5ec98785345981c023ff" prot="private" static="no" mutable="no">
+        <type><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref></type>
+        <definition>PojoUsuario com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.usuario</definition>
+        <argsstring></argsstring>
+        <name>usuario</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.usuario</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" line="18" column="25" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1a49b0485efa72cf0b50376ed7f3be941f" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor" kindref="compound">PojoSensor</ref> &gt;</type>
+        <definition>List&lt;PojoSensor&gt; com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.listaSensores</definition>
+        <argsstring></argsstring>
+        <name>listaSensores</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.listaSensores</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" line="19" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1ae8b0675e6231d88587b848167c37e214" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.getStatus</definition>
+        <argsstring>()</argsstring>
+        <name>getStatus</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.getStatus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" line="21" column="19" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" bodystart="21" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1a75a83e88167e6a86c041812498eb166b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.setStatus</definition>
+        <argsstring>(String status)</argsstring>
+        <name>setStatus</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.setStatus</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" line="25" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1a4e8c5108b983531ba9c09ca6c143a03e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.getMensaje</definition>
+        <argsstring>()</argsstring>
+        <name>getMensaje</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.getMensaje</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" line="29" column="19" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1a104cf2ce7859efabc4cd9d4e50207b6e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.setMensaje</definition>
+        <argsstring>(String mensaje)</argsstring>
+        <name>setMensaje</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.setMensaje</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>mensaje</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" line="33" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" bodystart="33" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1aa10c5005168439f6a1a53bb8d4990732" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref></type>
+        <definition>PojoUsuario com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.getUsuario</definition>
+        <argsstring>()</argsstring>
+        <name>getUsuario</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.getUsuario</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" line="37" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" bodystart="37" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1ac62dd4df79e85139bcdf3decbeeeb146" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.setUsuario</definition>
+        <argsstring>(PojoUsuario usuario)</argsstring>
+        <name>setUsuario</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.setUsuario</qualifiedname>
+        <param>
+          <type><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref></type>
+          <declname>usuario</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" line="41" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" bodystart="41" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1ac2ff01127abdb605c59eab187d9cc728" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor" kindref="compound">PojoSensor</ref> &gt;</type>
+        <definition>List&lt; PojoSensor &gt; com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.getListaSensores</definition>
+        <argsstring>()</argsstring>
+        <name>getListaSensores</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.getListaSensores</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" line="45" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" bodystart="45" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1af0ee625e1bf00d9c6642d881740e331a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.setListaSensores</definition>
+        <argsstring>(List&lt; PojoSensor &gt; listaSensores)</argsstring>
+        <name>setListaSensores</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor.setListaSensores</qualifiedname>
+        <param>
+          <type>List&lt; <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor" kindref="compound">PojoSensor</ref> &gt;</type>
+          <declname>listaSensores</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" line="49" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" bodystart="49" bodyend="51"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" line="15" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoRespuestaServidor.java" bodystart="15" bodyend="52"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1ac2ff01127abdb605c59eab187d9cc728" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoRespuestaServidor</scope><name>getListaSensores</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1a4e8c5108b983531ba9c09ca6c143a03e" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoRespuestaServidor</scope><name>getMensaje</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1ae8b0675e6231d88587b848167c37e214" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoRespuestaServidor</scope><name>getStatus</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1aa10c5005168439f6a1a53bb8d4990732" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoRespuestaServidor</scope><name>getUsuario</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1a49b0485efa72cf0b50376ed7f3be941f" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoRespuestaServidor</scope><name>listaSensores</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1a3c878348756925944c1b82c85db4db55" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoRespuestaServidor</scope><name>mensaje</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1af0ee625e1bf00d9c6642d881740e331a" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoRespuestaServidor</scope><name>setListaSensores</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1a104cf2ce7859efabc4cd9d4e50207b6e" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoRespuestaServidor</scope><name>setMensaje</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1a75a83e88167e6a86c041812498eb166b" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoRespuestaServidor</scope><name>setStatus</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1ac62dd4df79e85139bcdf3decbeeeb146" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoRespuestaServidor</scope><name>setUsuario</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1aadb0257a745af03120bc886a99578ccc" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoRespuestaServidor</scope><name>status</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor_1afad0bdf756ac5ec98785345981c023ff" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoRespuestaServidor</scope><name>usuario</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

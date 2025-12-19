@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="_example_instrumented_test_8java" kind="file" language="Java">
+    <compoundname>ExampleInstrumentedTest.java</compoundname>
+    <includes local="no">android.content.Context</includes>
+    <includes local="no">androidx.test.platform.app.InstrumentationRegistry</includes>
+    <includes local="no">androidx.test.ext.junit.runners.AndroidJUnit4</includes>
+    <includes local="no">org.junit.Test</includes>
+    <includes local="no">org.junit.runner.RunWith</includes>
+    <includes local="no">org.junit.Assert.*</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/androidTest/java/com/example/grupo5/aitherapp/ExampleInstrumentedTest.java</label>
+        <link refid="_example_instrumented_test_8java"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>android.content.Context</label>
+      </node>
+      <node id="4">
+        <label>androidx.test.ext.junit.runners.AndroidJUnit4</label>
+      </node>
+      <node id="3">
+        <label>androidx.test.platform.app.InstrumentationRegistry</label>
+      </node>
+      <node id="7">
+        <label>org.junit.Assert.*</label>
+      </node>
+      <node id="5">
+        <label>org.junit.Test</label>
+      </node>
+      <node id="6">
+        <label>org.junit.runner.RunWith</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_example_instrumented_test" prot="public">com::example::grupo5::aitherapp::ExampleInstrumentedTest</innerclass>
+    <innernamespace refid="namespacecom_1_1example_1_1grupo5_1_1aitherapp">com::example::grupo5::aitherapp</innernamespace>
+    <innernamespace refid="namespacejava_1_1lang">java::lang</innernamespace>
+    <innernamespace refid="namespaceorg_1_1junit_1_1_assert">org::junit::Assert</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacecom_1_1example_1_1grupo5_1_1aitherapp" refkind="compound"><highlight class="keyword">package<sp/></highlight><highlight class="normal">com.example.grupo5.aitherapp;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.content.Context;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>androidx.test.platform.app.InstrumentationRegistry;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>androidx.test.ext.junit.runners.AndroidJUnit4;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>org.junit.Test;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>org.junit.runner.RunWith;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>org.junit.Assert.*;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">@RunWith(AndroidJUnit4.class)</highlight></codeline>
+<codeline lineno="19" refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_example_instrumented_test" refkind="compound"><highlight class="normal">public<sp/>class<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_example_instrumented_test" kindref="compound">ExampleInstrumentedTest</ref><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>@Test</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_example_instrumented_test_1ad997168c76d4cc53431f14f3df723dd5" kindref="member">useAppContext</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Context<sp/>of<sp/>the<sp/>app<sp/>under<sp/>test.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Context<sp/>appContext<sp/>=<sp/>InstrumentationRegistry.getInstrumentation().getTargetContext();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assertEquals(</highlight><highlight class="stringliteral">&quot;com.example.grupo5.aitherapp&quot;</highlight><highlight class="normal">,<sp/>appContext.getPackageName());</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/androidTest/java/com/example/grupo5/aitherapp/ExampleInstrumentedTest.java"/>
+  </compounddef>
+</doxygen>

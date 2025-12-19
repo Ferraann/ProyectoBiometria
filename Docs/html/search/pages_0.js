@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['2_0',['Upgrading from 5.2',['../dir_b7aa11e20ecc50f796b1517dbf512153.html#autotoc_md6',1,'']]]
+  ['0_0',['Registro en la tabla &apos;usuario&apos; con estado &apos;activo=0&apos;.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/registrarUsuario.php#InsercionUsuario',1,'']]]
 ];

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="namespacecom_1_1example_1_1grupo5_1_1aitherapp" kind="namespace" language="Java">
+    <compoundname>com::example::grupo5::aitherapp</compoundname>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_example_instrumented_test" prot="public">com::example::grupo5::aitherapp::ExampleInstrumentedTest</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity" prot="public">com::example::grupo5::aitherapp::MainActivity</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter" prot="public">com::example::grupo5::aitherapp::PremioAdapter</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_example_unit_test" prot="public">com::example::grupo5::aitherapp::ExampleUnitTest</innerclass>
+    <innernamespace refid="namespacecom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app">com::example::grupo5::aitherapp::activitysApp</innernamespace>
+    <innernamespace refid="namespacecom_1_1example_1_1grupo5_1_1aitherapp_1_1btle">com::example::grupo5::aitherapp::btle</innernamespace>
+    <innernamespace refid="namespacecom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos">com::example::grupo5::aitherapp::pojos</innernamespace>
+    <innernamespace refid="namespacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit">com::example::grupo5::aitherapp::retrofit</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/androidTest/java/com/example/grupo5/aitherapp/ExampleInstrumentedTest.java" line="1" column="15"/>
+  </compounddef>
+</doxygen>

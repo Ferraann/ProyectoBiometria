@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="_list-_unsubscribe-example" kind="example">
+    <compoundname>List-Unsubscribe</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>DKIM Extra signing headers.</para>
+<para>&apos;, &apos;List-Help&apos;] <programlisting filename="List-Unsubscribe"></programlisting> </para>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/PHPMailer.php"/>
+  </compounddef>
+</doxygen>

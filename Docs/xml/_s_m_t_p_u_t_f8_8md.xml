@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="_s_m_t_p_u_t_f8_8md" kind="file" language="Markdown">
+    <compoundname>SMTPUTF8.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>A<sp/>short<sp/>history<sp/>of<sp/>UTF-8<sp/>in<sp/>email</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Background</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>most<sp/>of<sp/>its<sp/>existence,<sp/>SMTP<sp/>has<sp/>been<sp/>a<sp/>7-bit<sp/>channel,<sp/>only<sp/>supporting<sp/>US-ASCII<sp/>characters.<sp/>This<sp/>has<sp/>been<sp/>a<sp/>problem<sp/>for<sp/>many<sp/>languages,<sp/>especially<sp/>those<sp/>that<sp/>use<sp/>non-Latin<sp/>scripts,<sp/>and<sp/>has<sp/>led<sp/>to<sp/>the<sp/>development<sp/>of<sp/>various<sp/>workarounds.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>first<sp/>major<sp/>improvement,<sp/>introduced<sp/>in<sp/>1994<sp/>in<sp/>[RFC<sp/>1652](https://www.rfc-editor.org/rfc/rfc1652)<sp/>and<sp/>extended<sp/>in<sp/>2011<sp/>in<sp/>[RFC<sp/>6152](https://www.rfc-editor.org/rfc/rfc6152),<sp/>was<sp/>the<sp/>addition<sp/>of<sp/>the<sp/>`8BITMIME`<sp/>SMTP<sp/>extension,<sp/>which<sp/>allowed<sp/>raw<sp/>8-bit<sp/>data<sp/>to<sp/>be<sp/>included<sp/>in<sp/>message<sp/>bodies<sp/>sent<sp/>over<sp/>SMTP.</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>allowed<sp/>the<sp/>message<sp/>*contents*<sp/>to<sp/>contain<sp/>8-bit<sp/>data,<sp/>including<sp/>things<sp/>like<sp/>UTF-8<sp/>text,<sp/>even<sp/>though<sp/>the<sp/>SMTP<sp/>protocol<sp/>itself<sp/>was<sp/>still<sp/>firmly<sp/>7-bit.<sp/>This<sp/>worked<sp/>by<sp/>having<sp/>the<sp/>server<sp/>switch<sp/>to<sp/>8-bit<sp/>after<sp/>the<sp/>headers,<sp/>and<sp/>then<sp/>back<sp/>to<sp/>7-bit<sp/>after<sp/>the<sp/>completion<sp/>of<sp/>a<sp/>`DATA`<sp/>command.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">From<sp/>1996,<sp/>messages<sp/>could<sp/>support<sp/>[RFC<sp/>2047<sp/>encoding](https://www.rfc-editor.org/rfc/rfc2047),<sp/>which<sp/>permitted<sp/>inserting<sp/>characters<sp/>from<sp/>any<sp/>character<sp/>set<sp/>into<sp/>header<sp/>*values*<sp/>(but<sp/>not<sp/>names),<sp/>but<sp/>only<sp/>by<sp/>encoding<sp/>them<sp/>in<sp/>somewhat<sp/>unreadable<sp/>ways<sp/>to<sp/>allow<sp/>them<sp/>to<sp/>survive<sp/>passage<sp/>through<sp/>a<sp/>7-bit<sp/>channel.<sp/>An<sp/>example<sp/>with<sp/>a<sp/>subject<sp/>of<sp/>&quot;Schrödinger&apos;s<sp/>cat&quot;<sp/>would<sp/>be:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Subject:<sp/>=?utf-8?Q=Schr=C3=B6dinger=92s_Cat?=</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Here<sp/>the<sp/>accented<sp/>`ö`<sp/>is<sp/>encoded<sp/>as<sp/>`=C3=B6`,<sp/>which<sp/>is<sp/>the<sp/>UTF-8<sp/>encoding<sp/>of<sp/>the<sp/>2-byte<sp/>character,<sp/>and<sp/>the<sp/>whole<sp/>thing<sp/>is<sp/>wrapped<sp/>in<sp/>`=?utf-8?Q?`<sp/>to<sp/>indicate<sp/>that<sp/>it<sp/>uses<sp/>the<sp/>UTF-8<sp/>charset<sp/>and<sp/>`quoted-printable`<sp/>encoding.<sp/>This<sp/>is<sp/>a<sp/>bit<sp/>of<sp/>a<sp/>hack,<sp/>and<sp/>not<sp/>very<sp/>human-friendly,<sp/>but<sp/>it<sp/>works.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Similarly,<sp/>8-bit<sp/>message<sp/>bodies<sp/>could<sp/>be<sp/>encoded<sp/>using<sp/>the<sp/>same<sp/>`quoted-printable`<sp/>and<sp/>`base64`<sp/>content<sp/>transfer<sp/>encoding<sp/>(CTE)<sp/>schemes,<sp/>which<sp/>preserved<sp/>the<sp/>8-bit<sp/>content<sp/>while<sp/>encoding<sp/>it<sp/>in<sp/>a<sp/>format<sp/>that<sp/>could<sp/>survive<sp/>transmission<sp/>through<sp/>a<sp/>7-bit<sp/>channel.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Domain<sp/>names<sp/>were<sp/>originally<sp/>also<sp/>stuck<sp/>in<sp/>a<sp/>7-bit<sp/>world,<sp/>actually<sp/>even<sp/>more<sp/>constrained<sp/>to<sp/>only<sp/>a<sp/>subset<sp/>of<sp/>the<sp/>US-ASCII<sp/>character<sp/>set.<sp/>But<sp/>of<sp/>course,<sp/>many<sp/>people<sp/>want<sp/>to<sp/>have<sp/>domains<sp/>in<sp/>their<sp/>own<sp/>language/script.<sp/>Internationalized<sp/>domain<sp/>name<sp/>(IDN)<sp/>permitted<sp/>this,<sp/>using<sp/>yet<sp/>another<sp/>complex<sp/>encoding<sp/>scheme<sp/>called<sp/>punycode,<sp/>defined<sp/>for<sp/>domain<sp/>names<sp/>in<sp/>2003<sp/>in<sp/>[RFC<sp/>3492](https://www.rfc-editor.org/rfc/rfc3492).<sp/>This<sp/>finally<sp/>allowed<sp/>the<sp/>domain<sp/>part<sp/>(after<sp/>the<sp/>`@`)<sp/>of<sp/>email<sp/>addresses<sp/>to<sp/>contain<sp/>UTF-8,<sp/>though<sp/>it<sp/>was<sp/>actually<sp/>an<sp/>illusion<sp/>preserved<sp/>by<sp/>email<sp/>client<sp/>applications.<sp/>For<sp/>example,<sp/>an<sp/>address<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">`user@café.example.com`<sp/>translates<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">`user@xn--caf-dma.example.com`<sp/>in<sp/>punycode,<sp/>rendering<sp/>it<sp/>mostly<sp/>unreadable,<sp/>but<sp/>7-bit<sp/>friendly,<sp/>and<sp/>remaining<sp/>compatible<sp/>with<sp/>email<sp/>clients<sp/>that<sp/>don&apos;t<sp/>know<sp/>about<sp/>IDN.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>one<sp/>remaining<sp/>part<sp/>of<sp/>email<sp/>that<sp/>could<sp/>not<sp/>handle<sp/>UTF-8<sp/>is<sp/>the<sp/>local<sp/>part<sp/>of<sp/>email<sp/>addresses<sp/>(the<sp/>part<sp/>before<sp/>the<sp/>`@`).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">I&apos;ve<sp/>only<sp/>mentioned<sp/>UTF-8<sp/>here,<sp/>but<sp/>most<sp/>of<sp/>these<sp/>approaches<sp/>also<sp/>allowed<sp/>other<sp/>character<sp/>sets<sp/>that<sp/>were<sp/>popular,<sp/>such<sp/>as<sp/>[the<sp/>ISO-8859<sp/>family](https://en.wikipedia.org/wiki/ISO/IEC_8859).<sp/>However,<sp/>UTF-8<sp/>solves<sp/>so<sp/>many<sp/>problems<sp/>that<sp/>these<sp/>other<sp/>character<sp/>sets<sp/>are<sp/>gradually<sp/>falling<sp/>out<sp/>of<sp/>favour,<sp/>as<sp/>UTF-8<sp/>can<sp/>support<sp/>all<sp/>languages.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>patchwork<sp/>of<sp/>overlapping<sp/>approaches<sp/>has<sp/>served<sp/>us<sp/>well,<sp/>but<sp/>we<sp/>have<sp/>to<sp/>admit<sp/>that<sp/>it&apos;s<sp/>a<sp/>mess.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>SMTPUTF8</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">`SMTPUTF8`<sp/>is<sp/>another<sp/>SMTP<sp/>extension,<sp/>defined<sp/>in<sp/>[RFC<sp/>6531](https://www.rfc-editor.org/rfc/rfc6531)<sp/>in<sp/>2012.<sp/>This<sp/>essentially<sp/>solves<sp/>the<sp/>whole<sp/>problem,<sp/>allowing<sp/>the<sp/>entire<sp/>SMTP<sp/>conversation<sp/>—<sp/>commands,<sp/>headers,<sp/>and<sp/>message<sp/>bodies<sp/>—<sp/>to<sp/>be<sp/>sent<sp/>in<sp/>raw,<sp/>unencoded<sp/>UTF-8.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">But<sp/>there&apos;s<sp/>a<sp/>problem<sp/>with<sp/>this<sp/>approach:<sp/>adoption.<sp/>If<sp/>you<sp/>send<sp/>a<sp/>UTF-8<sp/>message<sp/>to<sp/>a<sp/>recipient<sp/>whose<sp/>mail<sp/>server<sp/>doesn&apos;t<sp/>support<sp/>this<sp/>format,<sp/>the<sp/>sender<sp/>has<sp/>to<sp/>somehow<sp/>downgrade<sp/>the<sp/>message<sp/>to<sp/>make<sp/>it<sp/>survive<sp/>a<sp/>transition<sp/>to<sp/>7-bit.<sp/>This<sp/>is<sp/>a<sp/>hard<sp/>problem<sp/>to<sp/>solve,<sp/>especially<sp/>since<sp/>there<sp/>is<sp/>no<sp/>way<sp/>to<sp/>make<sp/>a<sp/>7-bit<sp/>system<sp/>support<sp/>UTF-8<sp/>in<sp/>the<sp/>local<sp/>parts<sp/>of<sp/>addresses.<sp/>This<sp/>downgrade<sp/>problem<sp/>is<sp/>what<sp/>held<sp/>up<sp/>the<sp/>adoption<sp/>of<sp/>`SMTPUTF8`<sp/>in<sp/>PHPMailer<sp/>for<sp/>many<sp/>years,<sp/>but<sp/>in<sp/>that<sp/>time<sp/>the<sp/>*de<sp/>facto*<sp/>approach<sp/>has<sp/>become<sp/>to<sp/>simply<sp/>fail<sp/>in<sp/>that<sp/>situation,<sp/>and<sp/>tell<sp/>the<sp/>recipient<sp/>it&apos;s<sp/>time<sp/>they<sp/>upgraded<sp/>their<sp/>mail<sp/>server<sp/>😅.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>vast<sp/>majority<sp/>of<sp/>large<sp/>email<sp/>providers<sp/>(gmail,<sp/>Yahoo,<sp/>Microsoft,<sp/>etc),<sp/>mail<sp/>servers<sp/>(postfix,<sp/>exim,<sp/>IIS,<sp/>etc),<sp/>and<sp/>mail<sp/>clients<sp/>(Apple<sp/>Mail,<sp/>Outlook,<sp/>Thunderbird,<sp/>etc)<sp/>now<sp/>all<sp/>support<sp/>SMTPUTF8,<sp/>so<sp/>the<sp/>need<sp/>for<sp/>backward<sp/>compatibility<sp/>is<sp/>no<sp/>longer<sp/>what<sp/>it<sp/>was.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>SMTPUTF8<sp/>in<sp/>PHPMailer</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Several<sp/>other<sp/>PHP<sp/>email<sp/>libraries<sp/>have<sp/>implemented<sp/>a<sp/>halfway<sp/>solution<sp/>to<sp/>`SMTPUTF8`,<sp/>adding<sp/>only<sp/>the<sp/>ability<sp/>to<sp/>support<sp/>UTF-8<sp/>in<sp/>email<sp/>addresses,<sp/>not<sp/>elsewhere<sp/>in<sp/>the<sp/>protocol.<sp/>I<sp/>wanted<sp/>PHPMailer<sp/>to<sp/>do<sp/>it<sp/>&quot;the<sp/>right<sp/>way&quot;,<sp/>and<sp/>this<sp/>has<sp/>taken<sp/>much<sp/>longer.<sp/>PHPMailer<sp/>now<sp/>supports<sp/>UTF-8<sp/>everywhere,<sp/>and<sp/>does<sp/>not<sp/>need<sp/>to<sp/>use<sp/>transfer<sp/>or<sp/>header<sp/>encodings<sp/>for<sp/>UTF-8<sp/>text<sp/>when<sp/>connecting<sp/>to<sp/>an<sp/>`SMTPUTF8`-capable<sp/>mail<sp/>server.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>support<sp/>is<sp/>handled<sp/>automatically:<sp/>if<sp/>you<sp/>add<sp/>an<sp/>email<sp/>address<sp/>that<sp/>requires<sp/>UTF-8,<sp/>PHPMailer<sp/>will<sp/>use<sp/>UTF-8<sp/>for<sp/>everything.<sp/>If<sp/>not,<sp/>it<sp/>will<sp/>fall<sp/>back<sp/>to<sp/>7-bit<sp/>and<sp/>encode<sp/>the<sp/>message<sp/>as<sp/>necessary.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>one<sp/>place<sp/>you<sp/>will<sp/>need<sp/>to<sp/>be<sp/>careful<sp/>is<sp/>in<sp/>the<sp/>selection<sp/>of<sp/>the<sp/>address<sp/>validator.<sp/>By<sp/>default,<sp/>PHPMailer<sp/>uses<sp/>PHP&apos;s<sp/>built-in<sp/>`filter_var`<sp/>validator,<sp/>which<sp/>does<sp/>not<sp/>allow<sp/>UTF-8<sp/>email<sp/>addresses.<sp/>When<sp/>PHPMailer<sp/>spots<sp/>that<sp/>you<sp/>have<sp/>submitted<sp/>a<sp/>UTF-8<sp/>address,<sp/>but<sp/>have<sp/>not<sp/>altered<sp/>the<sp/>default<sp/>validator,<sp/>it<sp/>will<sp/>automatically<sp/>switch<sp/>to<sp/>using<sp/>a<sp/>UTF-8-compatible<sp/>validator.<sp/>As<sp/>soon<sp/>as<sp/>you<sp/>do<sp/>this,<sp/>any<sp/>SMTP<sp/>connection<sp/>you<sp/>make<sp/>will<sp/>*require*<sp/>that<sp/>the<sp/>server<sp/>you<sp/>connect<sp/>to<sp/>supports<sp/>`SMTPUTF8`.<sp/>You<sp/>can<sp/>select<sp/>this<sp/>validator<sp/>explicitly<sp/>by<sp/>setting<sp/>`PHPMailer::$validator<sp/>=<sp/>&apos;eai&apos;`<sp/>(an<sp/>acronym<sp/>for<sp/>Email<sp/>Address<sp/>Internationalization).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Postfix<sp/>gotcha</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Postfix<sp/>has<sp/>supported<sp/>`SMTPUTF8`<sp/>for<sp/>a<sp/>long<sp/>time,<sp/>but<sp/>it<sp/>has<sp/>a<sp/>peculiarity<sp/>that<sp/>it<sp/>does<sp/>not<sp/>always<sp/>advertise<sp/>that<sp/>it<sp/>does<sp/>so.<sp/>However,<sp/>rather<sp/>surprisingly,<sp/>if<sp/>you<sp/>use<sp/>UTF-8<sp/>in<sp/>the<sp/>conversation,<sp/>it<sp/>will<sp/>work<sp/>anyway.</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/SMTPUTF8.md"/>
+  </compounddef>
+</doxygen>

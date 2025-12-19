@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="actualizar__perfil_8php" kind="file" language="PHP">
+    <compoundname>actualizar_perfil.php</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="actualizar__perfil_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$conn</definition>
+        <argsstring></argsstring>
+        <name>$conn</name>
+        <initializer>= abrirServidor()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/php/actualizar_perfil.php" line="31" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/php/actualizar_perfil.php" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="actualizar__perfil_8php_1a871732a5362d7fe0b3ec7fba3c7f3198" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$mensaje_destino</definition>
+        <argsstring></argsstring>
+        <name>$mensaje_destino</name>
+        <initializer>= &quot;../html/perfil_cliente.php&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/php/actualizar_perfil.php" line="34" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/php/actualizar_perfil.php" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="actualizar__perfil_8php_1a52bb14d6056cde1360c7716cb9996849" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>if(!isset( $_SESSION[&apos;</definition>
+        <argsstring>(!isset($_SESSION[&apos;</argsstring>
+        <name>if</name>
+        <initializer>])) {
+    header(&quot;Location: login.html&quot;);
+    <ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;
+}
+
+
+$id = $_SESSION[&apos;usuario_id&apos;]</initializer>
+        <briefdescription>
+<para>Control de acceso: Redirige si no hay sesión activa. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/php/actualizar_perfil.php" line="39" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/php/actualizar_perfil.php" bodystart="39" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="variable" id="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$data</definition>
+        <argsstring></argsstring>
+        <name>$data</name>
+        <initializer>= [&quot;id&quot; =&gt; $id]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/php/actualizar_perfil.php" line="48" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/php/actualizar_perfil.php" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="actualizar__perfil_8php_1ab86363b4b99f159f18184677bc01ebef" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$check_user_stmt</definition>
+        <argsstring></argsstring>
+        <name>$check_user_stmt</name>
+        <initializer>= $conn-&gt;prepare(&quot;SELECT id FROM usuario WHERE id = ?&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><mdash/> VERIFICACIÓN DE EXISTENCIA DEL USUARIO CRÍTICA <mdash/> <simplesect kind="note"><para>Asegura que el usuario no haya sido borrado de la DB mientras mantenía la sesión. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/php/actualizar_perfil.php" line="54" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/php/actualizar_perfil.php" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="actualizar__perfil_8php_1ae6c5fcb6b67ff2256e32b8c49df8d593" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$check_user_res</definition>
+        <argsstring></argsstring>
+        <name>$check_user_res</name>
+        <initializer>= $check_user_stmt-&gt;get_result()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/php/actualizar_perfil.php" line="57" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/php/actualizar_perfil.php" bodystart="57" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Script de control para la actualización de datos del perfil de usuario. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Procesa cambios de nombre, correo, contraseña y foto de perfil. Implementa validaciones de seguridad, dominio de correo y requisitos de contraseña. <simplesect kind="author"><para>Ferran </para>
+</simplesect>
+<simplesect kind="date"><para>19/12/2025 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">session_start();</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">error_log(</highlight><highlight class="stringliteral">&quot;POST<sp/>data:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/>print_r($_POST,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">error_log(</highlight><highlight class="stringliteral">&quot;FILES<sp/>data:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/>print_r($_FILES,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">require_once<sp/></highlight><highlight class="stringliteral">&quot;../api/conexion.php&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal"><sp/>(glob(__DIR__<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;/../api/logicaNegocio/*.php&quot;</highlight><highlight class="normal">)<sp/>as<sp/>$file)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>require_once<sp/>$file;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref><sp/>=<sp/>abrirServidor();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><ref refid="actualizar__perfil_8php_1a871732a5362d7fe0b3ec7fba3c7f3198" kindref="member">$mensaje_destino</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;../html/perfil_cliente.php&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!isset($_SESSION[</highlight><highlight class="stringliteral">&apos;usuario_id&apos;</highlight><highlight class="normal">]))<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>header(</highlight><highlight class="stringliteral">&quot;Location:<sp/>login.html&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">$id<sp/>=<sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;usuario_id&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref><sp/>=<sp/>[</highlight><highlight class="stringliteral">&quot;id&quot;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$id];</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><ref refid="actualizar__perfil_8php_1ab86363b4b99f159f18184677bc01ebef" kindref="member">$check_user_stmt</ref><sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare(</highlight><highlight class="stringliteral">&quot;SELECT<sp/>id<sp/>FROM<sp/>usuario<sp/>WHERE<sp/>id<sp/>=<sp/>?&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><ref refid="actualizar__perfil_8php_1ab86363b4b99f159f18184677bc01ebef" kindref="member">$check_user_stmt</ref>-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;i&quot;</highlight><highlight class="normal">,<sp/>$id);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><ref refid="actualizar__perfil_8php_1ab86363b4b99f159f18184677bc01ebef" kindref="member">$check_user_stmt</ref>-&gt;execute();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><ref refid="actualizar__perfil_8php_1ae6c5fcb6b67ff2256e32b8c49df8d593" kindref="member">$check_user_res</ref><sp/>=<sp/><ref refid="actualizar__perfil_8php_1ab86363b4b99f159f18184677bc01ebef" kindref="member">$check_user_stmt</ref>-&gt;get_result();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="actualizar__perfil_8php_1ae6c5fcb6b67ff2256e32b8c49df8d593" kindref="member">$check_user_res</ref>-&gt;num_rows<sp/>===<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_error&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>de<sp/>autenticación:<sp/>El<sp/>usuario<sp/>asociado<sp/>a<sp/>la<sp/>sesión<sp/>ya<sp/>no<sp/>existe.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="actualizar__perfil_8php_1ab86363b4b99f159f18184677bc01ebef" kindref="member">$check_user_stmt</ref>-&gt;close();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>header(</highlight><highlight class="stringliteral">&quot;Location:<sp/>$mensaje_destino&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><ref refid="actualizar__perfil_8php_1ab86363b4b99f159f18184677bc01ebef" kindref="member">$check_user_stmt</ref>-&gt;close();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">//<sp/>MANEJO<sp/>DE<sp/>FOTO<sp/>BLOB<sp/>(Base64)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!empty($_POST[</highlight><highlight class="stringliteral">&apos;profile_image_base64&apos;</highlight><highlight class="normal">]))<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>$foto_data<sp/>=<sp/>[</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;usuario_id&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$id,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;foto&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$_POST[</highlight><highlight class="stringliteral">&apos;profile_image_base64&apos;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>];</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="perfil__cliente_8php_1af2317aab379c0be403615d09e71d1250" kindref="member">$resultado_foto</ref><sp/>=<sp/>guardarFotoPerfil(<ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>,<sp/>$foto_data);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="perfil__cliente_8php_1af2317aab379c0be403615d09e71d1250" kindref="member">$resultado_foto</ref>[</highlight><highlight class="stringliteral">&apos;status&apos;</highlight><highlight class="normal">]<sp/>===<sp/></highlight><highlight class="stringliteral">&apos;ok&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;foto_actualizada&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_exito&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Foto<sp/>de<sp/>perfil<sp/>actualizada<sp/>correctamente.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_error&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>al<sp/>guardar<sp/>la<sp/>foto:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/><ref refid="perfil__cliente_8php_1af2317aab379c0be403615d09e71d1250" kindref="member">$resultado_foto</ref>[</highlight><highlight class="stringliteral">&apos;mensaje&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>header(</highlight><highlight class="stringliteral">&quot;Location:<sp/>$mensaje_destino&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="comment">//<sp/>1.<sp/>Nombre</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">$nombre_anterior<sp/>=<sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;usuario_nombre&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">.$_SESSION[</highlight><highlight class="stringliteral">&apos;usuario_apellidos&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isset($_POST[</highlight><highlight class="stringliteral">&apos;nombre&apos;</highlight><highlight class="normal">]))<sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(empty($_POST[</highlight><highlight class="stringliteral">&apos;nombre&apos;</highlight><highlight class="normal">]))<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_error&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;El<sp/>nombre<sp/>está<sp/>vacío.<sp/>Por<sp/>favor,<sp/>ingrese<sp/>un<sp/>nombre<sp/>y<sp/>apellido.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>header(</highlight><highlight class="stringliteral">&quot;Location:<sp/>$mensaje_destino&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($_POST[</highlight><highlight class="stringliteral">&apos;nombre&apos;</highlight><highlight class="normal">]<sp/>!==<sp/>$nombre_anterior)<sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$partes<sp/>=<sp/>explode(</highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">,<sp/>$_POST[</highlight><highlight class="stringliteral">&apos;nombre&apos;</highlight><highlight class="normal">],<sp/>2);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;nombre&apos;</highlight><highlight class="normal">]<sp/>=<sp/>$partes[0];</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;apellidos&apos;</highlight><highlight class="normal">]<sp/>=<sp/>$partes[1]<sp/>??<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="comment">//<sp/>2.<sp/>Gmail</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!empty($_POST[</highlight><highlight class="stringliteral">&apos;gmail&apos;</highlight><highlight class="normal">]))<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($_POST[</highlight><highlight class="stringliteral">&apos;gmail&apos;</highlight><highlight class="normal">]<sp/>!==<sp/>$_POST[</highlight><highlight class="stringliteral">&apos;repetir-correo&apos;</highlight><highlight class="normal">])<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_error&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Los<sp/>correos<sp/>no<sp/>coinciden.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>header(</highlight><highlight class="stringliteral">&quot;Location:<sp/>$mensaje_destino&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>$gmail_nuevo<sp/>=<sp/>$_POST[</highlight><highlight class="stringliteral">&apos;gmail&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Filtro<sp/>de<sp/>dominios<sp/>permitidos</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strpos($gmail_nuevo,<sp/></highlight><highlight class="stringliteral">&apos;@gmail.&apos;</highlight><highlight class="normal">)<sp/>===<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strpos($gmail_nuevo,<sp/></highlight><highlight class="stringliteral">&apos;@yahoo.&apos;</highlight><highlight class="normal">)<sp/>===<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strpos($gmail_nuevo,<sp/></highlight><highlight class="stringliteral">&apos;@outlook.&apos;</highlight><highlight class="normal">)<sp/>===<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strpos($gmail_nuevo,<sp/></highlight><highlight class="stringliteral">&apos;@hotmail.&apos;</highlight><highlight class="normal">)<sp/>===<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strpos($gmail_nuevo,<sp/></highlight><highlight class="stringliteral">&apos;@upv.edu.es&apos;</highlight><highlight class="normal">)<sp/>===<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_error&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;El<sp/>dominio<sp/>del<sp/>nuevo<sp/>correo<sp/>no<sp/>está<sp/>permitido.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>header(</highlight><highlight class="stringliteral">&quot;Location:<sp/>$mensaje_destino&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($gmail_nuevo<sp/>!==<sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;usuario_correo&apos;</highlight><highlight class="normal">])<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$stmt_check<sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare(</highlight><highlight class="stringliteral">&quot;SELECT<sp/>id<sp/>FROM<sp/>usuario<sp/>WHERE<sp/>gmail<sp/>=<sp/>?&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$stmt_check-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;s&quot;</highlight><highlight class="normal">,<sp/>$gmail_nuevo);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$stmt_check-&gt;execute();</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$stmt_check-&gt;store_result();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($stmt_check-&gt;num_rows<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_error&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;El<sp/>correo<sp/>electrónico<sp/>introducido<sp/>ya<sp/>está<sp/>asociado<sp/>a<sp/>otra<sp/>cuenta.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$stmt_check-&gt;close();</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>header(</highlight><highlight class="stringliteral">&quot;Location:<sp/>$mensaje_destino&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$stmt_check-&gt;close();</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;gmail&apos;</highlight><highlight class="normal">]<sp/>=<sp/>$gmail_nuevo;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="comment">//<sp/>3.<sp/>Contraseña</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal">$passwordAntigua<sp/>=<sp/>$_POST[</highlight><highlight class="stringliteral">&apos;contrasena-antigua&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">$requiereVerificacion<sp/>=<sp/>!empty($_POST[</highlight><highlight class="stringliteral">&apos;contrasena&apos;</highlight><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($requiereVerificacion)<sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($_POST[</highlight><highlight class="stringliteral">&apos;contrasena&apos;</highlight><highlight class="normal">]<sp/>!==<sp/>$_POST[</highlight><highlight class="stringliteral">&apos;repetir-contrasena&apos;</highlight><highlight class="normal">])<sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_error&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Las<sp/>contraseñas<sp/>nuevas<sp/>no<sp/>coinciden.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>header(</highlight><highlight class="stringliteral">&quot;Location:<sp/>$mensaje_destino&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(strlen($_POST[</highlight><highlight class="stringliteral">&apos;contrasena&apos;</highlight><highlight class="normal">])<sp/>&lt;<sp/>8)<sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_error&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;La<sp/>contraseña<sp/>debe<sp/>tener<sp/>al<sp/>menos<sp/>8<sp/>caracteres.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>header(</highlight><highlight class="stringliteral">&quot;Location:<sp/>$mensaje_destino&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>$passwordNueva<sp/>=<sp/>$_POST[</highlight><highlight class="stringliteral">&apos;contrasena&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>$tieneNum<sp/>=<sp/>preg_match(</highlight><highlight class="stringliteral">&apos;/\d/&apos;</highlight><highlight class="normal">,<sp/>$passwordNueva);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>$tieneMay<sp/>=<sp/>preg_match(</highlight><highlight class="stringliteral">&apos;/[A-Z]/&apos;</highlight><highlight class="normal">,<sp/>$passwordNueva);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>$tieneEsp<sp/>=<sp/>preg_match(</highlight><highlight class="stringliteral">&apos;/[!@#$%^&amp;*(),.?&quot;:{}|&lt;&gt;]/&apos;</highlight><highlight class="normal">,<sp/>$passwordNueva);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!$tieneNum<sp/>||<sp/>!$tieneMay<sp/>||<sp/>!$tieneEsp)<sp/>{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_error&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;La<sp/>contraseña<sp/>debe<sp/>contener<sp/>al<sp/>menos<sp/>un<sp/>número,<sp/>una<sp/>mayúscula<sp/>y<sp/>un<sp/>carácter<sp/>especial.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>header(</highlight><highlight class="stringliteral">&quot;Location:<sp/>$mensaje_destino&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(empty($passwordAntigua))<sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_error&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Debe<sp/>introducir<sp/>la<sp/>contraseña<sp/>antigua.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>header(</highlight><highlight class="stringliteral">&quot;Location:<sp/>$mensaje_destino&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref><sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare(</highlight><highlight class="stringliteral">&quot;SELECT<sp/>password<sp/>FROM<sp/>usuario<sp/>WHERE<sp/>id<sp/>=<sp/>?&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;i&quot;</highlight><highlight class="normal">,<sp/>$id);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;execute();</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref><sp/>=<sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;get_result();</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref>-&gt;num_rows<sp/>===<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_error&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>de<sp/>autenticación<sp/>interna.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>header(</highlight><highlight class="stringliteral">&quot;Location:<sp/>$mensaje_destino&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>$user<sp/>=<sp/><ref refid="lognegtest_8php_1a49a8a4009b02e49717caa88b128affc5" kindref="member">$res</ref>-&gt;fetch_assoc();</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>$hashAlmacenado<sp/>=<sp/>$user[</highlight><highlight class="stringliteral">&apos;password&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;close();</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!password_verify($passwordAntigua,<sp/>$hashAlmacenado))<sp/>{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_error&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;La<sp/>contraseña<sp/>antigua<sp/>es<sp/>incorrecta.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>header(</highlight><highlight class="stringliteral">&quot;Location:<sp/>$mensaje_destino&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;password&apos;</highlight><highlight class="normal">]<sp/>=<sp/>password_hash($_POST[</highlight><highlight class="stringliteral">&apos;contrasena&apos;</highlight><highlight class="normal">],<sp/>PASSWORD_DEFAULT);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="comment">//<sp/>4.<sp/>Ejecución<sp/>de<sp/>Cambios</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(count(<ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>)<sp/>===<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_error&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>se<sp/>detectaron<sp/>modificaciones<sp/>para<sp/>guardar.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>header(</highlight><highlight class="stringliteral">&quot;Location:<sp/>$mensaje_destino&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><ref refid="main_test1_8php_1a06face0ef35c41554d8f4fe115363f58" kindref="member">$resultado</ref><sp/>=<sp/>actualizarUsuario(<ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>,<sp/><ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_test1_8php_1a06face0ef35c41554d8f4fe115363f58" kindref="member">$resultado</ref>[</highlight><highlight class="stringliteral">&quot;status&quot;</highlight><highlight class="normal">]<sp/>===<sp/></highlight><highlight class="stringliteral">&quot;ok&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Sincronización<sp/>de<sp/>la<sp/>sesión<sp/>con<sp/>los<sp/>nuevos<sp/>datos</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isset(<ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;nombre&apos;</highlight><highlight class="normal">]))<sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;usuario_nombre&apos;</highlight><highlight class="normal">]<sp/>=<sp/><ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;nombre&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isset(<ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;apellidos&apos;</highlight><highlight class="normal">]))<sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;usuario_apellidos&apos;</highlight><highlight class="normal">]<sp/>=<sp/><ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;apellidos&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isset(<ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;gmail&apos;</highlight><highlight class="normal">]))<sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;usuario_correo&apos;</highlight><highlight class="normal">]<sp/>=<sp/><ref refid="actualizar__perfil_8php_1a6efc15b5a2314dd4b5aaa556a375c6d6" kindref="member">$data</ref>[</highlight><highlight class="stringliteral">&apos;gmail&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_exito&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Perfil<sp/>actualizado<sp/>correctamente.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal">header(</highlight><highlight class="stringliteral">&quot;Location:<sp/>../html/perfil_cliente.php&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/php/actualizar_perfil.php"/>
+  </compounddef>
+</doxygen>

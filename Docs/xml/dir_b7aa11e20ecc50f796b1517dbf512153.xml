@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="dir_b7aa11e20ecc50f796b1517dbf512153" kind="dir">
+    <compoundname>C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0</compoundname>
+    <innerdir refid="dir_b0e94dc018de4307d2286a519e82c7ed">C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language</innerdir>
+    <innerdir refid="dir_74e48f56104d96694ffeca007d3e11cf">C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src</innerdir>
+    <innerfile refid="get__oauth__token_8php">get_oauth_token.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>[![SWUbanner](<ulink url="https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg">https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg</ulink>)](<ulink url="https://supportukrainenow.org/">https://supportukrainenow.org/</ulink>)</para>
+<para><image type="html" name="https://raw.github.com/PHPMailer/PHPMailer/master/examples/images/phpmailer.png" alt="PHPMailer" inline="yes"></image>
+</para>
+<sect1 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md5">
+<title>PHPMailer – A full-featured email creation and transfer class for PHP</title><para><ulink url="https://github.com/PHPMailer/PHPMailer/actions"><image type="html" name="https://github.com/PHPMailer/PHPMailer/workflows/Tests/badge.svg" alt="Test status" inline="yes"></image>
+</ulink> <ulink url="https://codecov.io/gh/PHPMailer/PHPMailer"><image type="html" name="https://codecov.io/gh/PHPMailer/PHPMailer/branch/master/graph/badge.svg?token=iORZpwmYmM" alt="codecov.io" inline="yes"></image>
+</ulink> <ulink url="https://packagist.org/packages/phpmailer/phpmailer"><image type="html" name="https://poser.pugx.org/phpmailer/phpmailer/v/stable.svg" alt="Latest Stable Version" inline="yes"></image>
+</ulink> <ulink url="https://packagist.org/packages/phpmailer/phpmailer"><image type="html" name="https://poser.pugx.org/phpmailer/phpmailer/downloads" alt="Total Downloads" inline="yes"></image>
+</ulink> <ulink url="https://packagist.org/packages/phpmailer/phpmailer"><image type="html" name="https://poser.pugx.org/phpmailer/phpmailer/license.svg" alt="License" inline="yes"></image>
+</ulink> <ulink url="https://phpmailer.github.io/PHPMailer/"><image type="html" name="https://github.com/phpmailer/phpmailer/workflows/Docs/badge.svg" alt="API Docs" inline="yes"></image>
+</ulink> <ulink url="https://api.securityscorecards.dev/projects/github.com/PHPMailer/PHPMailer"><image type="html" name="https://api.securityscorecards.dev/projects/github.com/PHPMailer/PHPMailer/badge" alt="OpenSSF Scorecard" inline="yes"></image>
+</ulink></para>
+<sect2 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md6">
+<title>Features</title><para><itemizedlist>
+<listitem><para>Probably the world&apos;s most popular code for sending email from PHP!</para>
+</listitem><listitem><para>Used by many open-source projects: WordPress, Drupal, 1CRM, SugarCRM, Yii, Joomla! and many more</para>
+</listitem><listitem><para>Integrated SMTP support – send without a local mail server</para>
+</listitem><listitem><para>Send emails with multiple To, CC, BCC, and Reply-to addresses</para>
+</listitem><listitem><para>Multipart/alternative emails for mail clients that do not read HTML email</para>
+</listitem><listitem><para>Add attachments, including inline</para>
+</listitem><listitem><para>Support for UTF-8 content and 8bit, base64, binary, and quoted-printable encodings</para>
+</listitem><listitem><para>Full UTF-8 support when using servers that support <computeroutput>SMTPUTF8</computeroutput>.</para>
+</listitem><listitem><para>Support for iCal events in multiparts and attachments</para>
+</listitem><listitem><para>SMTP authentication with <computeroutput>LOGIN</computeroutput>, <computeroutput>PLAIN</computeroutput>, <computeroutput>CRAM-MD5</computeroutput>, and <computeroutput>XOAUTH2</computeroutput> mechanisms over SMTPS and SMTP+STARTTLS transports</para>
+</listitem><listitem><para>Validates email addresses automatically</para>
+</listitem><listitem><para>Protects against header injection attacks</para>
+</listitem><listitem><para>Error messages in over 50 languages!</para>
+</listitem><listitem><para>DKIM and S/MIME signing support</para>
+</listitem><listitem><para>Compatible with PHP 5.5 and later, including PHP 8.4</para>
+</listitem><listitem><para>Namespaced to prevent name clashes</para>
+</listitem><listitem><para>Much more!</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md7">
+<title>Why you might need it</title><para>Many PHP developers need to send email from their code. The only PHP function that supports this directly is <ulink url="https://www.php.net/manual/en/function.mail.php"><computeroutput>mail()</computeroutput></ulink>. However, it does not provide any assistance for making use of popular features such as authentication, HTML messages, and attachments.</para>
+<para>Formatting email correctly is surprisingly difficult. There are myriad overlapping (and conflicting) standards, requiring tight adherence to horribly complicated formatting and encoding rules – the vast majority of code that you&apos;ll find online that uses the <computeroutput>mail()</computeroutput> function directly is just plain wrong, if not unsafe!</para>
+<para>The PHP <computeroutput>mail()</computeroutput> function usually sends via a local mail server, typically fronted by a <computeroutput>sendmail</computeroutput> binary on Linux, BSD, and macOS platforms, however, Windows usually doesn&apos;t include a local mail server; <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref>&apos;s integrated SMTP client allows email sending on all platforms without needing a local mail server. Be aware though, that the <computeroutput>mail()</computeroutput> function should be avoided when possible; it&apos;s both faster and <ulink url="https://exploitbox.io/paper/Pwning-PHP-Mail-Function-For-Fun-And-RCE.html">safer</ulink> to use SMTP to localhost.</para>
+<para><emphasis>Please</emphasis> don&apos;t be tempted to do it yourself – if you don&apos;t use <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref>, there are many other excellent libraries that you should look at before rolling your own. Try <ulink url="https://symfony.com/doc/current/mailer.html">Symfony Mailer</ulink>, <ulink url="https://docs.laminas.dev/laminas-mail/">Laminas/Mail</ulink>, <ulink url="https://github.com/zetacomponents/Mail">ZetaComponents</ulink>, etc.</para>
+</sect2>
+<sect2 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md8">
+<title>License</title><para>This software is distributed under the <ulink url="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL 2.1</ulink> license, along with the <ulink url="https://gplcc.github.io/gplcc/">GPL Cooperation Commitment</ulink>. Please read <ulink url="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LICENSE</ulink> for information on the software availability and distribution.</para>
+</sect2>
+<sect2 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md9">
+<title>Installation &amp; loading</title><para><ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> is available on <ulink url="https://packagist.org/packages/phpmailer/phpmailer">Packagist</ulink> (using semantic versioning), and installation via <ulink url="https://getcomposer.org">Composer</ulink> is the recommended way to install <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref>. Just add this line to your <computeroutput>composer.json</computeroutput> file:</para>
+<para><programlisting filename=".json"><codeline><highlight class="normal">&quot;phpmailer/phpmailer&quot;:<sp/>&quot;^7.0.0&quot;</highlight></codeline>
+</programlisting></para>
+<para>or run</para>
+<para><programlisting filename=".sh"><codeline><highlight class="normal">composer<sp/>require<sp/>phpmailer/phpmailer</highlight></codeline>
+</programlisting></para>
+<para>Note that the <computeroutput>vendor</computeroutput> folder and the <computeroutput>vendor/autoload.php</computeroutput> script are generated by Composer; they are not part of <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref>.</para>
+<para>If you want to use XOAUTH2 authentication, you will also need to add a dependency on the <computeroutput>league/oauth2-client</computeroutput> and appropriate service adapters package in your <computeroutput>composer.json</computeroutput>, or take a look at by @decomplexity&apos;s <ulink url="https://github.com/decomplexity/SendOauth2">SendOauth2 wrapper</ulink>, especially if you&apos;re using Microsoft services.</para>
+<para>Alternatively, if you&apos;re not using Composer, you can <ulink url="https://github.com/PHPMailer/PHPMailer/archive/master.zip">download PHPMailer as a zip file</ulink>, (note that docs and examples are not included in the zip file), then copy the contents of the <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> folder into one of the <computeroutput>include_path</computeroutput> directories specified in your PHP configuration and load each class file manually:</para>
+<para><programlisting filename=".php"><codeline><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline><highlight class="normal">use<sp/><ref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer\PHPMailer\PHPMailer</ref>;</highlight></codeline>
+<codeline><highlight class="normal">use<sp/><ref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_exception" kindref="compound">PHPMailer\PHPMailer\Exception</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">require<sp/></highlight><highlight class="stringliteral">&apos;path/to/PHPMailer/src/Exception.php&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">require<sp/></highlight><highlight class="stringliteral">&apos;path/to/PHPMailer/src/PHPMailer.php&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">require<sp/></highlight><highlight class="stringliteral">&apos;path/to/PHPMailer/src/SMTP.php&apos;</highlight><highlight class="normal">;</highlight></codeline>
+</programlisting></para>
+<para>If you&apos;re not using the <computeroutput>SMTP</computeroutput> class explicitly (you&apos;re probably not), you don&apos;t need a <computeroutput>use</computeroutput> line for it. Even if you&apos;re not using exceptions, you do still need to load the <computeroutput>Exception</computeroutput> class as it is used internally.</para>
+</sect2>
+<sect2 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md10">
+<title>Legacy versions</title><para><ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> 5.2 (which is compatible with PHP 5.0 — 7.0) is no longer supported, even for security updates. You will find the latest version of 5.2 in the <ulink url="https://github.com/PHPMailer/PHPMailer/tree/5.2-stable">5.2-stable branch</ulink>. If you&apos;re using PHP 5.5 or later (which you should be), switch to the 6.x releases.</para>
+<sect3 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md11">
+<title>Upgrading from 5.2</title><para>The biggest changes are that source files are now in the <computeroutput>src/</computeroutput> folder, and <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> now declares the namespace <computeroutput><ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref>\<ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref></computeroutput>. This has several important effects – <ulink url="https://github.com/PHPMailer/PHPMailer/tree/master/UPGRADING.md">read the upgrade guide</ulink> for more details.</para>
+</sect3>
+<sect3 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md12">
+<title>Minimal installation</title><para>While installing the entire package manually or with Composer is simple, convenient, and reliable, you may want to include only vital files in your project. At the very least you will need <ulink url="https://github.com/PHPMailer/PHPMailer/tree/master/src/PHPMailer.php">src/PHPMailer.php</ulink>. If you&apos;re using SMTP, you&apos;ll need <ulink url="https://github.com/PHPMailer/PHPMailer/tree/master/src/SMTP.php">src/SMTP.php</ulink>, and if you&apos;re using POP-before SMTP (<emphasis>very</emphasis> unlikely!), you&apos;ll need <ulink url="https://github.com/PHPMailer/PHPMailer/tree/master/src/POP3.php">src/POP3.php</ulink>. You can skip the <ulink url="https://github.com/PHPMailer/PHPMailer/tree/master/language/">language</ulink> folder if you&apos;re not showing errors to users and can make do with English-only errors. If you&apos;re using XOAUTH2 you will need <ulink url="https://github.com/PHPMailer/PHPMailer/tree/master/src/OAuth.php">src/OAuth.php</ulink> as well as the Composer dependencies for the services you wish to authenticate with. Really, it&apos;s much easier to use Composer!</para>
+</sect3>
+</sect2>
+<sect2 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md13">
+<title>A Simple Example</title><para><programlisting filename=".php"><codeline><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//Import<sp/>PHPMailer<sp/>classes<sp/>into<sp/>the<sp/>global<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//These<sp/>must<sp/>be<sp/>at<sp/>the<sp/>top<sp/>of<sp/>your<sp/>script,<sp/>not<sp/>inside<sp/>a<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">use<sp/><ref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer\PHPMailer\PHPMailer</ref>;</highlight></codeline>
+<codeline><highlight class="normal">use<sp/><ref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p" kindref="compound">PHPMailer\PHPMailer\SMTP</ref>;</highlight></codeline>
+<codeline><highlight class="normal">use<sp/><ref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_exception" kindref="compound">PHPMailer\PHPMailer\Exception</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//Load<sp/>Composer&apos;s<sp/>autoloader<sp/>(created<sp/>by<sp/>composer,<sp/>not<sp/>included<sp/>with<sp/>PHPMailer)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">require<sp/></highlight><highlight class="stringliteral">&apos;vendor/autoload.php&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//Create<sp/>an<sp/>instance;<sp/>passing<sp/>`true`<sp/>enables<sp/>exceptions</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">$mail<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Server<sp/>settings</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;SMTPDebug<sp/>=<sp/>SMTP::DEBUG_SERVER;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Enable<sp/>verbose<sp/>debug<sp/>output</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;isSMTP();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Send<sp/>using<sp/>SMTP</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;Host<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;smtp.example.com&apos;</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Set<sp/>the<sp/>SMTP<sp/>server<sp/>to<sp/>send<sp/>through</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;SMTPAuth<sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Enable<sp/>SMTP<sp/>authentication</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;Username<sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;user@example.com&apos;</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//SMTP<sp/>username</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;Password<sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;secret&apos;</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//SMTP<sp/>password</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;SMTPSecure<sp/>=<sp/>PHPMailer::ENCRYPTION_SMTPS;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Enable<sp/>implicit<sp/>TLS<sp/>encryption</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;Port<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>465;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//TCP<sp/>port<sp/>to<sp/>connect<sp/>to;<sp/>use<sp/>587<sp/>if<sp/>you<sp/>have<sp/>set<sp/>`SMTPSecure<sp/>=<sp/>PHPMailer::ENCRYPTION_STARTTLS`</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Recipients</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;setFrom(</highlight><highlight class="stringliteral">&apos;from@example.com&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Mailer&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;addAddress(</highlight><highlight class="stringliteral">&apos;joe@example.net&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Joe<sp/>User&apos;</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Add<sp/>a<sp/>recipient</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;addAddress(</highlight><highlight class="stringliteral">&apos;ellen@example.com&apos;</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Name<sp/>is<sp/>optional</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;addReplyTo(</highlight><highlight class="stringliteral">&apos;info@example.com&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Information&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;addCC(</highlight><highlight class="stringliteral">&apos;cc@example.com&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;addBCC(</highlight><highlight class="stringliteral">&apos;bcc@example.com&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Attachments</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;addAttachment(</highlight><highlight class="stringliteral">&apos;/var/tmp/file.tar.gz&apos;</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Add<sp/>attachments</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;addAttachment(</highlight><highlight class="stringliteral">&apos;/tmp/image.jpg&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;new.jpg&apos;</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Optional<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Content</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;isHTML(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Set<sp/>email<sp/>format<sp/>to<sp/>HTML</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;Subject<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;Here<sp/>is<sp/>the<sp/>subject&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;Body<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;This<sp/>is<sp/>the<sp/>HTML<sp/>message<sp/>body<sp/>&lt;b&gt;in<sp/>bold!&lt;/b&gt;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;AltBody<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;This<sp/>is<sp/>the<sp/>body<sp/>in<sp/>plain<sp/>text<sp/>for<sp/>non-HTML<sp/>mail<sp/>clients&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$mail-&gt;send();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&apos;Message<sp/>has<sp/>been<sp/>sent&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(Exception<sp/>$e)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;Message<sp/>could<sp/>not<sp/>be<sp/>sent.<sp/>Mailer<sp/>Error:<sp/>{$mail-&gt;ErrorInfo}&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para>You&apos;ll find plenty to play with in the <ulink url="https://github.com/PHPMailer/PHPMailer/tree/master/examples">examples</ulink> folder, which covers many common scenarios including sending through Gmail, building contact forms, sending to mailing lists, and more.</para>
+<para>If you are re-using the instance (e.g. when sending to a mailing list), you may need to clear the recipient list to avoid sending duplicate messages. See <ulink url="https://github.com/PHPMailer/PHPMailer/blob/master/examples/mailing_list.phps">the mailing list example</ulink> for further guidance.</para>
+<para>That&apos;s it. You should now be ready to use PHPMailer!</para>
+</sect2>
+<sect2 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md14">
+<title>Localization</title><para><ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> defaults to English, but in the <ulink url="https://github.com/PHPMailer/PHPMailer/tree/master/language/">language</ulink> folder, you&apos;ll find many translations for <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> error messages that you may encounter. Their filenames contain <ulink url="https://en.wikipedia.org/wiki/ISO_639-1">ISO 639-1</ulink> language code for the translations, for example <computeroutput>fr</computeroutput> for French. To specify a language, you need to tell <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> which one to use, like this:</para>
+<para><programlisting filename=".php"><codeline><highlight class="comment">//To<sp/>load<sp/>the<sp/>French<sp/>version</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">$mail-&gt;setLanguage(</highlight><highlight class="stringliteral">&apos;fr&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;/optional/path/to/language/directory/&apos;</highlight><highlight class="normal">);</highlight></codeline>
+</programlisting></para>
+<para>We welcome corrections and new languages – if you&apos;re looking for corrections, run the <ulink url="https://github.com/PHPMailer/PHPMailer/blob/master/test/Language/TranslationCompletenessTest.php">Language/TranslationCompletenessTest.php</ulink> script in the tests folder and it will show any missing translations.</para>
+</sect2>
+<sect2 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md15">
+<title>Documentation</title><para>Start reading at the <ulink url="https://github.com/PHPMailer/PHPMailer/wiki">GitHub wiki</ulink>. If you&apos;re having trouble, head for <ulink url="https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting">the troubleshooting guide</ulink> as it&apos;s frequently updated.</para>
+<para>Examples of how to use <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> for common scenarios can be found in the <ulink url="https://github.com/PHPMailer/PHPMailer/tree/master/examples">examples</ulink> folder. If you&apos;re looking for a good starting point, we recommend you start with <ulink url="https://github.com/PHPMailer/PHPMailer/tree/master/examples/gmail.phps">the Gmail example</ulink>.</para>
+<para>To reduce <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref>&apos;s deployed code footprint, examples are not included if you load <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> via Composer or via <ulink url="https://github.com/PHPMailer/PHPMailer/archive/master.zip">GitHub&apos;s zip file download</ulink>, so you&apos;ll need to either clone the git repository or use the above links to get to the examples directly.</para>
+<para>Complete generated API documentation is <ulink url="https://phpmailer.github.io/PHPMailer/">available online</ulink>.</para>
+<para>You can generate complete API-level documentation by running <computeroutput>phpdoc</computeroutput> in the top-level folder, and documentation will appear in the <computeroutput>docs</computeroutput> folder, though you&apos;ll need to have <ulink url="https://www.phpdoc.org">PHPDocumentor</ulink> installed. You may find <ulink url="https://github.com/PHPMailer/PHPMailer/blob/master/test/PHPMailer/PHPMailerTest.php">the unit tests</ulink> a good reference for how to do various operations such as encryption.</para>
+<para>If the documentation doesn&apos;t cover what you need, search the <ulink url="https://stackoverflow.com/questions/tagged/phpmailer">many questions on Stack Overflow</ulink>, and before you ask a question about &quot;SMTP Error: Could not connect to SMTP host.&quot;, <ulink url="https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting">read the troubleshooting guide</ulink>.</para>
+</sect2>
+<sect2 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md16">
+<title>Tests</title><para><ulink url="https://github.com/PHPMailer/PHPMailer/tree/master/test/">PHPMailer tests</ulink> use PHPUnit 9, with <ulink url="https://github.com/Yoast/PHPUnit-Polyfills">a polyfill</ulink> to let 9-style tests run on older PHPUnit and PHP versions.</para>
+<para><ulink url="https://github.com/PHPMailer/PHPMailer/actions"><image type="html" name="https://github.com/PHPMailer/PHPMailer/workflows/Tests/badge.svg" alt="Test status" inline="yes"></image>
+</ulink></para>
+<para>If this isn&apos;t passing, is there something you can do to help?</para>
+</sect2>
+<sect2 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md17">
+<title>Security</title><para>Please disclose any vulnerabilities found responsibly – report security issues to the maintainers privately.</para>
+<para>See <ulink url="https://github.com/PHPMailer/PHPMailer/tree/master/SECURITY.md">SECURITY</ulink> and <ulink url="https://github.com/PHPMailer/PHPMailer/security">PHPMailer&apos;s security advisories on GitHub</ulink>.</para>
+</sect2>
+<sect2 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md18">
+<title>Contributing</title><para>Please submit bug reports, suggestions, and pull requests to the <ulink url="https://github.com/PHPMailer/PHPMailer/issues">GitHub issue tracker</ulink>.</para>
+<para>We&apos;re particularly interested in fixing edge cases, expanding test coverage, and updating translations.</para>
+<para>If you found a mistake in the docs, or want to add something, go ahead and amend the wiki – anyone can edit it.</para>
+<para>If you have git clones from prior to the move to the <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> GitHub organisation, you&apos;ll need to update any remote URLs referencing the old GitHub location with a command like this from within your clone:</para>
+<para><programlisting filename=".sh"><codeline><highlight class="normal">git<sp/>remote<sp/>set-url<sp/>upstream<sp/>https://github.com/PHPMailer/PHPMailer.git</highlight></codeline>
+</programlisting></para>
+<para>Please <emphasis>don&apos;t</emphasis> use the SourceForge or Google Code projects any more; they are obsolete and no longer maintained.</para>
+</sect2>
+<sect2 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md19">
+<title>Sponsorship</title><para>Development time and resources for <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> are provided by <ulink url="https://info.smartmessages.net/">Smartmessages.net</ulink>, the world&apos;s only privacy-first email marketing system.</para>
+<para><ulink url="https://info.smartmessages.net/"><image type="html" name="https://www.smartmessages.net/img/smartmessages-logo.svg" alt="Smartmessages.net privacy-first email marketing logo" inline="yes"></image>
+</ulink></para>
+<para>Donations are very welcome, whether in beer 🍺, T-shirts 👕, or cold, hard cash 💰. Sponsorship through GitHub is a simple and convenient way to say &quot;thank you&quot; to <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref>&apos;s maintainers and contributors – just click the &quot;Sponsor&quot; button <ulink url="https://github.com/PHPMailer/PHPMailer">on the project page</ulink>. If your company uses <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref>, consider taking part in Tidelift&apos;s enterprise support programme.</para>
+</sect2>
+<sect2 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md20">
+<title>PHPMailer For Enterprise</title><para>Available as part of the Tidelift Subscription.</para>
+<para>The maintainers of <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open-source packages you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact packages you use. <ulink url="https://tidelift.com/subscription/pkg/packagist-phpmailer-phpmailer?utm_source=packagist-phpmailer-phpmailer&amp;utm_medium=referral&amp;utm_campaign=enterprise&amp;utm_term=repo">Learn more.</ulink></para>
+</sect2>
+<sect2 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md21">
+<title>Changelog</title><para>See changelog.</para>
+</sect2>
+<sect2 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md22">
+<title>History</title><para><itemizedlist>
+<listitem><para><ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> was originally written in 2001 by Brent R. Matzelle as a <ulink url="https://sourceforge.net/projects/phpmailer/">SourceForge project</ulink>.</para>
+</listitem><listitem><para><ulink url="https://github.com/Synchro">Marcus Bointon</ulink> (<computeroutput>coolbru</computeroutput> on SF) and Andy Prevost (<computeroutput>codeworxtech</computeroutput>) took over the project in 2004.</para>
+</listitem><listitem><para>Became an Apache incubator project on Google Code in 2010, managed by Jim Jagielski.</para>
+</listitem><listitem><para>Marcus created <ulink url="https://github.com/Synchro/PHPMailer">his fork on GitHub</ulink> in 2008.</para>
+</listitem><listitem><para>Jim and Marcus decide to join forces and use GitHub as the canonical and official repo for <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> in 2013.</para>
+</listitem><listitem><para><ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> moves to <ulink url="https://github.com/PHPMailer">the PHPMailer organisation</ulink> on GitHub in 2013.</para>
+</listitem></itemizedlist>
+</para>
+<sect3 id="dir_b7aa11e20ecc50f796b1517dbf512153_1autotoc_md23">
+<title>What&apos;s changed since moving from SourceForge?</title><para><itemizedlist>
+<listitem><para>Official successor to the SourceForge and Google Code projects.</para>
+</listitem><listitem><para>Test suite.</para>
+</listitem><listitem><para>Continuous integration with GitHub Actions.</para>
+</listitem><listitem><para>Composer support.</para>
+</listitem><listitem><para>Public development.</para>
+</listitem><listitem><para>Additional languages and language strings.</para>
+</listitem><listitem><para>CRAM-MD5 authentication support.</para>
+</listitem><listitem><para>Preserves full repo history of authors, commits, and branches from the original SourceForge project. </para>
+</listitem></itemizedlist>
+</para>
+</sect3>
+</sect2>
+</sect1>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/"/>
+  </compounddef>
+</doxygen>

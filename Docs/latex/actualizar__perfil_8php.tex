@@ -1,0 +1,91 @@
+\doxysection{C\+:/xampp/htdocs/\+Proyecto\+Biometria\+\_\+2/src/php/actualizar\+\_\+perfil.php File Reference}
+\label{actualizar__perfil_8php}\index{C:/xampp/htdocs/ProyectoBiometria\_2/src/php/actualizar\_perfil.php@{C:/xampp/htdocs/ProyectoBiometria\_2/src/php/actualizar\_perfil.php}}
+
+
+Script de control para la actualización de datos del perfil de usuario.  
+
+
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \$conn} = abrir\+Servidor()
+\item 
+\textbf{ \$mensaje\+\_\+destino} = "{}../html/perfil\+\_\+cliente.\+php"{}
+\item 
+\textbf{ if} (!isset(\$\+\_\+\+SESSION[\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Control de acceso\+: Redirige si no hay sesión activa. \end{DoxyCompactList}\item 
+\textbf{ \$data} = ["{}id"{} =$>$ \$id]
+\item 
+\textbf{ \$check\+\_\+user\+\_\+stmt} = \$conn-\/$>$prepare("{}SELECT id FROM usuario WHERE id = ?"{})
+\item 
+\textbf{ \$check\+\_\+user\+\_\+res} = \$check\+\_\+user\+\_\+stmt-\/$>$get\+\_\+result()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Script de control para la actualización de datos del perfil de usuario. 
+
+Procesa cambios de nombre, correo, contraseña y foto de perfil. Implementa validaciones de seguridad, dominio de correo y requisitos de contraseña. \begin{DoxyAuthor}{Author}
+Ferran 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+19/12/2025 
+\end{DoxyDate}
+
+
+\label{doc-var-members}
+\doxysubsection{Variable Documentation}
+\index{actualizar\_perfil.php@{actualizar\_perfil.php}!\$check\_user\_res@{\$check\_user\_res}}
+\index{\$check\_user\_res@{\$check\_user\_res}!actualizar\_perfil.php@{actualizar\_perfil.php}}
+\doxysubsubsection{\$check\_user\_res}
+{\footnotesize\ttfamily \label{actualizar__perfil_8php_ae6c5fcb6b67ff2256e32b8c49df8d593} 
+\$check\+\_\+user\+\_\+res = \$check\+\_\+user\+\_\+stmt-\/$>$get\+\_\+result()}
+
+\index{actualizar\_perfil.php@{actualizar\_perfil.php}!\$check\_user\_stmt@{\$check\_user\_stmt}}
+\index{\$check\_user\_stmt@{\$check\_user\_stmt}!actualizar\_perfil.php@{actualizar\_perfil.php}}
+\doxysubsubsection{\$check\_user\_stmt}
+{\footnotesize\ttfamily \label{actualizar__perfil_8php_ab86363b4b99f159f18184677bc01ebef} 
+\$check\+\_\+user\+\_\+stmt = \$conn-\/$>$prepare("{}SELECT id FROM usuario WHERE id = ?"{})}
+
+--- VERIFICACIÓN DE EXISTENCIA DEL USUARIO CRÍ\+TICA --- \begin{DoxyNote}{Note}
+Asegura que el usuario no haya sido borrado de la DB mientras mantenía la sesión. 
+\end{DoxyNote}
+\index{actualizar\_perfil.php@{actualizar\_perfil.php}!\$conn@{\$conn}}
+\index{\$conn@{\$conn}!actualizar\_perfil.php@{actualizar\_perfil.php}}
+\doxysubsubsection{\$conn}
+{\footnotesize\ttfamily \label{actualizar__perfil_8php_aa8a5a87b9c1a6a0819b88447cbe41877} 
+\$conn = abrir\+Servidor()}
+
+\index{actualizar\_perfil.php@{actualizar\_perfil.php}!\$data@{\$data}}
+\index{\$data@{\$data}!actualizar\_perfil.php@{actualizar\_perfil.php}}
+\doxysubsubsection{\$data}
+{\footnotesize\ttfamily \label{actualizar__perfil_8php_a6efc15b5a2314dd4b5aaa556a375c6d6} 
+\$data = ["{}id"{} =$>$ \$id]}
+
+\index{actualizar\_perfil.php@{actualizar\_perfil.php}!\$mensaje\_destino@{\$mensaje\_destino}}
+\index{\$mensaje\_destino@{\$mensaje\_destino}!actualizar\_perfil.php@{actualizar\_perfil.php}}
+\doxysubsubsection{\$mensaje\_destino}
+{\footnotesize\ttfamily \label{actualizar__perfil_8php_a871732a5362d7fe0b3ec7fba3c7f3198} 
+\$mensaje\+\_\+destino = "{}../html/perfil\+\_\+cliente.\+php"{}}
+
+\index{actualizar\_perfil.php@{actualizar\_perfil.php}!if@{if}}
+\index{if@{if}!actualizar\_perfil.php@{actualizar\_perfil.php}}
+\doxysubsubsection{if}
+{\footnotesize\ttfamily \label{actualizar__perfil_8php_a52bb14d6056cde1360c7716cb9996849} 
+if(!isset( \$\+\_\+\+SESSION[\textquotesingle{}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{]))\ \{}
+\DoxyCodeLine{\ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ login.html"{}});}
+\DoxyCodeLine{\ \ \ \ exit;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$id\ =\ \$\_SESSION[\textcolor{stringliteral}{'usuario\_id'}]}
+
+\end{DoxyCode}
+
+
+Control de acceso\+: Redirige si no hay sesión activa. 
+

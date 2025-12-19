@@ -1,0 +1,51 @@
+\doxysection{C\+:/xampp/htdocs/\+Proyecto\+Biometria\+\_\+2/src/api/logica\+Negocio/obtener\+Estados\+Incidencias.php File Reference}
+\label{obtener_estados_incidencias_8php}\index{C:/xampp/htdocs/ProyectoBiometria\_2/src/api/logicaNegocio/obtenerEstadosIncidencias.php@{C:/xampp/htdocs/ProyectoBiometria\_2/src/api/logicaNegocio/obtenerEstadosIncidencias.php}}
+
+
+Cargador de catálogo para los estados de gestión de incidencias.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ obtener\+Estados\+Incidencia} (\$conn)
+\begin{DoxyCompactList}\small\item\em Recupera todos los estados de incidencia disponibles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Cargador de catálogo para los estados de gestión de incidencias. 
+
+Recupera la lista completa de estados definidos en el sistema (ej. Abierta, En Proceso, Cerrada) para alimentar selectores y filtros en la interfaz de usuario. \begin{DoxyAuthor}{Author}
+Manuel 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+30/10/2025 
+\end{DoxyDate}
+
+
+\label{doc-func-members}
+\doxysubsection{Function Documentation}
+\index{obtenerEstadosIncidencias.php@{obtenerEstadosIncidencias.php}!obtenerEstadosIncidencia@{obtenerEstadosIncidencia}}
+\index{obtenerEstadosIncidencia@{obtenerEstadosIncidencia}!obtenerEstadosIncidencias.php@{obtenerEstadosIncidencias.php}}
+\doxysubsubsection{obtenerEstadosIncidencia()}
+{\footnotesize\ttfamily \label{obtener_estados_incidencias_8php_a0023a20a40df6a4ef06d7a28f801fa58} 
+obtener\+Estados\+Incidencia (\begin{DoxyParamCaption}\item[{}]{\$conn}{}\end{DoxyParamCaption})}
+
+
+
+Recupera todos los estados de incidencia disponibles. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+mysqli & {\em \$conn} & Instancia de conexión activa a la base de datos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Lista asociativa de estados. Si falla o no hay datos, devuelve un array vacío. 
+\end{DoxyReturn}
+\doxysubsection{Lectura\+Estados}\label{obtener_estados_incidencias_8php_LecturaEstados}
+Consulta simple a la tabla de referencia para obtener el listado oficial de fases.
+
+\begin{DoxyNote}{Note}
+Se utiliza MYSQLI\+\_\+\+ASSOC para que las claves del array coincidan con los nombres de las columnas.
+\end{DoxyNote}

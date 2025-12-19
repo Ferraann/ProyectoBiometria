@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="_api_service_8java" kind="file" language="Java">
+    <compoundname>ApiService.java</compoundname>
+    <includes local="no">com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor</includes>
+    <includes local="no">com.example.grupo5.aitherapp.pojos.PojoSensor</includes>
+    <includes local="no">com.example.grupo5.aitherapp.pojos.PojoUsuario</includes>
+    <includes local="no">com.google.gson.JsonElement</includes>
+    <includes local="no">com.google.gson.JsonObject</includes>
+    <includes local="no">retrofit2.Call</includes>
+    <includes local="no">retrofit2.http.Body</includes>
+    <includes local="no">retrofit2.http.Field</includes>
+    <includes local="no">retrofit2.http.GET</includes>
+    <includes local="no">retrofit2.http.POST</includes>
+    <includes local="no">retrofit2.http.Query</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiService.java</label>
+        <link refid="_api_service_8java"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor</label>
+      </node>
+      <node id="3">
+        <label>com.example.grupo5.aitherapp.pojos.PojoSensor</label>
+      </node>
+      <node id="4">
+        <label>com.example.grupo5.aitherapp.pojos.PojoUsuario</label>
+      </node>
+      <node id="5">
+        <label>com.google.gson.JsonElement</label>
+      </node>
+      <node id="6">
+        <label>com.google.gson.JsonObject</label>
+      </node>
+      <node id="7">
+        <label>retrofit2.Call</label>
+      </node>
+      <node id="8">
+        <label>retrofit2.http.Body</label>
+      </node>
+      <node id="9">
+        <label>retrofit2.http.Field</label>
+      </node>
+      <node id="10">
+        <label>retrofit2.http.GET</label>
+      </node>
+      <node id="11">
+        <label>retrofit2.http.POST</label>
+      </node>
+      <node id="12">
+        <label>retrofit2.http.Query</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service" prot="public">com::example::grupo5::aitherapp::retrofit::ApiService</innerclass>
+    <innernamespace refid="namespacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit">com::example::grupo5::aitherapp::retrofit</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">com.example.grupo5.aitherapp.retrofit;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.example.grupo5.aitherapp.pojos.PojoSensor;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.example.grupo5.aitherapp.pojos.PojoUsuario;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.google.gson.JsonElement;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.google.gson.JsonObject;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>retrofit2.Call;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>retrofit2.http.Body;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>retrofit2.http.Field;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>retrofit2.http.GET;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>retrofit2.http.POST;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>retrofit2.http.Query;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Fichero:<sp/>ApiCliente</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Autor:<sp/>Pablo<sp/>Chasi</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Fecha:<sp/>24/10/2025</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Interfaz<sp/>ApiService</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Descripción:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Interfaz<sp/>donde<sp/>se<sp/>declara<sp/>las<sp/>peticiones<sp/>HTTP<sp/>y<sp/>las<sp/>variables<sp/>que</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>se<sp/>usaran<sp/>y<sp/>enviaran.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">interface<sp/></highlight><highlight class="normal"><ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service" kindref="compound">ApiService</ref><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Metodo<sp/>post<sp/>para<sp/>hacer<sp/>el<sp/>login</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//lo<sp/>que<sp/>se<sp/>pretende<sp/>es<sp/>enviar<sp/>y<sp/>no</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//recibir<sp/>al<sp/>tener<sp/>void.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>@POST(</highlight><highlight class="stringliteral">&quot;index.php&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>Call&lt;PojoRespuestaServidor&gt;<sp/><ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a818e9d57c7b3f12eacda6d5fcf760ead" kindref="member">datosRegistro</ref>(</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Body<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref><sp/>usuario</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Metodo<sp/>post<sp/>donde<sp/>se<sp/>muestra<sp/>la<sp/>extructura<sp/>de<sp/>enviar<sp/>datos</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>@POST<sp/>(</highlight><highlight class="stringliteral">&quot;index.php&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>Call&lt;Void&gt;<sp/><ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a6db8019c344eff0d07a4d653dea0fb9b" kindref="member">enviarDatos</ref>(</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Field(</highlight><highlight class="stringliteral">&quot;CO2&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>co2,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Field(</highlight><highlight class="stringliteral">&quot;Temperatura&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>temperatura</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Metodo<sp/>post<sp/>para<sp/>hacer<sp/>login<sp/>del<sp/>usuario</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>@POST(</highlight><highlight class="stringliteral">&quot;index.php&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>Call&lt;PojoRespuestaServidor&gt;<sp/><ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1af9dadd420853953102515ccd5881abe1" kindref="member">loginUsuario</ref>(@Body<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref><sp/>usuario<sp/>);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Metodo<sp/>post<sp/>para<sp/>modificar<sp/>datos</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>@POST(</highlight><highlight class="stringliteral">&quot;index.php&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="comment">//<sp/>Cambia<sp/>al<sp/>endpoint<sp/>real<sp/>en<sp/>tu<sp/>servidor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>Call&lt;PojoRespuestaServidor&gt;<sp/><ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a28be13e92c5c9126549c6d611446f882" kindref="member">modificarDatos</ref>(@Body<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref><sp/>usuario);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Metodo<sp/>post<sp/>vara<sp/>crear<sp/>el<sp/>vinculo<sp/>del<sp/>sensor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>@POST(</highlight><highlight class="stringliteral">&quot;index.php&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>Call&lt;PojoRespuestaServidor&gt;<sp/><ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1aec7ff4f6c6bdfbc13d93b7b81e5b465e" kindref="member">vincularSensor</ref>(@Body<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor" kindref="compound">PojoSensor</ref><sp/>sensor);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Metodo<sp/>post<sp/>crear<sp/>sensor<sp/>y<sp/>relacion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>@POST(</highlight><highlight class="stringliteral">&quot;index.php&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>Call&lt;JsonObject&gt;<sp/><ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a0573ab7e447d4fabd7394c2817c2e7b7" kindref="member">crearSensorYRelacion</ref>(</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Query(</highlight><highlight class="stringliteral">&quot;accion&quot;</highlight><highlight class="normal">)<sp/>String<sp/>accion,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Body<sp/>JsonObject<sp/>body);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>@POST(</highlight><highlight class="stringliteral">&quot;index.php&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>Call&lt;PojoRespuestaServidor&gt;<sp/><ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1ab7438a0546c4934fcf9c3655fb562049" kindref="member">historialDistancias</ref>(@Body<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref><sp/>usuario);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>@POST(</highlight><highlight class="stringliteral">&quot;index.php&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>Call&lt;PojoRespuestaServidor&gt;<sp/><ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a3998326e460028470352128e8a89e6bb" kindref="member">distanciaFecha</ref>(@Body<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref><sp/>usuario);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>@POST(</highlight><highlight class="stringliteral">&quot;index.php&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>Call&lt;PojoRespuestaServidor&gt;<sp/><ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a14e90c182836777e1e7fe1d11ffc0d6c" kindref="member">guardarDistancia</ref>(@Body<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref><sp/>usuario);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>@POST(</highlight><highlight class="stringliteral">&quot;index.php&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>Call&lt;JsonObject&gt;<sp/><ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a341026bd11eb52a4cd24913522ac8d0b" kindref="member">obtenerSensoresUsuario</ref>(@Body<sp/>JsonObject<sp/>body);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@GET(</highlight><highlight class="stringliteral">&quot;index.php&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>Call&lt;PojoRespuestaServidor&gt;<sp/><ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a341026bd11eb52a4cd24913522ac8d0b" kindref="member">obtenerSensoresUsuario</ref>(</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Query(</highlight><highlight class="stringliteral">&quot;accion&quot;</highlight><highlight class="normal">)<sp/>String<sp/>accion,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Query(</highlight><highlight class="stringliteral">&quot;usuario_id&quot;</highlight><highlight class="normal">)<sp/>String<sp/>idUsuario</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiService.java"/>
+  </compounddef>
+</doxygen>

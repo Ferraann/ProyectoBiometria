@@ -1,0 +1,371 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3" kind="class" language="PHP" prot="public">
+    <compoundname>PHPMailer::PHPMailer::POP3</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1affdd38db9638306a2f7bc9f09b5f357e" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const PHPMailer\PHPMailer\POP3::VERSION</definition>
+        <argsstring></argsstring>
+        <name>VERSION</name>
+        <qualifiedname>PHPMailer\PHPMailer\POP3\VERSION</qualifiedname>
+        <initializer>= &apos;7.0.0&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="49" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a04069d3b913f83ae71e6305d9b9d6f49" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const PHPMailer\PHPMailer\POP3::DEFAULT_PORT</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_PORT</name>
+        <qualifiedname>PHPMailer\PHPMailer\POP3\DEFAULT_PORT</qualifiedname>
+        <initializer>= 110</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="56" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a34baf6363387468a4b19c1f5419bc8d0" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const PHPMailer\PHPMailer\POP3::DEFAULT_TIMEOUT</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_TIMEOUT</name>
+        <qualifiedname>PHPMailer\PHPMailer\POP3\DEFAULT_TIMEOUT</qualifiedname>
+        <initializer>= 30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="63" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1acb1d0c6e00cd32d1e054b63226dc3511" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\POP3::$do_debug</definition>
+        <argsstring></argsstring>
+        <name>$do_debug</name>
+        <qualifiedname>PHPMailer\PHPMailer\POP3\$do_debug</qualifiedname>
+        <initializer>= self::DEBUG_OFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="75" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a079d692eb4d22236b6e29dd7ffa3af42" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\POP3::$host</definition>
+        <argsstring></argsstring>
+        <name>$host</name>
+        <qualifiedname>PHPMailer\PHPMailer\POP3\$host</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="82" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1ad64de7ae646279d832db5aa26a2cb038" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\POP3::$port</definition>
+        <argsstring></argsstring>
+        <name>$port</name>
+        <qualifiedname>PHPMailer\PHPMailer\POP3\$port</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="89" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a3ebe63847c83626c94c17816b53718fe" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\POP3::$tval</definition>
+        <argsstring></argsstring>
+        <name>$tval</name>
+        <qualifiedname>PHPMailer\PHPMailer\POP3\$tval</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="96" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1ad44b18a833acd0c008f89126d5cb1ff7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\POP3::$username</definition>
+        <argsstring></argsstring>
+        <name>$username</name>
+        <qualifiedname>PHPMailer\PHPMailer\POP3\$username</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="103" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a4088c5edb27dfc176b7b964dd44376f1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\POP3::$password</definition>
+        <argsstring></argsstring>
+        <name>$password</name>
+        <qualifiedname>PHPMailer\PHPMailer\POP3\$password</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="110" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1aa250448fdb8ba74ce6f6900878c090fa" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const PHPMailer\PHPMailer\POP3::LE</definition>
+        <argsstring></argsstring>
+        <name>LE</name>
+        <qualifiedname>PHPMailer\PHPMailer\POP3\LE</qualifiedname>
+        <initializer>= &quot;\r\n&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Line break constant. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="136" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a72ebeefd63f5408d1ca2dccf4b2bdae2" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const PHPMailer\PHPMailer\POP3::DEBUG_OFF</definition>
+        <argsstring></argsstring>
+        <name>DEBUG_OFF</name>
+        <qualifiedname>PHPMailer\PHPMailer\POP3\DEBUG_OFF</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="143" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a017aa1f975409e985225afc3004d646b" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const PHPMailer\PHPMailer\POP3::DEBUG_SERVER</definition>
+        <argsstring></argsstring>
+        <name>DEBUG_SERVER</name>
+        <qualifiedname>PHPMailer\PHPMailer\POP3\DEBUG_SERVER</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="151" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a5e73f92b69db8dffe9ed6618ca936ca2" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const PHPMailer\PHPMailer\POP3::DEBUG_CLIENT</definition>
+        <argsstring></argsstring>
+        <name>DEBUG_CLIENT</name>
+        <qualifiedname>PHPMailer\PHPMailer\POP3\DEBUG_CLIENT</qualifiedname>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="158" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="158" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a10ba89166673bdcadbe60a3c55fd8f8e" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\POP3::$pop_conn</definition>
+        <argsstring></argsstring>
+        <name>$pop_conn</name>
+        <qualifiedname>PHPMailer\PHPMailer\POP3\$pop_conn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="117" column="15" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a316daf1dd734a645f5e0fd87a5fe5eb9" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\POP3::$connected</definition>
+        <argsstring></argsstring>
+        <name>$connected</name>
+        <qualifiedname>PHPMailer\PHPMailer\POP3\$connected</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="124" column="15" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a82e89b1a2bd2aaeeee1b839fc56d8a96" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\POP3::$errors</definition>
+        <argsstring></argsstring>
+        <name>$errors</name>
+        <qualifiedname>PHPMailer\PHPMailer\POP3\$errors</qualifiedname>
+        <initializer>= []</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="131" column="15" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="131" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a6f945200b0d39cad9e597525110f8a9d" prot="public" static="yes" mutable="no">
+        <type>function</type>
+        <definition>function PHPMailer\PHPMailer\POP3::popBeforeSmtp($host, $port=false, $timeout=false, $username=&apos;</definition>
+        <argsstring>( $host, $port=false, $timeout=false, $username=&apos;</argsstring>
+        <name>popBeforeSmtp</name>
+        <qualifiedname>PHPMailer\PHPMailer\POP3\popBeforeSmtp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Simple static wrapper for all-in-one POP before SMTP.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$host</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hostname to connect to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>bool</parametertype>
+<parametername>$port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The port number to connect to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>bool</parametertype>
+<parametername>$timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timeout value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$password</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$debug_level</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="172" column="28" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1ae4bb79a6ff6af1715d56460a1fe46c2c" prot="public" static="yes" mutable="no">
+        <type>function</type>
+        <definition>function PHPMailer\PHPMailer\POP3::$password</definition>
+        <argsstring></argsstring>
+        <name>$password</name>
+        <qualifiedname>PHPMailer\PHPMailer\POP3\$password</qualifiedname>
+        <initializer>= &apos;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="177" column="9" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="177" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> POP-Before-SMTP Authentication Class. Specifically for <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> to use for RFC1939 POP-before-SMTP authentication. 1) This class does not support APOP authentication. 2) Opening and closing lots of POP3 connections can be quite slow. If you need to send a batch of emails then just perform the authentication once at the start, and then loop through your mail sending script. Providing this process doesn&apos;t take longer than the verification period lasts on your POP3 server, you should be fine. 3) This is really ancient technology; you should only need to use it to talk to very old systems. 4) This POP3 class is deliberately lightweight and incomplete, implementing just enough to do authentication. If you want a more complete class there are other POP3 classes for PHP available.</para>
+<para><simplesect kind="author"><para>Richard Davey (original author) <ulink url="mailto:rich@corephp.co.uk">rich@corephp.co.uk</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Marcus Bointon (Synchro/coolbru) <ulink url="mailto:phpmailer@synchromedia.co.uk">phpmailer@synchromedia.co.uk</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Jim Jagielski (jimjag) <ulink url="mailto:jimjag@gmail.com">jimjag@gmail.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Andy Prevost (codeworxtech) <ulink url="mailto:codeworxtech@users.sourceforge.net">codeworxtech@users.sourceforge.net</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" line="42" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/POP3.php" bodystart="43" bodyend="469"/>
+    <listofallmembers>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a316daf1dd734a645f5e0fd87a5fe5eb9" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::POP3</scope><name>$connected</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1acb1d0c6e00cd32d1e054b63226dc3511" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::POP3</scope><name>$do_debug</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a82e89b1a2bd2aaeeee1b839fc56d8a96" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::POP3</scope><name>$errors</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a079d692eb4d22236b6e29dd7ffa3af42" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::POP3</scope><name>$host</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a4088c5edb27dfc176b7b964dd44376f1" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::POP3</scope><name>$password</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1ae4bb79a6ff6af1715d56460a1fe46c2c" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::POP3</scope><name>$password</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a10ba89166673bdcadbe60a3c55fd8f8e" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::POP3</scope><name>$pop_conn</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1ad64de7ae646279d832db5aa26a2cb038" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::POP3</scope><name>$port</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a3ebe63847c83626c94c17816b53718fe" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::POP3</scope><name>$tval</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1ad44b18a833acd0c008f89126d5cb1ff7" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::POP3</scope><name>$username</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a5e73f92b69db8dffe9ed6618ca936ca2" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::POP3</scope><name>DEBUG_CLIENT</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a72ebeefd63f5408d1ca2dccf4b2bdae2" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::POP3</scope><name>DEBUG_OFF</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a017aa1f975409e985225afc3004d646b" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::POP3</scope><name>DEBUG_SERVER</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a04069d3b913f83ae71e6305d9b9d6f49" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::POP3</scope><name>DEFAULT_PORT</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a34baf6363387468a4b19c1f5419bc8d0" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::POP3</scope><name>DEFAULT_TIMEOUT</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1aa250448fdb8ba74ce6f6900878c090fa" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::POP3</scope><name>LE</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1a6f945200b0d39cad9e597525110f8a9d" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::POP3</scope><name>popBeforeSmtp</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3_1affdd38db9638306a2f7bc9f09b5f357e" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::POP3</scope><name>VERSION</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

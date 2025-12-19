@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::PremioAdapter</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">RecyclerView::Adapter&lt; PremioAdapter.PremioViewHolder &gt;</basecompoundref>
+    <innerclass refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1_1_on_coins_changed_listener" prot="public">com::example::grupo5::aitherapp::PremioAdapter::OnCoinsChangedListener</innerclass>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1_1_premio_view_holder" prot="package">com::example::grupo5::aitherapp::PremioAdapter::PremioViewHolder</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1a0d787438fbb4ab17ca240507429e8fc0" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_premio" kindref="compound">PojoPremio</ref> &gt;</type>
+        <definition>List&lt;PojoPremio&gt; com.example.grupo5.aitherapp.PremioAdapter.premios</definition>
+        <argsstring></argsstring>
+        <name>premios</name>
+        <qualifiedname>com.example.grupo5.aitherapp.PremioAdapter.premios</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" line="30" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1a8c607b5b621795d32214c9a0ba281d81" prot="private" static="no" mutable="no">
+        <type>Context</type>
+        <definition>Context com.example.grupo5.aitherapp.PremioAdapter.context</definition>
+        <argsstring></argsstring>
+        <name>context</name>
+        <qualifiedname>com.example.grupo5.aitherapp.PremioAdapter.context</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" line="31" column="21" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1a23fbdffb05065eb89e62d151348df196" prot="private" static="no" mutable="no">
+        <type><ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1_1_on_coins_changed_listener" kindref="compound">OnCoinsChangedListener</ref></type>
+        <definition>OnCoinsChangedListener com.example.grupo5.aitherapp.PremioAdapter.coinsListener</definition>
+        <argsstring></argsstring>
+        <name>coinsListener</name>
+        <qualifiedname>com.example.grupo5.aitherapp.PremioAdapter.coinsListener</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" line="32" column="36" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" bodystart="32" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1af527a7204b7035c4d386c76954359bc1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>com.example.grupo5.aitherapp.PremioAdapter.PremioAdapter</definition>
+        <argsstring>(List&lt; PojoPremio &gt; premios, Context context)</argsstring>
+        <name>PremioAdapter</name>
+        <qualifiedname>com.example.grupo5.aitherapp.PremioAdapter.PremioAdapter</qualifiedname>
+        <param>
+          <type>List&lt; <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_premio" kindref="compound">PojoPremio</ref> &gt;</type>
+          <declname>premios</declname>
+        </param>
+        <param>
+          <type>Context</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" line="34" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" bodystart="34" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1a862d965224d4efa3a0ff6a961b9f9c7b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.PremioAdapter.setOnCoinsChangedListener</definition>
+        <argsstring>(OnCoinsChangedListener listener)</argsstring>
+        <name>setOnCoinsChangedListener</name>
+        <qualifiedname>com.example.grupo5.aitherapp.PremioAdapter.setOnCoinsChangedListener</qualifiedname>
+        <param>
+          <type><ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1_1_on_coins_changed_listener" kindref="compound">OnCoinsChangedListener</ref></type>
+          <declname>listener</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" line="43" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" bodystart="43" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1a22e2e30a61064ae16499ae80598a221a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>PremioViewHolder</type>
+        <definition>PremioViewHolder com.example.grupo5.aitherapp.PremioAdapter.onCreateViewHolder</definition>
+        <argsstring>(@NonNull ViewGroup parent, int viewType)</argsstring>
+        <name>onCreateViewHolder</name>
+        <qualifiedname>com.example.grupo5.aitherapp.PremioAdapter.onCreateViewHolder</qualifiedname>
+        <param>
+          <type>@NonNull ViewGroup</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>viewType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" line="49" column="29" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1a5f5b2ae7a4265ca6e5c590b8a3158f21" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.PremioAdapter.onBindViewHolder</definition>
+        <argsstring>(@NonNull PremioViewHolder holder, int position)</argsstring>
+        <name>onBindViewHolder</name>
+        <qualifiedname>com.example.grupo5.aitherapp.PremioAdapter.onBindViewHolder</qualifiedname>
+        <param>
+          <type>@NonNull PremioViewHolder</type>
+          <declname>holder</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" line="55" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" bodystart="55" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1ab49df02d2347142ffd6971f824af4ebc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int com.example.grupo5.aitherapp.PremioAdapter.getItemCount</definition>
+        <argsstring>()</argsstring>
+        <name>getItemCount</name>
+        <qualifiedname>com.example.grupo5.aitherapp.PremioAdapter.getItemCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" line="95" column="16" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" bodystart="95" bodyend="97"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1a442cc3f98f305b0547ffc29b323bd12e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Bitmap</type>
+        <definition>Bitmap com.example.grupo5.aitherapp.PremioAdapter.generarQR</definition>
+        <argsstring>(String texto)</argsstring>
+        <name>generarQR</name>
+        <qualifiedname>com.example.grupo5.aitherapp.PremioAdapter.generarQR</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>texto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" line="112" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" bodystart="112" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1a6bfadbaaf83216e66b4592fae0f9e885" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.PremioAdapter.enviarCorreoConfirmacion</definition>
+        <argsstring>(String email, String nombrePremio)</argsstring>
+        <name>enviarCorreoConfirmacion</name>
+        <qualifiedname>com.example.grupo5.aitherapp.PremioAdapter.enviarCorreoConfirmacion</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>email</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>nombrePremio</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" line="122" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" bodystart="122" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1a3d2294b12fbf9bb154b8a3aea18c3607" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.PremioAdapter.enviarCorreoConQR</definition>
+        <argsstring>(String email, String nombrePremio, Bitmap qrBitmap)</argsstring>
+        <name>enviarCorreoConQR</name>
+        <qualifiedname>com.example.grupo5.aitherapp.PremioAdapter.enviarCorreoConQR</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>email</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>nombrePremio</declname>
+        </param>
+        <param>
+          <type>Bitmap</type>
+          <declname>qrBitmap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" line="131" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" bodystart="131" bodyend="151"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>RecyclerView::Adapter&lt; PremioAdapter.PremioViewHolder &gt;</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.PremioAdapter</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>RecyclerView::Adapter&lt; PremioAdapter.PremioViewHolder &gt;</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.PremioAdapter</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" line="28" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/PremioAdapter.java" bodystart="28" bodyend="152"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1a23fbdffb05065eb89e62d151348df196" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::PremioAdapter</scope><name>coinsListener</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1a8c607b5b621795d32214c9a0ba281d81" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::PremioAdapter</scope><name>context</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1a6bfadbaaf83216e66b4592fae0f9e885" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::PremioAdapter</scope><name>enviarCorreoConfirmacion</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1a3d2294b12fbf9bb154b8a3aea18c3607" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::PremioAdapter</scope><name>enviarCorreoConQR</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1a442cc3f98f305b0547ffc29b323bd12e" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::PremioAdapter</scope><name>generarQR</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1ab49df02d2347142ffd6971f824af4ebc" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::PremioAdapter</scope><name>getItemCount</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1a5f5b2ae7a4265ca6e5c590b8a3158f21" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::PremioAdapter</scope><name>onBindViewHolder</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1a22e2e30a61064ae16499ae80598a221a" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::PremioAdapter</scope><name>onCreateViewHolder</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1af527a7204b7035c4d386c76954359bc1" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::PremioAdapter</scope><name>PremioAdapter</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1a0d787438fbb4ab17ca240507429e8fc0" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::PremioAdapter</scope><name>premios</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter_1a862d965224d4efa3a0ff6a961b9f9c7b" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::PremioAdapter</scope><name>setOnCoinsChangedListener</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

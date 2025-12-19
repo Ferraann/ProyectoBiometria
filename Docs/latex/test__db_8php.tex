@@ -1,0 +1,93 @@
+\doxysection{C\+:/xampp/htdocs/\+Proyecto\+Biometria\+\_\+2/src/api/apitest/test\+\_\+db.php File Reference}
+\label{test__db_8php}\index{C:/xampp/htdocs/ProyectoBiometria\_2/src/api/apitest/test\_db.php@{C:/xampp/htdocs/ProyectoBiometria\_2/src/api/apitest/test\_db.php}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \$servername} = "{}localhost"{}
+\item 
+\textbf{ \$username} = "{}aitherdb"{}
+\item 
+\textbf{ \$password} = "{}Sansaloni330."{}
+\item 
+\textbf{ \$dbname} = "{}aither"{}
+\item 
+\textbf{ \$port} = 3306
+\item 
+\textbf{ \$conn} = new mysqli(\$servername, \$username, \$password, \$dbname, \$port)
+\item 
+\textbf{ if} ( \$conn-\/$>$connect\+\_\+errno)
+\item 
+\textbf{ \$result} = \$conn-\/$>$query("{}SHOW TABLES;"{})
+\item 
+\textbf{ if}(\$result) \textbf{ else}
+\end{DoxyCompactItemize}
+
+
+\label{doc-var-members}
+\doxysubsection{Variable Documentation}
+\index{test\_db.php@{test\_db.php}!\$conn@{\$conn}}
+\index{\$conn@{\$conn}!test\_db.php@{test\_db.php}}
+\doxysubsubsection{\$conn}
+{\footnotesize\ttfamily \label{test__db_8php_aa8a5a87b9c1a6a0819b88447cbe41877} 
+\$conn = new mysqli(\$servername, \$username, \$password, \$dbname, \$port)}
+
+\index{test\_db.php@{test\_db.php}!\$dbname@{\$dbname}}
+\index{\$dbname@{\$dbname}!test\_db.php@{test\_db.php}}
+\doxysubsubsection{\$dbname}
+{\footnotesize\ttfamily \label{test__db_8php_ac5111a571fffa2499732833bb7f0d8c1} 
+\$dbname = "{}aither"{}}
+
+\index{test\_db.php@{test\_db.php}!\$password@{\$password}}
+\index{\$password@{\$password}!test\_db.php@{test\_db.php}}
+\doxysubsubsection{\$password}
+{\footnotesize\ttfamily \label{test__db_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d} 
+\$password = "{}Sansaloni330."{}}
+
+\index{test\_db.php@{test\_db.php}!\$port@{\$port}}
+\index{\$port@{\$port}!test\_db.php@{test\_db.php}}
+\doxysubsubsection{\$port}
+{\footnotesize\ttfamily \label{test__db_8php_aa0787efab4b22e8a212882f3409d4c77} 
+\$port = 3306}
+
+\index{test\_db.php@{test\_db.php}!\$result@{\$result}}
+\index{\$result@{\$result}!test\_db.php@{test\_db.php}}
+\doxysubsubsection{\$result}
+{\footnotesize\ttfamily \label{test__db_8php_a112ef069ddc0454086e3d1e6d8d55d07} 
+\$result = \$conn-\/$>$query("{}SHOW TABLES;"{})}
+
+\index{test\_db.php@{test\_db.php}!\$servername@{\$servername}}
+\index{\$servername@{\$servername}!test\_db.php@{test\_db.php}}
+\doxysubsubsection{\$servername}
+{\footnotesize\ttfamily \label{test__db_8php_ad79b54e31bd1050001133c4d70f850fe} 
+\$servername = "{}localhost"{}}
+
+\index{test\_db.php@{test\_db.php}!\$username@{\$username}}
+\index{\$username@{\$username}!test\_db.php@{test\_db.php}}
+\doxysubsubsection{\$username}
+{\footnotesize\ttfamily \label{test__db_8php_a0eb82aa5f81cf845de4b36cd653c42cf} 
+\$username = "{}aitherdb"{}}
+
+\index{test\_db.php@{test\_db.php}!else@{else}}
+\index{else@{else}!test\_db.php@{test\_db.php}}
+\doxysubsubsection{else}
+{\footnotesize\ttfamily \label{test__db_8php_a95321ad493869dffec303adcb3cdd9dd} 
+\textbf{ if} ( \$result) else}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ echo\ \textcolor{stringliteral}{"{}⚠\ Conectó,\ pero\ no\ pudo\ listar\ tablas:\ "{}}\ .\ \$conn-\/>error}
+
+\end{DoxyCode}
+\index{test\_db.php@{test\_db.php}!if@{if}}
+\index{if@{if}!test\_db.php@{test\_db.php}}
+\doxysubsubsection{if}
+{\footnotesize\ttfamily \label{test__db_8php_a2b15a06fce3b26e19d1653b8e2058fb5} 
+if (\begin{DoxyParamCaption}\item[{}]{\$conn-\/$>$}{}\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ echo\ \textcolor{stringliteral}{"{}No\ hay\ usuario\ para\ eliminar.\(\backslash\)n"{}}}
+
+\end{DoxyCode}
