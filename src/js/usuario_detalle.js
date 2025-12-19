@@ -1,122 +1,143 @@
-// ------------------------------------------------------------------
-// Fichero: usuario_detalle.js
-// Autor: Manuel
-// Fecha: 11/12/2025
-// ------------------------------------------------------------------
-// Descripción:
-//  Script que carga la ficha completa de un usuario del sistema.
-//  
-// Funcionalidad:
-//  - Muestra datos básicos (nombre, apellidos, email, puntos) y foto de perfil.
-//  - Muestra la lista de sensores actualmente asignados al usuario.
-//  - Muestra los roles actuales (Administrador/Técnico).
-//  - Permite a los Administradores modificar los roles del usuario a través de switches (funcionalidad restringida por permisos).
-// ------------------------------------------------------------------
-//import { obtenerRoles } from "./permisos.js";
-
-// ID del usuario logueado (quien usa la página)
-// const idUsuarioActivo = parseInt(
-//   window.sessionStorage.getItem("idUsuario") || "0"
-// );
-// let roles = null; // Almacenará los roles del usuario activo
+/**
+ * @file usuario_detalle.js
+ * @brief Gestión de la ficha detallada de usuarios y administración de roles.
+ * @details Este script permite visualizar el perfil completo de cualquier usuario del sistema,
+ * incluyendo sus datos personales, foto de perfil y sensores vinculados. Además, proporciona
+ * la lógica para que los administradores puedan promover o degradar roles (Admin/Técnico).
+ * @author Manuel
+ * @date 3/12/2025
+ */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const API_URL = "../api/index.php";
-  const params = new URLSearchParams(location.search);
-  const idUsuario = params.get("id"); // ID del usuario cuyo perfil se está viendo
 
+  /** @name Configuración y Estado
+   * @{ */
+  /** @brief URL del punto de entrada de la API. */
+  const API_URL = "../api/index.php";
+  /** @brief Analizador de parámetros para obtener el ID del usuario desde la URL. */
+  const params = new URLSearchParams(location.search);
+  /** @brief Identificador del usuario cuyo perfil se está visualizando. */
+  const idUsuario = params.get("id");
+
+  /** @brief Estado original del rol de administrador del usuario visto. @type {boolean} */
+  let esAdmin;
+  /** @brief Estado original del rol de técnico del usuario visto. @type {boolean} */
+  let esTec;
+  /** @} */
+
+  /**
+   * @brief Validación de seguridad inicial.
+   * @details Redirige al listado si no se especifica un ID de usuario en la URL.
+   */
   if (!idUsuario) {
     alert("No se indicó usuario");
     location.href = "incidencias.html";
     return;
   }
 
+  /** @name Elementos de Control de Roles
+   * @{ */
+  /** @brief Switch para el rol de administrador. @type {HTMLInputElement} */
   const chkAdmin = document.getElementById("chk-admin");
+  /** @brief Switch para el rol de técnico. @type {HTMLInputElement} */
   const chkTec = document.getElementById("chk-tecnico");
+  /** @brief Botón para persistir los cambios de roles en la base de datos. @type {HTMLButtonElement} */
   const btnSave = document.getElementById("btn-guardar");
+  /** @} */
 
-  let esAdmin; // Roles originales del perfil VISTO
-  let esTec; // Roles originales del perfil VISTO
+  /**
+   * @section 1. CARGA DE DATOS (IIFE ASÍNCRONO)
+   */
 
-  /* 1. Cargar datos básicos + foto ----------------------------- */
+  /**
+   * @brief Función autoejecutable que inicializa el perfil del usuario.
+   * @details Ejecuta tres bloques de carga en paralelo:
+   * 1. Datos personales y foto de perfil (Blob).
+   * 2. Roles actuales (Admin/Técnico).
+   * 3. Listado de sensores vinculados.
+   * @async
+   */
   (async () => {
     try {
-      // Obtener roles del usuario ACTIVO
-      //roles = await obtenerRoles(idUsuarioActivo);
-
-      // 1.1 Cargar datos del usuario que se está viendo
+      /**
+       * @section CargaPerfil
+       * @brief Recuperación de información personal y multimedia.
+       */
       const [resUser, resFoto] = await Promise.all([
         fetch(`${API_URL}?accion=getUsuarioXId&id=${idUsuario}`),
         fetch(`${API_URL}?accion=getFotoPerfil&id=${idUsuario}`),
       ]);
-      const user = await resUser.json();
-      if (!user || user.status === "error")
-        throw new Error("Usuario no encontrado");
 
-      document.getElementById(
-        "titulo-perfil"
-      ).textContent = `Perfil de ${user.nombre}`;
+      const user = await resUser.json();
+      if (!user || user.status === "error") throw new Error("Usuario no encontrado");
+
+      // Inyección de datos en el DOM
+      document.getElementById("titulo-perfil").textContent = `Perfil de ${user.nombre}`;
       document.getElementById("user-nombre").textContent = user.nombre;
-      document.getElementById("user-apellidos").textContent =
-        user.apellidos || "-";
+      document.getElementById("user-apellidos").textContent = user.apellidos || "-";
       document.getElementById("user-gmail").textContent = user.gmail;
       document.getElementById("user-puntos").textContent = user.puntos || 0;
 
-      // Cargar foto de perfil
+      /** @brief Gestión de la imagen de perfil como objeto URL (Blob). */
       const fotoPerfilElement = document.getElementById("foto-perfil");
       if (resFoto.ok) {
         const blob = await resFoto.blob();
         fotoPerfilElement.src = URL.createObjectURL(blob);
       }
 
-      /* 2. Cargar roles actuales del perfil VISTO ---------------------------------- */
-      const [resAdm, resTec] = await Promise.all([
+      /**
+       * @section CargaRoles
+       * @brief Recuperación de permisos actuales del usuario visualizado.
+       */
+      const [resAdm, resTec_api] = await Promise.all([
         fetch(`${API_URL}?accion=esAdministrador&id=${idUsuario}`),
         fetch(`${API_URL}?accion=esTecnico&id=${idUsuario}`),
       ]);
       const { es_admin: admin } = await resAdm.json();
-      const { es_tecnico: tec } = await resTec.json();
+      const { es_tecnico: tec } = await resTec_api.json();
 
+      /** @brief Sincronización de switches */
       chkAdmin.checked = admin;
       chkTec.checked = tec;
-
       esAdmin = admin;
       esTec = tec;
 
-      // Aplicar lógica de permisos: Deshabilita los switches si no es Admin
-      //aplicarLogicaPermisos(roles, chkAdmin, chkTec, btnSave);
-
-      /* 3. Cargar sensores actuales -------------------------- */
-      const resSens = await fetch(
-        `${API_URL}?accion=getSensoresDeUsuario&id=${idUsuario}`
-      );
+      /**
+       * @section CargaSensores
+       * @brief Obtención de los dispositivos asignados al usuario.
+       */
+      const resSens = await fetch(`${API_URL}?accion=getSensoresDeUsuario&id=${idUsuario}`);
       const sensores = await resSens.json();
       const lista = document.getElementById("lista-sensores");
-      lista.innerHTML =
-        !sensores || sensores.length === 0
+
+      lista.innerHTML = !sensores || sensores.length === 0
           ? '<li class="empty">Sin sensores asignados</li>'
-          : sensores
-              .map(
-                (s) =>
-                  `<li><strong>${s.nombre || s.mac}</strong> – ${
-                    s.modelo || "Sin modelo"
-                  }</li>`
-              )
-              .join("");
+          : sensores.map(s => `<li><strong>${s.nombre || s.mac}</strong> – ${s.modelo || "Sin modelo"}</li>`).join("");
+
     } catch (e) {
       alert(e.message);
       location.href = "incidencias.html";
     }
   })();
 
-  /* 4. Guardar cambios de roles ------------------------------- */
+  /**
+   * @section 2. GUARDAR CAMBIOS DE ROLES
+   */
+
+  /**
+   * @brief Gestiona la actualización de privilegios del usuario.
+   * @details Implementa una lógica de seguridad por pasos:
+   * 1. Verifica que el usuario que ejecuta la acción tenga rol de Admin.
+   * 2. Evita que un administrador se elimine a sí mismo sin una confirmación explícita.
+   * 3. Realiza peticiones POST individuales por cada rol modificado.
+   * @listens click
+   * @async
+   */
   btnSave.addEventListener("click", async () => {
-    // VERIFICACIÓN DE SEGURIDAD CRÍTICA
-    if (!roles || !roles.esAdmin) {
-      alert(
-        "Acceso denegado: Solo los administradores pueden modificar roles."
-      );
-      // Restaurar el estado original (por si el usuario ha manipulado el DOM)
+
+    /** @brief Verificación de seguridad del lado del cliente */
+    if (typeof roles === 'undefined' || !roles.esAdmin) {
+      alert("Acceso denegado: Solo los administradores pueden modificar roles.");
       chkAdmin.checked = esAdmin;
       chkTec.checked = esTec;
       return;
@@ -125,22 +146,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const nuevoAdmin = chkAdmin.checked;
     const nuevoTec = chkTec.checked;
 
-    //Evitar que el Admin se quite su propio rol sin confirmar
-    if (
-      String(idUsuario) === String(idUsuarioActivo) &&
-      esAdmin &&
-      !nuevoAdmin
-    ) {
-      const confirmar = confirm(
-        "Estás a punto de quitarte tu propio rol de Administrador. ¿Estás seguro? Perderás inmediatamente los privilegios de gestión."
-      );
+    /** @brief Protección ante auto-degradación de privilegios. */
+    if (String(idUsuario) === String(idUsuarioActivo) && esAdmin && !nuevoAdmin) {
+      const confirmar = confirm("Estás a punto de quitarte tu propio rol de Administrador. ¿Estás seguro?");
       if (!confirmar) {
-        chkAdmin.checked = true; // Restaurar el switch
+        chkAdmin.checked = true;
         return;
       }
     }
 
     try {
+      /** @brief Actualización secuencial de roles mediante la API. */
       if (nuevoAdmin !== esAdmin) {
         const acc = nuevoAdmin ? "asignarAdministrador" : "quitarAdministrador";
         const r = await fetch(API_URL, {
@@ -160,8 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
           body: JSON.stringify({ accion: acc, usuario_id: idUsuario }),
         });
         const res = JSON.parse(await r.text());
-        if (res.status !== "ok")
-          throw new Error(res.mensaje || "Error técnico");
+        if (res.status !== "ok") throw new Error(res.mensaje || "Error técnico");
       }
 
       alert("Cambios guardados");

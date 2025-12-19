@@ -5,7 +5,7 @@
  * visualizar su estado de funcionamiento y permitir a los técnicos alternar
  * el estado operativo (Correcto/Defectuoso) mediante una petición POST a la API.
  * @author Manuel
- * @date 11/12/2025
+ * @date 1/12/2025
  */
 
 document.addEventListener("DOMContentLoaded", () => {
