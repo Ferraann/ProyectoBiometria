@@ -16,7 +16,7 @@
 // //Permisos
 // //roles = await obtenerRoles(userId); //añadir esta linea en una carga inicial await
 // import { obtenerRoles } from "./permisos.js";
-// const idUsuarioActivo = parseInt(window.sessionStorage.getItem("idUsuario") || "0");
+const idUsuarioActivo = parseInt(window.sessionStorage.getItem("idUsuario") || "0");
 // let roles = null;
 
 /* ---------- DOM ---------- */
@@ -52,6 +52,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   try {
     /* 1. Incidencias */
     //roles = await obtenerRoles(idUsuarioActivo);
+    console.log("ID de Usuario Activo:", idUsuarioActivo);
     const res = await fetch(`${API_URL}?accion=getTodasIncidencias`);
     const textoCrudo = await res.text();
 

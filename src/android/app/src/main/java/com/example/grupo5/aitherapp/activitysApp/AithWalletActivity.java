@@ -28,6 +28,15 @@ public class AithWalletActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aithwallet);
+        SharedPreferences prefs = getSharedPreferences("MiAppPrefs", MODE_PRIVATE);
+        int coinsUsuario = prefs.getInt("coinsUsuario", 0);
+
+        TextView tvCoins = findViewById(R.id.coinNumber);
+        tvCoins.setText(String.valueOf(coinsUsuario));
+
+        ProgressBar progressBar = findViewById(R.id.progressBar);
+        progressBar.setMax(50);
+        progressBar.setProgress(coinsUsuario);
 
         ImageView backArrow = findViewById(R.id.imgBackArrow);
         backArrow.setOnClickListener(new View.OnClickListener() {

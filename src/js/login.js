@@ -151,6 +151,7 @@ loginForm.addEventListener("submit", async e => {
       const usuario = dataLogin.usuario;
       const usuarioId = usuario.id;
 
+      window.sessionStorage.setItem("idUsuario", usuarioId.toString());
       localStorage.setItem("user", JSON.stringify(usuario));
 
       // PASO 2: Verificar roles mediante llamadas GET

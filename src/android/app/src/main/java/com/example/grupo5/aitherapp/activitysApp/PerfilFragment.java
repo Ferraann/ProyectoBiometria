@@ -22,12 +22,11 @@ import com.example.grupo5.aitherapp.pojos.PojoUsuario;
 
 public class PerfilFragment extends Fragment {
 
-    EditText nombre, apellidos, contrasenyaAntigua, contrasenyaNueva, repetirContrasenyaNueva, correoNuevo, repetirCorreoNuevo;
-    ImageView botonModificarNombre, botonModificarApellido, botonModificarCorreo, botonModificarContrasenya;
+    EditText nombre, contrasenyaAntigua, contrasenyaNueva, repetirContrasenyaNueva, correoNuevo, repetirCorreoNuevo;
+    ImageView botonModificarNombre, botonModificarCorreo, botonModificarContrasenya;
     Button botonGuardarDatos;
 
     boolean modificaNombre = false;
-    boolean modificaApellido = false;
     boolean modificaCorreo = false;
     boolean modificaContrasenya = false;
 
@@ -46,7 +45,6 @@ public class PerfilFragment extends Fragment {
 
         // 1. VINCULAR VISTAS
         nombre = view.findViewById(R.id.editarNombre);
-        apellidos = view.findViewById(R.id.editarApellidos);
         correoNuevo = view.findViewById(R.id.editarCorreoNuevo);
         repetirCorreoNuevo = view.findViewById(R.id.editarRepetirCorreoNuevo);
         contrasenyaAntigua = view.findViewById(R.id.editarContrasenyaActual);
@@ -54,38 +52,32 @@ public class PerfilFragment extends Fragment {
         repetirContrasenyaNueva = view.findViewById(R.id.editarRepetirContrasenyaNueva);
 
         botonModificarNombre = view.findViewById(R.id.modificarNombre);
-        botonModificarApellido = view.findViewById(R.id.modificarApellidos);
         botonModificarCorreo = view.findViewById(R.id.modificarCorreo);
         botonModificarContrasenya = view.findViewById(R.id.modificarContrasenyaAntigua);
         botonGuardarDatos = view.findViewById(R.id.guardarDatos);
 
-        // 2. CONFIGURAR CLICS (Esto sustituye al onClick del XML)
+        // 2. CONFIGURAR CLICS
         botonModificarNombre.setOnClickListener(v -> activarModificarNombre());
-        botonModificarApellido.setOnClickListener(v -> activarModificarApellidos());
         botonModificarCorreo.setOnClickListener(v -> activarModificarCorreo());
         botonModificarContrasenya.setOnClickListener(v -> activarModificarContrasenya());
-
         botonGuardarDatos.setOnClickListener(v -> guardarModificaciones());
 
         // 3. CARGAR DATOS
         SharedPreferences prefs = getActivity().getSharedPreferences("SesionUsuario", Context.MODE_PRIVATE);
-        nombre.setText(prefs.getString("nombre", ""));
-        apellidos.setText(prefs.getString("apellidos", ""));
+        String nombreGuardado = prefs.getString("nombre", "");
+        String apellidosGuardados = prefs.getString("apellidos", "");
+        nombre.setText(nombreGuardado + " " + apellidosGuardados); // Nombre completo
+        correoNuevo.setText(prefs.getString("correo", ""));
+        repetirCorreoNuevo.setText(prefs.getString("correo", ""));
 
         return view;
     }
 
-    // --- MÉTODOS DE LÓGICA (Tus mismos métodos de antes) ---
+    // --- MÉTODOS DE LOGICA ---
 
     private void activarModificarNombre() {
         nombre.setEnabled(!nombre.isEnabled());
         modificaNombre = true;
-        habilitarGuardar();
-    }
-
-    private void activarModificarApellidos() {
-        apellidos.setEnabled(!apellidos.isEnabled());
-        modificaApellido = true;
         habilitarGuardar();
     }
 
@@ -109,33 +101,91 @@ public class PerfilFragment extends Fragment {
     }
 
     private void guardarModificaciones() {
+
         SharedPreferences prefs = getActivity().getSharedPreferences("SesionUsuario", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
         String idUsuario = prefs.getString("id", "");
+
+        if (idUsuario.isEmpty()) {
+            Toast.makeText(getContext(), "ERROR: No se encontró tu ID de usuario", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         usuario.setId(idUsuario);
         usuario.setAction("modificarDatos");
 
-        // VALIDACIONES (Tu código original)
+        // --- NOMBRE COMPLETO ---
         if (modificaNombre) {
-            if (nombre.getText().toString().trim().isEmpty()) {
-                Toast.makeText(getContext(), "Nombre vacío", Toast.LENGTH_SHORT).show();
+            String nuevoNombreCompleto = nombre.getText().toString().trim();
+            if (nuevoNombreCompleto.isEmpty()) {
+                Toast.makeText(getContext(), "El nombre no puede estar vacío", Toast.LENGTH_SHORT).show();
                 return;
             }
-            usuario.setNombre(nombre.getText().toString().trim());
+
+            // Separar localmente nombre y apellidos
+            String[] partes = nuevoNombreCompleto.split(" ", 2);
+            String nombreSolo = partes[0];
+            String apellidosSolo = partes.length > 1 ? partes[1] : "";
+
+            usuario.setNombre(nombreSolo);
+            usuario.setApellidos(apellidosSolo);
+
+            editor.putString("nombre", nombreSolo);
+            editor.putString("apellidos", apellidosSolo);
         }
 
-        // ... (Agrega aquí el resto de tus validaciones de apellido, correo y contraseña igual que tenías) ...
+        // --- CORREO ---
+        if (modificaCorreo) {
+            String correo1 = correoNuevo.getText().toString().trim();
+            String correo2 = repetirCorreoNuevo.getText().toString().trim();
 
-        // ENVIAR
-        putModificarDatos(usuario, getContext()); // 'getContext()' en vez de 'this'
-        Toast.makeText(getContext(), "Datos enviados", Toast.LENGTH_SHORT).show();
+            if (!correo1.equals(correo2)) {
+                Toast.makeText(getContext(), "Los correos no coinciden", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
-        // RESETEAR FORMULARIO
+            usuario.setCorreo(correo1);
+            editor.putString("correo", correo1);
+        }
+
+        // --- CONTRASEÑA ---
+        if (modificaContrasenya) {
+            String antigua = contrasenyaAntigua.getText().toString();
+            String nueva = contrasenyaNueva.getText().toString();
+            String nueva2 = repetirContrasenyaNueva.getText().toString();
+
+            if (!nueva.equals(nueva2)) {
+                Toast.makeText(getContext(), "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (!nueva.matches(regexTieneMayuscula) ||
+                    !nueva.matches(regexTieneNumeros) ||
+                    !nueva.matches(regexTieneSimbologia) ||
+                    !nueva.matches(regexTieneMasDe8Caracteres)) {
+
+                Toast.makeText(getContext(), "La nueva contraseña no cumple los requisitos", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // NO GUARDAR CONTRASEÑA EN SharedPreferences
+        }
+
+        // --- ENVIAR A LA API ---
+        putModificarDatos(usuario, getContext());
+
+        // --- GUARDAR EN LOCAL ---
+        editor.apply();
+
+        Toast.makeText(getContext(), "Datos actualizados correctamente", Toast.LENGTH_SHORT).show();
+
+        // RESET
         deshabilitarTodo();
     }
 
     private void deshabilitarTodo() {
         nombre.setEnabled(false);
-        apellidos.setEnabled(false);
         correoNuevo.setEnabled(false);
         repetirCorreoNuevo.setEnabled(false);
         contrasenyaAntigua.setEnabled(false);
@@ -145,7 +195,6 @@ public class PerfilFragment extends Fragment {
         botonGuardarDatos.setEnabled(false);
 
         modificaNombre = false;
-        modificaApellido = false;
         modificaCorreo = false;
         modificaContrasenya = false;
     }

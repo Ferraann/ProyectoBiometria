@@ -189,9 +189,9 @@ function obtenerIncidenciasActivas($conn)
 /**
  * FUNCIÓN 17: Obtener una lista de sensores asociados al usuario
  */
-function obtenerListaSensores($conn, $usuario_id){
-
-    if (empty($usuario_id)) {
+if (!function_exists('obtenerListaSensores')) {
+    function obtenerListaSensores($conn, $usuario_id) {
+if (empty($usuario_id)) {
         return ["status" => "error", "mensaje" => "Falta usuario_id."];
     }
 
@@ -221,5 +221,8 @@ function obtenerListaSensores($conn, $usuario_id){
     }
 
     return ["status" => "ok", "listaSensores" => $sensores];
+    }
 }
+
+
 ?>
