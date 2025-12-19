@@ -114,15 +114,6 @@ switch ($method) {
         $accion = $_GET['accion'] ?? null;
         switch ($accion) {
             case "getMediciones":          echo json_encode(obtenerMediciones($conn)); break;
-            case "getIncidenciasActivas":  echo json_encode(obtenerIncidenciasActivas($conn)); break;
-            case "getEstadisticas":        echo json_encode(obtenerEstadisticas($conn)); break;
-            case "getPromedioDeRango":
-                $lat_min = floatval($_GET['lat_min'] ?? 0);
-                $lat_max = floatval($_GET['lat_max'] ?? 0);
-                $lon_min = floatval($_GET['lon_min'] ?? 0);
-                $lon_max = floatval($_GET['lon_max'] ?? 0);
-                echo json_encode(promedioPorRango($conn, $lat_min, $lat_max, $lon_min, $lon_max));
-                break;
             case "getTodasIncidencias":    echo json_encode(obtenerTodasIncidencias($conn)); break;
             case "getFotosIncidencia":     echo json_encode(obtenerFotosIncidencia($conn, $_GET['incidencia_id'])); break;
             case "getHistorialDistancias": echo json_encode(getHistorialDistancias($conn, $_GET)); break;

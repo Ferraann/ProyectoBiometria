@@ -1,6 +1,6 @@
 <?php
 /**
- * @file test_total_aither.php
+ * @file TestTotalAPI.php
  * @brief Lanzador automático de pruebas para todos los métodos de la API AITHER.
  * @details Este script carga dinámicamente toda la lógica de negocio y ejecuta tests 
  * de integración simulados para validar la integridad de cada función del index.php.
@@ -10,8 +10,10 @@
 
 require_once 'MockDatabase.php';
 
-/** @section CargaLógica Importación masiva de funciones de negocio. */
-foreach (glob(__DIR__ . "/logicaNegocio/*.php") as $file) {
+/** * @section CargaLógica Importación masiva de funciones de negocio. 
+ * @details Sube un nivel desde la carpeta 'test' y accede a 'logicaNegocio'.
+ */
+foreach (glob(__DIR__ . "/../logicaNegocio/*.php") as $file) {
     require_once($file);
 }
 
@@ -52,7 +54,6 @@ runTest("Sensor: marcarSensorProblemas", function() use ($conn, $dummyInput) { s
 
 /** @section TestsIncidencias Pruebas del sistema de tickets y soporte. */
 runTest("Incidencias: obtenerTodasIncidencias", function() use ($conn) { obtenerTodasIncidencias($conn); });
-runTest("Incidencias: obtenerIncidenciasActivas", function() use ($conn) { obtenerIncidenciasActivas($conn); });
 runTest("Incidencias: crearIncidencia", function() use ($conn, $dummyInput) { crearIncidencia($conn, $dummyInput); });
 runTest("Incidencias: asignarTecnicoIncidencia", function() use ($conn, $dummyInput) { asignarTecnicoIncidencia($conn, $dummyInput); });
 runTest("Incidencias: guardarFotoIncidencia", function() use ($conn, $dummyInput) { guardarFotoIncidencia($conn, $dummyInput); });
@@ -60,7 +61,6 @@ runTest("Incidencias: guardarFotoIncidencia", function() use ($conn, $dummyInput
 /** @section TestsMediciones Pruebas de datos ambientales. */
 runTest("Mediciones: obtenerMediciones", function() use ($conn) { obtenerMediciones($conn); });
 runTest("Mediciones: guardarMedicion", function() use ($conn, $dummyInput) { guardarMedicion($conn, $dummyInput); });
-runTest("Mediciones: promedioPorRango", function() use ($conn) { promedioPorRango($conn, 39, 40, -1, 0); });
 
 /** @section TestsGamificacion Pruebas de puntos y distancias. */
 runTest("Gamificación: sumarPuntosUsuario", function() use ($conn) { sumarPuntosUsuario($conn, ["id_usuario"=>1, "puntos_a_sumar"=>10]); });
