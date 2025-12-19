@@ -1,44 +1,70 @@
 <?php
-// ------------------------------------------------------------------
-// Fichero: crearIncidencia.php
-// Autor: Manuel
-// Fecha: 11/12/2025
-// ------------------------------------------------------------------
-// Descripción:
-//  Función de API (Lógica de Negocio) para registrar una nueva incidencia
-//  generada por un usuario en el sistema.
-//  
-// Funcionalidad:
-//  - Función 'crearIncidencia' que valida la presencia de campos obligatorios (id_user, titulo, descripcion).
-//  - Normaliza el parámetro `sensor_id`, permitiendo que sea NULL si no se proporciona.
-//  - Consulta la base de datos para obtener el ID del estado predefinido 'Abierta' (o utiliza un fallback).
-//  - Construye dinámicamente la consulta INSERT utilizando consultas preparadas, adaptándose para manejar la diferencia entre asignar un valor entero (`?`) o `NULL` al campo `id_sensor`.
-//  - Tras la ejecución exitosa, devuelve el ID de la nueva incidencia creada.
-// ------------------------------------------------------------------
+/**
+ * @file crearIncidencia.php
+ * @brief Lógica de negocio para el registro de nuevas incidencias en el sistema.
+ * @details Procesa la creación de reportes técnicos vinculados a usuarios y, opcionalmente, a sensores.
+ * Gestiona la asignación automática del estado inicial y la integridad de los datos de entrada.
+ * @author Manuel
+ * @date 11/12/2025
+ */
 
+/**
+ * @brief Registra una nueva incidencia en la base de datos.
+ * @param mysqli $conn Instancia de conexión activa a la base de datos.
+ * @param array $data {
+ * @var int $id_user ID del usuario que reporta.
+ * @var string $titulo Resumen breve del problema.
+ * @var string $descripcion Detalle extenso de la incidencia.
+ * @var int|null $sensor_id (Opcional) Identificador del sensor relacionado.
+ * }
+ * @return array {
+ * @var string status 'ok' o 'error'.
+ * @var int|null id_incidencia ID generado tras la inserción (solo en éxito).
+ * @var string mensaje Descripción del resultado de la operación.
+ * }
+ */
 function crearIncidencia($conn, $data)
 {
-    // Validar parámetros obligatorios
+    // ----------------------------------------------------------------------------------------
+    // 1. VALIDACIÓN Y NORMALIZACIÓN DE DATOS
+    // ----------------------------------------------------------------------------------------
+
+    /** @section ValidacionEntrada Comprobación de campos obligatorios y saneado de tipos. */
     if (!isset($data['id_user'], $data['titulo'], $data['descripcion'])) {
-        return ["status" => "error", "mensaje" => "Faltan parámetros."];
+        return ["status" => "error", "mensaje" => "Faltan parámetros obligatorios (id_user, titulo o descripcion)."];
     }
 
-    // Normalizar sensor_id: si no se envía, será NULL
+    /** * @var int|null $sensor_id 
+     * @note Se normaliza a null si el campo llega vacío para cumplir con la integridad referencial de la DB.
+     */
     $sensor_id = isset($data['sensor_id']) && $data['sensor_id'] !== "" 
                  ? (int)$data['sensor_id'] 
                  : null;
 
-    // Obtener dinámicamente el estado "Abierta"
+    // ----------------------------------------------------------------------------------------
+    // 2. GESTIÓN DEL ESTADO INICIAL
+    // ----------------------------------------------------------------------------------------
+
+    /** * @section ObtencionEstado
+     * Recupera dinámicamente el ID para el estado 'Abierta'. 
+     * @note Se establece el ID '1' como fallback de seguridad si la consulta falla.
+     */
     $sqlEstado = "SELECT id FROM estado_incidencia WHERE nombre = 'Abierta' LIMIT 1";
     $resEstado = $conn->query($sqlEstado);
     $estadoRow = $resEstado ? $resEstado->fetch_assoc() : null;
     $estadoInicial = $estadoRow ? $estadoRow['id'] : 1;
 
-    // Insertar la incidencia
+    // ----------------------------------------------------------------------------------------
+    // 3. PERSISTENCIA EN BASE DE DATOS
+    // ----------------------------------------------------------------------------------------
+
+    /** * @section RegistroIncidencia
+     * Construcción dinámica del Statement para manejar de forma segura el valor NULL en id_sensor.
+     */
     if ($sensor_id !== null) {
-        // Si hay sensor, usamos bind_param normal
+        // Caso A: Incidencia vinculada a un sensor
         $sql = "INSERT INTO incidencias (id_user, titulo, descripcion, estado_id, id_sensor) 
-        VALUES (?, ?, ?, ?, ?)";
+                VALUES (?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param(
             "issii",
@@ -49,9 +75,9 @@ function crearIncidencia($conn, $data)
             $sensor_id
         );
     } else {
-        // Si no hay sensor, ponemos NULL directamente en SQL
+        // Caso B: Incidencia genérica (sin sensor)
         $sql = "INSERT INTO incidencias (id_user, titulo, descripcion, estado_id, id_sensor) 
-        VALUES (?, ?, ?, ?, NULL)";
+                VALUES (?, ?, ?, ?, NULL)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param(
             "issi",
@@ -63,15 +89,21 @@ function crearIncidencia($conn, $data)
     }
 
     if ($stmt->execute()) {
+        /** @var int $newId Captura del ID autoincremental generado. */
+        $newId = $conn->insert_id;
+        $stmt->close();
+        
         return [
             "status" => "ok",
-            "id_incidencia" => $conn->insert_id,
+            "id_incidencia" => $newId,
             "mensaje" => "Incidencia creada correctamente con estado inicial 'Abierta'."
         ];
     } else {
+        $errorMsg = $conn->error;
+        $stmt->close();
         return [
             "status" => "error",
-            "mensaje" => "Error al registrar incidencia: " . $conn->error
+            "mensaje" => "Error al registrar incidencia: " . $errorMsg
         ];
     }
 }
