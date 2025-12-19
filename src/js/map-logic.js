@@ -3,36 +3,88 @@
 // ==============================================
 // 1. CONFIGURACIÓN DE GASES Y DATOS GLOBALES
 // ==============================================
+
+/**
+ * @file map-logic.js
+ * @brief Script para la visualización de datos de calidad del aire mediante con Leaflet.
+ * @author Ferran Sansaloni Prats
+ */
+
+/**
+ * @typedef {Object} GasConfigItem
+ * @property {string} property Nombre de la propiedad en el objeto de datos de la estación.
+ * @property {string} name Nombre descriptivo del gas o indicador.
+ * @property {string} units Unidades de medida.
+ * @property {number[]} thresholds Umbrales de riesgo [Bajo, Alto] utilizados para determinar el color.
+ * @property {number} maxVal Valor máximo esperado para normalizar la intensidad del mapa de calor.
+ */
+
+/**
+ * @brief Objeto de configuración global para los gases y el indicador de riesgo máximo combinado.
+ * @constant
+ * @type {Object.<string, GasConfigItem>}
+ */
 const GAS_CONFIG = {
+    /** @brief Indicador de Máximo Riesgo Combinado. */
     MAX_GAS: { property: 'MAX_INTENSITY', name: 'Máximo Riesgo (Combinado)', units: 'N/A', thresholds: [0.5, 0.8], maxVal: 1.0 },
+    /** @brief Dióxido de Nitrógeno (NO₂). */
     NO2: { property: 'valor_NO2', name: 'Dióxido de Nitrógeno (NO₂)', units: 'µg/m³', thresholds: [20, 40], maxVal: 50 },
+    /** @brief Ozono (O₃). */
     O3: { property: 'valor_O3', name: 'Ozono (O₃)', units: 'µg/m³', thresholds: [100, 120], maxVal: 130 },
+    /** @brief Monóxido de Carbono (CO). */
     CO: { property: 'valor_CO', name: 'Monóxido de Carbono (CO)', units: 'mg/m³', thresholds: [5, 10], maxVal: 12 },
+    /** @brief Partículas <10µm (PM₁₀). */
     PM10: { property: 'valor_PM10', name: 'Partículas <10µm (PM₁₀)', units: 'µg/m³', thresholds: [20, 40], maxVal: 50 },
+    /** @brief Dióxido de Azufre (SO₂). */
     SO2: { property: 'valor_SO2', name: 'Dióxido de Azufre (SO₂)', units: 'µg/m³', thresholds: [5, 20], maxVal: 30 }
 };
 
+/** @brief Clave del gas actualmente seleccionado para la visualización. */
 let currentGas = 'MAX_GAS';
+/** @brief Vista actual del mapa ('general' para Península + Local, 'personal' solo para Local). */
 let currentView = 'general'; // 'general' o 'personal'
+/** @brief Array global de datos de estaciones de la península cargados desde un JSON. */
 let peninsulaDataGlobal = [];
+/** @brief Array global de datos de sensores locales cargados desde un GeoJSON. */
 let localDataGlobal = [];
 
+/** @brief Instancia del mapa de Leaflet. */
 let mapaInstance = null;
+/** @brief Grupo de capas de Leaflet para gestionar el mapa de calor. */
 let heatmapLayerGroup = L.layerGroup();
+/** @brief Instancia de la capa de calor (HeatLayer). */
 let heatLayer = null;
+/** @brief Instancia del control de leyenda de Leaflet. */
 let legend = L.control({position: 'bottomright'});
 
 // ==============================================
 // 2. LÓGICA DE CÁLCULO Y FILTRADO
 // ==============================================
 
+/**
+ * @brief Determina un color basado en un valor y unos umbrales predefinidos.
+ *
+ * Se utiliza para definir el color en la leyenda.
+ *
+ * @param {number} valor El valor a evaluar.
+ * @param {number[]} thresholds Array de umbrales [umbral_bajo, umbral_alto].
+ * @returns {string} Código de color (HEX) correspondiente al nivel de riesgo.
+ */
 function getColor(valor, thresholds) {
     if (valor === 0) return '#CCC';
-    if (valor > thresholds[1]) return '#FF0000';
-    if (valor > thresholds[0]) return '#FFFF00';
-    return '#00FF00';
+    if (valor > thresholds[1]) return '#FF0000'; // Alto
+    if (valor > thresholds[0]) return '#FFFF00'; // Medio
+    return '#00FF00'; // Bajo
 }
 
+/**
+ * @brief Calcula la intensidad máxima de riesgo entre todos los gases para una estación dada.
+ *
+ * La intensidad se calcula como el valor normalizado del gas (valor / maxVal) y se toma el máximo.
+ *
+ * @param {Object} station Objeto que contiene los valores de los gases para una estación.
+ * @returns {{intensity: number}} Objeto con la intensidad máxima calculada (entre 0.0 y 1.0).
+ */
 function getMaxGasIntensity(station) {
     let maxIntensity = 0;
     for (const key in GAS_CONFIG) {
@@ -48,6 +100,14 @@ function getMaxGasIntensity(station) {
     return { intensity: maxIntensity };
 }
 
+/**
+ * @brief Genera el array de puntos para el mapa de calor de Leaflet.
+ *
+ * Cada punto tiene el formato [latitud, longitud, intensidad]. La intensidad se normaliza a 0.0 - 1.0.
+ *
+ * @param {string} gasKey Clave del gas a mostrar (ej. 'NO2', 'MAX_GAS').
+ * @returns {Array.<number[]>} Array de puntos del mapa de calor.
+ */
 function getHeatmapPoints(gasKey) {
     // FILTRADO VITAL: Selecciona qué datos mostrar según la vista actual
     let dataToUse = (currentView === 'personal') ? localDataGlobal : peninsulaDataGlobal.concat(localDataGlobal);
@@ -72,6 +132,12 @@ function getHeatmapPoints(gasKey) {
 // 3. RENDERIZADO Y CONTROL DE VISTA
 // ==============================================
 
+/**
+ * @brief Dibuja o actualiza el mapa de calor en el mapa de Leaflet.
+ *
+ * @param {string} gasKey Clave del gas a dibujar.
+ * @returns {void}
+ */
 function drawHeatmap(gasKey) {
     if (!mapaInstance) return;
 
@@ -93,6 +159,7 @@ function drawHeatmap(gasKey) {
     heatLayer = L.heatLayer(heatPoints, heatOptions);
     heatmapLayerGroup.addLayer(heatLayer);
 
+    // Actualiza la leyenda
     if (legend.getContainer() != null) {
         legend.remove();
     }
@@ -100,7 +167,12 @@ function drawHeatmap(gasKey) {
 }
 
 /**
- * Función para cambiar la vista con efecto de desaparición de puntos
+ * @brief Función para cambiar la vista del mapa con efecto de transición (flyTo).
+ *
+ * Al cambiar de vista, la capa de calor se oculta durante la transición y se vuelve a dibujar al finalizar.
+ *
+ * @param {string} viewType El tipo de vista a cambiar ('general' o 'personal').
+ * @returns {void}
  */
 function switchMapView(viewType) {
     currentView = viewType;
@@ -135,6 +207,13 @@ function switchMapView(viewType) {
     });
 }
 
+/**
+ * @brief Implementación del método onAdd para el control de leyenda de Leaflet.
+ *
+ * Define el contenido HTML de la leyenda basado en el gas actualmente seleccionado.
+ *
+ * @returns {HTMLElement} El contenedor DOM de la leyenda.
+ */
 legend.onAdd = function () {
     const config = GAS_CONFIG[currentGas];
     var div = L.DomUtil.create('div', 'info legend'),
@@ -159,6 +238,14 @@ legend.onAdd = function () {
 // 4. INICIALIZACIÓN PRINCIPAL
 // ==============================================
 
+/**
+ * @brief Inicializa el mapa de Leaflet y carga los datos de calidad del aire.
+ *
+ * Si el mapa ya está inicializado, solo invalida el tamaño para asegurar la correcta visualización.
+ * Carga datos de la península y datos locales, y configura el control de capas para los gases.
+ *
+ * @returns {void}
+ */
 function initializeDashboardMap() {
     if (mapaInstance) {
         setTimeout(() => mapaInstance.invalidateSize(), 100);
@@ -216,6 +303,10 @@ function initializeDashboardMap() {
                         drawHeatmap(currentGas);
                         break;
                     }
+                    // NOTA: No es necesario llamar a drawHeatmap desde aquí
+                    // si se asume que al cambiar de base layer (gas) solo se quiere
+                    // actualizar el mapa de calor, que es una capa de superposición
+                    // que siempre se muestra si la opción "Mapa Calor" está activa.
                 }
             });
 
