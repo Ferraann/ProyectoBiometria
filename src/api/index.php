@@ -58,7 +58,7 @@ foreach (glob(__DIR__ . "/logicaNegocio/*.php") as $file) {
 
 /** @var mysqli $conn Instancia global de conexión a la base de datos. */
 $conn = abrirServidor();
-
+echo "La conexión funciona y el script no se corta";
 // ----------------------------------------------------------------------------------------
 // 3. PROCESAMIENTO DE DATOS DE ENTRADA
 // ----------------------------------------------------------------------------------------
