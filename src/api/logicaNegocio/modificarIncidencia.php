@@ -74,7 +74,7 @@ function asignarTecnicoIncidencia($conn, $datos) {
     $tecnicoId    = intval($datos['tecnico_id'] ?? 0);
 
     // ----------------------------------------------------------------------------------------
-    // 2. ASIGNACIÓN DE RECURSOS HUMANOS
+    // 2. ASIGNACIÓN DE TÉCNICO
     // ----------------------------------------------------------------------------------------
 
     /** @section UpdateTecnico Vinculación de personal a la incidencia. */
