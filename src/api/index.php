@@ -23,6 +23,13 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
+/** @section InicializacionSesion 
+* Asegura que el entorno de sesión esté disponible para almacenar la identidad. 
+*/
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 /** @section Preflight Handling 
  * Responde a las peticiones OPTIONS pre-vuelo de navegadores modernos.
  */

@@ -21,13 +21,6 @@
  */
 function loginUsuario($conn, $gmail, $password)
 {
-    /** @section InicializacionSesion 
-     * Asegura que el entorno de sesión esté disponible para almacenar la identidad. 
-     */
-    if (session_status() === PHP_SESSION_NONE) {
-        session_start();
-    }
-
     // ----------------------------------------------------------------------------------------
     // 1. RECUPERACIÓN DE CREDENCIALES
     // ----------------------------------------------------------------------------------------
