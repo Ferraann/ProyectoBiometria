@@ -16,6 +16,10 @@
 // 1. CONFIGURACIÓN DE ENTORNO Y CABECERAS (CORS)
 // ----------------------------------------------------------------------------------------
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 /** @note Las siguientes cabeceras permiten que aplicaciones Web y Móviles externas 
  * consuman los recursos de la API sin bloqueos de seguridad del navegador. */
 header('Content-Type: application/json');
@@ -75,8 +79,9 @@ if ($method === 'POST' || $method === 'PUT') {
     }
 
     /** @note Se guarda registro del último body recibido para tareas de depuración. */
-    if (!is_dir("logs")) mkdir("logs");
-    file_put_contents("logs/last_request.json", $rawBody);
+    if (is_dir(__DIR__ . "/logs") && is_writable(__DIR__ . "/logs")) {
+    file_put_contents(__DIR__ . "/logs/last_request.json", $rawBody);
+    }
 } else {
     $input = $_GET;
 }
