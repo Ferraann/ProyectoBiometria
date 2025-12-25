@@ -52,15 +52,28 @@ if (!idIncidencia) {
       throw new Error("Incidencia no encontrada");
 
     /**
-     * @brief 2. Carga concurrente de información de usuario y técnico.
-     * @note Se utiliza Promise.all para optimizar el tiempo de carga.
+     * @brief 2. Carga de información de usuario (creador) y técnico.
+     * Se maneja la ausencia de técnico para evitar peticiones a IDs nulos.
      */
-    const [resUser, resTec] = await Promise.all([
-      fetch(`../api/index.php?accion=getUsuarioXId&id=${inc.id_user}`),
-      fetch(`../api/index.php?accion=getUsuarioXId&id=${inc.id_tecnico}`),
-    ]);
+
+    // 2a. Cargar el usuario creador (siempre debería existir)
+    const resUser = await fetch(
+      `../api/index.php?accion=getUsuarioXId&id=${inc.id_user}`
+    );
     const user = await resUser.json();
-    const tec = await resTec.json();
+
+    // 2b. Cargar el técnico (SOLO si existe id_tecnico)
+    let tec = { status: "error" }; // Valor por defecto
+    if (inc.id_tecnico && inc.id_tecnico !== "0" && inc.id_tecnico !== 0) {
+      try {
+        const resTec = await fetch(
+          `../api/index.php?accion=getUsuarioXId&id=${inc.id_tecnico}`
+        );
+        tec = await resTec.json();
+      } catch (error) {
+        console.warn("No se pudo obtener datos del técnico asignado.");
+      }
+    }
 
     /**
      * @brief 3. Cargar catálogo de estados disponibles
@@ -94,14 +107,13 @@ if (!idIncidencia) {
 
     // 5. Formateo del nombre del Técnico Asignado
     const nombreTec =
-      tec && tec.status !== "error"
+      tec && tec.status === "ok"
         ? `${tec.nombre} ${tec.apellidos ?? ""}`.trim()
         : "Sin asignar";
 
     document.getElementById("link-tecnico").textContent = nombreTec;
-    document.getElementById("link-tecnico").href = tec.id
-      ? `usuario_detalle.html?id=${tec.id}&perfil=tecnico`
-      : "#";
+    document.getElementById("link-tecnico").href =
+      tec && tec.id ? `usuario_detalle.html?id=${tec.id}&perfil=tecnico` : "#";
 
     /**
      * @section Lógica de Reasignación
