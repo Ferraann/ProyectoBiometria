@@ -227,7 +227,7 @@ function renderIncidencias(datos) {
       <p class="meta"><strong>Fecha:</strong> ${new Date(inc.fecha_creacion).toLocaleString()}</p>
       
       <div class="acciones-incidencia" style="margin-top:10px;">
-        ${!tieneTecnico ? `<button class="btn-asignar" onclick="asignarIncidencia(${inc.id})">Asignarme a mí</button>` : ""}
+        ${!tieneTecnico ? `<button class="btn-asignar" data-id="${inc.id}">Asignarme a mí</button>` : ""}
       </div>
 
       <div class="fotos" id="fotos-${inc.id}"></div>
@@ -272,29 +272,35 @@ selFotos.addEventListener("change", aplicarFiltrosYRender);
 selOrden.addEventListener("change", aplicarFiltrosYRender);
 
 /**
- * @section ACCIONES DE TÉCNICO
+ * @section DELEGACIÓN DE EVENTOS
+ * Maneja los clics en los botones de asignar creados dinámicamente.
  */
+lista.addEventListener("click", (e) => {
+  // Verificamos si el elemento clicado tiene la clase del botón
+  if (e.target && e.target.classList.contains("btn-asignar")) {
+    const incidenciaId = e.target.getAttribute("data-id");
+    asignarIncidencia(incidenciaId);
+  }
+});
 
 /**
- * @brief Envía una petición a la API para asignar el usuario actual a una incidencia.
- * @param {number} incidenciaId ID de la incidencia a reclamar.
- * @async
+ * @brief Envía la petición de asignación a la API.
  */
 async function asignarIncidencia(incidenciaId) {
   if (idUsuarioActivo === 0) {
-    mostrarMensaje("Error: No se detecta sesión de usuario.");
+    mostrarMensaje("Error: Sesión no iniciada.");
     return;
   }
 
-  if (!confirm("¿Deseas asignarte esta incidencia?")) return;
+  if (!confirm("¿Confirmas que deseas asignarte esta incidencia?")) return;
 
   try {
     const response = await fetch(API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        accion: "asignarTecnicoIncidencia", 
-        incidencia_id: incidenciaId,
+        accion: "asignarmeTecnicoIncidencia",
+        incidencia_id: parseInt(incidenciaId),
         tecnico_id: idUsuarioActivo
       })
     });
@@ -302,14 +308,15 @@ async function asignarIncidencia(incidenciaId) {
     const resultado = await response.json();
 
     if (resultado.status === "ok") {
-      mostrarMensaje("Incidencia asignada correctamente.");
-      // Recargamos los datos de la API para refrescar la lista
-      location.reload(); 
+      mostrarMensaje("¡Incidencia asignada!");
+      // Opcional: En lugar de recargar, podrías volver a llamar a la API
+      // para que la transición sea más suave.
+      setTimeout(() => location.reload(), 1000);
     } else {
-      mostrarMensaje("Error: " + resultado.mensaje);
+      mostrarMensaje("Fallo: " + resultado.mensaje);
     }
   } catch (error) {
-    console.error("Error en la asignación:", error);
-    mostrarMensaje("Error de conexión con el servidor.");
+    console.error("Error:", error);
+    mostrarMensaje("Error de red.");
   }
 }
