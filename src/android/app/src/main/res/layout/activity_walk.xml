@@ -113,7 +113,7 @@
                         android:background="?attr/selectableItemBackground">
 
                         <TextView
-                            android:text="Leyenda de Gases"
+                            android:text="Guía de Contaminantes"
                             android:textColor="@color/blanco"
                             android:textStyle="bold"
                             android:textSize="20sp"

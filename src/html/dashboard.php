@@ -175,65 +175,57 @@ $gmail = $_SESSION['usuario_correo'];
         <div id="gas-info-panel" class="gas-info-modal">
             <div class="gas-info-content">
                 <header class="modal-header">
-                    <h2><i class="fa-solid fa-wind"></i> Guía de Salud y Contaminantes</h2>
+                    <h2> Guía de Contaminantes</h2>
                     <span class="close-info" id="close-info-btn">&times;</span>
                 </header>
 
                 <div class="modal-body">
-                    <section id="info-no2" class="gas-card no2">
-                        <div class="gas-header">
-                            <h3>NO₂ - Dióxido de Nitrógeno</h3>
-                            <span class="gas-tag">Combustión a alta temperatura</span>
-                        </div>
-                        <div class="gas-grid">
-                            <div class="gas-main-info">
-                                <h4><i class="fa-solid fa-house-chimney"></i> Fuentes y Origen</h4>
-                                <p>Tráfico vehicular, centrales eléctricas e industria. En interiores: estufas y calentadores.</p>
-                                <h4><i class="fa-solid fa-lungs"></i> Efectos en la salud</h4>
-                                <p><strong>Baja:</strong> Irritación de ojos, nariz y garganta. Tos y dificultad respiratoria.</p>
-                                <p><strong>Alta:</strong> Bronquitis, inflamación de vías respiratorias y edema pulmonar.</p>
-                            </div>
-                            <div class="gas-limits">
-                                <div class="limit-box eu"><span>Límite UE:</span> 40 µg/m³ (Anual)</div>
-                                <div class="limit-box oms"><span>Guía OMS:</span> 10 µg/m³ (Anual)</div>
-                            </div>
-                        </div>
-                    </section>
 
                     <section id="info-o3" class="gas-card o3">
                         <div class="gas-header">
-                            <h3>O₃ - Ozono Troposférico</h3>
-                            <span class="gas-tag">Reacción química con calor y sol</span>
+                            <h3>O₃ - Ozono</h3>
+                            <span class="gas-tag">Reacción fotoquímica compleja</span>
                         </div>
                         <div class="gas-grid">
                             <div class="gas-main-info">
-                                <h4><i class="fa-solid fa-sun"></i> Origen</h4>
-                                <p>No se emite directamente; se forma por la reacción de contaminantes con la radiación solar.</p>
-                                <h4><i class="fa-solid fa-mask-ventilator"></i> Salud</h4>
-                                <p>Reduce la función pulmonar y exacerba el asma. La exposición crónica daña el tejido pulmonar.</p>
+                                <h4>Generación y Fuentes</h4>
+                                <p><strong>Generación:</strong> No se emite de forma directa (reacción química con el sol).</p>
+                                <p><strong>Fuentes:</strong> Tráfico rodado, industrias, refinerías, vapores de gasolina, disolventes y productos de limpieza (especialmente en días soleados).</p>
+                                
+                                <h4>Efectos Nocivos</h4>
+                                <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
+                                    <li><strong>Baja exposición:</strong> Irritación, dolor de garganta/pecho, tos y falta de aire.</li>
+                                    <li><strong>Alta exposición:</strong> Reducción pulmonar, asma, bronquitis, enfisema y riesgo de infecciones. La exposición crónica puede causar daño permanente.</li>
+                                </ul>
                             </div>
                             <div class="gas-limits">
-                                <div class="limit-box eu"><span>Objetivo UE:</span> 120 µg/m³ (8h)</div>
-                                <div class="limit-box oms"><span>Recom. OMS:</span> 100 µg/m³ (8h)</div>
+                                <div class="limit-box eu"><span>UE (8h):</span> Máx 120 µg/m³</div>
+                                <div class="limit-box oms"><span>OMS (8h):</span> Máx 100 µg/m³</div>
                             </div>
                         </div>
                     </section>
 
-                    <section id="info-co" class="gas-card co">
+                    <section id="info-no2" class="gas-card no2">
                         <div class="gas-header">
-                            <h3>CO - Monóxido de Carbono</h3>
-                            <span class="gas-tag">Gas asfixiante invisible</span>
+                            <h3>NO₂ - Dióxido de Nitrógeno</h3>
+                            <span class="gas-tag">Combustión a altas temperaturas</span>
                         </div>
                         <div class="gas-grid">
                             <div class="gas-main-info">
-                                <h4><i class="fa-solid fa-triangle-exclamation"></i> Peligro Crítico</h4>
-                                <p>Reemplaza el oxígeno en la sangre. Afecta principalmente al cerebro y al corazón.</p>
-                                <h4><i class="fa-solid fa-stethoscope"></i> Síntomas</h4>
-                                <p>Debilidad, mareos, náuseas, confusión y pérdida de control muscular.</p>
+                                <h4>Generación y Fuentes</h4>
+                                <p><strong>Generación:</strong> Combustión a altas temperaturas.</p>
+                                <p><strong>Fuentes:</strong> Tráfico, centrales eléctricas, industria y fuentes interiores (estufas/calentadores).</p>
+
+                                <h4>Efectos Nocivos</h4>
+                                <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
+                                    <li><strong>Baja/Moderada:</strong> Irritación de ojos/nariz/garganta, tos, flema y disnea.</li>
+                                    <li><strong>Alta:</strong> Inflamación de vías, bronquitis y edema pulmonar.</li>
+                                </ul>
                             </div>
                             <div class="gas-limits">
-                                <div class="limit-box oms"><span>Límite 24h:</span> 4 mg/m³</div>
-                                <div class="limit-box alert"><span>Umbral Superior:</span> 7 mg/m³</div>
+                                <div class="limit-box eu"><span>UE:</span> 40 (Anual) / 200 (1h) µg/m³</div>
+                                <div class="limit-box oms"><span>OMS:</span> 10 (Anual) / 25 (24h) µg/m³</div>
+                                <div class="limit-box alert" style="margin-top:5px; width:100%"><span>Otros:</span> Sup: 7 mg/m³ | Min: 5 mg/m³</div>
                             </div>
                         </div>
                     </section>
@@ -241,27 +233,48 @@ $gmail = $_SESSION['usuario_correo'];
                     <section id="info-so2" class="gas-card so2">
                         <div class="gas-header">
                             <h3>SO₂ - Dióxido de Azufre</h3>
-                            <span class="gas-tag">Gas altamente irritante</span>
+                            <span class="gas-tag">Gas irritante</span>
                         </div>
                         <div class="gas-grid">
                             <div class="gas-main-info">
-                                <h4><i class="fa-solid fa-eye"></i> Efectos inmediatos</h4>
-                                <p>Irritación severa de ojos (quemaduras) y sistema respiratorio (disnea y sibilancias).</p>
-                                <h4><i class="fa-solid fa-circle-exclamation"></i> Riesgo crónico</h4>
-                                <p>Vinculado a enfermedades cardiovasculares y daños en ecosistemas.</p>
+                                <h4>Efectos en la Salud</h4>
+                                <p><strong>Sistema Respiratorio:</strong> Irritación, inflamación, tos, asma, broncoconstricción. Casos graves: edema y neumonía.</p>
+                                <p><strong>Ojos y Piel:</strong> Irritación severa, lagrimeo y quemaduras.</p>
+                                <p><strong>Otros:</strong> Dolor de cabeza, náuseas, ansiedad. A largo plazo: problemas cardiovasculares, diabetes y cáncer.</p>
                             </div>
                             <div class="gas-limits">
-                                <div class="limit-box oms"><span>Guía OMS:</span> 40 µg/m³ (24h)</div>
-                                <div class="limit-box alert"><span>Umbral Máx:</span> 75 μg/m³</div>
+                                <div class="limit-box oms"><span>OMS:</span> 40 (24h) / 500 (10min) µg/m³</div>
+                                <div class="limit-box alert"><span>Máx (60% VLD):</span> 75 μg/m³</div>
+                                <div class="limit-box alert"><span>Mín (40% VLD):</span> 50 μg/m³</div>
                             </div>
                         </div>
                     </section>
+
+                    <section id="info-co" class="gas-card co">
+                        <div class="gas-header">
+                            <h3>CO - Monóxido de Carbono</h3>
+                            <span class="gas-tag">Gas incoloro (Combustión incompleta)</span>
+                        </div>
+                        <div class="gas-grid">
+                            <div class="gas-main-info">
+                                <h4>Generación y Efectos</h4>
+                                <p><strong>Generación:</strong> Producido por la combustión incompleta.</p>
+                                <p><strong>Efectos:</strong> Reduce la capacidad de la sangre para transportar oxígeno. Puede causar dolor de cabeza, fatiga y problemas cardíacos.</p>
+                            </div>
+                            <div class="gas-limits">
+                                <div class="limit-box oms"><span>OMS (24h):</span> 4000 µg/m³</div>
+                                <div class="limit-box oms"><span>OMS (1h/8h):</span> 25 ppm / 9 ppm</div>
+                                <div class="limit-box alert" style="width:100%"><span>Eval:</span> Sup: 7 mg/m³ | Inf: 5 mg/m³</div>
+                            </div>
+                        </div>
+                    </section>
+
                 </div>
             </div>
         </div>
 
 
-    </body>
+</body>
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
             integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
     <script src="../js/leaflet-heat.js"></script>
