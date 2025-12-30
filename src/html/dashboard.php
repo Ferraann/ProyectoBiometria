@@ -188,7 +188,6 @@ $gmail = $_SESSION['usuario_correo'];
                         </div>
                         <div class="gas-grid">
                             <div class="gas-main-info">
-                                <h4>Generación y Fuentes</h4>
                                 <p><strong>Generación:</strong> No se emite de forma directa (reacción química con el sol).</p>
                                 <p><strong>Fuentes:</strong> Tráfico rodado, industrias, refinerías, vapores de gasolina, disolventes y productos de limpieza (especialmente en días soleados).</p>
                                 
@@ -212,7 +211,6 @@ $gmail = $_SESSION['usuario_correo'];
                         </div>
                         <div class="gas-grid">
                             <div class="gas-main-info">
-                                <h4>Generación y Fuentes</h4>
                                 <p><strong>Generación:</strong> Combustión a altas temperaturas.</p>
                                 <p><strong>Fuentes:</strong> Tráfico, centrales eléctricas, industria y fuentes interiores (estufas/calentadores).</p>
 
@@ -237,11 +235,13 @@ $gmail = $_SESSION['usuario_correo'];
                         </div>
                         <div class="gas-grid">
                             <div class="gas-main-info">
-                                <h4>Efectos en la Salud</h4>
-                                <p><strong>Sistema Respiratorio:</strong> Irritación, inflamación, tos, asma, broncoconstricción. Casos graves: edema y neumonía.</p>
-                                <p><strong>Ojos y Piel:</strong> Irritación severa, lagrimeo y quemaduras.</p>
-                                <p><strong>Otros:</strong> Dolor de cabeza, náuseas, ansiedad. A largo plazo: problemas cardiovasculares, diabetes y cáncer.</p>
-                            </div>
+                                <p><strong>Generación: se genera principalmente por la combustión de combustibles fósiles que contienen azufre (como el carbón y derivados del petróleo) y por la fundición de minerales ricos en azufre. Al quemarse, el azufre se oxida y se libera a la atmósfera.</strong> </p>
+                                <p><strong>Fuentes: industria energetica, Procesos industriales, Calefacción y transporte </strong> </p>
+                                <h4>Efectos Nocivos</h4>
+                                <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
+                                    <li><strong>Baja/Moderada:</strong> Ojos y piel: Irritación severa, lagrimeo y quemaduras.</li>
+                                    <li><strong>Alta:</strong>Sistema respiratorio: Irritado, inflamado, tos, asma, broncoconstricción. Casos graves: edema y neumonía.</li>
+                                </ul>
                             <div class="gas-limits">
                                 <div class="limit-box oms"><span>OMS:</span> 40 (24h) / 500 (10min) µg/m³</div>
                                 <div class="limit-box alert"><span>Máx (60% VLD):</span> 75 μg/m³</div>
@@ -257,7 +257,6 @@ $gmail = $_SESSION['usuario_correo'];
                         </div>
                         <div class="gas-grid">
                             <div class="gas-main-info">
-                                <h4>Generación y Efectos</h4>
                                 <p><strong>Generación:</strong> Producido por la combustión incompleta.</p>
                                 <p><strong>Efectos:</strong> Reduce la capacidad de la sangre para transportar oxígeno. Puede causar dolor de cabeza, fatiga y problemas cardíacos.</p>
                             </div>
