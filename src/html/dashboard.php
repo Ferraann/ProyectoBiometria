@@ -235,13 +235,15 @@ $gmail = $_SESSION['usuario_correo'];
                         </div>
                         <div class="gas-grid">
                             <div class="gas-main-info">
-                                <p><strong>Generación: se genera principalmente por la combustión de combustibles fósiles que contienen azufre (como el carbón y derivados del petróleo) y por la fundición de minerales ricos en azufre. Al quemarse, el azufre se oxida y se libera a la atmósfera.</strong> </p>
-                                <p><strong>Fuentes: industria energetica, Procesos industriales, Calefacción y transporte </strong> </p>
+                                <p><strong>Generación: </strong>se genera principalmente por la combustión de combustibles fósiles que contienen azufre (como el carbón y derivados del petróleo) y por la fundición de minerales ricos en azufre. Al quemarse, el azufre se oxida y se libera a la atmósfera. </p>
+                                <p><strong>Fuentes:</strong> Industria energetica, Procesos industriales, Calefacción y transporte  </p>
+
                                 <h4>Efectos Nocivos</h4>
                                 <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
                                     <li><strong>Baja/Moderada:</strong> Ojos y piel: Irritación severa, lagrimeo y quemaduras.</li>
                                     <li><strong>Alta:</strong>Sistema respiratorio: Irritado, inflamado, tos, asma, broncoconstricción. Casos graves: edema y neumonía.</li>
                                 </ul>
+                            </div>
                             <div class="gas-limits">
                                 <div class="limit-box oms"><span>OMS:</span> 40 (24h) / 500 (10min) µg/m³</div>
                                 <div class="limit-box alert"><span>Máx (60% VLD):</span> 75 μg/m³</div>
@@ -259,6 +261,12 @@ $gmail = $_SESSION['usuario_correo'];
                             <div class="gas-main-info">
                                 <p><strong>Generación:</strong> Producido por la combustión incompleta.</p>
                                 <p><strong>Efectos:</strong> Reduce la capacidad de la sangre para transportar oxígeno. Puede causar dolor de cabeza, fatiga y problemas cardíacos.</p>
+
+                                <h4>Efectos Nocivos</h4>
+                                <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
+                                    <li><strong>Baja Exposición:</strong> Dolor de cabeza (cefalea), fatiga, dificultad para respirar con esfuerzo, náuseas y mareos leves.</li>
+                                    <li><strong>Alta Exposición:</strong>Confusión mental, vértigo, pérdida de coordinación muscular, dolor de pecho, visión borrosa, pérdida de conocimiento, coma y muerte.</li>
+                                </ul>
                             </div>
                             <div class="gas-limits">
                                 <div class="limit-box oms"><span>OMS (24h):</span> 4000 µg/m³</div>
