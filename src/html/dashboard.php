@@ -198,6 +198,7 @@ $gmail = $_SESSION['usuario_correo'];
                                 </ul>
                             </div>
                             <div class="gas-limits">
+                                <h4>Umbrales</h4>
                                 <div class="limit-box eu"><span>UE (8h):</span> Máx 120 µg/m³</div>
                                 <div class="limit-box oms"><span>OMS (8h):</span> Máx 100 µg/m³</div>
                             </div>
@@ -216,11 +217,12 @@ $gmail = $_SESSION['usuario_correo'];
 
                                 <h4>Efectos Nocivos</h4>
                                 <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
-                                    <li><strong>Baja/Moderada:</strong> Irritación de ojos/nariz/garganta, tos, flema y disnea.</li>
-                                    <li><strong>Alta:</strong> Inflamación de vías, bronquitis y edema pulmonar.</li>
+                                    <li><strong>Baja exposición:</strong> Irritación de ojos/nariz/garganta, tos, flema y disnea.</li>
+                                    <li><strong>Alta exposición:</strong> Inflamación de vías, bronquitis y edema pulmonar.</li>
                                 </ul>
                             </div>
                             <div class="gas-limits">
+                                <h4>Umbrales</h4>
                                 <div class="limit-box eu"><span>UE:</span> 40 (Anual) / 200 (1h) µg/m³</div>
                                 <div class="limit-box oms"><span>OMS:</span> 10 (Anual) / 25 (24h) µg/m³</div>
                                 <div class="limit-box alert" style="margin-top:5px; width:100%"><span>Otros:</span> Sup: 7 mg/m³ | Min: 5 mg/m³</div>
@@ -235,16 +237,17 @@ $gmail = $_SESSION['usuario_correo'];
                         </div>
                         <div class="gas-grid">
                             <div class="gas-main-info">
-                                <p><strong>Generación: </strong>se genera principalmente por la combustión de combustibles fósiles que contienen azufre (como el carbón y derivados del petróleo) y por la fundición de minerales ricos en azufre. Al quemarse, el azufre se oxida y se libera a la atmósfera. </p>
-                                <p><strong>Fuentes:</strong> Industria energetica, Procesos industriales, Calefacción y transporte  </p>
+                                <p><strong>Generación: </strong>Se genera principalmente por la combustión de combustibles fósiles que contienen azufre (como el carbón y derivados del petróleo) y por la fundición de minerales ricos en azufre. Al quemarse, el azufre se oxida y se libera a la atmósfera. </p>
+                                <p><strong>Fuentes:</strong> Industria energetica, Procesos industriales, Calefacción y transporte.</p>
 
                                 <h4>Efectos Nocivos</h4>
                                 <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
-                                    <li><strong>Baja/Moderada:</strong> Ojos y piel: Irritación severa, lagrimeo y quemaduras.</li>
-                                    <li><strong>Alta:</strong>Sistema respiratorio: Irritado, inflamado, tos, asma, broncoconstricción. Casos graves: edema y neumonía.</li>
+                                    <li><strong>Baja exposición:</strong> Ojos y piel: Irritación severa, lagrimeo y quemaduras.</li>
+                                    <li><strong>Alta exposición:</strong>Sistema respiratorio: Irritado, inflamado, tos, asma, broncoconstricción. Casos graves: edema y neumonía.</li>
                                 </ul>
                             </div>
                             <div class="gas-limits">
+                                <h4>Umbrales</h4>
                                 <div class="limit-box oms"><span>OMS:</span> 40 (24h) / 500 (10min) µg/m³</div>
                                 <div class="limit-box alert"><span>Máx (60% VLD):</span> 75 μg/m³</div>
                                 <div class="limit-box alert"><span>Mín (40% VLD):</span> 50 μg/m³</div>
@@ -260,15 +263,16 @@ $gmail = $_SESSION['usuario_correo'];
                         <div class="gas-grid">
                             <div class="gas-main-info">
                                 <p><strong>Generación:</strong> Producido por la combustión incompleta.</p>
-                                <p><strong>Efectos:</strong> Reduce la capacidad de la sangre para transportar oxígeno. Puede causar dolor de cabeza, fatiga y problemas cardíacos.</p>
+                                <p><strong>Fuentes:</strong> La principal fuente es el tráfico rodado (coches, camiones, motos) debido a la quema de gasolina y diésel. Estufas de gas o leña mal ventiladas, calderas defectuosas, braseros de carbón, chimeneas obstruidas y humo de tabaco. </p>
 
                                 <h4>Efectos Nocivos</h4>
                                 <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
-                                    <li><strong>Baja Exposición:</strong> Dolor de cabeza (cefalea), fatiga, dificultad para respirar con esfuerzo, náuseas y mareos leves.</li>
-                                    <li><strong>Alta Exposición:</strong>Confusión mental, vértigo, pérdida de coordinación muscular, dolor de pecho, visión borrosa, pérdida de conocimiento, coma y muerte.</li>
+                                    <li><strong>Baja exposición:</strong> Dolor de cabeza (cefalea), fatiga, dificultad para respirar con esfuerzo, náuseas y mareos leves.</li>
+                                    <li><strong>Alta exposición:</strong>Confusión mental, vértigo, pérdida de coordinación muscular, dolor de pecho, visión borrosa, pérdida de conocimiento, coma y muerte.</li>
                                 </ul>
                             </div>
                             <div class="gas-limits">
+                                <h4>Umbrales</h4>
                                 <div class="limit-box oms"><span>OMS (24h):</span> 4000 µg/m³</div>
                                 <div class="limit-box oms"><span>OMS (1h/8h):</span> 25 ppm / 9 ppm</div>
                                 <div class="limit-box alert" style="width:100%"><span>Eval:</span> Sup: 7 mg/m³ | Inf: 5 mg/m³</div>

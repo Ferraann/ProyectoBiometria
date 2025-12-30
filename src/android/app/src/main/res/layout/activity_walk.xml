@@ -148,7 +148,7 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
-                            android:text="GENERACIÓN:\nReacción fotoquímica compleja (no se emite de forma directa).\n\nFUENTES PRINCIPALES:\nTráfico rodado, industrias, refinerías, vapores de gasolina, disolventes y productos de limpieza (especialmente en días soleados).\n\nEFECTOS NOCIVOS:\n- Baja exposición: Irritación, dolor de garganta y pecho, tos y falta de aire.\n- Alta exposición: Reducción pulmonar, asma, bronquitis, enfisema y riesgo de infecciones. La exposición crónica puede causar daño permanente.\n\nUMBRALES:\nUE: Máx 120 µg/m³ (8h).\nOMS: Máx 100 µg/m³ (8h)."
+                            android:text="GENERACIÓN:\n- Reacción fotoquímica compleja (no se emite de forma directa).\n\nFUENTES:\nTráfico rodado, industrias, refinerías, vapores de gasolina, disolventes y productos de limpieza (especialmente en días soleados).\n\nEFECTOS NOCIVOS:\n- Baja exposición: Irritación, dolor de garganta y pecho, tos y falta de aire.\n- Alta exposición: Reducción pulmonar, asma, bronquitis, enfisema y riesgo de infecciones. La exposición crónica puede causar daño permanente.\n\nUMBRALES:\nUE: Máx 120 µg/m³ (8h).\nOMS: Máx 100 µg/m³ (8h)."
                             android:textColor="#E0E0E0"
                             android:textSize="14sp"
                             android:layout_marginTop="4dp"
@@ -165,7 +165,7 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
-                            android:text="GENERACIÓN:\nCombustión a altas temperaturas.\n\nFUENTES PRINCIPALES:\nTráfico, centrales eléctricas, industria y fuentes interiores (estufas/calentadores).\n\nEFECTOS NOCIVOS:\n- Baja/Moderada: Irritación de ojos/nariz/garganta, tos, flema y disnea.\n- Alta: Inflamación de vías, bronquitis y edema pulmonar.\n\nUMBRALES:\nUE: Máx 40 µg/m³ (anual) / 200 µg/m³ (1h).\nOMS: Máx 10 µg/m³ (anual) / 25 µg/m³ (24h).\n\nOTROS LÍMITES:\nSuperior: 70% VL (7 mg/m³).\nMínimo: 50% VL (5 mg/m³)."
+                            android:text="GENERACIÓN:\n- Combustión a altas temperaturas.\n\nFUENTES:\nTráfico, centrales eléctricas, industria y fuentes interiores (estufas/calentadores).\n\nEFECTOS NOCIVOS:\n- Baja exposición: Irritación de ojos/nariz/garganta, tos, flema y disnea.\n- Alta exposición: Inflamación de vías, bronquitis y edema pulmonar.\n\nUMBRALES:\nUE: Máx 40 µg/m³ (anual) / 200 µg/m³ (1h).\nOMS: Máx 10 µg/m³ (anual) / 25 µg/m³ (24h).\n\nOTROS LÍMITES:\nSuperior: 70% VL (7 mg/m³).\nMínimo: 50% VL (5 mg/m³)."
                             android:textColor="#E0E0E0"
                             android:textSize="14sp"
                             android:layout_marginTop="4dp"
@@ -182,7 +182,7 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
-                            android:text="EFECTOS EN LA SALUD:\n- Sistema Respiratorio: Irritación, inflamación, tos, asma, broncoconstricción. Casos graves: edema, neumonía.\n- Ojos y Piel: Irritación severa, lagrimeo y quemaduras.\n- Otros: Dolor de cabeza, náuseas, ansiedad. A largo plazo: problemas cardiovasculares, diabetes y cáncer.\n\nUMBRALES:\nOMS: 40 µg/m³ (24h) / 500 µg/m³ (10min).\nMáximos: 60% VLD (75 μg/m³).\nMínimos: 40% VLD (50 μg/m³)."
+                            android:text="GENERACIÓN:\n- Se genera principalmente por la combustión de combustibles fósiles que contienen azufre (como el carbón y derivados del petróleo) y por la fundición de minerales ricos en azufre. Al quemarse, el azufre se oxida y se libera a la atmósfera. \n\nFUENTES:\n La principal fuente es el tráfico rodado (coches, camiones, motos) debido a la quema de gasolina y diésel. Estufas de gas o leña mal ventiladas, calderas defectuosas, braseros de carbón, chimeneas obstruidas y humo de tabaco. \n\nEFECTOS NOCIVOS:\n- Baja exposición: Dolor de cabeza (cefalea), fatiga, dificultad para respirar con esfuerzo, náuseas y mareos leves.\n- Alta exposición: Confusión mental, vértigo, pérdida de coordinación muscular, dolor de pecho, visión borrosa, pérdida de conocimiento, coma y muerte. \n\nUMBRALES:\nOMS: 40 µg/m³ (24h) / 500 µg/m³ (10min).\nMáximos: 60% VLD (75 μg/m³).\nMínimos: 40% VLD (50 μg/m³)."
                             android:textColor="#E0E0E0"
                             android:textSize="14sp"
                             android:layout_marginTop="4dp"
@@ -199,7 +199,7 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
-                            android:text="GENERACIÓN:\nGas incoloro producido por la combustión incompleta.\n\nEFECTOS:\nReduce la capacidad de la sangre para transportar oxígeno. Puede causar dolor de cabeza, fatiga y problemas cardíacos.\n\nUMBRALES OMS:\n4000 µg/m³ (24h).\n25 ppm (1h) / 9 ppm (8h).\n\nUMBRALES DE EVALUACIÓN:\nSuperior: 70% del VL (7 mg/m³).\nInferior: 50% del VL (5 mg/m³)."
+                            android:text="GENERACIÓN:\n- Producido por la combustión incompleta.\n\nEFECTOS:\nReduce la capacidad de la sangre para transportar oxígeno. Puede causar dolor de cabeza, fatiga y problemas cardíacos.\n\nUMBRALES OMS:\n4000 µg/m³ (24h).\n25 ppm (1h) / 9 ppm (8h).\n\nUMBRALES DE EVALUACIÓN:\nSuperior: 70% del VL (7 mg/m³).\nInferior: 50% del VL (5 mg/m³)."
                             android:textColor="#E0E0E0"
                             android:textSize="14sp"
                             android:layout_marginTop="4dp"
