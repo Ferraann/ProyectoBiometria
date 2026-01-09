@@ -17,6 +17,9 @@ const params = new URLSearchParams(location.search);
 const idIncidencia = params.get("id");
 /** @} */
 
+/** @brief Identificador del usuario activo recuperado de la sesión. */
+const idUsuarioActivo = parseInt(window.sessionStorage.getItem("idUsuario") || "0");
+
 /**
  * @brief Validación de entrada.
  * @details Si no existe un ID en la URL, redirige al listado general de incidencias.
