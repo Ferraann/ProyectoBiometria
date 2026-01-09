@@ -18,7 +18,7 @@ function abrirServidorpruebas()
     /** @var string $servername Nombre del host del servidor. */
     $servername = "localhost";
     /** @var string $dbname Nombre de la base de datos. */
-    $dbname = "prueba-mapa";
+    $dbname = "fsanpra_prueba-mapa";
 
     /** * @brief Lista de intentos de configuración.
      * Permite que desarrolladores en local y el entorno de Plesk coexistan.
@@ -31,7 +31,7 @@ function abrirServidorpruebas()
         ],
         [
             'username' => 'fsanpra_grupo_11',
-            'password' => 'prueba-mapa',
+            'password' => 'pruebamapa',
             'nombre'   => 'Entorno Producción (Plesk)'
         ]
     ];
