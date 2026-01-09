@@ -31,7 +31,7 @@ function abrirServidorpruebas()
         ],
         [
             'username' => 'fsanpra_grupo_11',
-            'password' => 'pruebamapa',
+            'password' => 'prueba_mapa',
             'nombre'   => 'Entorno Producción (Plesk)'
         ]
     ];
