@@ -1,4 +1,4 @@
-# 🌬️ PROYECTO AITHER
+# 🌬️ PROYECTO AITHER - Ult. actualización: 09/01/2026
 
 **AITHER** es un proyecto de innovación ciudadana que busca mejorar la **calidad del aire urbano** mediante el uso de **sensores ambientales conectados por Bluetooth Low Energy (BLE)**, una **app móvil** y una **plataforma web**.
 
