@@ -203,24 +203,36 @@ function aplicarFiltrosYRender() {
  * @brief Genera e inyecta el HTML de las tarjetas de incidencia en el DOM.
  * @param {Object[]} datos Array de objetos de incidencia a dibujar.
  */
+/**
+ * @section RENDERIZADO
+ */
 function renderIncidencias(datos) {
   if (!datos.length) {
     lista.innerHTML = '<p style="text-align:center;">No se encontraron incidencias.</p>';
     return;
   }
 
-  lista.innerHTML = datos.map(inc => `
+  lista.innerHTML = datos.map(inc => {
+    // Verificamos si ya tiene técnico para decidir si mostrar el botón
+    const tieneTecnico = inc.id_tecnico && inc.id_tecnico != 0;
+    
+    return `
     <div class="incidencia">
       <h2><a href="incidencia_detalle.html?id=${inc.id}" class="titulo-incidencia">${inc.titulo}</a></h2>
       <p><strong>Descripción:</strong> ${inc.descripcion}</p>
       <p class="meta"><strong>Usuario:</strong> <a href="usuario_detalle.html?id=${inc.id_user}&perfil=usuario">${inc.usuario || "Anónimo"}</a></p>
       ${inc.id_sensor ? `<p class="meta"><strong>Sensor:</strong> ${inc.nombre_sensor}</p>` : ""}
-      <p class="meta"><strong>Técnico:</strong> <a href="usuario_detalle.html?id=${inc.id_tecnico}&perfil=tecnico">${inc.tecnico}</a></p>
+      <p class="meta"><strong>Técnico:</strong> ${tieneTecnico ? `<a href="usuario_detalle.html?id=${inc.id_tecnico}&perfil=tecnico">${inc.tecnico}</a>` : "<em>Sin asignar</em>"}</p>
       <p class="meta"><strong>Estado:</strong> ${inc.estado}</p>
       <p class="meta"><strong>Fecha:</strong> ${new Date(inc.fecha_creacion).toLocaleString()}</p>
+      
+      <div class="acciones-incidencia" style="margin-top:10px;">
+        ${!tieneTecnico ? `<button class="btn-asignar" data-id="${inc.id}">Asignarme a mí</button>` : ""}
+      </div>
+
       <div class="fotos" id="fotos-${inc.id}"></div>
     </div>
-  `).join("");
+  `}).join("");
 
   cargarFotosVisibles();
 }
@@ -258,3 +270,53 @@ selTecnico.addEventListener("change", aplicarFiltrosYRender);
 selEstado.addEventListener("change", aplicarFiltrosYRender);
 selFotos.addEventListener("change", aplicarFiltrosYRender);
 selOrden.addEventListener("change", aplicarFiltrosYRender);
+
+/**
+ * @section DELEGACIÓN DE EVENTOS
+ * Maneja los clics en los botones de asignar creados dinámicamente.
+ */
+lista.addEventListener("click", (e) => {
+  // Verificamos si el elemento clicado tiene la clase del botón
+  if (e.target && e.target.classList.contains("btn-asignar")) {
+    const incidenciaId = e.target.getAttribute("data-id");
+    asignarIncidencia(incidenciaId);
+  }
+});
+
+/**
+ * @brief Envía la petición de asignación a la API.
+ */
+async function asignarIncidencia(incidenciaId) {
+  if (idUsuarioActivo === 0) {
+    mostrarMensaje("Error: Sesión no iniciada.");
+    return;
+  }
+
+  if (!confirm("¿Confirmas que deseas asignarte esta incidencia?")) return;
+
+  try {
+    const response = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        accion: "asignarmeTecnicoIncidencia",
+        incidencia_id: parseInt(incidenciaId),
+        tecnico_id: idUsuarioActivo
+      })
+    });
+
+    const resultado = await response.json();
+
+    if (resultado.status === "ok") {
+      mostrarMensaje("¡Incidencia asignada!");
+      // Opcional: En lugar de recargar, podrías volver a llamar a la API
+      // para que la transición sea más suave.
+      setTimeout(() => location.reload(), 1000);
+    } else {
+      mostrarMensaje("Fallo: " + resultado.mensaje);
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    mostrarMensaje("Error de red.");
+  }
+}
