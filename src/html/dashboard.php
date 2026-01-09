@@ -41,7 +41,6 @@ $gmail = $_SESSION['usuario_correo'];
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
               integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
@@ -129,60 +128,49 @@ $gmail = $_SESSION['usuario_correo'];
                         </div>
                     </div>
                     <!--Sitio del mapa interactivo-->
-                    <div class="mapa-dashboard">
-                        <div id="mapa"></div>
-                    </div>
+                <div class="mapa-dashboard">
+                    <div id="mapa"></div>
+                </div>
                 </div>
                 <!--Seccion de las estadisticas-->
                 <div class="tab-content" id="estadisticas-content" data-tab-content="estadisticas">
-                    <div class="stats-controls">
+                    <div class="map-controls">
                         <div class="dropdown-container">
-                            <select class="select-moderno" id="sensor-select">
-                                <option value="sensor1">Sensor 1</option>
-                                <option value="sensor2">Sensor 2</option>
-                            </select>
+                            <!--seleccion de que mapa se quieren ver las estadisticas-->
+                            <div class="dropdown-mapa" id="dropdown-stats-button">
+                                <span>Contaminación del aire - Gráficos</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="dropdown-menu" >
+                                <a href="#" class="dropdown-item">Mis sensores personales</a>
+                                <a href="#" class="dropdown-item">Contaminación del aire - Mapa general</a>
+                            </div>
                         </div>
-                        <div class="dropdown-container">
-                            <select class="select-moderno" id="gas-select">
-                                <option value="general">Gas</option>
-                                <option value="co2">CO2</option>
-                                <option value="no2">NO2</option>
-                            </select>
-                        </div>
-                        <div class="date-picker" id="date-picker-stats">
+                        <!--selecctor de fecha-->
+                        <div class="date-picker" id="date-picker-stats-button">
                             <span>Fecha: 12/11/2025</span>
                             <i class="fa-solid fa-calendar-days"></i>
                         </div>
                     </div>
-                    <div class="stats-layout">
-                        
-                        <div class="chart-section">
-                            <div class="chart-container-box">
-                                <canvas id="myAirChart"></canvas>
-                                <div class="chart-alert-icon" title="Nivel alto">
-                                    <i class="fa-solid fa-circle-exclamation"></i>
-                                </div>
-                            </div>
-                            <div class="status-message bad">
-                                <i class="fa-solid fa-face-frown-open"></i>
-                                <p>El día de hoy la media de la calidad de aire que respiraste es muy mala.</p>
-                            </div>
+                    <!--graficas-->
+                    <div class="graph-grid">
+                        <div class="graph-placeholder">
+                            <h3>Gráfico de evolución temporal</h3>
                         </div>
-                        <div class="recommendations-section">
-                            <h2>RECOMENDACIONES OFICIALES</h2>
-                            <div class="rec-content">
-                                <ul>
-                                    <li>Evita realizar ejercicio físico al aire libre.</li>
-                                    <li>Cierra las ventanas para evitar la entrada de aire exterior.</li>
-                                    <li>Usa mascarilla si necesitas salir.</li>
-                                    <li>Grupos de riesgo: permanecer en interiores.</li>
-                                </ul>
-                            </div>
+                        <div class="graph-placeholder">
+                            <h3>Niveles máximos y mínimos</h3>
+                        </div>
+                        <div class="graph-placeholder">
+                            <h3>Comparativa de sensores</h3>
+                        </div>
+                        <div class="graph-placeholder">
+                            <h3>Otro dato relevante</h3>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
+
 
         <div id="gas-info-panel" class="gas-info-modal">
             <div class="gas-info-content">
