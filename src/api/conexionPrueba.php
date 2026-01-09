@@ -13,12 +13,12 @@
  * * @return mysqli Objeto de conexión MySQLi activo.
  * @throws mysqli_sql_exception Si todas las configuraciones fallan.
  */
-function abrirServidor()
+function abrirServidorpruebas()
 {
     /** @var string $servername Nombre del host del servidor. */
     $servername = "localhost";
     /** @var string $dbname Nombre de la base de datos. */
-    $dbname = "aither";
+    $dbname = "fsanpra_prueba-mapa";
 
     /** * @brief Lista de intentos de configuración.
      * Permite que desarrolladores en local y el entorno de Plesk coexistan.
@@ -30,8 +30,8 @@ function abrirServidor()
             'nombre'   => 'Entorno Local (Root)'
         ],
         [
-            'username' => 'aitherdb',
-            'password' => 'Sansaloni330.',
+            'username' => 'fsanpra_grupo_11',
+            'password' => 'prueba-mapa',
             'nombre'   => 'Entorno Producción (Plesk)'
         ]
     ];
