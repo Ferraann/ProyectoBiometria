@@ -12,7 +12,7 @@ Cada ayuntamiento gestiona los sensores de su zona y los datos locales, garantiz
 ## 🔗 Enlaces
 
 - 🎨 **Diseño en Figma:** [AITHER UI/UX](https://www.figma.com/design/KpfFKl7ect6Y3GxxlvYcKh/AITHER?node-id=5-253&t=XlFJfDxGVBi3DCMN-1)  
-- 🌐 **Web del proyecto:** Proximamente. 
+- 🌐 **Web del proyecto: https://fsanpra.upv.edu.es/src/index.html
 ---
 
 ## 💡 Desarrollado por
