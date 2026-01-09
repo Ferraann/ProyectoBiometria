@@ -30,7 +30,7 @@ function abrirServidorpruebas()
             'nombre'   => 'Entorno Local (Root)'
         ],
         [
-            'username' => 'fsanpra_grupo_11',
+            'username' => 'manu',
             'password' => 'Loc@1234SALSA',
             'nombre'   => 'Entorno Producción (Plesk)'
         ]
