@@ -13,46 +13,66 @@
  */
 
 // ----------------------------------------------------------------------------------------
-// 1. CONFIGURACIÓN DE ENTORNO Y CABECERAS (CORS)
+// 1. DIAGNÓSTICO Y LOGS DE EMERGENCIA
 // ----------------------------------------------------------------------------------------
 
-/** @note Las siguientes cabeceras permiten que aplicaciones Web y Móviles externas 
- * consuman los recursos de la API sin bloqueos de seguridad del navegador. */
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Forzar registro de errores en un archivo propio
+ini_set('log_errors', 1);
+ini_set('error_log', __DIR__ . '/debug_api.log'); 
+
+error_log("--- Nueva petición: " . $_SERVER['REQUEST_METHOD'] . " ---");
+
+// ----------------------------------------------------------------------------------------
+// 2. CONFIGURACIÓN DE CABECERAS (CORS)
+// ----------------------------------------------------------------------------------------
+
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
-/** @section Preflight Handling 
- * Responde a las peticiones OPTIONS pre-vuelo de navegadores modernos.
- */
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit;
 }
 
 // ----------------------------------------------------------------------------------------
-// 2. CARGA DINÁMICA DE MÓDULOS
+// 3. CARGA DE DEPENDENCIAS Y MÓDULOS
 // ----------------------------------------------------------------------------------------
 
-require_once(__DIR__ . '/conexion.php'); 
-
-/** @section CargaModulos 
- * Itera el directorio 'logicaNegocio' e incluye todos los archivos de funciones automáticamente.
- * Esto permite añadir nuevas funcionalidades simplemente creando un archivo .php en dicha carpeta.
- */
-foreach (glob(__DIR__ . "/logicaNegocio/*.php") as $file) {
-    require_once($file);
-}
+require_once(__DIR__ . '/conexion.php');
+error_log("Paso 1: conexion.php cargado");
 
 /** @var mysqli $conn Instancia global de conexión a la base de datos. */
 $conn = abrirServidor();
+error_log("Paso 2: abrirServidor() ejecutado");
+
+/** * @section CargaModulos 
+ * Itera el directorio 'logicaNegocio' e incluye todos los archivos de funciones.
+ */
+$archivosModulos = glob(__DIR__ . "/logicaNegocio/*.php");
+if ($archivosModulos) {
+    foreach ($archivosModulos as $file) {
+        error_log("Cargando módulo: " . basename($file));
+        require_once($file);
+    }
+}
+error_log("Paso 3: Módulos cargados correctamente");
 
 // ----------------------------------------------------------------------------------------
-// 3. PROCESAMIENTO DE DATOS DE ENTRADA
+// 4. PROCESAMIENTO DE DATOS DE ENTRADA
 // ----------------------------------------------------------------------------------------
 
 $method = $_SERVER['REQUEST_METHOD'];
+$input = [];
 
 /** @section Parsing Entradas 
  * Normaliza los datos independientemente de si vienen por URL (GET) o en el cuerpo (POST/PUT).
@@ -68,14 +88,15 @@ if ($method === 'POST' || $method === 'PUT') {
     }
 
     /** @note Se guarda registro del último body recibido para tareas de depuración. */
-    if (!is_dir("logs")) mkdir("logs");
-    file_put_contents("logs/last_request.json", $rawBody);
+    if (is_dir(__DIR__ . "/logs") && is_writable(__DIR__ . "/logs")) {
+    file_put_contents(__DIR__ . "/logs/last_request.json", $rawBody);
+    }
 } else {
     $input = $_GET;
 }
 
 // ----------------------------------------------------------------------------------------
-// 4. ENRUTADOR DE ACCIONES (ROUTING)
+// 5. ENRUTADOR DE ACCIONES (ROUTING)
 // ----------------------------------------------------------------------------------------
 
 /** @section Router Distribución de peticiones según el parámetro 'accion'. */
