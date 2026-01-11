@@ -106,14 +106,19 @@ que dan diferente informacion pero la estructura es parecida.
             <div class="map-controls">
                 <div class="selector-gases-y-informacion">
                     <div class="dropdown-container">
-                        <div class="dropdown-mapa">
-                            <span>Mapa General</span>
+                        <div class="dropdown-mapa" style="cursor: pointer;">
+                            <span>Mapa general del aire</span>
                             <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Mapa general del aire</a>
+                            <a href="#" class="dropdown-item">Mis sensores personales</a>
                         </div>
                     </div>
                     <button id="open-info-btn" class="dropdown-mapa">
                         <i class="fa-solid fa-circle-info"></i>
-                        <span>Info Gases</span>
+                        <span>Información de Gases</span>
                     </button>
                 </div>
                 <div class="date-picker">
