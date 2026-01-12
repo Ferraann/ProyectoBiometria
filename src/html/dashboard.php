@@ -43,6 +43,7 @@ $gmail = $_SESSION['usuario_correo'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="../css/mapa.css">
@@ -154,6 +155,54 @@ que dan diferente informacion pero la estructura es parecida.
                     </div>
                     <div class="legend-bar" id="legend-bar"></div>
                     <div class="legend-labels" id="legend-values"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="estadisticas-content" data-tab-content="estadisticas">
+
+            <div class="map-controls">
+                <div class="selector-gases-y-informacion">
+                    <div class="dropdown-container">
+                        <select id="statsGasSelect" class="dropdown-mapa" style="cursor: pointer;">
+                            <option value="NO2">NO₂ (Dióxido de Nitrógeno)</option>
+                            <option value="O3">O₃ (Ozono)</option>
+                            <option value="CO">CO (Monóxido de Carbono)</option>
+                            <option value="SO2">SO₂ (Dióxido de Azufre)</option>
+                            <option value="PM10">PM10 (Partículas)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="date-picker">
+                    <span>Fecha: <?php echo date("d/m/Y"); ?></span>
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+            </div>
+
+            <div class="graph-grid">
+                <div class="graph-placeholder" style="background: #202020; border: 1px solid #444; position: relative;">
+                    <h3 style="color: #ffae00; margin-bottom: 10px; text-align: center;">Evolución Media Diaria (24h)</h3>
+                    <div style="height: 300px; width: 100%;">
+                        <canvas id="chartEvolucion"></canvas>
+                    </div>
+                </div>
+
+                <div class="graph-placeholder" style="background: #202020; border: 1px solid #444; position: relative;">
+                    <h3 style="color: #ffae00; margin-bottom: 10px; text-align: center;">Resumen Máximos/Mínimos Globales</h3>
+                    <div style="height: 300px; width: 100%;">
+                        <canvas id="chartMinMax"></canvas>
+                    </div>
+                </div>
+
+                <div class="graph-placeholder" style="background: #202020; border: 1px solid #444; position: relative;">
+                    <h3 style="color: #ffae00; margin-bottom: 10px; text-align: center;">Top 5 Sensores Más Contaminantes</h3>
+                    <div style="height: 300px; width: 100%;">
+                        <canvas id="chartTopSensores"></canvas>
+                    </div>
+                </div>
+
+                <div class="graph-placeholder" style="background: #202020; border: 1px solid #444; position: relative; display: flex; justify-content: center; align-items: center; color: #666;">
+                    <p>Próximamente: Predicción IA</p>
                 </div>
             </div>
         </div>
@@ -278,4 +327,6 @@ que dan diferente informacion pero la estructura es parecida.
 <script src="../js/map-logic.js"></script>
 <script src="../js/dashboard_cliente.js"></script>
 <script src="../js/Fun_icono_perfil.js"></script>
+
+<script src="../js/stats-logic.js"></script>
 </html>

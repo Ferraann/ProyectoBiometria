@@ -329,7 +329,7 @@ nav a:hover{
 
 /* La pestaña activa SÍ se muestra */
 .tab-content.active-tab-content {
-    display: block; 
+    display: grid;
 }
 
 /* --- Marcadores de posición para gráficas --- */
@@ -337,6 +337,7 @@ nav a:hover{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 1.5rem;
+    margin-top: 20px;
 }
 
 .graph-placeholder {
