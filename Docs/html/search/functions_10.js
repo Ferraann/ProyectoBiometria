@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['setaccion_0',['setAccion',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor.html#ae86fec2efa7eddd17c184239137443f0',1,'com::example::grupo5::aitherapp::pojos::PojoSensor']]],
+  ['setaction_1',['setAction',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario.html#adcc3ffdd168c4e6abe5454a239ce9747',1,'com::example::grupo5::aitherapp::pojos::PojoUsuario']]],
+  ['setactivo_2',['setActivo',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario.html#ad806aaa71aebd9450e49ecc338e8c93e',1,'com::example::grupo5::aitherapp::pojos::PojoUsuario']]],
+  ['setapellidos_3',['setApellidos',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario.html#a50ad801d86ed5532e07085376c3431e3',1,'com::example::grupo5::aitherapp::pojos::PojoUsuario']]],
+  ['setcontrasenya_4',['setContrasenya',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario.html#a832960ec7c37f2bf8e811b2fd4e7fad3',1,'com::example::grupo5::aitherapp::pojos::PojoUsuario']]],
+  ['setcorreo_5',['setCorreo',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario.html#aeac902bfb1cfff233715c0f67b8b44b4',1,'com::example::grupo5::aitherapp::pojos::PojoUsuario']]],
+  ['setdistancia_6',['setDistancia',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario.html#ad2da1383c584725369f586575892a586',1,'com::example::grupo5::aitherapp::pojos::PojoUsuario']]],
+  ['setfecha_7',['setFecha',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario.html#aeb10edf3bbb03911d2bdfe770a696c33',1,'com::example::grupo5::aitherapp::pojos::PojoUsuario']]],
+  ['setid_8',['setId',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario.html#abb5dcd853a809f0a7e00e62e7c2e2548',1,'com::example::grupo5::aitherapp::pojos::PojoUsuario']]],
+  ['setlistasensores_9',['setListaSensores',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor.html#af0ee625e1bf00d9c6642d881740e331a',1,'com::example::grupo5::aitherapp::pojos::PojoRespuestaServidor']]],
+  ['setmac_10',['setMac',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor.html#a5e02918c7602fee66e8eea0814073d8b',1,'com::example::grupo5::aitherapp::pojos::PojoSensor']]],
+  ['setmensaje_11',['setMensaje',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor.html#a104cf2ce7859efabc4cd9d4e50207b6e',1,'com::example::grupo5::aitherapp::pojos::PojoRespuestaServidor']]],
+  ['setmodelo_12',['setModelo',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor.html#a9854265609507fef78977958fc9bd646',1,'com::example::grupo5::aitherapp::pojos::PojoSensor']]],
+  ['setnombre_13',['setNombre',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario.html#a1d086479943a8506f81b4478d9dff67d',1,'com::example::grupo5::aitherapp::pojos::PojoUsuario']]],
+  ['setoncoinschangedlistener_14',['setOnCoinsChangedListener',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter.html#a862d965224d4efa3a0ff6a961b9f9c7b',1,'com::example::grupo5::aitherapp::PremioAdapter']]],
+  ['setstatus_15',['setStatus',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor.html#a75a83e88167e6a86c041812498eb166b',1,'com::example::grupo5::aitherapp::pojos::PojoRespuestaServidor']]],
+  ['setusuario_16',['setUsuario',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor.html#ac62dd4df79e85139bcdf3decbeeeb146',1,'com::example::grupo5::aitherapp::pojos::PojoRespuestaServidor']]],
+  ['setusuario_5fid_17',['setUsuario_id',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor.html#afe1b4358214f952e2db74f9754d5e54b',1,'com::example::grupo5::aitherapp::pojos::PojoSensor']]],
+  ['starttls_18',['startTLS',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p.html#aaa8c1051e8ca80b381bf5667558074de',1,'PHPMailer::PHPMailer::SMTP']]],
+  ['stringtobytes_19',['stringToBytes',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades.html#a9b174dd2b6eeb00865b3ddf4b85fc218',1,'com::example::grupo5::aitherapp::btle::Utilidades']]],
+  ['stringtouuid_20',['stringToUUID',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades.html#a4b12f9b908ceefb8bc50445153f98a7f',1,'com::example::grupo5::aitherapp::btle::Utilidades']]],
+  ['sumarpuntosusuario_21',['sumarPuntosUsuario',['../sumar_puntos_x_i_d_8php.html#ac843e9430e5b3d852f318a81162be32e',1,'sumarPuntosXID.php']]]
+];

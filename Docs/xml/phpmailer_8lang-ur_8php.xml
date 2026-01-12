@@ -1,0 +1,349 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="phpmailer_8lang-ur_8php" kind="file" language="PHP">
+    <compoundname>phpmailer.lang-ur.php</compoundname>
+    <innernamespace refid="namespace_p_h_p_mailer">PHPMailer</innernamespace>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1a9941c17a5eabafa36ac3b0859476a4fb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;authenticate&apos;]</definition>
+        <argsstring>[&apos;authenticate&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP خرابی: تصدیق کرنے سے قاصر۔&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="9" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1a440a455b3b54a1c64c347ebe77cfad69" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;connect_host&apos;]</definition>
+        <argsstring>[&apos;connect_host&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP خرابی: سرور سے منسلک ہونے سے قاصر۔&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="10" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1afe3883d1634dca642e14d301ffaaa952" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;data_not_accepted&apos;]</definition>
+        <argsstring>[&apos;data_not_accepted&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP خرابی: ڈیٹا قبول نہیں کیا گیا۔&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="11" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1a4438aaac30813894b1b04e75a2e0de98" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;empty_message&apos;]</definition>
+        <argsstring>[&apos;empty_message&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;پیغام کی باڈی خالی ہے۔&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="12" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1a8b9939d40805387acf622ec4f543af50" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;encoding&apos;]</definition>
+        <argsstring>[&apos;encoding&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;نامعلوم انکوڈنگ: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="13" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1a4ce303a3e848c4e95a193d1db9719998" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;execute&apos;]</definition>
+        <argsstring>[&apos;execute&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;عمل کرنے کے قابل نہیں &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="14" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1a9f10ce2f2b3bbd0e80d9a56ce05f72ba" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;file_access&apos;]</definition>
+        <argsstring>[&apos;file_access&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;فائل تک رسائی سے قاصر:&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="15" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1ae7db8a216f9a035e2f331350bc7ee105" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;file_open&apos;]</definition>
+        <argsstring>[&apos;file_open&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;فائل کی خرابی: فائل کو کھولنے سے قاصر:&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="16" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1aabfcfe6a66dc36821d7014bdc5a3b6f9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;from_failed&apos;]</definition>
+        <argsstring>[&apos;from_failed&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;درج ذیل بھیجنے والے کا پتہ ناکام ہو گیا:&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="17" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1a3a317f3e32c3246ff68ed968ddcf4774" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;instantiate&apos;]</definition>
+        <argsstring>[&apos;instantiate&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;میل فنکشن کی مثال بنانے سے قاصر۔&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="18" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1a5139862f86824b503222c7066bf5a4e6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;invalid_address&apos;]</definition>
+        <argsstring>[&apos;invalid_address&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;بھیجنے سے قاصر: غلط ای میل پتہ:&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="19" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1a53b73fedc58a3e9084bd6de0f3f1e4e1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;mailer_not_supported&apos;]</definition>
+        <argsstring>[&apos;mailer_not_supported&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos; میلر تعاون یافتہ نہیں ہے۔&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="20" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1a957c4c5cc80342ca5a19ba145f85daa9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;provide_address&apos;]</definition>
+        <argsstring>[&apos;provide_address&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;آپ کو کم از کم ایک منزل کا ای میل پتہ فراہم کرنا چاہیے۔&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="21" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1ae9940d910460e388276ce1a4c02081f7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;recipients_failed&apos;]</definition>
+        <argsstring>[&apos;recipients_failed&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP خرابی: درج ذیل پتہ پر نہیں بھیجا جاسکا: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="22" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1a59c4260e366f69d573d10355e2e2d820" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;signing&apos;]</definition>
+        <argsstring>[&apos;signing&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;دستخط کی خرابی: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="23" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1a83c3b0c6679b3878c71606ed753c5f2d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;smtp_connect_failed&apos;]</definition>
+        <argsstring>[&apos;smtp_connect_failed&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP ملنا ناکام ہوا&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="24" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1a9f53f2e12f4f1445bccf30b1e6a76538" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;smtp_error&apos;]</definition>
+        <argsstring>[&apos;smtp_error&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP سرور کی خرابی: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="25" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1a941459734cab977ccbc502e2cfad2b5f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;variable_set&apos;]</definition>
+        <argsstring>[&apos;variable_set&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;متغیر سیٹ نہیں کیا جا سکا: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="26" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1a74fde728a807ad6886041cb2be6dadc5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;extension_missing&apos;]</definition>
+        <argsstring>[&apos;extension_missing&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;ایکٹینشن موجود نہیں ہے۔ &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="27" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1a182e53ceae4baa432cd8e461dac95ce7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;smtp_code&apos;]</definition>
+        <argsstring>[&apos;smtp_code&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP سرور کوڈ: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="28" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1af7740b34a480b5237ca34c4b0b117fe2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;smtp_code_ex&apos;]</definition>
+        <argsstring>[&apos;smtp_code_ex&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;اضافی SMTP سرور کی معلومات:&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="29" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ur_8php_1af1a19af625656a691901499d5e167c2f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;invalid_header&apos;]</definition>
+        <argsstring>[&apos;invalid_header&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;غلط ہیڈر کا نام یا قدر&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" line="30" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php" bodystart="30" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;authenticate&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>خرابی:<sp/>تصدیق<sp/>کرنے<sp/>سے<sp/>قاصر۔&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;connect_host&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>خرابی:<sp/>سرور<sp/>سے<sp/>منسلک<sp/>ہونے<sp/>سے<sp/>قاصر۔&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;data_not_accepted&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>خرابی:<sp/>ڈیٹا<sp/>قبول<sp/>نہیں<sp/>کیا<sp/>گیا۔&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;empty_message&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;پیغام<sp/>کی<sp/>باڈی<sp/>خالی<sp/>ہے۔&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;encoding&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;نامعلوم<sp/>انکوڈنگ:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;execute&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;عمل<sp/>کرنے<sp/>کے<sp/>قابل<sp/>نہیں<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;file_access&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;فائل<sp/>تک<sp/>رسائی<sp/>سے<sp/>قاصر:&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;file_open&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;فائل<sp/>کی<sp/>خرابی:<sp/>فائل<sp/>کو<sp/>کھولنے<sp/>سے<sp/>قاصر:&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;from_failed&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;درج<sp/>ذیل<sp/>بھیجنے<sp/>والے<sp/>کا<sp/>پتہ<sp/>ناکام<sp/>ہو<sp/>گیا:&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;instantiate&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;میل<sp/>فنکشن<sp/>کی<sp/>مثال<sp/>بنانے<sp/>سے<sp/>قاصر۔&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;invalid_address&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;بھیجنے<sp/>سے<sp/>قاصر:<sp/>غلط<sp/>ای<sp/>میل<sp/>پتہ:&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;mailer_not_supported&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;<sp/>میلر<sp/>تعاون<sp/>یافتہ<sp/>نہیں<sp/>ہے۔&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;provide_address&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;آپ<sp/>کو<sp/>کم<sp/>از<sp/>کم<sp/>ایک<sp/>منزل<sp/>کا<sp/>ای<sp/>میل<sp/>پتہ<sp/>فراہم<sp/>کرنا<sp/>چاہیے۔&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;recipients_failed&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>خرابی:<sp/>درج<sp/>ذیل<sp/>پتہ<sp/>پر<sp/>نہیں<sp/>بھیجا<sp/>جاسکا:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;signing&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;دستخط<sp/>کی<sp/>خرابی:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;smtp_connect_failed&apos;</highlight><highlight class="normal">]<sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>ملنا<sp/>ناکام<sp/>ہوا&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;smtp_error&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>سرور<sp/>کی<sp/>خرابی:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;variable_set&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;متغیر<sp/>سیٹ<sp/>نہیں<sp/>کیا<sp/>جا<sp/>سکا:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;extension_missing&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;ایکٹینشن<sp/>موجود<sp/>نہیں<sp/>ہے۔<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;smtp_code&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>سرور<sp/>کوڈ:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;smtp_code_ex&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;اضافی<sp/>SMTP<sp/>سرور<sp/>کی<sp/>معلومات:&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;invalid_header&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;غلط<sp/>ہیڈر<sp/>کا<sp/>نام<sp/>یا<sp/>قدر&apos;</highlight><highlight class="normal">;</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ur.php"/>
+  </compounddef>
+</doxygen>

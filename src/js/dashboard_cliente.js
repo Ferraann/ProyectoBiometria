@@ -1,30 +1,69 @@
-/* --- 1. LÓGICA DEL CALENDARIO (REUTILIZABLE) --- */
+/**
+ * @file dashboard_cliente.js
+ * @brief Gestión de componentes de interfaz de usuario del Dashboard.
+ * @details Controla la lógica de calendarios dinámicos, menús desplegables de navegación,
+ * el sistema de pestañas (Tabs) y paneles modales informativos.
+ * @author Greysy
+ * @date 11/11/2025
+ */
 
-// Seleccionamos TODOS los elementos que tengan la clase .date-picker
+/**
+ * @section 1. LÓGICA DEL CALENDARIO (REUTILIZABLE)
+ */
+
+/**
+ * @name Calendario
+ * @{
+ * @brief Inicialización de selectores de fecha.
+ */
+
+/** * @brief Selecciona y configura todos los elementos con la clase .date-picker.
+ * @details Utiliza la librería externa Flatpickr para transformar inputs en calendarios.
+ * @see https://flatpickr.js.org/
+ */
 const allDatePickers = document.querySelectorAll('.date-picker');
 
-// Recorremos cada uno de ellos y les aplicamos flatpickr
 allDatePickers.forEach(picker => {
     flatpickr(picker, {
-        dateFormat: "d/m/Y", // Formato de fecha
-        defaultDate: "12/11/2025", // Fecha por defecto
-        
-        // Esta función se ejecuta cuando seleccionas una fecha
+        dateFormat: "d/m/Y",
+        defaultDate: "12/11/2025",
+
+        /**
+         * @brief Callback ejecutado al cambiar la fecha.
+         * @param {Array} selectedDates Objetos de fecha seleccionados.
+         * @param {string} dateStr Representación de cadena de la fecha.
+         * @param {Object} instance La instancia de flatpickr.
+         */
         onChange: function(selectedDates, dateStr, instance) {
-            // 'instance.element' se refiere al 'picker' en el que hicimos clic
             instance.element.querySelector('span').textContent = 'Fecha: ' + dateStr;
         }
     });
 });
+/** @} */
 
-/* --- 2. LÓGICA DEL DROPDOWN (REUTILIZABLE) --- */
+/**
+ * @section 2. LÓGICA DEL DROPDOWN (REUTILIZABLE)
+ * Lógica dropdown
+ */
+
+/**
+ * @name DropdownNavegacion
+ * @{
+ */
+
+/** @brief Botones que activan menús desplegables de selección de mapa. */
 const allDropdownButtons = document.querySelectorAll('.dropdown-mapa');
 
+/**
+ * @brief Configura el comportamiento de apertura y selección de los menús dropdown.
+ * @details Al seleccionar un ítem, actualiza el texto del botón y llama a la lógica de Leaflet.
+ * @see switchMapView()
+ */
 allDropdownButtons.forEach(button => {
     const menu = button.nextElementSibling;
     if (!menu || !menu.classList.contains('dropdown-menu')) return;
 
-    const dropdownItems = menu.querySelectorAll('.dropdown-item'); // Cambiado el nombre para mayor claridad
+    const dropdownItems = menu.querySelectorAll('.dropdown-item');
     const span = button.querySelector('span');
 
     button.addEventListener('click', function(event) {
@@ -32,13 +71,14 @@ allDropdownButtons.forEach(button => {
         menu.classList.toggle('show');
     });
 
-    // AQUÍ ESTABA EL ERROR: Asegúrate de usar 'dropdownItem' dentro del forEach
-    dropdownItems.forEach(item => { // Asegúrate de llamar a la variable 'item' aquí
+    dropdownItems.forEach(item => {
         item.addEventListener('click', function(event) {
             event.preventDefault();
             span.textContent = item.textContent.trim();
 
-            // Llamamos a la lógica del mapa
+            /**
+             * @brief Integración con la lógica del mapa (AirQualityMap.js)
+             */
             if (typeof switchMapView === 'function') {
                 if (item.textContent.includes("Mis sensores personales")) {
                     switchMapView('personal');
@@ -51,25 +91,44 @@ allDropdownButtons.forEach(button => {
     });
 });
 
-// Cerrar TODOS los menús si se hace clic fuera de ellos
+/**
+ * @brief Cierra todos los menús desplegables abiertos al hacer clic fuera de ellos.
+ */
 document.addEventListener('click', function(event) {
-    // Si el clic no fue dentro de un .dropdown-container, cierra todo
     if (!event.target.closest('.dropdown-container')) {
         document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
             menu.classList.remove('show');
         });
     }
 });
+/** @} */
 
+/**
+ * @section 3. LÓGICA DE PESTAÑAS (TABS)
+ * Lógica de pestañas
+ */
 
+/**
+ * @name SistemaPestanas
+ * @{
+ */
+
+/** @brief Enlaces de navegación entre pestañas. */
 const tabLinks = document.querySelectorAll('.sensores-nav a');
 
+/**
+ * @brief Gestiona el cambio de visibilidad entre los diferentes paneles de contenido.
+ * @details Si la pestaña seleccionada es 'mapas', se dispara la inicialización del mapa de Leaflet.
+ * @see initializeDashboardMap()
+ */
 tabLinks.forEach(link => {
     link.addEventListener('click', function(event) {
         event.preventDefault();
         const tabId = this.dataset.tab;
 
-        // Visualización de pestañas
+        /**
+         * @brief Visualización de pestañas.
+         */
         tabLinks.forEach(l => l.classList.remove('active'));
         this.classList.add('active');
 
@@ -82,9 +141,8 @@ tabLinks.forEach(link => {
             }
         });
 
-        // Solo llamamos al mapa si la pestaña es "mapas"
         if (tabId === 'mapas') {
-            // El retraso permite que el contenedor se vuelva visible antes de inicializar
+            // El retraso permite que el contenedor se vuelva visible antes de inicializar Leaflet
             setTimeout(() => {
                 if (typeof initializeDashboardMap === 'function') {
                     initializeDashboardMap();
@@ -94,11 +152,13 @@ tabLinks.forEach(link => {
     });
 });
 
-// Inicialización controlada al cargar el DOM
+/**
+ * @brief Inicialización automática al cargar el documento.
+ * @details Verifica si la pestaña activa por defecto es la de mapas para renderizarla.
+ */
 document.addEventListener('DOMContentLoaded', () => {
     const activeTab = document.querySelector('.sensores-nav a.active');
     if (activeTab && activeTab.dataset.tab === 'mapas') {
-        // Un solo temporizador para la carga inicial
         setTimeout(() => {
             if (typeof initializeDashboardMap === 'function') {
                 initializeDashboardMap();
@@ -106,43 +166,48 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 400);
     }
 });
+/** @} */
 
+/**
+ * @section 4. LÓGICA DEL MODAL
+ */
 
-
-
-
-
-// --- Lógica del Modal de Información ---
+/**
+ * @name PanelInfoModal
+ * @{
+ * @brief Gestión del panel de información sobre los gases.
+ */
 document.addEventListener('DOMContentLoaded', () => {
     const infoModal = document.getElementById('gas-info-panel');
     const openInfoBtn = document.getElementById('open-info-btn');
     const closeInfoBtn = document.getElementById('close-info-btn');
 
-    // Función para abrir
+    /** @brief Abre el panel modal. */
     if (openInfoBtn) {
         openInfoBtn.addEventListener('click', () => {
             infoModal.style.display = 'block';
         });
     }
 
-    // Función para cerrar
+    /** @brief Cierra el panel modal. */
     if (closeInfoBtn) {
         closeInfoBtn.addEventListener('click', () => {
             infoModal.style.display = 'none';
         });
     }
 
-    // Cerrar si se hace clic fuera del contenido blanco
+    /** @brief Cierre por clic fuera del contenedor. */
     window.addEventListener('click', (event) => {
         if (event.target === infoModal) {
             infoModal.style.display = 'none';
         }
     });
 
-    // Cerrar con la tecla Escape
+    /** @brief Cierre mediante la tecla Escape. */
     window.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && infoModal.style.display === 'block') {
             infoModal.style.display = 'none';
         }
     });
 });
+/** @} */

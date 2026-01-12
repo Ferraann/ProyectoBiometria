@@ -1,0 +1,534 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="_b_t_l_e_activity_8java" kind="file" language="Java">
+    <compoundname>BTLEActivity.java</compoundname>
+    <includes local="no">android.bluetooth.le.ScanSettings.SCAN_MODE_LOW_LATENCY</includes>
+    <includes local="no">android.Manifest</includes>
+    <includes local="no">android.bluetooth.BluetoothAdapter</includes>
+    <includes local="no">android.bluetooth.BluetoothDevice</includes>
+    <includes local="no">android.bluetooth.le.BluetoothLeScanner</includes>
+    <includes local="no">android.bluetooth.le.ScanCallback</includes>
+    <includes local="no">android.bluetooth.le.ScanFilter</includes>
+    <includes local="no">android.bluetooth.le.ScanResult</includes>
+    <includes local="no">android.bluetooth.le.ScanSettings</includes>
+    <includes local="no">android.content.pm.PackageManager</includes>
+    <includes local="no">android.os.Bundle</includes>
+    <includes local="no">android.util.Log</includes>
+    <includes local="no">android.view.View</includes>
+    <includes local="no">androidx.appcompat.app.AppCompatActivity</includes>
+    <includes local="no">androidx.core.app.ActivityCompat</includes>
+    <includes local="no">androidx.core.content.ContextCompat</includes>
+    <includes local="no">com.example.grupo5.aitherapp.R</includes>
+    <includes local="no">com.example.grupo5.aitherapp.btle.TramaIBeacon</includes>
+    <includes local="no">com.example.grupo5.aitherapp.btle.Utilidades</includes>
+    <includes local="no">com.example.grupo5.aitherapp.retrofit.ApiCliente</includes>
+    <includes local="no">com.example.grupo5.aitherapp.retrofit.ApiService</includes>
+    <includes local="no">java.util.ArrayList</includes>
+    <includes local="no">java.util.List</includes>
+    <includes local="no">retrofit2.Call</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java</label>
+        <link refid="_b_t_l_e_activity_8java"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>android.Manifest</label>
+      </node>
+      <node id="4">
+        <label>android.bluetooth.BluetoothAdapter</label>
+      </node>
+      <node id="5">
+        <label>android.bluetooth.BluetoothDevice</label>
+      </node>
+      <node id="6">
+        <label>android.bluetooth.le.BluetoothLeScanner</label>
+      </node>
+      <node id="7">
+        <label>android.bluetooth.le.ScanCallback</label>
+      </node>
+      <node id="8">
+        <label>android.bluetooth.le.ScanFilter</label>
+      </node>
+      <node id="9">
+        <label>android.bluetooth.le.ScanResult</label>
+      </node>
+      <node id="10">
+        <label>android.bluetooth.le.ScanSettings</label>
+      </node>
+      <node id="2">
+        <label>android.bluetooth.le.ScanSettings.SCAN_MODE_LOW_LATENCY</label>
+      </node>
+      <node id="11">
+        <label>android.content.pm.PackageManager</label>
+      </node>
+      <node id="12">
+        <label>android.os.Bundle</label>
+      </node>
+      <node id="13">
+        <label>android.util.Log</label>
+      </node>
+      <node id="14">
+        <label>android.view.View</label>
+      </node>
+      <node id="15">
+        <label>androidx.appcompat.app.AppCompatActivity</label>
+      </node>
+      <node id="16">
+        <label>androidx.core.app.ActivityCompat</label>
+      </node>
+      <node id="17">
+        <label>androidx.core.content.ContextCompat</label>
+      </node>
+      <node id="18">
+        <label>com.example.grupo5.aitherapp.R</label>
+      </node>
+      <node id="19">
+        <label>com.example.grupo5.aitherapp.btle.TramaIBeacon</label>
+      </node>
+      <node id="20">
+        <label>com.example.grupo5.aitherapp.btle.Utilidades</label>
+      </node>
+      <node id="21">
+        <label>com.example.grupo5.aitherapp.retrofit.ApiCliente</label>
+      </node>
+      <node id="22">
+        <label>com.example.grupo5.aitherapp.retrofit.ApiService</label>
+      </node>
+      <node id="23">
+        <label>java.util.ArrayList</label>
+      </node>
+      <node id="24">
+        <label>java.util.List</label>
+      </node>
+      <node id="25">
+        <label>retrofit2.Call</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity" prot="public">com::example::grupo5::aitherapp::activitysApp::BTLEActivity</innerclass>
+    <innernamespace refid="namespacecom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app">com::example::grupo5::aitherapp::activitysApp</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">com.example.grupo5.aitherapp.activitysApp;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>android.bluetooth.le.ScanSettings.SCAN_MODE_LOW_LATENCY;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.Manifest;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.bluetooth.BluetoothAdapter;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.bluetooth.BluetoothDevice;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.bluetooth.le.BluetoothLeScanner;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.bluetooth.le.ScanCallback;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.bluetooth.le.ScanFilter;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.bluetooth.le.ScanResult;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.bluetooth.le.ScanSettings;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.content.pm.PackageManager;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.os.Bundle;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.util.Log;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.view.View;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>androidx.appcompat.app.AppCompatActivity;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>androidx.core.app.ActivityCompat;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>androidx.core.content.ContextCompat;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.example.grupo5.aitherapp.R;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.example.grupo5.aitherapp.btle.TramaIBeacon;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.example.grupo5.aitherapp.btle.Utilidades;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.example.grupo5.aitherapp.retrofit.ApiCliente;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.example.grupo5.aitherapp.retrofit.ApiService;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>java.util.ArrayList;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>java.util.List;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>retrofit2.Call;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Fichero:<sp/>BTLEActivity.java</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Autor:<sp/>Pablo<sp/>Chasi</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Fecha:<sp/>28/10/2025</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Descripción:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Clase<sp/>encargada<sp/>de<sp/>gestionar<sp/>la<sp/>detección<sp/>de<sp/>dispositivos<sp/>Bluetooth</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Low<sp/>Energy<sp/>(BTLE),<sp/>especialmente<sp/>iBeacons.<sp/>Permite<sp/>iniciar<sp/>y<sp/>detener</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">//<sp/>el<sp/>escaneo,<sp/>procesar<sp/>la<sp/>información<sp/>recibida,<sp/>extraer<sp/>datos<sp/>de<sp/>tramas</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">//<sp/>iBeacon<sp/>y<sp/>enviarlas<sp/>al<sp/>servidor<sp/>mediante<sp/>Retrofit.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity" kindref="compound">BTLEActivity</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/>AppCompatActivity<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>String<sp/>ETIQUETA_LOG<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&gt;&gt;&gt;&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>CODIGO_PETICION_PERMISOS<sp/>=<sp/>11223344;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>BluetoothLeScanner<sp/>elEscanner;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>ScanCallback<sp/>callbackDelEscaneo<sp/>=<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>List&lt;ScanFilter&gt;<sp/>filtros<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>ArrayList&lt;&gt;();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//--------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>String<sp/>DispositivoQueSeBusca<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Clase<sp/>que<sp/>sirve<sp/>como<sp/>ejemplo<sp/>para<sp/>encontrar<sp/>Ibeacon</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>buscarTodosLosDispositivosBTLE()<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>buscarTodosLosDispositivosBTL():<sp/>empieza<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>buscarTodosLosDispositivosBTL():<sp/>instalamos<sp/>scan<sp/>callback<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//-----------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Planteamos<sp/>los<sp/>tres<sp/>casos</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.callbackDelEscaneo<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>ScanCallback()<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Override</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onScanResult(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>callbackType,<sp/>ScanResult<sp/>resultado<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super.onScanResult(callbackType,<sp/>resultado);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>buscarTodosLosDispositivosBTL():<sp/>onScanResult()<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mostrarInformacionDispositivoBTLE(<sp/>resultado<sp/>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Override</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onBatchScanResults(List&lt;ScanResult&gt;<sp/>results)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super.onBatchScanResults(results);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>buscarTodosLosDispositivosBTL():<sp/>onBatchScanResults()<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Override</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onScanFailed(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>errorCode)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super.onScanFailed(errorCode);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>buscarTodosLosDispositivosBTL():<sp/>onScanFailed()<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>buscarTodosLosDispositivosBTL():<sp/>empezamos<sp/>a<sp/>escanear<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ActivityCompat.checkSelfPermission(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>Manifest.permission.BLUETOOTH_SCAN)<sp/>!=<sp/>PackageManager.PERMISSION_GRANTED)<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.elEscanner.startScan(this.callbackDelEscaneo);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Clase<sp/>donde<sp/>se<sp/>le<sp/>da<sp/>forma<sp/>a<sp/>los<sp/>datos<sp/>y<sp/>los<sp/>muestro<sp/>por<sp/>el<sp/>logcat</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mostrarInformacionDispositivoBTLE(<sp/>ScanResult<sp/>resultado<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BluetoothDevice<sp/>bluetoothDevice<sp/>=<sp/>resultado.getDevice();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal">[]<sp/>bytes<sp/>=<sp/>resultado.getScanRecord().getBytes();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rssi<sp/>=<sp/>resultado.getRssi();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ActivityCompat.checkSelfPermission(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>Manifest.permission.BLUETOOTH_CONNECT)<sp/>!=<sp/>PackageManager.PERMISSION_GRANTED)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Estructura<sp/>de<sp/>la<sp/>información<sp/>del<sp/>beacon</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>****************************************************&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>******<sp/>DISPOSITIVO<sp/>DETECTADO<sp/>BTLE<sp/>******************<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>****************************************************&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>nombre<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>bluetoothDevice.getName());</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>toString<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>bluetoothDevice.toString());</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParcelUuid[]<sp/>puuids<sp/>=<sp/>bluetoothDevice.getUuids();</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(<sp/>puuids.length<sp/>&gt;=<sp/>1<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//Log.d(ETIQUETA_LOG,<sp/>&quot;<sp/>uuid<sp/>=<sp/>&quot;<sp/>+<sp/>puuids[0].getUuid());</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Log.d(ETIQUETA_LOG,<sp/>&quot;<sp/>uuid<sp/>=<sp/>&quot;<sp/>+<sp/>puuids[0].toString());</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>dirección<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>bluetoothDevice.getAddress());</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>rssi<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>rssi<sp/>);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>bytes<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>String(bytes));</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>bytes<sp/>(&quot;</highlight><highlight class="normal"><sp/>+<sp/>bytes.length<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades" kindref="compound">Utilidades</ref>.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a026202663e3a0c2949b37b71b8c65001" kindref="member">bytesToHexString</ref>(bytes));</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon" kindref="compound">TramaIBeacon</ref><sp/>tib<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon" kindref="compound">TramaIBeacon</ref>(bytes);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>----------------------------------------------------&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>prefijo<sp/><sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades" kindref="compound">Utilidades</ref>.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a026202663e3a0c2949b37b71b8c65001" kindref="member">bytesToHexString</ref>(tib.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a321e7acc264c474c803772e3a4949a5d" kindref="member">getPrefijo</ref>()));</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>advFlags<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades" kindref="compound">Utilidades</ref>.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a026202663e3a0c2949b37b71b8c65001" kindref="member">bytesToHexString</ref>(tib.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a22d0c77a84e0f887f092a3d288605d9c" kindref="member">getAdvFlags</ref>()));</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>advHeader<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades" kindref="compound">Utilidades</ref>.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a026202663e3a0c2949b37b71b8c65001" kindref="member">bytesToHexString</ref>(tib.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1adfc86677dcba561e62c7e85d09faf8eb" kindref="member">getAdvHeader</ref>()));</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>companyID<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades" kindref="compound">Utilidades</ref>.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a026202663e3a0c2949b37b71b8c65001" kindref="member">bytesToHexString</ref>(tib.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1afbfc4cc1ebc1b4162b524745a6ffb7b5" kindref="member">getCompanyID</ref>()));</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iBeacon<sp/>type<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>Integer.toHexString(tib.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1ad61aad4216c57e8b0ce87dd27aa46ae9" kindref="member">getiBeaconType</ref>()));</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iBeacon<sp/>length<sp/>0x<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>Integer.toHexString(tib.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1add2ea523610926324726d381564858ef" kindref="member">getiBeaconLength</ref>())<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>(<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>tib.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1add2ea523610926324726d381564858ef" kindref="member">getiBeaconLength</ref>()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>)<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>uuid<sp/><sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades" kindref="compound">Utilidades</ref>.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a026202663e3a0c2949b37b71b8c65001" kindref="member">bytesToHexString</ref>(tib.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1af162319142085c5a0efe2e0ce020c1f5" kindref="member">getUUID</ref>()));</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>uuid<sp/><sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades" kindref="compound">Utilidades</ref>.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a98f1092b762992509665bde16bd873f0" kindref="member">bytesToString</ref>(tib.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1af162319142085c5a0efe2e0ce020c1f5" kindref="member">getUUID</ref>()));</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>major<sp/><sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades" kindref="compound">Utilidades</ref>.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a026202663e3a0c2949b37b71b8c65001" kindref="member">bytesToHexString</ref>(tib.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a8bf8e407a8412779aa40fa399f8f926e" kindref="member">getMajor</ref>())<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;(<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades" kindref="compound">Utilidades</ref>.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1acda6a37fbfc7237d6381791f6bad4e99" kindref="member">bytesToInt</ref>(tib.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a8bf8e407a8412779aa40fa399f8f926e" kindref="member">getMajor</ref>())<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>)<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>minor<sp/><sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades" kindref="compound">Utilidades</ref>.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a026202663e3a0c2949b37b71b8c65001" kindref="member">bytesToHexString</ref>(tib.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1ad1d2fd127519aa1464879fa3762b332c" kindref="member">getMinor</ref>())<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;(<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades" kindref="compound">Utilidades</ref>.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1acda6a37fbfc7237d6381791f6bad4e99" kindref="member">bytesToInt</ref>(tib.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1ad1d2fd127519aa1464879fa3762b332c" kindref="member">getMinor</ref>())<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>)<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>txPower<sp/><sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>Integer.toHexString(tib.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a0d96e1367cc1b768ec15cbec95562804" kindref="member">getTxPower</ref>())<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>(<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>tib.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a0d96e1367cc1b768ec15cbec95562804" kindref="member">getTxPower</ref>()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>****************************************************&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enviarDatosAlServidor(<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades" kindref="compound">Utilidades</ref>.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a4fb2a375cc6c8952eabf4e4eeeaab3c1" kindref="member">bytesToLong</ref>(tib.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1ad1d2fd127519aa1464879fa3762b332c" kindref="member">getMinor</ref>()),<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades" kindref="compound">Utilidades</ref>.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a4fb2a375cc6c8952eabf4e4eeeaab3c1" kindref="member">bytesToLong</ref>(tib.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a8bf8e407a8412779aa40fa399f8f926e" kindref="member">getMajor</ref>()));</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Clase<sp/>que<sp/>con<sp/>un<sp/>nombre<sp/>busca<sp/>el<sp/>IBeacon<sp/>y<sp/>obtiene<sp/>sus<sp/>datos</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>buscarEsteDispositivoBTLE(</highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>String<sp/>dispositivoBuscado<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>buscarEsteDispositivoBTLE():<sp/>empieza<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>buscarEsteDispositivoBTLE():<sp/>instalamos<sp/>scan<sp/>callback<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>super.onScanResult(ScanSettings.SCAN_MODE_LOW_LATENCY,<sp/>result);<sp/>para<sp/>ahorro<sp/>de<sp/>energía</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.callbackDelEscaneo<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>ScanCallback()<sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Override</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onScanResult(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>callbackType,<sp/>ScanResult<sp/>resultado<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super.onScanResult(callbackType,<sp/>resultado);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>buscarEsteDispositivoBTLE():<sp/>onScanResult()<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mostrarInformacionDispositivoBTLE(<sp/>resultado<sp/>);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Override</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onBatchScanResults(List&lt;ScanResult&gt;<sp/>results)<sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super.onBatchScanResults(results);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>buscarEsteDispositivoBTLE():<sp/>onBatchScanResults()<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Override</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onScanFailed(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>errorCode)<sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super.onScanFailed(errorCode);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>buscarEsteDispositivoBTLE():<sp/>onScanFailed()<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filtros.clear();</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ScanFilter<sp/>sf<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>ScanFilter.Builder().setDeviceName(dispositivoBuscado).build();</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filtros.add(sf);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>buscarEsteDispositivoBTLE():<sp/>empezamos<sp/>a<sp/>escanear<sp/>buscando:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>dispositivoBuscado<sp/>);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ActivityCompat.checkSelfPermission(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>Manifest.permission.BLUETOOTH_SCAN)<sp/>!=<sp/>PackageManager.PERMISSION_GRANTED)<sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ScanSettings<sp/>settings<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>ScanSettings.Builder()</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.setScanMode(SCAN_MODE_LOW_LATENCY)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.build();</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>elEscanner.startScan(filtros,<sp/>settings,<sp/>callbackDelEscaneo);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Clase<sp/>que<sp/>pretende<sp/>detner<sp/>toda<sp/>función<sp/>que<sp/>detecte<sp/>Ibeacon</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>detenerBusquedaDispositivosBTLE()<sp/>{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>this.callbackDelEscaneo<sp/>==<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ActivityCompat.checkSelfPermission(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>Manifest.permission.BLUETOOTH_SCAN)<sp/>!=<sp/>PackageManager.PERMISSION_GRANTED)<sp/>{</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.elEscanner.stopScan(<sp/>this.callbackDelEscaneo<sp/>);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.callbackDelEscaneo<sp/>=<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1abd02b1ab9bfd1edbd1e71ff0db014ba2" kindref="member">botonBuscarDispositivosBTLEPulsado</ref>(<sp/>View<sp/>v<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>boton<sp/>buscar<sp/>dispositivos<sp/>BTLE<sp/>Pulsado&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.buscarTodosLosDispositivosBTLE();</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a503c729f9848632554324935883306ab" kindref="member">botonBuscarNuestroDispositivoBTLEPulsado</ref>(<sp/>View<sp/>v<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>boton<sp/>nuestro<sp/>dispositivo<sp/>BTLE<sp/>Pulsado&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//this.buscarEsteDispositivoBTLE(<sp/>Utilidades.stringToUUID(<sp/>&quot;EPSG-GTI-PROY-3A&quot;<sp/>)<sp/>);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//this.buscarEsteDispositivoBTLE(<sp/>&quot;EPSG-GTI-PROY-3A&quot;<sp/>);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.buscarEsteDispositivoBTLE(<sp/>DispositivoQueSeBusca<sp/>);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1ab27dd0f79a6007af6b561216a1f8faa1" kindref="member">botonDetenerBusquedaDispositivosBTLEPulsado</ref>(<sp/>View<sp/>v<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>boton<sp/>detener<sp/>busqueda<sp/>dispositivos<sp/>BTLE<sp/>Pulsado&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.detenerBusquedaDispositivosBTLE();</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>inicializarBlueTooth()<sp/>{</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>inicializarBlueTooth():<sp/>obtenemos<sp/>adaptador<sp/>BT<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BluetoothAdapter<sp/>bta<sp/>=<sp/>BluetoothAdapter.getDefaultAdapter();</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>inicializarBlueTooth():<sp/>habilitamos<sp/>adaptador<sp/>BT<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ActivityCompat.checkSelfPermission(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>Manifest.permission.BLUETOOTH_CONNECT)<sp/>!=<sp/>PackageManager.PERMISSION_GRANTED)<sp/>{</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bta.enable();</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>inicializarBlueTooth():<sp/>habilitado<sp/>=<sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>bta.isEnabled()<sp/>);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>inicializarBlueTooth():<sp/>estado<sp/>=<sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>bta.getState()<sp/>);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>inicializarBlueTooth():<sp/>obtenemos<sp/>escaner<sp/>btle<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.elEscanner<sp/>=<sp/>bta.getBluetoothLeScanner();</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>this.elEscanner<sp/>==<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>inicializarBlueTooth():<sp/>Socorro:<sp/>NO<sp/>hemos<sp/>obtenido<sp/>escaner<sp/>btle<sp/><sp/>!!!!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>inicializarBlueTooth():<sp/>voy<sp/>a<sp/>perdir<sp/>permisos<sp/>(si<sp/>no<sp/>los<sp/>tuviera)<sp/>!!!!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ContextCompat.checkSelfPermission(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>Manifest.permission.BLUETOOTH)<sp/>!=<sp/>PackageManager.PERMISSION_GRANTED</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>ContextCompat.checkSelfPermission(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>Manifest.permission.BLUETOOTH_ADMIN)<sp/>!=<sp/>PackageManager.PERMISSION_GRANTED</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>ContextCompat.checkSelfPermission(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>Manifest.permission.ACCESS_FINE_LOCATION)<sp/>!=<sp/>PackageManager.PERMISSION_GRANTED</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ActivityCompat.requestPermissions(</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity" kindref="compound">BTLEActivity</ref>.this,</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>String[]{Manifest.permission.BLUETOOTH,<sp/>Manifest.permission.BLUETOOTH_ADMIN,<sp/>Manifest.permission.ACCESS_FINE_LOCATION},</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CODIGO_PETICION_PERMISOS);</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>inicializarBlueTooth():<sp/>parece<sp/>que<sp/>YA<sp/>tengo<sp/>los<sp/>permisos<sp/>necesarios<sp/>!!!!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>@Override</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1aed4f63bdc8ac828450ce4064b9446252" kindref="member">onCreate</ref>(Bundle<sp/>savedInstanceState)<sp/>{</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super.onCreate(savedInstanceState);</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setContentView(R.layout.activity_beacon);</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>onCreate():<sp/>empieza<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inicializarBlueTooth();</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>onCreate():<sp/>termina<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>onCreate()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a0e7802cb920c449106cf0d222b0f19b1" kindref="member">onRequestPermissionsResult</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>requestCode,<sp/>String[]<sp/>permissions,</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">[]<sp/>grantResults)<sp/>{</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super.onRequestPermissionsResult(<sp/>requestCode,<sp/>permissions,<sp/>grantResults);</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(requestCode)<sp/>{</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>CODIGO_PETICION_PERMISOS:</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>request<sp/>is<sp/>cancelled,<sp/>the<sp/>result<sp/>arrays<sp/>are<sp/>empty.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(grantResults.length<sp/>&gt;<sp/>0<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grantResults[0]<sp/>==<sp/>PackageManager.PERMISSION_GRANTED)<sp/>{</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>onRequestPermissionResult():<sp/>permisos<sp/>concedidos<sp/><sp/>!!!!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Permission<sp/>is<sp/>granted.<sp/>Continue<sp/>the<sp/>action<sp/>or<sp/>workflow</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>in<sp/>your<sp/>app.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>onRequestPermissionResult():<sp/>Socorro:<sp/>permisos<sp/>NO<sp/>concedidos<sp/><sp/>!!!!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Other<sp/>&apos;case&apos;<sp/>lines<sp/>to<sp/>check<sp/>for<sp/>other</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>permissions<sp/>this<sp/>app<sp/>might<sp/>request.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//metodo<sp/>que<sp/>envia<sp/>los<sp/>datos<sp/>a<sp/>la<sp/>api<sp/>con<sp/>la<sp/>biblioteca<sp/>retrofit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>enviarDatosAlServidor(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>CO2,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>Temperatura){</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;Enviando<sp/>datos<sp/>al<sp/>servidor...<sp/>C02=&quot;</highlight><highlight class="normal"><sp/>+<sp/>CO2<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>Temperatura=&quot;</highlight><highlight class="normal"><sp/>+<sp/>Temperatura);</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Declaro<sp/>mi<sp/>esctrucura<sp/>para<sp/>trabajar<sp/>con<sp/>ella</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service" kindref="compound">ApiService</ref><sp/>api<sp/>=<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_cliente" kindref="compound">ApiCliente</ref>.<ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_cliente_1a365544bd5cfc60360ac6dac9a718b675" kindref="member">getApiService</ref>();</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Cojo<sp/>la<sp/>plantilla<sp/>para<sp/>después<sp/>mostrarlo<sp/>correctamente</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Call&lt;Void&gt;<sp/>call<sp/>=<sp/>api.<ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a6db8019c344eff0d07a4d653dea0fb9b" kindref="member">enviarDatos</ref>(CO2,Temperatura);</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Comprobar<sp/>si<sp/>se<sp/>a<sp/>enviado<sp/>correctamente<sp/>los<sp/>datos<sp/>y<sp/>envia<sp/>los<sp/>datos</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call.enqueue(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>retrofit2.Callback&lt;Void&gt;()<sp/>{</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Override</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>public<sp/>void<sp/>onResponse(Call&lt;Void&gt;<sp/>call,<sp/>retrofit2.Response&lt;Void&gt;<sp/>response)<sp/>{</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(response.isSuccessful())<sp/>{</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.d(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;✅<sp/>Datos<sp/>enviados<sp/>correctamente<sp/>al<sp/>servidor<sp/>PHP&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>else<sp/>{</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.e(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;⚠<sp/>Error<sp/>HTTP:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>response.code());</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Override</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onFailure(Call&lt;Void&gt;<sp/>call,<sp/>Throwable<sp/>t)<sp/>{</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.e(ETIQUETA_LOG,<sp/></highlight><highlight class="stringliteral">&quot;❌<sp/>Error<sp/>al<sp/>enviar<sp/>datos:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>t.getMessage());</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kind="namespace" language="PHP">
+    <compoundname>PHPMailer::PHPMailer</compoundname>
+    <innerclass refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_d_s_n_configurator" prot="public">PHPMailer::PHPMailer::DSNConfigurator</innerclass>
+    <innerclass refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_exception" prot="public">PHPMailer::PHPMailer::Exception</innerclass>
+    <innerclass refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth" prot="public">PHPMailer::PHPMailer::OAuth</innerclass>
+    <innerclass refid="interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider" prot="public">PHPMailer::PHPMailer::OAuthTokenProvider</innerclass>
+    <innerclass refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_h_p_mailer" prot="public">PHPMailer::PHPMailer::PHPMailer</innerclass>
+    <innerclass refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3" prot="public">PHPMailer::PHPMailer::POP3</innerclass>
+    <innerclass refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p" prot="public">PHPMailer::PHPMailer::SMTP</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Get an OAuth2 token from an OAuth2 provider.<itemizedlist>
+<listitem><para>Install this script on your server so that it&apos;s accessible as [https/http]://&lt;yourdomain&gt;/&lt;folder&gt;/get_oauth_token.php e.g.: <ulink url="http://localhost/phpmailer/get_oauth_token.php">http://localhost/phpmailer/get_oauth_token.php</ulink></para>
+</listitem><listitem><para>Ensure dependencies are installed with &apos;composer install&apos;</para>
+</listitem><listitem><para>Set up an app in your Google/Yahoo/Microsoft account</para>
+</listitem><listitem><para>Set the script address as the app&apos;s redirect URL If no refresh token is obtained when running this file, revoke access to your app and run the script again.</para>
+</listitem></itemizedlist>
+</para>
+<para><ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> - PHP email creation and transport class. PHP Version 5.5.</para>
+<para><simplesect kind="see"><para><ulink url="https://github.com/PHPMailer/PHPMailer/">https://github.com/PHPMailer/PHPMailer/</ulink> The <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> GitHub project</para>
+</simplesect>
+<simplesect kind="author"><para>Marcus Bointon (Synchro/coolbru) <ulink url="mailto:phpmailer@synchromedia.co.uk">phpmailer@synchromedia.co.uk</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Jim Jagielski (jimjag) <ulink url="mailto:jimjag@gmail.com">jimjag@gmail.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Andy Prevost (codeworxtech) <ulink url="mailto:codeworxtech@users.sourceforge.net">codeworxtech@users.sourceforge.net</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Brent R. Matzelle (original founder) </para>
+</simplesect>
+<simplesect kind="copyright"><para>2012 - 2023 Marcus Bointon </para>
+</simplesect>
+<simplesect kind="copyright"><para>2010 - 2012 Jim Jagielski </para>
+</simplesect>
+<simplesect kind="copyright"><para>2004 - 2009 Andy Prevost @license <ulink url="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</ulink> GNU Lesser General Public License </para>
+</simplesect>
+<simplesect kind="note"><para>This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</para>
+</simplesect>
+<ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> Exception class. PHP Version 5.5.</para>
+<para><simplesect kind="see"><para><ulink url="https://github.com/PHPMailer/PHPMailer/">https://github.com/PHPMailer/PHPMailer/</ulink> The <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> GitHub project</para>
+</simplesect>
+<simplesect kind="author"><para>Marcus Bointon (Synchro/coolbru) <ulink url="mailto:phpmailer@synchromedia.co.uk">phpmailer@synchromedia.co.uk</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Jim Jagielski (jimjag) <ulink url="mailto:jimjag@gmail.com">jimjag@gmail.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Andy Prevost (codeworxtech) <ulink url="mailto:codeworxtech@users.sourceforge.net">codeworxtech@users.sourceforge.net</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Brent R. Matzelle (original founder) </para>
+</simplesect>
+<simplesect kind="copyright"><para>2012 - 2020 Marcus Bointon </para>
+</simplesect>
+<simplesect kind="copyright"><para>2010 - 2012 Jim Jagielski </para>
+</simplesect>
+<simplesect kind="copyright"><para>2004 - 2009 Andy Prevost @license <ulink url="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</ulink> GNU Lesser General Public License </para>
+</simplesect>
+<simplesect kind="note"><para>This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</para>
+</simplesect>
+<ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> - PHP email creation and transport class. PHP Version 5.5.</para>
+<para><simplesect kind="see"><para><ulink url="https://github.com/PHPMailer/PHPMailer/">https://github.com/PHPMailer/PHPMailer/</ulink> The <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> GitHub project</para>
+</simplesect>
+<simplesect kind="author"><para>Marcus Bointon (Synchro/coolbru) <ulink url="mailto:phpmailer@synchromedia.co.uk">phpmailer@synchromedia.co.uk</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Jim Jagielski (jimjag) <ulink url="mailto:jimjag@gmail.com">jimjag@gmail.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Andy Prevost (codeworxtech) <ulink url="mailto:codeworxtech@users.sourceforge.net">codeworxtech@users.sourceforge.net</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Brent R. Matzelle (original founder) </para>
+</simplesect>
+<simplesect kind="copyright"><para>2012 - 2020 Marcus Bointon </para>
+</simplesect>
+<simplesect kind="copyright"><para>2010 - 2012 Jim Jagielski </para>
+</simplesect>
+<simplesect kind="copyright"><para>2004 - 2009 Andy Prevost @license <ulink url="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</ulink> GNU Lesser General Public License </para>
+</simplesect>
+<simplesect kind="note"><para>This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</para>
+</simplesect>
+<ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> POP-Before-SMTP Authentication Class. PHP Version 5.5.</para>
+<para><simplesect kind="see"><para><ulink url="https://github.com/PHPMailer/PHPMailer/">https://github.com/PHPMailer/PHPMailer/</ulink> The <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> GitHub project</para>
+</simplesect>
+<simplesect kind="author"><para>Marcus Bointon (Synchro/coolbru) <ulink url="mailto:phpmailer@synchromedia.co.uk">phpmailer@synchromedia.co.uk</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Jim Jagielski (jimjag) <ulink url="mailto:jimjag@gmail.com">jimjag@gmail.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Andy Prevost (codeworxtech) <ulink url="mailto:codeworxtech@users.sourceforge.net">codeworxtech@users.sourceforge.net</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Brent R. Matzelle (original founder) </para>
+</simplesect>
+<simplesect kind="copyright"><para>2012 - 2020 Marcus Bointon </para>
+</simplesect>
+<simplesect kind="copyright"><para>2010 - 2012 Jim Jagielski </para>
+</simplesect>
+<simplesect kind="copyright"><para>2004 - 2009 Andy Prevost @license <ulink url="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</ulink> GNU Lesser General Public License </para>
+</simplesect>
+<simplesect kind="note"><para>This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</para>
+</simplesect>
+<ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> RFC821 SMTP email transport class. PHP Version 5.5.</para>
+<para><simplesect kind="see"><para><ulink url="https://github.com/PHPMailer/PHPMailer/">https://github.com/PHPMailer/PHPMailer/</ulink> The <ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> GitHub project</para>
+</simplesect>
+<simplesect kind="author"><para>Marcus Bointon (Synchro/coolbru) <ulink url="mailto:phpmailer@synchromedia.co.uk">phpmailer@synchromedia.co.uk</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Jim Jagielski (jimjag) <ulink url="mailto:jimjag@gmail.com">jimjag@gmail.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Andy Prevost (codeworxtech) <ulink url="mailto:codeworxtech@users.sourceforge.net">codeworxtech@users.sourceforge.net</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Brent R. Matzelle (original founder) </para>
+</simplesect>
+<simplesect kind="copyright"><para>2012 - 2020 Marcus Bointon </para>
+</simplesect>
+<simplesect kind="copyright"><para>2010 - 2012 Jim Jagielski </para>
+</simplesect>
+<simplesect kind="copyright"><para>2004 - 2009 Andy Prevost @license <ulink url="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</ulink> GNU Lesser General Public License </para>
+</simplesect>
+<simplesect kind="note"><para>This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/get_oauth_token.php" line="33" column="10"/>
+  </compounddef>
+</doxygen>

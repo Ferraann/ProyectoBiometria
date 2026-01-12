@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="dir_6b057ed5cee7be3b2c1034784503f547" kind="dir">
+    <compoundname>C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest</compoundname>
+    <innerfile refid="diagnosticotst_8php">diagnosticotst.php</innerfile>
+    <innerfile refid="lognegtest_8php">lognegtest.php</innerfile>
+    <innerfile refid="logtotxt_8php">logtotxt.php</innerfile>
+    <innerfile refid="_mock_database_8php">MockDatabase.php</innerfile>
+    <innerfile refid="test__db_8php">test_db.php</innerfile>
+    <innerfile refid="_test_total_a_p_i_8php">TestTotalAPI.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/"/>
+  </compounddef>
+</doxygen>

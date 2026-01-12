@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="main_test1_8php" kind="file" language="PHP">
+    <compoundname>mainTest1.php</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="main_test1_8php_1a7004b00e16d01d2a629e125e180c91e0" prot="public" static="no" mutable="no">
+        <type>foreach(glob(__DIR__ . &quot;/../api/logicaNegocio/*.php&quot;) as $file</type>
+        <definition>foreach (glob(__DIR__ . &quot;/../api/logicaNegocio/*.php&quot;) as $file $conn) </definition>
+        <argsstring>)</argsstring>
+        <name>$conn</name>
+        <initializer>= abrirServidor()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php" line="25" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_test1_8php_1a76d23f0fecdb90afcac4af14b0203c99" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$emailTest</definition>
+        <argsstring></argsstring>
+        <name>$emailTest</name>
+        <initializer>= &quot;esteeselcorreoparaeltest@gmail.com&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php" line="33" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_test1_8php_1a6b32d1257bd00df02f59ecfdbac9a439" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$datosUsuario</definition>
+        <argsstring></argsstring>
+        <name>$datosUsuario</name>
+        <initializer>= [
+    &apos;nombre&apos;    =&gt; &apos;NombreTest&apos;,
+    &apos;apellidos&apos; =&gt; &apos;ApellidosTest&apos;,
+    &apos;gmail&apos;     =&gt; $emailTest,
+    &apos;password&apos;  =&gt; &apos;1234PruebaSegura&apos;,
+]]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php" line="35" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_test1_8php_1a06face0ef35c41554d8f4fe115363f58" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$resultado</definition>
+        <argsstring></argsstring>
+        <name>$resultado</name>
+        <initializer>= registrarUsuario($conn, $datosUsuario)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php" line="44" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_test1_8php_1aff30dec6ab8220335a21591d246afe6e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>if( $resultado[&apos;</definition>
+        <argsstring>($resultado[&apos;</argsstring>
+        <name>if</name>
+        <initializer> === &apos;ok&apos;) {
+    
+    echo &quot;Usuario insertado correctamente.\n&quot;;
+    echo &quot;Mensaje: **&quot; . $resultado[&apos;mensaje&apos;] . &quot;**\n\n&quot;;
+} <ref refid="main_test1_8php_1a3f806f7b935027bd22a608dd8b8dbc4b" kindref="member">else</ref> {
+    
+    die(&quot;Error al insertar el usuario.\nMensaje: **&quot; . $resultado[&apos;mensaje&apos;] . &quot;**\n\n&quot;);
+}
+
+
+
+
+echo &quot;Test 2: Recoger datos del usuario --&gt; \n&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php" line="46" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php" bodystart="46" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$stmt</definition>
+        <argsstring></argsstring>
+        <name>$stmt</name>
+        <initializer>= $conn-&gt;prepare(&quot;SELECT * FROM usuario WHERE gmail = ?&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php" line="61" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_test1_8php_1a112ef069ddc0454086e3d1e6d8d55d07" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$result</definition>
+        <argsstring></argsstring>
+        <name>$result</name>
+        <initializer>= $stmt-&gt;get_result()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php" line="64" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_test1_8php_1afba4f3b049abbbbcf8229ca2095fef33" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$usuarios</definition>
+        <argsstring></argsstring>
+        <name>$usuarios</name>
+        <initializer>= []</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php" line="67" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_test1_8php_1a3f806f7b935027bd22a608dd8b8dbc4b" prot="public" static="no" mutable="no">
+        <type><ref refid="main_test1_8php_1aff30dec6ab8220335a21591d246afe6e" kindref="member">if</ref>($result &amp;&amp; $result-&gt;num_rows &gt; 0</type>
+        <definition>if (!empty( $usuarios)) else</definition>
+        <argsstring>)</argsstring>
+        <name>else</name>
+        <initializer>{
+    
+    echo &quot;No se han recuperado usuarios.\n\n&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php" line="76" column="2" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php" bodystart="76" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Fichero:<sp/>mainTest1.php<sp/>(CORREGIDO)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Autor:<sp/>Ferran<sp/>Sansaloni<sp/>Prats</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Fecha:<sp/>30/10/2025</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Descripción:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>Script<sp/>para<sp/>probar<sp/>la<sp/>lógica<sp/>de<sp/>negocio<sp/>con<sp/>la<sp/>función<sp/>registrarUsuario.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>1.<sp/>Inserta<sp/>un<sp/>usuario<sp/>de<sp/>prueba<sp/>pasando<sp/>un<sp/>array<sp/>de<sp/>datos.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>2.<sp/>Recupera<sp/>los<sp/>usuarios<sp/>con<sp/>el<sp/>correo<sp/>de<sp/>prueba.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>3.<sp/>Muestra<sp/>el<sp/>contenido<sp/>recuperado<sp/>en<sp/>formato<sp/>JSON.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>4.<sp/>Limpieza:<sp/>elimina<sp/>el<sp/>usuario<sp/>de<sp/>prueba<sp/>para<sp/>mantener<sp/>la<sp/>idempotencia.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INCLUDES<sp/>NECESARIOS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">require_once(</highlight><highlight class="stringliteral">&apos;../api/conexion.php&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal"><sp/>(glob(__DIR__<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;/../api/logicaNegocio/*.php&quot;</highlight><highlight class="normal">)<sp/>as<sp/>$file)<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>require_once<sp/>$file;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref><sp/>=<sp/>abrirServidor();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TEST<sp/>1:<sp/>Insertar<sp/>usuario</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;Test<sp/>1:<sp/>Guardar<sp/>usuario<sp/>--&gt;<sp/>\t&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//<sp/>email<sp/>que<sp/>usamos<sp/>para<sp/>el<sp/>test</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><ref refid="main_test1_8php_1a76d23f0fecdb90afcac4af14b0203c99" kindref="member">$emailTest</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;esteeselcorreoparaeltest@gmail.com&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><ref refid="main_test1_8php_1a6b32d1257bd00df02f59ecfdbac9a439" kindref="member">$datosUsuario</ref><sp/>=<sp/>[</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;nombre&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&apos;NombreTest&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;apellidos&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&apos;ApellidosTest&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;gmail&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><ref refid="main_test1_8php_1a76d23f0fecdb90afcac4af14b0203c99" kindref="member">$emailTest</ref>,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;password&apos;</highlight><highlight class="normal"><sp/><sp/>=&gt;<sp/></highlight><highlight class="stringliteral">&apos;1234PruebaSegura&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">];</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">//<sp/>**2.<sp/>Llamamos<sp/>al<sp/>metodo<sp/>registrarUsuario<sp/>con<sp/>los<sp/>2<sp/>parámetros<sp/>correctos:<sp/>$conn<sp/>y<sp/>$datosUsuario**</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//<sp/>La<sp/>función<sp/>devuelve<sp/>un<sp/>array<sp/>[&apos;status&apos;<sp/>=&gt;<sp/>&apos;ok&apos;/&apos;error&apos;,<sp/>&apos;mensaje&apos;<sp/>=&gt;<sp/>&apos;...&apos;]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="main_test1_8php_1a06face0ef35c41554d8f4fe115363f58" kindref="member">$resultado</ref><sp/>=<sp/>registrarUsuario(<ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>,<sp/><ref refid="main_test1_8php_1a6b32d1257bd00df02f59ecfdbac9a439" kindref="member">$datosUsuario</ref>);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_test1_8php_1a06face0ef35c41554d8f4fe115363f58" kindref="member">$resultado</ref>[</highlight><highlight class="stringliteral">&apos;status&apos;</highlight><highlight class="normal">]<sp/>===<sp/></highlight><highlight class="stringliteral">&apos;ok&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Todo<sp/>bien</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;Usuario<sp/>insertado<sp/>correctamente.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;Mensaje:<sp/>**&quot;</highlight><highlight class="normal"><sp/>.<sp/><ref refid="main_test1_8php_1a06face0ef35c41554d8f4fe115363f58" kindref="member">$resultado</ref>[</highlight><highlight class="stringliteral">&apos;mensaje&apos;</highlight><highlight class="normal">]<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;**\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>die(</highlight><highlight class="stringliteral">&quot;Error<sp/>al<sp/>insertar<sp/>el<sp/>usuario.\nMensaje:<sp/>**&quot;</highlight><highlight class="normal"><sp/>.<sp/><ref refid="main_test1_8php_1a06face0ef35c41554d8f4fe115363f58" kindref="member">$resultado</ref>[</highlight><highlight class="stringliteral">&apos;mensaje&apos;</highlight><highlight class="normal">]<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;**\n\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=========================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TEST<sp/>2:<sp/>Leer<sp/>datos<sp/>del<sp/>usuario</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=========================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;Test<sp/>2:<sp/>Recoger<sp/>datos<sp/>del<sp/>usuario<sp/>--&gt;<sp/>\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Ejecutamos<sp/>la<sp/>consulta</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref><sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare(</highlight><highlight class="stringliteral">&quot;SELECT<sp/>*<sp/>FROM<sp/>usuario<sp/>WHERE<sp/>gmail<sp/>=<sp/>?&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;s&quot;</highlight><highlight class="normal">,<sp/><ref refid="main_test1_8php_1a76d23f0fecdb90afcac4af14b0203c99" kindref="member">$emailTest</ref>);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;execute();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref><sp/>=<sp/><ref refid="main_test1_8php_1af27a9140d5f2658693e7fd107f716449" kindref="member">$stmt</ref>-&gt;get_result();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Lista<sp/>para<sp/>los<sp/>usuarios<sp/>con<sp/>el<sp/>correo<sp/>de<sp/>prueba</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><ref refid="main_test1_8php_1afba4f3b049abbbbcf8229ca2095fef33" kindref="member">$usuarios</ref><sp/>=<sp/>[];</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref><sp/>&amp;&amp;<sp/><ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref>-&gt;num_rows<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>($row<sp/>=<sp/><ref refid="test__db_8php_1a112ef069ddc0454086e3d1e6d8d55d07" kindref="member">$result</ref>-&gt;fetch_assoc())<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Añadimos<sp/>los<sp/>usuarios<sp/>encontrados<sp/>en<sp/>la<sp/>lista</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_test1_8php_1afba4f3b049abbbbcf8229ca2095fef33" kindref="member">$usuarios</ref>[]<sp/>=<sp/>$row;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Todo<sp/>bien</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;Usuario(s)<sp/>recuperado(s):<sp/>**&quot;</highlight><highlight class="normal"><sp/>.<sp/>count(<ref refid="main_test1_8php_1afba4f3b049abbbbcf8229ca2095fef33" kindref="member">$usuarios</ref>)<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;**\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>se<sp/>han<sp/>recuperado<sp/>usuarios.\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=========================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TEST<sp/>3:<sp/>Mostrar<sp/>contenido</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=========================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Mostramos<sp/>los<sp/>datos</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;Test<sp/>3:<sp/>Mostrar<sp/>datos<sp/>--&gt;<sp/>\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">echo<sp/>json_encode(<ref refid="main_test1_8php_1afba4f3b049abbbbcf8229ca2095fef33" kindref="member">$usuarios</ref>,<sp/>JSON_PRETTY_PRINT);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=========================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TEST<sp/>4:<sp/>Limpieza</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=========================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">echo<sp/></highlight><highlight class="stringliteral">&quot;Test<sp/>4:<sp/>Eliminar<sp/>el<sp/>dato<sp/>insertado<sp/>(idempotente)<sp/>--&gt;<sp/>\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Si<sp/>hay<sp/>alguna<sp/>usuario<sp/>con<sp/>ese<sp/>correo<sp/>electrónico<sp/>que<sp/>se<sp/>elimine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!empty(<ref refid="main_test1_8php_1afba4f3b049abbbbcf8229ca2095fef33" kindref="member">$usuarios</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>$delStmt<sp/>=<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;prepare(</highlight><highlight class="stringliteral">&quot;DELETE<sp/>FROM<sp/>usuario<sp/>WHERE<sp/>gmail<sp/>=<sp/>?&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>$delStmt-&gt;bind_param(</highlight><highlight class="stringliteral">&quot;s&quot;</highlight><highlight class="normal">,<sp/><ref refid="main_test1_8php_1a76d23f0fecdb90afcac4af14b0203c99" kindref="member">$emailTest</ref>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>($delStmt-&gt;execute())<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;Usuario<sp/>eliminado<sp/>correctamente.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>al<sp/>eliminar<sp/>usuario:<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;error<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>hay<sp/>usuario<sp/>para<sp/>eliminar.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>-&gt;close();</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/tests/mainTest1.php"/>
+  </compounddef>
+</doxygen>

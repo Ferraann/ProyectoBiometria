@@ -1,0 +1,38 @@
+\doxysection{C\+:/xampp/htdocs/\+Proyecto\+Biometria\+\_\+2/src/api/logica\+Negocio/sumar\+Puntos\+XID.php File Reference}
+\label{sumar_puntos_x_i_d_8php}\index{C:/xampp/htdocs/ProyectoBiometria\_2/src/api/logicaNegocio/sumarPuntosXID.php@{C:/xampp/htdocs/ProyectoBiometria\_2/src/api/logicaNegocio/sumarPuntosXID.php}}
+
+
+Gestión del sistema de gamificación y recompensas.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ sumar\+Puntos\+Usuario} (\$conn, \$data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestión del sistema de gamificación y recompensas. 
+
+Proporciona la funcionalidad para incrementar el saldo de puntos de un usuario. Se utiliza principalmente en módulos de incentivos por reciclaje, participación o resolución de incidencias. \begin{DoxyAuthor}{Author}
+Manuel 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11/12/2025 
+\end{DoxyDate}
+
+
+\label{doc-func-members}
+\doxysubsection{Function Documentation}
+\index{sumarPuntosXID.php@{sumarPuntosXID.php}!sumarPuntosUsuario@{sumarPuntosUsuario}}
+\index{sumarPuntosUsuario@{sumarPuntosUsuario}!sumarPuntosXID.php@{sumarPuntosXID.php}}
+\doxysubsubsection{sumarPuntosUsuario()}
+{\footnotesize\ttfamily \label{sumar_puntos_x_i_d_8php_ac843e9430e5b3d852f318a81162be32e} 
+sumar\+Puntos\+Usuario (\begin{DoxyParamCaption}\item[{}]{\$conn}{, }\item[{}]{\$data}{}\end{DoxyParamCaption})}
+
+\doxysubsection{Comprobación de integridad de entrada.}\label{sumar_puntos_x_i_d_8php_ValidacionPuntos}
+\doxysubsection{Actualización de la columna \textquotesingle{}puntos\textquotesingle{}.}\label{sumar_puntos_x_i_d_8php_IncrementoSQL}
+\begin{DoxyNote}{Note}
+Se verifica affected\+\_\+rows para confirmar que el ID existía realmente.
+\end{DoxyNote}

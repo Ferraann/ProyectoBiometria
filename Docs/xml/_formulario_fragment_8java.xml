@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="_formulario_fragment_8java" kind="file" language="Java">
+    <compoundname>FormularioFragment.java</compoundname>
+    <includes local="no">android.os.Bundle</includes>
+    <includes local="no">android.view.LayoutInflater</includes>
+    <includes local="no">android.view.View</includes>
+    <includes local="no">android.view.ViewGroup</includes>
+    <includes local="no">androidx.fragment.app.Fragment</includes>
+    <includes local="no">com.example.grupo5.aitherapp.R</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/FormularioFragment.java</label>
+        <link refid="_formulario_fragment_8java"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>android.os.Bundle</label>
+      </node>
+      <node id="3">
+        <label>android.view.LayoutInflater</label>
+      </node>
+      <node id="4">
+        <label>android.view.View</label>
+      </node>
+      <node id="5">
+        <label>android.view.ViewGroup</label>
+      </node>
+      <node id="6">
+        <label>androidx.fragment.app.Fragment</label>
+      </node>
+      <node id="7">
+        <label>com.example.grupo5.aitherapp.R</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_formulario_fragment" prot="public">com::example::grupo5::aitherapp::activitysApp::FormularioFragment</innerclass>
+    <innernamespace refid="namespacecom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app">com::example::grupo5::aitherapp::activitysApp</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">com.example.grupo5.aitherapp.activitysApp;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.os.Bundle;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.view.LayoutInflater;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.view.View;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.view.ViewGroup;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>androidx.fragment.app.Fragment;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.example.grupo5.aitherapp.R;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_formulario_fragment" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_formulario_fragment" kindref="compound">FormularioFragment</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/>Fragment<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>@Override</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>View<sp/><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_formulario_fragment_1a4e2751fedb849b6ef3cb6d99f46e3e24" kindref="member">onCreateView</ref>(LayoutInflater<sp/>inflater,<sp/>ViewGroup<sp/>container,<sp/>Bundle<sp/>savedInstanceState)<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Aquí<sp/>podrías<sp/>añadir<sp/>la<sp/>lógica<sp/>de<sp/>los<sp/>botones<sp/>si<sp/>quieres</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>inflater.inflate(R.layout.fragment_formulario,<sp/>container,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/FormularioFragment.java"/>
+  </compounddef>
+</doxygen>

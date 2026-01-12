@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_lista_premios_activity" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::activitysApp::ListaPremiosActivity</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AppCompatActivity</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_lista_premios_activity_1af6159c69ff8f5779391b9c531cd17592" prot="private" static="no" mutable="no">
+        <type>RecyclerView</type>
+        <definition>RecyclerView com.example.grupo5.aitherapp.activitysApp.ListaPremiosActivity.recyclerView</definition>
+        <argsstring></argsstring>
+        <name>recyclerView</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.ListaPremiosActivity.recyclerView</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/ListaPremiosActivity.java" line="23" column="26" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/ListaPremiosActivity.java" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_lista_premios_activity_1a49a742c4f7966f6d233f30a94547caf9" prot="private" static="no" mutable="no">
+        <type><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_premio_adapter" kindref="compound">PremioAdapter</ref></type>
+        <definition>PremioAdapter com.example.grupo5.aitherapp.activitysApp.ListaPremiosActivity.adapter</definition>
+        <argsstring></argsstring>
+        <name>adapter</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.ListaPremiosActivity.adapter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/ListaPremiosActivity.java" line="24" column="27" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/ListaPremiosActivity.java" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_lista_premios_activity_1a2b533cb89223eeead22001c6758d9cb5" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_premio" kindref="compound">PojoPremio</ref> &gt;</type>
+        <definition>List&lt;PojoPremio&gt; com.example.grupo5.aitherapp.activitysApp.ListaPremiosActivity.premios</definition>
+        <argsstring></argsstring>
+        <name>premios</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.ListaPremiosActivity.premios</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/ListaPremiosActivity.java" line="25" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/ListaPremiosActivity.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_lista_premios_activity_1a5c0519e4e27ad9c3bf6ac9f7a7650bd7" prot="private" static="no" mutable="no">
+        <type>TextView</type>
+        <definition>TextView com.example.grupo5.aitherapp.activitysApp.ListaPremiosActivity.tvCoins</definition>
+        <argsstring></argsstring>
+        <name>tvCoins</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.ListaPremiosActivity.tvCoins</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/ListaPremiosActivity.java" line="26" column="22" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/ListaPremiosActivity.java" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_lista_premios_activity_1a4c3c46c562920ccd7f4ad694edbbebe4" prot="private" static="no" mutable="no">
+        <type>ProgressBar</type>
+        <definition>ProgressBar com.example.grupo5.aitherapp.activitysApp.ListaPremiosActivity.progressBar</definition>
+        <argsstring></argsstring>
+        <name>progressBar</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.ListaPremiosActivity.progressBar</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/ListaPremiosActivity.java" line="27" column="25" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/ListaPremiosActivity.java" bodystart="27" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_lista_premios_activity_1af9a53d097b7166a4f7074ec8076ecb5d" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.ListaPremiosActivity.onCreate</definition>
+        <argsstring>(Bundle savedInstanceState)</argsstring>
+        <name>onCreate</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.ListaPremiosActivity.onCreate</qualifiedname>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/ListaPremiosActivity.java" line="30" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/ListaPremiosActivity.java" bodystart="30" bodyend="78"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>AppCompatActivity</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.ListaPremiosActivity</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_lista_premios_activity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>AppCompatActivity</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.ListaPremiosActivity</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_lista_premios_activity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/ListaPremiosActivity.java" line="21" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/ListaPremiosActivity.java" bodystart="21" bodyend="79"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_lista_premios_activity_1a49a742c4f7966f6d233f30a94547caf9" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::ListaPremiosActivity</scope><name>adapter</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_lista_premios_activity_1af9a53d097b7166a4f7074ec8076ecb5d" prot="protected" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::ListaPremiosActivity</scope><name>onCreate</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_lista_premios_activity_1a2b533cb89223eeead22001c6758d9cb5" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::ListaPremiosActivity</scope><name>premios</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_lista_premios_activity_1a4c3c46c562920ccd7f4ad694edbbebe4" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::ListaPremiosActivity</scope><name>progressBar</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_lista_premios_activity_1af6159c69ff8f5779391b9c531cd17592" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::ListaPremiosActivity</scope><name>recyclerView</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_lista_premios_activity_1a5c0519e4e27ad9c3bf6ac9f7a7650bd7" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::ListaPremiosActivity</scope><name>tvCoins</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::activitysApp::VincularQRActivity</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AppCompatActivity</basecompoundref>
+    <innerclass refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1_1_qr_data" prot="private">com::example::grupo5::aitherapp::activitysApp::VincularQRActivity::QrData</innerclass>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1ae9a18c412f330d4b7c5bee6f016807a2" prot="private" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.REQUEST_CAMERA_PERMISSION</definition>
+        <argsstring></argsstring>
+        <name>REQUEST_CAMERA_PERMISSION</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.REQUEST_CAMERA_PERMISSION</qualifiedname>
+        <initializer>= 1001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" line="57" column="30" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" bodystart="57" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1a6527d94eba58052d795a847196fcd9c4" prot="private" static="no" mutable="no">
+        <type>PreviewView</type>
+        <definition>PreviewView com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.previewView</definition>
+        <argsstring></argsstring>
+        <name>previewView</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.previewView</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" line="59" column="25" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1ae43834c3bba13fcd46c45204700da94e" prot="private" static="no" mutable="no">
+        <type>TextView</type>
+        <definition>TextView com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.textResult</definition>
+        <argsstring></argsstring>
+        <name>textResult</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.textResult</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" line="60" column="22" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1a74504c89f9f83e2250b6b3c6dc25ec6c" prot="private" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.qrProcesado</definition>
+        <argsstring></argsstring>
+        <name>qrProcesado</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.qrProcesado</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" line="62" column="21" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" bodystart="62" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1a24127a89030ef68987d26130468722a8" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.onCreate</definition>
+        <argsstring>(Bundle savedInstanceState)</argsstring>
+        <name>onCreate</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.onCreate</qualifiedname>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" line="65" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" bodystart="65" bodyend="79"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1ad9878dd2372c172658e8635fb512858b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.allPermissionsGranted</definition>
+        <argsstring>()</argsstring>
+        <name>allPermissionsGranted</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.allPermissionsGranted</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" line="81" column="21" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" bodystart="81" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1a9a9fab31ea6615e4700fdf0a4b4b3319" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.startCamera</definition>
+        <argsstring>()</argsstring>
+        <name>startCamera</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.startCamera</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" line="100" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" bodystart="100" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1a8d2e7a70310c835b5f451884db845480" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.processImageProxy</definition>
+        <argsstring>(BarcodeScanner scanner, ImageProxy imageProxy, Context context)</argsstring>
+        <name>processImageProxy</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.processImageProxy</qualifiedname>
+        <param>
+          <type>BarcodeScanner</type>
+          <declname>scanner</declname>
+        </param>
+        <param>
+          <type>ImageProxy</type>
+          <declname>imageProxy</declname>
+        </param>
+        <param>
+          <type>Context</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" line="137" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" bodystart="137" bodyend="192"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1af91663eb90b8cc6c8a0cd6cf1a74147d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.onRequestPermissionsResult</definition>
+        <argsstring>(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)</argsstring>
+        <name>onRequestPermissionsResult</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.VincularQRActivity.onRequestPermissionsResult</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>requestCode</declname>
+        </param>
+        <param>
+          <type>@NonNull String[]</type>
+          <declname>permissions</declname>
+        </param>
+        <param>
+          <type>@NonNull int[]</type>
+          <declname>grantResults</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" line="87" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" bodystart="87" bodyend="98"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>AppCompatActivity</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.VincularQRActivity</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>AppCompatActivity</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.VincularQRActivity</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" line="56" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/VincularQRActivity.java" bodystart="56" bodyend="199"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1ad9878dd2372c172658e8635fb512858b" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::VincularQRActivity</scope><name>allPermissionsGranted</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1a24127a89030ef68987d26130468722a8" prot="protected" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::VincularQRActivity</scope><name>onCreate</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1af91663eb90b8cc6c8a0cd6cf1a74147d" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::VincularQRActivity</scope><name>onRequestPermissionsResult</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1a6527d94eba58052d795a847196fcd9c4" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::VincularQRActivity</scope><name>previewView</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1a8d2e7a70310c835b5f451884db845480" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::VincularQRActivity</scope><name>processImageProxy</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1a74504c89f9f83e2250b6b3c6dc25ec6c" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::VincularQRActivity</scope><name>qrProcesado</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1ae9a18c412f330d4b7c5bee6f016807a2" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::VincularQRActivity</scope><name>REQUEST_CAMERA_PERMISSION</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1a9a9fab31ea6615e4700fdf0a4b4b3319" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::VincularQRActivity</scope><name>startCamera</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_vincular_q_r_activity_1ae43834c3bba13fcd46c45204700da94e" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::VincularQRActivity</scope><name>textResult</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

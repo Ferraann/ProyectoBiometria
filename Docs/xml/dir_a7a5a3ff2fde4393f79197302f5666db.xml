@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="dir_a7a5a3ff2fde4393f79197302f5666db" kind="dir">
+    <compoundname>C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit</compoundname>
+    <innerfile refid="_api_cliente_8java">ApiCliente.java</innerfile>
+    <innerfile refid="_api_service_8java">ApiService.java</innerfile>
+    <innerfile refid="_logica_negocio_8java">LogicaNegocio.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/"/>
+  </compounddef>
+</doxygen>

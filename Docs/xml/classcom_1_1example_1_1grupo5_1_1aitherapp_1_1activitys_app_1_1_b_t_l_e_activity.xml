@@ -1,0 +1,352 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::activitysApp::BTLEActivity</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AppCompatActivity</basecompoundref>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1abe93549504800001e962cabb96ca1107" prot="private" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String com.example.grupo5.aitherapp.activitysApp.BTLEActivity.ETIQUETA_LOG</definition>
+        <argsstring></argsstring>
+        <name>ETIQUETA_LOG</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.BTLEActivity.ETIQUETA_LOG</qualifiedname>
+        <initializer>= &quot;&gt;&gt;&gt;&gt;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" line="46" column="33" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1aa2449113a54d5234ae5af96cd1db2064" prot="private" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int com.example.grupo5.aitherapp.activitysApp.BTLEActivity.CODIGO_PETICION_PERMISOS</definition>
+        <argsstring></argsstring>
+        <name>CODIGO_PETICION_PERMISOS</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.BTLEActivity.CODIGO_PETICION_PERMISOS</qualifiedname>
+        <initializer>= 11223344</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" line="48" column="30" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" bodystart="48" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1acac9a10c395ea27d35f83b63a39fb4a7" prot="private" static="no" mutable="no">
+        <type>BluetoothLeScanner</type>
+        <definition>BluetoothLeScanner com.example.grupo5.aitherapp.activitysApp.BTLEActivity.elEscanner</definition>
+        <argsstring></argsstring>
+        <name>elEscanner</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.BTLEActivity.elEscanner</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" line="52" column="32" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1ac6dfbdbbb2bf434de6e14b5d02c943d9" prot="private" static="no" mutable="no">
+        <type>ScanCallback</type>
+        <definition>ScanCallback com.example.grupo5.aitherapp.activitysApp.BTLEActivity.callbackDelEscaneo</definition>
+        <argsstring></argsstring>
+        <name>callbackDelEscaneo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.BTLEActivity.callbackDelEscaneo</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" line="54" column="26" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" bodystart="54" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a1e09fcac451d9505c2923088a08ba0dd" prot="package" static="no" mutable="no">
+        <type>List&lt; ScanFilter &gt;</type>
+        <definition>List&lt;ScanFilter&gt; com.example.grupo5.aitherapp.activitysApp.BTLEActivity.filtros</definition>
+        <argsstring></argsstring>
+        <name>filtros</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.BTLEActivity.filtros</qualifiedname>
+        <initializer>= new ArrayList&lt;&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" line="56" column="10" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a2cc0c4e0ae57a6768d3b659ceebf51b3" prot="package" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.activitysApp.BTLEActivity.DispositivoQueSeBusca</definition>
+        <argsstring></argsstring>
+        <name>DispositivoQueSeBusca</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.BTLEActivity.DispositivoQueSeBusca</qualifiedname>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" line="59" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" bodystart="59" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a820992de52702bfb6ae28af8fece7d4e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.BTLEActivity.buscarTodosLosDispositivosBTLE</definition>
+        <argsstring>()</argsstring>
+        <name>buscarTodosLosDispositivosBTLE</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.BTLEActivity.buscarTodosLosDispositivosBTLE</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" line="64" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" bodystart="64" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a3a732cc7a094c27f93a67719c65e6780" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.BTLEActivity.mostrarInformacionDispositivoBTLE</definition>
+        <argsstring>(ScanResult resultado)</argsstring>
+        <name>mostrarInformacionDispositivoBTLE</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.BTLEActivity.mostrarInformacionDispositivoBTLE</qualifiedname>
+        <param>
+          <type>ScanResult</type>
+          <declname>resultado</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" line="107" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" bodystart="107" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a73bdd63d27356bc79c61e5e370765175" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.BTLEActivity.buscarEsteDispositivoBTLE</definition>
+        <argsstring>(final String dispositivoBuscado)</argsstring>
+        <name>buscarEsteDispositivoBTLE</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.BTLEActivity.buscarEsteDispositivoBTLE</qualifiedname>
+        <param>
+          <type>final String</type>
+          <declname>dispositivoBuscado</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" line="161" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" bodystart="161" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a9651e1505a1bbd5bee820a13c04fd67c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.BTLEActivity.detenerBusquedaDispositivosBTLE</definition>
+        <argsstring>()</argsstring>
+        <name>detenerBusquedaDispositivosBTLE</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.BTLEActivity.detenerBusquedaDispositivosBTLE</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" line="213" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" bodystart="213" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a1d064870685e63e9f691d9234d6b886e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.BTLEActivity.inicializarBlueTooth</definition>
+        <argsstring>()</argsstring>
+        <name>inicializarBlueTooth</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.BTLEActivity.inicializarBlueTooth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" line="254" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" bodystart="254" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1aec44bd5d657211aa88379e0d5e3aea1f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.BTLEActivity.enviarDatosAlServidor</definition>
+        <argsstring>(float CO2, float Temperatura)</argsstring>
+        <name>enviarDatosAlServidor</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.BTLEActivity.enviarDatosAlServidor</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>CO2</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>Temperatura</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" line="341" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" bodystart="341" bodyend="366"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1abd02b1ab9bfd1edbd1e71ff0db014ba2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.BTLEActivity.botonBuscarDispositivosBTLEPulsado</definition>
+        <argsstring>(View v)</argsstring>
+        <name>botonBuscarDispositivosBTLEPulsado</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.BTLEActivity.botonBuscarDispositivosBTLEPulsado</qualifiedname>
+        <param>
+          <type>View</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" line="229" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" bodystart="229" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a503c729f9848632554324935883306ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.BTLEActivity.botonBuscarNuestroDispositivoBTLEPulsado</definition>
+        <argsstring>(View v)</argsstring>
+        <name>botonBuscarNuestroDispositivoBTLEPulsado</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.BTLEActivity.botonBuscarNuestroDispositivoBTLEPulsado</qualifiedname>
+        <param>
+          <type>View</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" line="236" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" bodystart="236" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1ab27dd0f79a6007af6b561216a1f8faa1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.BTLEActivity.botonDetenerBusquedaDispositivosBTLEPulsado</definition>
+        <argsstring>(View v)</argsstring>
+        <name>botonDetenerBusquedaDispositivosBTLEPulsado</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.BTLEActivity.botonDetenerBusquedaDispositivosBTLEPulsado</qualifiedname>
+        <param>
+          <type>View</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" line="247" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" bodystart="247" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a0e7802cb920c449106cf0d222b0f19b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.BTLEActivity.onRequestPermissionsResult</definition>
+        <argsstring>(int requestCode, String[] permissions, int[] grantResults)</argsstring>
+        <name>onRequestPermissionsResult</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.BTLEActivity.onRequestPermissionsResult</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>requestCode</declname>
+        </param>
+        <param>
+          <type>String[]</type>
+          <declname>permissions</declname>
+        </param>
+        <param>
+          <type>int[]</type>
+          <declname>grantResults</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" line="316" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" bodystart="316" bodyend="338"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1aed4f63bdc8ac828450ce4064b9446252" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.BTLEActivity.onCreate</definition>
+        <argsstring>(Bundle savedInstanceState)</argsstring>
+        <name>onCreate</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.BTLEActivity.onCreate</qualifiedname>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" line="302" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" bodystart="302" bodyend="312"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>AppCompatActivity</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.BTLEActivity</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>AppCompatActivity</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.BTLEActivity</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" line="43" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/BTLEActivity.java" bodystart="43" bodyend="369"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1abd02b1ab9bfd1edbd1e71ff0db014ba2" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::BTLEActivity</scope><name>botonBuscarDispositivosBTLEPulsado</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a503c729f9848632554324935883306ab" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::BTLEActivity</scope><name>botonBuscarNuestroDispositivoBTLEPulsado</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1ab27dd0f79a6007af6b561216a1f8faa1" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::BTLEActivity</scope><name>botonDetenerBusquedaDispositivosBTLEPulsado</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a73bdd63d27356bc79c61e5e370765175" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::BTLEActivity</scope><name>buscarEsteDispositivoBTLE</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a820992de52702bfb6ae28af8fece7d4e" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::BTLEActivity</scope><name>buscarTodosLosDispositivosBTLE</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1ac6dfbdbbb2bf434de6e14b5d02c943d9" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::BTLEActivity</scope><name>callbackDelEscaneo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1aa2449113a54d5234ae5af96cd1db2064" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::BTLEActivity</scope><name>CODIGO_PETICION_PERMISOS</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a9651e1505a1bbd5bee820a13c04fd67c" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::BTLEActivity</scope><name>detenerBusquedaDispositivosBTLE</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a2cc0c4e0ae57a6768d3b659ceebf51b3" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::BTLEActivity</scope><name>DispositivoQueSeBusca</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1acac9a10c395ea27d35f83b63a39fb4a7" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::BTLEActivity</scope><name>elEscanner</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1aec44bd5d657211aa88379e0d5e3aea1f" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::BTLEActivity</scope><name>enviarDatosAlServidor</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1abe93549504800001e962cabb96ca1107" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::BTLEActivity</scope><name>ETIQUETA_LOG</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a1e09fcac451d9505c2923088a08ba0dd" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::BTLEActivity</scope><name>filtros</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a1d064870685e63e9f691d9234d6b886e" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::BTLEActivity</scope><name>inicializarBlueTooth</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a3a732cc7a094c27f93a67719c65e6780" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::BTLEActivity</scope><name>mostrarInformacionDispositivoBTLE</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1aed4f63bdc8ac828450ce4064b9446252" prot="protected" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::BTLEActivity</scope><name>onCreate</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_b_t_l_e_activity_1a0e7802cb920c449106cf0d222b0f19b1" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::BTLEActivity</scope><name>onRequestPermissionsResult</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

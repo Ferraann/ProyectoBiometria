@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="dir_74e48f56104d96694ffeca007d3e11cf" kind="dir">
+    <compoundname>C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src</compoundname>
+    <innerfile refid="_d_s_n_configurator_8php">DSNConfigurator.php</innerfile>
+    <innerfile refid="_exception_8php">Exception.php</innerfile>
+    <innerfile refid="_o_auth_8php">OAuth.php</innerfile>
+    <innerfile refid="_o_auth_token_provider_8php">OAuthTokenProvider.php</innerfile>
+    <innerfile refid="_p_h_p_mailer_8php">PHPMailer.php</innerfile>
+    <innerfile refid="_p_o_p3_8php">POP3.php</innerfile>
+    <innerfile refid="_s_m_t_p_8php">SMTP.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/"/>
+  </compounddef>
+</doxygen>

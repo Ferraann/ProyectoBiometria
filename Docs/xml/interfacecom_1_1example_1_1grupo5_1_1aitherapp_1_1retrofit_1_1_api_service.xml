@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service" kind="interface" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::retrofit::ApiService</compoundname>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a818e9d57c7b3f12eacda6d5fcf760ead" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Call&lt; <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor" kindref="compound">PojoRespuestaServidor</ref> &gt;</type>
+        <definition>Call&lt; PojoRespuestaServidor &gt; com.example.grupo5.aitherapp.retrofit.ApiService.datosRegistro</definition>
+        <argsstring>( @Body PojoUsuario usuario)</argsstring>
+        <name>datosRegistro</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.ApiService.datosRegistro</qualifiedname>
+        <param>
+          <type>@Body <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref></type>
+          <declname>usuario</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiService.java" line="33" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a6db8019c344eff0d07a4d653dea0fb9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Call&lt; Void &gt;</type>
+        <definition>Call&lt; Void &gt; com.example.grupo5.aitherapp.retrofit.ApiService.enviarDatos</definition>
+        <argsstring>( @Field(&quot;CO2&quot;) float co2, @Field(&quot;Temperatura&quot;) float temperatura)</argsstring>
+        <name>enviarDatos</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.ApiService.enviarDatos</qualifiedname>
+        <param>
+          <type>@Field(&quot;CO2&quot;) float</type>
+          <declname>co2</declname>
+        </param>
+        <param>
+          <type>@Field(&quot;Temperatura&quot;) float</type>
+          <declname>temperatura</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiService.java" line="39" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1af9dadd420853953102515ccd5881abe1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Call&lt; <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor" kindref="compound">PojoRespuestaServidor</ref> &gt;</type>
+        <definition>Call&lt; PojoRespuestaServidor &gt; com.example.grupo5.aitherapp.retrofit.ApiService.loginUsuario</definition>
+        <argsstring>(@Body PojoUsuario usuario)</argsstring>
+        <name>loginUsuario</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.ApiService.loginUsuario</qualifiedname>
+        <param>
+          <type>@Body <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref></type>
+          <declname>usuario</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiService.java" line="46" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a28be13e92c5c9126549c6d611446f882" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Call&lt; <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor" kindref="compound">PojoRespuestaServidor</ref> &gt;</type>
+        <definition>Call&lt; PojoRespuestaServidor &gt; com.example.grupo5.aitherapp.retrofit.ApiService.modificarDatos</definition>
+        <argsstring>(@Body PojoUsuario usuario)</argsstring>
+        <name>modificarDatos</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.ApiService.modificarDatos</qualifiedname>
+        <param>
+          <type>@Body <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref></type>
+          <declname>usuario</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiService.java" line="50" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1aec7ff4f6c6bdfbc13d93b7b81e5b465e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Call&lt; <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor" kindref="compound">PojoRespuestaServidor</ref> &gt;</type>
+        <definition>Call&lt; PojoRespuestaServidor &gt; com.example.grupo5.aitherapp.retrofit.ApiService.vincularSensor</definition>
+        <argsstring>(@Body PojoSensor sensor)</argsstring>
+        <name>vincularSensor</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.ApiService.vincularSensor</qualifiedname>
+        <param>
+          <type>@Body <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor" kindref="compound">PojoSensor</ref></type>
+          <declname>sensor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiService.java" line="54" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a0573ab7e447d4fabd7394c2817c2e7b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Call&lt; JsonObject &gt;</type>
+        <definition>Call&lt; JsonObject &gt; com.example.grupo5.aitherapp.retrofit.ApiService.crearSensorYRelacion</definition>
+        <argsstring>( @Query(&quot;accion&quot;) String accion, @Body JsonObject body)</argsstring>
+        <name>crearSensorYRelacion</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.ApiService.crearSensorYRelacion</qualifiedname>
+        <param>
+          <type>@Query(&quot;accion&quot;) String</type>
+          <declname>accion</declname>
+        </param>
+        <param>
+          <type>@Body JsonObject</type>
+          <declname>body</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiService.java" line="58" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1ab7438a0546c4934fcf9c3655fb562049" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Call&lt; <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor" kindref="compound">PojoRespuestaServidor</ref> &gt;</type>
+        <definition>Call&lt; PojoRespuestaServidor &gt; com.example.grupo5.aitherapp.retrofit.ApiService.historialDistancias</definition>
+        <argsstring>(@Body PojoUsuario usuario)</argsstring>
+        <name>historialDistancias</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.ApiService.historialDistancias</qualifiedname>
+        <param>
+          <type>@Body <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref></type>
+          <declname>usuario</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiService.java" line="63" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a3998326e460028470352128e8a89e6bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Call&lt; <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor" kindref="compound">PojoRespuestaServidor</ref> &gt;</type>
+        <definition>Call&lt; PojoRespuestaServidor &gt; com.example.grupo5.aitherapp.retrofit.ApiService.distanciaFecha</definition>
+        <argsstring>(@Body PojoUsuario usuario)</argsstring>
+        <name>distanciaFecha</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.ApiService.distanciaFecha</qualifiedname>
+        <param>
+          <type>@Body <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref></type>
+          <declname>usuario</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiService.java" line="65" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a14e90c182836777e1e7fe1d11ffc0d6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Call&lt; <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor" kindref="compound">PojoRespuestaServidor</ref> &gt;</type>
+        <definition>Call&lt; PojoRespuestaServidor &gt; com.example.grupo5.aitherapp.retrofit.ApiService.guardarDistancia</definition>
+        <argsstring>(@Body PojoUsuario usuario)</argsstring>
+        <name>guardarDistancia</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.ApiService.guardarDistancia</qualifiedname>
+        <param>
+          <type>@Body <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref></type>
+          <declname>usuario</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiService.java" line="69" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a341026bd11eb52a4cd24913522ac8d0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Call&lt; JsonObject &gt;</type>
+        <definition>Call&lt; JsonObject &gt; com.example.grupo5.aitherapp.retrofit.ApiService.obtenerSensoresUsuario</definition>
+        <argsstring>(@Body JsonObject body)</argsstring>
+        <name>obtenerSensoresUsuario</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.ApiService.obtenerSensoresUsuario</qualifiedname>
+        <param>
+          <type>@Body JsonObject</type>
+          <declname>body</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiService.java" line="72" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1aa404b3ea508e7feee4344210dec4ddba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Call&lt; <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor" kindref="compound">PojoRespuestaServidor</ref> &gt;</type>
+        <definition>Call&lt; PojoRespuestaServidor &gt; com.example.grupo5.aitherapp.retrofit.ApiService.obtenerSensoresUsuario</definition>
+        <argsstring>( @Query(&quot;accion&quot;) String accion, @Query(&quot;usuario_id&quot;) String idUsuario)</argsstring>
+        <name>obtenerSensoresUsuario</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.ApiService.obtenerSensoresUsuario</qualifiedname>
+        <param>
+          <type>@Query(&quot;accion&quot;) String</type>
+          <declname>accion</declname>
+        </param>
+        <param>
+          <type>@Query(&quot;usuario_id&quot;) String</type>
+          <declname>idUsuario</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiService.java" line="75" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiService.java" line="27" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/ApiService.java" bodystart="27" bodyend="79"/>
+    <listofallmembers>
+      <member refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a0573ab7e447d4fabd7394c2817c2e7b7" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::ApiService</scope><name>crearSensorYRelacion</name></member>
+      <member refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a818e9d57c7b3f12eacda6d5fcf760ead" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::ApiService</scope><name>datosRegistro</name></member>
+      <member refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a3998326e460028470352128e8a89e6bb" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::ApiService</scope><name>distanciaFecha</name></member>
+      <member refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a6db8019c344eff0d07a4d653dea0fb9b" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::ApiService</scope><name>enviarDatos</name></member>
+      <member refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a14e90c182836777e1e7fe1d11ffc0d6c" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::ApiService</scope><name>guardarDistancia</name></member>
+      <member refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1ab7438a0546c4934fcf9c3655fb562049" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::ApiService</scope><name>historialDistancias</name></member>
+      <member refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1af9dadd420853953102515ccd5881abe1" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::ApiService</scope><name>loginUsuario</name></member>
+      <member refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a28be13e92c5c9126549c6d611446f882" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::ApiService</scope><name>modificarDatos</name></member>
+      <member refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1a341026bd11eb52a4cd24913522ac8d0b" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::ApiService</scope><name>obtenerSensoresUsuario</name></member>
+      <member refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1aa404b3ea508e7feee4344210dec4ddba" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::ApiService</scope><name>obtenerSensoresUsuario</name></member>
+      <member refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service_1aec7ff4f6c6bdfbc13d93b7b81e5b465e" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::ApiService</scope><name>vincularSensor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

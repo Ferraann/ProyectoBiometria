@@ -1,0 +1,458 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::pojos::PojoUsuario</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a3aad7492ac729994fedf906dff19d624" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoUsuario.id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="13" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a7cdf856049410f7827f282c78423da46" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoUsuario.nombre</definition>
+        <argsstring></argsstring>
+        <name>nombre</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.nombre</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="14" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a4fa8a03b8e4ab1421aed58c9f84283d1" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoUsuario.apellidos</definition>
+        <argsstring></argsstring>
+        <name>apellidos</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.apellidos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="15" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a658f39a2e92523191215624057cc7d74" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoUsuario.gmail</definition>
+        <argsstring></argsstring>
+        <name>gmail</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.gmail</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="16" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a69479cb07d14cf4f3cf0d69303ab836a" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoUsuario.password</definition>
+        <argsstring></argsstring>
+        <name>password</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.password</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="17" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a7a37c48cadc90a7780652ceb83d21ba4" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoUsuario.activo</definition>
+        <argsstring></argsstring>
+        <name>activo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.activo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="18" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a16595072c09551cbfa611643bedd9666" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoUsuario.accion</definition>
+        <argsstring></argsstring>
+        <name>accion</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.accion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="19" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a5f271e659c3dcda5f2268b18aa6245ce" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float com.example.grupo5.aitherapp.pojos.PojoUsuario.distancia</definition>
+        <argsstring></argsstring>
+        <name>distancia</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.distancia</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="20" column="19" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a93ebeee514c84c3785e969fa2a24fed9" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoUsuario.fecha</definition>
+        <argsstring></argsstring>
+        <name>fecha</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.fecha</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="21" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="21" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a53df60f994573049b15c29d7573b5f08" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float com.example.grupo5.aitherapp.pojos.PojoUsuario.getDistancia</definition>
+        <argsstring>()</argsstring>
+        <name>getDistancia</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.getDistancia</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="24" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="24" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1ad2da1383c584725369f586575892a586" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.pojos.PojoUsuario.setDistancia</definition>
+        <argsstring>(float distancia)</argsstring>
+        <name>setDistancia</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.setDistancia</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>distancia</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="25" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="25" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1ae75bae6c83a847a3d6034399783cfa08" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoUsuario.getFecha</definition>
+        <argsstring>()</argsstring>
+        <name>getFecha</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.getFecha</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="28" column="19" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1aeb10edf3bbb03911d2bdfe770a696c33" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.pojos.PojoUsuario.setFecha</definition>
+        <argsstring>(String fecha)</argsstring>
+        <name>setFecha</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.setFecha</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>fecha</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="29" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a663ce852cf710bbccf71d0c70f37f4f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoUsuario.getId</definition>
+        <argsstring>()</argsstring>
+        <name>getId</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.getId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="32" column="19" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1abb5dcd853a809f0a7e00e62e7c2e2548" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.pojos.PojoUsuario.setId</definition>
+        <argsstring>(String id)</argsstring>
+        <name>setId</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.setId</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="33" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1afba8910be3ea718d033c831d54e15fde" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoUsuario.getNombre</definition>
+        <argsstring>()</argsstring>
+        <name>getNombre</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.getNombre</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="36" column="19" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="36" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a1d086479943a8506f81b4478d9dff67d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.pojos.PojoUsuario.setNombre</definition>
+        <argsstring>(String nombre)</argsstring>
+        <name>setNombre</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.setNombre</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>nombre</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="37" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="37" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1ac17e8140cd0d3c5fe9c95c0017ce7671" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoUsuario.getApellidos</definition>
+        <argsstring>()</argsstring>
+        <name>getApellidos</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.getApellidos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="40" column="19" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a50ad801d86ed5532e07085376c3431e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.pojos.PojoUsuario.setApellidos</definition>
+        <argsstring>(String apellidos)</argsstring>
+        <name>setApellidos</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.setApellidos</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>apellidos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="41" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a8e6280bdc91f6bb5cf7dbc5d378d9a2e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoUsuario.getCorreo</definition>
+        <argsstring>()</argsstring>
+        <name>getCorreo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.getCorreo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="44" column="19" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1aeac902bfb1cfff233715c0f67b8b44b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.pojos.PojoUsuario.setCorreo</definition>
+        <argsstring>(String correo)</argsstring>
+        <name>setCorreo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.setCorreo</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>correo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="45" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="45" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1ac2d6f33cd053336cc72ecea4a45bb9fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoUsuario.getContrasenya</definition>
+        <argsstring>()</argsstring>
+        <name>getContrasenya</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.getContrasenya</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="48" column="19" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a832960ec7c37f2bf8e811b2fd4e7fad3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.pojos.PojoUsuario.setContrasenya</definition>
+        <argsstring>(String contrasenya)</argsstring>
+        <name>setContrasenya</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.setContrasenya</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>contrasenya</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="49" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="49" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a6c28660839f559839529f6a2ae330192" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoUsuario.getActivo</definition>
+        <argsstring>()</argsstring>
+        <name>getActivo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.getActivo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="52" column="19" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="52" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1ad806aaa71aebd9450e49ecc338e8c93e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.pojos.PojoUsuario.setActivo</definition>
+        <argsstring>(String activo)</argsstring>
+        <name>setActivo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.setActivo</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>activo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="53" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1ab9c76f5902ae5b7e374f7392e2d7a701" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String com.example.grupo5.aitherapp.pojos.PojoUsuario.getAction</definition>
+        <argsstring>()</argsstring>
+        <name>getAction</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.getAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="56" column="19" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="56" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1adcc3ffdd168c4e6abe5454a239ce9747" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.pojos.PojoUsuario.setAction</definition>
+        <argsstring>(String action)</argsstring>
+        <name>setAction</name>
+        <qualifiedname>com.example.grupo5.aitherapp.pojos.PojoUsuario.setAction</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>action</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="57" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="57" bodyend="57"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" line="12" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/pojos/PojoUsuario.java" bodystart="12" bodyend="58"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a16595072c09551cbfa611643bedd9666" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>accion</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a7a37c48cadc90a7780652ceb83d21ba4" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>activo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a4fa8a03b8e4ab1421aed58c9f84283d1" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>apellidos</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a5f271e659c3dcda5f2268b18aa6245ce" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>distancia</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a93ebeee514c84c3785e969fa2a24fed9" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>fecha</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1ab9c76f5902ae5b7e374f7392e2d7a701" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>getAction</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a6c28660839f559839529f6a2ae330192" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>getActivo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1ac17e8140cd0d3c5fe9c95c0017ce7671" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>getApellidos</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1ac2d6f33cd053336cc72ecea4a45bb9fd" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>getContrasenya</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a8e6280bdc91f6bb5cf7dbc5d378d9a2e" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>getCorreo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a53df60f994573049b15c29d7573b5f08" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>getDistancia</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1ae75bae6c83a847a3d6034399783cfa08" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>getFecha</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a663ce852cf710bbccf71d0c70f37f4f1" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>getId</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1afba8910be3ea718d033c831d54e15fde" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>getNombre</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a658f39a2e92523191215624057cc7d74" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>gmail</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a3aad7492ac729994fedf906dff19d624" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>id</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a7cdf856049410f7827f282c78423da46" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>nombre</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a69479cb07d14cf4f3cf0d69303ab836a" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>password</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1adcc3ffdd168c4e6abe5454a239ce9747" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>setAction</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1ad806aaa71aebd9450e49ecc338e8c93e" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>setActivo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a50ad801d86ed5532e07085376c3431e3" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>setApellidos</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a832960ec7c37f2bf8e811b2fd4e7fad3" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>setContrasenya</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1aeac902bfb1cfff233715c0f67b8b44b4" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>setCorreo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1ad2da1383c584725369f586575892a586" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>setDistancia</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1aeb10edf3bbb03911d2bdfe770a696c33" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>setFecha</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1abb5dcd853a809f0a7e00e62e7c2e2548" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>setId</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario_1a1d086479943a8506f81b4478d9dff67d" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::pojos::PojoUsuario</scope><name>setNombre</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="dir_5fcdb5b3f92569ac7f0cd7e0b6a72630" kind="dir">
+    <compoundname>C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio</compoundname>
+    <innerfile refid="activar_usuario_8php">activarUsuario.php</innerfile>
+    <innerfile refid="actualizar_usuario_8php">actualizarUsuario.php</innerfile>
+    <innerfile refid="canjear_recompensa_8php">canjearRecompensa.php</innerfile>
+    <innerfile refid="cerrar_incidencia_8php">cerrarIncidencia.php</innerfile>
+    <innerfile refid="crear_incidencia_8php">crearIncidencia.php</innerfile>
+    <innerfile refid="crear_sensor_y_relacion_8php">crearSensorYRelacion.php</innerfile>
+    <innerfile refid="crear_tipo_medicion_8php">crearTipoMedicion.php</innerfile>
+    <innerfile refid="distancias_8php">distancias.php</innerfile>
+    <innerfile refid="guardar_foto_incidencia_8php">guardarFotoIncidencia.php</innerfile>
+    <innerfile refid="guardar_foto_usuario_8php">guardarFotoUsuario.php</innerfile>
+    <innerfile refid="guardar_medicion_8php">guardarMedicion.php</innerfile>
+    <innerfile refid="login_usuario_8php">loginUsuario.php</innerfile>
+    <innerfile refid="mailer_8php">mailer.php</innerfile>
+    <innerfile refid="modificar_incidencia_8php">modificarIncidencia.php</innerfile>
+    <innerfile refid="obtener_estados_incidencias_8php">obtenerEstadosIncidencias.php</innerfile>
+    <innerfile refid="obtener_fotos_incidencias_8php">obtenerFotosIncidencias.php</innerfile>
+    <innerfile refid="obtener_foto_usuario_x_id_8php">obtenerFotoUsuarioXId.php</innerfile>
+    <innerfile refid="obtener_incidencia_x_id_8php">obtenerIncidenciaXId.php</innerfile>
+    <innerfile refid="obtener_lista_sensores_8php">obtenerListaSensores.php</innerfile>
+    <innerfile refid="obtener_medicion_8php">obtenerMedicion.php</innerfile>
+    <innerfile refid="obtener_sensores_x_id_usuario_8php">obtenerSensoresXIdUsuario.php</innerfile>
+    <innerfile refid="obtener_sensor_x_id_8php">obtenerSensorXId.php</innerfile>
+    <innerfile refid="obtener_todas_incidencias_8php">obtenerTodasIncidencias.php</innerfile>
+    <innerfile refid="obtener_usuario_x_id_8php">obtenerUsuarioXId.php</innerfile>
+    <innerfile refid="problemas_sensor_8php">problemasSensor.php</innerfile>
+    <innerfile refid="registrar_usuario_8php">registrarUsuario.php</innerfile>
+    <innerfile refid="roles_8php">roles.php</innerfile>
+    <innerfile refid="sumar_puntos_x_i_d_8php">sumarPuntosXID.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/"/>
+  </compounddef>
+</doxygen>

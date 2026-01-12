@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="_o_auth_8php" kind="file" language="PHP">
+    <compoundname>OAuth.php</compoundname>
+    <innerclass refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth" prot="public">PHPMailer::PHPMailer::OAuth</innerclass>
+    <innernamespace refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer">PHPMailer::PHPMailer</innernamespace>
+    <innernamespace refid="namespace_league_1_1_o_auth2_1_1_client_1_1_grant_1_1_refresh_token">League::OAuth2::Client::Grant::RefreshToken</innernamespace>
+    <innernamespace refid="namespace_league_1_1_o_auth2_1_1_client_1_1_provider_1_1_abstract_provider">League::OAuth2::Client::Provider::AbstractProvider</innernamespace>
+    <innernamespace refid="namespace_league_1_1_o_auth2_1_1_client_1_1_token_1_1_access_token">League::OAuth2::Client::Token::AccessToken</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">PHPMailer\PHPMailer;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">use<sp/>League\OAuth2\Client\Grant\RefreshToken;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">use<sp/>League\OAuth2\Client\Provider\AbstractProvider;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">use<sp/>League\OAuth2\Client\Token\AccessToken;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth" kindref="compound">OAuth</ref><sp/></highlight><highlight class="keyword">implements</highlight><highlight class="normal"><sp/><ref refid="interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider" kindref="compound">OAuthTokenProvider</ref></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a15f2963f6283e29e91812e29ebcbe454" kindref="member">$provider</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1ad839c78824f7946f48c5f9c58f148ca5" kindref="member">$oauthToken</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a94fce4de59fbf69e28964144691f82dc" kindref="member">$oauthUserEmail</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a6aad19fe065250b5bd496ece9f414e2b" kindref="member">$oauthClientSecret</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1af3e5e31b8f85412de717c8ad27d91943" kindref="member">$oauthClientId</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a84dc2ab02eca2d0aafcbb178a5a778e9" kindref="member">$oauthRefreshToken</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a58d10691ef6d5f8576b302ac11d39756" kindref="member">__construct</ref>($options)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;provider<sp/>=<sp/>$options[</highlight><highlight class="stringliteral">&apos;provider&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;oauthUserEmail<sp/>=<sp/>$options[</highlight><highlight class="stringliteral">&apos;userName&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;oauthClientSecret<sp/>=<sp/>$options[</highlight><highlight class="stringliteral">&apos;clientSecret&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;oauthClientId<sp/>=<sp/>$options[</highlight><highlight class="stringliteral">&apos;clientId&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;oauthRefreshToken<sp/>=<sp/>$options[</highlight><highlight class="stringliteral">&apos;refreshToken&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a489d6e6f54e346e72b628be10863fd24" kindref="member">getGrant</ref>()</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>RefreshToken();</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1aca2254505ade7984c55d2fcdc1b2f44a" kindref="member">getToken</ref>()</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>$this-&gt;provider-&gt;getAccessToken(</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;<ref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a489d6e6f54e346e72b628be10863fd24" kindref="member">getGrant</ref>(),</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[</highlight><highlight class="stringliteral">&apos;refresh_token&apos;</highlight><highlight class="normal"><sp/>=&gt;<sp/>$this-&gt;oauthRefreshToken]</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1a4a3f424167a7c1c4eb99068432045d5e" kindref="member">getOauth64</ref>()</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Get<sp/>a<sp/>new<sp/>token<sp/>if<sp/>it&apos;s<sp/>not<sp/>available<sp/>or<sp/>has<sp/>expired</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">null</highlight><highlight class="normal"><sp/>===<sp/>$this-&gt;oauthToken<sp/>||<sp/>$this-&gt;oauthToken-&gt;hasExpired())<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;oauthToken<sp/>=<sp/>$this-&gt;<ref refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_1aca2254505ade7984c55d2fcdc1b2f44a" kindref="member">getToken</ref>();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>base64_encode(</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;user=&apos;</highlight><highlight class="normal"><sp/>.</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;oauthUserEmail<sp/>.</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;\001auth=Bearer<sp/>&quot;</highlight><highlight class="normal"><sp/>.</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$this-&gt;oauthToken<sp/>.</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;\001\001&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuth.php"/>
+  </compounddef>
+</doxygen>

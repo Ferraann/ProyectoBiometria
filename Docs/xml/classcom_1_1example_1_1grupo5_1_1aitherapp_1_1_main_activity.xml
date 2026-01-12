@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::MainActivity</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AppCompatActivity</basecompoundref>
+    <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity_1a07b8e7b0c5e0e9e71ccffb401016c1b2" prot="package" static="no" mutable="no">
+        <type>EditText</type>
+        <definition>EditText com.example.grupo5.aitherapp.MainActivity.Email</definition>
+        <argsstring></argsstring>
+        <name>Email</name>
+        <qualifiedname>com.example.grupo5.aitherapp.MainActivity.Email</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/MainActivity.java" line="25" column="14" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/MainActivity.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity_1a6bcf0d70867611a0f81c6f1e81cbbdb0" prot="package" static="no" mutable="no">
+        <type>EditText</type>
+        <definition>EditText com.example.grupo5.aitherapp.MainActivity.Contrasenya</definition>
+        <argsstring></argsstring>
+        <name>Contrasenya</name>
+        <qualifiedname>com.example.grupo5.aitherapp.MainActivity.Contrasenya</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/MainActivity.java" line="25" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/MainActivity.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity_1ae4033a0979f287653dde313bae671e51" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.MainActivity.onCreate</definition>
+        <argsstring>(Bundle savedInstanceState)</argsstring>
+        <name>onCreate</name>
+        <qualifiedname>com.example.grupo5.aitherapp.MainActivity.onCreate</qualifiedname>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/MainActivity.java" line="28" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/MainActivity.java" bodystart="28" bodyend="43"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity_1a538c092f0e2a4e52fe9ce76290aad001" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.MainActivity.botonRegistrarse</definition>
+        <argsstring>(View v)</argsstring>
+        <name>botonRegistrarse</name>
+        <qualifiedname>com.example.grupo5.aitherapp.MainActivity.botonRegistrarse</qualifiedname>
+        <param>
+          <type>View</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/MainActivity.java" line="45" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/MainActivity.java" bodystart="45" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity_1ae0a383d130c453dec923b86bfff641a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.MainActivity.botonOlvidarContrasenya</definition>
+        <argsstring>(View v)</argsstring>
+        <name>botonOlvidarContrasenya</name>
+        <qualifiedname>com.example.grupo5.aitherapp.MainActivity.botonOlvidarContrasenya</qualifiedname>
+        <param>
+          <type>View</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/MainActivity.java" line="49" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/MainActivity.java" bodystart="49" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity_1abcec2ea6414652b3302766dc26a1cd1e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.MainActivity.botonLogin</definition>
+        <argsstring>(View v)</argsstring>
+        <name>botonLogin</name>
+        <qualifiedname>com.example.grupo5.aitherapp.MainActivity.botonLogin</qualifiedname>
+        <param>
+          <type>View</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/MainActivity.java" line="53" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/MainActivity.java" bodystart="53" bodyend="68"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity_1a1d00b948a2495c92683d4c90d23eb9c3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.MainActivity.showFingerprintLogin</definition>
+        <argsstring>()</argsstring>
+        <name>showFingerprintLogin</name>
+        <qualifiedname>com.example.grupo5.aitherapp.MainActivity.showFingerprintLogin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/MainActivity.java" line="70" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/MainActivity.java" bodystart="70" bodyend="98"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>AppCompatActivity</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.MainActivity</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>AppCompatActivity</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.MainActivity</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/MainActivity.java" line="23" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/MainActivity.java" bodystart="23" bodyend="99"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity_1abcec2ea6414652b3302766dc26a1cd1e" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::MainActivity</scope><name>botonLogin</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity_1ae0a383d130c453dec923b86bfff641a0" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::MainActivity</scope><name>botonOlvidarContrasenya</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity_1a538c092f0e2a4e52fe9ce76290aad001" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::MainActivity</scope><name>botonRegistrarse</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity_1a6bcf0d70867611a0f81c6f1e81cbbdb0" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::MainActivity</scope><name>Contrasenya</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity_1a07b8e7b0c5e0e9e71ccffb401016c1b2" prot="package" virt="non-virtual"><scope>com::example::grupo5::aitherapp::MainActivity</scope><name>Email</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity_1ae4033a0979f287653dde313bae671e51" prot="protected" virt="non-virtual"><scope>com::example::grupo5::aitherapp::MainActivity</scope><name>onCreate</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity_1a1d00b948a2495c92683d4c90d23eb9c3" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::MainActivity</scope><name>showFingerprintLogin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

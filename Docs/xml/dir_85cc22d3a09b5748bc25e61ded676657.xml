@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="dir_85cc22d3a09b5748bc25e61ded676657" kind="dir">
+    <compoundname>C:/xampp/htdocs/ProyectoBiometria_2/src/php</compoundname>
+    <innerfile refid="actualizar__perfil_8php">actualizar_perfil.php</innerfile>
+    <innerfile refid="logout_8php">logout.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/php/"/>
+  </compounddef>
+</doxygen>

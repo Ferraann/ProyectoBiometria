@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::btle::BtleScannerMultiple</compoundname>
+    <innerclass refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1_1_listener" prot="public">com::example::grupo5::aitherapp::btle::BtleScannerMultiple::Listener</innerclass>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1a317b92d9da2887d1dda6c73346742273" prot="private" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String com.example.grupo5.aitherapp.btle.BtleScannerMultiple.TAG</definition>
+        <argsstring></argsstring>
+        <name>TAG</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.BtleScannerMultiple.TAG</qualifiedname>
+        <initializer>= &quot;BtleScannerMultiple&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" line="30" column="33" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1a3d3c2bc99a098847b017955bb00ff3c2" prot="private" static="yes" mutable="no">
+        <type>final long</type>
+        <definition>final long com.example.grupo5.aitherapp.btle.BtleScannerMultiple.TIEMPO_DESCONEXION_MS</definition>
+        <argsstring></argsstring>
+        <name>TIEMPO_DESCONEXION_MS</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.BtleScannerMultiple.TIEMPO_DESCONEXION_MS</qualifiedname>
+        <initializer>= 20000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" line="33" column="31" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" bodystart="33" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1ae93826af00c0e7b8b9b987fd7dace3fa" prot="private" static="no" mutable="no">
+        <type>final Context</type>
+        <definition>final Context com.example.grupo5.aitherapp.btle.BtleScannerMultiple.context</definition>
+        <argsstring></argsstring>
+        <name>context</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.BtleScannerMultiple.context</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" line="35" column="27" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1a2752c9238f93375dec5d9ab0bbb052b3" prot="private" static="no" mutable="no">
+        <type>final List&lt; String &gt;</type>
+        <definition>final List&lt;String&gt; com.example.grupo5.aitherapp.btle.BtleScannerMultiple.macsObjetivo</definition>
+        <argsstring></argsstring>
+        <name>macsObjetivo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.BtleScannerMultiple.macsObjetivo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" line="36" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1a34021906afbbee7ca73f416ea1f38ed6" prot="private" static="no" mutable="no">
+        <type>final <ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1_1_listener" kindref="compound">Listener</ref></type>
+        <definition>final Listener com.example.grupo5.aitherapp.btle.BtleScannerMultiple.listener</definition>
+        <argsstring></argsstring>
+        <name>listener</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.BtleScannerMultiple.listener</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" line="37" column="28" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1ae1c30fbb159cb3605565472e6de87452" prot="private" static="no" mutable="no">
+        <type>BluetoothLeScanner</type>
+        <definition>BluetoothLeScanner com.example.grupo5.aitherapp.btle.BtleScannerMultiple.scanner</definition>
+        <argsstring></argsstring>
+        <name>scanner</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.BtleScannerMultiple.scanner</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" line="39" column="32" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1a6897f28eaaded4c3464e82f3f528e741" prot="private" static="no" mutable="no">
+        <type>ScanCallback</type>
+        <definition>ScanCallback com.example.grupo5.aitherapp.btle.BtleScannerMultiple.callback</definition>
+        <argsstring></argsstring>
+        <name>callback</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.BtleScannerMultiple.callback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" line="40" column="26" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1ac1f401c24ad744dd54b6548d7674b2ba" prot="private" static="no" mutable="no">
+        <type>final HashMap&lt; String, Double &gt;</type>
+        <definition>final HashMap&lt;String, Double&gt; com.example.grupo5.aitherapp.btle.BtleScannerMultiple.distanciasSuavizadas</definition>
+        <argsstring></argsstring>
+        <name>distanciasSuavizadas</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.BtleScannerMultiple.distanciasSuavizadas</qualifiedname>
+        <initializer>= new HashMap&lt;&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" line="43" column="27" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1a6de8b54b24f7c39e9ec1ef3d0c3fc740" prot="private" static="no" mutable="no">
+        <type>final HashMap&lt; String, Long &gt;</type>
+        <definition>final HashMap&lt;String, Long&gt; com.example.grupo5.aitherapp.btle.BtleScannerMultiple.ultimoVisto</definition>
+        <argsstring></argsstring>
+        <name>ultimoVisto</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.BtleScannerMultiple.ultimoVisto</qualifiedname>
+        <initializer>= new HashMap&lt;&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" line="46" column="27" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1abbac2adcc4d879a8402ca46f00ed370d" prot="private" static="no" mutable="no">
+        <type>final HashMap&lt; String, Boolean &gt;</type>
+        <definition>final HashMap&lt;String, Boolean&gt; com.example.grupo5.aitherapp.btle.BtleScannerMultiple.estadoConexion</definition>
+        <argsstring></argsstring>
+        <name>estadoConexion</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.BtleScannerMultiple.estadoConexion</qualifiedname>
+        <initializer>= new HashMap&lt;&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" line="49" column="27" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" bodystart="49" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1a8034474b758e424736d823aba586b06f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>com.example.grupo5.aitherapp.btle.BtleScannerMultiple.BtleScannerMultiple</definition>
+        <argsstring>(Context context, List&lt; String &gt; macs, Listener listener)</argsstring>
+        <name>BtleScannerMultiple</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.BtleScannerMultiple.BtleScannerMultiple</qualifiedname>
+        <param>
+          <type>Context</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>List&lt; String &gt;</type>
+          <declname>macs</declname>
+        </param>
+        <param>
+          <type><ref refid="interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1_1_listener" kindref="compound">Listener</ref></type>
+          <declname>listener</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" line="68" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" bodystart="68" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1a6079eb3e400481b5e9053bbc02687e62" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.btle.BtleScannerMultiple.iniciarEscaneo</definition>
+        <argsstring>()</argsstring>
+        <name>iniciarEscaneo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.BtleScannerMultiple.iniciarEscaneo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" line="85" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" bodystart="85" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1ae84130d3d9ea50f6606be1dc1cc2894a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.btle.BtleScannerMultiple.detenerEscaneo</definition>
+        <argsstring>()</argsstring>
+        <name>detenerEscaneo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.BtleScannerMultiple.detenerEscaneo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" line="173" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" bodystart="173" bodyend="187"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1a3df1e3edf09b6ea8789e2199951c659f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double com.example.grupo5.aitherapp.btle.BtleScannerMultiple.calcularDistanciaAprox</definition>
+        <argsstring>(String mac, int rssi)</argsstring>
+        <name>calcularDistanciaAprox</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.BtleScannerMultiple.calcularDistanciaAprox</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>mac</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>rssi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" line="193" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" bodystart="193" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1ab6fff46a16747b5201164553aec7c2ab" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.btle.BtleScannerMultiple.iniciarSupervisorDesconexion</definition>
+        <argsstring>()</argsstring>
+        <name>iniciarSupervisorDesconexion</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.BtleScannerMultiple.iniciarSupervisorDesconexion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" line="223" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" bodystart="223" bodyend="259"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Escáner BLE múltiple diseñado para detectar varios sensores afiliados por MAC. Incluye:<itemizedlist>
+<listitem><para>Distancia aproximada suavizada (EMA)</para>
+</listitem><listitem><para>Detección de desconexión (sin señal prolongada)</para>
+</listitem><listitem><para>Callbacks para Activities </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" line="28" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/BtleScannerMultiple.java" bodystart="28" bodyend="261"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1a8034474b758e424736d823aba586b06f" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::BtleScannerMultiple</scope><name>BtleScannerMultiple</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1a3df1e3edf09b6ea8789e2199951c659f" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::BtleScannerMultiple</scope><name>calcularDistanciaAprox</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1a6897f28eaaded4c3464e82f3f528e741" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::BtleScannerMultiple</scope><name>callback</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1ae93826af00c0e7b8b9b987fd7dace3fa" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::BtleScannerMultiple</scope><name>context</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1ae84130d3d9ea50f6606be1dc1cc2894a" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::BtleScannerMultiple</scope><name>detenerEscaneo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1ac1f401c24ad744dd54b6548d7674b2ba" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::BtleScannerMultiple</scope><name>distanciasSuavizadas</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1abbac2adcc4d879a8402ca46f00ed370d" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::BtleScannerMultiple</scope><name>estadoConexion</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1a6079eb3e400481b5e9053bbc02687e62" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::BtleScannerMultiple</scope><name>iniciarEscaneo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1ab6fff46a16747b5201164553aec7c2ab" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::BtleScannerMultiple</scope><name>iniciarSupervisorDesconexion</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1a34021906afbbee7ca73f416ea1f38ed6" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::BtleScannerMultiple</scope><name>listener</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1a2752c9238f93375dec5d9ab0bbb052b3" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::BtleScannerMultiple</scope><name>macsObjetivo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1ae1c30fbb159cb3605565472e6de87452" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::BtleScannerMultiple</scope><name>scanner</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1a317b92d9da2887d1dda6c73346742273" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::BtleScannerMultiple</scope><name>TAG</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1a3d3c2bc99a098847b017955bb00ff3c2" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::BtleScannerMultiple</scope><name>TIEMPO_DESCONEXION_MS</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1a6de8b54b24f7c39e9ec1ef3d0c3fc740" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::BtleScannerMultiple</scope><name>ultimoVisto</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

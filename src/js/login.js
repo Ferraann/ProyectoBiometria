@@ -1,31 +1,42 @@
-/* 
-===============================================================================
-NOMBRE: login.js
-DESCRIPCIÓN: 
-COPYRIGHT: © 2025 AITHER. Todos los derechos reservados.
-FECHA: 04/11/2025
-AUTOR: Ferran y Manuel
-APORTACIÓN: 
-===============================================================================
-*/
-// ELEMENTOS DEL DOM
+/**
+ * @file login.js
+ * @brief Gestión del sistema de autenticación y registro de usuarios.
+ * @details Este script controla la interfaz de acceso de AITHER, incluyendo:
+ * - Animaciones de transición entre Login y Registro.
+ * - Validación de fortaleza de contraseñas.
+ * - Comunicación asíncrona con la API para autenticación y roles.
+ * - Gestión de la persistencia de sesión mediante SessionStorage y LocalStorage.
+ * - Control del popup interactivo de políticas de privacidad.
+ * @author Ferran y Manuel
+ * @date 04/11/2025
+ * @copyright © 2025 AITHER. Todos los derechos reservados.
+ */
+
+/** @name ReferenciasDOM
+ * @{
+ */
+
+/** @brief Contenedor principal de los formularios. @type {HTMLElement} */
 const container = document.getElementById("container");
+/** @brief Botón para activar el panel de registro. @type {HTMLElement} */
 const signUpBtn = document.getElementById("signUpBtn");
+/** @brief Botón para activar el panel de inicio de sesión. @type {HTMLElement} */
 const signInBtn = document.getElementById("signInBtn");
-
-// FORMULARIOS
+/** @brief Formulario de inicio de sesión. @type {HTMLFormElement} */
 const loginForm = document.querySelector(".sign-in-container form");
+/** @brief Formulario de registro. @type {HTMLFormElement} */
 const registerForm = document.querySelector(".sign-up-container form");
-
-// Botón del header
+/** @brief Enlace de acción en el menú de navegación. @type {HTMLAnchorElement} */
 const botonHeader = document.querySelector("nav ul li:last-child a");
+/** @} */
 
-// ============================
-// MENSAJES DE ERROR (independientes)
-// ============================
+/* ============================
+   GESTIÓN DE MENSAJES
+   ============================ */
 
-// Estilos del mensaje para login
+/** @brief Elemento de mensaje para errores de login. */
 let msgLogin = document.createElement("p");
+
 msgLogin.id = "message-login";
 msgLogin.style.marginTop = "10px";
 msgLogin.style.fontWeight = "600";
@@ -34,8 +45,9 @@ msgLogin.style.textAlign = "center";
 msgLogin.style.color = "white";
 msgLogin.classList.remove("fade-out");
 
-// Estilos del mensaje para registro
+/** @brief Elemento de mensaje para errores de registro. */
 let msgRegister = document.createElement("p");
+
 msgRegister.id = "message-register";
 msgRegister.style.marginTop = "10px";
 msgRegister.style.fontWeight = "600";
@@ -46,9 +58,9 @@ msgRegister.style.color = "white";
 msgRegister.classList.remove("fade-out");
 
 
-// ============================
-// MOSTRAR / OCULTAR CONTRASEÑA
-// ============================
+/**
+ * @section MOSTRAR / OCULTAR CONTRASEÑA
+ */
 
 document.querySelectorAll(".toggle-password").forEach(icon => {
   icon.addEventListener("click", () => {
@@ -59,55 +71,54 @@ document.querySelectorAll(".toggle-password").forEach(icon => {
   });
 });
 
+/**
+ * @section ANIMACIÓN ENTRE LOGIN/REGISTER
+ */
 
-// ============================
-// ANIMACIÓN ENTRE LOGIN Y REGISTRO
-// ============================
-
-// Cuando se pulsa el boton de registro se añade la clase active
+/** @brief Cuando se pulsa el boton de registro se añade la clase active */
 signUpBtn.addEventListener("click", () => {
   container.classList.add("active");
 });
 
-// Cuando se pulsa el boton de inicio de sesión se quita la clase active
+/** @brief Cuando se pulsa el boton de inicio de sesión se quita la clase active */
 signInBtn.addEventListener("click", () => {
   container.classList.remove("active");
 });
 
-// Cambios de color del botón del header según el estado
+/** @brief Cambios de color del botón del header según el estado */
 container.addEventListener("transitionend", () => {
   botonHeader.classList.toggle("active", container.classList.contains("active"));
 });
 
-// Actualizar el estado del boton de inicio de sesión del header
+/** @brief Actualizar el estado del boton de inicio de sesión del header */
 function updateHeaderLoginButton() {
   const isRegister = container.classList.contains("active");
   botonHeader.classList.toggle("disabled", !isRegister);
   botonHeader.classList.toggle("enabled", isRegister);
 }
 
-// Llamada inicial al cargar la página
+/** @brief Llamada inicial al cargar la página */
 updateHeaderLoginButton();
 
-// Actualizar tras animaciones o clics
+/** @brief Actualizar tras animaciones o clics */
 container.addEventListener("transitionend", updateHeaderLoginButton);
 signUpBtn.addEventListener("click", updateHeaderLoginButton);
 signInBtn.addEventListener("click", updateHeaderLoginButton);
 
-// Interceptar click en el header
+
+/** @brief Interceptar click en el header */
+
 botonHeader.addEventListener("click", (e) => {
   e.preventDefault();
-  // Si el hoton header tiene la clase disabled nada
   if (botonHeader.classList.contains("disabled")) return;
-  // Si no, es decir, que tiene la clase active, primero se le quita la clase active y se llama a updateHeaderLoginButton()
   container.classList.remove("active");
   updateHeaderLoginButton();
   document.getElementById("correo-sign-in")?.focus();
 });
 
-// ---------------------------------------------------------------------------
-// FUNCIÓN AUXILIAR: Mostrar mensaje con desvanecimiento
-// ---------------------------------------------------------------------------
+/**
+ * @section FUNCIÓN AUXILIAR: Mostrar mensaje con desvanecimiento
+ */
 function mostrarMensaje(tipo, texto, duracion = 3000) {
   const msg = tipo === "login" ? msgLogin : msgRegister;
   msg.textContent = texto;
@@ -122,9 +133,9 @@ function mostrarMensaje(tipo, texto, duracion = 3000) {
   setTimeout(() => msg.classList.add("fade-out"), duracion);
 }
 
-// ---------------------------------------------------------------------------
-// EVENTO: LOGIN → consume API vía index.php (acción: login)
-// ---------------------------------------------------------------------------
+/**
+ * @section EVENTO: LOGIN → consume API vía index.php (acción: login)
+ */
 loginForm.addEventListener("submit", async e => {
   e.preventDefault();
 
@@ -137,7 +148,7 @@ loginForm.addEventListener("submit", async e => {
   }
 
   try {
-    // PASO 1: Intentar iniciar sesión (POST)
+    /** @brief PASO 1: Intentar iniciar sesión (POST) */
     const response = await fetch("../api/index.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -154,7 +165,7 @@ loginForm.addEventListener("submit", async e => {
       window.sessionStorage.setItem("idUsuario", usuarioId.toString());
       localStorage.setItem("user", JSON.stringify(usuario));
 
-      // PASO 2: Verificar roles mediante llamadas GET
+      /** @brief PASO 2: Verificar roles mediante llamadas GET */
       const urlTecnico = "https://fsanpra.upv.edu.es/src/html/incidencias.html";
       const urlAdmin = "https://fsanpra.upv.edu.es/src/html/incidencias.html";
       let redirectURL = "dashboard.php"; // URL por defecto si no es ni técnico ni administrador
@@ -163,21 +174,21 @@ loginForm.addEventListener("submit", async e => {
       const dataTecnico = await resTecnico.json();
       const esTecnico = dataTecnico.es_tecnico || false;
 
-      // Llamada 2b: ¿Es administrador?
+      /** @brief Llamada 2b: ¿Es administrador? */
       const resAdmin = await fetch(`../api/index.php?accion=esAdministrador&id=${usuarioId}`);
       const dataAdmin = await resAdmin.json();
       const esAdministrador = dataAdmin.es_admin || false;
 
-      // PASO 3: Redirigir según el rol
+      /** @brief PASO 3: Redirigir según el rol */
       if (esTecnico) {
         redirectURL = urlTecnico;
       }
 
       if (esAdministrador) {
-        redirectURL = urlAdmin; //admin tiene prioridad sobre técnico, si va detras, se sobreescribe la url
-      } 
+        redirectURL = urlAdmin;
+      }
 
-      // Redirigir a la URL determinada
+      /** @brief Redirigir a la URL determinada */
       window.location.href = redirectURL;
 
     } else {
@@ -189,9 +200,9 @@ loginForm.addEventListener("submit", async e => {
   }
 });
 
-// ---------------------------------------------------------------------------
-// EVENTO: REGISTRO → consume API vía index.php (acción: registrarUsuario)
-// ---------------------------------------------------------------------------
+/**
+ * @section EVENTO: REGISTRO → consume API vía index.php (acción: registrarUsuario)
+ */
 registerForm.addEventListener("submit", async e => {
   e.preventDefault();
 
@@ -202,13 +213,13 @@ registerForm.addEventListener("submit", async e => {
   const confirm = document.getElementById("confirmar-contraseña-sign-up").value.trim();
   const politica = registerForm.querySelector("input[type='checkbox']").checked;
 
-  // Validaciones previas
+  /** @brief Validaciones previas */
   if (!nombre || !apellidos || !gmail || !password || !confirm) {
     mostrarMensaje("register", "Por favor, completa todos los campos.");
     return;
   }
 
-  // Validar fortaleza de contraseña
+  /** @brief Validar fortaleza de contraseña */
   const tieneNum = /\d/.test(password);
   const tieneMay = /[A-Z]/.test(password);
   const tieneEsp = /[!@#$%^&*(),.?":{}|<>]/.test(password);
@@ -257,12 +268,11 @@ registerForm.addEventListener("submit", async e => {
   }
 });
 
+/**
+ * @section Popup de la politica de privacidad
+ */
 
-// ---------------------------------------------------------------------------
-// Popup de la politica de privacidad
-// ---------------------------------------------------------------------------
-
-// Abrir el popup cuando se pulsa en "popup-politica"
+/** @brief Abrir el popup cuando se pulsa en "popup-politica" */
 const popupLinks = document.querySelectorAll(".popup-politica");
 const popup = document.getElementById("popup-politica");
 const btnAccept = document.getElementById("btnAccept");
@@ -271,7 +281,8 @@ const closePopup = document.getElementById("closePopup");
 const inputCheckmark = document.getElementById("checkmark");
 const checkmarkSpan = registerForm.querySelector(".politica .checkmark");
 
-// Abrir popup al pulsar el texto
+
+/** @brief Abrir popup al pulsar el texto  */
 popupLinks.forEach(link => {
   link.addEventListener("click", () => {
     popup.style.display = "flex";
@@ -280,43 +291,40 @@ popupLinks.forEach(link => {
   });
 });
 
-// ABRIR POPUP AL PULSAR LA CASILLA VISIBLE (SPAN)
+/** @brief ABRIR POPUP AL PULSAR LA CASILLA VISIBLE (SPAN) */
 checkmarkSpan.addEventListener("click", (e) => {
   e.preventDefault();
 
-  // Si el checkbox real está deshabilitado, es porque necesita aceptar la política.
+  /** @brief Si el checkbox real está deshabilitado, es porque necesita aceptar la política. */
   if (inputCheckmark.disabled) {
-    // Comportamiento 1: Abrir Popup
+    /** @brief Comportamiento 1: Abrir Popup */
     popup.style.display = "flex";
-    btnAccept.disabled = true; // Reiniciamos
-    popupText.scrollTop = 0; // Scroll al inicio
+    btnAccept.disabled = true;
+    popupText.scrollTop = 0;
 
   } else {
-    // Comportamiento 2: Simular clic en el checkbox real para marcar/desmarcar
+    /** @brief Comportamiento 2: Simular clic en el checkbox real para marcar/desmarcar */
 
-    // Invertimos el estado 'checked' del input invisible
     inputCheckmark.checked = !inputCheckmark.checked;
 
-    // Nota: El CSS se encargará de actualizar la apariencia del SPAN
-    // dependiendo del estado del INPUT.
   }
 });
 
-// Cerrar popup al pulsar la X
+/** @brief Cerrar popup al pulsar la X */
 closePopup.addEventListener("click", () => {
   popup.style.display = "none";
 });
 
-// Detectar scroll al final
+/** @brief Detectar scroll al final */
 popupText.addEventListener("scroll", () => {
   if (popupText.scrollTop + popupText.clientHeight >= popupText.scrollHeight - 1) {
     btnAccept.disabled = false;
   }
 });
 
-// Al pulsar aceptar, cerrar popup y habilitar el checkbox
+/** @brief Al pulsar aceptar, cerrar popup y habilitar el checkbox */
 btnAccept.addEventListener("click", () => {
   popup.style.display = "none";
-  inputCheckmark.disabled = false; // Ahora sí se puede marcar
-  inputCheckmark.checked = true;   // Marcamos automáticamente
+  inputCheckmark.disabled = false;
+  inputCheckmark.checked = true;
 });

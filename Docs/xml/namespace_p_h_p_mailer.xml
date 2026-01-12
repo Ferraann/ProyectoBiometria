@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="namespace_p_h_p_mailer" kind="namespace" language="PHP">
+    <compoundname>PHPMailer</compoundname>
+    <innernamespace refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer">PHPMailer::PHPMailer</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> - PHP email creation and transport class. PHP Version 5.5</para>
+<para><simplesect kind="see"><para><ulink url="https://github.com/PHPMailer/PHPMailer/">https://github.com/PHPMailer/PHPMailer/</ulink> The <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> GitHub project </para>
+</simplesect>
+<simplesect kind="author"><para>Marcus Bointon (Synchro/coolbru) <ulink url="mailto:phpmailer@synchromedia.co.uk">phpmailer@synchromedia.co.uk</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Jim Jagielski (jimjag) <ulink url="mailto:jimjag@gmail.com">jimjag@gmail.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Andy Prevost (codeworxtech) <ulink url="mailto:codeworxtech@users.sourceforge.net">codeworxtech@users.sourceforge.net</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Brent R. Matzelle (original founder) </para>
+</simplesect>
+<simplesect kind="copyright"><para>2012 - 2020 Marcus Bointon </para>
+</simplesect>
+<simplesect kind="copyright"><para>2010 - 2012 Jim Jagielski </para>
+</simplesect>
+<simplesect kind="copyright"><para>2004 - 2009 Andy Prevost @license <ulink url="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</ulink> GNU Lesser General Public License </para>
+</simplesect>
+<simplesect kind="note"><para>This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</para>
+</simplesect>
+Afrikaans <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para>Arabic <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>bahjat al mostafa <ulink url="mailto:bahjat983@hotmail.com">bahjat983@hotmail.com</ulink></para>
+</simplesect>
+Assamese <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Manish Sarkar <ulink url="mailto:manish.n.manish@gmail.com">manish.n.manish@gmail.com</ulink></para>
+</simplesect>
+Azerbaijani <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>@mirjalal</para>
+</simplesect>
+Bosnian <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Ermin Islamagić <ulink url="mailto:ermin@islamagic.com">ermin@islamagic.com</ulink></para>
+</simplesect>
+Belarusian <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Aleksander Maksymiuk <ulink url="mailto:info@setpro.pl">info@setpro.pl</ulink></para>
+</simplesect>
+Bulgarian <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Mikhail Kyosev <ulink url="mailto:mialygk@gmail.com">mialygk@gmail.com</ulink></para>
+</simplesect>
+Bengali <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Manish Sarkar <ulink url="mailto:manish.n.manish@gmail.com">manish.n.manish@gmail.com</ulink></para>
+</simplesect>
+Catalan <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Ivan &lt;web AT microstudi DOT com&gt;</para>
+</simplesect>
+Czech <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para>Danish <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>John Sebastian <ulink url="mailto:jms@iwb.dk">jms@iwb.dk</ulink> Rewrite and extension of the work by Mikael Stokkebro <ulink url="mailto:info@stokkebro.dk">info@stokkebro.dk</ulink></para>
+</simplesect>
+German <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para>Greek <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para>Esperanto <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para>Spanish <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Matt Sturdy <ulink url="mailto:matt.sturdy@gmail.com">matt.sturdy@gmail.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Crystopher Glodzienski Cardoso <ulink url="mailto:crystopher.glodzienski@gmail.com">crystopher.glodzienski@gmail.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Daniel Cruz <ulink url="mailto:danicruz0415@gmail.com">danicruz0415@gmail.com</ulink></para>
+</simplesect>
+Estonian <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Indrek Päri </para>
+</simplesect>
+<simplesect kind="author"><para>Elan Ruusamäe <ulink url="mailto:glen@delfi.ee">glen@delfi.ee</ulink></para>
+</simplesect>
+Persian/Farsi <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Ali Jazayeri <ulink url="mailto:jaza.ali@gmail.com">jaza.ali@gmail.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Mohammad Hossein Mojtahedi <ulink url="mailto:mhm5000@gmail.com">mhm5000@gmail.com</ulink></para>
+</simplesect>
+Finnish <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Jyry Kuukanen</para>
+</simplesect>
+Faroese <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Dávur Sørensen <ulink url="http://www.profo-webdesign.dk">http://www.profo-webdesign.dk</ulink></para>
+</simplesect>
+French <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para>Some French punctuation requires a thin non-breaking space (U+202F) character before it, for example before a colon or exclamation mark. There is one of these characters between these quotes: &quot; &quot;</para>
+<para>Galician <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>by Donato Rouco <ulink url="mailto:donatorouco@gmail.com">donatorouco@gmail.com</ulink></para>
+</simplesect>
+Hebrew <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Ronny Sherer <ulink url="mailto:ronny@hoojima.com">ronny@hoojima.com</ulink></para>
+</simplesect>
+Hindi <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Yash Karanke <ulink url="mailto:mr.karanke@gmail.com">mr.karanke@gmail.com</ulink> Rewrite and extension of the work by Jayanti Suthar <ulink url="mailto:suthar.jayanti93@gmail.com">suthar.jayanti93@gmail.com</ulink></para>
+</simplesect>
+Croatian <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Hrvoj3e <ulink url="mailto:hrvoj3e@gmail.com">hrvoj3e@gmail.com</ulink></para>
+</simplesect>
+Hungarian <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>@dominicus-75</para>
+</simplesect>
+Armenian <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Hrayr Grigoryan <ulink url="mailto:hrayr@bits.am">hrayr@bits.am</ulink></para>
+</simplesect>
+Indonesian <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Cecep Prawiro <ulink url="mailto:cecep.prawiro@gmail.com">cecep.prawiro@gmail.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>@januridp </para>
+</simplesect>
+<simplesect kind="author"><para>Ian Mustafa <ulink url="mailto:mail@ianmustafa.com">mail@ianmustafa.com</ulink></para>
+</simplesect>
+Italian <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Ilias Bartolini <ulink url="mailto:brain79@inwind.it">brain79@inwind.it</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Stefano Sabatini <ulink url="mailto:sabas88@gmail.com">sabas88@gmail.com</ulink></para>
+</simplesect>
+Japanese <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Mitsuhiro Yoshida <ulink url="https://mitstek.com">https://mitstek.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Yoshi Sakai <ulink url="http://bluemooninc.jp/">http://bluemooninc.jp/</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Arisophy <ulink url="https://github.com/arisophy/">https://github.com/arisophy/</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>ARAKI Musashi <ulink url="https://github.com/arakim/">https://github.com/arakim/</ulink></para>
+</simplesect>
+Georgian <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Avtandil Kikabidze aka LONGMAN <ulink url="mailto:akalongman@gmail.com">akalongman@gmail.com</ulink></para>
+</simplesect>
+Korean <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>ChalkPE <ulink url="mailto:amato0617@gmail.com">amato0617@gmail.com</ulink></para>
+</simplesect>
+Kurdish (Sorani) <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Halo Salman <ulink url="mailto:halo@home4t.com">halo@home4t.com</ulink></para>
+</simplesect>
+Lithuanian <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Dainius Kaupaitis <ulink url="mailto:dk@sum.lt">dk@sum.lt</ulink></para>
+</simplesect>
+Latvian <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Eduards M. <ulink url="mailto:e@npd.lv">e@npd.lv</ulink></para>
+</simplesect>
+Malagasy <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Hackinet <ulink url="mailto:piyushjha8164@gmail.com">piyushjha8164@gmail.com</ulink></para>
+</simplesect>
+Mongolian <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>@wispas</para>
+</simplesect>
+Malaysian <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Nawawi Jamili <ulink url="mailto:nawawi@rutweb.com">nawawi@rutweb.com</ulink></para>
+</simplesect>
+Norwegian Bokmål <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para>Dutch <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to <ref refid="_p_h_p_mailer_8php" kindref="compound">PHPMailer.php</ref> for definitive list.</para>
+<para><simplesect kind="author"><para>Tuxion <ulink url="mailto:team@tuxion.nl">team@tuxion.nl</ulink></para>
+</simplesect>
+Polish <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para>Portuguese (European) <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>João Vieira <ulink url="mailto:mail@joaovieira.eu">mail@joaovieira.eu</ulink></para>
+</simplesect>
+Brazilian Portuguese <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Paulo Henrique Garcia <ulink url="mailto:paulo@controllerweb.com.br">paulo@controllerweb.com.br</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Lucas Guimarães <ulink url="mailto:lucas@lucasguimaraes.com">lucas@lucasguimaraes.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Phelipe Alves <ulink url="mailto:phelipealvesdesouza@gmail.com">phelipealvesdesouza@gmail.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Fabio Beneditto <ulink url="mailto:fabiobeneditto@gmail.com">fabiobeneditto@gmail.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Geidson Benício Coelho <ulink url="mailto:geidsonc@gmail.com">geidsonc@gmail.com</ulink></para>
+</simplesect>
+Romanian <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para>Russian <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Alexey Chumakov <ulink url="mailto:alex@chumakov.ru">alex@chumakov.ru</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Foster Snowhill <ulink url="mailto:i18n@forstwoof.ru">i18n@forstwoof.ru</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>ProjectSoft <ulink url="mailto:projectsoft2009@yandex.ru">projectsoft2009@yandex.ru</ulink></para>
+</simplesect>
+Sinhalese <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Ayesh Karunaratne <ulink url="mailto:ayesh@aye.sh">ayesh@aye.sh</ulink></para>
+</simplesect>
+Slovak <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Michal Tinka <ulink url="mailto:michaltinka@gmail.com">michaltinka@gmail.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Peter Orlický <ulink url="mailto:pcmanik91@gmail.com">pcmanik91@gmail.com</ulink></para>
+</simplesect>
+Slovene <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Klemen Tušar <ulink url="mailto:techouse@gmail.com">techouse@gmail.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Filip Š <ulink url="mailto:projects@filips.si">projects@filips.si</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Blaž Oražem <ulink url="mailto:blaz@orazem.si">blaz@orazem.si</ulink></para>
+</simplesect>
+Serbian <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Александар Јевремовић <ulink url="mailto:ajevremovic@gmail.com">ajevremovic@gmail.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Miloš Milanović <ulink url="mailto:mmilanovic016@gmail.com">mmilanovic016@gmail.com</ulink></para>
+</simplesect>
+Swedish <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Johan Linnér <ulink url="mailto:johan@linner.biz">johan@linner.biz</ulink></para>
+</simplesect>
+Tagalog <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Adriane Justine Tan <ulink url="mailto:eidoriantan@gmail.com">eidoriantan@gmail.com</ulink></para>
+</simplesect>
+Turkish <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Elçin Özel </para>
+</simplesect>
+<simplesect kind="author"><para>Can Yılmaz </para>
+</simplesect>
+<simplesect kind="author"><para>Mehmet Benlioğlu </para>
+</simplesect>
+<simplesect kind="author"><para>@yasinaydin </para>
+</simplesect>
+<simplesect kind="author"><para>Ogün Karakuş</para>
+</simplesect>
+Ukrainian <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Yuriy Rudyy <ulink url="mailto:yrudyy@prs.net.ua">yrudyy@prs.net.ua</ulink> @fixed by Boris Yurchenko <ulink url="mailto:boris@yurchenko.pp.ua">boris@yurchenko.pp.ua</ulink></para>
+</simplesect>
+Urdu <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>Saqib Ali Siddiqui <ulink url="mailto:saqibsra@gmail.com">saqibsra@gmail.com</ulink></para>
+</simplesect>
+Vietnamese (Tiếng Việt) <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list.</para>
+<para><simplesect kind="author"><para>VINADES.,JSC <ulink url="mailto:contact@vinades.vn">contact@vinades.vn</ulink></para>
+</simplesect>
+Traditional Chinese <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>liqwei <ulink url="mailto:liqwei@liqwei.com">liqwei@liqwei.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Peter Dave Hello &lt;@PeterDaveHello/&gt; </para>
+</simplesect>
+<simplesect kind="author"><para>Jason Chiang <ulink url="mailto:xcojad@gmail.com">xcojad@gmail.com</ulink></para>
+</simplesect>
+Simplified Chinese <ref refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer" kindref="compound">PHPMailer</ref> language file: refer to English translation for definitive list</para>
+<para><simplesect kind="author"><para>liqwei <ulink url="mailto:liqwei@liqwei.com">liqwei@liqwei.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>young <ulink url="mailto:masxy@foxmail.com">masxy@foxmail.com</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para>Teddysun <ulink url="mailto:i@teddysun.com">i@teddysun.com</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/get_oauth_token.php" line="6" column="1"/>
+  </compounddef>
+</doxygen>

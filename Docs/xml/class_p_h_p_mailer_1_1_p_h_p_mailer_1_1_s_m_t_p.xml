@@ -1,0 +1,1199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p" kind="class" language="PHP" prot="public">
+    <compoundname>PHPMailer::PHPMailer::SMTP</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1adb37dc6e8c061cbac377ab9ee88226e2" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const PHPMailer\PHPMailer\SMTP::VERSION</definition>
+        <argsstring></argsstring>
+        <name>VERSION</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\VERSION</qualifiedname>
+        <initializer>= &apos;7.0.0&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="38" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1ab2bc171fd161519d12c7fd7b0a1d3176" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const PHPMailer\PHPMailer\SMTP::LE</definition>
+        <argsstring></argsstring>
+        <name>LE</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\LE</qualifiedname>
+        <initializer>= &quot;\r\n&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="45" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1aef1068c15b9355ebf66e052745e4e0ca" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const PHPMailer\PHPMailer\SMTP::DEFAULT_PORT</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_PORT</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\DEFAULT_PORT</qualifiedname>
+        <initializer>= 25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="52" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1ab32846b18249a9b98bf3ec78a28e968e" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const PHPMailer\PHPMailer\SMTP::DEFAULT_SECURE_PORT</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_SECURE_PORT</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\DEFAULT_SECURE_PORT</qualifiedname>
+        <initializer>= 465</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="59" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a4c5eb9b22d600ffa5c214ed105128e73" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const PHPMailer\PHPMailer\SMTP::MAX_LINE_LENGTH</definition>
+        <argsstring></argsstring>
+        <name>MAX_LINE_LENGTH</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\MAX_LINE_LENGTH</qualifiedname>
+        <initializer>= 998</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="69" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a05b338f63fcd91f38215f43871a99580" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const PHPMailer\PHPMailer\SMTP::MAX_REPLY_LENGTH</definition>
+        <argsstring></argsstring>
+        <name>MAX_REPLY_LENGTH</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\MAX_REPLY_LENGTH</qualifiedname>
+        <initializer>= 512</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="79" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a8c5221cdb5224f8c67978e5a2da38b23" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const PHPMailer\PHPMailer\SMTP::DEBUG_OFF</definition>
+        <argsstring></argsstring>
+        <name>DEBUG_OFF</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\DEBUG_OFF</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="86" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a3ecab0a4eccea9942cc2729bed531af6" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const PHPMailer\PHPMailer\SMTP::DEBUG_CLIENT</definition>
+        <argsstring></argsstring>
+        <name>DEBUG_CLIENT</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\DEBUG_CLIENT</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="93" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a45fa42c04676ab8e5e5a4dab9c2083a4" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const PHPMailer\PHPMailer\SMTP::DEBUG_SERVER</definition>
+        <argsstring></argsstring>
+        <name>DEBUG_SERVER</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\DEBUG_SERVER</qualifiedname>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="100" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a05072dd85e54971b267bc6b08dc05295" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const PHPMailer\PHPMailer\SMTP::DEBUG_CONNECTION</definition>
+        <argsstring></argsstring>
+        <name>DEBUG_CONNECTION</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\DEBUG_CONNECTION</qualifiedname>
+        <initializer>= 3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="107" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a04709c9b341fb27c20d62593b68fdb1a" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const PHPMailer\PHPMailer\SMTP::DEBUG_LOWLEVEL</definition>
+        <argsstring></argsstring>
+        <name>DEBUG_LOWLEVEL</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\DEBUG_LOWLEVEL</qualifiedname>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="114" column="11" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a0e032b2173ed26c766dfe470df6eb319" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::$do_debug</definition>
+        <argsstring></argsstring>
+        <name>$do_debug</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\$do_debug</qualifiedname>
+        <initializer>= self::DEBUG_OFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="127" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1ac2a5968345259a91691a44c6dc913edb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::$Debugoutput</definition>
+        <argsstring></argsstring>
+        <name>$Debugoutput</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\$Debugoutput</qualifiedname>
+        <initializer>= &apos;echo&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="150" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1ab52b493d0c84a7e73f43bb3e92dc4128" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::$do_verp</definition>
+        <argsstring></argsstring>
+        <name>$do_verp</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\$do_verp</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="160" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1aa314060411a7fff51e69f3c587767714" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::$do_smtputf8</definition>
+        <argsstring></argsstring>
+        <name>$do_smtputf8</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\$do_smtputf8</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="169" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a9febb57e836ef770eb8dd638f2b47143" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::$Timeout</definition>
+        <argsstring></argsstring>
+        <name>$Timeout</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\$Timeout</qualifiedname>
+        <initializer>= 300</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="180" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a7785030cd094811e338ee7dd0715f7e0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::$Timelimit</definition>
+        <argsstring></argsstring>
+        <name>$Timelimit</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\$Timelimit</qualifiedname>
+        <initializer>= 300</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="188" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="188" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a2fd7e9fddc80f7fe6fb156abd92176b2" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::$smtp_transaction_id_patterns</definition>
+        <argsstring></argsstring>
+        <name>$smtp_transaction_id_patterns</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\$smtp_transaction_id_patterns</qualifiedname>
+        <initializer>= [
+        &apos;exim&apos; =&gt; &apos;/[\d]{3} OK id=(.*)/&apos;,
+        &apos;sendmail&apos; =&gt; &apos;/[\d]{3} 2\.0\.0 (.*) Message/&apos;,
+        &apos;postfix&apos; =&gt; &apos;/[\d]{3} 2\.0\.0 Ok: queued as (.*)/&apos;,
+        &apos;Microsoft_ESMTP&apos; =&gt; &apos;/[0-9]{3} 2\.[\d]\.0 (.*)@(?:.*) Queued mail for delivery/&apos;,
+        &apos;Amazon_SES&apos; =&gt; &apos;/[\d]{3} Ok (.*)/&apos;,
+        &apos;SendGrid&apos; =&gt; &apos;/[\d]{3} Ok: queued as (.*)/&apos;,
+        &apos;CampaignMonitor&apos; =&gt; &apos;/[\d]{3} 2\.0\.0 OK:([a-zA-Z\d]{48})/&apos;,
+        &apos;Haraka&apos; =&gt; &apos;/[\d]{3} Message Queued \((.*)\)/&apos;,
+        &apos;ZoneMTA&apos; =&gt; &apos;/[\d]{3} Message queued as (.*)/&apos;,
+        &apos;Mailjet&apos; =&gt; &apos;/[\d]{3} OK queued as (.*)/&apos;,
+        &apos;Gsmtp&apos; =&gt; &apos;/[\d]{3} 2\.0\.0 OK (.*) - gsmtp/&apos;,
+    ]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="197" column="15" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a153880c002bd516d6c148cee78d49d93" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::$last_smtp_transaction_id</definition>
+        <argsstring></argsstring>
+        <name>$last_smtp_transaction_id</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\$last_smtp_transaction_id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="229" column="15" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1abaa18a03893b06f7c6cdb8c8fdfe642c" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::$smtp_conn</definition>
+        <argsstring></argsstring>
+        <name>$smtp_conn</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\$smtp_conn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="236" column="15" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a26a4595f6e451557cdb5c544ee590084" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::$error</definition>
+        <argsstring></argsstring>
+        <name>$error</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\$error</qualifiedname>
+        <initializer>= [
+        &apos;error&apos; =&gt; &apos;&apos;,
+        &apos;detail&apos; =&gt; &apos;&apos;,
+        &apos;smtp_code&apos; =&gt; &apos;&apos;,
+        &apos;smtp_code_ex&apos; =&gt; &apos;&apos;,
+    ]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="243" column="15" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="243" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1acc6db4b35fbcb4fe4d726654cdec5870" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::$helo_rply</definition>
+        <argsstring></argsstring>
+        <name>$helo_rply</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\$helo_rply</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="256" column="15" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="256" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a8b7b4ca3f7c75ef0b76a8f09bd87e8be" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::$server_caps</definition>
+        <argsstring></argsstring>
+        <name>$server_caps</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\$server_caps</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="268" column="15" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="268" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a85c8f6d36dc8e00141f0b450fa754e2f" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::$last_reply</definition>
+        <argsstring></argsstring>
+        <name>$last_reply</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\$last_reply</qualifiedname>
+        <initializer>= &apos;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="275" column="15" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="275" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1abd6973a99b71d1b6a134a60e74f73d41" prot="public" static="yes" mutable="no">
+        <type>static</type>
+        <definition>PHPMailer\PHPMailer\SMTP::$xclient_allowed_attributes</definition>
+        <argsstring></argsstring>
+        <name>$xclient_allowed_attributes</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\$xclient_allowed_attributes</qualifiedname>
+        <initializer>= [
+        &apos;NAME&apos;, &apos;ADDR&apos;, &apos;PORT&apos;, &apos;PROTO&apos;, &apos;HELO&apos;, &apos;LOGIN&apos;, &apos;DESTADDR&apos;, &apos;DESTPORT&apos;
+    ]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="219" column="19" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="219" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a428c75f1ab137d95c57567459f51e876" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::edebug</definition>
+        <argsstring>($str, $level=0)</argsstring>
+        <name>edebug</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\edebug</qualifiedname>
+        <param>
+          <declname>$str</declname>
+        </param>
+        <param>
+          <declname>$level</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Output debugging info via a user-selected method.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Debug string to output </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The debug level of this message; see DEBUG_* constants</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>SMTP::$Debugoutput </para>
+</simplesect>
+<simplesect kind="see"><para>SMTP::$do_debug </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>@noinspection ForgottenDebugOutputInspection</para>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="286" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="286" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1ac323a39de60b32fcd8182f2d499b3bd8" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::getSMTPConnection</definition>
+        <argsstring>($host, $port=null, $timeout=30, $options=[])</argsstring>
+        <name>getSMTPConnection</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\getSMTPConnection</qualifiedname>
+        <param>
+          <declname>$host</declname>
+        </param>
+        <param>
+          <declname>$port</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <declname>$timeout</declname>
+          <defval>30</defval>
+        </param>
+        <param>
+          <declname>$options</declname>
+          <defval>[]</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create connection to the SMTP server.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$host</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>SMTP server IP or host name </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The port number to connect to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>How long to wait for the connection to open </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>array</parametertype>
+<parametername>$options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of options for stream_context_create()</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>false|resource </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="406" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="406" bodyend="478"/>
+      </memberdef>
+      <memberdef kind="function" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1ae097c9420480708994efc030d1dddef1" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::hmac</definition>
+        <argsstring>($data, $key)</argsstring>
+        <name>hmac</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\hmac</qualifiedname>
+        <param>
+          <declname>$data</declname>
+        </param>
+        <param>
+          <declname>$key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculate an MD5 HMAC hash. Works like hash_hmac(&apos;md5&apos;, $data, $key) in case that function is not available.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data to hash </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key to hash with</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="693" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="693" bodyend="718"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a67c7eef2c32d3ef26b6eb28afca3820b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::connect</definition>
+        <argsstring>($host, $port=null, $timeout=30, $options=[])</argsstring>
+        <name>connect</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\connect</qualifiedname>
+        <param>
+          <declname>$host</declname>
+        </param>
+        <param>
+          <declname>$port</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <declname>$timeout</declname>
+          <defval>30</defval>
+        </param>
+        <param>
+          <declname>$options</declname>
+          <defval>[]</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Connect to an SMTP server.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$host</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>SMTP server IP or host name </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The port number to connect to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>How long to wait for the connection to open </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>array</parametertype>
+<parametername>$options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of options for stream_context_create()</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="347" column="21" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="347" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="function" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1aaa8c1051e8ca80b381bf5667558074de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::startTLS</definition>
+        <argsstring>()</argsstring>
+        <name>startTLS</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\startTLS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiate a TLS (encrypted) session.</para>
+<para><simplesect kind="return"><para>bool </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="485" column="21" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="485" bodyend="513"/>
+      </memberdef>
+      <memberdef kind="function" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a70ebff41266b8b64c44ea535f1afb8cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::authenticate</definition>
+        <argsstring>( $username, $password, $authtype=null, $OAuth=null)</argsstring>
+        <name>authenticate</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\authenticate</qualifiedname>
+        <param>
+          <declname>$username</declname>
+        </param>
+        <param>
+          <declname>$password</declname>
+        </param>
+        <param>
+          <declname>$authtype</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <declname>$OAuth</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Perform SMTP authentication. Must be run after hello().</para>
+<para><simplesect kind="see"><para>hello()</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user name </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$password</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The password </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$authtype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The auth type (CRAM-MD5, PLAIN, LOGIN, XOAUTH2) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>OAuthTokenProvider</parametertype>
+<parametername>$OAuth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An optional OAuthTokenProvider instance for XOAUTH2 authentication</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True if successfully authenticated </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="528" column="21" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="528" bodyend="681"/>
+      </memberdef>
+      <memberdef kind="function" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1ad61de5eca48890f8d121a3b9c9df2824" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::connected</definition>
+        <argsstring>()</argsstring>
+        <name>connected</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\connected</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check connection state.</para>
+<para><simplesect kind="return"><para>bool True if connected </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="725" column="21" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="725" bodyend="744"/>
+      </memberdef>
+      <memberdef kind="function" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1aff2f3ac922cccee840cf0965bdfb92e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\close</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Close the socket and clean up the state of the class. Don&apos;t use this function without first trying to use QUIT.</para>
+<para><simplesect kind="see"><para>quit() </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="752" column="21" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="752" bodyend="762"/>
+      </memberdef>
+      <memberdef kind="function" id="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a521b8dadc893ac68f1a3b27e54f7faaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PHPMailer\PHPMailer\SMTP::data</definition>
+        <argsstring>($msg_data)</argsstring>
+        <name>data</name>
+        <qualifiedname>PHPMailer\PHPMailer\SMTP\data</qualifiedname>
+        <param>
+          <declname>$msg_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Send an SMTP DATA command. Issues a data command and sends the msg_data to the server, finalizing the mail transaction. $msg_data is the message that is to be sent with the headers. Each header needs to be on a single line followed by a &lt;CRLF&gt; with the message headers and the message body being separated by an additional &lt;CRLF&gt;. Implements RFC 821: DATA &lt;CRLF&gt;.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$msg_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Message data to send</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>Send an SMTP HELO or EHLO command. Low-level implementation used by hello().</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$hello</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The HELO string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$host</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hostname to say we are</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool</para>
+</simplesect>
+<simplesect kind="see"><para>hello()</para>
+</simplesect>
+Parse a reply to HELO/EHLO command to discover server extensions. In case of HELO, the only parameter that can be discovered is a server name.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>HELO</computeroutput> or <computeroutput>EHLO</computeroutput></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Send an SMTP MAIL command. Starts a mail transaction from the email address specified in $from. Returns true if successful or false otherwise. If True the mail transaction is started and then one or more recipient commands may be called followed by a data command. Implements RFC 821: MAIL &lt;SP&gt; FROM:&lt;reverse-path&gt; &lt;CRLF&gt; and two extensions, namely XVERP and SMTPUTF8.</para>
+<para>The server&apos;s EHLO response is not checked. If use of either extensions is enabled even though the server does not support that, mail submission will fail.</para>
+<para>XVERP is documented at <ulink url="https://www.postfix.org/VERP_README.html">https://www.postfix.org/VERP_README.html</ulink> and SMTPUTF8 is specified in RFC 6531.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$from</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source address of this message</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool</para>
+</simplesect>
+Send an SMTP QUIT command. Closes the socket if there is no error or the $close_on_error argument is true. Implements from RFC 821: QUIT &lt;CRLF&gt;.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>bool</parametertype>
+<parametername>$close_on_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Should the connection close if an error occurs?</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool</para>
+</simplesect>
+Send an SMTP RCPT command. Sets the TO argument to $toaddr. Returns true if the recipient was accepted false if it was rejected. Implements from RFC 821: RCPT &lt;SP&gt; TO:&lt;forward-path&gt; &lt;CRLF&gt;.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The address the message is being sent to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$dsn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Comma separated list of DSN notifications. NEVER, SUCCESS, FAILURE or DELAY. If you specify NEVER all other notifications are ignored.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool</para>
+</simplesect>
+Send SMTP XCLIENT command to server and check its return code.</para>
+<para><simplesect kind="return"><para>bool True on success</para>
+</simplesect>
+Send an SMTP RSET command. Abort any transaction that is currently in progress. Implements RFC 821: RSET &lt;CRLF&gt;.</para>
+<para><simplesect kind="return"><para>bool True on success</para>
+</simplesect>
+Send a command to an SMTP server and check its return code.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command name - not sent to the server </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$commandstring</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actual command to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>array</parametertype>
+<parametername>$expect</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>One or more expected integer success codes</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True on success</para>
+</simplesect>
+Send an SMTP SAML command. Starts a mail transaction from the email address specified in $from. Returns true if successful or false otherwise. If True the mail transaction is started and then one or more recipient commands may be called followed by a data command. This command will send the message to the users terminal if they are logged in and send them an email. Implements RFC 821: SAML &lt;SP&gt; FROM:&lt;reverse-path&gt; &lt;CRLF&gt;.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$from</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The address the message is from</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool</para>
+</simplesect>
+Send an SMTP VRFY command.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name to verify</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool</para>
+</simplesect>
+Send an SMTP NOOP command. Used to keep keep-alives alive, doesn&apos;t actually do anything.</para>
+<para><simplesect kind="return"><para>bool</para>
+</simplesect>
+Send an SMTP TURN command. This is an optional command for SMTP that this class does not support. This method is here to make the RFC821 Definition complete for this class and <emphasis>may</emphasis> be implemented in future. Implements from RFC 821: TURN &lt;CRLF&gt;.</para>
+<para><simplesect kind="return"><para>bool</para>
+</simplesect>
+Send raw data to the server.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optionally, the command this is part of, used only for controlling debug output</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int|bool The number of bytes sent to the server or false on error</para>
+</simplesect>
+Get the latest error.</para>
+<para><simplesect kind="return"><para>array</para>
+</simplesect>
+Get SMTP extensions available on the server.</para>
+<para><simplesect kind="return"><para>array|null</para>
+</simplesect>
+Get metadata about the SMTP server from its HELO/EHLO response. The method works in three ways, dependent on argument value and current state:<orderedlist>
+<listitem><para>HELO/EHLO has not been sent - returns null and populates $this-&gt;error.</para>
+</listitem><listitem><para>HELO has been sent - $name == &apos;HELO&apos;: returns server name $name == &apos;EHLO&apos;: returns boolean false $name == any other string: returns null and populates $this-&gt;error</para>
+</listitem><listitem><para>EHLO has been sent - $name == &apos;HELO&apos;|&apos;EHLO&apos;: returns the server name $name == any other string: if extension $name exists, returns True or its options (e.g. AUTH mechanisms supported). Otherwise returns False.</para>
+</listitem></orderedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of SMTP extension or &apos;HELO&apos;|&apos;EHLO&apos;</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>string|bool|null</para>
+</simplesect>
+Get the last reply from the server.</para>
+<para><simplesect kind="return"><para>string</para>
+</simplesect>
+Read the SMTP server&apos;s response. Either before eof or socket timeout occurs on the operation. With SMTP we can tell if we have more lines to read if the 4th character is &apos;-&apos; symbol. If it is a space then we don&apos;t need to read anything else.</para>
+<para><simplesect kind="return"><para>string</para>
+</simplesect>
+Enable or disable VERP address generation.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>bool</parametertype>
+<parametername>$enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Get VERP address generation mode.</para>
+<para><simplesect kind="return"><para>bool</para>
+</simplesect>
+Enable or disable use of SMTPUTF8.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>bool</parametertype>
+<parametername>$enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Get SMTPUTF8 use.</para>
+<para><simplesect kind="return"><para>bool</para>
+</simplesect>
+Set error messages and codes.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$detail</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Further detail on the error </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$smtp_code</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An associated SMTP error code </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$smtp_code_ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Extended SMTP code</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Set debug output method.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametertype>callable</parametertype>
+<parametername>$method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the mechanism to use for debugging output, or a callable to handle it</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Get debug output method.</para>
+<para><simplesect kind="return"><para>string</para>
+</simplesect>
+Set debug output level.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$level</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Get debug output level.</para>
+<para><simplesect kind="return"><para>int</para>
+</simplesect>
+Set SMTP timeout.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timeout duration in seconds</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Get SMTP timeout.</para>
+<para><simplesect kind="return"><para>int</para>
+</simplesect>
+Reports an error number and string.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$errno</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error number returned by PHP </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$errmsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error message returned by PHP </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$errfile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file the error occurred in </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$errline</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The line number the error occurred on</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Extract and return the ID of the last SMTP transaction based on a list of patterns provided in SMTP::$smtp_transaction_id_patterns. Relies on the host providing the ID in response to a DATA command. If no reply has been received yet, it will return null. If no pattern was matched, it will return false.</para>
+<para><simplesect kind="return"><para>bool|string|null</para>
+</simplesect>
+Get the queue/transaction ID of the last SMTP transaction If no reply has been received yet, it will return null. If no pattern was matched, it will return false.</para>
+<para><simplesect kind="return"><para>bool|string|null</para>
+</simplesect>
+<simplesect kind="see"><para>recordLastTransactionID()</para>
+</simplesect>
+</para>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="777" column="21" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="777" bodyend="857"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="namespace_p_h_p_mailer" kindref="compound">PHPMailer</ref> RFC821 SMTP email transport class. Implements RFC 821 SMTP commands and provides some utility methods for sending mail to an SMTP server.</para>
+<para><simplesect kind="author"><para>Chris Ryan </para>
+</simplesect>
+<simplesect kind="author"><para>Marcus Bointon <ulink url="mailto:phpmailer@synchromedia.co.uk">phpmailer@synchromedia.co.uk</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" line="31" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/SMTP.php" bodystart="32" bodyend="1588"/>
+    <listofallmembers>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1ac2a5968345259a91691a44c6dc913edb" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>$Debugoutput</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a0e032b2173ed26c766dfe470df6eb319" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>$do_debug</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1aa314060411a7fff51e69f3c587767714" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>$do_smtputf8</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1ab52b493d0c84a7e73f43bb3e92dc4128" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>$do_verp</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a26a4595f6e451557cdb5c544ee590084" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>$error</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1acc6db4b35fbcb4fe4d726654cdec5870" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>$helo_rply</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a85c8f6d36dc8e00141f0b450fa754e2f" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>$last_reply</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a153880c002bd516d6c148cee78d49d93" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>$last_smtp_transaction_id</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a8b7b4ca3f7c75ef0b76a8f09bd87e8be" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>$server_caps</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1abaa18a03893b06f7c6cdb8c8fdfe642c" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>$smtp_conn</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a2fd7e9fddc80f7fe6fb156abd92176b2" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>$smtp_transaction_id_patterns</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a7785030cd094811e338ee7dd0715f7e0" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>$Timelimit</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a9febb57e836ef770eb8dd638f2b47143" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>$Timeout</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1abd6973a99b71d1b6a134a60e74f73d41" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>$xclient_allowed_attributes</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a70ebff41266b8b64c44ea535f1afb8cd" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>authenticate</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1aff2f3ac922cccee840cf0965bdfb92e0" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>close</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a67c7eef2c32d3ef26b6eb28afca3820b" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>connect</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1ad61de5eca48890f8d121a3b9c9df2824" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>connected</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a521b8dadc893ac68f1a3b27e54f7faaa" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>data</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a3ecab0a4eccea9942cc2729bed531af6" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>DEBUG_CLIENT</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a05072dd85e54971b267bc6b08dc05295" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>DEBUG_CONNECTION</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a04709c9b341fb27c20d62593b68fdb1a" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>DEBUG_LOWLEVEL</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a8c5221cdb5224f8c67978e5a2da38b23" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>DEBUG_OFF</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a45fa42c04676ab8e5e5a4dab9c2083a4" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>DEBUG_SERVER</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1aef1068c15b9355ebf66e052745e4e0ca" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>DEFAULT_PORT</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1ab32846b18249a9b98bf3ec78a28e968e" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>DEFAULT_SECURE_PORT</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a428c75f1ab137d95c57567459f51e876" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>edebug</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1ac323a39de60b32fcd8182f2d499b3bd8" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>getSMTPConnection</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1ae097c9420480708994efc030d1dddef1" prot="protected" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>hmac</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1ab2bc171fd161519d12c7fd7b0a1d3176" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>LE</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a4c5eb9b22d600ffa5c214ed105128e73" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>MAX_LINE_LENGTH</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1a05b338f63fcd91f38215f43871a99580" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>MAX_REPLY_LENGTH</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1aaa8c1051e8ca80b381bf5667558074de" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>startTLS</name></member>
+      <member refid="class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p_1adb37dc6e8c061cbac377ab9ee88226e2" prot="public" virt="non-virtual"><scope>PHPMailer::PHPMailer::SMTP</scope><name>VERSION</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

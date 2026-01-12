@@ -1,0 +1,424 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="phpmailer_8lang-bn_8php" kind="file" language="PHP">
+    <compoundname>phpmailer.lang-bn.php</compoundname>
+    <innernamespace refid="namespace_p_h_p_mailer">PHPMailer</innernamespace>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a9941c17a5eabafa36ac3b0859476a4fb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;authenticate&apos;]</definition>
+        <argsstring>[&apos;authenticate&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP ত্রুটি: প্রমাণীকরণ করতে অক্ষম৷&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="9" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1ac4b95e4f2f4cfa70daf54de9dd118355" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;buggy_php&apos;]</definition>
+        <argsstring>[&apos;buggy_php&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;আপনার PHP সংস্করণ একটি বাগ দ্বারা প্রভাবিত হয় যার ফলে দূষিত বার্তা হতে পারে। এটি ঠিক করতে, পাঠাতে SMTP ব্যবহার করুন, আপনার php.ini এ mail.add_x_header বিকল্পটি নিষ্ক্রিয় করুন, MacOS বা Linux-এ স্যুইচ করুন, অথবা আপনার PHP সংস্করণকে 7.0.17+ বা 7.1.3+ এ পরিবর্তন করুন।&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="10" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a440a455b3b54a1c64c347ebe77cfad69" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;connect_host&apos;]</definition>
+        <argsstring>[&apos;connect_host&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP ত্রুটি: SMTP সার্ভারের সাথে সংযোগ করতে অক্ষম৷&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="11" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1afe3883d1634dca642e14d301ffaaa952" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;data_not_accepted&apos;]</definition>
+        <argsstring>[&apos;data_not_accepted&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP ত্রুটি: ডেটা গ্রহণ করা হয়নি৷&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="12" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a4438aaac30813894b1b04e75a2e0de98" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;empty_message&apos;]</definition>
+        <argsstring>[&apos;empty_message&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;বার্তার অংশটি খালি।&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="13" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a8b9939d40805387acf622ec4f543af50" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;encoding&apos;]</definition>
+        <argsstring>[&apos;encoding&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;অজানা এনকোডিং: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="14" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a4ce303a3e848c4e95a193d1db9719998" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;execute&apos;]</definition>
+        <argsstring>[&apos;execute&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;নির্বাহ করতে অক্ষম: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="15" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a74fde728a807ad6886041cb2be6dadc5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;extension_missing&apos;]</definition>
+        <argsstring>[&apos;extension_missing&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;এক্সটেনশন অনুপস্থিত:&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="16" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a9f10ce2f2b3bbd0e80d9a56ce05f72ba" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;file_access&apos;]</definition>
+        <argsstring>[&apos;file_access&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;ফাইল অ্যাক্সেস করতে অক্ষম: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="17" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1ae7db8a216f9a035e2f331350bc7ee105" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;file_open&apos;]</definition>
+        <argsstring>[&apos;file_open&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;ফাইল ত্রুটি: ফাইল খুলতে অক্ষম: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="18" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1aabfcfe6a66dc36821d7014bdc5a3b6f9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;from_failed&apos;]</definition>
+        <argsstring>[&apos;from_failed&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;নিম্নলিখিত প্রেরকের ঠিকানা(গুলি) ব্যর্থ হয়েছে: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="19" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a3a317f3e32c3246ff68ed968ddcf4774" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;instantiate&apos;]</definition>
+        <argsstring>[&apos;instantiate&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;মেল ফাংশনের একটি উদাহরণ তৈরি করতে অক্ষম৷&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="20" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a5139862f86824b503222c7066bf5a4e6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;invalid_address&apos;]</definition>
+        <argsstring>[&apos;invalid_address&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;পাঠাতে অক্ষম: অবৈধ ইমেল ঠিকানা: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="21" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1af1a19af625656a691901499d5e167c2f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;invalid_header&apos;]</definition>
+        <argsstring>[&apos;invalid_header&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;অবৈধ হেডার নাম বা মান&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="22" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a9751d08dfc4a0fa31ccfb0c7c9bb946e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;invalid_hostentry&apos;]</definition>
+        <argsstring>[&apos;invalid_hostentry&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;অবৈধ হোস্টেন্ট্রি: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="23" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a319b92254c00dd2d36433533f68f2a99" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;invalid_host&apos;]</definition>
+        <argsstring>[&apos;invalid_host&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;অবৈধ হোস্ট:&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="24" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a53b73fedc58a3e9084bd6de0f3f1e4e1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;mailer_not_supported&apos;]</definition>
+        <argsstring>[&apos;mailer_not_supported&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;মেইলার সমর্থিত নয়।&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="25" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a957c4c5cc80342ca5a19ba145f85daa9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;provide_address&apos;]</definition>
+        <argsstring>[&apos;provide_address&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;আপনাকে অবশ্যই অন্তত একটি গন্তব্য ইমেল ঠিকানা প্রদান করতে হবে৷&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="26" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1ae9940d910460e388276ce1a4c02081f7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;recipients_failed&apos;]</definition>
+        <argsstring>[&apos;recipients_failed&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP ত্রুটি: নিম্নলিখিত গন্তব্যগুলি ব্যর্থ হয়েছে: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="27" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a59c4260e366f69d573d10355e2e2d820" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;signing&apos;]</definition>
+        <argsstring>[&apos;signing&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;স্বাক্ষর করতে ব্যর্থ হয়েছে: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="28" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a182e53ceae4baa432cd8e461dac95ce7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;smtp_code&apos;]</definition>
+        <argsstring>[&apos;smtp_code&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP কোড: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="29" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1af7740b34a480b5237ca34c4b0b117fe2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;smtp_code_ex&apos;]</definition>
+        <argsstring>[&apos;smtp_code_ex&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;অতিরিক্ত SMTP তথ্য:&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="30" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1ac802af07f952308bc24473131684c21a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;smtp_detail&apos;]</definition>
+        <argsstring>[&apos;smtp_detail&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;বর্ণনা: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="31" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a83c3b0c6679b3878c71606ed753c5f2d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;smtp_connect_failed&apos;]</definition>
+        <argsstring>[&apos;smtp_connect_failed&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP সংযোগ() ব্যর্থ হয়েছে৷&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="32" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a9f53f2e12f4f1445bccf30b1e6a76538" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;smtp_error&apos;]</definition>
+        <argsstring>[&apos;smtp_error&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP সার্ভার ত্রুটি: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="33" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a941459734cab977ccbc502e2cfad2b5f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;variable_set&apos;]</definition>
+        <argsstring>[&apos;variable_set&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;পরিবর্তনশীল সেট করা যায়নি: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="34" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-bn_8php_1a74fde728a807ad6886041cb2be6dadc5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;extension_missing&apos;]</definition>
+        <argsstring>[&apos;extension_missing&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;অনুপস্থিত এক্সটেনশন: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" line="35" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php" bodystart="35" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;authenticate&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>ত্রুটি:<sp/>প্রমাণীকরণ<sp/>করতে<sp/>অক্ষম৷&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;buggy_php&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;আপনার<sp/>PHP<sp/>সংস্করণ<sp/>একটি<sp/>বাগ<sp/>দ্বারা<sp/>প্রভাবিত<sp/>হয়<sp/>যার<sp/>ফলে<sp/>দূষিত<sp/>বার্তা<sp/>হতে<sp/>পারে।<sp/>এটি<sp/>ঠিক<sp/>করতে,<sp/>পাঠাতে<sp/>SMTP<sp/>ব্যবহার<sp/>করুন,<sp/>আপনার<sp/>php.ini<sp/>এ<sp/>mail.add_x_header<sp/>বিকল্পটি<sp/>নিষ্ক্রিয়<sp/>করুন,<sp/>MacOS<sp/>বা<sp/>Linux-এ<sp/>স্যুইচ<sp/>করুন,<sp/>অথবা<sp/>আপনার<sp/>PHP<sp/>সংস্করণকে<sp/>7.0.17+<sp/>বা<sp/>7.1.3+<sp/>এ<sp/>পরিবর্তন<sp/>করুন।&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;connect_host&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>ত্রুটি:<sp/>SMTP<sp/>সার্ভারের<sp/>সাথে<sp/>সংযোগ<sp/>করতে<sp/>অক্ষম৷&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;data_not_accepted&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>ত্রুটি:<sp/>ডেটা<sp/>গ্রহণ<sp/>করা<sp/>হয়নি৷&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;empty_message&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;বার্তার<sp/>অংশটি<sp/>খালি।&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;encoding&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;অজানা<sp/>এনকোডিং:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;execute&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;নির্বাহ<sp/>করতে<sp/>অক্ষম:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;extension_missing&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;এক্সটেনশন<sp/>অনুপস্থিত:&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;file_access&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;ফাইল<sp/>অ্যাক্সেস<sp/>করতে<sp/>অক্ষম:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;file_open&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;ফাইল<sp/>ত্রুটি:<sp/>ফাইল<sp/>খুলতে<sp/>অক্ষম:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;from_failed&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;নিম্নলিখিত<sp/>প্রেরকের<sp/>ঠিকানা(গুলি)<sp/>ব্যর্থ<sp/>হয়েছে:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;instantiate&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;মেল<sp/>ফাংশনের<sp/>একটি<sp/>উদাহরণ<sp/>তৈরি<sp/>করতে<sp/>অক্ষম৷&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;invalid_address&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;পাঠাতে<sp/>অক্ষম:<sp/>অবৈধ<sp/>ইমেল<sp/>ঠিকানা:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;invalid_header&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;অবৈধ<sp/>হেডার<sp/>নাম<sp/>বা<sp/>মান&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;invalid_hostentry&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;অবৈধ<sp/>হোস্টেন্ট্রি:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;invalid_host&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;অবৈধ<sp/>হোস্ট:&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;mailer_not_supported&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;মেইলার<sp/>সমর্থিত<sp/>নয়।&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;provide_address&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;আপনাকে<sp/>অবশ্যই<sp/>অন্তত<sp/>একটি<sp/>গন্তব্য<sp/>ইমেল<sp/>ঠিকানা<sp/>প্রদান<sp/>করতে<sp/>হবে৷&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;recipients_failed&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>ত্রুটি:<sp/>নিম্নলিখিত<sp/>গন্তব্যগুলি<sp/>ব্যর্থ<sp/>হয়েছে:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;signing&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;স্বাক্ষর<sp/>করতে<sp/>ব্যর্থ<sp/>হয়েছে:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;smtp_code&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>কোড:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;smtp_code_ex&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;অতিরিক্ত<sp/>SMTP<sp/>তথ্য:&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;smtp_detail&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;বর্ণনা:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;smtp_connect_failed&apos;</highlight><highlight class="normal">]<sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>সংযোগ()<sp/>ব্যর্থ<sp/>হয়েছে৷&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;smtp_error&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>সার্ভার<sp/>ত্রুটি:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;variable_set&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;পরিবর্তনশীল<sp/>সেট<sp/>করা<sp/>যায়নি:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;extension_missing&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;অনুপস্থিত<sp/>এক্সটেনশন:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-bn.php"/>
+  </compounddef>
+</doxygen>

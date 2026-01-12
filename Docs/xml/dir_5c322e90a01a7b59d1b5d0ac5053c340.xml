@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="dir_5c322e90a01a7b59d1b5d0ac5053c340" kind="dir">
+    <compoundname>C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java</compoundname>
+    <innerdir refid="dir_11a297859fd7adad9d2d8e6b5c00034e">C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::retrofit::LogicaNegocio</compoundname>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_1a3fde517e24c7639f9ffbe6798af03fe0" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.example.grupo5.aitherapp.retrofit.LogicaNegocio.PostRegistro</definition>
+        <argsstring>(String Nombre, String Apellidos, String Correo, String Contrasenya, Context contexto)</argsstring>
+        <name>PostRegistro</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.LogicaNegocio.PostRegistro</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>Nombre</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>Apellidos</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>Correo</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>Contrasenya</declname>
+        </param>
+        <param>
+          <type>Context</type>
+          <declname>contexto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/LogicaNegocio.java" line="38" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/LogicaNegocio.java" bodystart="38" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_1ad793ceb58fee76cf3d67c2a2edee9f14" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.example.grupo5.aitherapp.retrofit.LogicaNegocio.PostLogin</definition>
+        <argsstring>(String correo, String contrasenya, Context contexto)</argsstring>
+        <name>PostLogin</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.LogicaNegocio.PostLogin</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>correo</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>contrasenya</declname>
+        </param>
+        <param>
+          <type>Context</type>
+          <declname>contexto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/LogicaNegocio.java" line="79" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/LogicaNegocio.java" bodystart="79" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_1af7e6a0f3a6f4760b65b92ad80ee0749a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.example.grupo5.aitherapp.retrofit.LogicaNegocio.putModificarDatos</definition>
+        <argsstring>(PojoUsuario usuario, Context contexto)</argsstring>
+        <name>putModificarDatos</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.LogicaNegocio.putModificarDatos</qualifiedname>
+        <param>
+          <type><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref></type>
+          <declname>usuario</declname>
+        </param>
+        <param>
+          <type>Context</type>
+          <declname>contexto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/LogicaNegocio.java" line="127" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/LogicaNegocio.java" bodystart="127" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_1a0cb2d1c9bbde44c229482a227e2d04ea" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.example.grupo5.aitherapp.retrofit.LogicaNegocio.postVincularSensor</definition>
+        <argsstring>(PojoSensor sensor, Context contexto)</argsstring>
+        <name>postVincularSensor</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.LogicaNegocio.postVincularSensor</qualifiedname>
+        <param>
+          <type><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_sensor" kindref="compound">PojoSensor</ref></type>
+          <declname>sensor</declname>
+        </param>
+        <param>
+          <type>Context</type>
+          <declname>contexto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/LogicaNegocio.java" line="163" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/LogicaNegocio.java" bodystart="163" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_1a160878ae2f35eeb81eee7cf7827b0bd5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.example.grupo5.aitherapp.retrofit.LogicaNegocio.guardarDistanciaHoy</definition>
+        <argsstring>(float distancia, Context contexto)</argsstring>
+        <name>guardarDistanciaHoy</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.LogicaNegocio.guardarDistanciaHoy</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>distancia</declname>
+        </param>
+        <param>
+          <type>Context</type>
+          <declname>contexto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/LogicaNegocio.java" line="196" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/LogicaNegocio.java" bodystart="196" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_1ade5325e081534bbfd0689ec9b1eb734a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.example.grupo5.aitherapp.retrofit.LogicaNegocio.getHistorialDistancias</definition>
+        <argsstring>(Context contexto, Callback&lt; PojoRespuestaServidor &gt; callback)</argsstring>
+        <name>getHistorialDistancias</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.LogicaNegocio.getHistorialDistancias</qualifiedname>
+        <param>
+          <type>Context</type>
+          <declname>contexto</declname>
+        </param>
+        <param>
+          <type>Callback&lt; <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor" kindref="compound">PojoRespuestaServidor</ref> &gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/LogicaNegocio.java" line="235" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/LogicaNegocio.java" bodystart="235" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_1a4f75b07b3104303bb27ca0b727c9e9a1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.example.grupo5.aitherapp.retrofit.LogicaNegocio.getDistanciaFecha</definition>
+        <argsstring>(String fecha, Context contexto, Callback&lt; PojoRespuestaServidor &gt; callback)</argsstring>
+        <name>getDistanciaFecha</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.LogicaNegocio.getDistanciaFecha</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>fecha</declname>
+        </param>
+        <param>
+          <type>Context</type>
+          <declname>contexto</declname>
+        </param>
+        <param>
+          <type>Callback&lt; <ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_respuesta_servidor" kindref="compound">PojoRespuestaServidor</ref> &gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/LogicaNegocio.java" line="256" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/LogicaNegocio.java" bodystart="256" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_1aacbdb0a878241f7fdcbff74e3b7f35f1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.example.grupo5.aitherapp.retrofit.LogicaNegocio.getListaSensores</definition>
+        <argsstring>(PojoUsuario usuario, Context contexto)</argsstring>
+        <name>getListaSensores</name>
+        <qualifiedname>com.example.grupo5.aitherapp.retrofit.LogicaNegocio.getListaSensores</qualifiedname>
+        <param>
+          <type><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1pojos_1_1_pojo_usuario" kindref="compound">PojoUsuario</ref></type>
+          <declname>usuario</declname>
+        </param>
+        <param>
+          <type>Context</type>
+          <declname>contexto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/LogicaNegocio.java" line="278" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/LogicaNegocio.java" bodystart="278" bodyend="309"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/LogicaNegocio.java" line="33" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/retrofit/LogicaNegocio.java" bodystart="33" bodyend="310"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_1a4f75b07b3104303bb27ca0b727c9e9a1" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::LogicaNegocio</scope><name>getDistanciaFecha</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_1ade5325e081534bbfd0689ec9b1eb734a" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::LogicaNegocio</scope><name>getHistorialDistancias</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_1aacbdb0a878241f7fdcbff74e3b7f35f1" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::LogicaNegocio</scope><name>getListaSensores</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_1a160878ae2f35eeb81eee7cf7827b0bd5" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::LogicaNegocio</scope><name>guardarDistanciaHoy</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_1ad793ceb58fee76cf3d67c2a2edee9f14" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::LogicaNegocio</scope><name>PostLogin</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_1a3fde517e24c7639f9ffbe6798af03fe0" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::LogicaNegocio</scope><name>PostRegistro</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_1a0cb2d1c9bbde44c229482a227e2d04ea" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::LogicaNegocio</scope><name>postVincularSensor</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio_1af7e6a0f3a6f4760b65b92ad80ee0749a" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::retrofit::LogicaNegocio</scope><name>putModificarDatos</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

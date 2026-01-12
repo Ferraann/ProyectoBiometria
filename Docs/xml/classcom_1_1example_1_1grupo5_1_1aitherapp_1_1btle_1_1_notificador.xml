@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_notificador" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::btle::Notificador</compoundname>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_notificador_1a86b5bf8c87c05ecc8f0b16a30a0d0536" prot="private" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String com.example.grupo5.aitherapp.btle.Notificador.CHANNEL_ID</definition>
+        <argsstring></argsstring>
+        <name>CHANNEL_ID</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.Notificador.CHANNEL_ID</qualifiedname>
+        <initializer>= &quot;canal_desconexion&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Notificador.java" line="18" column="33" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Notificador.java" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_notificador_1a297a72c9bcd860161584db4ebd5b8e31" prot="private" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String com.example.grupo5.aitherapp.btle.Notificador.CHANNEL_NAME</definition>
+        <argsstring></argsstring>
+        <name>CHANNEL_NAME</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.Notificador.CHANNEL_NAME</qualifiedname>
+        <initializer>= &quot;Desconexión BTLE&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Notificador.java" line="19" column="33" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Notificador.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_notificador_1aa52217db50d3bd6fe8822f2b94e300d6" prot="private" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String com.example.grupo5.aitherapp.btle.Notificador.CHANNEL_DESC</definition>
+        <argsstring></argsstring>
+        <name>CHANNEL_DESC</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.Notificador.CHANNEL_DESC</qualifiedname>
+        <initializer>= &quot;Notifica cuando un dispositivo BTLE se desconecta&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Notificador.java" line="20" column="33" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Notificador.java" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_notificador_1af27e455e8c471f1267fe9dcda9e9cb7b" prot="private" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean com.example.grupo5.aitherapp.btle.Notificador.yaNotificado</definition>
+        <argsstring></argsstring>
+        <name>yaNotificado</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.Notificador.yaNotificado</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Notificador.java" line="23" column="28" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Notificador.java" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_notificador_1a41ecd6813714a11a0854df80c7c7dbec" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.example.grupo5.aitherapp.btle.Notificador.resetearEstado</definition>
+        <argsstring>()</argsstring>
+        <name>resetearEstado</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.Notificador.resetearEstado</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Notificador.java" line="25" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Notificador.java" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_notificador_1aa68bf51c2818cfd4f36ee2d14711c5a8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.example.grupo5.aitherapp.btle.Notificador.enviarNotificacion</definition>
+        <argsstring>(Context context, String macDispositivo)</argsstring>
+        <name>enviarNotificacion</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.Notificador.enviarNotificacion</qualifiedname>
+        <param>
+          <type>Context</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>macDispositivo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Notificador.java" line="29" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Notificador.java" bodystart="29" bodyend="52"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_notificador_1a04e69d6b8e4ef81ac3b4c424f4b14414" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.example.grupo5.aitherapp.btle.Notificador.crearCanal</definition>
+        <argsstring>(Context context)</argsstring>
+        <name>crearCanal</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.Notificador.crearCanal</qualifiedname>
+        <param>
+          <type>Context</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Notificador.java" line="54" column="25" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Notificador.java" bodystart="54" bodyend="65"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Notificador.java" line="16" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Notificador.java" bodystart="16" bodyend="66"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_notificador_1aa52217db50d3bd6fe8822f2b94e300d6" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::Notificador</scope><name>CHANNEL_DESC</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_notificador_1a86b5bf8c87c05ecc8f0b16a30a0d0536" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::Notificador</scope><name>CHANNEL_ID</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_notificador_1a297a72c9bcd860161584db4ebd5b8e31" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::Notificador</scope><name>CHANNEL_NAME</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_notificador_1a04e69d6b8e4ef81ac3b4c424f4b14414" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::Notificador</scope><name>crearCanal</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_notificador_1aa68bf51c2818cfd4f36ee2d14711c5a8" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::Notificador</scope><name>enviarNotificacion</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_notificador_1a41ecd6813714a11a0854df80c7c7dbec" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::Notificador</scope><name>resetearEstado</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_notificador_1af27e455e8c471f1267fe9dcda9e9cb7b" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::Notificador</scope><name>yaNotificado</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

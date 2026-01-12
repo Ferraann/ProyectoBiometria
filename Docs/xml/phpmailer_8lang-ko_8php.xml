@@ -1,0 +1,304 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="phpmailer_8lang-ko_8php" kind="file" language="PHP">
+    <compoundname>phpmailer.lang-ko.php</compoundname>
+    <innernamespace refid="namespace_p_h_p_mailer">PHPMailer</innernamespace>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1a9941c17a5eabafa36ac3b0859476a4fb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;authenticate&apos;]</definition>
+        <argsstring>[&apos;authenticate&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP 오류: 인증할 수 없습니다.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="9" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1a440a455b3b54a1c64c347ebe77cfad69" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;connect_host&apos;]</definition>
+        <argsstring>[&apos;connect_host&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP 오류: SMTP 호스트에 접속할 수 없습니다.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="10" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1afe3883d1634dca642e14d301ffaaa952" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;data_not_accepted&apos;]</definition>
+        <argsstring>[&apos;data_not_accepted&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP 오류: 데이터가 받아들여지지 않았습니다.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="11" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1a4438aaac30813894b1b04e75a2e0de98" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;empty_message&apos;]</definition>
+        <argsstring>[&apos;empty_message&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;메세지 내용이 없습니다&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="12" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1a8b9939d40805387acf622ec4f543af50" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;encoding&apos;]</definition>
+        <argsstring>[&apos;encoding&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;알 수 없는 인코딩: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="13" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1a4ce303a3e848c4e95a193d1db9719998" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;execute&apos;]</definition>
+        <argsstring>[&apos;execute&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;실행 불가: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="14" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1a9f10ce2f2b3bbd0e80d9a56ce05f72ba" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;file_access&apos;]</definition>
+        <argsstring>[&apos;file_access&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;파일 접근 불가: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="15" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1ae7db8a216f9a035e2f331350bc7ee105" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;file_open&apos;]</definition>
+        <argsstring>[&apos;file_open&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;파일 오류: 파일을 열 수 없습니다: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="16" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1aabfcfe6a66dc36821d7014bdc5a3b6f9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;from_failed&apos;]</definition>
+        <argsstring>[&apos;from_failed&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;다음 From 주소에서 오류가 발생했습니다: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="17" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1a3a317f3e32c3246ff68ed968ddcf4774" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;instantiate&apos;]</definition>
+        <argsstring>[&apos;instantiate&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;mail 함수를 인스턴스화할 수 없습니다&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="18" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1a5139862f86824b503222c7066bf5a4e6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;invalid_address&apos;]</definition>
+        <argsstring>[&apos;invalid_address&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;잘못된 주소: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="19" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1a53b73fedc58a3e9084bd6de0f3f1e4e1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;mailer_not_supported&apos;]</definition>
+        <argsstring>[&apos;mailer_not_supported&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos; 메일러는 지원되지 않습니다.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="20" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1a957c4c5cc80342ca5a19ba145f85daa9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;provide_address&apos;]</definition>
+        <argsstring>[&apos;provide_address&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;적어도 한 개 이상의 수신자 메일 주소를 제공해야 합니다.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="21" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1ae9940d910460e388276ce1a4c02081f7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;recipients_failed&apos;]</definition>
+        <argsstring>[&apos;recipients_failed&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP 오류: 다음 수신자에서 오류가 발생했습니다: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="22" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1a59c4260e366f69d573d10355e2e2d820" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;signing&apos;]</definition>
+        <argsstring>[&apos;signing&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;서명 오류: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="23" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1a83c3b0c6679b3878c71606ed753c5f2d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;smtp_connect_failed&apos;]</definition>
+        <argsstring>[&apos;smtp_connect_failed&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP 연결을 실패하였습니다.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="24" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1a9f53f2e12f4f1445bccf30b1e6a76538" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;smtp_error&apos;]</definition>
+        <argsstring>[&apos;smtp_error&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;SMTP 서버 오류: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="25" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1a941459734cab977ccbc502e2cfad2b5f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;variable_set&apos;]</definition>
+        <argsstring>[&apos;variable_set&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;변수 설정 및 초기화 불가: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="26" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="phpmailer_8lang-ko_8php_1a74fde728a807ad6886041cb2be6dadc5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPMAILER_LANG[ &apos;extension_missing&apos;]</definition>
+        <argsstring>[&apos;extension_missing&apos;]</argsstring>
+        <name>$PHPMAILER_LANG</name>
+        <initializer>= &apos;확장자 없음: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" line="27" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php" bodystart="27" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;authenticate&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>오류:<sp/>인증할<sp/>수<sp/>없습니다.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;connect_host&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>오류:<sp/>SMTP<sp/>호스트에<sp/>접속할<sp/>수<sp/>없습니다.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;data_not_accepted&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>오류:<sp/>데이터가<sp/>받아들여지지<sp/>않았습니다.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;empty_message&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;메세지<sp/>내용이<sp/>없습니다&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;encoding&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;알<sp/>수<sp/>없는<sp/>인코딩:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;execute&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;실행<sp/>불가:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;file_access&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;파일<sp/>접근<sp/>불가:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;file_open&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;파일<sp/>오류:<sp/>파일을<sp/>열<sp/>수<sp/>없습니다:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;from_failed&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;다음<sp/>From<sp/>주소에서<sp/>오류가<sp/>발생했습니다:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;instantiate&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;mail<sp/>함수를<sp/>인스턴스화할<sp/>수<sp/>없습니다&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;invalid_address&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;잘못된<sp/>주소:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;mailer_not_supported&apos;</highlight><highlight class="normal">]<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;<sp/>메일러는<sp/>지원되지<sp/>않습니다.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;provide_address&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;적어도<sp/>한<sp/>개<sp/>이상의<sp/>수신자<sp/>메일<sp/>주소를<sp/>제공해야<sp/>합니다.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;recipients_failed&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>오류:<sp/>다음<sp/>수신자에서<sp/>오류가<sp/>발생했습니다:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;signing&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;서명<sp/>오류:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;smtp_connect_failed&apos;</highlight><highlight class="normal">]<sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>연결을<sp/>실패하였습니다.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;smtp_error&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;SMTP<sp/>서버<sp/>오류:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;variable_set&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;변수<sp/>설정<sp/>및<sp/>초기화<sp/>불가:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><ref refid="phpmailer_8lang-af_8php_1a9941c17a5eabafa36ac3b0859476a4fb" kindref="member">$PHPMAILER_LANG</ref>[</highlight><highlight class="stringliteral">&apos;extension_missing&apos;</highlight><highlight class="normal">]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;확장자<sp/>없음:<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/language/phpmailer.lang-ko.php"/>
+  </compounddef>
+</doxygen>

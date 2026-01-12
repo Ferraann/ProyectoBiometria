@@ -1,0 +1,448 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::btle::TramaIBeacon</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a9a92d463779ce8311e8c1e97f25b283f" prot="private" static="no" mutable="no">
+        <type>byte[]</type>
+        <definition>byte [] com.example.grupo5.aitherapp.btle.TramaIBeacon.prefijo</definition>
+        <argsstring></argsstring>
+        <name>prefijo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.prefijo</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+<para>9 bytes iniciales de la trama iBeacon </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="14" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1aa01a2b9a4c9f3049c15d3057c54460a9" prot="private" static="no" mutable="no">
+        <type>byte[]</type>
+        <definition>byte [] com.example.grupo5.aitherapp.btle.TramaIBeacon.uuid</definition>
+        <argsstring></argsstring>
+        <name>uuid</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.uuid</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+<para>UUID del beacon (16 bytes). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="15" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1abcee518391f752933bf9f60eac004e86" prot="private" static="no" mutable="no">
+        <type>byte[]</type>
+        <definition>byte [] com.example.grupo5.aitherapp.btle.TramaIBeacon.major</definition>
+        <argsstring></argsstring>
+        <name>major</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.major</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+<para>Valor &quot;major&quot; (2 bytes). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="16" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1af04494c64e8205abaa56f8633c2afe96" prot="private" static="no" mutable="no">
+        <type>byte[]</type>
+        <definition>byte [] com.example.grupo5.aitherapp.btle.TramaIBeacon.minor</definition>
+        <argsstring></argsstring>
+        <name>minor</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.minor</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+<para>Valor &quot;minor&quot; (2 bytes). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="17" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1ab32ccc7868adc8b20193bc65e8083d97" prot="private" static="no" mutable="no">
+        <type>byte</type>
+        <definition>byte com.example.grupo5.aitherapp.btle.TramaIBeacon.txPower</definition>
+        <argsstring></argsstring>
+        <name>txPower</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.txPower</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Potencia TX calibrada (1 byte). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="18" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1ab47ffe5ffd1c07f2779568756a00dc33" prot="private" static="no" mutable="no">
+        <type>byte[]</type>
+        <definition>byte [] com.example.grupo5.aitherapp.btle.TramaIBeacon.losBytes</definition>
+        <argsstring></argsstring>
+        <name>losBytes</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.losBytes</qualifiedname>
+        <briefdescription>
+<para>Trama completa recibida. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="20" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a0d8a3366df00b5f22261df7e9c54d5e9" prot="private" static="no" mutable="no">
+        <type>byte[]</type>
+        <definition>byte [] com.example.grupo5.aitherapp.btle.TramaIBeacon.advFlags</definition>
+        <argsstring></argsstring>
+        <name>advFlags</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.advFlags</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+<para>Flags de advertising (3 bytes). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="22" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a9824a1deb9f869731e89b274cfcac7db" prot="private" static="no" mutable="no">
+        <type>byte[]</type>
+        <definition>byte [] com.example.grupo5.aitherapp.btle.TramaIBeacon.advHeader</definition>
+        <argsstring></argsstring>
+        <name>advHeader</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.advHeader</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+<para>Cabecera de advertising (2 bytes). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="23" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a3842ebfeab07ad83e0a81b0b973f9e5d" prot="private" static="no" mutable="no">
+        <type>byte[]</type>
+        <definition>byte [] com.example.grupo5.aitherapp.btle.TramaIBeacon.companyID</definition>
+        <argsstring></argsstring>
+        <name>companyID</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.companyID</qualifiedname>
+        <initializer>= new byte[2]</initializer>
+        <briefdescription>
+<para>Identificador de fabricante (2 bytes). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="24" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a91b57f62c80ccf5a99f38eae29f65e41" prot="private" static="no" mutable="no">
+        <type>byte</type>
+        <definition>byte com.example.grupo5.aitherapp.btle.TramaIBeacon.iBeaconType</definition>
+        <argsstring></argsstring>
+        <name>iBeaconType</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.iBeaconType</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Tipo de iBeacon (1 byte). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="25" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a6c080f5c6522296566716a231f70d669" prot="private" static="no" mutable="no">
+        <type>byte</type>
+        <definition>byte com.example.grupo5.aitherapp.btle.TramaIBeacon.iBeaconLength</definition>
+        <argsstring></argsstring>
+        <name>iBeaconLength</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.iBeaconLength</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Longitud del frame iBeacon (1 byte). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="26" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="26" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a321e7acc264c474c803772e3a4949a5d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte[]</type>
+        <definition>byte[] com.example.grupo5.aitherapp.btle.TramaIBeacon.getPrefijo</definition>
+        <argsstring>()</argsstring>
+        <name>getPrefijo</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.getPrefijo</qualifiedname>
+        <briefdescription>
+<para>Obtiene el prefijo del paquete iBeacon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Array de 9 bytes correspondientes al prefijo. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="32" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="32" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1af162319142085c5a0efe2e0ce020c1f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte[]</type>
+        <definition>byte[] com.example.grupo5.aitherapp.btle.TramaIBeacon.getUUID</definition>
+        <argsstring>()</argsstring>
+        <name>getUUID</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.getUUID</qualifiedname>
+        <briefdescription>
+<para>Obtiene el UUID del beacon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Array de 16 bytes correspondientes al UUID. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="40" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="40" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a8bf8e407a8412779aa40fa399f8f926e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte[]</type>
+        <definition>byte[] com.example.grupo5.aitherapp.btle.TramaIBeacon.getMajor</definition>
+        <argsstring>()</argsstring>
+        <name>getMajor</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.getMajor</qualifiedname>
+        <briefdescription>
+<para>Obtiene el valor Major. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Array de 2 bytes del Major. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="48" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="48" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1ad1d2fd127519aa1464879fa3762b332c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte[]</type>
+        <definition>byte[] com.example.grupo5.aitherapp.btle.TramaIBeacon.getMinor</definition>
+        <argsstring>()</argsstring>
+        <name>getMinor</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.getMinor</qualifiedname>
+        <briefdescription>
+<para>Obtiene el valor Minor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Array de 2 bytes del Minor. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="56" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="56" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a0d96e1367cc1b768ec15cbec95562804" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte</type>
+        <definition>byte com.example.grupo5.aitherapp.btle.TramaIBeacon.getTxPower</definition>
+        <argsstring>()</argsstring>
+        <name>getTxPower</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.getTxPower</qualifiedname>
+        <briefdescription>
+<para>Devuelve la potencia TX del beacon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Byte que representa el TxPower. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="64" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="64" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1ab6bfefe803fe02b4e4c314ab22c83a7b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte[]</type>
+        <definition>byte[] com.example.grupo5.aitherapp.btle.TramaIBeacon.getLosBytes</definition>
+        <argsstring>()</argsstring>
+        <name>getLosBytes</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.getLosBytes</qualifiedname>
+        <briefdescription>
+<para>Obtiene la trama completa recibida. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Array con todos los bytes de la trama. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="72" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="72" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a22d0c77a84e0f887f092a3d288605d9c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte[]</type>
+        <definition>byte[] com.example.grupo5.aitherapp.btle.TramaIBeacon.getAdvFlags</definition>
+        <argsstring>()</argsstring>
+        <name>getAdvFlags</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.getAdvFlags</qualifiedname>
+        <briefdescription>
+<para>Obtiene los flags de advertising. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Array de 3 bytes con los flags. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="80" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="80" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1adfc86677dcba561e62c7e85d09faf8eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte[]</type>
+        <definition>byte[] com.example.grupo5.aitherapp.btle.TramaIBeacon.getAdvHeader</definition>
+        <argsstring>()</argsstring>
+        <name>getAdvHeader</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.getAdvHeader</qualifiedname>
+        <briefdescription>
+<para>Obtiene la cabecera de advertising. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Array de 2 bytes con la cabecera. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="88" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="88" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1afbfc4cc1ebc1b4162b524745a6ffb7b5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte[]</type>
+        <definition>byte[] com.example.grupo5.aitherapp.btle.TramaIBeacon.getCompanyID</definition>
+        <argsstring>()</argsstring>
+        <name>getCompanyID</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.getCompanyID</qualifiedname>
+        <briefdescription>
+<para>Obtiene el identificador de la compañía (Apple: 0x004C). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Array de 2 bytes con el Company ID. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="96" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="96" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1ad61aad4216c57e8b0ce87dd27aa46ae9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte</type>
+        <definition>byte com.example.grupo5.aitherapp.btle.TramaIBeacon.getiBeaconType</definition>
+        <argsstring>()</argsstring>
+        <name>getiBeaconType</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.getiBeaconType</qualifiedname>
+        <briefdescription>
+<para>Devuelve el tipo de iBeacon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Byte que indica el tipo de frame. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="104" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="104" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1add2ea523610926324726d381564858ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte</type>
+        <definition>byte com.example.grupo5.aitherapp.btle.TramaIBeacon.getiBeaconLength</definition>
+        <argsstring>()</argsstring>
+        <name>getiBeaconLength</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.getiBeaconLength</qualifiedname>
+        <briefdescription>
+<para>Devuelve la longitud de la estructura iBeacon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Byte con la longitud. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="112" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="112" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1aa8b99758408b89e298619213f8f7c8c4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>com.example.grupo5.aitherapp.btle.TramaIBeacon.TramaIBeacon</definition>
+        <argsstring>(byte[] bytes)</argsstring>
+        <name>TramaIBeacon</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.TramaIBeacon.TramaIBeacon</qualifiedname>
+        <param>
+          <type>byte[]</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+<para>Constructor que interpreta una trama iBeacon y separa sus campos. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Extrae automáticamente el prefijo, UUID, major, minor, TxPower y otros parámetros necesarios para identificar correctamente un iBeacon.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array completo de la trama BLE recibida (mínimo 30 bytes). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="124" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="124" bodyend="138"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Clase que representa y descompone una trama iBeacon a partir de un array de bytes. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Permite obtener el prefijo, UUID, major, minor, TxPower y demás campos de la trama publicitaria recibida por BLE.</para>
+<para><simplesect kind="author"><para>Jordi Bataller </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" line="12" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/TramaIBeacon.java" bodystart="12" bodyend="139"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a0d8a3366df00b5f22261df7e9c54d5e9" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>advFlags</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a9824a1deb9f869731e89b274cfcac7db" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>advHeader</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a3842ebfeab07ad83e0a81b0b973f9e5d" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>companyID</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a22d0c77a84e0f887f092a3d288605d9c" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>getAdvFlags</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1adfc86677dcba561e62c7e85d09faf8eb" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>getAdvHeader</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1afbfc4cc1ebc1b4162b524745a6ffb7b5" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>getCompanyID</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1add2ea523610926324726d381564858ef" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>getiBeaconLength</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1ad61aad4216c57e8b0ce87dd27aa46ae9" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>getiBeaconType</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1ab6bfefe803fe02b4e4c314ab22c83a7b" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>getLosBytes</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a8bf8e407a8412779aa40fa399f8f926e" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>getMajor</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1ad1d2fd127519aa1464879fa3762b332c" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>getMinor</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a321e7acc264c474c803772e3a4949a5d" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>getPrefijo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a0d96e1367cc1b768ec15cbec95562804" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>getTxPower</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1af162319142085c5a0efe2e0ce020c1f5" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>getUUID</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a6c080f5c6522296566716a231f70d669" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>iBeaconLength</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a91b57f62c80ccf5a99f38eae29f65e41" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>iBeaconType</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1ab47ffe5ffd1c07f2779568756a00dc33" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>losBytes</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1abcee518391f752933bf9f60eac004e86" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>major</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1af04494c64e8205abaa56f8633c2afe96" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>minor</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1a9a92d463779ce8311e8c1e97f25b283f" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>prefijo</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1aa8b99758408b89e298619213f8f7c8c4" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>TramaIBeacon</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1ab32ccc7868adc8b20193bc65e8083d97" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>txPower</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_trama_i_beacon_1aa01a2b9a4c9f3049c15d3057c54460a9" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::TramaIBeacon</scope><name>uuid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::activitysApp::HomeActivity</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AppCompatActivity</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1a89feb025283d5a0ae1a7ee22d08ad699" prot="private" static="no" mutable="no">
+        <type><ref refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple" kindref="compound">BtleScannerMultiple</ref></type>
+        <definition>BtleScannerMultiple com.example.grupo5.aitherapp.activitysApp.HomeActivity.bleScanner</definition>
+        <argsstring></argsstring>
+        <name>bleScanner</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.HomeActivity.bleScanner</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" line="32" column="33" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" bodystart="32" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1a7ba5c7f8b844cee8e2a14c7d665cb4b3" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.HomeActivity.onCreate</definition>
+        <argsstring>(Bundle savedInstanceState)</argsstring>
+        <name>onCreate</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.HomeActivity.onCreate</qualifiedname>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" line="35" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" bodystart="35" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1a9f4bddf8cd39ad95bc4448549a11c116" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.HomeActivity.onResume</definition>
+        <argsstring>()</argsstring>
+        <name>onResume</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.HomeActivity.onResume</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" line="110" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" bodystart="110" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1af04d0bd3d819dbab55645e6df74864dc" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.HomeActivity.onDestroy</definition>
+        <argsstring>()</argsstring>
+        <name>onDestroy</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.HomeActivity.onDestroy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" line="256" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" bodystart="256" bodyend="262"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1a3a179998c8776685a1b684c0dbb678ac" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.HomeActivity.configurarEscaneoBleSilencioso</definition>
+        <argsstring>()</argsstring>
+        <name>configurarEscaneoBleSilencioso</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.HomeActivity.configurarEscaneoBleSilencioso</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" line="119" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" bodystart="119" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1acf3ce52e25d7d7d67d072347d6844722" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.HomeActivity.mostrarPopupHuella</definition>
+        <argsstring>()</argsstring>
+        <name>mostrarPopupHuella</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.HomeActivity.mostrarPopupHuella</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" line="189" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" bodystart="189" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1ad9b87061039b4280c8b7c9bc81607bc9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.HomeActivity.registrarHuella</definition>
+        <argsstring>()</argsstring>
+        <name>registrarHuella</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.HomeActivity.registrarHuella</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" line="213" column="18" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" bodystart="213" bodyend="253"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1a9299ac4a59825a847d7692669694c67e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.HomeActivity.botonEditarPerfil</definition>
+        <argsstring>(View v)</argsstring>
+        <name>botonEditarPerfil</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.HomeActivity.botonEditarPerfil</qualifiedname>
+        <param>
+          <type>View</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" line="174" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" bodystart="174" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1a11120d3e0b5cfb01557f460dd77cccb3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.HomeActivity.botonIrNotificaciones</definition>
+        <argsstring>(View v)</argsstring>
+        <name>botonIrNotificaciones</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.HomeActivity.botonIrNotificaciones</qualifiedname>
+        <param>
+          <type>View</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" line="178" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" bodystart="178" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1a55188123cf3148088a1ccb1118deeb70" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.example.grupo5.aitherapp.activitysApp.HomeActivity.botonIrSensores</definition>
+        <argsstring>(View v)</argsstring>
+        <name>botonIrSensores</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.HomeActivity.botonIrSensores</qualifiedname>
+        <param>
+          <type>View</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" line="182" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" bodystart="182" bodyend="184"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>AppCompatActivity</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.HomeActivity</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>AppCompatActivity</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.HomeActivity</label>
+        <link refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" line="30" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/HomeActivity.java" bodystart="30" bodyend="263"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1a89feb025283d5a0ae1a7ee22d08ad699" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::HomeActivity</scope><name>bleScanner</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1a9299ac4a59825a847d7692669694c67e" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::HomeActivity</scope><name>botonEditarPerfil</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1a11120d3e0b5cfb01557f460dd77cccb3" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::HomeActivity</scope><name>botonIrNotificaciones</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1a55188123cf3148088a1ccb1118deeb70" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::HomeActivity</scope><name>botonIrSensores</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1a3a179998c8776685a1b684c0dbb678ac" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::HomeActivity</scope><name>configurarEscaneoBleSilencioso</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1acf3ce52e25d7d7d67d072347d6844722" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::HomeActivity</scope><name>mostrarPopupHuella</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1a7ba5c7f8b844cee8e2a14c7d665cb4b3" prot="protected" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::HomeActivity</scope><name>onCreate</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1af04d0bd3d819dbab55645e6df74864dc" prot="protected" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::HomeActivity</scope><name>onDestroy</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1a9f4bddf8cd39ad95bc4448549a11c116" prot="protected" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::HomeActivity</scope><name>onResume</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_home_activity_1ad9b87061039b4280c8b7c9bc81607bc9" prot="private" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::HomeActivity</scope><name>registrarHuella</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

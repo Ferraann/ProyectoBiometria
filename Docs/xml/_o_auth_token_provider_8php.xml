@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="_o_auth_token_provider_8php" kind="file" language="PHP">
+    <compoundname>OAuthTokenProvider.php</compoundname>
+    <innerclass refid="interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider" prot="public">PHPMailer::PHPMailer::OAuthTokenProvider</innerclass>
+    <innernamespace refid="namespace_p_h_p_mailer_1_1_p_h_p_mailer">PHPMailer::PHPMailer</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">PHPMailer\PHPMailer;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">interface<sp/></highlight><highlight class="normal"><ref refid="interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider" kindref="compound">OAuthTokenProvider</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="interface_p_h_p_mailer_1_1_p_h_p_mailer_1_1_o_auth_token_provider_1a697711271ad79acf84ad9d62c45e6706" kindref="member">getOauth64</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/libs/PHPMailer-7.0.0/src/OAuthTokenProvider.php"/>
+  </compounddef>
+</doxygen>

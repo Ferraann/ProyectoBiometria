@@ -1,4 +1,28 @@
 var searchData=
 [
-  ['relating_20to_20phpmailer_0',['Security notices relating to PHPMailer',['../md_src_2libs_2_p_h_p_mailer-7_80_80_2_s_e_c_u_r_i_t_y.html',1,'']]]
+  ['para_20verificar_20si_20el_20usuario_20ya_20tiene_20actividad_20hoy_0',['Consulta para verificar si el usuario ya tiene actividad hoy.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/distancias.php#BusquedaDiaria',1,'']]],
+  ['perfil_20del_20usuario_1',['Resta de puntos en el perfil del usuario.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/canjearRecompensa.php#DeduccionPuntos',1,'']]],
+  ['perfiles_2',['Pruebas de gestión de cuentas y perfiles.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/TestTotalAPI.php#TestsUsuarios',1,'']]],
+  ['personal_20a_20la_20incidencia_3',['Vinculación de personal a la incidencia.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/modificarIncidencia.php#UpdateTecnico',1,'']]],
+  ['php_4',['PHPMailer – A full-featured email creation and transfer class for PHP',['../dir_b7aa11e20ecc50f796b1517dbf512153.html#autotoc_md5',1,'']]],
+  ['phpmailer_5',['PHPMailer',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/canjearRecompensa.php#NotificacionEmail',1,'Envío de comprobante mediante PHPMailer.'],['../md__c_1_2xampp_2htdocs_2_proyecto_biometria__2_2src_2libs_2_p_h_p_mailer-7_80_80_2_s_e_c_u_r_i_t_y.html',1,'Security notices relating to PHPMailer'],['../md__c_1_2xampp_2htdocs_2_proyecto_biometria__2_2src_2libs_2_p_h_p_mailer-7_80_80_2_s_m_t_p_u_t_f8.html#autotoc_md28',1,'SMTPUTF8 in PHPMailer']]],
+  ['phpmailer_20–_20a_20full_20featured_20email_20creation_20and_20transfer_20class_20for_20php_6',['PHPMailer – A full-featured email creation and transfer class for PHP',['../dir_b7aa11e20ecc50f796b1517dbf512153.html#autotoc_md5',1,'']]],
+  ['phpmailer_20for_20enterprise_7',['PHPMailer For Enterprise',['../dir_b7aa11e20ecc50f796b1517dbf512153.html#autotoc_md20',1,'']]],
+  ['por_8',['💡 Desarrollado por',['../C:/xampp/htdocs/ProyectoBiometria_2/README.md#autotoc_md4',1,'']]],
+  ['postfix_20gotcha_9',['Postfix gotcha',['../md__c_1_2xampp_2htdocs_2_proyecto_biometria__2_2src_2libs_2_p_h_p_mailer-7_80_80_2_s_m_t_p_u_t_f8.html#autotoc_md29',1,'']]],
+  ['presencia_20del_20id_20de_20incidencia_10',['Verificación de la presencia del ID de incidencia.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/cerrarIncidencia.php#ValidacionParametros',1,'']]],
+  ['primer_20registro_20del_20día_11',['Creación del primer registro del día.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/distancias.php#InsertDistancia',1,'']]],
+  ['proximamente_12',['- 🌐 &lt;b&gt;Web del proyecto:&lt;/b&gt; Proximamente.',['../C:/xampp/htdocs/ProyectoBiometria_2/README.md#autotoc_md3',1,'']]],
+  ['proyecto_20aither_13',['🌬️ PROYECTO AITHER',['../C:/xampp/htdocs/ProyectoBiometria_2/README.md#autotoc_md0',1,'']]],
+  ['proyecto_3a_20proximamente_14',['- 🌐 &lt;b&gt;Web del proyecto:&lt;/b&gt; Proximamente.',['../C:/xampp/htdocs/ProyectoBiometria_2/README.md#autotoc_md3',1,'']]],
+  ['pruebas_20de_20datos_20ambientales_15',['Pruebas de datos ambientales.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/TestTotalAPI.php#TestsMediciones',1,'']]],
+  ['pruebas_20de_20gestión_20de_20cuentas_20y_20perfiles_16',['Pruebas de gestión de cuentas y perfiles.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/TestTotalAPI.php#TestsUsuarios',1,'']]],
+  ['pruebas_20de_20hardware_20y_20telemetría_17',['Pruebas de hardware y telemetría.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/TestTotalAPI.php#TestsSensores',1,'']]],
+  ['pruebas_20de_20puntos_20y_20distancias_18',['Pruebas de puntos y distancias.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/TestTotalAPI.php#TestsGamificacion',1,'']]],
+  ['pruebas_20de_20validación_20y_20asignación_20de_20rangos_19',['Pruebas de validación y asignación de rangos.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/TestTotalAPI.php#TestsRoles',1,'']]],
+  ['pruebas_20del_20sistema_20de_20tickets_20y_20soporte_20',['Pruebas del sistema de tickets y soporte.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/TestTotalAPI.php#TestsIncidencias',1,'']]],
+  ['puntos_21',['Actualización de la columna &apos;puntos&apos;.',['../sumar_puntos_x_i_d_8php.html#IncrementoSQL',1,'']]],
+  ['puntos_20actuales_20y_20datos_20de_20contacto_22',['Consulta de puntos actuales y datos de contacto.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/canjearRecompensa.php#VerificacionSaldo',1,'']]],
+  ['puntos_20en_20el_20perfil_20del_20usuario_23',['Resta de puntos en el perfil del usuario.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/canjearRecompensa.php#DeduccionPuntos',1,'']]],
+  ['puntos_20y_20distancias_24',['Pruebas de puntos y distancias.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/apitest/TestTotalAPI.php#TestsGamificacion',1,'']]]
 ];

@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_soporte_activity_1_1_soporte_pager_adapter" kind="class" language="Java" prot="private">
+    <compoundname>com::example::grupo5::aitherapp::activitysApp::SoporteActivity::SoportePagerAdapter</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">FragmentStateAdapter</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_soporte_activity_1_1_soporte_pager_adapter_1a00556d00322dfa88632443053c3ec2e5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>com.example.grupo5.aitherapp.activitysApp.SoporteActivity.SoportePagerAdapter.SoportePagerAdapter</definition>
+        <argsstring>(@NonNull FragmentActivity fragmentActivity)</argsstring>
+        <name>SoportePagerAdapter</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.SoporteActivity.SoportePagerAdapter.SoportePagerAdapter</qualifiedname>
+        <param>
+          <type>@NonNull FragmentActivity</type>
+          <declname>fragmentActivity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SoporteActivity.java" line="47" column="16" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SoporteActivity.java" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_soporte_activity_1_1_soporte_pager_adapter_1a4f84bdb27ab5bca0bf568ecc4a4cfce6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Fragment</type>
+        <definition>Fragment com.example.grupo5.aitherapp.activitysApp.SoporteActivity.SoportePagerAdapter.createFragment</definition>
+        <argsstring>(int position)</argsstring>
+        <name>createFragment</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.SoporteActivity.SoportePagerAdapter.createFragment</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SoporteActivity.java" line="53" column="25" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SoporteActivity.java" bodystart="53" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_soporte_activity_1_1_soporte_pager_adapter_1a7c671a147c6e4ec97526e104d6da8553" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int com.example.grupo5.aitherapp.activitysApp.SoporteActivity.SoportePagerAdapter.getItemCount</definition>
+        <argsstring>()</argsstring>
+        <name>getItemCount</name>
+        <qualifiedname>com.example.grupo5.aitherapp.activitysApp.SoporteActivity.SoportePagerAdapter.getItemCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SoporteActivity.java" line="63" column="20" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SoporteActivity.java" bodystart="63" bodyend="65"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>FragmentStateAdapter</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.SoporteActivity.SoportePagerAdapter</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>FragmentStateAdapter</label>
+      </node>
+      <node id="1">
+        <label>com.example.grupo5.aitherapp.activitysApp.SoporteActivity.SoportePagerAdapter</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SoporteActivity.java" line="45" column="12" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/activitysApp/SoporteActivity.java" bodystart="45" bodyend="66"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_soporte_activity_1_1_soporte_pager_adapter_1a4f84bdb27ab5bca0bf568ecc4a4cfce6" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::SoporteActivity::SoportePagerAdapter</scope><name>createFragment</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_soporte_activity_1_1_soporte_pager_adapter_1a7c671a147c6e4ec97526e104d6da8553" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::SoporteActivity::SoportePagerAdapter</scope><name>getItemCount</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_soporte_activity_1_1_soporte_pager_adapter_1a00556d00322dfa88632443053c3ec2e5" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::activitysApp::SoporteActivity::SoportePagerAdapter</scope><name>SoportePagerAdapter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

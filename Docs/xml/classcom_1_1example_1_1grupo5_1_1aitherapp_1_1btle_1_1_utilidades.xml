@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades" kind="class" language="Java" prot="public">
+    <compoundname>com::example::grupo5::aitherapp::btle::Utilidades</compoundname>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a9b174dd2b6eeb00865b3ddf4b85fc218" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte[]</type>
+        <definition>static byte[] com.example.grupo5.aitherapp.btle.Utilidades.stringToBytes</definition>
+        <argsstring>(String texto)</argsstring>
+        <name>stringToBytes</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.Utilidades.stringToBytes</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>texto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" line="14" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a4b12f9b908ceefb8bc50445153f98a7f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>UUID</type>
+        <definition>static UUID com.example.grupo5.aitherapp.btle.Utilidades.stringToUUID</definition>
+        <argsstring>(String uuid)</argsstring>
+        <name>stringToUUID</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.Utilidades.stringToUUID</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" line="22" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" bodystart="22" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a694f6df8a1a52a887200b665c487478d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>static String com.example.grupo5.aitherapp.btle.Utilidades.uuidToString</definition>
+        <argsstring>(UUID uuid)</argsstring>
+        <name>uuidToString</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.Utilidades.uuidToString</qualifiedname>
+        <param>
+          <type>UUID</type>
+          <declname>uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" line="42" column="26" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" bodystart="42" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1ac0ea364128a091c387d4b75c51a64bbd" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>static String com.example.grupo5.aitherapp.btle.Utilidades.uuidToHexString</definition>
+        <argsstring>(UUID uuid)</argsstring>
+        <name>uuidToHexString</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.Utilidades.uuidToHexString</qualifiedname>
+        <param>
+          <type>UUID</type>
+          <declname>uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" line="49" column="26" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" bodystart="49" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a98f1092b762992509665bde16bd873f0" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>static String com.example.grupo5.aitherapp.btle.Utilidades.bytesToString</definition>
+        <argsstring>(byte[] bytes)</argsstring>
+        <name>bytesToString</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.Utilidades.bytesToString</qualifiedname>
+        <param>
+          <type>byte[]</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" line="56" column="26" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" bodystart="56" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a084b5cd50f817a00eb205144ca367092" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte[]</type>
+        <definition>static byte[] com.example.grupo5.aitherapp.btle.Utilidades.dosLongToBytes</definition>
+        <argsstring>(long masSignificativos, long menosSignificativos)</argsstring>
+        <name>dosLongToBytes</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.Utilidades.dosLongToBytes</qualifiedname>
+        <param>
+          <type>long</type>
+          <declname>masSignificativos</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>menosSignificativos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" line="71" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" bodystart="71" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1acda6a37fbfc7237d6381791f6bad4e99" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int com.example.grupo5.aitherapp.btle.Utilidades.bytesToInt</definition>
+        <argsstring>(byte[] bytes)</argsstring>
+        <name>bytesToInt</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.Utilidades.bytesToInt</qualifiedname>
+        <param>
+          <type>byte[]</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" line="81" column="23" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" bodystart="81" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a4fb2a375cc6c8952eabf4e4eeeaab3c1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>static long com.example.grupo5.aitherapp.btle.Utilidades.bytesToLong</definition>
+        <argsstring>(byte[] bytes)</argsstring>
+        <name>bytesToLong</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.Utilidades.bytesToLong</qualifiedname>
+        <param>
+          <type>byte[]</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" line="88" column="24" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" bodystart="88" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a8a2606ca6b331bcffcc5aabaeddd5e9a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int com.example.grupo5.aitherapp.btle.Utilidades.bytesToIntOK</definition>
+        <argsstring>(byte[] bytes)</argsstring>
+        <name>bytesToIntOK</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.Utilidades.bytesToIntOK</qualifiedname>
+        <param>
+          <type>byte[]</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" line="94" column="23" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" bodystart="94" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a026202663e3a0c2949b37b71b8c65001" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>static String com.example.grupo5.aitherapp.btle.Utilidades.bytesToHexString</definition>
+        <argsstring>(byte[] bytes)</argsstring>
+        <name>bytesToHexString</name>
+        <qualifiedname>com.example.grupo5.aitherapp.btle.Utilidades.bytesToHexString</qualifiedname>
+        <param>
+          <type>byte[]</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" line="133" column="26" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" bodystart="133" bodyend="145"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" line="10" column="7" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/android/app/src/main/java/com/example/grupo5/aitherapp/btle/Utilidades.java" bodystart="10" bodyend="146"/>
+    <listofallmembers>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a026202663e3a0c2949b37b71b8c65001" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::Utilidades</scope><name>bytesToHexString</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1acda6a37fbfc7237d6381791f6bad4e99" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::Utilidades</scope><name>bytesToInt</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a8a2606ca6b331bcffcc5aabaeddd5e9a" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::Utilidades</scope><name>bytesToIntOK</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a4fb2a375cc6c8952eabf4e4eeeaab3c1" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::Utilidades</scope><name>bytesToLong</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a98f1092b762992509665bde16bd873f0" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::Utilidades</scope><name>bytesToString</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a084b5cd50f817a00eb205144ca367092" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::Utilidades</scope><name>dosLongToBytes</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a9b174dd2b6eeb00865b3ddf4b85fc218" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::Utilidades</scope><name>stringToBytes</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a4b12f9b908ceefb8bc50445153f98a7f" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::Utilidades</scope><name>stringToUUID</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1ac0ea364128a091c387d4b75c51a64bbd" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::Utilidades</scope><name>uuidToHexString</name></member>
+      <member refid="classcom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_utilidades_1a694f6df8a1a52a887200b665c487478d" prot="public" virt="non-virtual"><scope>com::example::grupo5::aitherapp::btle::Utilidades</scope><name>uuidToString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

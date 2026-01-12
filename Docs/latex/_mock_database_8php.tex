@@ -1,0 +1,53 @@
+\doxysection{C\+:/xampp/htdocs/\+Proyecto\+Biometria\+\_\+2/src/api/apitest/\+Mock\+Database.php File Reference}
+\label{_mock_database_8php}\index{C:/xampp/htdocs/ProyectoBiometria\_2/src/api/apitest/MockDatabase.php@{C:/xampp/htdocs/ProyectoBiometria\_2/src/api/apitest/MockDatabase.php}}
+
+
+Infraestructura de simulación para pruebas unitarias sin base de datos real.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Mock\+Stmt}
+\begin{DoxyCompactList}\small\item\em Simula una sentencia preparada (Statement). \end{DoxyCompactList}\item 
+class \textbf{ Mock\+Result}
+\begin{DoxyCompactList}\small\item\em Simula el conjunto de resultados (Result Set) de una consulta. \end{DoxyCompactList}\item 
+class \textbf{ Mock\+Conn}
+\begin{DoxyCompactList}\small\item\em Simula la conexión principal a la base de datos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ run\+Test} (\$nombre, \$funcion)
+\begin{DoxyCompactList}\small\item\em Ejecutor de pruebas con reporte visual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Infraestructura de simulación para pruebas unitarias sin base de datos real. 
+
+Define clases que imitan el comportamiento de mysqli, mysqli\+\_\+stmt y mysqli\+\_\+result. Permite ejecutar la lógica de negocio en un entorno controlado y seguro. \begin{DoxyAuthor}{Author}
+Manuel 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+19/12/2025 
+\end{DoxyDate}
+
+
+\label{doc-func-members}
+\doxysubsection{Function Documentation}
+\index{MockDatabase.php@{MockDatabase.php}!runTest@{runTest}}
+\index{runTest@{runTest}!MockDatabase.php@{MockDatabase.php}}
+\doxysubsubsection{runTest()}
+{\footnotesize\ttfamily \label{_mock_database_8php_a9d43798a18b1fd560ffdc9f86a693d01} 
+run\+Test (\begin{DoxyParamCaption}\item[{}]{\$nombre}{, }\item[{}]{\$funcion}{}\end{DoxyParamCaption})}
+
+
+
+Ejecutor de pruebas con reporte visual. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$nombre} & Nombre descriptivo del test. \\
+\hline
+callable & {\em \$funcion} & Función anónima que contiene la lógica del test. \\
+\hline
+\end{DoxyParams}

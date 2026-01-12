@@ -1,8 +1,26 @@
 var searchData=
 [
-  ['mailer_0',['mailer',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_d_s_n_configurator.html#a805e71e2fdb239ff519b1e0237affb65',1,'PHPMailer::PHPMailer::DSNConfigurator']]],
-  ['mainactivity_1',['MainActivity',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1_main_activity.html',1,'com::example::grupo5::aitherapp']]],
-  ['might_20need_20it_2',['Why you might need it',['../dir_b7aa11e20ecc50f796b1517dbf512153.html#autotoc_md2',1,'']]],
-  ['minimal_20installation_3',['Minimal installation',['../dir_b7aa11e20ecc50f796b1517dbf512153.html#autotoc_md7',1,'']]],
-  ['moving_20from_20sourceforge_4',['What&apos;s changed since moving from SourceForge?',['../dir_b7aa11e20ecc50f796b1517dbf512153.html#autotoc_md18',1,'']]]
+  ['la_20base_20de_20datos_0',['Extracción de filas del buffer de la base de datos.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/obtenerSensoresXIdUsuario.php#MapeoAsociativo',1,'']]],
+  ['la_20columna_20puntos_1',['Actualización de la columna &apos;puntos&apos;.',['../sumar_puntos_x_i_d_8php.html#IncrementoSQL',1,'']]],
+  ['la_20fase_20del_20ticket_2',['Cambio en la fase del ticket.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/modificarIncidencia.php#UpdateEstado',1,'']]],
+  ['la_20incidencia_3',['Vinculación de personal a la incidencia.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/modificarIncidencia.php#UpdateTecnico',1,'']]],
+  ['la_20magnitud_20física_4',['Registro de la magnitud física.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/guardarMedicion.php#InsercionDatos',1,'']]],
+  ['la_20presencia_20del_20id_20de_20incidencia_5',['Verificación de la presencia del ID de incidencia.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/cerrarIncidencia.php#ValidacionParametros',1,'']]],
+  ['la_20tabla_20usuario_20con_20estado_20activo_200_6',['Registro en la tabla &apos;usuario&apos; con estado &apos;activo=0&apos;.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/registrarUsuario.php#InsercionUsuario',1,'']]],
+  ['le_7',['LE',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3.html#aa250448fdb8ba74ce6f6900878c090fa',1,'PHPMailer\\PHPMailer\\POP3\\LE'],['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p.html#ab2bc171fd161519d12c7fd7b0a1d3176',1,'PHPMailer\\PHPMailer\\SMTP\\LE']]],
+  ['legacy_20versions_8',['Legacy versions',['../dir_b7aa11e20ecc50f796b1517dbf512153.html#autotoc_md10',1,'']]],
+  ['license_9',['License',['../dir_b7aa11e20ecc50f796b1517dbf512153.html#autotoc_md8',1,'']]],
+  ['listapremiosactivity_10',['ListaPremiosActivity',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1activitys_app_1_1_lista_premios_activity.html',1,'com::example::grupo5::aitherapp::activitysApp']]],
+  ['listapremiosactivity_2ejava_11',['ListaPremiosActivity.java',['../_lista_premios_activity_8java.html',1,'']]],
+  ['listener_12',['Listener',['../interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1btle_1_1_btle_scanner_multiple_1_1_listener.html',1,'com::example::grupo5::aitherapp::btle::BtleScannerMultiple']]],
+  ['loading_13',['Installation &amp;amp; loading',['../dir_b7aa11e20ecc50f796b1517dbf512153.html#autotoc_md9',1,'']]],
+  ['localization_14',['Localization',['../dir_b7aa11e20ecc50f796b1517dbf512153.html#autotoc_md14',1,'']]],
+  ['logicanegocio_15',['LogicaNegocio',['../classcom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_logica_negocio.html',1,'com::example::grupo5::aitherapp::retrofit']]],
+  ['logicanegocio_2ejava_16',['LogicaNegocio.java',['../_logica_negocio_8java.html',1,'']]],
+  ['loginusuario_17',['loginUsuario',['../interfacecom_1_1example_1_1grupo5_1_1aitherapp_1_1retrofit_1_1_api_service.html#af9dadd420853953102515ccd5881abe1',1,'com::example::grupo5::aitherapp::retrofit::ApiService']]],
+  ['loginusuario_2ephp_18',['loginUsuario.php',['../login_usuario_8php.html',1,'']]],
+  ['lognegtest_2ephp_19',['lognegtest.php',['../lognegtest_8php.html',1,'']]],
+  ['logout_2ephp_20',['logout.php',['../logout_8php.html',1,'']]],
+  ['logtotxt_2ephp_21',['logtotxt.php',['../logtotxt_8php.html',1,'']]],
+  ['los_20datos_20recibidos_22',['Comprobación de integridad de los datos recibidos.',['../C:/xampp/htdocs/ProyectoBiometria_2/src/api/logicaNegocio/canjearRecompensa.php#ValidacionEntrada',1,'']]]
 ];

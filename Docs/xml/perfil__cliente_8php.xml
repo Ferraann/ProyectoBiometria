@@ -1,0 +1,478 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="perfil__cliente_8php" kind="file" language="PHP">
+    <compoundname>perfil_cliente.php</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="perfil__cliente_8php_1a7004b00e16d01d2a629e125e180c91e0" prot="public" static="no" mutable="no">
+        <type>foreach(glob(__DIR__ . &quot;/../api/logicaNegocio/*.php&quot;) as $file</type>
+        <definition>foreach (glob(__DIR__ . &quot;/../api/logicaNegocio/*.php&quot;) as $file $conn) </definition>
+        <argsstring>)</argsstring>
+        <name>$conn</name>
+        <initializer>= abrirServidor()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" line="20" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="perfil__cliente_8php_1a52bb14d6056cde1360c7716cb9996849" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>if(!isset( $_SESSION[&apos;</definition>
+        <argsstring>(!isset($_SESSION[&apos;</argsstring>
+        <name>if</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" line="27" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="perfil__cliente_8php_1aee3b454e89e80106e73ee4978444f2da" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$DEFAULT_IMAGE_PATH</definition>
+        <argsstring></argsstring>
+        <name>$DEFAULT_IMAGE_PATH</name>
+        <initializer>= &quot;../img/imagen-icono.webp&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" line="37" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="perfil__cliente_8php_1ab7e0d93bad5f4fbce6761cc8a93ab09b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$foto_a_mostrar</definition>
+        <argsstring></argsstring>
+        <name>$foto_a_mostrar</name>
+        <initializer>= $DEFAULT_IMAGE_PATH</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" line="38" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="perfil__cliente_8php_1af2317aab379c0be403615d09e71d1250" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$resultado_foto</definition>
+        <argsstring></argsstring>
+        <name>$resultado_foto</name>
+        <initializer>= obtenerFotoPerfil($conn, $id_usuario)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" line="41" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="perfil__cliente_8php_1a78da83a029ca715b7655cafb97759f19" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>if( $resultado_foto[&apos;</definition>
+        <argsstring>($resultado_foto[&apos;</argsstring>
+        <name>if</name>
+        <initializer>] === &apos;ok&apos; &amp;&amp;
+    !empty($resultado_foto[&apos;fotos&apos;][0][&apos;foto&apos;])) {
+
+    
+    $base64_img = $resultado_foto[&apos;fotos&apos;][0][&apos;foto&apos;];
+
+    
+    
+    $foto_a_mostrar = &apos;data:image/jpeg;base64,&apos; . $base64_img;
+}
+
+
+
+
+
+$nombre = $_SESSION[&apos;usuario_nombre&apos;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" line="43" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" bodystart="43" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="variable" id="perfil__cliente_8php_1af33be8f6de543997b3a23371142c034c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$nombreCompleto</definition>
+        <argsstring></argsstring>
+        <name>$nombreCompleto</name>
+        <initializer>= $_SESSION[&apos;usuario_nombre&apos;] . &quot; &quot; . $_SESSION[&apos;usuario_apellidos&apos;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" line="59" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="perfil__cliente_8php_1a27f8add3c7237d28b80571218cb42824" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$gmail</definition>
+        <argsstring></argsstring>
+        <name>$gmail</name>
+        <initializer>= $_SESSION[&apos;usuario_correo&apos;]]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" line="60" column="1" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="perfil__cliente_8php_1a0cbfa59c5d6e69e7d66925e9e1db85ad" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>if(isset( $_SESSION[&apos;</definition>
+        <argsstring>(isset($_SESSION[&apos;</argsstring>
+        <name>if</name>
+        <initializer>)):</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" line="185" column="13" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="perfil__cliente_8php_1a339ba3314beaf7f2fd098c5fd9d97b6d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>unset( $_SESSION[&apos;</definition>
+        <argsstring>($_SESSION[&apos;</argsstring>
+        <name>unset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" line="190" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="perfil__cliente_8php_1a82cd33ca97ff99f2fcc5e9c81d65251b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>endif</definition>
+        <argsstring></argsstring>
+        <name>endif</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" line="191" column="13" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="perfil__cliente_8php_1a0cbfa59c5d6e69e7d66925e9e1db85ad" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>if(isset( $_SESSION[&apos;</definition>
+        <argsstring>(isset($_SESSION[&apos;</argsstring>
+        <name>if</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" line="194" column="13" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="perfil__cliente_8php_1a339ba3314beaf7f2fd098c5fd9d97b6d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>unset( $_SESSION[&apos;</definition>
+        <argsstring>($_SESSION[&apos;</argsstring>
+        <name>unset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" line="199" column="17" bodyfile="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php" bodystart="199" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;!--</highlight></codeline>
+<codeline lineno="2"><highlight class="normal">===============================================================================</highlight></codeline>
+<codeline lineno="3"><highlight class="normal">NOMBRE:<sp/>perfil_cliente.html</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">DESCRIPCIÓN:<sp/>En<sp/>esta<sp/>seccion<sp/>privada<sp/>del<sp/>usuario<sp/>podra<sp/>encontrar<sp/>sus<sp/>datos<sp/>personalers,</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>datos<sp/>de<sp/>los<sp/>sensores<sp/>y<sp/>podra<sp/>modificarlos<sp/>en<sp/>caso<sp/>de<sp/>que<sp/>sea<sp/>necesario.</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">COPYRIGHT:<sp/>©<sp/>2025<sp/>AITHER.<sp/>Todos<sp/>los<sp/>derechos<sp/>reservados.</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">FECHA:<sp/>13/11/2025</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">AUTOR:<sp/>Greysy<sp/>Burgos<sp/>Salazar<sp/>Y<sp/>Ferran<sp/>Sansaloni<sp/>Prats</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">APORTACIÓN:<sp/>Estructura<sp/>completa<sp/>de<sp/>la<sp/>página<sp/>HTML<sp/>para<sp/>el<sp/>inicio<sp/>de<sp/>sesión</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>con<sp/>enlaces<sp/>a<sp/>recursos<sp/>CSS<sp/>y<sp/>JavaScript<sp/>externos.</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">===============================================================================</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">--&gt;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">require_once<sp/></highlight><highlight class="stringliteral">&quot;../api/conexion.php&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal"><sp/>(glob(__DIR__<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;/../api/logicaNegocio/*.php&quot;</highlight><highlight class="normal">)<sp/>as<sp/>$file)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>require_once<sp/>$file;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref><sp/>=<sp/>abrirServidor();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">session_start();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-----------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>1.<sp/>VALIDACIÓN<sp/>DE<sp/>SESIÓN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-----------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!isset($_SESSION[</highlight><highlight class="stringliteral">&apos;usuario_id&apos;</highlight><highlight class="normal">]))<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>header(</highlight><highlight class="stringliteral">&quot;Location:<sp/>login.html&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="logout_8php_1a6733eb5f605d09eaede9845835d71c4e" kindref="member">exit</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">$id_usuario<sp/>=<sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;usuario_id&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-----------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">//<sp/>2.<sp/>RECUPERAR<sp/>LA<sp/>FOTO<sp/>DE<sp/>PERFIL<sp/>BLOB</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-----------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><ref refid="perfil__cliente_8php_1aee3b454e89e80106e73ee4978444f2da" kindref="member">$DEFAULT_IMAGE_PATH</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;../img/imagen-icono.webp&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><ref refid="perfil__cliente_8php_1ab7e0d93bad5f4fbce6761cc8a93ab09b" kindref="member">$foto_a_mostrar</ref><sp/>=<sp/><ref refid="perfil__cliente_8php_1aee3b454e89e80106e73ee4978444f2da" kindref="member">$DEFAULT_IMAGE_PATH</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Nota:<sp/>Asume<sp/>que<sp/>la<sp/>función<sp/>de<sp/>obtención<sp/>de<sp/>foto<sp/>(que<sp/>era<sp/>guardarFotoPerfil)<sp/>se<sp/>llama<sp/>ahora<sp/>obtenerFotoPerfil</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><ref refid="perfil__cliente_8php_1af2317aab379c0be403615d09e71d1250" kindref="member">$resultado_foto</ref><sp/>=<sp/>obtenerFotoPerfil(<ref refid="test__db_8php_1aa8a5a87b9c1a6a0819b88447cbe41877" kindref="member">$conn</ref>,<sp/>$id_usuario);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="perfil__cliente_8php_1af2317aab379c0be403615d09e71d1250" kindref="member">$resultado_foto</ref>[</highlight><highlight class="stringliteral">&apos;status&apos;</highlight><highlight class="normal">]<sp/>===<sp/></highlight><highlight class="stringliteral">&apos;ok&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>!empty(<ref refid="perfil__cliente_8php_1af2317aab379c0be403615d09e71d1250" kindref="member">$resultado_foto</ref>[</highlight><highlight class="stringliteral">&apos;fotos&apos;</highlight><highlight class="normal">][0][</highlight><highlight class="stringliteral">&apos;foto&apos;</highlight><highlight class="normal">]))<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Si<sp/>la<sp/>DB<sp/>devuelve<sp/>la<sp/>imagen<sp/>en<sp/>Base64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>$base64_img<sp/>=<sp/><ref refid="perfil__cliente_8php_1af2317aab379c0be403615d09e71d1250" kindref="member">$resultado_foto</ref>[</highlight><highlight class="stringliteral">&apos;fotos&apos;</highlight><highlight class="normal">][0][</highlight><highlight class="stringliteral">&apos;foto&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Construimos<sp/>el<sp/>Data<sp/>URI<sp/>que<sp/>el<sp/>navegador<sp/>puede<sp/>leer<sp/>directamente</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Usamos<sp/>&apos;image/jpeg&apos;<sp/>como<sp/>tipo<sp/>por<sp/>defecto,<sp/>pero<sp/>podrías<sp/>intentar<sp/>inferirlo.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="perfil__cliente_8php_1ab7e0d93bad5f4fbce6761cc8a93ab09b" kindref="member">$foto_a_mostrar</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;data:image/jpeg;base64,&apos;</highlight><highlight class="normal"><sp/>.<sp/>$base64_img;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-----------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">//<sp/>3.<sp/>CONSTRUCCIÓN<sp/>DE<sp/>VARIABLES<sp/>DE<sp/>SESIÓN<sp/>(para<sp/>el<sp/>HEADER<sp/>y<sp/>CAMPOS)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-----------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">$nombre<sp/>=<sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;usuario_nombre&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><ref refid="perfil__cliente_8php_1af33be8f6de543997b3a23371142c034c" kindref="member">$nombreCompleto</ref><sp/>=<sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;usuario_nombre&apos;</highlight><highlight class="normal">]<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>.<sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;usuario_apellidos&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><ref refid="perfil__cliente_8php_1a27f8add3c7237d28b80571218cb42824" kindref="member">$gmail</ref><sp/>=<sp/>$_SESSION[</highlight><highlight class="stringliteral">&apos;usuario_correo&apos;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">?&gt;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal">&lt;!DOCTYPE<sp/>html&gt;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">&lt;html<sp/>lang=</highlight><highlight class="stringliteral">&quot;es&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">&lt;head&gt;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;meta<sp/>charset=</highlight><highlight class="stringliteral">&quot;UTF-8&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;meta<sp/>name=</highlight><highlight class="stringliteral">&quot;viewport&quot;</highlight><highlight class="normal"><sp/>content=</highlight><highlight class="stringliteral">&quot;width=device-width,<sp/>initial-scale=1.0&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;title&gt;AITHER<sp/>|<sp/>Perfil&lt;/title&gt;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;link<sp/>rel=</highlight><highlight class="stringliteral">&quot;icon&quot;</highlight><highlight class="normal"><sp/>href=</highlight><highlight class="stringliteral">&quot;../img/logo_aither.png&quot;</highlight><highlight class="normal"><sp/>type=</highlight><highlight class="stringliteral">&quot;image/png&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;link<sp/>rel=</highlight><highlight class="stringliteral">&quot;stylesheet&quot;</highlight><highlight class="normal"><sp/>href=</highlight><highlight class="stringliteral">&quot;../css/perfil_cliente.css&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;link<sp/>href=</highlight><highlight class="stringliteral">&quot;https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap&quot;</highlight><highlight class="normal"><sp/>rel=</highlight><highlight class="stringliteral">&quot;stylesheet&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;link<sp/>rel=</highlight><highlight class="stringliteral">&quot;stylesheet&quot;</highlight><highlight class="normal"><sp/>href=</highlight><highlight class="stringliteral">&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;script<sp/>src=</highlight><highlight class="stringliteral">&quot;../js/actualizar_perfil.js&quot;</highlight><highlight class="normal"><sp/>defer&gt;&lt;/script&gt;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">&lt;/head&gt;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">&lt;body&gt;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">&lt;!--</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>----------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>BLOQUE:<sp/>&lt;header&gt;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>DISEÑO<sp/>LÓGICO:<sp/>Contiene<sp/>el<sp/>logotipo<sp/>y<sp/>la<sp/>barra<sp/>de<sp/>navegación<sp/>principal.</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>DESCRIPCIÓN:<sp/>Proporciona<sp/>acceso<sp/>rápido<sp/>a<sp/>secciones<sp/>informativas<sp/>y</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>un<sp/>botón<sp/>para<sp/>iniciar<sp/>sesión.</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>----------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>--&gt;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">&lt;header&gt;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;!--<sp/>Logo<sp/>de<sp/>Aither<sp/>|<sp/>Al<sp/>hacer<sp/>clic<sp/>tiene<sp/>que<sp/>llevar<sp/>a<sp/>la<sp/>landing<sp/>--&gt;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;./dashboard.php&quot;</highlight><highlight class="normal">&gt;&lt;img<sp/>src=</highlight><highlight class="stringliteral">&quot;../img/logo_Aither_web.png&quot;</highlight><highlight class="normal"><sp/>alt=</highlight><highlight class="stringliteral">&quot;Este<sp/>es<sp/>el<sp/>logo<sp/>de<sp/>nuestro<sp/>Proyecto:<sp/>Aither&quot;</highlight><highlight class="normal">&gt;&lt;/a&gt;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;nav&gt;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--Mis<sp/>sensores,<sp/>soporte<sp/>tecnico<sp/>y<sp/>perfil<sp/>(configuracion<sp/>y<sp/>cerrar<sp/>sesion)--&gt;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;ul&gt;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>Componentes<sp/>del<sp/>nav<sp/>--&gt;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;dashboard.php&quot;</highlight><highlight class="normal">&gt;Mis<sp/>&lt;br&gt;<sp/>sensores&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;soporte_tecnico_cliente.php&quot;</highlight><highlight class="normal">&gt;Soporte<sp/>&lt;br&gt;<sp/>técnico&lt;/a&gt;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/li&gt;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;profile-dropdown-container&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;#&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;nav-perfil&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;profile-toggle-button&quot;</highlight><highlight class="normal">&gt;&lt;i<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;fa-solid<sp/>fa-circle-user&quot;</highlight><highlight class="normal">&gt;&lt;/i&gt;&lt;span&gt;&lt;?php<sp/>echo<sp/>htmlspecialchars($nombre);<sp/>?&gt;&lt;/span&gt;&lt;/a&gt;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;profile-menu&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;profile-menu&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>Menú<sp/>--&gt;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;menu-header&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>Icono,<sp/>nombre<sp/>y<sp/>x<sp/>de<sp/>cerrar<sp/>--&gt;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;i<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;fa-solid<sp/>fa-circle-user<sp/>profile-icon-large&quot;</highlight><highlight class="normal">&gt;&lt;/i&gt;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;span<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;profile-name&quot;</highlight><highlight class="normal">&gt;&lt;?php<sp/>echo<sp/>htmlspecialchars($nombre);<sp/>?&gt;&lt;/span&gt;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;i<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;fa-solid<sp/>fa-xmark<sp/>close-menu-btn&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;close-menu-button&quot;</highlight><highlight class="normal">&gt;&lt;/i&gt;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>Componentes<sp/>del<sp/>menú<sp/>--&gt;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;perfil_cliente.php&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;menu-item&quot;</highlight><highlight class="normal">&gt;CONFIGURACIÓN&lt;/a&gt;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;../php/logout.php&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;menu-item<sp/>logout-item&quot;</highlight><highlight class="normal">&gt;CERRAR<sp/>SESIÓN&lt;/a&gt;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/li&gt;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/ul&gt;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;/nav&gt;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">&lt;/header&gt;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal">&lt;!--<sp/>Contenedor<sp/>main,<sp/>cuerpo<sp/>de<sp/>la<sp/>pagina<sp/>--&gt;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">&lt;main<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;perfil-container&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;!--<sp/>Sección<sp/>de<sp/>editar<sp/>perfil<sp/>--&gt;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;section<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;edit-perfil-section&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;h2&gt;EDITAR<sp/>PERFIL&lt;/h2&gt;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;form<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;perfil-form&quot;</highlight><highlight class="normal"><sp/>action=</highlight><highlight class="stringliteral">&quot;../php/actualizar_perfil.php&quot;</highlight><highlight class="normal"><sp/>method=</highlight><highlight class="stringliteral">&quot;POST&quot;</highlight><highlight class="normal"><sp/>enctype=</highlight><highlight class="stringliteral">&quot;multipart/form-data&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>Logo<sp/>del<sp/>perfil<sp/>y<sp/>boton<sp/>para<sp/>editar<sp/>--&gt;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;form-group<sp/>foto-group&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;foto-placeholder&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;img<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;profile-image-display&quot;</highlight><highlight class="normal"><sp/>src=</highlight><highlight class="stringliteral">&quot;&lt;?php<sp/>echo<sp/>htmlspecialchars($foto_a_mostrar);<sp/>?&gt;&quot;</highlight><highlight class="normal"><sp/>alt=</highlight><highlight class="stringliteral">&quot;Foto<sp/>de<sp/>perfil&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;#&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;edit-link&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;edit-photo-link&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Editar<sp/>&lt;i<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;fa-solid<sp/>fa-pen&quot;</highlight><highlight class="normal">&gt;&lt;/i&gt;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/a&gt;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;input<sp/>type=</highlight><highlight class="stringliteral">&quot;file&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;profile-image-upload&quot;</highlight><highlight class="normal"><sp/>name=</highlight><highlight class="stringliteral">&quot;profile_image&quot;</highlight><highlight class="normal"><sp/>accept=</highlight><highlight class="stringliteral">&quot;image/*&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;input<sp/>type=</highlight><highlight class="stringliteral">&quot;hidden&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;profile-image-base64&quot;</highlight><highlight class="normal"><sp/>name=</highlight><highlight class="stringliteral">&quot;profile_image_base64&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>Campos<sp/>de<sp/>edición<sp/>--&gt;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;form-fields&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>Campo<sp/>de<sp/>nombre<sp/>--&gt;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;input-row&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;label<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;nombre&quot;</highlight><highlight class="normal">&gt;Nombre:&lt;/label&gt;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;input<sp/>type=</highlight><highlight class="stringliteral">&quot;text&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;nombre&quot;</highlight><highlight class="normal"><sp/>name=</highlight><highlight class="stringliteral">&quot;nombre&quot;</highlight><highlight class="normal"><sp/>value=</highlight><highlight class="stringliteral">&quot;&lt;?php<sp/>echo<sp/>htmlspecialchars($nombreCompleto);<sp/>?&gt;&quot;</highlight><highlight class="normal"><sp/>disabled&gt;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;#&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;edit-icon&quot;</highlight><highlight class="normal">&gt;&lt;i<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;fa-solid<sp/>fa-pen-to-square&quot;</highlight><highlight class="normal">&gt;&lt;/i&gt;&lt;/a&gt;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>Campo<sp/>de<sp/>correo<sp/>electrónico<sp/>--&gt;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;input-row&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;label<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;gmail&quot;</highlight><highlight class="normal">&gt;Correo<sp/>Electrónico:&lt;/label&gt;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;input<sp/>type=</highlight><highlight class="stringliteral">&quot;email&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;gmail&quot;</highlight><highlight class="normal"><sp/>name=</highlight><highlight class="stringliteral">&quot;gmail&quot;</highlight><highlight class="normal"><sp/>value=</highlight><highlight class="stringliteral">&quot;&lt;?php<sp/>echo<sp/>htmlspecialchars($gmail);<sp/>?&gt;&quot;</highlight><highlight class="normal"><sp/>disabled&gt;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;#&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;edit-icon&quot;</highlight><highlight class="normal">&gt;&lt;i<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;fa-solid<sp/>fa-pen-to-square&quot;</highlight><highlight class="normal">&gt;&lt;/i&gt;&lt;/a&gt;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>Campo<sp/>de<sp/>confirmar<sp/>correo<sp/>--&gt;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;input-row&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;label<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;repetir-correo&quot;</highlight><highlight class="normal">&gt;Confirmar<sp/>Correo:&lt;/label&gt;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;input<sp/>type=</highlight><highlight class="stringliteral">&quot;email&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;repetir-correo&quot;</highlight><highlight class="normal"><sp/>name=</highlight><highlight class="stringliteral">&quot;repetir-correo&quot;</highlight><highlight class="normal"><sp/>disabled&gt;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>Campo<sp/>de<sp/>contraseña<sp/>nueva<sp/>--&gt;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;input-row&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;label<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;contrasena&quot;</highlight><highlight class="normal">&gt;Contraseña<sp/>Nueva:&lt;/label&gt;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;input<sp/>type=</highlight><highlight class="stringliteral">&quot;password&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;contrasena&quot;</highlight><highlight class="normal"><sp/><sp/>name=</highlight><highlight class="stringliteral">&quot;contrasena&quot;</highlight><highlight class="normal"><sp/>disabled&gt;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;#&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;edit-icon&quot;</highlight><highlight class="normal">&gt;&lt;i<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;fa-solid<sp/>fa-pen-to-square&quot;</highlight><highlight class="normal">&gt;&lt;/i&gt;&lt;/a&gt;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>Campo<sp/>de<sp/>confirmar<sp/>contraseña<sp/>--&gt;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;input-row&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;label<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;repetir-contrasena&quot;</highlight><highlight class="normal">&gt;Confirmar<sp/>Contraseña:&lt;/label&gt;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;input<sp/>type=</highlight><highlight class="stringliteral">&quot;password&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;repetir-contrasena&quot;</highlight><highlight class="normal"><sp/>name=</highlight><highlight class="stringliteral">&quot;repetir-contrasena&quot;</highlight><highlight class="normal"><sp/>disabled&gt;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>Campo<sp/>de<sp/>contraseña<sp/>antigua<sp/>--&gt;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;input-row&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;label<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;contrasena-antigua&quot;</highlight><highlight class="normal">&gt;Contraseña<sp/>Antigua:&lt;/label&gt;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;input<sp/>type=</highlight><highlight class="stringliteral">&quot;password&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;contrasena-antigua&quot;</highlight><highlight class="normal"><sp/><sp/>name=</highlight><highlight class="stringliteral">&quot;contrasena-antigua&quot;</highlight><highlight class="normal"><sp/>disabled&gt;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>Controlador<sp/>de<sp/>los<sp/>mensajes<sp/>en<sp/>pantalla,<sp/>tanto<sp/>los<sp/>mensajes<sp/>de<sp/>error<sp/>como<sp/>los<sp/>de<sp/>éxito<sp/>--&gt;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;?php</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Muestra<sp/>el<sp/>mensaje<sp/>de<sp/>error<sp/>si<sp/>existe</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isset($_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_error&apos;</highlight><highlight class="normal">])):<sp/>?&gt;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;alert<sp/>error&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;js-alerta-error&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;?php<sp/>echo<sp/>htmlspecialchars($_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_error&apos;</highlight><highlight class="normal">]);<sp/>?&gt;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;?php</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="perfil__cliente_8php_1a339ba3314beaf7f2fd098c5fd9d97b6d" kindref="member">unset</ref>($_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_error&apos;</highlight><highlight class="normal">]);<sp/></highlight><highlight class="comment">//<sp/>Limpia<sp/>el<sp/>mensaje<sp/>para<sp/>que<sp/>no<sp/>se<sp/>muestre<sp/>de<sp/>nuevo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="perfil__cliente_8php_1a82cd33ca97ff99f2fcc5e9c81d65251b" kindref="member">endif</ref>;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Muestra<sp/>el<sp/>mensaje<sp/>de<sp/>éxito<sp/>si<sp/>existe</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isset($_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_exito&apos;</highlight><highlight class="normal">])):<sp/>?&gt;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;alert<sp/>success&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;js-alerta-exito&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;?php<sp/>echo<sp/>htmlspecialchars($_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_exito&apos;</highlight><highlight class="normal">]);<sp/>?&gt;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;?php</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="perfil__cliente_8php_1a339ba3314beaf7f2fd098c5fd9d97b6d" kindref="member">unset</ref>($_SESSION[</highlight><highlight class="stringliteral">&apos;mensaje_exito&apos;</highlight><highlight class="normal">]);<sp/></highlight><highlight class="comment">//<sp/>Limpia<sp/>el<sp/>mensaje<sp/>de<sp/>éxito</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="perfil__cliente_8php_1a82cd33ca97ff99f2fcc5e9c81d65251b" kindref="member">endif</ref>;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?&gt;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>Botón<sp/>de<sp/>guardar<sp/>(SUBMIT)<sp/>--&gt;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;button<sp/>type=</highlight><highlight class="stringliteral">&quot;submit&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;btn-guardar&quot;</highlight><highlight class="normal">&gt;GUARDAR&lt;/button&gt;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/form&gt;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;/section&gt;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;!--<sp/>Seción<sp/>de<sp/>configuración<sp/>de<sp/>sensores<sp/>--&gt;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;section<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;config-sensores-section&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;h2&gt;CONFIGURAR<sp/>SENSORES&lt;/h2&gt;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>Selector<sp/>de<sp/>sensores<sp/>--&gt;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;nav<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;sensor-tabs&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;ul&gt;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;#&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tab-link<sp/>active&quot;</highlight><highlight class="normal"><sp/>data-sensor=</highlight><highlight class="stringliteral">&quot;1&quot;</highlight><highlight class="normal">&gt;Sensor<sp/>1&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;#&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tab-link&quot;</highlight><highlight class="normal"><sp/>data-sensor=</highlight><highlight class="stringliteral">&quot;2&quot;</highlight><highlight class="normal">&gt;Sensor<sp/>2&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/ul&gt;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/nav&gt;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>Información<sp/>del<sp/>sensor<sp/>1<sp/>--&gt;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;sensor-details<sp/>active-tab&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;sensor-1-content&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;ul&gt;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;**ID<sp/>del<sp/>sensor:**<sp/>&lt;span&gt;ES000123456&lt;/span&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;**Fecha<sp/>de<sp/>inicio:**<sp/>&lt;span&gt;01/10/2025&lt;/span&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;**Batería<sp/>restante:**<sp/>&lt;span&gt;78%&lt;/span&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;**Incidencias<sp/>antiguas:**<sp/>&lt;span&gt;3<sp/>(Ver<sp/>detalles)&lt;/span&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/ul&gt;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>Información<sp/>del<sp/>sensor<sp/>2<sp/>--&gt;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;sensor-details&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;sensor-2-content&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;ul&gt;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;**ID<sp/>del<sp/>sensor:**<sp/>&lt;span&gt;ES000654321&lt;/span&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;**Fecha<sp/>de<sp/>inicio:**<sp/>&lt;span&gt;20/11/2025&lt;/span&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;**Batería<sp/>restante:**<sp/>&lt;span&gt;100%&lt;/span&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;**Incidencias<sp/>antiguas:**<sp/>&lt;span&gt;0&lt;/span&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/ul&gt;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;/section&gt;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">&lt;/main&gt;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">&lt;script<sp/>src=</highlight><highlight class="stringliteral">&quot;../js/Fun_icono_perfil.js&quot;</highlight><highlight class="normal">&gt;&lt;/script&gt;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal">&lt;script&gt;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>tabLinks<sp/>=<sp/>document.querySelectorAll(</highlight><highlight class="stringliteral">&apos;.sensor-tabs<sp/>a&apos;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>Correcto:<sp/>.sensor-tabs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>tabContents<sp/>=<sp/>document.querySelectorAll(</highlight><highlight class="stringliteral">&apos;.sensor-details&apos;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>Correcto:<sp/>.sensor-details</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>tabLinks.forEach(link<sp/>=&gt;<sp/>{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>link.addEventListener(</highlight><highlight class="stringliteral">&apos;click&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">(event)<sp/>{</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.preventDefault();</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1.<sp/>Obtener<sp/>el<sp/>ID<sp/>del<sp/>sensor<sp/>(usando<sp/>data-sensor,<sp/>no<sp/>data-tab)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sensorId<sp/>=<sp/>this.dataset.sensor;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2.<sp/>Remover<sp/>&apos;active&apos;<sp/>de<sp/>todos<sp/>los<sp/>enlaces<sp/>y<sp/>&apos;active-tab&apos;<sp/>de<sp/>todos<sp/>los<sp/>contenidos</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tabLinks.forEach(l<sp/>=&gt;<sp/>l.classList.remove(</highlight><highlight class="stringliteral">&apos;active&apos;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tabContents.forEach(c<sp/>=&gt;<sp/>c.classList.remove(</highlight><highlight class="stringliteral">&apos;active-tab&apos;</highlight><highlight class="normal">));<sp/></highlight><highlight class="comment">//<sp/>Clase<sp/>correcta:<sp/>active-tab</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>3.<sp/>Añadir<sp/>&apos;active&apos;<sp/>al<sp/>enlace<sp/>clickeado</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.classList.add(</highlight><highlight class="stringliteral">&apos;active&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>4.<sp/>Mostrar<sp/>el<sp/>contenido<sp/>correspondiente<sp/>(usando<sp/>el<sp/>ID)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>activeContent<sp/>=<sp/>document.getElementById(`sensor-${sensorId}-content`);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(activeContent)<sp/>{</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>activeContent.classList.add(</highlight><highlight class="stringliteral">&apos;active-tab&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="268"><highlight class="normal">&lt;/script&gt;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal">&lt;/body&gt;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal">&lt;/html&gt;</highlight></codeline>
+    </programlisting>
+    <location file="C:/xampp/htdocs/ProyectoBiometria_2/src/html/perfil_cliente.php"/>
+  </compounddef>
+</doxygen>

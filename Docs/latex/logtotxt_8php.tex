@@ -1,0 +1,71 @@
+\doxysection{C\+:/xampp/htdocs/\+Proyecto\+Biometria\+\_\+2/src/api/apitest/logtotxt.php File Reference}
+\label{logtotxt_8php}\index{C:/xampp/htdocs/ProyectoBiometria\_2/src/api/apitest/logtotxt.php@{C:/xampp/htdocs/ProyectoBiometria\_2/src/api/apitest/logtotxt.php}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \$root\+Dir} = dirname(\+\_\+\+\_\+\+DIR\+\_\+\+\_\+)
+\item 
+\textbf{ \$output} = "{}========================================================\textbackslash{}n"{}
+\item 
+\textbf{ \$main\+Files} = [\textquotesingle{}index.\+php\textquotesingle{}, \textquotesingle{}conexion.\+php\textquotesingle{}]
+\item 
+foreach(\$main\+Files as \$file) \textbf{ \$logica\+Negocio\+Dir} = \$root\+Dir . \textquotesingle{}/logica\+Negocio/\textquotesingle{}
+\item 
+\textbf{ \$logic\+Files} = glob(\$logica\+Negocio\+Dir . "{}$\ast$.php"{})
+\item 
+\textbf{ if}(empty(\$logic\+Files)) \textbf{ else}
+\end{DoxyCompactItemize}
+
+
+\label{doc-var-members}
+\doxysubsection{Variable Documentation}
+\index{logtotxt.php@{logtotxt.php}!\$logicaNegocioDir@{\$logicaNegocioDir}}
+\index{\$logicaNegocioDir@{\$logicaNegocioDir}!logtotxt.php@{logtotxt.php}}
+\doxysubsubsection{\$logicaNegocioDir}
+{\footnotesize\ttfamily \label{logtotxt_8php_ab07ad3f5348ea4b66a4ae48803b2c991} 
+foreach ( \$main\+Files as \$file) \$logica\+Negocio\+Dir = \$root\+Dir . \textquotesingle{}/logica\+Negocio/\textquotesingle{}}
+
+\index{logtotxt.php@{logtotxt.php}!\$logicFiles@{\$logicFiles}}
+\index{\$logicFiles@{\$logicFiles}!logtotxt.php@{logtotxt.php}}
+\doxysubsubsection{\$logicFiles}
+{\footnotesize\ttfamily \label{logtotxt_8php_ac0bcb5b34044c9e09c298fe2fcd92a40} 
+\$logic\+Files = glob(\$logica\+Negocio\+Dir . "{}$\ast$.php"{})}
+
+\index{logtotxt.php@{logtotxt.php}!\$mainFiles@{\$mainFiles}}
+\index{\$mainFiles@{\$mainFiles}!logtotxt.php@{logtotxt.php}}
+\doxysubsubsection{\$mainFiles}
+{\footnotesize\ttfamily \label{logtotxt_8php_a269fb39b337450e38b6c47c0240bafda} 
+\$main\+Files = [\textquotesingle{}index.\+php\textquotesingle{}, \textquotesingle{}conexion.\+php\textquotesingle{}]}
+
+\index{logtotxt.php@{logtotxt.php}!\$output@{\$output}}
+\index{\$output@{\$output}!logtotxt.php@{logtotxt.php}}
+\doxysubsubsection{\$output}
+{\footnotesize\ttfamily \label{logtotxt_8php_a73004ce9cd673c1bfafd1dc351134797} 
+\$output = "{}========================================================\textbackslash{}n"{}}
+
+\index{logtotxt.php@{logtotxt.php}!\$rootDir@{\$rootDir}}
+\index{\$rootDir@{\$rootDir}!logtotxt.php@{logtotxt.php}}
+\doxysubsubsection{\$rootDir}
+{\footnotesize\ttfamily \label{logtotxt_8php_a68ccc223df2708efe11893f675abdacf} 
+\$root\+Dir = dirname(\+\_\+\+\_\+\+DIR\+\_\+\+\_\+)}
+
+\index{logtotxt.php@{logtotxt.php}!else@{else}}
+\index{else@{else}!logtotxt.php@{logtotxt.php}}
+\doxysubsubsection{else}
+{\footnotesize\ttfamily \label{logtotxt_8php_a8e7c79777a9b4495d1890ba03124352c} 
+\textbf{ if} (empty( \$logic\+Files)) else}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{foreach}\ (\$logicFiles\ as\ \$file)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$fileName\ =\ basename(\$file);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$output\ .=\ \textcolor{stringliteral}{"{}\#\#\#\ INICIO:\ logicaNegocio/"{}}\ .\ \$fileName\ .\ \textcolor{stringliteral}{"{}\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$output\ .=\ file\_get\_contents(\$file);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$output\ .=\ \textcolor{stringliteral}{"{}\(\backslash\)n\#\#\#\ FIN:\ logicaNegocio/"{}}\ .\ \$fileName\ .\ \textcolor{stringliteral}{"{}\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$output\ .=\ \textcolor{stringliteral}{"{}========================================================\(\backslash\)n"{}}}
+
+\end{DoxyCode}
