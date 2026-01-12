@@ -307,7 +307,7 @@ async function loadData(isBackground = false) {
             // MODO MAX: Cargar TODO
             const gases = ['NO2', 'O3', 'PM10', 'SO2', 'CO'];
             const promises = gases.map(g =>
-                fetch(`../php/api_datos.php?gas=${g}&_=${time}`).then(r => r.json()).catch(() => [])
+                fetch(`./src/php/api_datos.php?gas=${g}&_=${time}`).then(r => r.json()).catch(() => [])
             );
 
             const results = await Promise.all(promises);
