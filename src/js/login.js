@@ -180,12 +180,12 @@ loginForm.addEventListener("submit", async e => {
       const esAdministrador = dataAdmin.es_admin || false;
 
       /** @brief PASO 3: Redirigir según el rol */
-      if (esTecnico) {
-        redirectURL = urlTecnico;
-      }
-
       if (esAdministrador) {
         redirectURL = urlAdmin;
+      }
+      
+      if (esTecnico) {
+        redirectURL = urlTecnico;
       }
 
       /** @brief Redirigir a la URL determinada */
