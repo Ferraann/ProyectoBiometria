@@ -323,9 +323,6 @@ if ($conn) {
         $SERVER_DATA,
         JSON_UNESCAPED_UNICODE | JSON_NUMERIC_CHECK
     ); ?>;
-
-    // Verificación rápida en consola (opcional)
-    console.log("Datos cargados:", window.SERVER_DATA);
 </script>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
