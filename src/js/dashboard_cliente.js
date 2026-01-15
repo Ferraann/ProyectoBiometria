@@ -150,13 +150,27 @@ function initCharts() {
         });
     }
 
-    // 3. Top 5
+    // 3. Top 5 (SOLO ESTACIONES OFICIALES)
     const ctxTop = document.getElementById('chartTopSensores');
     if (ctxTop) {
         chartTopSensoresInstance = new Chart(ctxTop, {
             type: 'bar',
-            data: { labels: [], datasets: [{ label: 'Contaminación', data: [], backgroundColor: '#e53935', barThickness: 20 }] },
-            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: '#444' } } } }
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Contaminación Media (Red Oficial)',
+                    data: [],
+                    backgroundColor: '#152D9A', // Azul Aither (Institucional)
+                    barThickness: 20
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { x: { grid: { color: '#444' } } }
+            }
         });
     }
 }
