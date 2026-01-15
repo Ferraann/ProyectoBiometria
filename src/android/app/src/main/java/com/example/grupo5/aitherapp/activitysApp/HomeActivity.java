@@ -105,7 +105,7 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         findViewById(R.id.btnVincularQR_card).setOnClickListener(v ->
-                startActivity(new Intent(HomeActivity.this, VincularQRActivity.class))
+                startActivity(new Intent(HomeActivity.this, AnyadirSensorActivity.class))
         );
 
         findViewById(R.id.Btncoins_card).setOnClickListener(v ->
