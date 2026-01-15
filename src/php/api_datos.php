@@ -1,7 +1,11 @@
 <?php
 header('Content-Type: application/json');
-$conn = new mysqli("127.0.0.1", "root", "", "prueba-mapa");
+require_once "../api/conexion.php";
+foreach (glob(__DIR__ . "/../api/logicaNegocio/*.php") as $file) {
+    require_once $file;
+}
 
+$conn = abrirServidor();
 $gas = isset($_GET['gas']) ? $_GET['gas'] : 'CO';
 
 // Esta consulta evita buscar en 1.4M de filas innecesariamente

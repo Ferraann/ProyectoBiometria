@@ -1,35 +1,57 @@
-<!--
-===============================================================================
-NOMBRE: dashboard_cliente.html
-DESCRIPCIÓN: dashboard o panel de control, esta pagina es la parte privada del usuario,
-            una vez hace login esto es lo primero que ve. En el podemos encontrar, con dos apartados 
-            principales que son los mapas y las estadisticas. Tambien podra acceder a el soporte tecnico 
-            y proximamente a su perfil, ...
-COPYRIGHT: © 2025 AITHER. Todos los derechos reservados.
-FECHA: 10/11/2025
-AUTOR: Greysy Burgos Salazar
-APORTACIÓN: Estructura completa de la página HTML para el inicio de sesión
-            con enlaces a recursos CSS y JavaScript externos.
-===============================================================================
--->
-
 <?php
-/*
 session_start();
 
-// Si NO hay un usuario logeado, redirigir al login
+// Configuración de errores (Desactivar en producción)
+// error_reporting(0);
+
+/*
+// Seguridad: Descomentar cuando el login esté 100% operativo
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: login.html");
     exit;
 }
+*/
 
-// Construimos el nombre completo
-$nombre = $_SESSION['usuario_nombre'];
-$nombreCompleto = $_SESSION['usuario_nombre'] . " " . $_SESSION['usuario_apellidos'];
-$gmail = $_SESSION['usuario_correo'];
- */
+$nombre = $_SESSION['usuario_nombre'] ?? 'Usuario';
+
+// ===============================
+// 1. CARGA DE RECURSOS Y CONEXIÓN
+// ===============================
+require_once '../api/conexion.php';
+require_once '../api/logicaNegocio/obtenerMedicion.php';
+
+$conn = abrirServidor();
+
+// ===============================
+// 2. CONFIGURACIÓN DE GASES
+// ===============================
+// IDs deben coincidir con tu tabla 'tipo_medicion' en la BBDD
+$MAPA_GASES = [
+    "NO2"  => "1",
+    "O3"   => "2",
+    "SO2"  => "3",
+    "CO"   => "4",
+    "PM10" => "5"
+];
+
+$SERVER_DATA = [];
+
+// ===============================
+// 3. OBTENCIÓN DE DATOS
+// ===============================
+if ($conn) {
+    foreach ($MAPA_GASES as $gas => $tipoMedida) {
+        $datos = getMedicionesXTipo($conn, $tipoMedida);
+        // Aseguramos que siempre sea un array para evitar errores en JS
+        $SERVER_DATA[$gas] = is_array($datos) ? $datos : [];
+    }
+} else {
+    // Fallback por si falla la conexión
+    foreach ($MAPA_GASES as $gas => $id) {
+        $SERVER_DATA[$gas] = [];
+    }
+}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -37,39 +59,34 @@ $gmail = $_SESSION['usuario_correo'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AITHER | Panel de control</title>
+
     <link rel="icon" href="../img/logo_aither.png" type="image/png">
+
     <link rel="stylesheet" href="../css/dashboard_cliente.css">
+    <link rel="stylesheet" href="../css/mapa.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="../css/mapa.css">
-
 </head>
 <body>
-<!--
-----------------------------------------------------------------------------
-BLOQUE: <header>
-DISEÑO LÓGICO: Contiene el logotipo y la barra de navegación principal.
-DESCRIPCIÓN: Proporciona acceso rápido a secciones informativas y
-un botón para iniciar sesión.
-----------------------------------------------------------------------------
--->
+
 <header>
-    <!-- Logo de Aither | Al hacer clic tiene que llevar a la landing -->
-    <a href="#"><img src="../img/logo_Aither_web.png" alt="Este es el logo de nuestro Proyecto: Aither"></a>
+    <a href="#"><img src="../img/logo_Aither_web.png" alt="Logo Aither"></a>
     <nav>
-        <!--Mis sensores, soporte tecnico y perfil (configuracion y cerrar sesion)-->
         <ul>
             <li><a href="dashboard.php">Mis <br> sensores</a></li>
-            <li>
-                <a href="soporte_tecnico_cliente.php">Soporte <br> técnico</a>
-            </li>
+            <li><a href="soporte_tecnico_cliente.php">Soporte <br> técnico</a></li>
+
             <li class="profile-dropdown-container">
-                <a href="#" class="nav-perfil" id="profile-toggle-button"><i class="fa-solid fa-circle-user"></i><span><?php echo htmlspecialchars($nombre); ?></span></a>
+                <a href="#" class="nav-perfil" id="profile-toggle-button">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span><?php echo htmlspecialchars($nombre); ?></span>
+                </a>
                 <div class="profile-menu" id="profile-menu">
                     <div class="menu-header">
                         <i class="fa-solid fa-circle-user profile-icon-large"></i>
@@ -83,25 +100,18 @@ un botón para iniciar sesión.
         </ul>
     </nav>
 </header>
-<!--
-----------------------------------------------------------------------------
-BLOQUE: <main>
-DISEÑO LÓGICO: La parte principal del dashboard, esta compuesto por dos secciones
-que dan diferente informacion pero la estructura es parecida.
-----------------------------------------------------------------------------
--->
+
 <main>
     <div class="sensores-container">
-        <!--Titulo-->
         <h1>MIS SENSORES</h1>
-        <!--pestañas de navegacion entre mapas y estadisticas-->
+
         <nav class="sensores-nav">
             <ul>
                 <li><a href="#" class="active" data-tab="mapas">Mapas</a></li>
                 <li><a href="#" data-tab="estadisticas">Estadísticas</a></li>
             </ul>
         </nav>
-        <!--seccion de los mapas-->
+
         <div class="tab-content active-tab-content" id="mapas-content" data-tab-content="mapas">
 
             <div class="map-controls">
@@ -111,7 +121,6 @@ que dan diferente informacion pero la estructura es parecida.
                             <span>Mapa general del aire</span>
                             <i class="fa-solid fa-chevron-down"></i>
                         </div>
-
                         <div class="dropdown-menu">
                             <a href="#" class="dropdown-item">Mapa general del aire</a>
                             <a href="#" class="dropdown-item">Mis sensores personales</a>
@@ -129,7 +138,6 @@ que dan diferente informacion pero la estructura es parecida.
             </div>
 
             <div class="mapa-dashboard">
-
                 <div id="loader">Analizando atmósfera...</div>
 
                 <div id="map-controls-widget">
@@ -160,7 +168,6 @@ que dan diferente informacion pero la estructura es parecida.
         </div>
 
         <div class="tab-content" id="estadisticas-content" data-tab-content="estadisticas">
-
             <div class="map-controls">
                 <div class="selector-gases-y-informacion">
                     <div class="dropdown-container">
@@ -206,8 +213,8 @@ que dan diferente informacion pero la estructura es parecida.
                 </div>
             </div>
         </div>
+    </div>
 </main>
-
 
 <div id="gas-info-panel" class="gas-info-modal">
     <div class="gas-info-content">
@@ -217,7 +224,6 @@ que dan diferente informacion pero la estructura es parecida.
         </header>
 
         <div class="modal-body">
-
             <section id="info-o3" class="gas-card o3">
                 <div class="gas-header">
                     <h3>O₃ - Ozono</h3>
@@ -226,12 +232,11 @@ que dan diferente informacion pero la estructura es parecida.
                 <div class="gas-grid">
                     <div class="gas-main-info">
                         <p><strong>Generación:</strong> No se emite de forma directa (reacción química con el sol).</p>
-                        <p><strong>Fuentes:</strong> Tráfico rodado, industrias, refinerías, vapores de gasolina, disolventes y productos de limpieza (especialmente en días soleados).</p>
-
+                        <p><strong>Fuentes:</strong> Tráfico, industrias, disolventes (especialmente en días soleados).</p>
                         <h4>Efectos Nocivos</h4>
                         <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
-                            <li><strong>Baja exposición:</strong> Irritación, dolor de garganta/pecho, tos y falta de aire.</li>
-                            <li><strong>Alta exposición:</strong> Reducción pulmonar, asma, bronquitis, enfisema y riesgo de infecciones. La exposición crónica puede causar daño permanente.</li>
+                            <li><strong>Baja exposición:</strong> Irritación, tos y falta de aire.</li>
+                            <li><strong>Alta exposición:</strong> Reducción pulmonar, asma, daño permanente.</li>
                         </ul>
                     </div>
                     <div class="gas-limits">
@@ -250,19 +255,17 @@ que dan diferente informacion pero la estructura es parecida.
                 <div class="gas-grid">
                     <div class="gas-main-info">
                         <p><strong>Generación:</strong> Combustión a altas temperaturas.</p>
-                        <p><strong>Fuentes:</strong> Tráfico, centrales eléctricas, industria y fuentes interiores (estufas/calentadores).</p>
-
+                        <p><strong>Fuentes:</strong> Tráfico, centrales eléctricas, industria.</p>
                         <h4>Efectos Nocivos</h4>
                         <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
-                            <li><strong>Baja exposición:</strong> Irritación de ojos/nariz/garganta, tos, flema y disnea.</li>
-                            <li><strong>Alta exposición:</strong> Inflamación de vías, bronquitis y edema pulmonar.</li>
+                            <li><strong>Baja exposición:</strong> Irritación de ojos/garganta, tos.</li>
+                            <li><strong>Alta exposición:</strong> Inflamación de vías, bronquitis.</li>
                         </ul>
                     </div>
                     <div class="gas-limits">
                         <h4>Umbrales</h4>
-                        <div class="limit-box eu"><span>UE:</span> 40 (Anual) / 200 (1h) µg/m³</div>
-                        <div class="limit-box oms"><span>OMS:</span> 10 (Anual) / 25 (24h) µg/m³</div>
-                        <div class="limit-box alert" style="margin-top:5px; width:100%"><span>Otros:</span> Sup: 7 mg/m³ | Min: 5 mg/m³</div>
+                        <div class="limit-box eu"><span>UE:</span> 40 (Anual) µg/m³</div>
+                        <div class="limit-box oms"><span>OMS:</span> 10 (Anual) µg/m³</div>
                     </div>
                 </div>
             </section>
@@ -274,20 +277,17 @@ que dan diferente informacion pero la estructura es parecida.
                 </div>
                 <div class="gas-grid">
                     <div class="gas-main-info">
-                        <p><strong>Generación: </strong>Se genera principalmente por la combustión de combustibles fósiles que contienen azufre (como el carbón y derivados del petróleo) y por la fundición de minerales ricos en azufre. Al quemarse, el azufre se oxida y se libera a la atmósfera. </p>
-                        <p><strong>Fuentes:</strong> Industria energetica, Procesos industriales, Calefacción y transporte.</p>
-
+                        <p><strong>Generación: </strong>Combustión de fósiles con azufre y fundición de minerales.</p>
+                        <p><strong>Fuentes:</strong> Industria energética, calefacción y transporte.</p>
                         <h4>Efectos Nocivos</h4>
                         <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
-                            <li><strong>Baja exposición:</strong> Ojos y piel: Irritación severa, lagrimeo y quemaduras.</li>
-                            <li><strong>Alta exposición:</strong>Sistema respiratorio: Irritado, inflamado, tos, asma, broncoconstricción. Casos graves: edema y neumonía.</li>
+                            <li><strong>Baja exposición:</strong> Irritación severa, lagrimeo.</li>
+                            <li><strong>Alta exposición:</strong> Asma, broncoconstricción, neumonía.</li>
                         </ul>
                     </div>
                     <div class="gas-limits">
                         <h4>Umbrales</h4>
-                        <div class="limit-box oms"><span>OMS:</span> 40 (24h) / 500 (10min) µg/m³</div>
-                        <div class="limit-box alert"><span>Máx (60% VLD):</span> 75 μg/m³</div>
-                        <div class="limit-box alert"><span>Mín (40% VLD):</span> 50 μg/m³</div>
+                        <div class="limit-box oms"><span>OMS:</span> 40 (24h) µg/m³</div>
                     </div>
                 </div>
             </section>
@@ -299,34 +299,39 @@ que dan diferente informacion pero la estructura es parecida.
                 </div>
                 <div class="gas-grid">
                     <div class="gas-main-info">
-                        <p><strong>Generación:</strong> Producido por la combustión incompleta.</p>
-                        <p><strong>Fuentes:</strong> La principal fuente es el tráfico rodado (coches, camiones, motos) debido a la quema de gasolina y diésel. Estufas de gas o leña mal ventiladas, calderas defectuosas, braseros de carbón, chimeneas obstruidas y humo de tabaco. </p>
-
+                        <p><strong>Generación:</strong> Combustión incompleta.</p>
+                        <p><strong>Fuentes:</strong> Tráfico, estufas mal ventiladas, tabaco.</p>
                         <h4>Efectos Nocivos</h4>
                         <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
-                            <li><strong>Baja exposición:</strong> Dolor de cabeza (cefalea), fatiga, dificultad para respirar con esfuerzo, náuseas y mareos leves.</li>
-                            <li><strong>Alta exposición:</strong>Confusión mental, vértigo, pérdida de coordinación muscular, dolor de pecho, visión borrosa, pérdida de conocimiento, coma y muerte.</li>
+                            <li><strong>Baja exposición:</strong> Cefalea, fatiga, mareos.</li>
+                            <li><strong>Alta exposición:</strong> Confusión, pérdida de conocimiento, coma.</li>
                         </ul>
                     </div>
                     <div class="gas-limits">
                         <h4>Umbrales</h4>
                         <div class="limit-box oms"><span>OMS (24h):</span> 4000 µg/m³</div>
-                        <div class="limit-box oms"><span>OMS (1h/8h):</span> 25 ppm / 9 ppm</div>
-                        <div class="limit-box alert" style="width:100%"><span>Eval:</span> Sup: 7 mg/m³ | Inf: 5 mg/m³</div>
                     </div>
                 </div>
             </section>
-
         </div>
     </div>
 </div>
 
+<script>
+    // Pasamos el array de PHP a una variable global de JS de forma segura
+    window.SERVER_DATA = <?= json_encode(
+        $SERVER_DATA,
+        JSON_UNESCAPED_UNICODE | JSON_NUMERIC_CHECK
+    ); ?>;
+</script>
 
-</body>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 <script src="../js/map-logic.js"></script>
+
 <script src="../js/dashboard_cliente.js"></script>
+
 <script src="../js/Fun_icono_perfil.js"></script>
 
-<script src="../js/stats-logic.js"></script>
+</body>
 </html>

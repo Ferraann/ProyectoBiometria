@@ -163,3 +163,171 @@
 [12-Jan-2026 13:10:59 Europe/Berlin] Cargando módulo: roles.php
 [12-Jan-2026 13:10:59 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
 [12-Jan-2026 13:10:59 Europe/Berlin] Paso 3: Módulos cargados correctamente
+[15-Jan-2026 18:52:04 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:52:04 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:52:04 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:52:04 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:52:04 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:52:04 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:52:04 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:52:04 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:52:04 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:52:04 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:52:04 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:52:04 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:52:04 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:52:04 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:52:28 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:52:28 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:52:28 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:52:28 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:52:28 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:52:28 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:52:28 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:52:28 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:52:28 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:52:28 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:52:28 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:52:28 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:52:28 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:52:28 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:42 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:42 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:42 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:42 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:42 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:42 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:42 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:42 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:42 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:42 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:42 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:42 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:42 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:42 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:42 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:45 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:45 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:45 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:45 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:45 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:45 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:45 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:45 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:45 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:45 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:45 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:45 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:45 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:45 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:45 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
