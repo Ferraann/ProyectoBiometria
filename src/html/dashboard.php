@@ -138,7 +138,7 @@ if ($conn) {
             </div>
 
             <div class="mapa-dashboard">
-                <div id="loader">>Analizando atmósfera...</div>
+                <div id="loader">Analizando atmósfera...</div>
 
                 <div id="map-controls-widget">
                     <strong>MONITOR AIRE</strong><br>
