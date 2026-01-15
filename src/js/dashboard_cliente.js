@@ -228,24 +228,72 @@ function cargarMinMax(tipoId, fecha) {
         .catch(e => console.error(e));
 }
 
-function cargarTopSensores(tipoId, fecha) {
-    if(!chartTopSensoresInstance) return;
-    fetch(`../api/index.php?accion=getTopSensores&tipo_id=${tipoId}&fecha=${fecha}`)
-        .then(res => res.json())
-        .then(data => {
-            const labels = data.map(d => d.nombre);
-            const valores = data.map(d => d.valor);
+function cargarTopSensores(tipoId, fecha) { // tipoId y fecha ya no se usan para fetch, pero los mantengo por compatibilidad
+    if (!chartTopSensoresInstance) return;
 
-            // TRUCO: Si el nombre contiene "(Oficial)", pintamos la barra de otro color
-            const colores = data.map(d =>
-                    d.nombre.includes('(Oficial)') ? '#FFD700' : '#e53935'
-                // Oro para oficiales, Rojo para usuarios
-            );
+    // 1. Obtener el Gas seleccionado actualmente en el desplegable
+    const gasSelect = document.getElementById('statsGasSelect');
+    const gasKey = gasSelect ? gasSelect.value : 'NO2'; // Ej: "NO2", "CO"...
 
-            chartTopSensoresInstance.data.labels = labels;
-            chartTopSensoresInstance.data.datasets[0].data = valores;
-            chartTopSensoresInstance.data.datasets[0].backgroundColor = colores; // Aplicamos colores
-            chartTopSensoresInstance.update();
-        })
-        .catch(e => console.error(e));
+    // 2. Obtener los datos REALES de contaminación de ese gas (cargados previamente por el mapa)
+    // Si no hay datos, array vacío.
+    const datosContaminacion = (window.SERVER_DATA && window.SERVER_DATA[gasKey]) ? window.SERVER_DATA[gasKey] : [];
+
+    if (datosContaminacion.length === 0) {
+        console.warn("Aún no hay datos de contaminación cargados para calcular el Top 5.");
+        return;
+    }
+
+    // 3. Obtener configuración de conversión (para que el CO salga bien en ppbv, etc)
+    const factorConversion = (window.gasConfig && window.gasConfig[gasKey]) ? window.gasConfig[gasKey].conversion : 1;
+
+    // 4. ALGORITMO: Asignar a cada estación oficial el valor de contaminación más cercano
+    const rankingEstaciones = window.stations.map(estacion => {
+        // Buscamos la medición más cercana a esta estación
+        let valorMasCercano = 0;
+        let distanciaMinima = Infinity;
+
+        // Normalizamos lat/lng de la estación
+        const latEst = estacion.lat;
+        const lonEst = estacion.lng || estacion.lon;
+
+        datosContaminacion.forEach(medicion => {
+            // Calculamos distancia simple (Pitágoras es suficiente para distancias cortas visuales)
+            // Nota: medicion.lat/lon deben ser números
+            const dLat = latEst - parseFloat(medicion.lat);
+            const dLon = lonEst - parseFloat(medicion.lon);
+            const distancia = Math.sqrt(dLat*dLat + dLon*dLon);
+
+            if (distancia < distanciaMinima) {
+                distanciaMinima = distancia;
+                valorMasCercano = parseFloat(medicion.value);
+            }
+        });
+
+        return {
+            nombre: estacion.name, // Nombre de la estación oficial
+            // Aplicamos la conversión (ej: x500 para CO) y redondeamos
+            valor: parseFloat((valorMasCercano * factorConversion).toFixed(2)),
+            distancia: distanciaMinima // (Opcional, para depurar)
+        };
+    });
+
+    // 5. ORDENAR: De mayor a menor contaminación
+    rankingEstaciones.sort((a, b) => b.valor - a.valor);
+
+    // 6. CORTAR: Nos quedamos con el TOP 5
+    const top5 = rankingEstaciones.slice(0, 5);
+
+    // 7. PINTAR GRÁFICA
+    const labels = top5.map(d => d.nombre);
+    const valores = top5.map(d => d.valor);
+
+    chartTopSensoresInstance.data.labels = labels;
+    chartTopSensoresInstance.data.datasets[0].data = valores;
+
+    // Color: Dorado para indicar que son Oficiales
+    chartTopSensoresInstance.data.datasets[0].backgroundColor = '#FFD700';
+    chartTopSensoresInstance.data.datasets[0].label = `Top 5 Estaciones (${gasKey})`;
+
+    chartTopSensoresInstance.update();
 }

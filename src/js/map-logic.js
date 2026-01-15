@@ -64,6 +64,7 @@ const stations = [
     {code: "52-1-1", lat: 35.291, lng: -2.946, name: "MELILLA"},
     {code: "41-72-3", lat: 41.72361, lon: -2.85694, name: "DURUELO DE LA SIERRA"}
 ];
+window.stations = stations;
 
 // --- 1. CONFIGURACIÓN VISUAL Y CONVERSIONES ---
 const config = {
@@ -88,6 +89,7 @@ const config = {
         stops: [ { val: 0, c: [0, 102, 151] }, { val: 1, c: [50, 135, 175] }, { val: 10, c: [195, 195, 125] }, { val: 25, c: [217, 113, 51] }, { val: 100, c: [74, 12, 0] } ]
     }
 };
+window.gasConfig = config;
 
 const maxRiskConfig = {
     unit: "Dominante",
