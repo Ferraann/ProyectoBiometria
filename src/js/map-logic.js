@@ -389,21 +389,22 @@ map.on('click', function(e) {
 
 
 // --- ACTUALIZACIÓN POR FECHA (AJAX) ---
-async function updateMapByDate(fechaFormatoSQL) {
+window.updateMapByDate = async function(fechaFormatoSQL) {
     const loader = document.getElementById('loader');
     if (loader) loader.style.display = 'flex';
+
+    console.log(`📡 (MapLogic) Solicitando datos nuevos para: ${fechaFormatoSQL}`);
 
     try {
         const promesas = Object.keys(GAS_IDS).map(async (gasKey) => {
             const id = GAS_IDS[gasKey];
+            // Pedimos los datos crudos a la API
             const url = `../api/index.php?accion=getMedicionesXTipo&tipo_id=${id}&fecha=${fechaFormatoSQL}`;
             const response = await fetch(url);
             if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
             const data = await response.json();
 
-            // IMPORTANTE: Aquí solo guardamos los datos CRUDOS.
-            // NO aplicamos conversión aquí para no multiplicarlo dos veces.
-            // La conversión la hace 'loadData' cuando pinta.
+            // Guardamos datos crudos
             const datosCrudos = data.map(p => ({
                 ...p,
                 lat: parseFloat(p.lat),
@@ -414,21 +415,29 @@ async function updateMapByDate(fechaFormatoSQL) {
         });
 
         const resultados = await Promise.all(promesas);
+
+        // Actualizamos la variable global
         resultados.forEach(item => {
             if(window.SERVER_DATA) {
                 window.SERVER_DATA[item.key] = item.data;
             }
         });
 
+        console.log("✅ (MapLogic) Datos actualizados en memoria.");
+
+        // Repintamos mapa (si está visible)
         loadData();
+
+        // DEVOLVEMOS TRUE para indicar que todo fue bien
+        return true;
 
     } catch (error) {
         console.error("Error actualizando el mapa:", error);
-        alert("Hubo un error al cargar los datos de la fecha seleccionada.");
+        return false;
     } finally {
         if (loader) loader.style.display = 'none';
     }
-}
+};
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', function() {
