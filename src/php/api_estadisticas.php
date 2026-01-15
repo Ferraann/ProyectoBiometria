@@ -1,7 +1,11 @@
 <?php
 // php/api_estadisticas.php
 header('Content-Type: application/json');
-$conn = new mysqli("127.0.0.1", "root", "", "prueba-mapa");
+// $conn = new mysqli("127.0.0.1", "root", "", "prueba-mapa");
+require_once "../api/conexion.php";
+foreach (glob(__DIR__ . "/../api/logicaNegocio/*.php") as $file) {
+    require_once $file;
+}
 
 if ($conn->connect_error) {
     die(json_encode(["error" => "Conexión fallida"]));

@@ -163,623 +163,171 @@
 [12-Jan-2026 13:10:59 Europe/Berlin] Cargando módulo: roles.php
 [12-Jan-2026 13:10:59 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
 [12-Jan-2026 13:10:59 Europe/Berlin] Paso 3: Módulos cargados correctamente
-[15-Jan-2026 19:26:41 Europe/Berlin] --- Nueva petición: GET ---
-[15-Jan-2026 19:26:41 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 19:26:41 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 19:26:41 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 19:26:41 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 19:26:41 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 19:26:41 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 19:26:41 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 19:26:41 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 19:26:41 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 19:26:41 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 19:26:41 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 19:26:41 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 19:26:41 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria\src\api\logicaNegocio\gestionRecompensas.php on line 112
-[15-Jan-2026 19:27:18 Europe/Berlin] --- Nueva petición: GET ---
-[15-Jan-2026 19:27:18 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 19:27:18 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 19:27:18 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 19:27:18 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 19:27:18 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 19:27:18 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 19:27:18 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 19:27:18 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 19:27:18 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 19:27:18 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 19:27:18 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 19:27:18 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 19:27:18 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria\src\api\logicaNegocio\gestionRecompensas.php on line 112
-[15-Jan-2026 19:27:19 Europe/Berlin] --- Nueva petición: GET ---
-[15-Jan-2026 19:27:19 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 19:27:19 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 19:27:19 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 19:27:19 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 19:27:19 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 19:27:19 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 19:27:19 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 19:27:19 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 19:27:19 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 19:27:19 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 19:27:19 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 19:27:19 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 19:27:19 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria\src\api\logicaNegocio\gestionRecompensas.php on line 112
-[15-Jan-2026 19:31:11 Europe/Berlin] --- Nueva petición: GET ---
-[15-Jan-2026 19:31:11 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 19:31:11 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 19:31:11 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: guardarFotoIncidencia.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: guardarFotoUsuario.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: guardarMedicion.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: loginUsuario.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: mailer.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: modificarIncidencia.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: obtenerEstadosIncidencias.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: obtenerFotoUsuarioXId.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: obtenerFotosIncidencias.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: obtenerIncidenciaXId.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: obtenerListaSensores.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: obtenerMedicion.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: obtenerSensorXId.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: obtenerSensoresXIdUsuario.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: obtenerTodasIncidencias.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: obtenerUsuarioXId.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: problemasSensor.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: registrarUsuario.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: roles.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
-[15-Jan-2026 19:31:11 Europe/Berlin] Paso 3: Módulos cargados correctamente
-[15-Jan-2026 19:35:07 Europe/Berlin] --- Nueva petición: POST ---
-[15-Jan-2026 19:35:07 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 19:35:07 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 19:35:07 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: guardarFotoIncidencia.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: guardarFotoUsuario.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: guardarMedicion.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: loginUsuario.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: mailer.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: modificarIncidencia.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerEstadosIncidencias.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerFotoUsuarioXId.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerFotosIncidencias.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerIncidenciaXId.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerListaSensores.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerMedicion.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerSensorXId.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerSensoresXIdUsuario.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerTodasIncidencias.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerUsuarioXId.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: problemasSensor.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: registrarUsuario.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: roles.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Paso 3: Módulos cargados correctamente
-[15-Jan-2026 19:35:07 Europe/Berlin] --- Nueva petición: GET ---
-[15-Jan-2026 19:35:07 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 19:35:07 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 19:35:07 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: guardarFotoIncidencia.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: guardarFotoUsuario.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: guardarMedicion.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: loginUsuario.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: mailer.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: modificarIncidencia.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerEstadosIncidencias.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerFotoUsuarioXId.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerFotosIncidencias.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerIncidenciaXId.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerListaSensores.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerMedicion.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerSensorXId.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerSensoresXIdUsuario.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerTodasIncidencias.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: obtenerUsuarioXId.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: problemasSensor.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: registrarUsuario.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: roles.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
-[15-Jan-2026 19:35:07 Europe/Berlin] Paso 3: Módulos cargados correctamente
-[15-Jan-2026 19:48:31 Europe/Berlin] --- Nueva petición: POST ---
-[15-Jan-2026 19:48:31 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 19:48:31 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 19:48:31 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: guardarFotoIncidencia.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: guardarFotoUsuario.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: guardarMedicion.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: loginUsuario.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: mailer.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: modificarIncidencia.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerEstadosIncidencias.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerFotoUsuarioXId.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerFotosIncidencias.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerIncidenciaXId.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerListaSensores.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerMedicion.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerSensorXId.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerSensoresXIdUsuario.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerTodasIncidencias.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerUsuarioXId.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: problemasSensor.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: registrarUsuario.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: roles.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Paso 3: Módulos cargados correctamente
-[15-Jan-2026 19:48:31 Europe/Berlin] --- Nueva petición: GET ---
-[15-Jan-2026 19:48:31 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 19:48:31 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 19:48:31 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: guardarFotoIncidencia.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: guardarFotoUsuario.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: guardarMedicion.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: loginUsuario.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: mailer.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: modificarIncidencia.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerEstadosIncidencias.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerFotoUsuarioXId.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerFotosIncidencias.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerIncidenciaXId.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerListaSensores.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerMedicion.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerSensorXId.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerSensoresXIdUsuario.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerTodasIncidencias.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: obtenerUsuarioXId.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: problemasSensor.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: registrarUsuario.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: roles.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
-[15-Jan-2026 19:48:31 Europe/Berlin] Paso 3: Módulos cargados correctamente
-[15-Jan-2026 20:00:33 Europe/Berlin] --- Nueva petición: POST ---
-[15-Jan-2026 20:00:33 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 20:00:33 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 20:00:33 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: guardarFotoIncidencia.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: guardarFotoUsuario.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: guardarMedicion.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: loginUsuario.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: mailer.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: modificarIncidencia.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerEstadosIncidencias.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerFotoUsuarioXId.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerFotosIncidencias.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerIncidenciaXId.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerListaSensores.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerMedicion.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerSensorXId.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerSensoresXIdUsuario.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerTodasIncidencias.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerUsuarioXId.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: problemasSensor.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: registrarUsuario.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: roles.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Paso 3: Módulos cargados correctamente
-[15-Jan-2026 20:00:33 Europe/Berlin] --- Nueva petición: GET ---
-[15-Jan-2026 20:00:33 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 20:00:33 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 20:00:33 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: guardarFotoIncidencia.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: guardarFotoUsuario.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: guardarMedicion.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: loginUsuario.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: mailer.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: modificarIncidencia.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerEstadosIncidencias.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerFotoUsuarioXId.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerFotosIncidencias.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerIncidenciaXId.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerListaSensores.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerMedicion.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerSensorXId.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerSensoresXIdUsuario.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerTodasIncidencias.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: obtenerUsuarioXId.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: problemasSensor.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: registrarUsuario.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: roles.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
-[15-Jan-2026 20:00:33 Europe/Berlin] Paso 3: Módulos cargados correctamente
-[15-Jan-2026 20:50:08 Europe/Berlin] --- Nueva petición: POST ---
-[15-Jan-2026 20:50:08 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 20:50:08 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 20:50:08 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: guardarFotoIncidencia.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: guardarFotoUsuario.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: guardarMedicion.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: loginUsuario.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: mailer.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: modificarIncidencia.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: obtenerEstadosIncidencias.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: obtenerFotoUsuarioXId.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: obtenerFotosIncidencias.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: obtenerIncidenciaXId.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: obtenerListaSensores.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: obtenerMedicion.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: obtenerSensorXId.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: obtenerSensoresXIdUsuario.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: obtenerTodasIncidencias.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: obtenerUsuarioXId.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: problemasSensor.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: registrarUsuario.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: roles.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
-[15-Jan-2026 20:50:08 Europe/Berlin] Paso 3: Módulos cargados correctamente
-[15-Jan-2026 20:50:09 Europe/Berlin] --- Nueva petición: GET ---
-[15-Jan-2026 20:50:09 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 20:50:09 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 20:50:09 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: guardarFotoIncidencia.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: guardarFotoUsuario.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: guardarMedicion.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: loginUsuario.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: mailer.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: modificarIncidencia.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: obtenerEstadosIncidencias.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: obtenerFotoUsuarioXId.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: obtenerFotosIncidencias.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: obtenerIncidenciaXId.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: obtenerListaSensores.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: obtenerMedicion.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: obtenerSensorXId.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: obtenerSensoresXIdUsuario.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: obtenerTodasIncidencias.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: obtenerUsuarioXId.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: problemasSensor.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: registrarUsuario.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: roles.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
-[15-Jan-2026 20:50:09 Europe/Berlin] Paso 3: Módulos cargados correctamente
-[15-Jan-2026 21:17:14 Europe/Berlin] --- Nueva petición: POST ---
-[15-Jan-2026 21:17:14 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 21:17:14 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 21:17:14 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: guardarFotoIncidencia.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: guardarFotoUsuario.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: guardarMedicion.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: loginUsuario.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: mailer.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: modificarIncidencia.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: obtenerEstadosIncidencias.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: obtenerFotoUsuarioXId.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: obtenerFotosIncidencias.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: obtenerIncidenciaXId.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: obtenerListaSensores.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: obtenerMedicion.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: obtenerSensorXId.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: obtenerSensoresXIdUsuario.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: obtenerTodasIncidencias.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: obtenerUsuarioXId.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: problemasSensor.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: registrarUsuario.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: roles.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
-[15-Jan-2026 21:17:14 Europe/Berlin] Paso 3: Módulos cargados correctamente
-[15-Jan-2026 21:17:14 Europe/Berlin] --- Nueva petición: GET ---
-[15-Jan-2026 21:17:14 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 21:17:15 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 21:17:15 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: guardarFotoIncidencia.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: guardarFotoUsuario.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: guardarMedicion.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: loginUsuario.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: mailer.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: modificarIncidencia.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: obtenerEstadosIncidencias.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: obtenerFotoUsuarioXId.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: obtenerFotosIncidencias.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: obtenerIncidenciaXId.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: obtenerListaSensores.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: obtenerMedicion.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: obtenerSensorXId.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: obtenerSensoresXIdUsuario.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: obtenerTodasIncidencias.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: obtenerUsuarioXId.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: problemasSensor.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: registrarUsuario.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: roles.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
-[15-Jan-2026 21:17:15 Europe/Berlin] Paso 3: Módulos cargados correctamente
-[15-Jan-2026 21:21:33 Europe/Berlin] --- Nueva petición: POST ---
-[15-Jan-2026 21:21:33 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 21:21:33 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 21:21:33 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: guardarFotoIncidencia.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: guardarFotoUsuario.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: guardarMedicion.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: loginUsuario.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: mailer.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: modificarIncidencia.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerEstadosIncidencias.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerFotoUsuarioXId.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerFotosIncidencias.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerIncidenciaXId.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerListaSensores.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerMedicion.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerSensorXId.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerSensoresXIdUsuario.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerTodasIncidencias.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerUsuarioXId.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: problemasSensor.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: registrarUsuario.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: roles.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Paso 3: Módulos cargados correctamente
-[15-Jan-2026 21:21:33 Europe/Berlin] --- Nueva petición: GET ---
-[15-Jan-2026 21:21:33 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 21:21:33 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 21:21:33 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: guardarFotoIncidencia.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: guardarFotoUsuario.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: guardarMedicion.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: loginUsuario.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: mailer.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: modificarIncidencia.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerEstadosIncidencias.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerFotoUsuarioXId.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerFotosIncidencias.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerIncidenciaXId.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerListaSensores.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerMedicion.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerSensorXId.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerSensoresXIdUsuario.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerTodasIncidencias.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: obtenerUsuarioXId.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: problemasSensor.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: registrarUsuario.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: roles.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
-[15-Jan-2026 21:21:33 Europe/Berlin] Paso 3: Módulos cargados correctamente
-[15-Jan-2026 21:26:33 Europe/Berlin] --- Nueva petición: POST ---
-[15-Jan-2026 21:26:33 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 21:26:33 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 21:26:33 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: guardarFotoIncidencia.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: guardarFotoUsuario.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: guardarMedicion.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: loginUsuario.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: mailer.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: modificarIncidencia.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerEstadosIncidencias.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerFotoUsuarioXId.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerFotosIncidencias.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerIncidenciaXId.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerListaSensores.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerMedicion.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerSensorXId.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerSensoresXIdUsuario.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerTodasIncidencias.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerUsuarioXId.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: problemasSensor.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: registrarUsuario.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: roles.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Paso 3: Módulos cargados correctamente
-[15-Jan-2026 21:26:33 Europe/Berlin] --- Nueva petición: GET ---
-[15-Jan-2026 21:26:33 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 21:26:33 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 21:26:33 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: guardarFotoIncidencia.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: guardarFotoUsuario.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: guardarMedicion.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: loginUsuario.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: mailer.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: modificarIncidencia.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerEstadosIncidencias.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerFotoUsuarioXId.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerFotosIncidencias.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerIncidenciaXId.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerListaSensores.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerMedicion.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerSensorXId.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerSensoresXIdUsuario.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerTodasIncidencias.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: obtenerUsuarioXId.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: problemasSensor.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: registrarUsuario.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: roles.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
-[15-Jan-2026 21:26:33 Europe/Berlin] Paso 3: Módulos cargados correctamente
-[15-Jan-2026 21:33:36 Europe/Berlin] --- Nueva petición: POST ---
-[15-Jan-2026 21:33:36 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 21:33:36 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 21:33:36 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: guardarFotoIncidencia.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: guardarFotoUsuario.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: guardarMedicion.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: loginUsuario.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: mailer.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: modificarIncidencia.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerEstadosIncidencias.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerFotoUsuarioXId.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerFotosIncidencias.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerIncidenciaXId.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerListaSensores.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerMedicion.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerSensorXId.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerSensoresXIdUsuario.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerTodasIncidencias.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerUsuarioXId.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: problemasSensor.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: registrarUsuario.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: roles.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Paso 3: Módulos cargados correctamente
-[15-Jan-2026 21:33:36 Europe/Berlin] --- Nueva petición: GET ---
-[15-Jan-2026 21:33:36 Europe/Berlin] Paso 1: conexion.php cargado
-[15-Jan-2026 21:33:36 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
-[15-Jan-2026 21:33:36 Europe/Berlin] Paso 2: abrirServidor() ejecutado
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: activarUsuario.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: actualizarUsuario.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: canjearRecompensa.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: crearIncidencia.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: distancias.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: gestionRecompensas.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: guardarFotoIncidencia.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: guardarFotoUsuario.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: guardarMedicion.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: loginUsuario.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: mailer.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: modificarIncidencia.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerEstadosIncidencias.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerFotoUsuarioXId.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerFotosIncidencias.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerIncidenciaXId.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerListaSensores.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerMedicion.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerSensorXId.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerSensoresXIdUsuario.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerTodasIncidencias.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: obtenerUsuarioXId.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: problemasSensor.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: registrarUsuario.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: roles.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
-[15-Jan-2026 21:33:36 Europe/Berlin] Paso 3: Módulos cargados correctamente
+[15-Jan-2026 18:52:04 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:52:04 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:52:04 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:52:04 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:52:04 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:52:04 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:52:04 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:52:04 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:52:04 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:52:04 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:52:04 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:52:04 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:52:04 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:52:04 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:52:28 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:52:28 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:52:28 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:52:28 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:52:28 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:52:28 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:52:28 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:52:28 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:52:28 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:52:28 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:52:28 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:52:28 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:52:28 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:52:28 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:42 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:42 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:42 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:42 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:42 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:42 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:42 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:42 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:42 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:42 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:42 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:42 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:42 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:42 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:42 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:42 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:42 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:45 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:45 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:45 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:45 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:45 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:45 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:45 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:45 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:45 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:45 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:45 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:45 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
+[15-Jan-2026 18:57:45 Europe/Berlin] --- Nueva petición: GET ---
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 1: conexion.php cargado
+[15-Jan-2026 18:57:45 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[15-Jan-2026 18:57:45 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: activarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: canjearRecompensa.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: distancias.php
+[15-Jan-2026 18:57:45 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[15-Jan-2026 18:57:45 Europe/Berlin] PHP Fatal error:  Cannot redeclare canjearRecompensa() (previously declared in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\canjearRecompensa.php:26) in C:\xampp\htdocs\ProyectoBiometria_2\src\api\logicaNegocio\gestionRecompensas.php on line 112
