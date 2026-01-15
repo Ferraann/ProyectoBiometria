@@ -317,6 +317,7 @@ function renderStations() {
     });
 }
 
+
 // --- FUNCIÓN PRINCIPAL DE CARGA (LOAD DATA) ---
 function loadData() {
     const selector = document.getElementById('gasSelect');
