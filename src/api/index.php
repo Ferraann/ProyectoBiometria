@@ -127,6 +127,8 @@ switch ($method) {
             case "canjearRecompensa":         echo json_encode(canjearRecompensa($conn, $input)); break;
             case "marcarSensorSinProblemas":  echo json_encode(sensorSinProblemas($conn, $input)); break;
             case "marcarSensorConProblemas":  echo json_encode(sensorConProblemas($conn, $input)); break;
+            case "canjearRecompensa":         echo json_encode(canjearRecompensa($conn, $input));  break;
+            case "usarRecompensaFisica":      echo json_encode(marcarRecompensaComoUsada($conn, $input)); break;
             default:                          echo json_encode(["status" => "error", "mensaje" => "Acción POST no reconocida."]); break;
         }
         break;
@@ -157,9 +159,8 @@ switch ($method) {
                 $id = intval($_GET['id'] ?? 0);
                 echo json_encode(obtenerSensorXId($conn, $id) ?: ["status" => "error", "mensaje" => "Sensor no encontrado"]); 
                 break;
-            case "getObtenerSensoresUsuario":
-                echo json_encode(obtenerListaSensores($conn, $_GET['usuario_id'])); 
-                break;
+            case "getObtenerSensoresUsuario": echo json_encode(obtenerListaSensores($conn, $_GET['usuario_id'])); break;
+            case "getRecompensasDisponibles": echo json_encode(obtenerRecompensasDisponibles($conn));   break;
             default: echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]); break;
         }
         break;
