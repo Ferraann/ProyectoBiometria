@@ -337,3 +337,72 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Mapeo de IDs igual que en tu PHP (IMPORTANTE QUE COINCIDAN)
+const GAS_IDS = {
+    "NO2": 1,
+    "O3": 2,
+    "SO2": 3,
+    "CO": 4,
+    "PM10": 5
+};
+
+/**
+ * Función asíncrona para actualizar el mapa por fecha
+ * @param {string} fechaFormatoSQL - Fecha en formato 'YYYY-MM-DD'
+ */
+async function updateMapByDate(fechaFormatoSQL) {
+    const loader = document.getElementById('loader');
+    if (loader) loader.style.display = 'block'; // Mostrar cargando
+
+    console.log(`📡 Solicitando datos para la fecha: ${fechaFormatoSQL}`);
+
+    try {
+        // Creamos un array de promesas para pedir los 5 gases a la vez (más rápido)
+        const promesas = Object.keys(GAS_IDS).map(async (gasKey) => {
+            const id = GAS_IDS[gasKey];
+
+            // Llamada a tu API modificada
+            const url = `../api/index.php?accion=getMedicionesXTipo&tipo_id=${id}&fecha=${fechaFormatoSQL}`;
+
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+
+            const data = await response.json();
+
+            // Necesitamos convertir los datos string a float igual que hizo PHP al inicio
+            const datosProcesados = data.map(p => ({
+                ...p,
+                lat: parseFloat(p.lat),
+                lon: parseFloat(p.lon),
+                // Aplicamos la conversión de unidades si existe en 'config'
+                value: parseFloat(p.value) * (config[gasKey] ? config[gasKey].conversion : 1)
+            }));
+
+            return { key: gasKey, data: datosProcesados };
+        });
+
+        // Esperamos a que terminen las 5 peticiones
+        const resultados = await Promise.all(promesas);
+
+        // Actualizamos la variable global con los nuevos datos
+        resultados.forEach(item => {
+            // Limpiamos array previo y asignamos el nuevo
+            if(window.SERVER_DATA) {
+                window.SERVER_DATA[item.key] = item.data;
+            }
+        });
+
+        console.log("✅ Datos actualizados. Repintando mapa...");
+
+        // Llamamos a tu función existente loadData() para refrescar el mapa
+        // Nota: Asegúrate de que loadData() usa window.SERVER_DATA
+        loadData();
+
+    } catch (error) {
+        console.error("❌ Error actualizando el mapa:", error);
+        alert("Hubo un error al cargar los datos de la fecha seleccionada.");
+    } finally {
+        if (loader) loader.style.display = 'none'; // Ocultar cargando
+    }
+}

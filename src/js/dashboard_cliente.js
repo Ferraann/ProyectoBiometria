@@ -56,17 +56,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. CALENDARIOS Y MODALES (Tus funciones originales)
     // =========================================================
 
-    // CALENDARIO
     const allDatePickers = document.querySelectorAll('.date-picker');
+
     allDatePickers.forEach(picker => {
         flatpickr(picker, {
-            dateFormat: "d/m/Y",
+            dateFormat: "d/m/Y", // Formato visual para el usuario (Español)
             defaultDate: "today",
+            disableMobile: "true",
+            locale: {
+                firstDayOfWeek: 1 // Lunes
+            },
             onChange: function(selectedDates, dateStr, instance) {
+                // 1. Actualizamos el texto visual
                 instance.element.querySelector('span').textContent = 'Fecha: ' + dateStr;
-                // Si estamos en estadísticas, recargar gráfica
-                if (instance.element.closest('#estadisticas-content')) {
-                    if (typeof actualizarGrafica === 'function') actualizarGrafica();
+
+                // 2. Convertimos la fecha a formato YYYY-MM-DD para la API (MySQL)
+                const fechaParaAPI = instance.formatDate(selectedDates[0], "Y-m-d");
+
+                // 3. Detectamos en qué pestaña estamos
+                if (instance.element.closest('#mapas-content')) {
+                    // Si estamos en el mapa, llamamos a la función global de map-logic.js
+                    if (typeof updateMapByDate === 'function') {
+                        updateMapByDate(fechaParaAPI);
+                    }
+                } else if (instance.element.closest('#estadisticas-content')) {
+                    // Si estamos en estadísticas, llamamos a su función de actualización
+                    if (typeof actualizarGrafica === 'function') {
+                        // actualizarGrafica(fechaParaAPI); // Descomenta cuando implementes filtro en gráficas
+                    }
                 }
             }
         });

@@ -65,37 +65,32 @@ function obtenerMediciones($conn)
  * * @return array Colección de puntos con latitud, longitud y valor.
  * * @note La localización se asume almacenada en formato "lat,long" en la columna m.localizacion.
  */
-function getMedicionesXTipo($conn, $tipoId)
+function getMedicionesXTipo($conn, $tipoId, $fecha = null)
 {
-    // ----------------------------------------------------------------------------------------
-    // 1. CONSULTA DE ÚLTIMA LECTURA POR GRUPO
-    // ----------------------------------------------------------------------------------------
-    
-    /** * @section LogicaSQL
-     * Utilizamos una subconsulta para encontrar la hora máxima (más reciente) 
-     * por cada sensor y tipo de medición, asegurando eficiencia en tablas grandes.
-     */
+    // Si no llega fecha, usamos la de hoy por defecto
+    $fechaFiltro = $fecha ?? date('Y-m-d');
+
+    // Modificamos la consulta para filtrar por el día específico usando DATE()
+    // Nota: DATE(m.hora) extrae solo la parte Y-m-d de la columna datetime
     $sql = "SELECT m.valor, m.localizacion, m.hora, tm.unidad, tm.medida, s.mac
-        FROM medicion m
-        INNER JOIN tipo_medicion tm ON m.tipo_medicion_id = tm.id
-        INNER JOIN sensor s ON m.sensor_id = s.id
-        WHERE m.tipo_medicion_id = ? 
-        AND m.hora >= DATE_SUB(NOW(), INTERVAL 3 DAY)
-        ORDER BY m.hora ASC";
+            FROM medicion m
+            INNER JOIN tipo_medicion tm ON m.tipo_medicion_id = tm.id
+            INNER JOIN sensor s ON m.sensor_id = s.id
+            WHERE m.tipo_medicion_id = ? 
+            AND DATE(m.hora) = ? 
+            ORDER BY m.hora ASC";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $tipoId);
+
+    // Bind de parámetros: "is" -> (integer, string)
+    $stmt->bind_param("is", $tipoId, $fechaFiltro);
+
     $stmt->execute();
     $result = $stmt->get_result();
 
     $puntos = [];
 
-    // ----------------------------------------------------------------------------------------
-    // 2. FORMATEO PARA LIBRERÍAS DE MAPAS (Leaflet/Google Maps)
-    // ----------------------------------------------------------------------------------------
-    
     while ($row = $result->fetch_assoc()) {
-        // La tabla define localizacion como varchar(255), asumimos "lat,long"
         if (!empty($row['localizacion'])) {
             $coords = explode(',', $row['localizacion']);
             if (count($coords) === 2) {
