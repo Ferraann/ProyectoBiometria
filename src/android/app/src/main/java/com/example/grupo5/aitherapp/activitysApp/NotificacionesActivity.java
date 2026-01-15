@@ -76,6 +76,16 @@ public class NotificacionesActivity extends AppCompatActivity {
                 overridePendingTransition(0, 0);
             });
         }
+
+        // Botón Walk
+        ImageView btnWalk = findViewById(R.id.nav_walk);
+        if (btnWalk != null) {
+            btnWalk.setOnClickListener(v -> {
+                Intent intent = new Intent(NotificacionesActivity.this, WalkActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            });
+        }
     }
 
     public void crearCanal(){

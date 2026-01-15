@@ -91,7 +91,7 @@ public class HomeActivity extends AppCompatActivity {
 
         // Botón Añadir Sensor (Ahora es un CardView)
         findViewById(R.id.btnVincularQR_card).setOnClickListener(v ->
-                startActivity(new Intent(HomeActivity.this, VincularQRActivity.class))
+                startActivity(new Intent(HomeActivity.this, AnyadirSensorActivity.class))
         );
 
         // Botón AithWallet (Ahora es un CardView)

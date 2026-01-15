@@ -74,5 +74,14 @@ public class EditarPerfilActivity extends AppCompatActivity {
                 overridePendingTransition(0, 0);
             });
         }
+        // Botón Walk
+        ImageView btnWalk = findViewById(R.id.nav_walk);
+        if (btnWalk != null) {
+            btnWalk.setOnClickListener(v -> {
+                Intent intent = new Intent(EditarPerfilActivity.this, WalkActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            });
+        }
     }
 }
