@@ -54,4 +54,68 @@ function obtenerMediciones($conn)
 
     return $datos;
 }
+
+/**
+ * @brief Recupera la última medición de cada sensor para un tipo de gas específico.
+ * @details Esta función optimiza la carga del mapa al filtrar por la magnitud física 
+ * deseada (ej. 'CO2', 'Temperatura') y obtener solo el registro más reciente de cada 
+ * dispositivo físico, evitando la superposición de datos históricos.
+ * * @param mysqli $conn Instancia de conexión activa a la base de datos.
+ * @param string $tipoId Id de la magnitud a filtrar (coincidente con tm.medida).
+ * * @return array Colección de puntos con latitud, longitud y valor.
+ * * @note La localización se asume almacenada en formato "lat,long" en la columna m.localizacion.
+ */
+function getMedicionesXTipo($conn, $tipoId)
+{
+    // ----------------------------------------------------------------------------------------
+    // 1. CONSULTA DE ÚLTIMA LECTURA POR GRUPO
+    // ----------------------------------------------------------------------------------------
+    
+    /** * @section LogicaSQL
+     * Utilizamos una subconsulta para encontrar la hora máxima (más reciente) 
+     * por cada sensor y tipo de medición, asegurando eficiencia en tablas grandes.
+     */
+    $sql = "SELECT m.valor, m.localizacion, m.hora, tm.unidad, tm.medida, s.mac
+            FROM medicion m
+            INNER JOIN tipo_medicion tm ON m.tipo_medicion_id = tm.id
+            INNER JOIN sensor s ON m.sensor_id = s.id
+            WHERE m.tipo_medicion_id = ? 
+            AND m.hora = (
+                SELECT MAX(m2.hora) 
+                FROM medicion m2 
+                WHERE m2.sensor_id = m.sensor_id 
+                AND m2.tipo_medicion_id = m.tipo_medicion_id
+            )";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $tipoId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $puntos = [];
+
+    // ----------------------------------------------------------------------------------------
+    // 2. FORMATEO PARA LIBRERÍAS DE MAPAS (Leaflet/Google Maps)
+    // ----------------------------------------------------------------------------------------
+    
+    while ($row = $result->fetch_assoc()) {
+        // La tabla define localizacion como varchar(255), asumimos "lat,long"
+        if (!empty($row['localizacion'])) {
+            $coords = explode(',', $row['localizacion']);
+            if (count($coords) === 2) {
+                $puntos[] = [
+                    "lat"    => (float)trim($coords[0]),
+                    "lon"    => (float)trim($coords[1]),
+                    "value"  => (float)$row['valor'],
+                    "unit"   => $row['unidad'],
+                    "label"  => $row['medida'],
+                    "sensor" => $row['mac'],
+                    "fecha"  => $row['hora']
+                ];
+            }
+        }
+    }
+
+    return $puntos;
+}
 ?>

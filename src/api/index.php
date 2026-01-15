@@ -127,6 +127,8 @@ switch ($method) {
             case "canjearRecompensa":         echo json_encode(canjearRecompensa($conn, $input)); break;
             case "marcarSensorSinProblemas":  echo json_encode(sensorSinProblemas($conn, $input)); break;
             case "marcarSensorConProblemas":  echo json_encode(sensorConProblemas($conn, $input)); break;
+            case "canjearRecompensa":         echo json_encode(canjearRecompensa($conn, $input));  break;
+            case "usarRecompensaFisica":      echo json_encode(marcarRecompensaComoUsada($conn, $input)); break;
             default:                          echo json_encode(["status" => "error", "mensaje" => "Acción POST no reconocida."]); break;
         }
         break;
@@ -157,8 +159,16 @@ switch ($method) {
                 $id = intval($_GET['id'] ?? 0);
                 echo json_encode(obtenerSensorXId($conn, $id) ?: ["status" => "error", "mensaje" => "Sensor no encontrado"]); 
                 break;
-            case "getObtenerSensoresUsuario":
-                echo json_encode(obtenerListaSensores($conn, $_GET['usuario_id'])); 
+            case "getObtenerSensoresUsuario": echo json_encode(obtenerListaSensores($conn, $_GET['usuario_id'])); break;
+            case "getRecompensasDisponibles": echo json_encode(obtenerRecompensasDisponibles($conn));   break;
+            case "getMedicionesXTipo":    
+                $tipoId = isset($_GET['tipo_id']) ? intval($_GET['tipo_id']) : 0;      
+                    if ($tipoId > 0) {
+                        echo json_encode(rellenarMapa($conn, $tipoId));
+                    } else {
+                        http_response_code(400);
+                        echo json_encode(["status" => "error", "mensaje" => "ID de tipo de medición no válido"]);
+                    }
                 break;
             default: echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]); break;
         }
