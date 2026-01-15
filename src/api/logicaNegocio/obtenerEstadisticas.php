@@ -29,16 +29,25 @@ function getEvolucionDiaria($conn, $tipoId, $fecha) {
 // 2. RESUMEN MÁXIMOS/MÍNIMOS (Gráfica de Barras o Números)
 // Devuelve el valor mínimo, máximo y promedio global del día.
 function getMinMaxGlobal($conn, $tipoId, $fecha) {
+    // AÑADIDO: "AND valor > 0" para evitar que el mínimo sea siempre 0 si hay algún fallo.
+    // Si realmente quieres incluir el 0, quita esa parte, pero la barra no se verá.
     $sql = "SELECT MIN(valor) as minimo, MAX(valor) as maximo, AVG(valor) as media 
             FROM medicion 
-            WHERE tipo_medicion_id = ? AND DATE(hora) = ?";
+            WHERE tipo_medicion_id = ? 
+            AND DATE(hora) = ?
+            AND valor > 0";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("is", $tipoId, $fecha);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    return $result->fetch_assoc();
+    // Si no hay datos, devolvemos 0 para evitar errores
+    $fila = $result->fetch_assoc();
+    if (!$fila || $fila['minimo'] === null) {
+        return ['minimo' => 0, 'maximo' => 0, 'media' => 0];
+    }
+    return $fila;
 }
 
 // 3. TOP 5 SENSORES MÁS CONTAMINANTES (Gráfica de Barras Horizontal)
@@ -59,8 +68,7 @@ function getTopSensores($conn, $tipoId, $fecha) {
 
     $datos = [];
     while ($row = $result->fetch_assoc()) {
-        // Si no tiene nombre, usamos la MAC o 'Sensor X'
-        $nombre = $row['ubicacion_nombre'] ?? $row['mac'] ?? "Sensor Desconocido";
+        $nombre = $row['ubicacion_nombre'] ?? $row['mac'] ?? "Sensor";
         $datos[] = [
             'nombre' => $nombre,
             'valor' => round($row['promedio'], 2)
