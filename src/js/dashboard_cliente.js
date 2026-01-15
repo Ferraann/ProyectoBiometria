@@ -183,8 +183,6 @@ window.actualizarTodasLasGraficas = function(fechaForzada = null) {
         }
     }
 
-    console.log(`📊 Actualizando gráficas > Gas: ${gasKey}, Fecha: ${fecha}`);
-
     cargarEvolucion(tipoId, fecha);
     cargarMinMax(tipoId, fecha);
     cargarTopSensores(tipoId, fecha);
@@ -235,12 +233,18 @@ function cargarTopSensores(tipoId, fecha) {
     fetch(`../api/index.php?accion=getTopSensores&tipo_id=${tipoId}&fecha=${fecha}`)
         .then(res => res.json())
         .then(data => {
-            // Data debe ser un array. Si está vacío, limpiamos la gráfica.
             const labels = data.map(d => d.nombre);
             const valores = data.map(d => d.valor);
 
+            // TRUCO: Si el nombre contiene "(Oficial)", pintamos la barra de otro color
+            const colores = data.map(d =>
+                    d.nombre.includes('(Oficial)') ? '#FFD700' : '#e53935'
+                // Oro para oficiales, Rojo para usuarios
+            );
+
             chartTopSensoresInstance.data.labels = labels;
             chartTopSensoresInstance.data.datasets[0].data = valores;
+            chartTopSensoresInstance.data.datasets[0].backgroundColor = colores; // Aplicamos colores
             chartTopSensoresInstance.update();
         })
         .catch(e => console.error(e));

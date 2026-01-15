@@ -53,24 +53,35 @@ function getMinMaxGlobal($conn, $tipoId, $fecha) {
 // 3. TOP 5 SENSORES MÁS CONTAMINANTES (Gráfica de Barras Horizontal)
 // Devuelve los 5 sensores con mayor promedio de contaminación ese día.
 function getTopSensores($conn, $tipoId, $fecha) {
+    // OPTIMIZACIÓN: En lugar de DATE(m.hora) = ?, usamos un rango.
+    // Esto permite usar el índice (index) de la base de datos y volar con 1M de registros.
+    $fechaInicio = $fecha . " 00:00:00";
+    $fechaFin    = $fecha . " 23:59:59";
+
     $sql = "SELECT s.ubicacion_nombre, s.mac, AVG(m.valor) as promedio 
             FROM medicion m
             INNER JOIN sensor s ON m.sensor_id = s.id
-            WHERE m.tipo_medicion_id = ? AND DATE(m.hora) = ?
+            WHERE m.tipo_medicion_id = ? 
+            AND m.hora >= ? AND m.hora <= ?
             GROUP BY m.sensor_id 
             ORDER BY promedio DESC 
             LIMIT 5";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("is", $tipoId, $fecha);
+    // "iss": integer, string, string
+    $stmt->bind_param("iss", $tipoId, $fechaInicio, $fechaFin);
     $stmt->execute();
     $result = $stmt->get_result();
 
     $datos = [];
     while ($row = $result->fetch_assoc()) {
-        $nombre = $row['ubicacion_nombre'] ?? $row['mac'] ?? "Sensor";
+        // Preferimos el nombre de ubicación (ej: "MADRID-RETIRO (Oficial)"), si no la MAC
+        $nombre = !empty($row['ubicacion_nombre']) ? $row['ubicacion_nombre'] : $row['mac'];
+
         $datos[] = [
             'nombre' => $nombre,
+            // Enviamos el valor crudo. La conversión (x500 en CO) la hará JS si es necesario,
+            // pero para el ranking "Top 5" el valor crudo sirve perfectamente.
             'valor' => round($row['promedio'], 2)
         ];
     }
