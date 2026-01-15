@@ -243,12 +243,52 @@ function renderMap(mode) {
 
 // --- RENDERIZAR ESTACIONES ---
 function renderStations() {
+    // 1. Limpiamos capas anteriores
     if (canvasLayer) map.removeLayer(canvasLayer);
     stationLayer.clearLayers();
+
+    // 2. Averiguar qué gas estamos viendo y sus datos
+    const selector = document.getElementById('gasSelect');
+    // Si el selector está en "ESTACIONES", por defecto mostramos datos de NO2 o el último seleccionado
+    // Pero para ser consistentes, intentemos ver qué gas hay seleccionado en Estadísticas o usar NO2 por defecto
+    const statsSelector = document.getElementById('statsGasSelect');
+    const gasKey = statsSelector ? statsSelector.value : 'NO2'; // Usamos el gas de la otra pestaña como referencia
+
+    // Obtener datos crudos y config
+    const datosContaminacion = (window.SERVER_DATA && window.SERVER_DATA[gasKey]) ? window.SERVER_DATA[gasKey] : [];
+    const conversion = (config[gasKey] ? config[gasKey].conversion : 1);
+    const unit = config[gasKey] ? config[gasKey].unit : '';
 
     stations.forEach(st => {
         const lat = st.lat;
         const lng = st.lng || st.lon;
+
+        // --- LÓGICA DE CÁLCULO (IGUAL QUE LA GRÁFICA) ---
+        let valorMostrar = 0;
+        let distMinima = Infinity;
+        let hayDatos = false;
+
+        datosContaminacion.forEach(dato => {
+            // Distancia simple
+            const dist = Math.sqrt(Math.pow(lat - dato.lat, 2) + Math.pow(lng - dato.lon, 2));
+
+            // Buscamos el dato más cercano.
+            // Si está muy cerca (< 0.1 grados), asumimos que afecta a la estación
+            if (dist < distMinima) {
+                distMinima = dist;
+                if (dist < 0.1) { // Umbral de cercanía (~11km)
+                    hayDatos = true;
+                    // Nos quedamos con el valor mayor (principio de precaución)
+                    const val = parseFloat(dato.value);
+                    if (val > valorMostrar) valorMostrar = val;
+                }
+            }
+        });
+
+        // Aplicamos conversión
+        const valorFinal = hayDatos ? (valorMostrar * conversion).toFixed(2) : "Sin datos";
+
+        // --- GENERAR POPUP ---
         const popupContent = `
             <div style="font-family:'Segoe UI',sans-serif; min-width:180px;">
                 <div style="border-bottom:1px solid #444; padding-bottom:5px; margin-bottom:10px;">
@@ -258,11 +298,14 @@ function renderStations() {
                     ${st.name}
                 </div>
                 <div style="background:#333; padding:8px; border-radius:5px; margin-top:5px;">
-                    <div style="font-size:12px; color:#ccc; margin-bottom:2px;">
-                        <span style="color:#888;">Código:</span> ${st.code}
+                    <div style="font-size:12px; color:#ccc; margin-bottom:4px;">
+                        <span style="color:#888;">Gas Ref:</span> <strong>${gasKey}</strong>
                     </div>
-                    <div style="font-size:12px; color:#ccc;">
-                        <span style="color:#888;">Coords:</span> ${lat.toFixed(4)}, ${lng.toFixed(4)}
+                    <div style="font-size:16px; font-weight:bold; color:#fff; margin-bottom:4px;">
+                        ${valorFinal} <span style="font-size:11px; font-weight:normal; color:#aaa;">${unit}</span>
+                    </div>
+                    <div style="font-size:10px; color:#aaa; margin-top:5px; border-top:1px solid #555; padding-top:3px;">
+                        Cód: ${st.code} | Coords: ${lat.toFixed(3)}, ${lng.toFixed(3)}
                     </div>
                 </div>
             </div>
