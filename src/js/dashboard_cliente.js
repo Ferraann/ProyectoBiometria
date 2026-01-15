@@ -1,26 +1,29 @@
 /**
  * @file dashboard_cliente.js
- * @brief Gestión de la interfaz: Pestañas, Modales, Calendarios y Gráficas.
+ * @brief Gestión completa de pestañas, fechas y gráficas.
  */
+
+// =========================================================
+// 1. VARIABLES GLOBALES DE GRÁFICAS
+// =========================================================
+let chartEvolucionInstance = null;
+let chartMinMaxInstance = null;
+let chartTopSensoresInstance = null;
+const GAS_IDS_STATS = { "NO2": 1, "O3": 2, "SO2": 3, "CO": 4, "PM10": 5 };
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // =========================================================
-    // 1. LÓGICA DE PESTAÑAS (TABS) - CONEXIÓN CON MAPA
-    // =========================================================
+    // --- PESTAÑAS (TABS) ---
     const tabLinks = document.querySelectorAll('.sensores-nav a');
-
     tabLinks.forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault();
             const tabId = this.dataset.tab;
 
-            // Gestión visual de clases (Active)
             tabLinks.forEach(l => l.classList.remove('active'));
             this.classList.add('active');
 
-            const tabContents = document.querySelectorAll('.tab-content');
-            tabContents.forEach(content => {
+            document.querySelectorAll('.tab-content').forEach(content => {
                 if (content.getAttribute('data-tab-content') === tabId) {
                     content.classList.add('active-tab-content');
                 } else {
@@ -28,154 +31,221 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Lógica específica al cambiar de pestaña
+            // Recargas específicas por pestaña
             if (tabId === 'mapas') {
                 setTimeout(() => {
-                    // Si existe el mapa, lo redimensionamos para evitar errores de renderizado
-                    if (typeof map !== 'undefined') {
-                        map.invalidateSize();
-                    }
-                    // Llamamos a la función de carga de map-logic.js
-                    if (typeof loadData === 'function') {
-                        loadData();
-                    }
+                    if (typeof map !== 'undefined') map.invalidateSize();
+                    if (typeof loadData === 'function') loadData();
                 }, 150);
-
             } else if (tabId === 'estadisticas') {
                 setTimeout(() => {
-                    if (typeof initStatisticsChart === 'function') {
-                        initStatisticsChart();
-                        actualizarGrafica();
-                    }
+                    initCharts(); // Asegura que el canvas existe
+                    window.actualizarTodasLasGraficas(); // Carga inicial
                 }, 150);
             }
         });
     });
 
-    // =========================================================
-    // 2. CALENDARIOS Y MODALES (Tus funciones originales)
-    // =========================================================
-
-    const allDatePickers = document.querySelectorAll('.date-picker');
-
-    allDatePickers.forEach(picker => {
-        flatpickr(picker, {
-            dateFormat: "d/m/Y", // Formato visual para el usuario (Español)
-            defaultDate: "today",
-            disableMobile: "true",
-            locale: {
-                firstDayOfWeek: 1 // Lunes
-            },
-            onChange: function(selectedDates, dateStr, instance) {
-                // 1. Actualizamos el texto visual
-                instance.element.querySelector('span').textContent = 'Fecha: ' + dateStr;
-
-                // 2. Convertimos la fecha a formato YYYY-MM-DD para la API (MySQL)
-                const fechaParaAPI = instance.formatDate(selectedDates[0], "Y-m-d");
-
-                // 3. Detectamos en qué pestaña estamos
-                if (instance.element.closest('#mapas-content')) {
-                    // Si estamos en el mapa, llamamos a la función global de map-logic.js
-                    if (typeof updateMapByDate === 'function') {
-                        updateMapByDate(fechaParaAPI);
-                    }
-                } else if (instance.element.closest('#estadisticas-content')) {
-                    // Si estamos en estadísticas, llamamos a su función de actualización
-                    if (typeof actualizarGrafica === 'function') {
-                        // actualizarGrafica(fechaParaAPI); // Descomenta cuando implementes filtro en gráficas
-                    }
-                }
-            }
-        });
-    });
-
-    // DROPDOWNS
-    const allDropdownButtons = document.querySelectorAll('.dropdown-mapa');
-    allDropdownButtons.forEach(button => {
-        button.addEventListener('click', function(event) {
-            event.stopPropagation();
+    // --- DROPDOWNS ---
+    document.querySelectorAll('.dropdown-mapa').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
             const menu = this.nextElementSibling;
-            if (menu && menu.classList.contains('dropdown-menu')) {
-                menu.classList.toggle('show');
-            }
+            if (menu) menu.classList.toggle('show');
         });
     });
-    document.addEventListener('click', function(event) {
-        if (!event.target.closest('.dropdown-container')) {
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.dropdown-container')) {
             document.querySelectorAll('.dropdown-menu.show').forEach(m => m.classList.remove('show'));
         }
     });
 
-    // MODAL INFO
+    // --- MODAL INFO ---
     const infoModal = document.getElementById('gas-info-panel');
     const openInfoBtn = document.getElementById('open-info-btn');
     const closeInfoBtn = document.getElementById('close-info-btn');
+    if(openInfoBtn) openInfoBtn.addEventListener('click', () => infoModal.style.display = 'block');
+    if(closeInfoBtn) closeInfoBtn.addEventListener('click', () => infoModal.style.display = 'none');
+    window.addEventListener('click', (e) => { if(e.target === infoModal) infoModal.style.display = 'none'; });
 
-    if (openInfoBtn && infoModal) openInfoBtn.addEventListener('click', () => infoModal.style.display = 'block');
-    if (closeInfoBtn && infoModal) closeInfoBtn.addEventListener('click', () => infoModal.style.display = 'none');
-    window.addEventListener('click', (e) => { if (e.target === infoModal) infoModal.style.display = 'none'; });
-
-});
-
-
-// =========================================================
-// 3. LÓGICA DE ESTADÍSTICAS (CHART.JS)
-// =========================================================
-
-let myChartInstance = null;
-
-function initStatisticsChart() {
-    // IMPORTANTE: Asegúrate de que en tu HTML el ID sea 'chartEvolucion' o cambia esto a 'myAirChart'
-    // En el código que pasaste antes tenías 'chartEvolucion' en el HTML.
-    const ctx = document.getElementById('chartEvolucion');
-    if (!ctx) return;
-
-    if (myChartInstance) myChartInstance.destroy();
-
-    myChartInstance = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: [],
-            datasets: [
-                {
-                    label: 'Calidad del Aire',
-                    data: [],
-                    borderColor: '#152D9A',
-                    backgroundColor: 'rgba(21, 45, 154, 0.1)',
-                    borderWidth: 3,
-                    tension: 0.4,
-                    pointRadius: 3,
-                    fill: true
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
-            scales: {
-                y: { beginAtZero: true, grid: { color: '#444' } },
-                x: { grid: { display: false } }
-            }
-        }
-    });
-}
-
-// Función temporal de simulación para que veas la gráfica moverse
-// (Descomenta el fetch cuando tengas el PHP de estadísticas listo)
-function actualizarGrafica() {
-    if (!myChartInstance) return;
-
-    // Simulación de datos
-    console.log("Cargando gráfica simulada...");
-    const labels = [];
-    const data = [];
-    for(let i=0; i<24; i++) {
-        labels.push(i + ":00");
-        data.push(Math.floor(Math.random() * 50) + 10);
+    // --- SELECTOR DE GAS (ESTADÍSTICAS) ---
+    const statsGasSelect = document.getElementById('statsGasSelect');
+    if (statsGasSelect) {
+        statsGasSelect.addEventListener('change', () => {
+            window.actualizarTodasLasGraficas();
+        });
     }
 
-    myChartInstance.data.labels = labels;
-    myChartInstance.data.datasets[0].data = data;
-    myChartInstance.update();
+    // =========================================================
+    // 2. CONFIGURACIÓN DEL CALENDARIO (CORREGIDO)
+    // =========================================================
+    const allDatePickers = document.querySelectorAll('.date-picker');
+    allDatePickers.forEach(picker => {
+        flatpickr(picker, {
+            dateFormat: "d/m/Y",
+            defaultDate: "today",
+            locale: { firstDayOfWeek: 1 },
+            onChange: function(selectedDates, dateStr, instance) {
+                // Actualizar texto visual
+                instance.element.querySelector('span').textContent = 'Fecha: ' + dateStr;
+
+                // Formato SQL
+                const fechaParaAPI = instance.formatDate(selectedDates[0], "Y-m-d");
+
+                // Detectar pestaña activa y actualizar lo que corresponda
+                if (instance.element.closest('#mapas-content')) {
+                    if (typeof updateMapByDate === 'function') {
+                        updateMapByDate(fechaParaAPI);
+                    }
+                } else if (instance.element.closest('#estadisticas-content')) {
+                    // AQUÍ ESTÁ EL ARREGLO: Pasamos la fecha explícitamente
+                    window.actualizarTodasLasGraficas(fechaParaAPI);
+                }
+            }
+        });
+    });
+
+}); // Fin DOMContentLoaded
+
+
+// =========================================================
+// 3. LÓGICA DE GRÁFICAS (Funciones Globales)
+// =========================================================
+
+function initCharts() {
+    // Si ya existen, no las recreamos para evitar errores de superposición
+    if (chartEvolucionInstance) return;
+
+    // 1. Evolución
+    const ctxEvol = document.getElementById('chartEvolucion');
+    if (ctxEvol) {
+        chartEvolucionInstance = new Chart(ctxEvol, {
+            type: 'line',
+            data: { labels: [], datasets: [{ label: 'Media', data: [], borderColor: '#ffae00', backgroundColor: 'rgba(255, 174, 0, 0.1)', fill: true, tension: 0.4 }] },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { grid: { color: '#444' } }, x: { grid: { display: false } } } }
+        });
+    }
+
+    // 2. Min/Max (Con corrección de visibilidad)
+    const ctxMinMax = document.getElementById('chartMinMax');
+    if (ctxMinMax) {
+        chartMinMaxInstance = new Chart(ctxMinMax, {
+            type: 'bar',
+            data: {
+                labels: ['Mínimo', 'Promedio', 'Máximo'],
+                datasets: [{
+                    label: 'Valores',
+                    data: [],
+                    backgroundColor: ['#00d2ff', '#3a7bd5', '#ff4b1f'],
+                    // ESTO AYUDA: Si el valor es muy bajo pero no 0, se ve un poco
+                    minBarLength: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true, grid: { color: '#444' } } }
+            }
+        });
+    }
+
+    // 3. Top 5
+    const ctxTop = document.getElementById('chartTopSensores');
+    if (ctxTop) {
+        chartTopSensoresInstance = new Chart(ctxTop, {
+            type: 'bar',
+            data: { labels: [], datasets: [{ label: 'Contaminación', data: [], backgroundColor: '#e53935', barThickness: 20 }] },
+            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: '#444' } } } }
+        });
+    }
+}
+
+// Hacemos la función GLOBAL (window.) para que el calendario pueda llamarla sin problemas
+window.actualizarTodasLasGraficas = function(fechaForzada = null) {
+
+    // Obtener Gas
+    const gasSelect = document.getElementById('statsGasSelect');
+    const gasKey = gasSelect ? gasSelect.value : 'NO2';
+    const tipoId = GAS_IDS_STATS[gasKey];
+
+    // Obtener Fecha: Si nos la pasan (desde el calendario), la usamos.
+    // Si no, intentamos buscarla en el input, y si no, usamos HOY.
+    let fecha = fechaForzada;
+
+    if (!fecha) {
+        // Buscamos el input de fecha de estadísticas
+        const datePickerInput = document.querySelector('#estadisticas-content .date-picker');
+        if (datePickerInput && datePickerInput._flatpickr && datePickerInput._flatpickr.selectedDates.length > 0) {
+            fecha = datePickerInput._flatpickr.formatDate(datePickerInput._flatpickr.selectedDates[0], "Y-m-d");
+        } else {
+            fecha = new Date().toISOString().split('T')[0]; // Hoy
+        }
+    }
+
+    cargarEvolucion(tipoId, fecha);
+    cargarMinMax(tipoId, fecha);
+    cargarTopSensores(tipoId, fecha);
+};
+
+// --- FETCHERS ---
+
+function cargarEvolucion(tipoId, fecha) {
+    if(!chartEvolucionInstance) return;
+    fetch(`../api/index.php?accion=getEvolucionDiaria&tipo_id=${tipoId}&fecha=${fecha}`)
+        .then(res => res.json())
+        .then(data => {
+            const labels = [];
+            const valores = [];
+            for (let i = 0; i < 24; i++) {
+                labels.push(`${i}:00`);
+                // Buscamos coincidencia numérica estricta
+                const dato = data.find(d => parseInt(d.hora) === i);
+                valores.push(dato ? parseFloat(dato.media) : 0);
+            }
+            chartEvolucionInstance.data.labels = labels;
+            chartEvolucionInstance.data.datasets[0].data = valores;
+            chartEvolucionInstance.update();
+        })
+        .catch(e => console.error(e));
+}
+
+function cargarMinMax(tipoId, fecha) {
+    if(!chartMinMaxInstance) return;
+    fetch(`../api/index.php?accion=getMinMaxGlobal&tipo_id=${tipoId}&fecha=${fecha}`)
+        .then(res => res.json())
+        .then(data => {
+            // Si todo es 0, Chart.js a veces no pinta nada.
+            // minBarLength ayuda, pero los datos deben llegar bien.
+            const valores = [
+                parseFloat(data.minimo || 0),
+                parseFloat(data.media || 0),
+                parseFloat(data.maximo || 0)
+            ];
+            chartMinMaxInstance.data.datasets[0].data = valores;
+            chartMinMaxInstance.update();
+        })
+        .catch(e => console.error(e));
+}
+
+function cargarTopSensores(tipoId, fecha) {
+    if(!chartTopSensoresInstance) return;
+    fetch(`../api/index.php?accion=getTopSensores&tipo_id=${tipoId}&fecha=${fecha}`)
+        .then(res => res.json())
+        .then(data => {
+            const labels = data.map(d => d.nombre);
+            const valores = data.map(d => d.valor);
+
+            // TRUCO: Si el nombre contiene "(Oficial)", pintamos la barra de otro color
+            const colores = data.map(d =>
+                    d.nombre.includes('(Oficial)') ? '#FFD700' : '#e53935'
+                // Oro para oficiales, Rojo para usuarios
+            );
+
+            chartTopSensoresInstance.data.labels = labels;
+            chartTopSensoresInstance.data.datasets[0].data = valores;
+            chartTopSensoresInstance.data.datasets[0].backgroundColor = colores; // Aplicamos colores
+            chartTopSensoresInstance.update();
+        })
+        .catch(e => console.error(e));
 }

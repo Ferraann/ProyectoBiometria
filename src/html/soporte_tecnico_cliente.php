@@ -110,7 +110,9 @@ un botón para iniciar sesión.
             <input type="text" name="titulo" class="custom-input" maxlength="150" required>
             
             <label class="custom-label">ID del Sensor (opcional):</label>
-            <input type="number" name="sensor_id" id="sensor_id" class="custom-input" maxlength="10">
+            <select type="number" name="sensor_id" id="sensor_id" class="custom-input" >
+                <option value="" selected>-- Selecciona un sensor --</option>
+            </select>
 
             
             <label class="custom-label">Consulta: *</label>

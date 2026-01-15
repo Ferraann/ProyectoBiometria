@@ -23,6 +23,7 @@ if (!user || !user.id) {
     location.href = "login.html";
 } else {
     document.getElementById("id_user").value = user.id;
+    cargarSensoresEnSelector();
 }
 
 /**
@@ -153,6 +154,40 @@ if (imagenInput) {
 
         this.value = "";
     });
+}
+
+/**
+ * @brief Carga los sensores del usuario logueado con formato "ID - Nombre".
+ */
+async function cargarSensoresEnSelector() {
+    const selectSensor = document.getElementById("sensor_id");
+    if (!selectSensor || !user.id) return;
+
+    try {
+        const res = await fetch(`../api/index.php?accion=getSensoresDeUsuario&id=${user.id}`);
+        const sensores = await res.json();
+
+        selectSensor.innerHTML = '<option value="">-- Selecciona un sensor (opcional) --</option>';
+
+        if (sensores && sensores.length > 0) {
+            sensores.forEach(s => {
+                const opt = document.createElement("option");
+                opt.value = s.id;
+                
+                // Formato solicitado: "ID - Nombre"
+                // Si el nombre no existe, usamos el modelo o la MAC como respaldo
+                const nombreMostrar = s.nombre || s.modelo || s.mac;
+                opt.textContent = `${s.id} - ${nombreMostrar}`;
+                
+                selectSensor.appendChild(opt);
+            });
+        } else {
+            selectSensor.innerHTML = '<option value="">No tienes sensores vinculados</option>';
+        }
+    } catch (error) {
+        console.error("Error cargando sensores:", error);
+        selectSensor.innerHTML = '<option value="">Error al cargar sensores</option>';
+    }
 }
 
 /**
