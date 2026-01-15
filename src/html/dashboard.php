@@ -146,6 +146,8 @@ if ($conn) {
                     <select id="gasSelect">
                         <option value="MAX" selected>Riesgo Combinado</option>
                         <option disabled>──────────</option>
+                        <option value="ESTACIONES">Estaciones Oficiales</option>
+                        <option disabled>──────────</option>
                         <option value="NO2">NO₂ (Dióxido de Nitrógeno)</option>
                         <option value="O3">O₃ (Ozono)</option>
                         <option value="PM10">PM10 (Partículas)</option>
@@ -153,7 +155,6 @@ if ($conn) {
                         <option value="CO">CO (Monóxido de Carbono)</option>
                     </select>
                 </div>
-
                 <div id="map"></div>
 
                 <div id="legend">

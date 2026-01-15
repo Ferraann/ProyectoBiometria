@@ -7,11 +7,65 @@ const stations = [
     {code: "28-79-99", lat: 40.42389, lng: -3.68222, name: "MADRID-ESCUELAS AGUIRRE"},
     {code: "28-79-4", lat: 40.42417, lng: -3.71222, name: "MADRID-PLAZA ESPAÑA"},
     {code: "28-79-106", lat: 40.41917, lng: -3.69194, name: "MADRID-RETIRO"},
-    // ... (El resto de tus estaciones igual) ...
+    {code: "8-19-1", lat: 41.38528, lng: 2.15389, name: "BARCELONA-EIXAMPLE"},
+    {code: "8-19-2", lat: 41.39861, lng: 2.15333, name: "BARCELONA-GRACIA"},
+    {code: "46-250-1", lat: 39.45861, lng: -0.37667, name: "VALENCIA-PISTA SILLA"},
+    {code: "41-91-3", lat: 37.39972, lng: -6.00278, name: "SEVILLA-TORNEO"},
+    {code: "48-13-1", lat: 43.26333, lng: -2.94833, name: "BILBAO-Mª DIAZ DE HARO"},
+    {code: "1-22-1", lat: 42.51833, lng: -2.61944, name: "EL CIEGO"},
+    {code: "1-36-4", lat: 43.14407, lng: -2.96337, name: "LLODIO"},
+    {code: "1-51-1", lat: 42.849, lng: -2.3937, name: "AGURAIN"},
+    {code: "1-55-1", lat: 42.8752, lng: -3.2317, name: "VALDEREJO"},
+    {code: "1-59-8", lat: 42.8548, lng: -2.6807, name: "AVENIDA GASTEIZ"},
+    {code: "2-3-2", lat: 38.9808, lng: -1.8452, name: "ALBACETE-PARQUE TECNOLOGICO"},
+    {code: "3-14-6", lat: 38.43606, lng: -0.56772, name: "ALACANT-EL PLÁ"},
+    {code: "4-13-5", lat: 36.85222, lng: -2.43583, name: "ALMERIA - MEDITERRANEO"},
+    {code: "5-19-1", lat: 40.662, lng: -4.693, name: "AVILA"},
+    {code: "6-15-1", lat: 38.877, lng: -6.975, name: "BADAJOZ"},
+    {code: "9-59-2", lat: 42.345, lng: -3.693, name: "BURGOS 1"},
+    {code: "10-52-1", lat: 39.805, lng: -6.398, name: "CAÑAVERAL"},
+    {code: "11-12-3", lat: 36.529, lng: -6.291, name: "CADIZ"},
+    {code: "12-40-10", lat: 39.993, lng: -0.046, name: "CASTELLÓ - PENYETA"},
+    {code: "13-32-1", lat: 38.986, lng: -3.931, name: "CIUDAD REAL"},
+    {code: "14-21-4", lat: 37.892, lng: -4.773, name: "CORDOBA - ASOMADILLA"},
+    {code: "15-30-1", lat: 43.377, lng: -8.406, name: "A CORUÑA - TORRE HERCULES"},
+    {code: "16-78-1", lat: 40.068, lng: -2.132, name: "CUENCA"},
+    {code: "17-79-1", lat: 41.979, lng: 2.822, name: "GIRONA"},
+    {code: "18-87-1", lat: 37.202, lng: -3.607, name: "GRANADA - NORTE"},
+    {code: "19-13-1", lat: 40.632, lng: -3.167, name: "GUADALAJARA"},
+    {code: "20-69-1", lat: 43.307, lng: -1.976, name: "DONOSTIA"},
+    {code: "21-41-1", lat: 37.268, lng: -6.941, name: "HUELVA - POZO DULCE"},
+    {code: "22-125-4", lat: 42.138, lng: -0.408, name: "HUESCA"},
+    {code: "23-50-2", lat: 37.773, lng: -3.785, name: "JAEN"},
+    {code: "24-89-3", lat: 42.607, lng: -5.575, name: "LEON 1"},
+    {code: "25-120-1", lat: 41.616, lng: 0.621, name: "LLEIDA"},
+    {code: "26-89-1", lat: 42.463, lng: -2.433, name: "LOGROÑO"},
+    {code: "27-28-1", lat: 43.013, lng: -7.558, name: "LUGO"},
+    {code: "29-67-1", lat: 36.728, lng: -4.464, name: "MALAGA - EL ATABAL"},
+    {code: "30-30-1", lat: 37.973, lng: -1.164, name: "MURCIA-ALCANTARILLA"},
+    {code: "31-201-3", lat: 42.813, lng: -1.637, name: "PAMPLONA-ROT.DE"},
+    {code: "32-54-1", lat: 42.333, lng: -7.864, name: "OURENSE"},
+    {code: "33-44-3", lat: 43.366, lng: -5.861, name: "OVIEDO"},
+    {code: "34-120-2", lat: 42.008, lng: -4.534, name: "PALENCIA 2"},
+    {code: "35-16-5", lat: 28.113, lng: -15.424, name: "LAS PALMAS-MERCADO"},
+    {code: "36-57-1", lat: 42.221, lng: -8.749, name: "VIGO"},
+    {code: "37-274-1", lat: 40.971, lng: -5.659, name: "SALAMANCA 1"},
+    {code: "38-13-1", lat: 28.463, lng: -16.273, name: "S.CRUZ TENERIFE-GLADIOLOS"},
+    {code: "39-75-1", lat: 43.463, lng: -3.821, name: "SANTANDER"},
+    {code: "40-194-2", lat: 40.941, lng: -4.106, name: "SEGOVIA 2"},
+    {code: "42-173-1", lat: 41.764, lng: -2.463, name: "SORIA"},
+    {code: "43-148-4", lat: 41.121, lng: 1.252, name: "TARRAGONA - UNIVERSITAT"},
+    {code: "44-216-1", lat: 40.339, lng: -1.107, name: "TERUEL"},
+    {code: "45-168-1", lat: 39.866, lng: -4.022, name: "TOLEDO"},
+    {code: "47-186-1", lat: 41.666, lng: -4.721, name: "VALLADOLID 1"},
+    {code: "49-275-1", lat: 41.506, lng: -5.744, name: "ZAMORA 1"},
+    {code: "50-297-36", lat: 41.635, lng: -0.893, name: "ZARAGOZA-RENOVALES"},
+    {code: "51-1-1", lat: 35.889, lng: -5.317, name: "CEUTA"},
+    {code: "52-1-1", lat: 35.291, lng: -2.946, name: "MELILLA"},
     {code: "41-72-3", lat: 41.72361, lon: -2.85694, name: "DURUELO DE LA SIERRA"}
 ];
 
-// --- 1. CONFIGURACIÓN VISUAL ---
+// --- 1. CONFIGURACIÓN VISUAL Y CONVERSIONES ---
 const config = {
     NO2: {
         unit: "µg/m³", conversion: 1,
@@ -26,7 +80,7 @@ const config = {
         stops: [ { val: 0, c: [1, 101, 150] }, { val: 10, c: [1, 101, 150] }, { val: 20, c: [1, 101, 150] }, { val: 100, c: [176, 178, 132] }, { val: 1000, c: [74, 12, 0] } ]
     },
     CO: {
-        unit: "ppbv", conversion: 500,
+        unit: "ppbv", conversion: 500, // IMPORTANTE: Conversión activa
         stops: [ { val: 0, c: [124, 124, 124] }, { val: 50, c: [124, 124, 116] }, { val: 100, c: [124, 113, 60] }, { val: 500, c: [46, 29, 29] }, { val: 1200, c: [130, 26, 25] } ]
     },
     SO2: {
@@ -46,84 +100,22 @@ const maxRiskConfig = {
     ]
 };
 
+// Configuración del Mapa
 const boundsEspana = [[34.5, -11.0], [44.5, 5.5]];
 const map = L.map('map', {
-    maxBounds: boundsEspana, maxBoundsViscosity: 1.0, minZoom: 6, maxZoom: 12
+    maxBounds: boundsEspana, maxBoundsViscosity: 1.0, minZoom: 5, maxZoom: 12
 }).setView([39.90, -3.70], 6);
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { noWrap: true }).addTo(map);
 
-// Variables Globales
+// VARIABLES GLOBALES
 let globalPointsData = [];
 let multiGasData = {};
 let canvasLayer = null;
+let stationLayer = L.layerGroup().addTo(map);
+const GAS_IDS = { "NO2": 1, "O3": 2, "SO2": 3, "CO": 4, "PM10": 5 };
 
-// Mapeo de IDs igual que en tu PHP (IMPORTANTE QUE COINCIDAN)
-const GAS_IDS = {
-    "NO2": 1,
-    "O3": 2,
-    "SO2": 3,
-    "CO": 4,
-    "PM10": 5
-};
-
-/**
- * Función asíncrona para actualizar el mapa por fecha
- * @param {string} fechaFormatoSQL - Fecha en formato 'YYYY-MM-DD'
- */
-async function updateMapByDate(fechaFormatoSQL) {
-    const loader = document.getElementById('loader');
-    if (loader) loader.style.display = 'block'; // Mostrar cargando
-
-    try {
-        // Creamos un array de promesas para pedir los 5 gases a la vez (más rápido)
-        const promesas = Object.keys(GAS_IDS).map(async (gasKey) => {
-            const id = GAS_IDS[gasKey];
-
-            // Llamada a tu API modificada
-            const url = `../api/index.php?accion=getMedicionesXTipo&tipo_id=${id}&fecha=${fechaFormatoSQL}`;
-
-            const response = await fetch(url);
-            if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
-
-            const data = await response.json();
-
-            // Necesitamos convertir los datos string a float igual que hizo PHP al inicio
-            const datosProcesados = data.map(p => ({
-                ...p,
-                lat: parseFloat(p.lat),
-                lon: parseFloat(p.lon),
-                // Aplicamos la conversión de unidades si existe en 'config'
-                value: parseFloat(p.value) * (config[gasKey] ? config[gasKey].conversion : 1)
-            }));
-
-            return { key: gasKey, data: datosProcesados };
-        });
-
-        // Esperamos a que terminen las 5 peticiones
-        const resultados = await Promise.all(promesas);
-
-        // Actualizamos la variable global con los nuevos datos
-        resultados.forEach(item => {
-            // Limpiamos array previo y asignamos el nuevo
-            if(window.SERVER_DATA) {
-                window.SERVER_DATA[item.key] = item.data;
-            }
-        });
-
-        // Llamamos a tu función existente loadData() para refrescar el mapa
-        // Nota: Asegúrate de que loadData() usa window.SERVER_DATA
-        loadData();
-
-    } catch (error) {
-        console.error("Error actualizando el mapa:", error);
-        alert("Hubo un error al cargar los datos de la fecha seleccionada.");
-    } finally {
-        if (loader) loader.style.display = 'none'; // Ocultar cargando
-    }
-}
-
-// --- FUNCIONES MATEMÁTICAS ---
+// --- FUNCIONES MATEMÁTICAS / UTILIDADES ---
 function interpolateColor(value, gas) {
     const conf = (gas === 'MAX') ? maxRiskConfig : config[gas];
     const stops = conf.stops;
@@ -148,16 +140,24 @@ function getSeverityScore(val, gas) {
     return score > 100 ? 100 : score;
 }
 
-function updateLegend(gas) {
-    const conf = (gas === 'MAX') ? maxRiskConfig : config[gas];
+function updateLegend(mode) {
     const legendTitle = document.getElementById('legend-title');
     const legendUnit = document.getElementById('legend-unit');
     const legendBar = document.getElementById('legend-bar');
     const legendValues = document.getElementById('legend-values');
 
-    // Protección extra por si no existen elementos de leyenda
-    if(legendTitle) legendTitle.innerText = (gas === 'MAX') ? "Nivel de Riesgo" : gas;
-    if(legendUnit) legendUnit.innerText = (gas === 'MAX') ? "% Saturación" : conf.unit;
+    // MODO ESTACIONES
+    if (mode === 'ESTACIONES') {
+        if(legendTitle) legendTitle.innerText = "Red Oficial";
+        if(legendUnit) legendUnit.innerText = "Puntos de Control";
+        if(legendBar) legendBar.style.background = "none";
+        if(legendValues) legendValues.innerHTML = "<span style='width:100%; text-align:center;'>Estaciones AEMET/Locales</span>";
+        return;
+    }
+
+    const conf = (mode === 'MAX') ? maxRiskConfig : config[mode];
+    if(legendTitle) legendTitle.innerText = (mode === 'MAX') ? "Nivel de Riesgo" : mode;
+    if(legendUnit) legendUnit.innerText = (mode === 'MAX') ? "% Saturación" : conf.unit;
 
     const stops = conf.stops;
     let gradientStr = "linear-gradient(to right";
@@ -181,42 +181,157 @@ function calculateIDW(latlng, points) {
     return den < 0.0001 ? null : num / den;
 }
 
-function findNearestStation(lat, lng) {
-    let nearest = null;
-    let minDistance = Infinity;
-    stations.forEach(st => {
-        const d = Math.sqrt(Math.pow(lat - st.lat, 2) + Math.pow(lng - st.lng, 2));
-        if (d < minDistance) {
-            minDistance = d;
-            nearest = { ...st, distanceKm: d * 111 };
+// --- RENDERIZADO DEL MAPA DE CALOR (CANVAS) ---
+function renderMap(mode) {
+    stationLayer.clearLayers();
+    if (canvasLayer) map.removeLayer(canvasLayer);
+
+    const HeatGrid = L.GridLayer.extend({
+        createTile: function(coords) {
+            const tile = L.DomUtil.create('canvas', 'leaflet-tile');
+            const size = this.getTileSize();
+            tile.width = size.x; tile.height = size.y;
+            const ctx = tile.getContext('2d');
+            const step = 8; // Pixelación
+
+            for (let x = 0; x < size.x; x += step) {
+                for (let y = 0; y < size.y; y += step) {
+                    const latlng = map.unproject(coords.scaleBy(size).add([x, y]), coords.z);
+                    let val = null;
+
+                    if (mode === 'MAX') {
+                        let maxRisk = -1;
+                        let dominantGas = null;
+                        ['NO2', 'O3', 'PM10', 'SO2', 'CO'].forEach(g => {
+                            if (multiGasData[g] && multiGasData[g].length > 0) {
+                                const v = calculateIDW(latlng, multiGasData[g]);
+                                if (v !== null) {
+                                    const risk = getSeverityScore(v, g);
+                                    if (risk > maxRisk) { maxRisk = risk; dominantGas = g; }
+                                }
+                            }
+                        });
+                        if (dominantGas) {
+                            ctx.fillStyle = interpolateColor(maxRisk, 'MAX');
+                            ctx.fillRect(x, y, step, step);
+                        }
+                    } else {
+                        // Modo Gas Individual
+                        val = calculateIDW(latlng, globalPointsData);
+                        if (val !== null) {
+                            ctx.fillStyle = interpolateColor(val, mode);
+                            ctx.fillRect(x, y, step, step);
+                        }
+                    }
+                }
+            }
+            return tile;
         }
     });
-    return nearest;
+
+    canvasLayer = new HeatGrid({ opacity: 0.8 }).addTo(map);
+    setTimeout(() => {
+        const container = canvasLayer.getContainer();
+        if (container) {
+            container.style.filter = "blur(10px) saturate(1.5)";
+            container.style.mixBlendMode = "screen";
+        }
+    }, 100);
 }
 
-function resolveStationName(p) {
-    if (p.ubicacion_nombre && p.ubicacion_nombre !== "undefined") return p.ubicacion_nombre;
-    if (p.name && p.name !== "undefined") return p.name;
-    if (p.NOMBRE && p.NOMBRE !== "undefined") return p.NOMBRE;
-    let bestMatch = null;
-    let minGeoDist = 0.005;
-    for(let s of stations) {
-        const d = Math.sqrt(Math.pow(p.lat - s.lat, 2) + Math.pow(p.lon - s.lon, 2));
-        if (d < minGeoDist) { minGeoDist = d; bestMatch = s.name; }
-    }
-    if (bestMatch) return bestMatch;
-    return "Estación Desconocida";
+// --- RENDERIZAR ESTACIONES ---
+function renderStations() {
+    if (canvasLayer) map.removeLayer(canvasLayer);
+    stationLayer.clearLayers();
+
+    stations.forEach(st => {
+        const lat = st.lat;
+        const lng = st.lng || st.lon;
+        const popupContent = `
+            <div style="font-family:'Segoe UI',sans-serif; min-width:180px;">
+                <div style="border-bottom:1px solid #444; padding-bottom:5px; margin-bottom:10px;">
+                    <strong style="color:#ffae00;">ESTACIÓN OFICIAL</strong>
+                </div>
+                <div style="font-size:14px; font-weight:bold; color:#fff; margin-bottom:5px;">
+                    ${st.name}
+                </div>
+                <div style="background:#333; padding:8px; border-radius:5px; margin-top:5px;">
+                    <div style="font-size:12px; color:#ccc; margin-bottom:2px;">
+                        <span style="color:#888;">Código:</span> ${st.code}
+                    </div>
+                    <div style="font-size:12px; color:#ccc;">
+                        <span style="color:#888;">Coords:</span> ${lat.toFixed(4)}, ${lng.toFixed(4)}
+                    </div>
+                </div>
+            </div>
+        `;
+
+        L.marker([lat, lng])
+            .bindPopup(popupContent)
+            .addTo(stationLayer);
+    });
+}
+
+// --- FUNCIÓN PRINCIPAL DE CARGA (LOAD DATA) ---
+function loadData() {
+    const selector = document.getElementById('gasSelect');
+    const loader = document.getElementById('loader');
+
+    if (!selector) return;
+
+    if (loader) loader.style.display = 'flex';
+    const mode = selector.value;
+
+    updateLegend(mode);
+
+    setTimeout(() => {
+        // 1. Si es modo ESTACIONES, renderizamos y salimos
+        if (mode === 'ESTACIONES') {
+            renderStations();
+            if (loader) loader.style.display = 'none';
+            return;
+        }
+
+        // 2. Verificación de seguridad
+        if (typeof SERVER_DATA === 'undefined' || !window.SERVER_DATA) {
+            console.error("No hay datos del servidor.");
+            if (loader) loader.style.display = 'none';
+            return;
+        }
+
+        // 3. Procesamiento y CONVERSIÓN DE DATOS
+        // AQUÍ ESTÁ LA CORRECCIÓN: Multiplicamos SIEMPRE por el factor de conversión
+        // independientemente de si el valor es string o number.
+        const gases = ['NO2', 'O3', 'PM10', 'SO2', 'CO'];
+        gases.forEach(g => {
+            const rawData = window.SERVER_DATA[g] || [];
+            multiGasData[g] = rawData.map(p => ({
+                ...p,
+                lat: typeof p.lat === 'string' ? parseFloat(p.lat) : p.lat,
+                lon: typeof p.lon === 'string' ? parseFloat(p.lon) : p.lon,
+                // FORZAMOS LA CONVERSIÓN: Esto arregla el CO (x500)
+                value: parseFloat(p.value) * (config[g] ? config[g].conversion : 1)
+            }));
+        });
+
+        if (mode === 'MAX') {
+            renderMap('MAX');
+        } else {
+            globalPointsData = multiGasData[mode] || [];
+            renderMap(mode);
+        }
+
+        if (loader) loader.style.display = 'none';
+
+    }, 300);
 }
 
 // --- EVENTO CLIC EN MAPA ---
 map.on('click', function(e) {
     const selector = document.getElementById('gasSelect');
-    if (!selector) return;
+    if (!selector || selector.value === 'ESTACIONES') return;
 
     const selectedMode = selector.value;
-    const lat = e.latlng.lat;
-    const lng = e.latlng.lng;
-    const nearest = findNearestStation(lat, lng);
 
     let contentHtml = "";
     let mainColor = "#fff";
@@ -231,11 +346,7 @@ map.on('click', function(e) {
                 const val = calculateIDW(e.latlng, multiGasData[g]);
                 if (val !== null) {
                     const risk = getSeverityScore(val, g);
-                    if (risk > maxRisk) {
-                        maxRisk = risk;
-                        dominantGas = g;
-                        dominantVal = val;
-                    }
+                    if (risk > maxRisk) { maxRisk = risk; dominantGas = g; dominantVal = val; }
                 }
             }
         });
@@ -269,163 +380,57 @@ map.on('click', function(e) {
             </div>
         `;
     }
-
-    if (nearest) {
-        const finalName = resolveStationName(nearest);
-        contentHtml += `
-            <div style="font-size:11px; color:#ccc; background:#333; padding:8px; border-radius:6px; text-align:left;">
-                <div style="margin-bottom:4px;">
-                    <span style="color:#888;">Ref:</span> <strong>${finalName}</strong>
-                </div>
-                <div style="margin-bottom:4px;">
-                    <span style="color:#888;">ID:</span> ${nearest.code}
-                </div>
-                <div>
-                    <span style="color:#888;">Dist:</span> ${nearest.distanceKm.toFixed(2)} km
-                </div>
-            </div>
-        `;
-    }
-
     L.popup().setLatLng(e.latlng)
         .setContent(`<div style="font-family:'Segoe UI',sans-serif; min-width:160px;">${contentHtml}</div>`)
         .openOn(map);
 });
 
-// --- RENDERIZADO DEL MAPA ---
-function renderMap(mode) {
-    if (canvasLayer) map.removeLayer(canvasLayer);
 
-    const HeatGrid = L.GridLayer.extend({
-        createTile: function(coords) {
-            const tile = L.DomUtil.create('canvas', 'leaflet-tile');
-            const size = this.getTileSize();
-            tile.width = size.x; tile.height = size.y;
-            const ctx = tile.getContext('2d');
-            const step = 8; // Pixelación
-
-            for (let x = 0; x < size.x; x += step) {
-                for (let y = 0; y < size.y; y += step) {
-                    const latlng = map.unproject(coords.scaleBy(size).add([x, y]), coords.z);
-
-                    if (mode === 'MAX') {
-                        let maxRisk = -1;
-                        let dominantGas = null;
-                        ['NO2', 'O3', 'PM10', 'SO2', 'CO'].forEach(g => {
-                            if (multiGasData[g] && multiGasData[g].length > 0) {
-                                const val = calculateIDW(latlng, multiGasData[g]);
-                                if (val !== null) {
-                                    const risk = getSeverityScore(val, g);
-                                    if (risk > maxRisk) {
-                                        maxRisk = risk;
-                                        dominantGas = g;
-                                    }
-                                }
-                            }
-                        });
-                        if (dominantGas) {
-                            ctx.fillStyle = interpolateColor(maxRisk, 'MAX');
-                            ctx.fillRect(x, y, step, step);
-                        }
-                    } else {
-                        const val = calculateIDW(latlng, globalPointsData);
-                        if (val !== null) {
-                            ctx.fillStyle = interpolateColor(val, mode);
-                            ctx.fillRect(x, y, step, step);
-                        }
-                    }
-                }
-            }
-            return tile;
-        }
-    });
-
-    canvasLayer = new HeatGrid({ opacity: 0.8 }).addTo(map);
-    setTimeout(() => {
-        const container = canvasLayer.getContainer();
-        if (container) {
-            container.style.filter = "blur(10px) saturate(1.5)";
-            container.style.mixBlendMode = "screen";
-        }
-    }, 100);
-}
-
-// --- FUNCIÓN PRINCIPAL DE CARGA (PROTEGIDA) ---
-// js/map-logic.js
-
-function loadData() {
-    const selector = document.getElementById('gasSelect');
+// --- ACTUALIZACIÓN POR FECHA (AJAX) ---
+async function updateMapByDate(fechaFormatoSQL) {
     const loader = document.getElementById('loader');
-
-    if (!selector) return;
-
-    // 1. Aseguramos que el loader se vea al iniciar el proceso
     if (loader) loader.style.display = 'flex';
 
-    const mode = selector.value;
-    updateLegend(mode);
+    try {
+        const promesas = Object.keys(GAS_IDS).map(async (gasKey) => {
+            const id = GAS_IDS[gasKey];
+            const url = `../api/index.php?accion=getMedicionesXTipo&tipo_id=${id}&fecha=${fechaFormatoSQL}`;
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+            const data = await response.json();
 
-    // Pequeño retardo artificial (300ms) para permitir que el navegador
-    // renderice el loader antes de bloquearse procesando datos.
-    // Además, da una sensación de "análisis" más tecnológica.
-    setTimeout(() => {
-        if (typeof SERVER_DATA === 'undefined' || !window.SERVER_DATA) {
-            console.error("No hay datos del servidor.");
-            if (loader) loader.style.display = 'none';
-            return;
-        }
-
-        // --- PROCESAMIENTO DE DATOS ---
-        const gases = ['NO2', 'O3', 'PM10', 'SO2', 'CO'];
-        gases.forEach(g => {
-            const rawData = window.SERVER_DATA[g] || [];
-
-            // Si ya vienen procesados (del updateMapByDate) no hace falta mapear de nuevo,
-            // pero para la carga inicial de PHP sí. Verificamos si ya tienen 'lat' numérico.
-            multiGasData[g] = rawData.map(p => ({
+            // IMPORTANTE: Aquí solo guardamos los datos CRUDOS.
+            // NO aplicamos conversión aquí para no multiplicarlo dos veces.
+            // La conversión la hace 'loadData' cuando pinta.
+            const datosCrudos = data.map(p => ({
                 ...p,
-                lat: typeof p.lat === 'string' ? parseFloat(p.lat) : p.lat,
-                lon: typeof p.lon === 'string' ? parseFloat(p.lon) : p.lon,
-                value: typeof p.value === 'string' ? parseFloat(p.value) * config[g].conversion : p.value
+                lat: parseFloat(p.lat),
+                lon: parseFloat(p.lon),
+                value: parseFloat(p.value)
             }));
+            return { key: gasKey, data: datosCrudos };
         });
 
-        // --- RENDERIZADO ---
-        if (mode === 'MAX') {
-            renderMap('MAX');
-        } else {
-            globalPointsData = multiGasData[mode] || [];
-            renderMap(mode);
-        }
+        const resultados = await Promise.all(promesas);
+        resultados.forEach(item => {
+            if(window.SERVER_DATA) {
+                window.SERVER_DATA[item.key] = item.data;
+            }
+        });
 
-        // 2. OCULTAR EL LOADER AL TERMINAR
-        if (loader) {
-            // Un fade-out suave quedaría genial, pero por ahora simple:
-            loader.style.display = 'none';
-        }
+        loadData();
 
-    }, 300); // Fin del timeout
+    } catch (error) {
+        console.error("Error actualizando el mapa:", error);
+        alert("Hubo un error al cargar los datos de la fecha seleccionada.");
+    } finally {
+        if (loader) loader.style.display = 'none';
+    }
 }
 
-// Asegúrate de que al final del archivo el Listener llama a loadData
+// Inicialización
 document.addEventListener('DOMContentLoaded', function() {
-    loadData(); // Esto lanzará la carga inicial con el loader
-
-    const selectorGas = document.getElementById('gasSelect');
-    if (selectorGas) {
-        selectorGas.addEventListener('change', function() {
-            loadData();
-        });
-    }
-});
-
-// --- INICIALIZACIÓN SEGURA ---
-// Esperamos a que el HTML esté listo antes de ejecutar nada
-document.addEventListener('DOMContentLoaded', function() {
-    // 1. Iniciamos la carga inicial
     loadData();
-
-    // 2. Activamos el listener del selector si existe
     const selectorGas = document.getElementById('gasSelect');
     if (selectorGas) {
         selectorGas.addEventListener('change', function() {
