@@ -155,7 +155,6 @@ if ($conn) {
                         <option value="CO">CO (Monóxido de Carbono)</option>
                     </select>
                 </div>
-
                 <div id="map"></div>
 
                 <div id="legend">
