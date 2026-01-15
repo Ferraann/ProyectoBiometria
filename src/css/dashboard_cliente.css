@@ -238,12 +238,6 @@ nav a:hover{
     color: var(--Principal_1);
 }
 
-.dropdown-mapa {
-    background-color: #f9f9f9;
-    color: #333;
-    border: none;
-}
-
 .dropdown-mapa, .date-picker {
     display: flex;
     align-items: center;
@@ -289,17 +283,17 @@ nav a:hover{
 /* Contenedor para posicionar el menú */
 .dropdown-container {
     position: relative; /* Clave para el menú absoluto */
+    display: inline-block;
 }
 
 /* Estilos del menú desplegable (oculto por defecto) */
 .dropdown-menu {
-    display: none; /* Oculto por defecto */
+    display: none;
     position: absolute;
-    top: 110%; /* Justo debajo del botón */
+    top: 110%;
     left: 0;
     z-index: 10;
-    
-    width: 100%; /* Mismo ancho que el botón */
+    width: 100%;
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -335,7 +329,7 @@ nav a:hover{
 
 /* La pestaña activa SÍ se muestra */
 .tab-content.active-tab-content {
-    display: block; 
+    display: grid;
 }
 
 /* --- Marcadores de posición para gráficas --- */
@@ -343,6 +337,7 @@ nav a:hover{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 1.5rem;
+    margin-top: 20px;
 }
 
 .graph-placeholder {
@@ -450,6 +445,125 @@ nav a:hover{
     grid-template-columns: 1fr 280px;
     gap: 20px;
     margin-top: 1rem;
+}
+
+/* --- ESTILOS NUEVOS PARA ESTADÍSTICAS --- */
+
+/* Controles superiores alineados */
+.stats-controls {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+/* Estilo para los selects parecidos a tus botones */
+.select-moderno {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    outline: none;
+    min-width: 120px;
+}
+
+/* Layout principal de dos columnas */
+.stats-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Columna Izquierda (Gráfico) */
+.chart-section {
+    flex: 2; /* Ocupa más espacio (66%) */
+    background: white;
+    border-radius: 20px;
+    position: relative;
+}
+
+.chart-container-box {
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    height: 400px;
+    width: 100%;
+}
+
+/* Columna Derecha (Recomendaciones) */
+.recommendations-section {
+    flex: 1; /* Ocupa menos espacio (33%) */
+    padding-top: 10px;
+}
+
+.recommendations-section h2 {
+    color: var(--Principal_1);
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.rec-content ul {
+    list-style: disc;
+    padding-left: 20px;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Alerta flotante sobre el gráfico (el icono azul !) */
+.chart-alert-icon {
+    position: absolute;
+    top: 40%;
+    left: 55%;
+    font-size: 2rem;
+    color: var(--Principal_1);
+    background: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Mensaje de estado abajo (Carita roja) */
+.status-message {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.status-message i {
+    font-size: 3rem;
+}
+
+.status-message p {
+    font-size: 1rem;
+    color: #555;
+    max-width: 80%;
+}
+
+/* Estados de colores */
+.status-message.bad i { color: #d32f2f; } /* Rojo */
+.status-message.warning i { color: #fbc02d; } /* Amarillo */
+.status-message.good i { color: #388e3c; } /* Verde */
+
+/* Responsive para móvil */
+@media (max-width: 900px) {
+    .stats-layout {
+        flex-direction: column;
+    }
+    .chart-container-box {
+        height: 300px;
+    }
 }
 
 /* Colores por gas */
