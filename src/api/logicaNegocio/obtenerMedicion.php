@@ -76,11 +76,12 @@ function getMedicionesXTipo($conn, $tipoId)
      * por cada sensor y tipo de medición, asegurando eficiencia en tablas grandes.
      */
     $sql = "SELECT m.valor, m.localizacion, m.hora, tm.unidad, tm.medida, s.mac
-            FROM medicion m
-            INNER JOIN tipo_medicion tm ON m.tipo_medicion_id = tm.id
-            INNER JOIN sensor s ON m.sensor_id = s.id
-            WHERE m.tipo_medicion_id = ? 
-            ";
+        FROM medicion m
+        INNER JOIN tipo_medicion tm ON m.tipo_medicion_id = tm.id
+        INNER JOIN sensor s ON m.sensor_id = s.id
+        WHERE m.tipo_medicion_id = ? 
+        AND m.hora >= DATE_SUB(NOW(), INTERVAL 7 DAY)
+        ORDER BY m.hora ASC";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $tipoId);
