@@ -2,7 +2,7 @@
 // ARCHIVO: js/map-logic.js
 // ==========================================
 
-// --- 0. LISTA MAESTRA DE ESTACIONES (Tu lista completa) ---
+// --- 0. LISTA MAESTRA DE ESTACIONES ---
 const stations = [
     {code: "28-79-99", lat: 40.42389, lng: -3.68222, name: "MADRID-ESCUELAS AGUIRRE"},
     {code: "28-79-4", lat: 40.42417, lng: -3.71222, name: "MADRID-PLAZA ESPAÑA"},
@@ -65,7 +65,7 @@ const stations = [
     {code: "41-72-3", lat: 41.72361, lon: -2.85694, name: "DURUELO DE LA SIERRA"}
 ];
 
-// --- 1. CONFIGURACIÓN VISUAL ---
+// --- 1. CONFIGURACIÓN VISUAL Y CONVERSIONES ---
 const config = {
     NO2: {
         unit: "µg/m³", conversion: 1,
@@ -77,10 +77,10 @@ const config = {
     },
     O3: {
         unit: "µg/m³", conversion: 1,
-        stops: [ { val: 0, c: [1, 1, 150] }, { val: 10, c: [1, 101, 150] }, { val: 20, c: [1, 101, 150] }, { val: 100, c: [176, 178, 132] }, { val: 1000, c: [74, 12, 0] } ]
+        stops: [ { val: 0, c: [1, 101, 150] }, { val: 10, c: [1, 101, 150] }, { val: 20, c: [1, 101, 150] }, { val: 100, c: [176, 178, 132] }, { val: 1000, c: [74, 12, 0] } ]
     },
     CO: {
-        unit: "ppbv", conversion: 500,
+        unit: "ppbv", conversion: 500, // IMPORTANTE: Conversión activa
         stops: [ { val: 0, c: [124, 124, 124] }, { val: 50, c: [124, 124, 116] }, { val: 100, c: [124, 113, 60] }, { val: 500, c: [46, 29, 29] }, { val: 1200, c: [130, 26, 25] } ]
     },
     SO2: {
@@ -112,7 +112,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { n
 let globalPointsData = [];
 let multiGasData = {};
 let canvasLayer = null;
-let stationLayer = L.layerGroup().addTo(map); // Capa específica para los marcadores de estaciones
+let stationLayer = L.layerGroup().addTo(map);
 const GAS_IDS = { "NO2": 1, "O3": 2, "SO2": 3, "CO": 4, "PM10": 5 };
 
 // --- FUNCIONES MATEMÁTICAS / UTILIDADES ---
@@ -146,7 +146,7 @@ function updateLegend(mode) {
     const legendBar = document.getElementById('legend-bar');
     const legendValues = document.getElementById('legend-values');
 
-    // Si mostramos estaciones, ocultamos la barra de colores y mostramos texto simple
+    // MODO ESTACIONES
     if (mode === 'ESTACIONES') {
         if(legendTitle) legendTitle.innerText = "Red Oficial";
         if(legendUnit) legendUnit.innerText = "Puntos de Control";
@@ -183,10 +183,7 @@ function calculateIDW(latlng, points) {
 
 // --- RENDERIZADO DEL MAPA DE CALOR (CANVAS) ---
 function renderMap(mode) {
-    // Si la capa de estaciones está activa y cambiamos a gas, la limpiamos
     stationLayer.clearLayers();
-
-    // Limpiamos capa anterior si existe
     if (canvasLayer) map.removeLayer(canvasLayer);
 
     const HeatGrid = L.GridLayer.extend({
@@ -242,20 +239,14 @@ function renderMap(mode) {
     }, 100);
 }
 
-// --- NUEVA FUNCIÓN: RENDERIZAR ESTACIONES ---
+// --- RENDERIZAR ESTACIONES ---
 function renderStations() {
-    // 1. Limpiamos el mapa de calor si existe
     if (canvasLayer) map.removeLayer(canvasLayer);
-    // 2. Limpiamos estaciones anteriores
     stationLayer.clearLayers();
 
-    // 3. Iteramos las estaciones y creamos marcadores
     stations.forEach(st => {
-        // Normalizamos coordenadas (tu array mezcla lng y lon)
         const lat = st.lat;
         const lng = st.lng || st.lon;
-
-        // Estilo del Popup (Igual que el de gases)
         const popupContent = `
             <div style="font-family:'Segoe UI',sans-serif; min-width:180px;">
                 <div style="border-bottom:1px solid #444; padding-bottom:5px; margin-bottom:10px;">
@@ -294,20 +285,23 @@ function loadData() {
     updateLegend(mode);
 
     setTimeout(() => {
-        // --- NUEVA LÓGICA: Si es modo ESTACIONES, renderizamos y salimos ---
+        // 1. Si es modo ESTACIONES, renderizamos y salimos
         if (mode === 'ESTACIONES') {
             renderStations();
             if (loader) loader.style.display = 'none';
             return;
         }
 
-        // --- LÓGICA EXISTENTE DE GASES ---
+        // 2. Verificación de seguridad
         if (typeof SERVER_DATA === 'undefined' || !window.SERVER_DATA) {
             console.error("No hay datos del servidor.");
             if (loader) loader.style.display = 'none';
             return;
         }
 
+        // 3. Procesamiento y CONVERSIÓN DE DATOS
+        // AQUÍ ESTÁ LA CORRECCIÓN: Multiplicamos SIEMPRE por el factor de conversión
+        // independientemente de si el valor es string o number.
         const gases = ['NO2', 'O3', 'PM10', 'SO2', 'CO'];
         gases.forEach(g => {
             const rawData = window.SERVER_DATA[g] || [];
@@ -315,7 +309,8 @@ function loadData() {
                 ...p,
                 lat: typeof p.lat === 'string' ? parseFloat(p.lat) : p.lat,
                 lon: typeof p.lon === 'string' ? parseFloat(p.lon) : p.lon,
-                value: typeof p.value === 'string' ? parseFloat(p.value) * config[g].conversion : p.value
+                // FORZAMOS LA CONVERSIÓN: Esto arregla el CO (x500)
+                value: parseFloat(p.value) * (config[g] ? config[g].conversion : 1)
             }));
         });
 
@@ -331,18 +326,13 @@ function loadData() {
     }, 300);
 }
 
-// --- EVENTO CLIC EN MAPA (PARA LOS GASES) ---
+// --- EVENTO CLIC EN MAPA ---
 map.on('click', function(e) {
     const selector = document.getElementById('gasSelect');
-    // Si estamos viendo estaciones, el clic en el mapa no debe hacer nada (los marcadores tienen su propio click)
     if (!selector || selector.value === 'ESTACIONES') return;
 
-    // ... (El resto de tu lógica de popup para gases se mantiene igual) ...
     const selectedMode = selector.value;
-    const lat = e.latlng.lat;
-    const lng = e.latlng.lng;
 
-    // Calcula IDW solo si NO estamos en modo estaciones
     let contentHtml = "";
     let mainColor = "#fff";
 
@@ -396,7 +386,7 @@ map.on('click', function(e) {
 });
 
 
-// --- LÓGICA DE ACTUALIZACIÓN POR FECHA (AJAX) ---
+// --- ACTUALIZACIÓN POR FECHA (AJAX) ---
 async function updateMapByDate(fechaFormatoSQL) {
     const loader = document.getElementById('loader');
     if (loader) loader.style.display = 'flex';
@@ -408,13 +398,17 @@ async function updateMapByDate(fechaFormatoSQL) {
             const response = await fetch(url);
             if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
             const data = await response.json();
-            const datosProcesados = data.map(p => ({
+
+            // IMPORTANTE: Aquí solo guardamos los datos CRUDOS.
+            // NO aplicamos conversión aquí para no multiplicarlo dos veces.
+            // La conversión la hace 'loadData' cuando pinta.
+            const datosCrudos = data.map(p => ({
                 ...p,
                 lat: parseFloat(p.lat),
                 lon: parseFloat(p.lon),
-                value: parseFloat(p.value) * (config[gasKey] ? config[gasKey].conversion : 1)
+                value: parseFloat(p.value)
             }));
-            return { key: gasKey, data: datosProcesados };
+            return { key: gasKey, data: datosCrudos };
         });
 
         const resultados = await Promise.all(promesas);
