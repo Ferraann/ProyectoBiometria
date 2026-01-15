@@ -12,7 +12,6 @@
  * @brief Array global que almacena los objetos de archivo (imágenes) seleccionados por el usuario.
  */
 let archivosAcumulados = [];
-cargarSensoresEnSelector();
 
 /**
  * @section Sesion
@@ -24,6 +23,7 @@ if (!user || !user.id) {
     location.href = "login.html";
 } else {
     document.getElementById("id_user").value = user.id;
+    cargarSensoresEnSelector();
 }
 
 /**
@@ -140,7 +140,6 @@ if (imagenInput) {
         });
 
         actualizarTextoVisual();
-        cargarSensoresEnSelector();
 
         if (hayDuplicados) {
             Swal.fire({
@@ -216,7 +215,6 @@ function limpiarFormularioCompleto() {
     if(formElement) formElement.reset();
     archivosAcumulados = [];
     actualizarTextoVisual();
-    cargarSensoresEnSelector();
 }
 
 /**
@@ -228,7 +226,6 @@ if (btnReset) {
         setTimeout(() => {
             archivosAcumulados = [];
             actualizarTextoVisual();
-            cargarSensoresEnSelector();
         }, 10);
     });
 }

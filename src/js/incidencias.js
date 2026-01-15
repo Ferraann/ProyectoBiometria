@@ -32,6 +32,8 @@ const selEstado = document.getElementById("filtroEstado");
 const selFotos = document.getElementById("filtroFotos");
 /** @brief Selector para el orden de fecha. @type {HTMLSelectElement} */
 const selOrden = document.getElementById("ordenFecha");
+/** @brief Selector para filtrar incidencias críticas de sensores. @type {HTMLSelectElement} */
+const selUrgencia = document.getElementById("filtroUrgencia");
 /** @} */
 
 /**
@@ -166,6 +168,7 @@ async function detectarFotos() {
  */
 function aplicarFiltrosYRender() {
   let filtradas = incidencias.filter((inc) => {
+    // --- Filtros base ---
     const texto = buscador.value.toLowerCase();
     const coincideTexto = !texto ||
         inc.titulo.toLowerCase().includes(texto) ||
@@ -174,16 +177,32 @@ function aplicarFiltrosYRender() {
 
     const coincideTecnico = !selTecnico.value || inc.id_tecnico == selTecnico.value;
     const coincideEstado = !selEstado.value || inc.estado === selEstado.value;
-
     const fot = selFotos.value;
     const coincideFotos = !fot || (fot === "con" && mapaFotos[inc.id]) || (fot === "sin" && !mapaFotos[inc.id]);
 
-    return coincideTexto && coincideTecnico && coincideEstado && coincideFotos;
+    // --- NUEVO FILTRO: CRÍTICAS (+24H Y SENSOR) ---
+    const filtroUrgencia = selUrgencia.value;
+    let coincideUrgencia = true;
+
+    if (filtroUrgencia === "criticas") {
+      // 1. Verificar si tiene sensor (id_sensor no es null ni 0)
+      const tieneSensor = inc.id_sensor && inc.id_sensor != 0;
+      
+      // 2. Calcular tiempo (24 horas = 86,400,000 milisegundos)
+      const fechaCreacion = new Date(inc.fecha_creacion).getTime();
+      const ahora = new Date().getTime();
+      const transcurridoMas24h = (ahora - fechaCreacion) > (24 * 60 * 60 * 1000);
+      
+      // 3. Solo mostrar si está activa (asumiendo que estados finales no cuentan)
+      const estaActiva = inc.estado.toLowerCase() !== "resuelta" && inc.estado.toLowerCase() !== "cerrada";
+
+      coincideUrgencia = tieneSensor && transcurridoMas24h && estaActiva;
+    }
+
+    return coincideTexto && coincideTecnico && coincideEstado && coincideFotos && coincideUrgencia;
   });
 
-  /**
-   * @brief Ordenación por fecha
-   */
+  // Ordenación (se mantiene igual)
   const orden = selOrden.value;
   filtradas.sort((a, b) => {
     const dA = new Date(a.fecha_creacion);
@@ -270,6 +289,7 @@ selTecnico.addEventListener("change", aplicarFiltrosYRender);
 selEstado.addEventListener("change", aplicarFiltrosYRender);
 selFotos.addEventListener("change", aplicarFiltrosYRender);
 selOrden.addEventListener("change", aplicarFiltrosYRender);
+selUrgencia.addEventListener("change", aplicarFiltrosYRender);
 
 /**
  * @section DELEGACIÓN DE EVENTOS
