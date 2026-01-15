@@ -80,7 +80,7 @@ function getMedicionesXTipo($conn, $tipoId)
         INNER JOIN tipo_medicion tm ON m.tipo_medicion_id = tm.id
         INNER JOIN sensor s ON m.sensor_id = s.id
         WHERE m.tipo_medicion_id = ? 
-        AND m.hora >= DATE_SUB(NOW(), INTERVAL 7 DAY)
+        AND m.hora >= DATE_SUB(NOW(), INTERVAL 3 DAY)
         ORDER BY m.hora ASC";
 
     $stmt = $conn->prepare($sql);
