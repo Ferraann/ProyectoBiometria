@@ -75,8 +75,6 @@ async function updateMapByDate(fechaFormatoSQL) {
     const loader = document.getElementById('loader');
     if (loader) loader.style.display = 'block'; // Mostrar cargando
 
-    console.log(`📡 Solicitando datos para la fecha: ${fechaFormatoSQL}`);
-
     try {
         // Creamos un array de promesas para pedir los 5 gases a la vez (más rápido)
         const promesas = Object.keys(GAS_IDS).map(async (gasKey) => {
@@ -113,14 +111,12 @@ async function updateMapByDate(fechaFormatoSQL) {
             }
         });
 
-        console.log("✅ Datos actualizados. Repintando mapa...");
-
         // Llamamos a tu función existente loadData() para refrescar el mapa
         // Nota: Asegúrate de que loadData() usa window.SERVER_DATA
         loadData();
 
     } catch (error) {
-        console.error("❌ Error actualizando el mapa:", error);
+        console.error("Error actualizando el mapa:", error);
         alert("Hubo un error al cargar los datos de la fecha seleccionada.");
     } finally {
         if (loader) loader.style.display = 'none'; // Ocultar cargando
@@ -355,42 +351,73 @@ function renderMap(mode) {
 }
 
 // --- FUNCIÓN PRINCIPAL DE CARGA (PROTEGIDA) ---
+// js/map-logic.js
+
 function loadData() {
     const selector = document.getElementById('gasSelect');
     const loader = document.getElementById('loader');
 
-    // !!! PROTECCIÓN CLAVE: Si el selector no existe, no hacemos nada !!!
     if (!selector) return;
 
+    // 1. Aseguramos que el loader se vea al iniciar el proceso
+    if (loader) loader.style.display = 'flex';
+
     const mode = selector.value;
-    if (loader) loader.style.display = 'block';
     updateLegend(mode);
 
-    if (typeof SERVER_DATA === 'undefined') {
-        console.error("No hay datos del servidor.");
-        if (loader) loader.style.display = 'none';
-        return;
-    }
+    // Pequeño retardo artificial (300ms) para permitir que el navegador
+    // renderice el loader antes de bloquearse procesando datos.
+    // Además, da una sensación de "análisis" más tecnológica.
+    setTimeout(() => {
+        if (typeof SERVER_DATA === 'undefined' || !window.SERVER_DATA) {
+            console.error("No hay datos del servidor.");
+            if (loader) loader.style.display = 'none';
+            return;
+        }
 
-    const gases = ['NO2', 'O3', 'PM10', 'SO2', 'CO'];
-    gases.forEach(g => {
-        const rawData = SERVER_DATA[g] || [];
-        multiGasData[g] = rawData.map(p => ({
-            ...p,
-            lat: parseFloat(p.lat),
-            lon: parseFloat(p.lon),
-            value: parseFloat(p.value) * config[g].conversion
-        }));
-    });
+        // --- PROCESAMIENTO DE DATOS ---
+        const gases = ['NO2', 'O3', 'PM10', 'SO2', 'CO'];
+        gases.forEach(g => {
+            const rawData = window.SERVER_DATA[g] || [];
 
-    if (mode === 'MAX') {
-        renderMap('MAX');
-    } else {
-        globalPointsData = multiGasData[mode] || [];
-        renderMap(mode);
-    }
-    if (loader) loader.style.display = 'none';
+            // Si ya vienen procesados (del updateMapByDate) no hace falta mapear de nuevo,
+            // pero para la carga inicial de PHP sí. Verificamos si ya tienen 'lat' numérico.
+            multiGasData[g] = rawData.map(p => ({
+                ...p,
+                lat: typeof p.lat === 'string' ? parseFloat(p.lat) : p.lat,
+                lon: typeof p.lon === 'string' ? parseFloat(p.lon) : p.lon,
+                value: typeof p.value === 'string' ? parseFloat(p.value) * config[g].conversion : p.value
+            }));
+        });
+
+        // --- RENDERIZADO ---
+        if (mode === 'MAX') {
+            renderMap('MAX');
+        } else {
+            globalPointsData = multiGasData[mode] || [];
+            renderMap(mode);
+        }
+
+        // 2. OCULTAR EL LOADER AL TERMINAR
+        if (loader) {
+            // Un fade-out suave quedaría genial, pero por ahora simple:
+            loader.style.display = 'none';
+        }
+
+    }, 300); // Fin del timeout
 }
+
+// Asegúrate de que al final del archivo el Listener llama a loadData
+document.addEventListener('DOMContentLoaded', function() {
+    loadData(); // Esto lanzará la carga inicial con el loader
+
+    const selectorGas = document.getElementById('gasSelect');
+    if (selectorGas) {
+        selectorGas.addEventListener('change', function() {
+            loadData();
+        });
+    }
+});
 
 // --- INICIALIZACIÓN SEGURA ---
 // Esperamos a que el HTML esté listo antes de ejecutar nada
