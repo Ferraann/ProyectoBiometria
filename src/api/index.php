@@ -174,6 +174,23 @@ switch ($method) {
                     echo json_encode(["status" => "error", "mensaje" => "ID de tipo de medición no válido"]);
                 }
                 break;
+            case "getEvolucionDiaria":
+                $tipoId = intval($_GET['tipo_id'] ?? 0);
+                $fecha = $_GET['fecha'] ?? date('Y-m-d');
+                echo json_encode(getEvolucionDiaria($conn, $tipoId, $fecha));
+                break;
+
+            case "getMinMaxGlobal":
+                $tipoId = intval($_GET['tipo_id'] ?? 0);
+                $fecha = $_GET['fecha'] ?? date('Y-m-d');
+                echo json_encode(getMinMaxGlobal($conn, $tipoId, $fecha));
+                break;
+
+            case "getTopSensores":
+                $tipoId = intval($_GET['tipo_id'] ?? 0);
+                $fecha = $_GET['fecha'] ?? date('Y-m-d');
+                echo json_encode(getTopSensores($conn, $tipoId, $fecha));
+                break;
             default: echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]); break;
         }
         break;

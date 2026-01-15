@@ -401,8 +401,6 @@ async function updateMapByDate(fechaFormatoSQL) {
     const loader = document.getElementById('loader');
     if (loader) loader.style.display = 'flex';
 
-    console.log(`📡 Solicitando datos para la fecha: ${fechaFormatoSQL}`);
-
     try {
         const promesas = Object.keys(GAS_IDS).map(async (gasKey) => {
             const id = GAS_IDS[gasKey];
@@ -426,11 +424,10 @@ async function updateMapByDate(fechaFormatoSQL) {
             }
         });
 
-        console.log("✅ Datos actualizados. Repintando mapa...");
         loadData();
 
     } catch (error) {
-        console.error("❌ Error actualizando el mapa:", error);
+        console.error("Error actualizando el mapa:", error);
         alert("Hubo un error al cargar los datos de la fecha seleccionada.");
     } finally {
         if (loader) loader.style.display = 'none';
