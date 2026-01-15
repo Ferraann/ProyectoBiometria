@@ -2,8 +2,8 @@
 ===============================================================================
 NOMBRE: dashboard_cliente.html
 DESCRIPCIÓN: dashboard o panel de control, esta pagina es la parte privada del usuario,
-            una vez hace login esto es lo primero que ve. En el podemos encontrar, con dos apartados 
-            principales que son los mapas y las estadisticas. Tambien podra acceder a el soporte tecnico 
+            una vez hace login esto es lo primero que ve. En el podemos encontrar, con dos apartados
+            principales que son los mapas y las estadisticas. Tambien podra acceder a el soporte tecnico
             y proximamente a su perfil, ...
 COPYRIGHT: © 2025 AITHER. Todos los derechos reservados.
 FECHA: 10/11/2025
@@ -14,22 +14,49 @@ APORTACIÓN: Estructura completa de la página HTML para el inicio de sesión
 -->
 
 <?php
-/*
 session_start();
 
-// Si NO hay un usuario logeado, redirigir al login
-if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.html");
-    exit;
+// 1. Configuración de errores para ver si falla la conexión (Solo en desarrollo)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+$nombre = $_SESSION['usuario_nombre'] ?? 'Usuario';
+
+// 2. Importar recursos
+// Asegúrate de que estas rutas sean CORRECTAS respecto a dónde está este archivo
+require_once '../api/conexion.php';
+require_once '../api/logicaNegocio/obtenerMedicion.php';
+
+// 3. Abrir conexión
+$conn = abrirServidor();
+
+if (!$conn) {
+    die("Error crítico: No se pudo conectar a la base de datos.");
 }
 
-// Construimos el nombre completo
-$nombre = $_SESSION['usuario_nombre'];
-$nombreCompleto = $_SESSION['usuario_nombre'] . " " . $_SESSION['usuario_apellidos'];
-$gmail = $_SESSION['usuario_correo'];
- */
-?>
+// 4. Configuración de IDs (DEBEN COINCIDIR CON TU TABLA tipo_medicion)
+$MAPA_GASES = [
+    "NO2"  => "1",
+    "O3"   => "2",
+    "SO2"  => "3",
+    "CO"   => "4",
+    "PM10" => "5"
+];
 
+$SERVER_DATA = [];
+
+// 5. Carga de datos
+foreach ($MAPA_GASES as $gas => $tipoMedida) {
+    // Obtenemos los datos usando la lógica de negocio existente
+    $datos = getMedicionesXTipo($conn, $tipoMedida);
+
+    // Si devuelve null o false, lo convertimos a array vacío para evitar errores en JS
+    $SERVER_DATA[$gas] = is_array($datos) ? $datos : [];
+}
+
+var_dump($SERVER_DATA); exit;
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -323,10 +350,15 @@ que dan diferente informacion pero la estructura es parecida.
 
 
 </body>
+<script>
+    window.SERVER_DATA = <?= json_encode(
+        $SERVER_DATA,
+        JSON_UNESCAPED_UNICODE | JSON_NUMERIC_CHECK
+    ); ?>;
+</script>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="../js/map-logic.js"></script>
 <script src="../js/dashboard_cliente.js"></script>
 <script src="../js/Fun_icono_perfil.js"></script>
-
-<script src="../js/stats-logic.js"></script>
 </html>
