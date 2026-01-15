@@ -184,80 +184,52 @@ function cargarMinMax(tipoId, fecha) {
 function cargarTopSensoresFrontend(gasKey) {
     if (!chartTopSensoresInstance) return;
 
-    // 1. Verificar datos
+    // 1. Verificar si tenemos datos del servidor (se acaban de actualizar gracias al await)
     const datosContaminacion = (window.SERVER_DATA && window.SERVER_DATA[gasKey]) ? window.SERVER_DATA[gasKey] : [];
 
+    // Si no hay datos (día vacío), limpiamos gráfica
     if (datosContaminacion.length === 0) {
+        console.warn("⚠️ No hay datos para calcular el Top 5 en esta fecha.");
         chartTopSensoresInstance.data.labels = [];
         chartTopSensoresInstance.data.datasets[0].data = [];
         chartTopSensoresInstance.update();
         return;
     }
 
-    const stations = window.stations || [];
+    const stations = window.stations || []; // Tu lista fija
     const config = window.gasConfig || {};
     const conversion = (config[gasKey] ? config[gasKey].conversion : 1);
 
-    // 2. PREPARAR ACUMULADORES
-    // Creamos un mapa para guardar los valores asignados a cada estación
-    // Estructura: { 'NombreEstacion': { suma: 0, cuenta: 0, maximo: 0 } }
-    let mapaEstaciones = {};
-    stations.forEach(st => {
-        mapaEstaciones[st.name] = {
-            lat: st.lat,
-            lng: st.lng || st.lon,
-            maximo: 0 // Guardaremos el pico más alto detectado cerca de ella
-        };
-    });
+    // 2. Algoritmo: Para cada estación oficial, buscamos el valor más cercano
+    const ranking = stations.map(st => {
+        let valMasCercano = 0;
+        let distMin = Infinity;
+        let encontroDato = false;
 
-    // 3. BARRIDO DE DATOS (Cada dato busca su dueño)
-    datosContaminacion.forEach(dato => {
-        let estacionMasCercana = null;
-        let distMinima = Infinity;
-
-        // Buscamos a qué estación oficial pertenece este dato
-        stations.forEach(st => {
-            const dist = Math.sqrt(Math.pow(st.lat - dato.lat, 2) + Math.pow((st.lng||st.lon) - dato.lon, 2));
-            if (dist < distMinima) {
-                distMinima = dist;
-                estacionMasCercana = st.name;
+        datosContaminacion.forEach(d => {
+            // Distancia Euclídea
+            const dist = Math.sqrt(Math.pow(st.lat - d.lat, 2) + Math.pow((st.lng||st.lon) - d.lon, 2));
+            if (dist < distMin) {
+                distMin = dist;
+                valMasCercano = d.value;
+                encontroDato = true;
             }
         });
 
-        // FILTRO DE DISTANCIA MÁXIMA (Opcional pero recomendado)
-        // Si el dato está a más de 0.1 grados (~11km) de la estación, lo ignoramos
-        // para que un dato en Galicia no afecte a Madrid si no hay estaciones cerca.
-        if (distMinima < 0.1 && estacionMasCercana) {
-            const valorReal = parseFloat(dato.value);
-            // Nos quedamos con el valor MÁXIMO detectado en su zona de influencia
-            if (valorReal > mapaEstaciones[estacionMasCercana].maximo) {
-                mapaEstaciones[estacionMasCercana].maximo = valorReal;
-            }
-        }
-    });
-
-    // 4. GENERAR RANKING
-    let ranking = Object.keys(mapaEstaciones).map(nombre => {
+        // Solo consideramos la estación si tiene un sensor "cerca" (ej. < 0.5 grados ~ 50km)
+        // O simplemente tomamos el más cercano siempre.
         return {
-            nombre: nombre,
-            // Aplicamos conversión y redondeo
-            valor: parseFloat((mapaEstaciones[nombre].maximo * conversion).toFixed(2))
+            nombre: st.name,
+            valor: encontroDato ? (parseFloat(valMasCercano) * conversion) : 0
         };
     });
 
-    // 5. ORDENAR Y CORTAR
-    ranking.sort((a, b) => b.valor - a.valor);
+    // 3. Ordenar y Top 5
+    ranking.sort((a,b) => b.valor - a.valor);
     const top5 = ranking.slice(0, 5);
 
-    // 6. PINTAR
     chartTopSensoresInstance.data.labels = top5.map(x => x.nombre);
     chartTopSensoresInstance.data.datasets[0].data = top5.map(x => x.valor);
     chartTopSensoresInstance.data.datasets[0].label = `Top 5 Estaciones (${gasKey})`;
-
-    // Si todos son 0 (no hay datos cerca de estaciones), limpiamos para que no salga feo
-    if (top5.length > 0 && top5[0].valor === 0) {
-        chartTopSensoresInstance.data.datasets[0].data = [];
-    }
-
     chartTopSensoresInstance.update();
 }

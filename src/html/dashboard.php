@@ -12,6 +12,7 @@ if (!isset($_SESSION['usuario_id'])) {
 }
 */
 
+date_default_timezone_set('Europe/Madrid');
 $nombre = $_SESSION['usuario_nombre'] ?? 'Usuario';
 
 // ===============================
