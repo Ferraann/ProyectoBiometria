@@ -80,12 +80,7 @@ function getMedicionesXTipo($conn, $tipoId)
             INNER JOIN tipo_medicion tm ON m.tipo_medicion_id = tm.id
             INNER JOIN sensor s ON m.sensor_id = s.id
             WHERE m.tipo_medicion_id = ? 
-            AND m.hora = (
-                SELECT MAX(m2.hora) 
-                FROM medicion m2 
-                WHERE m2.sensor_id = m.sensor_id 
-                AND m2.tipo_medicion_id = m.tipo_medicion_id
-            )";
+            ";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $tipoId);
