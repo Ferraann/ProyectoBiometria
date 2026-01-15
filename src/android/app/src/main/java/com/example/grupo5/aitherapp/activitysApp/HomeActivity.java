@@ -25,89 +25,45 @@ import com.example.grupo5.aitherapp.pojos.PojoSensor;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-// Importaciones de OSMDroid
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.Executor;
 
 public class HomeActivity extends AppCompatActivity {
 
     private BtleScannerMultiple bleScanner;
     private MapView map;
-
-    // Variable para manejar la capa de calor
     private ContaminacionOverlay overlayCalor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // 1. CONFIGURACIÓN OSMDROID (Antes de setContentView)
+        // 1. Configuración OSM
         Configuration.getInstance().load(getApplicationContext(),
                 PreferenceManager.getDefaultSharedPreferences(getApplicationContext()));
 
         setContentView(R.layout.activity_home);
 
-        // 2. INICIALIZAR EL MAPA Y LA CAPA DE CALOR
+        // 2. Configurar Mapa
         setupMapa();
 
-        // -----------------------------------------------------------
-        // (Resto de tu lógica intacta)
-        // -----------------------------------------------------------
+        // 3. GENERAR DATOS FALSOS (MOCK) PARA VISUALIZAR
+        generarDatosFalsos();
 
-        ImageView btnHome = findViewById(R.id.nav_home);
-        if (btnHome != null) {
-            btnHome.setSelected(true);
-            overridePendingTransition(0, 0);
-        }
-
-        ImageView btnNotificaciones = findViewById(R.id.nav_bell);
-        if (btnNotificaciones != null) {
-            btnNotificaciones.setOnClickListener(v -> {
-                Intent intent = new Intent(HomeActivity.this, NotificacionesActivity.class);
-                startActivity(intent);
-                overridePendingTransition(0, 0);
-            });
-        }
-
-        ImageView btnPerfil = findViewById(R.id.nav_profile);
-        if (btnPerfil != null) {
-            btnPerfil.setOnClickListener(v -> {
-                Intent intent = new Intent(HomeActivity.this, EditarPerfilActivity.class);
-                startActivity(intent);
-                overridePendingTransition(0, 0);
-            });
-        }
-
-        ImageView btnWalk = findViewById(R.id.nav_walk);
-        if (btnWalk != null) {
-            btnWalk.setOnClickListener(v -> {
-                Intent intent = new Intent(HomeActivity.this, WalkActivity.class);
-                startActivity(intent);
-                overridePendingTransition(0, 0);
-            });
-        }
-
-        SharedPreferences prefs = getSharedPreferences("MiAppPrefs", MODE_PRIVATE);
-        int coinsUsuario = prefs.getInt("coinsUsuario", 0);
-        coinsUsuario += 10;
-        prefs.edit().putInt("coinsUsuario", coinsUsuario).apply();
-
-        TextView tvCoins = findViewById(R.id.coinNumber);
-        if (tvCoins != null) {
-            tvCoins.setText(String.valueOf(coinsUsuario));
-        }
+        // 4. Resto de UI
+        setupNavegacion();
+        actualizarMonedas();
 
         findViewById(R.id.btnVincularQR_card).setOnClickListener(v ->
-                startActivity(new Intent(HomeActivity.this, AnyadirSensorActivity.class))
+                startActivity(new Intent(HomeActivity.this, VincularQRActivity.class))
         );
-
         findViewById(R.id.Btncoins_card).setOnClickListener(v ->
                 startActivity(new Intent(HomeActivity.this, AithWalletActivity.class))
         );
@@ -116,65 +72,126 @@ public class HomeActivity extends AppCompatActivity {
         configurarEscaneoBleSilencioso();
     }
 
-    /**
-     * Configura el mapa, añade el overlay de calor y carga datos falsos.
-     */
     @SuppressLint("ClickableViewAccessibility")
     private void setupMapa() {
         map = findViewById(R.id.map);
         if (map != null) {
             map.setTileSource(TileSourceFactory.MAPNIK);
             map.setMultiTouchControls(true);
-            map.getController().setZoom(13.0); // Un poco más lejos para ver los puntos
+            map.getController().setZoom(13.0);
 
-            // Centrar en Valencia (puedes cambiarlo)
-            GeoPoint startPoint = new GeoPoint(39.4699, -0.3763);
-            map.getController().setCenter(startPoint);
+            // Centrar en Valencia
+            GeoPoint centro = new GeoPoint(39.4699, -0.3763);
+            map.getController().setCenter(centro);
 
-            // --- AÑADIMOS LA CAPA DE CALOR ---
+            // Añadir capa de calor vacía
             overlayCalor = new ContaminacionOverlay();
             map.getOverlays().add(overlayCalor);
-
-            // Cargamos datos de prueba para ver los colores
-            cargarDatosDePrueba();
 
             // Solución ScrollView
             map.setOnTouchListener((v, event) -> {
                 int action = event.getAction();
-                switch (action) {
-                    case MotionEvent.ACTION_DOWN:
-                        v.getParent().requestDisallowInterceptTouchEvent(true);
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        v.getParent().requestDisallowInterceptTouchEvent(false);
-                        break;
-                }
+                if (action == MotionEvent.ACTION_DOWN) v.getParent().requestDisallowInterceptTouchEvent(true);
+                if (action == MotionEvent.ACTION_UP) v.getParent().requestDisallowInterceptTouchEvent(false);
                 return false;
             });
         }
     }
 
     /**
-     * Método temporal para pintar puntos falsos y verificar que el mapa de calor funciona.
+     * Genera 50 puntos aleatorios alrededor de Valencia para simular el mapa de calor.
      */
-    private void cargarDatosDePrueba() {
-        if (overlayCalor == null) return;
+    private void generarDatosFalsos() {
+        List<ContaminacionOverlay.PuntoContaminacion> listaMock = new ArrayList<>();
+        Random random = new Random();
 
-        List<ContaminacionOverlay.PuntoContaminacion> lista = new ArrayList<>();
+        // Coordenadas base (Valencia)
+        double latBase = 39.4699;
+        double lonBase = -0.3763;
 
-        // Valencia Centro (Zona Amarilla - Moderada)
-        lista.add(new ContaminacionOverlay.PuntoContaminacion(39.4699, -0.3763, 0.5));
+        // Generamos 50 puntos
+        for (int i = 0; i < 50; i++) {
+            // Desviación aleatoria para esparcir los puntos (aprox 2-3km a la redonda)
+            double latOffset = (random.nextDouble() - 0.5) * 0.04;
+            double lonOffset = (random.nextDouble() - 0.5) * 0.04;
 
-        // Puerto (Zona Verde - Limpia)
-        lista.add(new ContaminacionOverlay.PuntoContaminacion(39.4580, -0.3300, 0.1));
+            // Intensidad aleatoria entre 0.0 (Verde) y 1.0 (Rojo)
+            double intensidad = random.nextDouble();
 
-        // Zona Industrial ficticia al oeste (Zona Roja - Alta contaminación)
-        lista.add(new ContaminacionOverlay.PuntoContaminacion(39.4700, -0.4000, 0.9));
+            listaMock.add(new ContaminacionOverlay.PuntoContaminacion(
+                    latBase + latOffset,
+                    lonBase + lonOffset,
+                    intensidad
+            ));
+        }
 
-        overlayCalor.setPuntos(lista);
+        // Puntos fijos específicos para probar colores exactos
+        // Zona Industrial (Rojo intenso)
+        listaMock.add(new ContaminacionOverlay.PuntoContaminacion(39.48, -0.38, 0.95));
+        // Zona Puerto (Verde limpio)
+        listaMock.add(new ContaminacionOverlay.PuntoContaminacion(39.46, -0.33, 0.1));
+        // Zona Centro (Amarillo/Naranja)
+        listaMock.add(new ContaminacionOverlay.PuntoContaminacion(39.47, -0.375, 0.6));
 
-        // Refrescar el mapa para que pinte
-        map.invalidate();
+        // Pintar en el mapa
+        if (overlayCalor != null) {
+            overlayCalor.setPuntos(listaMock);
+            map.invalidate(); // Refrescar visualmente
+        }
+    }
+
+    // --- MÉTODOS AUXILIARES (UI, BLE, HUELLA) ---
+    private void setupNavegacion() {
+        ImageView btnHome = findViewById(R.id.nav_home); if(btnHome!=null) btnHome.setSelected(true);
+        ImageView btnNot = findViewById(R.id.nav_bell); if(btnNot!=null) btnNot.setOnClickListener(v -> startActivity(new Intent(this, NotificacionesActivity.class)));
+        ImageView btnPerf = findViewById(R.id.nav_profile); if(btnPerf!=null) btnPerf.setOnClickListener(v -> startActivity(new Intent(this, EditarPerfilActivity.class)));
+        ImageView btnWalk = findViewById(R.id.nav_walk); if(btnWalk!=null) btnWalk.setOnClickListener(v -> startActivity(new Intent(this, WalkActivity.class)));
+    }
+
+    private void actualizarMonedas() {
+        SharedPreferences prefs = getSharedPreferences("MiAppPrefs", MODE_PRIVATE);
+        int coins = prefs.getInt("coinsUsuario", 0) + 10;
+        prefs.edit().putInt("coinsUsuario", coins).apply();
+        TextView tv = findViewById(R.id.coinNumber);
+        if (tv != null) tv.setText(String.valueOf(coins));
+    }
+
+    private void configurarEscaneoBleSilencioso() {
+        if (bleScanner != null) { bleScanner.detenerEscaneo(); bleScanner = null; }
+        SharedPreferences p = getSharedPreferences("SesionUsuario", MODE_PRIVATE);
+        List<PojoSensor> s = new Gson().fromJson(p.getString("ListaSensores", "[]"), new TypeToken<List<PojoSensor>>(){}.getType());
+        List<String> m = new ArrayList<>();
+        if(s!=null) {
+            for(PojoSensor x:s) {
+                // Validación básica de MAC para evitar crash
+                if(x.getMac()!=null && x.getMac().length() == 17) m.add(x.getMac());
+            }
+        }
+        if(m.isEmpty()) return;
+        bleScanner = new BtleScannerMultiple(this, m, new BtleScannerMultiple.Listener() {
+            public void onSensorDetectado(String mac, int rssi, double d) {}
+            public void onSensorDesconectado(String mac) { Notificador.enviarNotificacion(HomeActivity.this, mac); }
+        });
+        bleScanner.iniciarEscaneo();
+    }
+
+    private void mostrarPopupHuella() {
+        SharedPreferences p = getSharedPreferences("USER_PREFS", MODE_PRIVATE);
+        if (p.getBoolean("fingerprint_enabled", false) || p.getBoolean("fingerprint_declined", false)) return;
+        new AlertDialog.Builder(this).setTitle("Huella").setMessage("¿Activar?")
+                .setPositiveButton("Sí", (d,w)->registrarHuella())
+                .setNegativeButton("No", (d,w)->p.edit().putBoolean("fingerprint_declined",true).apply()).show();
+    }
+
+    private void registrarHuella() {
+        BiometricManager bm = BiometricManager.from(this);
+        if (bm.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG) != BiometricManager.BIOMETRIC_SUCCESS) return;
+        Executor ex = ContextCompat.getMainExecutor(this);
+        new BiometricPrompt(this, ex, new BiometricPrompt.AuthenticationCallback() {
+            public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult r) {
+                getSharedPreferences("USER_PREFS", MODE_PRIVATE).edit().putBoolean("fingerprint_enabled", true).apply();
+            }
+        }).authenticate(new BiometricPrompt.PromptInfo.Builder().setTitle("Huella").setNegativeButtonText("No").build());
     }
 
     @Override
@@ -190,121 +207,9 @@ public class HomeActivity extends AppCompatActivity {
         if (map != null) map.onPause();
     }
 
-    // -------------------------------------------------------------
-    // Escaneo BLE
-    // -------------------------------------------------------------
-    private void configurarEscaneoBleSilencioso() {
-        if (bleScanner != null) {
-            bleScanner.detenerEscaneo();
-            bleScanner = null;
-        }
-
-        SharedPreferences prefsSesion = getSharedPreferences("SesionUsuario", MODE_PRIVATE);
-        String jsonLista = prefsSesion.getString("ListaSensores", "[]");
-        Gson gson = new Gson();
-        Type tipoLista = new TypeToken<List<PojoSensor>>() {}.getType();
-        List<PojoSensor> sensoresAfiliados = gson.fromJson(jsonLista, tipoLista);
-
-        List<String> macs = new ArrayList<>();
-        if (sensoresAfiliados != null) {
-            for (PojoSensor sensor : sensoresAfiliados) {
-                if (sensor.getMac() != null && !sensor.getMac().isEmpty()) {
-                    macs.add(sensor.getMac());
-                }
-            }
-        }
-
-        if (macs.isEmpty()) return;
-
-        bleScanner = new BtleScannerMultiple(this, macs, new BtleScannerMultiple.Listener() {
-            @Override
-            public void onSensorDetectado(String mac, int rssi, double distanciaAprox) {
-                // Escaneo silencioso
-            }
-
-            @Override
-            public void onSensorDesconectado(String mac) {
-                Notificador.enviarNotificacion(HomeActivity.this, mac);
-            }
-        });
-
-        bleScanner.iniciarEscaneo();
-    }
-
-    // -------------------------------------------------------------
-    // Navegación y otros
-    // -------------------------------------------------------------
-    public void botonEditarPerfil(View v) {
-        startActivity(new Intent(this, EditarPerfilActivity.class));
-    }
-
-    public void botonIrNotificaciones(View v) {
-        startActivity(new Intent(this, NotificacionesActivity.class));
-    }
-
-    public void botonIrSensores(View v) {
-        startActivity(new Intent(this, SensoresActivity.class));
-    }
-
-    private void mostrarPopupHuella() {
-        SharedPreferences prefs = getSharedPreferences("USER_PREFS", MODE_PRIVATE);
-        if (prefs.getBoolean("fingerprint_enabled", false) || prefs.getBoolean("fingerprint_declined", false)) return;
-
-        new AlertDialog.Builder(this)
-                .setTitle("Recordatorio")
-                .setMessage("¿Quieres activar el login por huella?")
-                .setCancelable(false)
-                .setPositiveButton("Sí", (dialog, which) -> {
-                    dialog.dismiss();
-                    registrarHuella();
-                })
-                .setNegativeButton("No", (dialog, which) -> {
-                    dialog.dismiss();
-                    prefs.edit().putBoolean("fingerprint_declined", true).apply();
-                    Toast.makeText(this, "Seguirás usando contraseña.", Toast.LENGTH_SHORT).show();
-                })
-                .show();
-    }
-
-    private void registrarHuella() {
-        BiometricManager biometricManager = BiometricManager.from(this);
-        if (biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG)
-                != BiometricManager.BIOMETRIC_SUCCESS) {
-            Toast.makeText(this, "No se puede usar la huella.", Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        Executor executor = ContextCompat.getMainExecutor(this);
-        BiometricPrompt biometricPrompt = new BiometricPrompt(this, executor,
-                new BiometricPrompt.AuthenticationCallback() {
-                    @Override
-                    public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
-                        super.onAuthenticationSucceeded(result);
-                        getSharedPreferences("USER_PREFS", MODE_PRIVATE)
-                                .edit().putBoolean("fingerprint_enabled", true).apply();
-                        Toast.makeText(HomeActivity.this, "Huella activada.", Toast.LENGTH_SHORT).show();
-                    }
-                    @Override
-                    public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
-                        super.onAuthenticationError(errorCode, errString);
-                        Toast.makeText(HomeActivity.this, "Error: " + errString, Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-        BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
-                .setTitle("Registrar huella")
-                .setSubtitle("Coloca tu dedo")
-                .setNegativeButtonText("Cancelar")
-                .build();
-
-        biometricPrompt.authenticate(promptInfo);
-    }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (bleScanner != null) {
-            bleScanner.detenerEscaneo();
-        }
+        if (bleScanner != null) bleScanner.detenerEscaneo();
     }
 }

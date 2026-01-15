@@ -1,10 +1,13 @@
 package com.example.grupo5.aitherapp.retrofit;
 
+import com.example.grupo5.aitherapp.pojos.PojoMedicionMapa;
 import com.example.grupo5.aitherapp.pojos.PojoRespuestaServidor;
 import com.example.grupo5.aitherapp.pojos.PojoSensor;
 import com.example.grupo5.aitherapp.pojos.PojoUsuario;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -75,5 +78,10 @@ public interface ApiService {
     Call<PojoRespuestaServidor> obtenerSensoresUsuario(
             @Query("accion") String accion,
             @Query("usuario_id") String idUsuario
+    );
+
+    @GET("index.php")
+    Call<List<PojoMedicionMapa>> getMedicionesMapa(
+            @Query("accion") String accion
     );
 }

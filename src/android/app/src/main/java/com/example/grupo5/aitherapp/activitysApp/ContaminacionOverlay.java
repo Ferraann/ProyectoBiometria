@@ -5,6 +5,7 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.RadialGradient;
 import android.graphics.Shader;
+import org.osmdroid.util.TileSystem; // Importante
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.Overlay;
 import org.osmdroid.util.GeoPoint;
@@ -18,10 +19,15 @@ public class ContaminacionOverlay extends Overlay {
     private List<PuntoContaminacion> puntos = new ArrayList<>();
     private Paint paint;
 
+    // Radio REAL de la mancha de contaminación (en metros)
+    // 500-800m es ideal para ver barrios afectados
+    private static final double RADIO_EN_METROS = 650.0;
+
     public ContaminacionOverlay() {
         paint = new Paint();
-        // Dither ayuda a que el degradado se vea más suave
         paint.setDither(true);
+        paint.setAntiAlias(true);
+        paint.setStyle(Paint.Style.FILL);
     }
 
     public void setPuntos(List<PuntoContaminacion> nuevosPuntos) {
@@ -30,68 +36,82 @@ public class ContaminacionOverlay extends Overlay {
 
     @Override
     public void draw(Canvas canvas, MapView mapView, boolean shadow) {
-        if (shadow) return;
+        if (shadow || puntos.isEmpty()) return;
 
         Projection projection = mapView.getProjection();
         Point screenPoint = new Point();
 
-        // Radio de la "nube" de gas en píxeles.
-        // Puedes aumentarlo si quieres que las manchas sean más grandes.
-        float radioNube = 150.0f;
+        // --- CÁLCULO PRECISO DEL RADIO ---
+        // 1. Obtenemos la latitud del centro del mapa (la distorsión depende de esto)
+        double latitudCentro = mapView.getMapCenter().getLatitude();
+        // 2. Obtenemos el nivel de zoom actual (puede ser decimal, ej: 15.5)
+        double zoomLevel = mapView.getZoomLevelDouble();
+
+        // 3. Calculamos cuántos metros representa 1 píxel en este momento exacto
+        double metrosPorPixel = TileSystem.GroundResolution(latitudCentro, zoomLevel);
+
+        // 4. Convertimos nuestros metros deseados a píxeles
+        float radioPixels = (float) (RADIO_EN_METROS / metrosPorPixel);
+
+        // Limitamos el tamaño mínimo para que no desaparezca si te alejas al espacio
+        if (radioPixels < 2) radioPixels = 2;
 
         for (PuntoContaminacion punto : puntos) {
-            // Convertir Lat/Lon a píxeles
+            // Convertir Lat/Lon a píxeles en pantalla
             GeoPoint geoPoint = new GeoPoint(punto.latitud, punto.longitud);
             projection.toPixels(geoPoint, screenPoint);
 
-            // Obtenemos el color base (Rojo, Amarillo, Verde) según el nivel
-            int colorBase = obtenerColorBase(punto.nivel);
+            // Optimización: No dibujar si está fuera de la pantalla
+            // Dejamos un margen del tamaño del radio para no cortar los bordes
+            if (screenPoint.x < -radioPixels || screenPoint.y < -radioPixels ||
+                    screenPoint.x > canvas.getWidth() + radioPixels ||
+                    screenPoint.y > canvas.getHeight() + radioPixels) {
+                continue;
+            }
 
-            // Creamos un degradado: Del color base (centro) hacia transparente (borde)
-            // Esto crea el efecto de "humo" o "gas"
+            // Configuramos el color y degradado
+            int colorCentro = obtenerColorBase(punto.intensidad);
+            int colorBorde = colorCentro & 0x00FFFFFF; // Mismo color pero transparente
+
             RadialGradient gradient = new RadialGradient(
                     screenPoint.x, screenPoint.y,
-                    radioNube,
-                    new int[]{colorBase, colorBase & 0x00FFFFFF}, // Color sólido -> Color transparente
-                    null,
+                    radioPixels,
+                    colorCentro,
+                    colorBorde,
                     Shader.TileMode.CLAMP
             );
 
             paint.setShader(gradient);
 
-            // Dibujamos el círculo con el degradado
-            canvas.drawCircle(screenPoint.x, screenPoint.y, radioNube, paint);
+            // Dibujamos
+            canvas.drawCircle(screenPoint.x, screenPoint.y, radioPixels, paint);
         }
     }
 
-    /**
-     * Devuelve un color ARGB dependiendo del nivel de contaminación.
-     * Usamos Alpha 200 (semi-transparente) para que se vea un poco el mapa debajo.
-     */
-    private int obtenerColorBase(double nivel) {
-        // Nivel 0.0 - 0.3: Verde (Buena calidad)
-        if (nivel < 0.3) {
-            return 0xC800FF00; // 0xC8 es la transparencia (aprox 80%)
-        }
-        // Nivel 0.3 - 0.6: Amarillo (Moderada)
-        else if (nivel < 0.6) {
-            return 0xC8FFFF00;
-        }
-        // Nivel > 0.6: Rojo (Mala calidad)
-        else {
-            return 0xC8FF0000;
-        }
+    private int obtenerColorBase(double intensidad) {
+        // Usamos una transparencia del 40% (0x66) para que se mezclen bien las capas
+        int alpha = 0x66;
+
+        if (intensidad < 0.2) return Color(alpha, 0, 255, 255);      // Cian (Muy limpio)
+        else if (intensidad < 0.4) return Color(alpha, 0, 255, 0);   // Verde (Bien)
+        else if (intensidad < 0.6) return Color(alpha, 255, 255, 0); // Amarillo (Regular)
+        else if (intensidad < 0.8) return Color(alpha, 255, 165, 0); // Naranja (Mal)
+        else return Color(alpha, 255, 0, 0);                         // Rojo (Peligro)
+    }
+
+    private int Color(int a, int r, int g, int b) {
+        return (a << 24) | (r << 16) | (g << 8) | b;
     }
 
     public static class PuntoContaminacion {
         public double latitud;
         public double longitud;
-        public double nivel;
+        public double intensidad;
 
-        public PuntoContaminacion(double lat, double lon, double nivel) {
+        public PuntoContaminacion(double lat, double lon, double intensidad) {
             this.latitud = lat;
             this.longitud = lon;
-            this.nivel = nivel;
+            this.intensidad = intensidad;
         }
     }
-}
+}   
