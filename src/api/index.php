@@ -161,6 +161,15 @@ switch ($method) {
                 break;
             case "getObtenerSensoresUsuario": echo json_encode(obtenerListaSensores($conn, $_GET['usuario_id'])); break;
             case "getRecompensasDisponibles": echo json_encode(obtenerRecompensasDisponibles($conn));   break;
+            case "getMedicionesXTipo":    
+                $tipoId = isset($_GET['tipo_id']) ? intval($_GET['tipo_id']) : 0;      
+                    if ($tipoId > 0) {
+                        echo json_encode(rellenarMapa($conn, $tipoId));
+                    } else {
+                        http_response_code(400);
+                        echo json_encode(["status" => "error", "mensaje" => "ID de tipo de medición no válido"]);
+                    }
+                break;
             default: echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]); break;
         }
         break;
