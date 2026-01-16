@@ -430,3 +430,37 @@
 [15-Jan-2026 21:55:40 Europe/Berlin] Cargando módulo: roles.php
 [15-Jan-2026 21:55:40 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
 [15-Jan-2026 21:55:40 Europe/Berlin] Paso 3: Módulos cargados correctamente
+[16-Jan-2026 03:05:39 Europe/Berlin] --- Nueva petición: GET ---
+[16-Jan-2026 03:05:39 Europe/Berlin] Paso 1: conexion.php cargado
+[16-Jan-2026 03:05:39 Europe/Berlin] Conexión establecida con éxito: Entorno Local (Root)
+[16-Jan-2026 03:05:39 Europe/Berlin] Paso 2: abrirServidor() ejecutado
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: activarUsuario.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: actualizarUsuario.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: cerrarIncidencia.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: crearIncidencia.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: crearSensorYRelacion.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: crearTipoMedicion.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: distancias.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: gestionRecompensas.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: guardarFotoIncidencia.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: guardarFotoUsuario.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: guardarMedicion.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: loginUsuario.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: mailer.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: modificarIncidencia.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: obtenerEstadisticas.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: obtenerEstadosIncidencias.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: obtenerFotoUsuarioXId.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: obtenerFotosIncidencias.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: obtenerIncidenciaXId.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: obtenerListaSensores.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: obtenerMedicion.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: obtenerSensorXId.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: obtenerSensoresXIdUsuario.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: obtenerTodasIncidencias.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: obtenerUsuarioXId.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: problemasSensor.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: registrarUsuario.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: roles.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Cargando módulo: sumarPuntosXID.php
+[16-Jan-2026 03:05:39 Europe/Berlin] Paso 3: Módulos cargados correctamente
