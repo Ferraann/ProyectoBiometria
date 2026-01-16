@@ -50,14 +50,13 @@ function obtenerListaSensores($conn, $usuario_id){
  */
 function getTodosLosSensoresDetallados($conn) {
     try {
-        // Hemos simplificado los JOINs para que, si falla la relación con el usuario, 
-        // el sensor aparezca de todos modos (gracias al LEFT JOIN).
+        // Corregido: 'problema' en lugar de 'estado' y 'id' es el nombre correcto
         $sql = "SELECT 
                     s.id AS sensor_id, 
                     s.mac, 
                     s.nombre AS nombre_sensor, 
                     s.modelo, 
-                    s.estado, 
+                    s.problema, 
                     (SELECT u.nombre 
                      FROM usuario u 
                      JOIN usuario_sensor us ON u.id = us.usuario_id 
@@ -69,7 +68,7 @@ function getTodosLosSensoresDetallados($conn) {
         $result = $conn->query($sql);
 
         if (!$result) {
-            error_log("Error SQL Directo: " . $conn->error);
+            error_log("SQL Error: " . $conn->error);
             return ["status" => "error", "mensaje" => $conn->error];
         }
 
@@ -77,18 +76,19 @@ function getTodosLosSensoresDetallados($conn) {
         while ($row = $result->fetch_assoc()) {
             $sensores[] = [
                 "sensor_id"      => (int)$row["sensor_id"],
-                "mac"            => $row["mac"] ?? '00:00:00:00',
+                "mac"            => $row["mac"],
                 "nombre_sensor"  => $row["nombre_sensor"] ?? 'Sin nombre',
                 "modelo"         => $row["modelo"] ?? 'N/A',
-                "estado"         => (int)$row["estado"],
-                "nombre_usuario" => $row["nombre_usuario"] // Será NULL si no tiene dueño
+                // Invertimos la lógica para el JS: si 'problema' es 0, el estado es 1 (activo/bien)
+                "estado"         => $row["problema"] == 0 ? 1 : 0,
+                "nombre_usuario" => $row["nombre_usuario"]
             ];
         }
 
         return ["status" => "ok", "listaSensores" => $sensores];
 
     } catch (Exception $e) {
-        error_log("Excepción en sensores: " . $e->getMessage());
+        error_log("Excepción: " . $e->getMessage());
         return ["status" => "error", "mensaje" => $e->getMessage()];
     }
 }
