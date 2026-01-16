@@ -1,6 +1,6 @@
 /**
  * @file map-logic-index.js
- * @brief Mapa Landing Page: Datos fijos del día 15 + Loader
+ * @brief Mapa Landing Page: Optimizado, con Zoom y Auto-centrado.
  */
 
 'use strict';
@@ -27,13 +27,18 @@ const maxRiskConfig = {
 const GAS_IDS = { "NO2": 1, "O3": 2, "SO2": 3, "CO": 4, "PM10": 5 };
 let multiGasData = {};
 let canvasLayer = null;
+// Variable para guardar todos los puntos y poder centrar el mapa
+let allPointsBounds = [];
 
-// --- 2. MAPA ---
+// --- 2. MAPA (CONFIGURACIÓN DE ZOOM CORREGIDA) ---
 const map = L.map('map', {
-    zoomControl: false,
-    scrollWheelZoom: false,
+    zoomControl: true,       // PONEMOS TRUE: Botones + y - visibles
+    scrollWheelZoom: true,   // PONEMOS TRUE: Rueda del ratón funciona
     attributionControl: false,
-    dragging: true
+    doubleClickZoom: true,
+    dragging: true,
+    minZoom: 5,              // Evitamos que se alejen demasiado (ahorra cálculo)
+    maxZoom: 15
 }).setView([40.416, -3.703], 6);
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
@@ -43,8 +48,8 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
 // --- 3. FUNCIONES AUXILIARES ---
 function interpolateColor(value) {
     const stops = maxRiskConfig.stops;
-    if (value <= stops[0].val) return `rgba(${stops[0].c.join(',')}, 0.75)`;
-    if (value >= stops[stops.length-1].val) return `rgba(${stops[stops.length-1].c.join(',')}, 0.75)`;
+    if (value <= stops[0].val) return `rgba(${stops[0].c.join(',')}, 0.65)`; // Un poco más transparente
+    if (value >= stops[stops.length-1].val) return `rgba(${stops[stops.length-1].c.join(',')}, 0.65)`;
     for (let i = 0; i < stops.length - 1; i++) {
         if (value >= stops[i].val && value <= stops[i+1].val) {
             const min = stops[i], max = stops[i+1];
@@ -52,7 +57,7 @@ function interpolateColor(value) {
             const r = Math.round(min.c[0] + (max.c[0] - min.c[0]) * pct);
             const g = Math.round(min.c[1] + (max.c[1] - min.c[1]) * pct);
             const b = Math.round(min.c[2] + (max.c[2] - min.c[2]) * pct);
-            return `rgba(${r}, ${g}, ${b}, 0.9)`;
+            return `rgba(${r}, ${g}, ${b}, 0.8)`;
         }
     }
 }
@@ -66,8 +71,14 @@ function getSeverityScore(val, gas) {
 
 function calculateIDW(latlng, points) {
     let num = 0, den = 0;
+    // OPTIMIZACIÓN: Solo calculamos si el punto está "cerca" (radio de optimización)
+    // Esto evita recorrer miles de puntos lejanos innecesariamente
     for (let p of points) {
         if(p.value < 0) continue;
+
+        // Diferencia aproximada lat/lon antes de hacer pitágoras (optimización)
+        if (Math.abs(latlng.lat - p.lat) > 1 || Math.abs(latlng.lng - p.lon) > 1) continue;
+
         const d2 = Math.pow(latlng.lat - p.lat, 2) + Math.pow(latlng.lng - p.lon, 2);
         if (d2 < 0.00001) return p.value;
         const w = 1 / (d2 * d2);
@@ -77,7 +88,7 @@ function calculateIDW(latlng, points) {
     return den < 0.0001 ? null : num / den;
 }
 
-// --- 4. RENDERIZADO ---
+// --- 4. RENDERIZADO (OPTIMIZADO) ---
 function renderMaxRiskMap() {
     if (canvasLayer) map.removeLayer(canvasLayer);
 
@@ -87,7 +98,11 @@ function renderMaxRiskMap() {
             const size = this.getTileSize();
             tile.width = size.x; tile.height = size.y;
             const ctx = tile.getContext('2d');
-            const step = 4;
+
+            // --- OPTIMIZACIÓN CLAVE ---
+            // step = 8 significa píxeles más gordos pero 4 VECES MÁS RÁPIDO que step=4
+            // Si sigue yendo lento, sube esto a 10 o 12.
+            const step = 8;
 
             for (let x = 0; x < size.x; x += step) {
                 for (let y = 0; y < size.y; y += step) {
@@ -116,16 +131,15 @@ function renderMaxRiskMap() {
 
     canvasLayer = new HeatGrid({ opacity: 0.8 }).addTo(map);
 
-    // Efectos visuales finales
     setTimeout(() => {
         const container = canvasLayer.getContainer();
         if (container) {
-            container.style.filter = "blur(10px) saturate(1.5)";
+            // Un poco más de blur para disimular los píxeles gordos
+            container.style.filter = "blur(12px) saturate(1.4)";
             container.style.mixBlendMode = "screen";
             container.style.pointerEvents = "none";
         }
 
-        // --- AQUÍ QUITAMOS EL LOADER ---
         const loader = document.getElementById('loader');
         if (loader) {
             loader.style.transition = "opacity 0.5s ease";
@@ -136,21 +150,18 @@ function renderMaxRiskMap() {
     }, 200);
 }
 
-// --- 5. CARGA DE DATOS (DÍA 15) ---
+// --- 5. CARGA DE DATOS ---
 async function initLandingMap() {
-    // 1. Mostrar Loader explícitamente al inicio
     const loader = document.getElementById('loader');
     if (loader) loader.style.display = 'flex';
 
-    // 2. FECHA FIJA: DÍA 15
-    // Asegúrate que el año y mes son correctos según tu base de datos
+    // FECHA FIJA: DÍA 15
     const targetDate = '2026-01-15';
 
     console.log("Cargando atmósfera del día:", targetDate);
 
     const promesas = Object.keys(GAS_IDS).map(async (gasKey) => {
         const id = GAS_IDS[gasKey];
-        // Ruta a la API
         const url = `api/index.php?accion=getMedicionesXTipo&tipo_id=${id}&fecha=${targetDate}`;
 
         try {
@@ -159,11 +170,19 @@ async function initLandingMap() {
             const data = await response.json();
 
             const conversion = config[gasKey].conversion || 1;
-            const datosProcesados = data.map(p => ({
-                lat: parseFloat(p.lat),
-                lon: parseFloat(p.lon),
-                value: parseFloat(p.value) * conversion
-            }));
+            const datosProcesados = data.map(p => {
+                const lat = parseFloat(p.lat);
+                const lon = parseFloat(p.lon);
+
+                // Guardamos coordenadas para el auto-zoom
+                allPointsBounds.push([lat, lon]);
+
+                return {
+                    lat: lat,
+                    lon: lon,
+                    value: parseFloat(p.value) * conversion
+                };
+            });
 
             return { key: gasKey, data: datosProcesados };
 
@@ -178,7 +197,13 @@ async function initLandingMap() {
         multiGasData[item.key] = item.data;
     });
 
-    // Pintar (esto apagará el loader al terminar)
+    // --- AUTO-ZOOM A LOS DATOS ---
+    if (allPointsBounds.length > 0) {
+        // Hacemos que el mapa viaje automáticamente a donde están los datos
+        const bounds = L.latLngBounds(allPointsBounds);
+        map.fitBounds(bounds, { padding: [50, 50] });
+    }
+
     renderMaxRiskMap();
 }
 
