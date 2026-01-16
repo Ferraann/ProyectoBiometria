@@ -70,21 +70,25 @@ function getMedicionesXTipo($conn, $tipoId, $fecha = null)
     // Si no llega fecha, usamos la de hoy por defecto
     $fechaFiltro = $fecha ?? date('Y-m-d');
 
-    // Modificamos la consulta para filtrar por el día específico usando DATE()
-    // Nota: DATE(m.hora) extrae solo la parte Y-m-d de la columna datetime
-    $sql = "SELECT m.valor, m.localizacion, m.hora, tm.unidad, tm.medida, s.mac
+    // --- AQUÍ ESTÁ LA CLAVE ---
+    // Usamos MAX(m.valor) -> Para que si hay un 500, coja el 500.
+    // Usamos GROUP BY m.sensor_id -> Para que cada sensor sea UN SOLO punto en el mapa.
+
+    $sql = "SELECT 
+                MAX(m.valor) as max_valor, 
+                m.localizacion, 
+                tm.unidad, 
+                tm.medida, 
+                s.mac
             FROM medicion m
             INNER JOIN tipo_medicion tm ON m.tipo_medicion_id = tm.id
             INNER JOIN sensor s ON m.sensor_id = s.id
             WHERE m.tipo_medicion_id = ? 
             AND DATE(m.hora) = ? 
-            ORDER BY m.hora ASC";
+            GROUP BY m.sensor_id";
 
     $stmt = $conn->prepare($sql);
-
-    // Bind de parámetros: "is" -> (integer, string)
     $stmt->bind_param("is", $tipoId, $fechaFiltro);
-
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -93,16 +97,24 @@ function getMedicionesXTipo($conn, $tipoId, $fecha = null)
     while ($row = $result->fetch_assoc()) {
         if (!empty($row['localizacion'])) {
             $coords = explode(',', $row['localizacion']);
+
+            // Aseguramos que haya latitud y longitud
             if (count($coords) === 2) {
-                $puntos[] = [
-                    "lat"    => (float)trim($coords[0]),
-                    "lon"    => (float)trim($coords[1]),
-                    "value"  => (float)$row['valor'],
-                    "unit"   => $row['unidad'],
-                    "label"  => $row['medida'],
-                    "sensor" => $row['mac'],
-                    "fecha"  => $row['hora']
-                ];
+                $lat = (float)trim($coords[0]);
+                $lon = (float)trim($coords[1]);
+
+                // Solo añadimos si las coordenadas son válidas
+                if ($lat != 0 && $lon != 0) {
+                    $puntos[] = [
+                        "lat"    => $lat,
+                        "lon"    => $lon,
+                        "value"  => (float)$row['max_valor'], // Usamos el MAXIMO valor
+                        "unit"   => $row['unidad'],
+                        "label"  => $row['medida'],
+                        "sensor" => $row['mac'],
+                        "fecha"  => $fechaFiltro
+                    ];
+                }
             }
         }
     }

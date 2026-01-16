@@ -42,7 +42,7 @@ $SERVER_DATA = [];
 // ===============================
 if ($conn) {
     foreach ($MAPA_GASES as $gas => $tipoMedida) {
-        $datos = getMedicionesXTipo($conn, $tipoMedida);
+        $datos = getMedicionesXTipo($conn, $tipoMedida, '2025-01-16');
         // Aseguramos que siempre sea un array para evitar errores en JS
         $SERVER_DATA[$gas] = is_array($datos) ? $datos : [];
     }
