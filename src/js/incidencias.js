@@ -167,13 +167,14 @@ async function detectarFotos() {
  * @details Tras el filtrado, actualiza el estado global 'incidenciasFiltradas' y dispara el render.
  */
 function aplicarFiltrosYRender() {
+  // 1. Filtrar los datos
   let filtradas = incidencias.filter((inc) => {
     // --- Filtros base ---
     const texto = buscador.value.toLowerCase();
     const coincideTexto = !texto ||
-        inc.titulo.toLowerCase().includes(texto) ||
-        inc.descripcion.toLowerCase().includes(texto) ||
-        inc.estado.toLowerCase().includes(texto);
+      inc.titulo.toLowerCase().includes(texto) ||
+      inc.descripcion.toLowerCase().includes(texto) ||
+      inc.estado.toLowerCase().includes(texto);
 
     const coincideTecnico = !selTecnico.value || inc.id_tecnico == selTecnico.value;
     const coincideEstado = !selEstado.value || inc.estado === selEstado.value;
@@ -185,16 +186,18 @@ function aplicarFiltrosYRender() {
     let coincideUrgencia = true;
 
     if (filtroUrgencia === "criticas") {
-      // 1. Verificar si tiene sensor (id_sensor no es null ni 0)
       const tieneSensor = inc.id_sensor && inc.id_sensor != 0;
-      
-      // 2. Calcular tiempo (24 horas = 86,400,000 milisegundos)
-      const fechaCreacion = new Date(inc.fecha_creacion).getTime();
+
+      const fechaLimpia = inc.fecha_creacion.replace(" ", "T");
+      const fechaCreacion = new Date(fechaLimpia).getTime();
       const ahora = new Date().getTime();
-      const transcurridoMas24h = (ahora - fechaCreacion) > (24 * 60 * 60 * 1000);
-      
-      // 3. Solo mostrar si está activa (asumiendo que estados finales no cuentan)
-      const estaActiva = inc.estado.toLowerCase() !== "resuelta" && inc.estado.toLowerCase() !== "cerrada";
+
+      const diferenciaMs = ahora - fechaCreacion;
+      const veinticuatroHorasMs = 24 * 60 * 60 * 1000;
+      const transcurridoMas24h = diferenciaMs > veinticuatroHorasMs;
+
+      const estadoMinuscula = (inc.estado || "").toLowerCase();
+      const estaActiva = estadoMinuscula !== "resuelta" && estadoMinuscula !== "cerrada" && estadoMinuscula !== "finalizada";
 
       coincideUrgencia = tieneSensor && transcurridoMas24h && estaActiva;
     }
@@ -202,14 +205,15 @@ function aplicarFiltrosYRender() {
     return coincideTexto && coincideTecnico && coincideEstado && coincideFotos && coincideUrgencia;
   });
 
-  // Ordenación (se mantiene igual)
+  // 2. Ordenación
   const orden = selOrden.value;
   filtradas.sort((a, b) => {
-    const dA = new Date(a.fecha_creacion);
-    const dB = new Date(b.fecha_creacion);
+    const dA = new Date(a.fecha_creacion.replace(" ", "T"));
+    const dB = new Date(b.fecha_creacion.replace(" ", "T"));
     return orden === "asc" ? dA - dB : dB - dA;
   });
 
+  // 3. Renderizado
   incidenciasFiltradas = filtradas;
   renderIncidencias(incidenciasFiltradas);
 }
@@ -234,7 +238,7 @@ function renderIncidencias(datos) {
   lista.innerHTML = datos.map(inc => {
     // Verificamos si ya tiene técnico para decidir si mostrar el botón
     const tieneTecnico = inc.id_tecnico && inc.id_tecnico != 0;
-    
+
     return `
     <div class="incidencia">
       <h2><a href="incidencia_detalle.html?id=${inc.id}" class="titulo-incidencia">${inc.titulo}</a></h2>
@@ -339,4 +343,110 @@ async function asignarIncidencia(incidenciaId) {
     console.error("Error:", error);
     mostrarMensaje("Error de red.");
   }
+  
+/**
+ * @section GESTIÓN DE VISTAS (TABS)
+ */
+const tabIncidencias = document.getElementById('tab-incidencias');
+const tabSensores = document.getElementById('tab-sensores');
+const secIncidencias = document.getElementById('sec-incidencias');
+const secSensores = document.getElementById('sec-sensores');
+
+// Almacén global para los sensores cargados
+window.listadoSensores = null;
+
+tabIncidencias.addEventListener('click', (e) => {
+    e.preventDefault();
+    secIncidencias.style.display = 'block';
+    secSensores.style.display = 'none';
+    tabIncidencias.classList.add('active'); tabIncidencias.classList.remove('inactive');
+    tabSensores.classList.add('inactive'); tabSensores.classList.remove('active');
+});
+
+tabSensores.addEventListener('click', async (e) => {
+    e.preventDefault();
+    secIncidencias.style.display = 'none';
+    secSensores.style.display = 'block';
+    tabSensores.classList.add('active'); tabSensores.classList.remove('inactive');
+    tabIncidencias.classList.add('inactive'); tabIncidencias.classList.remove('active');
+    
+    // Carga inicial de sensores si la lista está vacía
+    if (!window.listadoSensores) await cargarSensores();
+});
+
+/**
+ * @section LÓGICA DE SENSORES Y FILTRADO MULTIPLE
+ */
+
+async function cargarSensores() {
+    try {
+        const res = await fetch(`${API_URL}?accion=getTodosLosSensoresDetallados`);
+        window.listadoSensores = await res.json();
+        aplicarFiltrosSensores(); // Renderizado inicial
+    } catch (err) { 
+        console.error("Error cargando sensores", err); 
+    }
+}
+
+function aplicarFiltrosSensores() {
+    if (!window.listadoSensores) return;
+
+    const busqueda = document.getElementById('buscadorSensores').value.toLowerCase();
+    const filtroEstado = document.getElementById('filtroEstadoSensor').value; // "todos", "1", "0"
+    const filtroAsignacion = document.getElementById('filtroAsignacion').value; // "todos", "si", "no"
+
+    const filtrados = window.listadoSensores.filter(s => {
+        // 1. Buscador (MAC, Modelo o Nombre)
+        const coincideBusqueda = 
+            s.mac.toLowerCase().includes(busqueda) || 
+            (s.modelo && s.modelo.toLowerCase().includes(busqueda)) ||
+            (s.nombre_sensor && s.nombre_sensor.toLowerCase().includes(busqueda));
+
+        // 2. Filtro Estado Activo/Inactivo (Hardware)
+        const coincideEstado = (filtroEstado === "todos") || (s.estado == filtroEstado);
+
+        // 3. Filtro Asignación (Si tiene usuario o no)
+        const estaAsignado = s.nombre_usuario !== null && s.nombre_usuario !== undefined;
+        const coincideAsignacion = (filtroAsignacion === "todos") || 
+                                   (filtroAsignacion === "si" && estaAsignado) || 
+                                   (filtroAsignacion === "no" && !estaAsignado);
+
+        return coincideBusqueda && coincideEstado && coincideAsignacion;
+    });
+
+    renderizarSensores(filtrados);
+}
+
+function renderizarSensores(datos) {
+    const grid = document.getElementById('grid-sensores');
+    if (!datos.length) {
+        grid.innerHTML = '<p style="grid-column: 1/-1; text-align:center;">No se han encontrado sensores con estos criterios.</p>';
+        return;
+    }
+
+    grid.innerHTML = datos.map(s => {
+        const asignado = s.nombre_usuario;
+        const activo = s.estado == 1;
+
+        return `
+        <div class="incidencia" style="border-left: 5px solid ${asignado ? '#152D9A' : '#28a745'}">
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+                <h3>${s.mac}</h3>
+                <span class="badge" style="background: ${activo ? '#e3f9e5' : '#fee2e2'}; color: ${activo ? '#1f7a24' : '#b91c1c'}; padding: 2px 8px; border-radius: 12px; font-size: 11px;">
+                    ${activo ? 'ACTIVO' : 'INACTIVO'}
+                </span>
+            </div>
+            <p><strong>Nombre:</strong> ${s.nombre_sensor || 'Sin nombre'}</p>
+            <p><strong>Modelo:</strong> ${s.modelo || 'N/A'}</p>
+            <p><strong>Usuario:</strong> ${asignado ? `<span style="color: #152D9A; font-weight: bold;">${s.nombre_usuario}</span>` : '<span style="color: #28a745;">Disponible</span>'}</p>
+        </div>
+        `;
+    }).join('');
+}
+
+// --- LISTENERS DE SENSORES ---
+document.getElementById('buscadorSensores')?.addEventListener('input', aplicarFiltrosSensores);
+document.getElementById('filtroEstadoSensor')?.addEventListener('change', aplicarFiltrosSensores);
+document.getElementById('filtroAsignacion')?.addEventListener('change', aplicarFiltrosSensores);
+
 }

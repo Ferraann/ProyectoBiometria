@@ -1,87 +1,96 @@
 <?php
 /**
- * @file obtenerListaSensores.php
- * @brief Recuperación de inventario de dispositivos activos por usuario.
- * @details Gestiona la consulta de sensores vinculados, filtrando únicamente aquellos que
- * mantienen una relación vigente ('actual') con el identificador de usuario proporcionado.
+ * @file gestionSensores.php
+ * @brief Módulo de gestión y consulta de inventario de sensores.
+ * @details Contiene las funciones necesarias para recuperar sensores por usuario 
+ * o el inventario completo para el panel de administración técnica.
  * @author Manuel
- * @date 11/12/2025
+ * @date 16/01/2026
  */
 
 /**
- * @brief Obtiene el listado de sensores vinculados actualmente a un usuario.
+ * @brief Obtiene el listado de sensores vinculados actualmente a un usuario específico.
  * @param mysqli $conn Instancia de conexión activa a la base de datos.
  * @param int $usuario_id Identificador único del usuario.
  * @return array {
  * @var string status 'ok' o 'error'.
  * @var array listaSensores Colección de objetos con 'id' y 'mac' del sensor.
- * @var string|null mensaje Información adicional en caso de ausencia de datos.
  * }
  */
 function obtenerListaSensores($conn, $usuario_id){
-
-    // ----------------------------------------------------------------------------------------
-    // 1. VALIDACIÓN DE ENTRADA
-    // ----------------------------------------------------------------------------------------
+    // 1. VALIDACIÓN
     if (empty($usuario_id)) {
         return ["status" => "error", "mensaje" => "Falta usuario_id obligatorio."];
     }
 
-    // ----------------------------------------------------------------------------------------
-    // 2. CONSULTA RELACIONAL (JOIN)
-    // ----------------------------------------------------------------------------------------
-
-    /** @section ConsultaSensoresActivos 
-     * Extracción de datos maestros del sensor mediante su tabla intermedia de relación.
-     */
-    /* SQL:
-     * - INNER JOIN: Cruza la tabla 'sensor' con 'usuario_sensor' para verificar propiedad.
-     * - us.usuario_id = ?: Filtra por el dueño actual.
-     * - us.actual = 1: Crucial para ignorar sensores que el usuario tuvo en el pasado 
-     * pero que ya no gestiona (historial inactivo).
-     */
+    // 2. CONSULTA (INNER JOIN para sensores de un usuario)
     $sql = "SELECT s.id, s.mac 
             FROM sensor s 
-            INNER JOIN usuario_sensor us 
-                ON s.id = us.sensor_id
-            WHERE us.usuario_id = ? 
-              AND us.actual = 1";
+            INNER JOIN usuario_sensor us ON s.id = us.sensor_id
+            WHERE us.usuario_id = ? AND us.actual = 1";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $usuario_id);
     $stmt->execute();
-    
-    /** @var mysqli_result $result Resultado de la consulta relacional. */
     $result = $stmt->get_result();
 
-    // ----------------------------------------------------------------------------------------
-    // 3. ESTRUCTURACIÓN DE RESPUESTA
-    // ----------------------------------------------------------------------------------------
-
+    // 3. ESTRUCTURACIÓN
     $sensores = [];
-
-    /** @section MapeoResultados Construcción del array asociativo de salida. */
     while ($row = $result->fetch_assoc()) {
-        $sensores[] = [
-            "id"  => (int)$row["id"],
-            "mac" => $row["mac"]
-        ];
+        $sensores[] = ["id" => (int)$row["id"], "mac" => $row["mac"]];
     }
-
     $stmt->close();
 
-    if (empty($sensores)) {
-        /** @note Se retorna un array vacío en 'listaSensores' para evitar errores de iteración en el cliente. */
-        return [
-            "status" => "ok", 
-            "listaSensores" => [], 
-            "mensaje" => "El usuario no tiene sensores asociados en este momento."
+    return ["status" => "ok", "listaSensores" => $sensores];
+}
+
+/**
+ * @brief Obtiene el inventario global de sensores para el Panel Técnico.
+ * @details Recupera todos los sensores del sistema, su estado de hardware y 
+ * la información de asignación actual (dueño) mediante LEFT JOIN.
+ * @param mysqli $conn Instancia de conexión activa a la base de datos.
+ * @return array {
+ * @var string status 'ok' o 'error'.
+ * @var array listaSensores Detalle completo: id, mac, nombre, modelo, estado y usuario.
+ * }
+ */
+function getTodosLosSensoresDetallados($conn) {
+    // 1. CONSULTA (LEFT JOIN para inventario global)
+    /** @section ConsultaInventarioMaestro
+     * Se obtienen todos los dispositivos, estén o no asignados a un usuario.
+     */
+    $sql = "SELECT 
+                s.id AS sensor_id, 
+                s.mac, 
+                COALESCE(s.nombre, 'Sin nombre') AS nombre_sensor, 
+                COALESCE(s.modelo, 'N/A') AS modelo, 
+                s.estado, 
+                u.nombre AS nombre_usuario 
+            FROM sensor s
+            LEFT JOIN usuario_sensor us ON s.id = us.sensor_id AND us.actual = 1
+            LEFT JOIN usuario u ON us.usuario_id = u.id
+            ORDER BY s.id DESC";
+
+    $result = $conn->query($sql);
+
+    // 2. VALIDACIÓN DE RESULTADO
+    if (!$result) {
+        return ["status" => "error", "mensaje" => "Error al acceder al inventario."];
+    }
+
+    // 3. ESTRUCTURACIÓN
+    $sensores = [];
+    while ($row = $result->fetch_assoc()) {
+        $sensores[] = [
+            "sensor_id"     => (int)$row["sensor_id"],
+            "mac"           => $row["mac"],
+            "nombre_sensor" => $row["nombre_sensor"],
+            "modelo"        => $row["modelo"],
+            "estado"        => (int)$row["estado"], // 1: Activo, 0: Inactivo
+            "nombre_usuario" => $row["nombre_usuario"] // NULL si está disponible
         ];
     }
 
-    return [
-        "status" => "ok", 
-        "listaSensores" => $sensores
-    ];
+    return ["status" => "ok", "listaSensores" => $sensores];
 }
 ?>
