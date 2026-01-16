@@ -188,3 +188,4 @@ function obtenerRecompensasDisponibles($conn) {
     }
     return $lista;
 }
+?>

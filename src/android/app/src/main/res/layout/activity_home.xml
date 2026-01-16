@@ -65,25 +65,10 @@
                 app:cardElevation="0dp"
                 android:layout_marginBottom="20dp">
 
-                <LinearLayout
+                <WebView
+                    android:id="@+id/webviewMap"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@android:drawable/ic_dialog_map"
-                        app:tint="@color/azulOscuro_Principal"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Mapa en construcción"
-                        android:textColor="@color/azulOscuro_Principal"
-                        android:textStyle="bold"/>
-                </LinearLayout>
+                    android:layout_height="match_parent" />
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"

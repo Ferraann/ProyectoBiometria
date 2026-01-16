@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Mapa Global Aither</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+
+    <style>
+        /* --- ESTILOS OPTIMIZADOS PARA MÓVIL --- */
+        body { margin: 0; padding: 0; background: #000; color: #fff; font-family: 'Segoe UI', Roboto, sans-serif; overflow: hidden; }
+        #map { width: 100vw; height: 100vh; z-index: 1; background: #000; }
+
+        /* UI FLOTANTE */
+        .ui-overlay {
+            position: absolute;
+            z-index: 1000;
+            padding: 8px 10px;
+            background: rgba(0,0,0,0.75);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+
+        /* POSICIÓN Y TAMAÑO DE CONTROLES */
+        #controls {
+            top: 10px;
+            left: 10px;
+            width: 140px;
+        }
+
+        /* POSICIÓN Y TAMAÑO DE LEYENDA */
+        #legend {
+            bottom: 15px;
+            right: 10px;
+            width: 160px;
+        }
+
+        /* SELECTOR */
+        select {
+            background: #222;
+            color: #eee;
+            border: 1px solid #444;
+            padding: 4px;
+            border-radius: 4px;
+            width: 100%;
+            outline: none;
+            font-size: 11px;
+            margin-top: 3px;
+        }
+
+        /* TEXTOS */
+        .title-label {
+            color: #ffae00;
+            font-weight: 800;
+            font-size: 10px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .legend-label {
+            font-weight: 700;
+            font-size: 11px;
+            margin-bottom: 3px;
+        }
+
+        /* BARRA DE COLOR */
+        #legend-bar { height: 8px; width: 100%; margin: 4px 0; border-radius: 4px; }
+        #legend-values { display: flex; justify-content: space-between; font-size: 9px; color: #bbb; font-weight: 600; }
+        #legend-unit { text-align: right; font-size: 9px; margin-top: 2px; color: #888; }
+
+        /* LOADER */
+        #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.5s ease-out; }
+        .loader-spinner { border: 3px solid rgba(255,255,255,0.1); border-top: 3px solid #0ff; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin-bottom: 15px; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* MAPA */
+        .leaflet-tile-pane { filter: contrast(1.2) brightness(0.8) saturate(0.8); }
+        .leaflet-control-attribution { display: none !important; }
+        .leaflet-bar a { width: 24px !important; height: 24px !important; line-height: 24px !important; background-color: rgba(0,0,0,0.8) !important; color: #fff !important; border-color: #444 !important; }
+
+        /* POPUP */
+        .leaflet-popup-content-wrapper { background: rgba(20,20,20,0.9) !important; color: #fff !important; padding: 0; border-radius: 8px; }
+        .leaflet-popup-content { margin: 8px 12px; }
+        .leaflet-popup-tip { background: rgba(20,20,20,0.9) !important; }
+    </style>
+</head>
+<body>
+
+<div id="loader">
+    <div class="loader-spinner"></div>
+    <div style="color:#0ff; font-weight:bold; font-size: 12px; letter-spacing: 1px;">GENERANDO MUNDO...</div>
+</div>
+
+<div id="controls" class="ui-overlay">
+    <div class="title-label">VISUALIZACIÓN</div>
+    <select id="gasSelect">
+        <option value="MAX">Riesgo Combinado</option>
+        <option value="NO2">NO₂ (Dióxido Nitrógeno)</option>
+        <option value="CO">CO (Monóxido Carbono)</option>
+        <option value="PM10">PM10 (Partículas)</option>
+        <option value="O3">O₃ (Ozono)</option>
+        <option value="SO2">SO₂ (Azufre)</option>
+    </select>
+</div>
+
+<div id="legend" class="ui-overlay">
+    <div id="legend-title" class="legend-label">Nivel de Riesgo</div>
+    <div id="legend-bar"></div>
+    <div id="legend-values"></div>
+    <div id="legend-unit">% Saturación</div>
+</div>
+
+<div id="map"></div>
+
+<script>
+    // --- INICIALIZACIÓN ---
+    const noise = new SimplexNoise();
+
+    // --- CONFIGURACIÓN ---
+    const config = {
+        NO2: { unit: "µg/m³", stops: [ { val: 0, c: [0, 100, 150] }, { val: 50, c: [222, 117, 53] }, { val: 120, c: [74, 12, 0] } ] },
+        PM10: { unit: "µg/m³", stops: [ { val: 0, c: [1, 101, 150] }, { val: 100, c: [212, 151, 79] }, { val: 200, c: [74, 12, 0] } ] },
+        O3: { unit: "µg/m³", stops: [ { val: 0, c: [1, 101, 150] }, { val: 120, c: [176, 178, 132] }, { val: 240, c: [74, 12, 0] } ] },
+        CO: { unit: "ppbv", stops: [ { val: 0, c: [124, 124, 124] }, { val: 600, c: [46, 29, 29] }, { val: 1200, c: [130, 26, 25] } ] },
+        SO2: { unit: "mg/m²", stops: [ { val: 0, c: [0, 102, 151] }, { val: 125, c: [217, 113, 51] }, { val: 350, c: [74, 12, 0] } ] }
+    };
+    const maxRiskConfig = { unit: "Índice Global", stops: [ { val: 0, c: [0, 100, 150] }, { val: 50, c: [194, 195, 126] }, { val: 100, c: [74, 12, 0] } ] };
+
+    // --- MAPA (Centrado en España) ---
+    const map = L.map('map', {
+        minZoom: 2, maxZoom: 10, zoomControl: false, worldCopyJump: true
+    }).setView([40.0, -3.0], 6); // <-- AQUÍ ESTÁ EL CAMBIO: Lat 40, Lon -3, Zoom 6
+
+    L.control.zoom({ position: 'topright' }).addTo(map);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { noWrap: false }).addTo(map);
+
+    let canvasLayer = null;
+
+    // --- FUNCIONES ---
+    function interpolateColor(value, mode) {
+        const conf = (mode === 'MAX') ? maxRiskConfig : config[mode];
+        if(!conf) return 'rgba(0,0,0,0)';
+        const stops = conf.stops;
+        if (value <= stops[0].val) value = stops[0].val;
+        if (value >= stops[stops.length-1].val) value = stops[stops.length-1].val;
+
+        for (let i = 0; i < stops.length - 1; i++) {
+            if (value >= stops[i].val && value <= stops[i+1].val) {
+                const min = stops[i], max = stops[i+1];
+                const pct = (value - min.val) / (max.val - min.val);
+                const r = Math.round(min.c[0] + (max.c[0] - min.c[0]) * pct);
+                const g = Math.round(min.c[1] + (max.c[1] - min.c[1]) * pct);
+                const b = Math.round(min.c[2] + (max.c[2] - min.c[2]) * pct);
+
+                let alpha = 0.5 + (pct * 0.4);
+                if(mode !== 'MAX' && value < stops[stops.length-1].val * 0.2) alpha = 0.2;
+                return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+            }
+        }
+        return 'rgba(0,0,0,0)';
+    }
+
+    function generateFakeGlobalValue(lat, lon, mode) {
+        const freqLat = 0.05; const freqLon = 0.08;
+        let n = noise.noise2D(lat * freqLat, lon * freqLon);
+        n = (n + 1) / 2;
+        if (mode === 'NO2') n = Math.pow(n, 2);
+        else if (mode === 'CO') n = Math.pow(n, 1.5);
+        else if (mode === 'PM10') n = Math.pow(n, 3);
+        else if (mode === 'MAX') n = (n + Math.pow(n, 2)) / 2;
+
+        const conf = (mode === 'MAX') ? maxRiskConfig : config[mode];
+        const maxVal = conf.stops[conf.stops.length-1].val;
+        return n * maxVal;
+    }
+
+    function renderGlobalFakeMap(mode) {
+        if (canvasLayer) map.removeLayer(canvasLayer);
+        const HeatGrid = L.GridLayer.extend({
+            createTile: function(coords) {
+                const tile = L.DomUtil.create('canvas', 'leaflet-tile');
+                const size = this.getTileSize();
+                tile.width = size.x; tile.height = size.y;
+                const ctx = tile.getContext('2d');
+                ctx.globalCompositeOperation = 'screen';
+                const step = 16;
+                for (let x = 0; x < size.x; x += step) {
+                    for (let y = 0; y < size.y; y += step) {
+                        const latlng = map.unproject(coords.scaleBy(size).add([x, y]), coords.z);
+                        const val = generateFakeGlobalValue(latlng.lat, latlng.lng, mode);
+                        ctx.fillStyle = interpolateColor(val, mode);
+                        ctx.fillRect(x-1, y-1, step+2, step+2);
+                    }
+                }
+                return tile;
+            }
+        });
+        canvasLayer = new HeatGrid({ opacity: 0.95 }).addTo(map);
+        setTimeout(() => {
+            const container = canvasLayer.getContainer();
+            if (container) {
+                container.style.filter = "blur(12px) saturate(1.6) contrast(1.1)";
+                container.style.mixBlendMode = "screen";
+            }
+        }, 50);
+    }
+
+    function updateLegend(mode) {
+        const conf = (mode === 'MAX') ? maxRiskConfig : config[mode];
+        document.getElementById('legend-title').innerText = (mode === 'MAX') ? "Índice Global" : mode;
+        document.getElementById('legend-unit').innerText = conf.unit;
+
+        let grad = "linear-gradient(to right";
+        conf.stops.forEach(s => { grad += `, rgb(${s.c.join(',')})`; });
+        grad += ")";
+        document.getElementById('legend-bar').style.background = grad;
+
+        const minVal = Math.round(conf.stops[0].val);
+        const maxVal = Math.round(conf.stops[conf.stops.length-1].val);
+        document.getElementById('legend-values').innerHTML = `<span>${minVal}</span><span>${maxVal}</span>`;
+    }
+
+    map.on('click', function(e) {
+        const selector = document.getElementById('gasSelect');
+        const mode = selector.value;
+        const val = generateFakeGlobalValue(e.latlng.lat, e.latlng.lng, mode);
+        const conf = (mode === 'MAX') ? maxRiskConfig : config[mode];
+        const color = interpolateColor(val, mode).replace(/[\d.]+\)$/g, '1)');
+
+        const popupHtml = `
+            <div style="font-family:'Segoe UI',sans-serif; min-width:120px; text-align:center;">
+                <div style="font-size:10px; color:#aaa; margin-bottom:2px;">VALOR ESTIMADO</div>
+                <div style="font-size:24px; font-weight:800; color:${color}; line-height:1;">
+                    ${val.toFixed(0)}
+                </div>
+                <div style="font-size:12px; color:#ccc;">${conf.unit}</div>
+            </div>
+        `;
+        L.popup().setLatLng(e.latlng).setContent(popupHtml).openOn(map);
+    });
+
+    function onModeChanged() {
+        const loader = document.getElementById('loader');
+        loader.style.opacity = '1';
+        loader.style.display = 'flex';
+        const mode = document.getElementById('gasSelect').value;
+        updateLegend(mode);
+        setTimeout(() => {
+            renderGlobalFakeMap(mode);
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.display = 'none'; }, 500);
+        }, 100);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('gasSelect').addEventListener('change', onModeChanged);
+        onModeChanged();
+    });
+</script>
+</body>
+</html>

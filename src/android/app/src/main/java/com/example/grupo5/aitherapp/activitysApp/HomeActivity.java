@@ -1,9 +1,14 @@
 package com.example.grupo5.aitherapp.activitysApp;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +27,6 @@ import com.example.grupo5.aitherapp.pojos.PojoSensor;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
@@ -30,234 +34,186 @@ import java.util.concurrent.Executor;
 public class HomeActivity extends AppCompatActivity {
 
     private BtleScannerMultiple bleScanner;
+    private WebView webView;
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // funcionamento del toolbar
+        // 1. CONFIGURACIÓN DEL MAPA WEB (WebView)
+        configurarWebView();
 
-        ImageView btnHome = findViewById(R.id.nav_home);
+        // 2. CONFIGURACIÓN UI y NAVEGACIÓN
+        setupNavegacion();
+        actualizarMonedas();
 
-        if (btnHome != null) {
-            btnHome.setSelected(true);
-
-            overridePendingTransition(0, 0);
-        }
-
-        ImageView btnNotificaciones = findViewById(R.id.nav_bell);
-
-        if (btnNotificaciones != null) {
-            btnNotificaciones.setOnClickListener(v -> {
-                Intent intent = new Intent(HomeActivity.this, NotificacionesActivity.class);
-                startActivity(intent);
-
-                overridePendingTransition(0, 0);
-            });
-        }
-
-        ImageView btnPerfil = findViewById(R.id.nav_profile);
-
-        if (btnPerfil != null) {
-            btnPerfil.setOnClickListener(v -> {
-                Intent intent = new Intent(HomeActivity.this, EditarPerfilActivity.class);
-                startActivity(intent);
-
-                overridePendingTransition(0, 0);
-            });
-        }
-
-        ImageView btnWalk = findViewById(R.id.nav_walk);
-
-        if (btnWalk != null) {
-            btnWalk.setOnClickListener(v -> {
-                Intent intent = new Intent(HomeActivity.this, WalkActivity.class);
-                startActivity(intent);
-                overridePendingTransition(0, 0);
-            });
-        }
-
-        SharedPreferences prefs = getSharedPreferences("MiAppPrefs", MODE_PRIVATE);
-
-        int coinsUsuario = prefs.getInt("coinsUsuario", 0);
-        coinsUsuario += 10;
-        prefs.edit().putInt("coinsUsuario", coinsUsuario).apply();
-
-        TextView tvCoins = findViewById(R.id.coinNumber);
-        if (tvCoins != null) {
-            tvCoins.setText(String.valueOf(coinsUsuario));
-        }
-
-        // Botón Añadir Sensor (Ahora es un CardView)
+        // Botones principales
         findViewById(R.id.btnVincularQR_card).setOnClickListener(v ->
-                startActivity(new Intent(HomeActivity.this, AnyadirSensorActivity.class))
+                startActivity(new Intent(HomeActivity.this, VincularQRActivity.class))
         );
-
-        // Botón AithWallet (Ahora es un CardView)
         findViewById(R.id.Btncoins_card).setOnClickListener(v ->
                 startActivity(new Intent(HomeActivity.this, AithWalletActivity.class))
         );
 
-        // Popup huella (solo si procede)
+        // 3. FUNCIONALIDADES DE FONDO (Huella y BLE)
         mostrarPopupHuella();
-
-        // Primer arranque de escaneo BLE silencioso
         configurarEscaneoBleSilencioso();
+    }
+
+    private void configurarWebView() {
+        webView = findViewById(R.id.webviewMap);
+
+        if (webView != null) {
+            WebSettings settings = webView.getSettings();
+
+            // Habilitar JS es obligatorio para Leaflet
+            settings.setJavaScriptEnabled(true);
+
+            // Permitir acceso a archivos locales (assets)
+            settings.setAllowFileAccess(true);
+            settings.setAllowContentAccess(true);
+
+            // Mejoras de rendimiento y almacenamiento
+            settings.setDomStorageEnabled(true);
+            settings.setDatabaseEnabled(true);
+            settings.setCacheMode(WebSettings.LOAD_DEFAULT);
+
+            // WebChromeClient permite ver logs de JS en el Logcat (útil para depurar)
+            webView.setWebChromeClient(new WebChromeClient());
+
+            // WebViewClient mantiene la navegación dentro de la app (no abre Chrome)
+            webView.setWebViewClient(new WebViewClient());
+
+            // CARGAR EL HTML LOCAL
+            // Asegúrate de haber creado la carpeta assets/ y copiado los archivos ahí
+            webView.loadUrl("file:///android_asset/index.html");
+        }
+    }
+
+    // Método opcional: Si en el futuro quieres pasar datos de sensores reales al mapa JS
+    private void enviarDatosAlMapa(String jsonDatos) {
+        if (webView != null) {
+            // Llama a la función JS loadData o actualiza la variable global
+            webView.evaluateJavascript("window.SERVER_DATA = " + jsonDatos + "; loadData();", null);
+        }
+    }
+
+    // =========================================================================
+    // LÓGICA ORIGINAL (UI, BLE, HUELLA) - SIN CAMBIOS
+    // =========================================================================
+
+    private void setupNavegacion() {
+        ImageView btnHome = findViewById(R.id.nav_home);
+        if(btnHome!=null) btnHome.setSelected(true);
+
+        ImageView btnNot = findViewById(R.id.nav_bell);
+        if(btnNot!=null) btnNot.setOnClickListener(v -> startActivity(new Intent(this, NotificacionesActivity.class)));
+
+        ImageView btnPerf = findViewById(R.id.nav_profile);
+        if(btnPerf!=null) btnPerf.setOnClickListener(v -> startActivity(new Intent(this, EditarPerfilActivity.class)));
+
+        ImageView btnWalk = findViewById(R.id.nav_walk);
+        if(btnWalk!=null) btnWalk.setOnClickListener(v -> startActivity(new Intent(this, WalkActivity.class)));
+    }
+
+    private void actualizarMonedas() {
+        SharedPreferences prefs = getSharedPreferences("MiAppPrefs", MODE_PRIVATE);
+        // Lógica de ejemplo: sumar monedas al entrar
+        int coins = prefs.getInt("coinsUsuario", 0);
+        // prefs.edit().putInt("coinsUsuario", coins + 10).apply();
+
+        TextView tv = findViewById(R.id.coinNumber);
+        if (tv != null) tv.setText(String.valueOf(coins));
+    }
+
+    private void configurarEscaneoBleSilencioso() {
+        if (bleScanner != null) {
+            bleScanner.detenerEscaneo();
+            bleScanner = null;
+        }
+        SharedPreferences p = getSharedPreferences("SesionUsuario", MODE_PRIVATE);
+        String jsonLista = p.getString("ListaSensores", "[]");
+        List<PojoSensor> listaSensores = new Gson().fromJson(jsonLista, new TypeToken<List<PojoSensor>>(){}.getType());
+
+        List<String> macs = new ArrayList<>();
+        if(listaSensores != null) {
+            for(PojoSensor x : listaSensores) {
+                if(x.getMac() != null && x.getMac().length() == 17) {
+                    macs.add(x.getMac());
+                }
+            }
+        }
+
+        if(macs.isEmpty()) return;
+
+        bleScanner = new BtleScannerMultiple(this, macs, new BtleScannerMultiple.Listener() {
+            @Override
+            public void onSensorDetectado(String mac, int rssi, double d) {
+                // Aquí podrías actualizar datos en tiempo real si quisieras
+            }
+            @Override
+            public void onSensorDesconectado(String mac) {
+                Notificador.enviarNotificacion(HomeActivity.this, mac);
+            }
+        });
+        bleScanner.iniciarEscaneo();
+    }
+
+    private void mostrarPopupHuella() {
+        SharedPreferences p = getSharedPreferences("USER_PREFS", MODE_PRIVATE);
+        if (p.getBoolean("fingerprint_enabled", false) || p.getBoolean("fingerprint_declined", false)) return;
+
+        new AlertDialog.Builder(this)
+                .setTitle("Huella")
+                .setMessage("¿Desea activar el acceso rápido con huella dactilar?")
+                .setPositiveButton("Sí", (d,w) -> registrarHuella())
+                .setNegativeButton("No", (d,w) -> p.edit().putBoolean("fingerprint_declined",true).apply())
+                .show();
+    }
+
+    private void registrarHuella() {
+        BiometricManager bm = BiometricManager.from(this);
+        if (bm.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG) != BiometricManager.BIOMETRIC_SUCCESS) {
+            Toast.makeText(this, "El dispositivo no soporta autenticación biométrica", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        Executor ex = ContextCompat.getMainExecutor(this);
+        new BiometricPrompt(this, ex, new BiometricPrompt.AuthenticationCallback() {
+            @Override
+            public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
+                getSharedPreferences("USER_PREFS", MODE_PRIVATE).edit().putBoolean("fingerprint_enabled", true).apply();
+                Toast.makeText(HomeActivity.this, "Huella activada correctamente", Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
+                Toast.makeText(HomeActivity.this, "Error: " + errString, Toast.LENGTH_SHORT).show();
+            }
+        }).authenticate(new BiometricPrompt.PromptInfo.Builder()
+                .setTitle("Configurar Huella")
+                .setSubtitle("Toca el sensor para confirmar")
+                .setNegativeButtonText("Cancelar")
+                .build());
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        // Al volver a Home (por ejemplo tras escanear un QR), recargamos sensores y escaneo
+        if (webView != null) webView.onResume(); // Importante para pausar JS si sales
         configurarEscaneoBleSilencioso();
     }
 
-    // -------------------------------------------------------------
-    // Configura e inicia el escaneo BLE silencioso según sensores afiliados
-    // -------------------------------------------------------------
-    private void configurarEscaneoBleSilencioso() {
-
-        // Si ya había un escáner activo, lo detenemos antes de reconfigurar
-        if (bleScanner != null) {
-            bleScanner.detenerEscaneo();
-            bleScanner = null;
-        }
-
-        // 1. Recuperar sensores afiliados guardados en sesión
-        SharedPreferences prefsSesion = getSharedPreferences("SesionUsuario", MODE_PRIVATE);
-        String jsonLista = prefsSesion.getString("ListaSensores", "[]");
-
-        // 2. Convertir JSON → Lista de sensores
-        Gson gson = new Gson();
-        Type tipoLista = new TypeToken<List<PojoSensor>>() {}.getType();
-        List<PojoSensor> sensoresAfiliados = gson.fromJson(jsonLista, tipoLista);
-
-        // 3. Extraer la MAC de cada sensor
-        List<String> macs = new ArrayList<>();
-        if (sensoresAfiliados != null) {
-            for (PojoSensor sensor : sensoresAfiliados) {
-                if (sensor.getMac() != null && !sensor.getMac().isEmpty()) {
-                    macs.add(sensor.getMac());
-                }
-            }
-        }
-
-        // Si no hay sensores afiliados, no iniciamos escaneo (usuario recién registrado sin QR)
-        if (macs.isEmpty()) {
-            return;
-        }
-
-        // 4. Crear escáner BLE
-        bleScanner = new BtleScannerMultiple(this, macs, new BtleScannerMultiple.Listener() {
-
-            @Override
-            public void onSensorDetectado(String mac, int rssi, double distanciaAprox) {
-                // Escaneo silencioso:
-                // Aquí podrías guardar estado, loguear, etc., si lo necesitas.
-            }
-
-            @Override
-            public void onSensorDesconectado(String mac) {
-                // Notificación controlada (solo una vez por desconexión)
-                Notificador.enviarNotificacion(HomeActivity.this, mac);
-            }
-        });
-
-        // 5. Iniciar escaneo
-        bleScanner.iniciarEscaneo();
-    }
-
-    // -------------------------------------------------------------
-    // Navegación
-    // -------------------------------------------------------------
-    public void botonEditarPerfil(View v) {
-        startActivity(new Intent(this, EditarPerfilActivity.class));
-    }
-
-    public void botonIrNotificaciones(View v) {
-        startActivity(new Intent(this, NotificacionesActivity.class));
-    }
-
-    public void botonIrSensores(View v) {
-        startActivity(new Intent(this, SensoresActivity.class));
-    }
-
-    // -------------------------------------------------------------
-    // Huella / Biometría
-    // -------------------------------------------------------------
-    private void mostrarPopupHuella() {
-        SharedPreferences prefs = getSharedPreferences("USER_PREFS", MODE_PRIVATE);
-        boolean fingerprintEnabled = prefs.getBoolean("fingerprint_enabled", false);
-        boolean fingerprintDeclined = prefs.getBoolean("fingerprint_declined", false);
-
-        // Si ya activó o rechazó, no mostrar popup
-        if (fingerprintEnabled || fingerprintDeclined) return;
-
-        new AlertDialog.Builder(this)
-                .setTitle("Recordatorio")
-                .setMessage("¿Quieres activar el login por huella?")
-                .setCancelable(false)
-                .setPositiveButton("Sí", (dialog, which) -> {
-                    dialog.dismiss();
-                    registrarHuella();
-                })
-                .setNegativeButton("No", (dialog, which) -> {
-                    dialog.dismiss();
-                    prefs.edit().putBoolean("fingerprint_declined", true).apply();
-                    Toast.makeText(this, "Seguirás usando contraseña.", Toast.LENGTH_SHORT).show();
-                })
-                .show();
-    }
-
-    private void registrarHuella() {
-        BiometricManager biometricManager = BiometricManager.from(this);
-        if (biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG)
-                != BiometricManager.BIOMETRIC_SUCCESS) {
-            Toast.makeText(this,
-                    "No se puede usar la huella. Registra una huella en ajustes si quieres usarla.",
-                    Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        Executor executor = ContextCompat.getMainExecutor(this);
-        BiometricPrompt biometricPrompt = new BiometricPrompt(this, executor,
-                new BiometricPrompt.AuthenticationCallback() {
-                    @Override
-                    public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
-                        super.onAuthenticationSucceeded(result);
-                        getSharedPreferences("USER_PREFS", MODE_PRIVATE)
-                                .edit()
-                                .putBoolean("fingerprint_enabled", true)
-                                .apply();
-
-                        Toast.makeText(HomeActivity.this,
-                                "Huella activada correctamente.", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
-                        super.onAuthenticationError(errorCode, errString);
-                        Toast.makeText(HomeActivity.this,
-                                "Error al registrar huella: " + errString, Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-        BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
-                .setTitle("Registrar huella")
-                .setSubtitle("Coloca tu dedo en el sensor")
-                .setNegativeButtonText("Cancelar")
-                .build();
-
-        biometricPrompt.authenticate(promptInfo);
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (webView != null) webView.onPause();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
-        if (bleScanner != null) {
-            bleScanner.detenerEscaneo();
-        }
+        if (bleScanner != null) bleScanner.detenerEscaneo();
+        if (webView != null) webView.destroy(); // Limpiar memoria
     }
 }

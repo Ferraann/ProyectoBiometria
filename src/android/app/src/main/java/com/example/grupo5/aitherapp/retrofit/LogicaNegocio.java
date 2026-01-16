@@ -307,4 +307,16 @@ public class LogicaNegocio {
             }
         });
     }
+
+    //-------------------------------------------------------------------------------------------
+    // Obtener mediciones para el mapa (NUEVO)
+    //-------------------------------------------------------------------------------------------
+    public static void getMedicionesMapa(Callback<List<com.example.grupo5.aitherapp.pojos.PojoMedicionMapa>> callback) {
+        ApiService api = ApiCliente.getApiService();
+
+        // Llamamos a la acción exacta que tienes en tu index.php
+        Call<List<com.example.grupo5.aitherapp.pojos.PojoMedicionMapa>> call = api.getMedicionesMapa("getMediciones");
+
+        call.enqueue(callback);
+    }
 }

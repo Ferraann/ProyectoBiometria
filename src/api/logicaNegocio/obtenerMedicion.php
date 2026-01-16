@@ -35,7 +35,8 @@ function obtenerMediciones($conn)
             FROM medicion m
             INNER JOIN tipo_medicion tm ON m.tipo_medicion_id = tm.id
             INNER JOIN sensor s ON m.sensor_id = s.id
-            ORDER BY m.hora DESC";
+            ORDER BY m.hora DESC
+            LIMIT 200";
 
     /** @var mysqli_result|bool $result Conjunto de resultados de la ejecución. */
     $result = $conn->query($sql);
