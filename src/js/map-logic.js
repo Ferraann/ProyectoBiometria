@@ -437,8 +437,6 @@ window.updateMapByDate = async function(fechaFormatoSQL) {
     const loader = document.getElementById('loader');
     if (loader) loader.style.display = 'flex';
 
-    console.log(`📡 (MapLogic) Solicitando datos nuevos para: ${fechaFormatoSQL}`);
-
     try {
         const promesas = Object.keys(GAS_IDS).map(async (gasKey) => {
             const id = GAS_IDS[gasKey];
@@ -466,8 +464,6 @@ window.updateMapByDate = async function(fechaFormatoSQL) {
                 window.SERVER_DATA[item.key] = item.data;
             }
         });
-
-        console.log("✅ (MapLogic) Datos actualizados en memoria.");
 
         // Repintamos mapa (si está visible)
         loadData();
