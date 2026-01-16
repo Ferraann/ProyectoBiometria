@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             onChange: async function(selectedDates, dateStr, instance) {
                 // 1. Convertir fecha visual (16/01/2026) a formato SQL (2026-01-16)
                 const fechaParaAPI = instance.formatDate(selectedDates[0], "Y-m-d");
-                
+
                 // 2. Actualizar texto visual
                 instance.element.querySelector('span').textContent = 'Fecha: ' + dateStr;
 
@@ -77,9 +77,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- OTROS (Dropdowns, Modales) ---
     document.querySelectorAll('.dropdown-mapa').forEach(btn => {
         btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const menu = this.nextElementSibling;
-            if (menu) menu.classList.toggle('show');
+            e.preventDefault();
+            const texto = this.textContent.trim();
+
+            // Actualizamos el texto del botón principal
+            const dropdownLabel = document.querySelector('.dropdown-mapa span');
+            if(dropdownLabel) dropdownLabel.textContent = texto;
+
+            // Cambiamos el modo
+            if (texto === 'Mis sensores personales') {
+                window.MODO_MAPA = 'PERSONAL';
+            } else {
+                window.MODO_MAPA = 'GENERAL';
+            }
+
+            // Cerramos el menú
+            document.querySelector('.dropdown-menu').classList.remove('show');
+
+            // Recargamos el mapa con el nuevo modo
+            if (typeof window.updateMapByDate === 'function') {
+                // Buscamos la fecha actual seleccionada
+                const picker = document.querySelector('.date-picker')._flatpickr;
+                const fecha = picker ? picker.formatDate(picker.selectedDates[0], "Y-m-d") : new Date().toISOString().split('T')[0];
+                window.updateMapByDate(fecha);
+            }
         });
     });
     document.addEventListener('click', (e) => {
