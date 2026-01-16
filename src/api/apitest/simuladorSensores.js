@@ -1,22 +1,19 @@
-
 const URL = "https://fsanpra.upv.edu.es/src/api/index.php";
 const TOTAL_SENSORES = 200;      // total de nodos simulados
 const INTERVALO_MS = 2000;       // cada cuánto se envían datos
-const LOTE = 20;                 // procesar en lotes para no saturar
+const LOTE = 20;                 // procesar en lotes
 const MAX_HISTORY = 1000;        // máximo de claves idempotentes guardadas
+const PAUSA_LOTE_MS = 300;
 
 const sensores = Array.from({ length: TOTAL_SENSORES }, (_, i) => i + 1);
 
-// memoria idempotente (cliente)
-const enviados = new Set();
+// memoria idempotente (clave → timestamp)
+const enviados = new Map();
 
-// estadísticas
-const stats = {
-  exitos: 0,
-  fallidos: 0
-};
+// control de ejecución
+let running = true;
 
-// redondea el tiempo a slots de INTERVALO_MS
+// redondea el tiempo a slots fijos
 function timeSlot() {
   return Math.floor(Date.now() / INTERVALO_MS) * INTERVALO_MS;
 }
@@ -26,7 +23,7 @@ function claveIdempotente(sensorId, slot) {
 }
 
 // genera datos de sensor
-function generarDato(sensorId, slot) {
+function generarDato(sensorId) {
   return {
     accion: "guardarMedicion",
     sensor_id: sensorId,
@@ -41,62 +38,70 @@ async function enviarDato(sensorId) {
   const slot = timeSlot();
   const key = claveIdempotente(sensorId, slot);
 
-  // ⛔ ya enviado → no duplicar
+  // ⛔ evitar duplicados
   if (enviados.has(key)) return;
 
-  enviados.add(key);
+  enviados.set(key, Date.now());
 
   try {
     const res = await fetch(URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(generarDato(sensorId, slot))
+      headers: {
+        "Content-Type": "application/json",
+        "Idempotency-Key": key
+      },
+      body: JSON.stringify(generarDato(sensorId))
     });
 
     if (!res.ok) {
       const texto = await res.text();
-      enviados.delete(key);
-      stats.fallidos++;
+      enviados.delete(key); // permitir reintento
       console.error(`❌ Sensor ${sensorId} HTTP ${res.status}: ${texto}`);
     } else {
-      stats.exitos++;
       console.log(`✅ Sensor ${sensorId} enviado`);
     }
   } catch (e) {
     enviados.delete(key);
-    stats.fallidos++;
-    console.error(`🔥 Sensor ${sensorId} fallo: ${e.message}`);
+    console.error(`🔥 Sensor ${sensorId} error: ${e.message}`);
   }
 }
 
-// limpieza de memoria de claves idempotentes
+// limpieza por antigüedad real
 function limpiarMemoria() {
-  if (enviados.size > MAX_HISTORY) {
-    const iter = enviados.values();
-    for (let i = 0; i < 200; i++) {
-      enviados.delete(iter.next().value);
+  if (enviados.size <= MAX_HISTORY) return;
+
+  const ahora = Date.now();
+  for (const [key, timestamp] of enviados) {
+    if (ahora - timestamp > INTERVALO_MS * 2) {
+      enviados.delete(key);
     }
+    if (enviados.size <= MAX_HISTORY) break;
   }
 }
 
 // simulador principal
 async function simulador() {
-  while (true) {
-    for (let i = 0; i < sensores.length; i += LOTE) {
+  console.log("🚀 Simulador iniciado");
+
+  while (running) {
+    for (let i = 0; i < sensores.length && running; i += LOTE) {
       const lote = sensores.slice(i, i + LOTE);
       await Promise.all(lote.map(enviarDato));
-      await new Promise(r => setTimeout(r, 300));
+      await new Promise(r => setTimeout(r, PAUSA_LOTE_MS));
     }
 
-    // limpiar memoria de idempotencia
     limpiarMemoria();
-
-    // mostrar estadísticas
-    console.log(`📊 Estadísticas: Exitosos=${stats.exitos}, Fallidos=${stats.fallidos}`);
-
     await new Promise(r => setTimeout(r, INTERVALO_MS));
   }
+
+  console.log("🛑 Simulador detenido limpiamente");
 }
 
-// iniciar simulador
+// parada limpia con Ctrl+C
+process.on("SIGINT", () => {
+  console.log("\n⏹ Deteniendo simulador...");
+  running = false;
+});
+
+// iniciar
 simulador();
