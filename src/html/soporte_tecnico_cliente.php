@@ -89,9 +89,9 @@ un botón para iniciar sesión.
                 <div class="pdf-item">
                     <div class="pdf-left">
                         <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                        <span class="pdf-name">FuncionamientoDelSensor.pdf</span>
+                        <span class="pdf-name">ManualdeUsuario.pdf</span>
                     </div>
-                    <a href="#" class="pdf-download"><i class="fa-solid fa-download"></i></a>
+                    <a href="../img/ManualUsuario.pdf" class="pdf-download"><i class="fa-solid fa-download"></i></a>
                 </div>
             </div>
         </div>
