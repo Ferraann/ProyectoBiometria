@@ -437,24 +437,16 @@ window.updateMapByDate = async function(fechaFormatoSQL) {
     const loader = document.getElementById('loader');
     if (loader) loader.style.display = 'flex';
 
-    // DECIDIMOS QUÉ ACCIÓN PEDIR A LA API
-    // Si el modo es PERSONAL, pedimos 'getMisSensores', si no 'getMedicionesXTipo'
-    const accionAPI = (window.MODO_MAPA === 'PERSONAL') ? 'getMisSensores' : 'getMedicionesXTipo';
-
-    console.log(`📡 Solicitando datos (${window.MODO_MAPA}) para fecha: ${fechaFormatoSQL}`);
-
     try {
         const promesas = Object.keys(GAS_IDS).map(async (gasKey) => {
             const id = GAS_IDS[gasKey];
-
-            // Usamos la variable accionAPI aquí
-            const url = `../api/index.php?accion=${accionAPI}&tipo_id=${id}&fecha=${fechaFormatoSQL}`;
-
+            // Pedimos los datos crudos a la API
+            const url = `../api/index.php?accion=getMedicionesXTipo&tipo_id=${id}&fecha=${fechaFormatoSQL}`;
             const response = await fetch(url);
             if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
             const data = await response.json();
 
-            // Guardamos datos
+            // Guardamos datos crudos
             const datosCrudos = data.map(p => ({
                 ...p,
                 lat: parseFloat(p.lat),
@@ -466,17 +458,21 @@ window.updateMapByDate = async function(fechaFormatoSQL) {
 
         const resultados = await Promise.all(promesas);
 
+        // Actualizamos la variable global
         resultados.forEach(item => {
             if(window.SERVER_DATA) {
                 window.SERVER_DATA[item.key] = item.data;
             }
         });
 
-        loadData(); // Repintar mapa
+        // Repintamos mapa (si está visible)
+        loadData();
+
+        // DEVOLVEMOS TRUE para indicar que todo fue bien
         return true;
 
     } catch (error) {
-        console.error("Error actualizando mapa:", error);
+        console.error("Error actualizando el mapa:", error);
         return false;
     } finally {
         if (loader) loader.style.display = 'none';

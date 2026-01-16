@@ -41,15 +41,13 @@ $SERVER_DATA = [];
 // 3. OBTENCIÓN DE DATOS
 // ===============================
 if ($conn) {
-    // Por defecto, al cargar la página, usamos la fecha de HOY
-    $fechaInicial = date('Y-m-d');
-
     foreach ($MAPA_GASES as $gas => $tipoMedida) {
-        // Pasamos la fecha de hoy a la función
-        $datos = getMedicionesXTipo($conn, $tipoMedida, $fechaInicial);
+        $datos = getMedicionesXTipo($conn, $tipoMedida);
+        // Aseguramos que siempre sea un array para evitar errores en JS
         $SERVER_DATA[$gas] = is_array($datos) ? $datos : [];
     }
 } else {
+    // Fallback por si falla la conexión
     foreach ($MAPA_GASES as $gas => $id) {
         $SERVER_DATA[$gas] = [];
     }

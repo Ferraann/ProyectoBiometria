@@ -185,24 +185,6 @@ switch ($method) {
                 $fecha = $_GET['fecha'] ?? date('Y-m-d');
                 echo json_encode(getMinMaxGlobal($conn, $tipoId, $fecha));
                 break;
-            case 'getMisSensores':
-                session_start(); // Aseguramos que la sesión está iniciada para leer el ID
-
-                // Verificamos que el usuario esté logueado
-                if (!isset($_SESSION['usuario_id'])) {
-                    echo json_encode([]);
-                    exit;
-                }
-
-                $usuarioId = $_SESSION['usuario_id'];
-                $tipoId = $_GET['tipo_id'];
-                $fecha = isset($_GET['fecha']) ? $_GET['fecha'] : date('Y-m-d');
-
-                // Llamamos a la nueva función
-                $datos = getMedicionesDeUsuario($conn, $usuarioId, $tipoId, $fecha);
-
-                echo json_encode($datos);
-                break;
             default: echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]); break;
         }
         break;
