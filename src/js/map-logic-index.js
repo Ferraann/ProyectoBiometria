@@ -1,210 +1,195 @@
 /**
  * @file map-logic-index.js
- * @brief Lógica de visualización simplificada para el mapa de calor (Heatmap) de AITHER.
- * @details Este script inicializa un mapa de Leaflet sin controles de zoom manual,
- * fusiona datos de estaciones de la península con sensores locales y calcula
- * una capa de riesgo máximo combinado (MAX_GAS) de forma automática.
- * @author Ferran
- * @date 9/12/2025
+ * @brief Lógica del mapa para la Landing Page (index.html).
+ * @details Conecta con la API para mostrar el riesgo máximo de HOY en tiempo real.
  */
 
 'use strict';
 
-/**
- * @section 1. CONFIGURACIÓN DE GASES Y DATOS GLOBALES
- */
-
-/**
- * @brief Configuración técnica de los contaminantes.
- * @details Contiene umbrales, propiedades de datos y valores máximos para la normalización.
- * @constant
- */
-const GAS_CONFIG = {
-    MAX_GAS: { property: 'MAX_INTENSITY', name: 'Máximo Riesgo (Combinado)', units: 'N/A', thresholds: [0.5, 0.8], maxVal: 1.0 },
-    NO2: { property: 'valor_NO2', name: 'Dióxido de Nitrógeno (NO₂)', units: 'µg/m³', thresholds: [20, 40], maxVal: 50 },
-    O3: { property: 'valor_O3', name: 'Ozono (O₃)', units: 'µg/m³', thresholds: [100, 120], maxVal: 130 },
-    CO: { property: 'valor_CO', name: 'Monóxido de Carbono (CO)', units: 'mg/m³', thresholds: [5, 10], maxVal: 12 },
-    PM10: { property: 'valor_PM10', name: 'Partículas <10µm (PM₁₀)', units: 'µg/m³', thresholds: [20, 40], maxVal: 50 },
-    SO2: { property: 'valor_SO2', name: 'Dióxido de Azufre (SO₂)', units: 'µg/m³', thresholds: [5, 20], maxVal: 30 }
+// --- 1. CONFIGURACIÓN VISUAL (Igual que el Dashboard) ---
+const config = {
+    NO2: {
+        unit: "µg/m³", conversion: 1,
+        stops: [ { val: 0, c: [0, 100, 150] }, { val: 5, c: [0, 100, 150] }, { val: 15, c: [194, 195, 126] }, { val: 50, c: [222, 117, 53] }, { val: 100, c: [74, 12, 0] } ]
+    },
+    PM10: {
+        unit: "µg/m³", conversion: 1,
+        stops: [ { val: 0, c: [1, 101, 150] }, { val: 10, c: [1, 101, 150] }, { val: 25, c: [172, 186, 189] }, { val: 100, c: [212, 151, 79] }, { val: 200, c: [74, 12, 0] } ]
+    },
+    O3: {
+        unit: "µg/m³", conversion: 1,
+        stops: [ { val: 0, c: [1, 101, 150] }, { val: 10, c: [1, 101, 150] }, { val: 20, c: [1, 101, 150] }, { val: 100, c: [176, 178, 132] }, { val: 1000, c: [74, 12, 0] } ]
+    },
+    CO: {
+        unit: "ppbv", conversion: 500,
+        stops: [ { val: 0, c: [124, 124, 124] }, { val: 50, c: [124, 124, 116] }, { val: 100, c: [124, 113, 60] }, { val: 500, c: [46, 29, 29] }, { val: 1200, c: [130, 26, 25] } ]
+    },
+    SO2: {
+        unit: "mg/m²", conversion: 1,
+        stops: [ { val: 0, c: [0, 102, 151] }, { val: 1, c: [50, 135, 175] }, { val: 10, c: [195, 195, 125] }, { val: 25, c: [217, 113, 51] }, { val: 100, c: [74, 12, 0] } ]
+    }
 };
 
-/** @brief Clave del gas actual (fijada en MAX_GAS para esta vista). */
-let currentGas = 'MAX_GAS';
-/** @brief Almacén unificado de datos (Península + Local). @type {Array<Object>|null} */
-let gasData = null;
-/** @brief Instancia de la capa de calor de Leaflet. */
-let heatLayer = null;
-/** @brief Control de leyenda de Leaflet. */
-let legend = L.control({position: 'bottomright'});
-/** @brief Grupo de capas para gestionar el heatmap de forma aislada. */
-let heatmapLayerGroup = L.layerGroup();
+const maxRiskConfig = {
+    unit: "Dominante",
+    stops: [
+        { val: 0,   c: [0, 100, 150] },
+        { val: 25,  c: [0, 220, 220] },
+        { val: 50,  c: [194, 195, 126] },
+        { val: 75,  c: [222, 117, 53] },
+        { val: 100, c: [74, 12, 0] }
+    ]
+};
 
-/**
- * @section 2. INICIALIZACIÓN DEL MAPA
- */
+const GAS_IDS = { "NO2": 1, "O3": 2, "SO2": 3, "CO": 4, "PM10": 5 };
+let multiGasData = {};
+let canvasLayer = null;
 
-/**
- * @brief Instancia principal del mapa de Leaflet.
- * @note Se desactiva `zoomControl` para una experiencia puramente visual/estática.
- */
+// --- 2. INICIALIZACIÓN DEL MAPA ---
+// Desactivamos zoomControl como pedía el diseño original de la landing
 const map = L.map('map', {
-    zoomControl: false
-}).setView([39.228493, -0.529656], 9);
+    zoomControl: false,
+    scrollWheelZoom: false, // Evita hacer zoom sin querer al hacer scroll en la landing
+    attributionControl: false
+}).setView([40.416, -3.703], 6); // Centrado en España
 
-/** @brief Capa base de OpenStreetMap con compatibilidad para mapas de calor. */
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-    crossOrigin: true
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    opacity: 0.9
 }).addTo(map);
 
-/**
- * @section 3. LÓGICA DEL HEATMAP Y VISUALIZACIÓN
- */
-
-/**
- * @brief Devuelve un color hexadecimal según el nivel de riesgo.
- * @param {number} valor Intensidad calculada.
- * @param {number[]} thresholds Umbrales de riesgo.
- * @returns {string} Código hexadecimal de color.
- */
-function getColor(valor, thresholds) {
-    if (valor === 0) return '#CCC';
-    if (valor > thresholds[1]) return '#FF0000';
-    if (valor > thresholds[0]) return '#FFFF00';
-    return '#00FF00';
-}
-
-/**
- * @brief Calcula el contaminante más dominante en una estación para determinar el riesgo total.
- * @param {Object} station Datos de la estación o sensor.
- * @returns {Object} Objeto con la intensidad (0 a 1) y el nombre del gas dominante.
- */
-function getMaxGasIntensity(station) {
-    let maxIntensity = 0;
-    let maxGas = 'N/A';
-
-    for (const key in GAS_CONFIG) {
-        if (key !== 'MAX_GAS' && GAS_CONFIG[key].property) {
-            const config = GAS_CONFIG[key];
-            const value = station[config.property] || 0;
-
-            if (value > 0) {
-                const intensity = Math.min(value / config.maxVal, 1.0);
-                if (intensity > maxIntensity) {
-                    maxIntensity = intensity;
-                    maxGas = config.name;
-                }
-            }
+// --- 3. FUNCIONES DE CÁLCULO (IDW) ---
+function interpolateColor(value) {
+    const stops = maxRiskConfig.stops;
+    if (value <= stops[0].val) return `rgba(${stops[0].c.join(',')}, 0.75)`;
+    if (value >= stops[stops.length-1].val) return `rgba(${stops[stops.length-1].c.join(',')}, 0.75)`;
+    for (let i = 0; i < stops.length - 1; i++) {
+        if (value >= stops[i].val && value <= stops[i+1].val) {
+            const min = stops[i], max = stops[i+1];
+            const pct = (value - min.val) / (max.val - min.val);
+            const r = Math.round(min.c[0] + (max.c[0] - min.c[0]) * pct);
+            const g = Math.round(min.c[1] + (max.c[1] - min.c[1]) * pct);
+            const b = Math.round(min.c[2] + (max.c[2] - min.c[2]) * pct);
+            return `rgba(${r}, ${g}, ${b}, 0.9)`;
         }
     }
-    return { intensity: maxIntensity, gas: maxGas };
 }
 
-/**
- * @brief Genera el array de coordenadas e intensidades para la capa de calor.
- * @param {string} gasKey Identificador del gas en GAS_CONFIG.
- * @returns {Array} Puntos de calor filtrados.
- */
-function getHeatmapPoints(gasKey) {
-    if (gasKey === 'MAX_GAS') {
-        return gasData.map(station => {
-            const { intensity } = getMaxGasIntensity(station);
-            return intensity > 0 ? [station.lat, station.lng, intensity] : null;
-        }).filter(point => point !== null);
-    } else {
-        return [];
-    }
+function getSeverityScore(val, gas) {
+    if (!config[gas]) return 0;
+    const maxLimit = config[gas].stops[config[gas].stops.length - 1].val;
+    let score = (val / maxLimit) * 100;
+    return score > 100 ? 100 : score;
 }
 
-/**
- * @brief Dibuja y actualiza la capa de calor y la leyenda en el mapa.
- * @param {string} gasKey Gas seleccionado para la visualización.
- */
-function drawHeatmap(gasKey) {
-    if (!gasData) return;
-
-    const heatPoints = getHeatmapPoints(gasKey);
-
-    if (heatLayer) {
-        heatmapLayerGroup.removeLayer(heatLayer);
+function calculateIDW(latlng, points) {
+    let num = 0, den = 0;
+    for (let p of points) {
+        if(p.value < 0) continue;
+        const d2 = Math.pow(latlng.lat - p.lat, 2) + Math.pow(latlng.lng - p.lon, 2);
+        if (d2 < 0.00001) return p.value;
+        const w = 1 / (d2 * d2);
+        num += w * p.value;
+        den += w;
     }
-
-    /** @brief Opciones de renderizado del Heatmap (Radio, desenfoque y gradiente). */
-    const heatOptions = {
-        minOpacity: 0.15,
-        maxZoom: 10,
-        radius: 30,
-        blur: 30,
-        max: 1.0,
-        gradient: { 0.0: 'green', 0.25: 'lime', 0.5: 'yellow', 1.0: 'red' }
-    };
-
-    heatLayer = L.heatLayer(heatPoints, heatOptions);
-    heatmapLayerGroup.addLayer(heatLayer);
-
-    // Actualización de la leyenda
-    if (legend.getContainer() != null) {
-        map.removeControl(legend);
-    }
-    legend.addTo(map);
+    return den < 0.0001 ? null : num / den;
 }
 
-/**
- * @brief Define la estructura y el contenido visual de la leyenda.
- * @details Muestra los niveles de riesgo (Bajo, Medio, Alto) con sus respectivos colores.
- * @returns {HTMLElement} Div con la leyenda renderizada.
- */
-legend.onAdd = function (map) {
-    const config = GAS_CONFIG['MAX_GAS'];
-    var div = L.DomUtil.create('div', 'info legend'),
-        thresholds = config.thresholds,
-        labels = [];
+// --- 4. RENDERIZADO DEL MAPA ---
+function renderMaxRiskMap() {
+    if (canvasLayer) map.removeLayer(canvasLayer);
 
-    div.innerHTML += `<h4>${config.name} (${config.units})</h4>`;
+    const HeatGrid = L.GridLayer.extend({
+        createTile: function(coords) {
+            const tile = L.DomUtil.create('canvas', 'leaflet-tile');
+            const size = this.getTileSize();
+            tile.width = size.x; tile.height = size.y;
+            const ctx = tile.getContext('2d');
+            const step = 8; // Pixelación suave
 
-    labels.push('<i style="background:' + getColor(thresholds[0] - 0.1, thresholds) + '"></i> Bajo Riesgo (< 50%)');
-    labels.push('<i style="background:' + getColor(thresholds[0] + 0.1, thresholds) + '"></i> Riesgo Medio (50% - 80%)');
-    labels.push('<i style="background:' + getColor(thresholds[1] + 0.1, thresholds) + '"></i> Alto Riesgo (> 80%)');
+            for (let x = 0; x < size.x; x += step) {
+                for (let y = 0; y < size.y; y += step) {
+                    const latlng = map.unproject(coords.scaleBy(size).add([x, y]), coords.z);
 
-    div.innerHTML += labels.join('<br>');
-    return div;
-};
+                    // Cálculo de riesgo máximo combinado
+                    let maxRisk = -1;
+                    let dominantGas = null;
 
-/**
- * @section 4. CARGA DE DATOS Y STARTUP
- */
+                    ['NO2', 'O3', 'PM10', 'SO2', 'CO'].forEach(g => {
+                        if (multiGasData[g] && multiGasData[g].length > 0) {
+                            const v = calculateIDW(latlng, multiGasData[g]);
+                            if (v !== null) {
+                                const risk = getSeverityScore(v, g);
+                                if (risk > maxRisk) { maxRisk = risk; dominantGas = g; }
+                            }
+                        }
+                    });
 
-/**
- * @brief Carga concurrente de archivos JSON y GeoJSON.
- * @details Fusiona los datos de estaciones regionales y locales en un único array unificado.
- */
-Promise.all([
-    fetch('data/datos_config_gases.json').then(r => r.json()),
-    fetch('data/datos_sensores.geojson').then(r => r.json())
-])
-    .then(([dataConfig, dataLocal]) => {
-        let peninsulaData = dataConfig.gas_station_data;
-
-        /** @brief Mapeo de GeoJSON a estructura plana compatible con el motor de cálculo. */
-        const localData = dataLocal.features.map(feature => ({
-            id_sensor: feature.properties.id_sensor,
-            lat: feature.geometry.coordinates[1],
-            lng: feature.geometry.coordinates[0],
-            valor_NO2: feature.properties.valor_NO2,
-            valor_O3: feature.properties.valor_O3,
-            valor_CO: feature.properties.valor_CO,
-            valor_SO2: feature.properties.valor_SO2,
-            valor_PM10: feature.properties.valor_PM10,
-        }));
-
-        gasData = peninsulaData.concat(localData);
-
-        currentGas = 'MAX_GAS';
-        drawHeatmap(currentGas);
-        heatmapLayerGroup.addTo(map);
-
-    })
-    .catch(error => {
-        console.error('Error durante la carga de JSON:', error);
-        alert('Error al cargar los datos.');
+                    if (dominantGas && maxRisk > 5) { // Solo pintar si hay algo de riesgo mínimo
+                        ctx.fillStyle = interpolateColor(maxRisk);
+                        ctx.fillRect(x, y, step, step);
+                    }
+                }
+            }
+            return tile;
+        }
     });
+
+    canvasLayer = new HeatGrid({ opacity: 0.8 }).addTo(map);
+
+    // Efecto visual "Neon"
+    setTimeout(() => {
+        const container = canvasLayer.getContainer();
+        if (container) {
+            container.style.filter = "blur(8px) saturate(1.4)";
+            container.style.mixBlendMode = "screen";
+        }
+    }, 100);
+}
+
+// --- 5. CARGA DE DATOS DESDE LA API ---
+async function initLandingMap() {
+    const today = new Date().toISOString().split('T')[0]; // Fecha HOY formato YYYY-MM-DD
+
+    // Si quieres probar con el día 16 fijado, descomenta la siguiente línea:
+    // const today = '2026-01-16';
+
+    console.log("Cargando mapa landing para fecha:", today);
+
+    const promesas = Object.keys(GAS_IDS).map(async (gasKey) => {
+        const id = GAS_IDS[gasKey];
+        // Ruta relativa a la API desde index.html
+        const url = `api/index.php?accion=getMedicionesXTipo&tipo_id=${id}&fecha=${today}`;
+
+        try {
+            const response = await fetch(url);
+            if (!response.ok) return { key: gasKey, data: [] };
+            const data = await response.json();
+
+            // Convertir y Normalizar datos
+            const conversion = config[gasKey].conversion || 1;
+
+            const datosProcesados = data.map(p => ({
+                lat: parseFloat(p.lat),
+                lon: parseFloat(p.lon),
+                value: parseFloat(p.value) * conversion
+            }));
+
+            return { key: gasKey, data: datosProcesados };
+
+        } catch (e) {
+            console.warn(`Error cargando ${gasKey}`, e);
+            return { key: gasKey, data: [] };
+        }
+    });
+
+    const resultados = await Promise.all(promesas);
+
+    resultados.forEach(item => {
+        multiGasData[item.key] = item.data;
+    });
+
+    renderMaxRiskMap();
+}
+
+// Ejecutar al cargar
+document.addEventListener('DOMContentLoaded', initLandingMap);

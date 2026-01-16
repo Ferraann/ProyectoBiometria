@@ -4,13 +4,10 @@ session_start();
 // Configuración de errores (Desactivar en producción)
 // error_reporting(0);
 
-/*
-// Seguridad: Descomentar cuando el login esté 100% operativo
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: login.html");
     exit;
 }
-*/
 
 date_default_timezone_set('Europe/Madrid');
 $nombre = $_SESSION['usuario_nombre'] ?? 'Usuario';
