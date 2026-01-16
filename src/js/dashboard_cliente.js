@@ -220,60 +220,44 @@ function cargarTopSensoresFrontend(gasKey) {
     const config = window.gasConfig || {};
     const conversion = (config[gasKey] ? config[gasKey].conversion : 1);
 
-    // 2. Preparar mapa de estaciones
-    // Clave: NombreEstación, Valor: { maximo: 0 }
-    let mapaEstaciones = {};
-    stations.forEach(st => {
-        mapaEstaciones[st.name] = { maximo: 0 };
-    });
-
-    // 3. ASIGNAR CADA DATO A SU ESTACIÓN MÁS CERCANA (VORONOI)
-    datosContaminacion.forEach(dato => {
-        let estacionMasCercana = null;
+    // 2. ALGORITMO (Igual que el Mapa): Estación busca dato más cercano
+    const ranking = stations.map(st => {
+        let valorMasCercano = 0;
         let distMinima = Infinity;
+        let hayDatos = false;
 
-        // ¿Quién es mi estación más cercana?
-        stations.forEach(st => {
-            // Pitágoras simple para velocidad
-            const dist = Math.sqrt(Math.pow(st.lat - dato.lat, 2) + Math.pow((st.lng||st.lon) - dato.lon, 2));
+        // Normalizar coords estación
+        const latSt = st.lat;
+        const lonSt = st.lng || st.lon;
+
+        datosContaminacion.forEach(dato => {
+            const dist = Math.sqrt(Math.pow(latSt - dato.lat, 2) + Math.pow(lonSt - dato.lon, 2));
+
+            // Lógica estricta de vecino más cercano
             if (dist < distMinima) {
                 distMinima = dist;
-                estacionMasCercana = st.name;
+                // Si está dentro del radio de influencia (ej. 0.1 grados ~ 10km)
+                if (dist < 0.1) {
+                    hayDatos = true;
+                    valorMasCercano = parseFloat(dato.value);
+                }
             }
         });
 
-        // Si hemos encontrado una estación cerca (puedes ajustar el umbral, ej: 1.0 grado)
-        if (estacionMasCercana && distMinima < 1.0) {
-            const valorReal = parseFloat(dato.value);
-            // Nos quedamos con el peor dato (máximo riesgo) de su zona
-            if (valorReal > mapaEstaciones[estacionMasCercana].maximo) {
-                mapaEstaciones[estacionMasCercana].maximo = valorReal;
-            }
-        }
-    });
-
-    // 4. Convertir a Array para ordenar
-    let ranking = Object.keys(mapaEstaciones).map(nombre => {
         return {
-            nombre: nombre,
-            valor: parseFloat((mapaEstaciones[nombre].maximo * conversion).toFixed(2))
+            nombre: st.name,
+            valor: hayDatos ? parseFloat((valorMasCercano * conversion).toFixed(2)) : 0
         };
     });
 
-    // 5. Ordenar por contaminación descendente
+    // 3. Ordenar y Top 5
     ranking.sort((a, b) => b.valor - a.valor);
-
-    // 6. Coger Top 5
     const top5 = ranking.slice(0, 5);
 
-    // 7. Actualizar Gráfica
+    // 4. Pintar
     chartTopSensoresInstance.data.labels = top5.map(x => x.nombre);
     chartTopSensoresInstance.data.datasets[0].data = top5.map(x => x.valor);
-
-    // Si el top 1 es 0, significa que no hay datos relevantes cerca de ninguna estación
-    if (top5.length > 0 && top5[0].valor === 0) {
-        chartTopSensoresInstance.data.datasets[0].data = [];
-    }
+    chartTopSensoresInstance.data.datasets[0].label = `Top 5 Estaciones (${gasKey})`;
 
     chartTopSensoresInstance.update();
 }
