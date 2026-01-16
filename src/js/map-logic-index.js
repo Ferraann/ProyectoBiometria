@@ -1,43 +1,27 @@
 /**
  * @file map-logic-index.js
- * @brief Lógica del mapa para la Landing Page (index.html).
- * @details Conecta con la API para mostrar el riesgo máximo de HOY en tiempo real.
+ * @brief Mapa Visual de Riesgo para Landing Page (Sin Popups, Solo Visual)
  */
 
 'use strict';
 
-// --- 1. CONFIGURACIÓN VISUAL (Igual que el Dashboard) ---
+// --- 1. CONFIGURACIÓN VISUAL (Umbrales de contaminación) ---
 const config = {
-    NO2: {
-        unit: "µg/m³", conversion: 1,
-        stops: [ { val: 0, c: [0, 100, 150] }, { val: 5, c: [0, 100, 150] }, { val: 15, c: [194, 195, 126] }, { val: 50, c: [222, 117, 53] }, { val: 100, c: [74, 12, 0] } ]
-    },
-    PM10: {
-        unit: "µg/m³", conversion: 1,
-        stops: [ { val: 0, c: [1, 101, 150] }, { val: 10, c: [1, 101, 150] }, { val: 25, c: [172, 186, 189] }, { val: 100, c: [212, 151, 79] }, { val: 200, c: [74, 12, 0] } ]
-    },
-    O3: {
-        unit: "µg/m³", conversion: 1,
-        stops: [ { val: 0, c: [1, 101, 150] }, { val: 10, c: [1, 101, 150] }, { val: 20, c: [1, 101, 150] }, { val: 100, c: [176, 178, 132] }, { val: 1000, c: [74, 12, 0] } ]
-    },
-    CO: {
-        unit: "ppbv", conversion: 500,
-        stops: [ { val: 0, c: [124, 124, 124] }, { val: 50, c: [124, 124, 116] }, { val: 100, c: [124, 113, 60] }, { val: 500, c: [46, 29, 29] }, { val: 1200, c: [130, 26, 25] } ]
-    },
-    SO2: {
-        unit: "mg/m²", conversion: 1,
-        stops: [ { val: 0, c: [0, 102, 151] }, { val: 1, c: [50, 135, 175] }, { val: 10, c: [195, 195, 125] }, { val: 25, c: [217, 113, 51] }, { val: 100, c: [74, 12, 0] } ]
-    }
+    NO2: { conversion: 1, stops: [{val:0,c:[0,100,150]},{val:100,c:[74,12,0]}] }, // Simplificado para landing
+    PM10: { conversion: 1, stops: [{val:0,c:[1,101,150]},{val:200,c:[74,12,0]}] },
+    O3:   { conversion: 1, stops: [{val:0,c:[1,101,150]},{val:1000,c:[74,12,0]}] },
+    CO:   { conversion: 500, stops: [{val:0,c:[124,124,124]},{val:1200,c:[130,26,25]}] },
+    SO2:  { conversion: 1, stops: [{val:0,c:[0,102,151]},{val:100,c:[74,12,0]}] }
 };
 
+// Configuración de Colores para el Riesgo Combinado (Azul -> Verde -> Amarillo -> Rojo)
 const maxRiskConfig = {
-    unit: "Dominante",
     stops: [
-        { val: 0,   c: [0, 100, 150] },
-        { val: 25,  c: [0, 220, 220] },
-        { val: 50,  c: [194, 195, 126] },
-        { val: 75,  c: [222, 117, 53] },
-        { val: 100, c: [74, 12, 0] }
+        { val: 0,   c: [0, 100, 150] },   // Azul (Limpio)
+        { val: 25,  c: [0, 220, 220] },   // Cian
+        { val: 50,  c: [194, 195, 126] }, // Amarillo verdoso
+        { val: 75,  c: [222, 117, 53] },  // Naranja
+        { val: 100, c: [74, 12, 0] }      // Rojo Sangre (Peligro)
     ]
 };
 
@@ -46,18 +30,24 @@ let multiGasData = {};
 let canvasLayer = null;
 
 // --- 2. INICIALIZACIÓN DEL MAPA ---
-// Desactivamos zoomControl como pedía el diseño original de la landing
+// zoomControl: false -> Quita los botones + / -
+// scrollWheelZoom: false -> Evita que la web haga zoom al bajar con el ratón
+// dragging: false -> (Opcional) Si quieres que el mapa sea 100% estático como una imagen
 const map = L.map('map', {
     zoomControl: false,
-    scrollWheelZoom: false, // Evita hacer zoom sin querer al hacer scroll en la landing
-    attributionControl: false
+    scrollWheelZoom: false,
+    attributionControl: false,
+    doubleClickZoom: false,
+    boxZoom: false,
+    keyboard: false,
+    dragging: true // Lo dejamos en true para que puedan moverse si quieren
 }).setView([40.416, -3.703], 6); // Centrado en España
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     opacity: 0.9
 }).addTo(map);
 
-// --- 3. FUNCIONES DE CÁLCULO (IDW) ---
+// --- 3. FUNCIONES MATEMÁTICAS ---
 function interpolateColor(value) {
     const stops = maxRiskConfig.stops;
     if (value <= stops[0].val) return `rgba(${stops[0].c.join(',')}, 0.75)`;
@@ -74,6 +64,7 @@ function interpolateColor(value) {
     }
 }
 
+// Normaliza el valor de 0 a 100 según peligrosidad
 function getSeverityScore(val, gas) {
     if (!config[gas]) return 0;
     const maxLimit = config[gas].stops[config[gas].stops.length - 1].val;
@@ -81,20 +72,21 @@ function getSeverityScore(val, gas) {
     return score > 100 ? 100 : score;
 }
 
+// Interpolación IDW (Distancia Inversa)
 function calculateIDW(latlng, points) {
     let num = 0, den = 0;
     for (let p of points) {
         if(p.value < 0) continue;
         const d2 = Math.pow(latlng.lat - p.lat, 2) + Math.pow(latlng.lng - p.lon, 2);
         if (d2 < 0.00001) return p.value;
-        const w = 1 / (d2 * d2);
+        const w = 1 / (d2 * d2); // Peso cuadrático
         num += w * p.value;
         den += w;
     }
     return den < 0.0001 ? null : num / den;
 }
 
-// --- 4. RENDERIZADO DEL MAPA ---
+// --- 4. RENDERIZADO (Canvas) ---
 function renderMaxRiskMap() {
     if (canvasLayer) map.removeLayer(canvasLayer);
 
@@ -104,27 +96,27 @@ function renderMaxRiskMap() {
             const size = this.getTileSize();
             tile.width = size.x; tile.height = size.y;
             const ctx = tile.getContext('2d');
-            const step = 8; // Pixelación suave
+            const step = 4; // CALIDAD: 4 es alta calidad (píxeles pequeños), 8 es más rápido
 
             for (let x = 0; x < size.x; x += step) {
                 for (let y = 0; y < size.y; y += step) {
                     const latlng = map.unproject(coords.scaleBy(size).add([x, y]), coords.z);
 
-                    // Cálculo de riesgo máximo combinado
-                    let maxRisk = -1;
-                    let dominantGas = null;
+                    let maxRisk = 0;
 
+                    // Comprobamos todos los gases disponibles para ver cual es peor en este punto
                     ['NO2', 'O3', 'PM10', 'SO2', 'CO'].forEach(g => {
                         if (multiGasData[g] && multiGasData[g].length > 0) {
                             const v = calculateIDW(latlng, multiGasData[g]);
                             if (v !== null) {
                                 const risk = getSeverityScore(v, g);
-                                if (risk > maxRisk) { maxRisk = risk; dominantGas = g; }
+                                if (risk > maxRisk) { maxRisk = risk; }
                             }
                         }
                     });
 
-                    if (dominantGas && maxRisk > 5) { // Solo pintar si hay algo de riesgo mínimo
+                    // Solo pintamos si hay riesgo visible
+                    if (maxRisk > 1) {
                         ctx.fillStyle = interpolateColor(maxRisk);
                         ctx.fillRect(x, y, step, step);
                     }
@@ -136,28 +128,28 @@ function renderMaxRiskMap() {
 
     canvasLayer = new HeatGrid({ opacity: 0.8 }).addTo(map);
 
-    // Efecto visual "Neon"
+    // Filtros CSS para efecto visual potente (Blur + Saturación)
     setTimeout(() => {
         const container = canvasLayer.getContainer();
         if (container) {
-            container.style.filter = "blur(8px) saturate(1.4)";
+            container.style.filter = "blur(10px) saturate(1.5)";
             container.style.mixBlendMode = "screen";
+            container.style.pointerEvents = "none"; // IMPORTANTE: Evita que el canvas intercepte clics
         }
     }, 100);
 }
 
-// --- 5. CARGA DE DATOS DESDE LA API ---
+// --- 5. CARGA DE DATOS ---
 async function initLandingMap() {
-    const today = new Date().toISOString().split('T')[0]; // Fecha HOY formato YYYY-MM-DD
+    // 1. FECHA: Usamos HOY automáticamente
+    const today = new Date().toISOString().split('T')[0];
 
-    // Si quieres probar con el día 16 fijado, descomenta la siguiente línea:
+    // NOTA: Si quieres forzar para ver tus datos del día 16, descomenta esto:
     // const today = '2026-01-16';
-
-    console.log("Cargando mapa landing para fecha:", today);
 
     const promesas = Object.keys(GAS_IDS).map(async (gasKey) => {
         const id = GAS_IDS[gasKey];
-        // Ruta relativa a la API desde index.html
+        // OJO: La ruta api/... asume que index.html está en la raíz y api en /api
         const url = `api/index.php?accion=getMedicionesXTipo&tipo_id=${id}&fecha=${today}`;
 
         try {
@@ -165,7 +157,7 @@ async function initLandingMap() {
             if (!response.ok) return { key: gasKey, data: [] };
             const data = await response.json();
 
-            // Convertir y Normalizar datos
+            // Conversión (Ej: CO x 500)
             const conversion = config[gasKey].conversion || 1;
 
             const datosProcesados = data.map(p => ({
@@ -177,7 +169,6 @@ async function initLandingMap() {
             return { key: gasKey, data: datosProcesados };
 
         } catch (e) {
-            console.warn(`Error cargando ${gasKey}`, e);
             return { key: gasKey, data: [] };
         }
     });
@@ -188,8 +179,9 @@ async function initLandingMap() {
         multiGasData[item.key] = item.data;
     });
 
+    // Pintamos el mapa
     renderMaxRiskMap();
 }
 
-// Ejecutar al cargar
+// Ejecutar al cargar la página
 document.addEventListener('DOMContentLoaded', initLandingMap);
