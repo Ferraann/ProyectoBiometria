@@ -429,18 +429,30 @@ function renderizarSensores(datos) {
 
     grid.innerHTML = datos.map(s => {
         const asignado = s.nombre_usuario;
+        const idUsuario = s.usuario_id; 
         const activo = s.estado == 1;
+
         return `
         <div class="incidencia" style="border-left: 5px solid ${asignado ? '#152D9A' : '#28a745'}">
             <div style="display: flex; justify-content: space-between; align-items: start;">
-                <h3>${s.mac}</h3>
+                <h3>
+                    <a href="sensor_detalle.html?id=${s.sensor_id}" style="text-decoration: none; color: inherit;">
+                        ${s.mac} <i class="fas fa-external-link-alt" style="font-size: 10px; margin-left: 5px;"></i>
+                    </a>
+                </h3>
                 <span class="badge" style="background: ${activo ? '#e3f9e5' : '#fee2e2'}; color: ${activo ? '#1f7a24' : '#b91c1c'}; padding: 2px 8px; border-radius: 12px; font-size: 11px;">
                     ${activo ? 'ACTIVO' : 'INACTIVO'}
                 </span>
             </div>
             <p><strong>Nombre:</strong> ${s.nombre_sensor || 'Sin nombre'}</p>
             <p><strong>Modelo:</strong> ${s.modelo || 'N/A'}</p>
-            <p><strong>Usuario:</strong> ${asignado ? `<span style="color: #152D9A; font-weight: bold;">${s.nombre_usuario}</span>` : '<span style="color: #28a745;">Disponible</span>'}</p>
+            
+            <p><strong>Usuario:</strong> 
+                ${asignado 
+                    ? `<a href="usuario_detalle.html?id=${idUsuario}&perfil=usuario" style="color: #152D9A; font-weight: bold; text-decoration: underline;">${s.nombre_usuario}</a>` 
+                    : '<span style="color: #28a745;">Disponible</span>'
+                }
+            </p>
         </div>
         `;
     }).join('');

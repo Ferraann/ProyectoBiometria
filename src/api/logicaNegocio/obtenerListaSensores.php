@@ -50,20 +50,18 @@ function obtenerListaSensores($conn, $usuario_id){
  */
 function getTodosLosSensoresDetallados($conn) {
     try {
-        // Corregido: 'problema' en lugar de 'estado' y 'id' es el nombre correcto
         $sql = "SELECT 
-                    s.id AS sensor_id, 
-                    s.mac, 
-                    s.nombre AS nombre_sensor, 
-                    s.modelo, 
-                    s.problema, 
-                    (SELECT u.nombre 
-                     FROM usuario u 
-                     JOIN usuario_sensor us ON u.id = us.usuario_id 
-                     WHERE us.sensor_id = s.id AND us.actual = 1 
-                     LIMIT 1) AS nombre_usuario
-                FROM sensor s
-                ORDER BY s.id DESC";
+            s.id AS sensor_id, 
+            s.mac, 
+            s.nombre AS nombre_sensor, 
+            s.modelo, 
+            s.problema, 
+            (SELECT u.nombre FROM usuario u JOIN usuario_sensor us ON u.id = us.usuario_id 
+             WHERE us.sensor_id = s.id AND us.actual = 1 LIMIT 1) AS nombre_usuario,
+            (SELECT u.id FROM usuario u JOIN usuario_sensor us ON u.id = us.usuario_id 
+             WHERE us.sensor_id = s.id AND us.actual = 1 LIMIT 1) AS usuario_id
+        FROM sensor s
+        ORDER BY s.id DESC";
 
         $result = $conn->query($sql);
 
@@ -81,7 +79,8 @@ function getTodosLosSensoresDetallados($conn) {
                 "modelo"         => $row["modelo"] ?? 'N/A',
                 // Invertimos la lógica para el JS: si 'problema' es 0, el estado es 1 (activo/bien)
                 "estado"         => $row["problema"] == 0 ? 1 : 0,
-                "nombre_usuario" => $row["nombre_usuario"]
+                "nombre_usuario" => $row["nombre_usuario"],
+                "usuario_id" => $row["usuario_id"] ? (int)$row["usuario_id"] : null
             ];
         }
 
