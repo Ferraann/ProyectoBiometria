@@ -1,6 +1,6 @@
 /**
  * @file map-logic-index.js
- * @brief Mapa Landing Page: Límites geográficos (España/Portugal), Zoom y Loader.
+ * @brief Mapa Landing Page: Zona Ibérica + Islas, Efecto Rebote y Alto Rendimiento.
  */
 
 'use strict';
@@ -29,13 +29,14 @@ let multiGasData = {};
 let canvasLayer = null;
 let allPointsBounds = [];
 
-// --- 2. CONFIGURACIÓN DEL MAPA (LÍMITES Y REBOTE) ---
+// --- 2. CONFIGURACIÓN DEL MAPA Y LÍMITES ---
 
-// Definimos la caja que incluye España (Península), Portugal, Baleares y Canarias.
-// [Lat Sur, Lon Oeste], [Lat Norte, Lon Este]
+// LÍMITES EXACTOS: [Lat Sur, Lon Oeste], [Lat Norte, Lon Este]
+// Sur 27.0 (Coge Canarias) | Oeste -20.0 (Coge Portugal y mar de sobra)
+// Norte 44.5 (Pirineos)    | Este 6.0 (Menorca)
 const boundsLimit = [
-    [27.0, -19.0], // Esquina inferior izquierda (Canarias/Oeste Portugal)
-    [44.5, 6.0]    // Esquina superior derecha (Pirineos/Menorca)
+    [27.0, -20.0],
+    [44.5, 6.0]
 ];
 
 const map = L.map('map', {
@@ -44,15 +45,15 @@ const map = L.map('map', {
     attributionControl: false,
     doubleClickZoom: true,
     dragging: true,
-    minZoom: 5,             // No dejar alejarse más de la vista general
-    maxZoom: 15,
-    maxBounds: boundsLimit, // <--- AQUÍ PONEMOS EL LÍMITE
-    maxBoundsViscosity: 1.0 // <--- ESTO ES EL "REBOTE" (1.0 es sólido, no deja salir)
-}).setView([40.0, -4.0], 6); // Vista inicial centrada en la península
+    minZoom: 5,             // Zoom mínimo para ver toda la zona
+    maxZoom: 12,            // Zoom máximo suficiente
+    maxBounds: boundsLimit, // <--- EL LÍMITE FÍSICO
+    maxBoundsViscosity: 1.0 // <--- EL EFECTO DE ARRASTRE (1.0 = Muro sólido)
+}).setView([40.0, -4.0], 6);
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     opacity: 0.9,
-    bounds: boundsLimit // Optimizamos la carga de tiles
+    bounds: boundsLimit // Optimización de carga
 }).addTo(map);
 
 
@@ -84,6 +85,8 @@ function calculateIDW(latlng, points) {
     let num = 0, den = 0;
     for (let p of points) {
         if(p.value < 0) continue;
+
+        // Optimización matemática: Si el punto está muy lejos (más de 1 grado), lo ignoramos
         if (Math.abs(latlng.lat - p.lat) > 1 || Math.abs(latlng.lng - p.lon) > 1) continue;
 
         const d2 = Math.pow(latlng.lat - p.lat, 2) + Math.pow(latlng.lng - p.lon, 2);
@@ -95,7 +98,7 @@ function calculateIDW(latlng, points) {
     return den < 0.0001 ? null : num / den;
 }
 
-// --- 4. RENDERIZADO (OPTIMIZADO) ---
+// --- 4. RENDERIZADO (CANVAS OPTIMIZADO) ---
 function renderMaxRiskMap() {
     if (canvasLayer) map.removeLayer(canvasLayer);
 
@@ -105,13 +108,15 @@ function renderMaxRiskMap() {
             const size = this.getTileSize();
             tile.width = size.x; tile.height = size.y;
             const ctx = tile.getContext('2d');
-            const step = 8; // Rendimiento rápido
+
+            // STEP 8: Calidad media-alta pero rendimiento muy rápido (evita que se pete)
+            const step = 8;
 
             for (let x = 0; x < size.x; x += step) {
                 for (let y = 0; y < size.y; y += step) {
                     const latlng = map.unproject(coords.scaleBy(size).add([x, y]), coords.z);
 
-                    // Solo pintamos si estamos dentro de los límites visuales (ahorro de CPU)
+                    // OPTIMIZACIÓN: Si el píxel está fuera de España/Portugal, no calculamos nada
                     if (latlng.lat < boundsLimit[0][0] || latlng.lat > boundsLimit[1][0] ||
                         latlng.lng < boundsLimit[0][1] || latlng.lng > boundsLimit[1][1]) {
                         continue;
@@ -140,6 +145,7 @@ function renderMaxRiskMap() {
 
     canvasLayer = new HeatGrid({ opacity: 0.8 }).addTo(map);
 
+    // Efectos visuales al terminar de pintar
     setTimeout(() => {
         const container = canvasLayer.getContainer();
         if (container) {
@@ -148,6 +154,7 @@ function renderMaxRiskMap() {
             container.style.pointerEvents = "none";
         }
 
+        // Quitar Loader
         const loader = document.getElementById('loader');
         if (loader) {
             loader.style.transition = "opacity 0.5s ease";
@@ -169,16 +176,21 @@ async function initLandingMap() {
 
     const promesas = Object.keys(GAS_IDS).map(async (gasKey) => {
         const id = GAS_IDS[gasKey];
+        // Ruta relativa a la API
         const url = `api/index.php?accion=getMedicionesXTipo&tipo_id=${id}&fecha=${targetDate}`;
         try {
             const response = await fetch(url);
             if (!response.ok) return { key: gasKey, data: [] };
             const data = await response.json();
             const conversion = config[gasKey].conversion || 1;
+
             const datosProcesados = data.map(p => {
                 const lat = parseFloat(p.lat);
                 const lon = parseFloat(p.lon);
-                allPointsBounds.push([lat, lon]);
+                // Solo guardamos coordenadas válidas para el bounds
+                if(!isNaN(lat) && !isNaN(lon)) {
+                    allPointsBounds.push([lat, lon]);
+                }
                 return { lat: lat, lon: lon, value: parseFloat(p.value) * conversion };
             });
             return { key: gasKey, data: datosProcesados };
@@ -193,15 +205,12 @@ async function initLandingMap() {
         multiGasData[item.key] = item.data;
     });
 
-    // Auto-zoom suave si hay datos
+    // AUTO-CENTRADO SEGURO
+    // Si hay datos, centramos el mapa en ellos, pero respetando los límites de Portugal/España
     if (allPointsBounds.length > 0) {
-        const bounds = L.latLngBounds(allPointsBounds);
-        // Nos aseguramos que el auto-zoom no se salga de los límites permitidos
-        if (boundsLimit) {
-            const safeBounds = bounds.extend(L.latLng(boundsLimit[0])).extend(L.latLng(boundsLimit[1]));
-            // Centrado preferente en los datos, pero sin romper nada
-            map.fitBounds(bounds, { padding: [50, 50], maxZoom: 10 });
-        }
+        const dataBounds = L.latLngBounds(allPointsBounds);
+        // Ajustamos la vista para ver los datos, pero sin salirnos del límite máximo
+        map.fitBounds(dataBounds, { padding: [50, 50], maxZoom: 10 });
     }
 
     renderMaxRiskMap();
