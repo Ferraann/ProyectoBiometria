@@ -3,6 +3,10 @@ package com.example.grupo5.aitherapp.activitysApp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -71,6 +75,25 @@ public class WalkActivity extends AppCompatActivity {
                     imgFlecha.animate().rotation(180).setDuration(300).start(); // Flecha arriba
                 }
             });
+        }
+
+        WebView webViewWalk = findViewById(R.id.webviewMapWalk);
+        if (webViewWalk != null) {
+            WebSettings settings = webViewWalk.getSettings();
+            settings.setJavaScriptEnabled(true);
+            settings.setAllowFileAccess(true);
+            settings.setAllowContentAccess(true);
+            settings.setDomStorageEnabled(true);
+
+            // Configuración para mejor rendimiento
+            settings.setRenderPriority(WebSettings.RenderPriority.HIGH);
+            settings.setCacheMode(WebSettings.LOAD_DEFAULT);
+
+            webViewWalk.setWebChromeClient(new WebChromeClient());
+            webViewWalk.setWebViewClient(new WebViewClient());
+
+            // Cargar el mismo mapa que en Home
+            webViewWalk.loadUrl("file:///android_asset/index.html");
         }
     }
 }

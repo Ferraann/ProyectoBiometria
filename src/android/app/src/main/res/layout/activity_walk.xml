@@ -59,34 +59,18 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="350dp"
                 app:cardCornerRadius="20dp"
                 app:cardBackgroundColor="@color/azul_Paneles"
                 app:cardElevation="0dp"
                 android:layout_marginBottom="20dp">
 
-                <LinearLayout
+                <WebView
+                    android:id="@+id/webviewMapWalk"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:layout_height="match_parent" />
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@android:drawable/ic_menu_compass"
-                        app:tint="@color/azulOscuro_Principal"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Ruta en tiempo real en obras"
-                        android:textColor="@color/azulOscuro_Principal"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10dp"/>
-                </LinearLayout>
             </androidx.cardview.widget.CardView>
-
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

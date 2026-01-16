@@ -65,12 +65,10 @@
                 app:cardElevation="0dp"
                 android:layout_marginBottom="20dp">
 
-                <org.osmdroid.views.MapView
-                    android:id="@+id/map"
+                <WebView
+                    android:id="@+id/webviewMap"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:clickable="true"
-                    android:focusable="true" />
+                    android:layout_height="match_parent" />
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
