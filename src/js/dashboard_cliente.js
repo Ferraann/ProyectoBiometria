@@ -60,8 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
 
-                console.log("📅 Cambio de fecha detectado:", fechaParaAPI);
-
                 // 4. LÓGICA CENTRALIZADA: Siempre actualizamos los datos primero
                 if (typeof window.updateMapByDate === 'function') {
                     // Esperamos a que se bajen los datos nuevos
@@ -161,8 +159,6 @@ window.actualizarTodasLasGraficas = function(fechaForzada = null) {
         }
     }
 
-    console.log(`📊 Actualizando Gráficas para: ${gasKey} en fecha ${fecha}`);
-
     // Llamamos a las APIs (PHP) para Evolución y MinMax
     cargarEvolucion(tipoId, fecha);
     cargarMinMax(tipoId, fecha);
@@ -197,132 +193,4 @@ function cargarMinMax(tipoId, fecha) {
             chartMinMaxInstance.data.datasets[0].data = v;
             chartMinMaxInstance.update();
         }).catch(e => console.error(e));
-}
-
-// =========================================================================
-// FUNCIÓN CORREGIDA: Asignación exclusiva (1 dato -> 1 estación)
-// =========================================================================
-function cargarTopSensoresFrontend(gasKey) {
-    if (!chartTopSensoresInstance) return;
-
-    // 1. Obtener datos crudos (descargados de la BBDD)
-    const datosContaminacion = (window.SERVER_DATA && window.SERVER_DATA[gasKey]) ? window.SERVER_DATA[gasKey] : [];
-
-    // Si no hay datos para ese día/gas, limpiamos la gráfica
-    if (datosContaminacion.length === 0) {
-        chartTopSensoresInstance.data.labels = [];
-        chartTopSensoresInstance.data.datasets[0].data = [];
-        chartTopSensoresInstance.update();
-        return;
-    }
-
-    const stations = window.stations || [];
-    const config = window.gasConfig || {};
-    // Obtenemos el factor de conversión (ej: CO se multiplica por 500)
-    const conversion = (config[gasKey] ? config[gasKey].conversion : 1);
-
-    // 2. LÓGICA: BUSCAR EL PICO MÁXIMO CERCANO A CADA ESTACIÓN
-    const ranking = stations.map(st => {
-        let maxValorEncontrado = 0; // Empezamos en 0
-        let hayDatosCerca = false;
-
-        const latSt = st.lat;
-        const lonSt = st.lng || st.lon;
-
-        datosContaminacion.forEach(dato => {
-            // Calcular distancia (Pitágoras)
-            const dist = Math.sqrt(Math.pow(latSt - dato.lat, 2) + Math.pow(lonSt - dato.lon, 2));
-
-            // RADIO DE BÚSQUEDA: 0.1 grados son aprox 11km.
-            // Si el dato está cerca de la estación...
-            if (dist < 0.1) {
-                hayDatosCerca = true;
-                const val = parseFloat(dato.value);
-
-                // ...y es MAYOR que lo que ya teníamos, nos quedamos con él.
-                if (val > maxValorEncontrado) {
-                    maxValorEncontrado = val;
-                }
-            }
-        });
-
-        return {
-            nombre: st.name,
-            // Aplicamos la conversión al valor máximo encontrado
-            valor: hayDatosCerca ? parseFloat((maxValorEncontrado * conversion).toFixed(2)) : 0
-        };
-    });
-
-    // 3. ORDENAR: De más contaminado a menos
-    ranking.sort((a, b) => b.valor - a.valor);
-
-    // 4. TOP 5
-    const top5 = ranking.slice(0, 5);
-
-    // 5. PINTAR
-    chartTopSensoresInstance.data.labels = top5.map(x => x.nombre);
-    chartTopSensoresInstance.data.datasets[0].data = top5.map(x => x.valor);
-    chartTopSensoresInstance.data.datasets[0].label = `Top 5 Estaciones (${gasKey})`;
-
-    // Asignar color (Dorado para indicar Oficiales)
-    chartTopSensoresInstance.data.datasets[0].backgroundColor = '#FFD700';
-
-    chartTopSensoresInstance.update();
-}
-
-function cargarTopSensoresFrontend(gasKey) {
-    // Si la gráfica no está inicializada, no hacemos nada
-    if (!chartTopSensoresInstance) return;
-
-    // 1. OBTENER DATOS SELECCIONADOS
-    const tipoId = GAS_IDS_STATS[gasKey]; // Convertimos "NO2" -> 1
-
-    // Buscar la fecha del selector (flatpickr)
-    let fecha = new Date().toISOString().split('T')[0]; // Por defecto hoy
-    const picker = document.querySelector('#estadisticas-content .date-picker');
-    if (picker && picker._flatpickr && picker._flatpickr.selectedDates[0]) {
-        fecha = picker._flatpickr.formatDate(picker._flatpickr.selectedDates[0], "Y-m-d");
-    }
-
-    // Factor de conversión (ej: para CO a veces se usa, si no, es 1)
-    const config = window.gasConfig || {};
-    const conversion = (config[gasKey] ? config[gasKey].conversion : 1);
-
-    console.log(`Buscando Top 5 para Gas: ${gasKey} (${tipoId}) en Fecha: ${fecha}`);
-
-    // 2. PETICIÓN AL SERVIDOR (Aquí ocurre la magia)
-    fetch(`../api/index.php?accion=getTopSensores&tipo_id=${tipoId}&fecha=${fecha}`)
-        .then(res => res.json())
-        .then(data => {
-            // data es un array de 5 objetos: [{nombre: "Madrid", valor: 500}, ...]
-
-            // Preparamos arrays para Chart.js
-            const etiquetas = [];
-            const valores = [];
-            const colores = [];
-
-            data.forEach(item => {
-                etiquetas.push(item.nombre);
-
-                // Aplicamos conversión si hace falta
-                const valFinal = (item.valor * conversion).toFixed(2);
-                valores.push(valFinal);
-
-                // COLOR: Si el valor es muy alto (>100), Rojo Alerta. Si no, Dorado.
-                if (valFinal > 100) {
-                    colores.push('#ff4b1f'); // Rojo
-                } else {
-                    colores.push('#FFD700'); // Dorado
-                }
-            });
-
-            // 3. PINTAR LA GRÁFICA
-            chartTopSensoresInstance.data.labels = etiquetas;
-            chartTopSensoresInstance.data.datasets[0].data = valores;
-            chartTopSensoresInstance.data.datasets[0].backgroundColor = colores;
-            chartTopSensoresInstance.data.datasets[0].label = `Máximos ${gasKey} (µg/m³)`;
-
-            chartTopSensoresInstance.update();
-        })
-        .catch(err => console.error("Error cargando Top 5:", err));
 }

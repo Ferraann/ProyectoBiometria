@@ -203,13 +203,6 @@ if ($conn) {
                     </div>
                 </div>
 
-                <div class="graph-placeholder" style="background: #202020; border: 1px solid #444; position: relative;">
-                    <h3 style="color: #ffae00; margin-bottom: 10px; text-align: center;">Top 5 Sensores Más Contaminantes</h3>
-                    <div style="height: 300px; width: 100%;">
-                        <canvas id="chartTopSensores"></canvas>
-                    </div>
-                </div>
-
                 <div class="graph-placeholder" style="background: #202020; border: 1px solid #444; position: relative; display: flex; justify-content: center; align-items: center; color: #666;">
                     <p>Próximamente: Predicción IA</p>
                 </div>
