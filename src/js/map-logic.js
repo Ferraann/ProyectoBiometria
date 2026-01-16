@@ -243,19 +243,18 @@ function renderMap(mode) {
 
 // --- RENDERIZAR ESTACIONES ---
 function renderStations() {
+    // 1. Limpiamos capas anteriores
     if (canvasLayer) map.removeLayer(canvasLayer);
     stationLayer.clearLayers();
 
-    // Determinar qué gas mostrar
+    // 2. Averiguar qué gas estamos viendo y sus datos
     const selector = document.getElementById('gasSelect');
+    // Si el selector está en "ESTACIONES", por defecto mostramos datos de NO2 o el último seleccionado
+    // Pero para ser consistentes, intentemos ver qué gas hay seleccionado en Estadísticas o usar NO2 por defecto
     const statsSelector = document.getElementById('statsGasSelect');
-    let gasKey = 'NO2';
-    if (selector && selector.value !== 'ESTACIONES' && selector.value !== 'MAX') {
-        gasKey = selector.value;
-    } else if (statsSelector) {
-        gasKey = statsSelector.value;
-    }
+    const gasKey = statsSelector ? statsSelector.value : 'NO2'; // Usamos el gas de la otra pestaña como referencia
 
+    // Obtener datos crudos y config
     const datosContaminacion = (window.SERVER_DATA && window.SERVER_DATA[gasKey]) ? window.SERVER_DATA[gasKey] : [];
     const conversion = (config[gasKey] ? config[gasKey].conversion : 1);
     const unit = config[gasKey] ? config[gasKey].unit : '';
@@ -264,26 +263,32 @@ function renderStations() {
         const lat = st.lat;
         const lng = st.lng || st.lon;
 
-        // LÓGICA DE MÁXIMO RIESGO
-        let maxValorEncontrado = 0;
-        let hayDatosCerca = false;
+        // --- LÓGICA DE CÁLCULO (IGUAL QUE LA GRÁFICA) ---
+        let valorMostrar = 0;
+        let distMinima = Infinity;
+        let hayDatos = false;
 
         datosContaminacion.forEach(dato => {
+            // Distancia simple
             const dist = Math.sqrt(Math.pow(lat - dato.lat, 2) + Math.pow(lng - dato.lon, 2));
 
-            // Si está en el radio de ~11km (0.1 grados)
-            if (dist < 0.1) {
-                hayDatosCerca = true;
-                const val = parseFloat(dato.value);
-                // Nos quedamos con el valor más alto encontrado en la zona
-                if (val > maxValorEncontrado) {
-                    maxValorEncontrado = val;
+            // Buscamos el dato más cercano.
+            // Si está muy cerca (< 0.1 grados), asumimos que afecta a la estación
+            if (dist < distMinima) {
+                distMinima = dist;
+                if (dist < 0.1) { // Umbral de cercanía (~11km)
+                    hayDatos = true;
+                    // Nos quedamos con el valor mayor (principio de precaución)
+                    const val = parseFloat(dato.value);
+                    if (val > valorMostrar) valorMostrar = val;
                 }
             }
         });
 
-        const valorFinal = hayDatosCerca ? (maxValorEncontrado * conversion).toFixed(2) : "Sin datos";
+        // Aplicamos conversión
+        const valorFinal = hayDatos ? (valorMostrar * conversion).toFixed(2) : "Sin datos";
 
+        // --- GENERAR POPUP ---
         const popupContent = `
             <div style="font-family:'Segoe UI',sans-serif; min-width:180px;">
                 <div style="border-bottom:1px solid #444; padding-bottom:5px; margin-bottom:10px;">
@@ -300,7 +305,7 @@ function renderStations() {
                         ${valorFinal} <span style="font-size:11px; font-weight:normal; color:#aaa;">${unit}</span>
                     </div>
                     <div style="font-size:10px; color:#aaa; margin-top:5px; border-top:1px solid #555; padding-top:3px;">
-                        Cód: ${st.code}
+                        Cód: ${st.code} | Coords: ${lat.toFixed(3)}, ${lng.toFixed(3)}
                     </div>
                 </div>
             </div>

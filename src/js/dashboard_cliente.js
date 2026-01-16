@@ -205,9 +205,10 @@ function cargarMinMax(tipoId, fecha) {
 function cargarTopSensoresFrontend(gasKey) {
     if (!chartTopSensoresInstance) return;
 
-    // 1. Obtener datos
+    // 1. Obtener datos crudos (descargados de la BBDD)
     const datosContaminacion = (window.SERVER_DATA && window.SERVER_DATA[gasKey]) ? window.SERVER_DATA[gasKey] : [];
 
+    // Si no hay datos para ese día/gas, limpiamos la gráfica
     if (datosContaminacion.length === 0) {
         chartTopSensoresInstance.data.labels = [];
         chartTopSensoresInstance.data.datasets[0].data = [];
@@ -217,29 +218,28 @@ function cargarTopSensoresFrontend(gasKey) {
 
     const stations = window.stations || [];
     const config = window.gasConfig || {};
+    // Obtenemos el factor de conversión (ej: CO se multiplica por 500)
     const conversion = (config[gasKey] ? config[gasKey].conversion : 1);
 
-    // 2. LÓGICA DE "MÁXIMO RIESGO EN LA ZONA"
+    // 2. LÓGICA: BUSCAR EL PICO MÁXIMO CERCANO A CADA ESTACIÓN
     const ranking = stations.map(st => {
-        let maxValorEncontrado = 0;
+        let maxValorEncontrado = 0; // Empezamos en 0
         let hayDatosCerca = false;
 
-        // Normalizar coords estación
         const latSt = st.lat;
         const lonSt = st.lng || st.lon;
 
         datosContaminacion.forEach(dato => {
-            // Calcular distancia
+            // Calcular distancia (Pitágoras)
             const dist = Math.sqrt(Math.pow(latSt - dato.lat, 2) + Math.pow(lonSt - dato.lon, 2));
 
             // RADIO DE BÚSQUEDA: 0.1 grados son aprox 11km.
-            // Buscamos cualquier dato en ese radio.
+            // Si el dato está cerca de la estación...
             if (dist < 0.1) {
                 hayDatosCerca = true;
                 const val = parseFloat(dato.value);
-                // ¡AQUÍ ESTÁ EL CAMBIO!
-                // Si encontramos un valor más alto que el que teníamos, nos quedamos con él.
-                // Da igual que esté un poco más lejos, priorizamos el valor alto.
+
+                // ...y es MAYOR que lo que ya teníamos, nos quedamos con él.
                 if (val > maxValorEncontrado) {
                     maxValorEncontrado = val;
                 }
@@ -248,18 +248,24 @@ function cargarTopSensoresFrontend(gasKey) {
 
         return {
             nombre: st.name,
+            // Aplicamos la conversión al valor máximo encontrado
             valor: hayDatosCerca ? parseFloat((maxValorEncontrado * conversion).toFixed(2)) : 0
         };
     });
 
-    // 3. Ordenar y Top 5
+    // 3. ORDENAR: De más contaminado a menos
     ranking.sort((a, b) => b.valor - a.valor);
+
+    // 4. TOP 5
     const top5 = ranking.slice(0, 5);
 
-    // 4. Pintar
+    // 5. PINTAR
     chartTopSensoresInstance.data.labels = top5.map(x => x.nombre);
     chartTopSensoresInstance.data.datasets[0].data = top5.map(x => x.valor);
     chartTopSensoresInstance.data.datasets[0].label = `Top 5 Estaciones (${gasKey})`;
+
+    // Asignar color (Dorado para indicar Oficiales)
+    chartTopSensoresInstance.data.datasets[0].backgroundColor = '#FFD700';
 
     chartTopSensoresInstance.update();
 }
