@@ -70,15 +70,23 @@ function getMedicionesXTipo($conn, $tipoId, $fecha = null)
     // Si no llega fecha, usamos la de hoy por defecto
     $fechaFiltro = $fecha ?? date('Y-m-d');
 
-    // Modificamos la consulta para filtrar por el día específico usando DATE()
-    // Nota: DATE(m.hora) extrae solo la parte Y-m-d de la columna datetime
-    $sql = "SELECT m.valor, m.localizacion, m.hora, tm.unidad, tm.medida, s.mac
+    // SOLUCIÓN:
+    // 1. Usamos MAX(m.valor) para coger el pico de contaminación del día.
+    // 2. Usamos GROUP BY m.sensor_id para que cada sensor solo salga UNA vez en el mapa.
+    // 3. Añadimos m.localizacion en el SELECT (usando ANY_VALUE o asumiendo que es constante por sensor).
+
+    $sql = "SELECT 
+                MAX(m.valor) as max_valor, 
+                m.localizacion, 
+                tm.unidad, 
+                tm.medida, 
+                s.mac
             FROM medicion m
             INNER JOIN tipo_medicion tm ON m.tipo_medicion_id = tm.id
             INNER JOIN sensor s ON m.sensor_id = s.id
             WHERE m.tipo_medicion_id = ? 
             AND DATE(m.hora) = ? 
-            ORDER BY m.hora ASC";
+            GROUP BY m.sensor_id";
 
     $stmt = $conn->prepare($sql);
 
@@ -94,15 +102,24 @@ function getMedicionesXTipo($conn, $tipoId, $fecha = null)
         if (!empty($row['localizacion'])) {
             $coords = explode(',', $row['localizacion']);
             if (count($coords) === 2) {
-                $puntos[] = [
-                    "lat"    => (float)trim($coords[0]),
-                    "lon"    => (float)trim($coords[1]),
-                    "value"  => (float)$row['valor'],
-                    "unit"   => $row['unidad'],
-                    "label"  => $row['medida'],
-                    "sensor" => $row['mac'],
-                    "fecha"  => $row['hora']
-                ];
+                // Limpiamos espacios en blanco por si acaso "40.123, -3.123"
+                $lat = (float)trim($coords[0]);
+                $lon = (float)trim($coords[1]);
+
+                // Verificación extra: Si lat/lon son 0, el punto no se pinta bien
+                if ($lat != 0 && $lon != 0) {
+                    $puntos[] = [
+                        "lat"    => $lat,
+                        "lon"    => $lon,
+                        // ¡IMPORTANTE!: Usamos el alias 'max_valor'
+                        "value"  => (float)$row['max_valor'],
+                        "unit"   => $row['unidad'],
+                        "label"  => $row['medida'],
+                        "sensor" => $row['mac'],
+                        // Usamos la fecha del filtro ya que agrupamos
+                        "fecha"  => $fechaFiltro
+                    ];
+                }
             }
         }
     }
