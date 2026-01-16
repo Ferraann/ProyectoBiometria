@@ -50,54 +50,45 @@ function obtenerListaSensores($conn, $usuario_id){
  */
 function getTodosLosSensoresDetallados($conn) {
     try {
-        // 1. Log de control inicial
-        error_log("--- Iniciando consulta de sensores ---");
-
+        // Hemos simplificado los JOINs para que, si falla la relación con el usuario, 
+        // el sensor aparezca de todos modos (gracias al LEFT JOIN).
         $sql = "SELECT 
                     s.id AS sensor_id, 
                     s.mac, 
                     s.nombre AS nombre_sensor, 
                     s.modelo, 
                     s.estado, 
-                    u.nombre AS nombre_usuario 
+                    (SELECT u.nombre 
+                     FROM usuario u 
+                     JOIN usuario_sensor us ON u.id = us.usuario_id 
+                     WHERE us.sensor_id = s.id AND us.actual = 1 
+                     LIMIT 1) AS nombre_usuario
                 FROM sensor s
-                LEFT JOIN usuario_sensor us ON s.id = us.sensor_id AND us.actual = 1
-                LEFT JOIN usuario u ON us.usuario_id = u.id
                 ORDER BY s.id DESC";
 
         $result = $conn->query($sql);
 
         if (!$result) {
-            error_log("SQL Error: " . $conn->error);
+            error_log("Error SQL Directo: " . $conn->error);
             return ["status" => "error", "mensaje" => $conn->error];
         }
 
-        // 2. ¿Cuántas filas devuelve MySQL ANTES de procesarlas?
-        error_log("Filas encontradas en MySQL: " . $result->num_rows);
-
         $sensores = [];
         while ($row = $result->fetch_assoc()) {
-            // 3. Log del primer registro para ver qué nombres de columnas vienen
-            if (empty($sensores)) {
-                error_log("Estructura primera fila: " . print_r($row, true));
-            }
-
             $sensores[] = [
-                "sensor_id"      => (int)($row["sensor_id"] ?? 0),
-                "mac"            => $row["mac"] ?? "N/A",
-                "nombre_sensor"  => $row["nombre_sensor"] ?? "Sin nombre",
-                "modelo"         => $row["modelo"] ?? "N/A",
-                "estado"         => (int)($row["estado"] ?? 0),
-                "nombre_usuario" => $row["nombre_usuario"] ?? null
+                "sensor_id"      => (int)$row["sensor_id"],
+                "mac"            => $row["mac"] ?? '00:00:00:00',
+                "nombre_sensor"  => $row["nombre_sensor"] ?? 'Sin nombre',
+                "modelo"         => $row["modelo"] ?? 'N/A',
+                "estado"         => (int)$row["estado"],
+                "nombre_usuario" => $row["nombre_usuario"] // Será NULL si no tiene dueño
             ];
         }
-
-        error_log("Total procesados: " . count($sensores));
 
         return ["status" => "ok", "listaSensores" => $sensores];
 
     } catch (Exception $e) {
-        error_log("Excepción: " . $e->getMessage());
+        error_log("Excepción en sensores: " . $e->getMessage());
         return ["status" => "error", "mensaje" => $e->getMessage()];
     }
 }
