@@ -370,17 +370,17 @@ nav a:hover{
 
 /* El div que envuelve al canvas (que tiene style="height: 300px; width: 100%") */
 .graph-placeholder > div {
-    width: 100% !important; /* Fuerza el ancho al contenedor padre */
-    max-width: 100%;        /* Evita que crezca más allá */
-    flex: 1;                /* Ocupa el espacio restante vertical */
-    min-width: 0;           /* TRUCO CLAVE: Permite que el flex item se encoja */
-    position: relative;     /* Necesario para Chart.js */
+    width: 100%;
+    max-width: 100%;
+    flex: 1;
+    min-width: 0;
+    position: relative;
 }
 
 /* La etiqueta canvas en sí */
 .graph-placeholder canvas {
-    max-width: 100% !important;
-    height: auto !important;
+    max-width: 100%;
+    height: auto;
 }
 
 .gas-main-info h4 i {
