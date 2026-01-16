@@ -50,11 +50,14 @@ function obtenerListaSensores($conn, $usuario_id){
  */
 function getTodosLosSensoresDetallados($conn) {
     try {
+        // 1. Log de control inicial
+        error_log("--- Iniciando consulta de sensores ---");
+
         $sql = "SELECT 
                     s.id AS sensor_id, 
                     s.mac, 
-                    COALESCE(s.nombre, 'Sin nombre') AS nombre_sensor, 
-                    COALESCE(s.modelo, 'N/A') AS modelo, 
+                    s.nombre AS nombre_sensor, 
+                    s.modelo, 
                     s.estado, 
                     u.nombre AS nombre_usuario 
                 FROM sensor s
@@ -64,32 +67,38 @@ function getTodosLosSensoresDetallados($conn) {
 
         $result = $conn->query($sql);
 
-        // 1. DEPURE: Si la consulta falla, registramos el error exacto de SQL
         if (!$result) {
-            error_log("SQL Error en getTodosLosSensoresDetallados: " . $conn->error);
-            return ["status" => "error", "mensaje" => "Error en la base de datos."];
+            error_log("SQL Error: " . $conn->error);
+            return ["status" => "error", "mensaje" => $conn->error];
         }
+
+        // 2. ¿Cuántas filas devuelve MySQL ANTES de procesarlas?
+        error_log("Filas encontradas en MySQL: " . $result->num_rows);
 
         $sensores = [];
         while ($row = $result->fetch_assoc()) {
+            // 3. Log del primer registro para ver qué nombres de columnas vienen
+            if (empty($sensores)) {
+                error_log("Estructura primera fila: " . print_r($row, true));
+            }
+
             $sensores[] = [
-                "sensor_id"      => (int)$row["sensor_id"],
-                "mac"            => $row["mac"],
-                "nombre_sensor"  => $row["nombre_sensor"],
-                "modelo"         => $row["modelo"],
-                "estado"         => (int)$row["estado"],
-                "nombre_usuario" => $row["nombre_usuario"]
+                "sensor_id"      => (int)($row["sensor_id"] ?? 0),
+                "mac"            => $row["mac"] ?? "N/A",
+                "nombre_sensor"  => $row["nombre_sensor"] ?? "Sin nombre",
+                "modelo"         => $row["modelo"] ?? "N/A",
+                "estado"         => (int)($row["estado"] ?? 0),
+                "nombre_usuario" => $row["nombre_usuario"] ?? null
             ];
         }
 
-        // 2. DEPURE: Registrar cuántos sensores se han encontrado
-        error_log("getTodosLosSensoresDetallados: Cargados " . count($sensores) . " sensores.");
+        error_log("Total procesados: " . count($sensores));
 
         return ["status" => "ok", "listaSensores" => $sensores];
 
     } catch (Exception $e) {
-        error_log("CRÍTICO (getTodosLosSensoresDetallados): " . $e->getMessage());
-        return ["status" => "error", "mensaje" => "Excepción en el servidor."];
+        error_log("Excepción: " . $e->getMessage());
+        return ["status" => "error", "mensaje" => $e->getMessage()];
     }
 }
 ?>

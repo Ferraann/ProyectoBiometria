@@ -191,6 +191,7 @@ switch ($method) {
                 $fecha = $_GET['fecha'] ?? date('Y-m-d');
                 echo json_encode(getTopSensores($conn, $tipoId, $fecha));
                 break;
+                
             case 'getTodosLosSensoresDetallados':
                 $respuesta = getTodosLosSensoresDetallados($conn);  
                 if ($respuesta['status'] === 'ok') {
