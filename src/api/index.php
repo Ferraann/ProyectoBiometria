@@ -186,10 +186,16 @@ switch ($method) {
                 echo json_encode(getMinMaxGlobal($conn, $tipoId, $fecha));
                 break;
 
-            case "getTopSensores":
-                $tipoId = intval($_GET['tipo_id'] ?? 0);
+            case 'getTopSensores':
+                // Recibimos los parámetros del frontend
+                $id = $_GET['tipo_id'] ?? 1;
                 $fecha = $_GET['fecha'] ?? date('Y-m-d');
-                echo json_encode(getTopSensores($conn, $tipoId, $fecha));
+
+                // Llamamos a la función del Paso 1
+                $resultado = getTopSensores($conn, $id, $fecha);
+
+                // Devolvemos JSON al Javascript
+                echo json_encode($resultado);
                 break;
             default: echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]); break;
         }

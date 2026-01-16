@@ -53,36 +53,37 @@ function getMinMaxGlobal($conn, $tipoId, $fecha) {
 // 3. TOP 5 SENSORES MÁS CONTAMINANTES (Gráfica de Barras Horizontal)
 // Devuelve los 5 sensores con mayor promedio de contaminación ese día.
 function getTopSensores($conn, $tipoId, $fecha) {
-    // OPTIMIZACIÓN: En lugar de DATE(m.hora) = ?, usamos un rango.
-    // Esto permite usar el índice (index) de la base de datos y volar con 1M de registros.
+    // 1. y 2. Preparamos el filtro de FECHA y GAS
+    // Usamos rangos para que sea rapidísimo
     $fechaInicio = $fecha . " 00:00:00";
     $fechaFin    = $fecha . " 23:59:59";
 
-    $sql = "SELECT s.ubicacion_nombre, s.mac, AVG(m.valor) as promedio 
+    // 3. LA CONSULTA MÁGICA
+    // - MAX(m.valor): Encuentra el pico más alto (ej: 500), ignora los ceros.
+    // - GROUP BY s.id: OBLIGA a que sean centrales diferentes. Nunca saldrá la misma dos veces.
+    $sql = "SELECT s.ubicacion_nombre, s.mac, MAX(m.valor) as pico_maximo
             FROM medicion m
             INNER JOIN sensor s ON m.sensor_id = s.id
             WHERE m.tipo_medicion_id = ? 
             AND m.hora >= ? AND m.hora <= ?
-            GROUP BY m.sensor_id 
-            ORDER BY promedio DESC 
+            GROUP BY s.id 
+            ORDER BY pico_maximo DESC 
             LIMIT 5";
 
     $stmt = $conn->prepare($sql);
-    // "iss": integer, string, string
     $stmt->bind_param("iss", $tipoId, $fechaInicio, $fechaFin);
     $stmt->execute();
     $result = $stmt->get_result();
 
     $datos = [];
     while ($row = $result->fetch_assoc()) {
-        // Preferimos el nombre de ubicación (ej: "MADRID-RETIRO (Oficial)"), si no la MAC
+        // Si la central no tiene nombre, usamos su MAC para que no salga vacío
         $nombre = !empty($row['ubicacion_nombre']) ? $row['ubicacion_nombre'] : $row['mac'];
 
+        // 4. Preparamos los datos para la gráfica
         $datos[] = [
             'nombre' => $nombre,
-            // Enviamos el valor crudo. La conversión (x500 en CO) la hará JS si es necesario,
-            // pero para el ranking "Top 5" el valor crudo sirve perfectamente.
-            'valor' => round($row['promedio'], 2)
+            'valor'  => (float)$row['pico_maximo'] // Convertimos a número decimal
         ];
     }
     return $datos;

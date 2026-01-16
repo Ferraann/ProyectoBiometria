@@ -269,3 +269,60 @@ function cargarTopSensoresFrontend(gasKey) {
 
     chartTopSensoresInstance.update();
 }
+
+function cargarTopSensoresFrontend(gasKey) {
+    // Si la gráfica no está inicializada, no hacemos nada
+    if (!chartTopSensoresInstance) return;
+
+    // 1. OBTENER DATOS SELECCIONADOS
+    const tipoId = GAS_IDS_STATS[gasKey]; // Convertimos "NO2" -> 1
+
+    // Buscar la fecha del selector (flatpickr)
+    let fecha = new Date().toISOString().split('T')[0]; // Por defecto hoy
+    const picker = document.querySelector('#estadisticas-content .date-picker');
+    if (picker && picker._flatpickr && picker._flatpickr.selectedDates[0]) {
+        fecha = picker._flatpickr.formatDate(picker._flatpickr.selectedDates[0], "Y-m-d");
+    }
+
+    // Factor de conversión (ej: para CO a veces se usa, si no, es 1)
+    const config = window.gasConfig || {};
+    const conversion = (config[gasKey] ? config[gasKey].conversion : 1);
+
+    console.log(`Buscando Top 5 para Gas: ${gasKey} (${tipoId}) en Fecha: ${fecha}`);
+
+    // 2. PETICIÓN AL SERVIDOR (Aquí ocurre la magia)
+    fetch(`../api/index.php?accion=getTopSensores&tipo_id=${tipoId}&fecha=${fecha}`)
+        .then(res => res.json())
+        .then(data => {
+            // data es un array de 5 objetos: [{nombre: "Madrid", valor: 500}, ...]
+
+            // Preparamos arrays para Chart.js
+            const etiquetas = [];
+            const valores = [];
+            const colores = [];
+
+            data.forEach(item => {
+                etiquetas.push(item.nombre);
+
+                // Aplicamos conversión si hace falta
+                const valFinal = (item.valor * conversion).toFixed(2);
+                valores.push(valFinal);
+
+                // COLOR: Si el valor es muy alto (>100), Rojo Alerta. Si no, Dorado.
+                if (valFinal > 100) {
+                    colores.push('#ff4b1f'); // Rojo
+                } else {
+                    colores.push('#FFD700'); // Dorado
+                }
+            });
+
+            // 3. PINTAR LA GRÁFICA
+            chartTopSensoresInstance.data.labels = etiquetas;
+            chartTopSensoresInstance.data.datasets[0].data = valores;
+            chartTopSensoresInstance.data.datasets[0].backgroundColor = colores;
+            chartTopSensoresInstance.data.datasets[0].label = `Máximos ${gasKey} (µg/m³)`;
+
+            chartTopSensoresInstance.update();
+        })
+        .catch(err => console.error("Error cargando Top 5:", err));
+}
