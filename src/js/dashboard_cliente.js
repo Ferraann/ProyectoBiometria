@@ -205,10 +205,9 @@ function cargarMinMax(tipoId, fecha) {
 function cargarTopSensoresFrontend(gasKey) {
     if (!chartTopSensoresInstance) return;
 
-    // 1. Obtener datos crudos
+    // 1. Obtener datos
     const datosContaminacion = (window.SERVER_DATA && window.SERVER_DATA[gasKey]) ? window.SERVER_DATA[gasKey] : [];
 
-    // Si no hay datos, limpiamos
     if (datosContaminacion.length === 0) {
         chartTopSensoresInstance.data.labels = [];
         chartTopSensoresInstance.data.datasets[0].data = [];
@@ -220,33 +219,36 @@ function cargarTopSensoresFrontend(gasKey) {
     const config = window.gasConfig || {};
     const conversion = (config[gasKey] ? config[gasKey].conversion : 1);
 
-    // 2. ALGORITMO (Igual que el Mapa): Estación busca dato más cercano
+    // 2. LÓGICA DE "MÁXIMO RIESGO EN LA ZONA"
     const ranking = stations.map(st => {
-        let valorMasCercano = 0;
-        let distMinima = Infinity;
-        let hayDatos = false;
+        let maxValorEncontrado = 0;
+        let hayDatosCerca = false;
 
         // Normalizar coords estación
         const latSt = st.lat;
         const lonSt = st.lng || st.lon;
 
         datosContaminacion.forEach(dato => {
+            // Calcular distancia
             const dist = Math.sqrt(Math.pow(latSt - dato.lat, 2) + Math.pow(lonSt - dato.lon, 2));
 
-            // Lógica estricta de vecino más cercano
-            if (dist < distMinima) {
-                distMinima = dist;
-                // Si está dentro del radio de influencia (ej. 0.1 grados ~ 10km)
-                if (dist < 0.1) {
-                    hayDatos = true;
-                    valorMasCercano = parseFloat(dato.value);
+            // RADIO DE BÚSQUEDA: 0.1 grados son aprox 11km.
+            // Buscamos cualquier dato en ese radio.
+            if (dist < 0.1) {
+                hayDatosCerca = true;
+                const val = parseFloat(dato.value);
+                // ¡AQUÍ ESTÁ EL CAMBIO!
+                // Si encontramos un valor más alto que el que teníamos, nos quedamos con él.
+                // Da igual que esté un poco más lejos, priorizamos el valor alto.
+                if (val > maxValorEncontrado) {
+                    maxValorEncontrado = val;
                 }
             }
         });
 
         return {
             nombre: st.name,
-            valor: hayDatos ? parseFloat((valorMasCercano * conversion).toFixed(2)) : 0
+            valor: hayDatosCerca ? parseFloat((maxValorEncontrado * conversion).toFixed(2)) : 0
         };
     });
 

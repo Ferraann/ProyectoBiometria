@@ -246,10 +246,9 @@ function renderStations() {
     if (canvasLayer) map.removeLayer(canvasLayer);
     stationLayer.clearLayers();
 
+    // Determinar qué gas mostrar
     const selector = document.getElementById('gasSelect');
-    // Intentamos coger el gas seleccionado en estadísticas para que coincida, si no el del mapa
     const statsSelector = document.getElementById('statsGasSelect');
-    // Si el mapa está en modo "ESTACIONES", no tiene gas seleccionado, así que miramos el de estadísticas
     let gasKey = 'NO2';
     if (selector && selector.value !== 'ESTACIONES' && selector.value !== 'MAX') {
         gasKey = selector.value;
@@ -265,24 +264,25 @@ function renderStations() {
         const lat = st.lat;
         const lng = st.lng || st.lon;
 
-        let valorMostrar = 0;
-        let distMinima = Infinity;
-        let hayDatos = false;
+        // LÓGICA DE MÁXIMO RIESGO
+        let maxValorEncontrado = 0;
+        let hayDatosCerca = false;
 
         datosContaminacion.forEach(dato => {
             const dist = Math.sqrt(Math.pow(lat - dato.lat, 2) + Math.pow(lng - dato.lon, 2));
 
-            // MISMA LÓGICA EXACTA QUE EN LA GRÁFICA
-            if (dist < distMinima) {
-                distMinima = dist;
-                if (dist < 0.1) {
-                    hayDatos = true;
-                    valorMostrar = parseFloat(dato.value);
+            // Si está en el radio de ~11km (0.1 grados)
+            if (dist < 0.1) {
+                hayDatosCerca = true;
+                const val = parseFloat(dato.value);
+                // Nos quedamos con el valor más alto encontrado en la zona
+                if (val > maxValorEncontrado) {
+                    maxValorEncontrado = val;
                 }
             }
         });
 
-        const valorFinal = hayDatos ? (valorMostrar * conversion).toFixed(2) : "Sin datos";
+        const valorFinal = hayDatosCerca ? (maxValorEncontrado * conversion).toFixed(2) : "Sin datos";
 
         const popupContent = `
             <div style="font-family:'Segoe UI',sans-serif; min-width:180px;">
