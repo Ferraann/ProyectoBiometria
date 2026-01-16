@@ -341,27 +341,46 @@ nav a:hover{
 /* --- Marcadores de posición para gráficas --- */
 .graph-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    /* CAMBIO: Bajamos de 400px a 300px para que sea más flexible */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
     margin-top: 20px;
+    width: 100%; /* Asegura que no exceda el contenedor padre */
+    box-sizing: border-box; /* Incluye padding en el cálculo del ancho */
 }
 
 .graph-placeholder {
     width: 100%;
-    min-height: 350px; /* Altura para las gráficas */
-    
-    /* Mismo estilo que el placeholder del mapa */
-    background-color: #EBF0F5;
-    border: 1px dashed #ccc;
+    min-height: 350px;
+    background-color: #202020; /* Color que tenías inline en HTML */
+    border: 1px solid #444;    /* Borde que tenías inline */
     border-radius: 10px;
-    
-    /* Centrar el texto de ejemplo */
+
+    /* FLEXBOX CORREGIDO */
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Apila título arriba y gráfica abajo */
+    justify-content: flex-start; /* Empieza desde arriba */
     align-items: center;
-    color: #aaa;
+
     padding: 1rem;
     box-sizing: border-box;
+    overflow: hidden; /* Corta cualquier cosa que intente salirse */
+    position: relative;
+}
+
+/* El div que envuelve al canvas (que tiene style="height: 300px; width: 100%") */
+.graph-placeholder > div {
+    width: 100% !important; /* Fuerza el ancho al contenedor padre */
+    max-width: 100%;        /* Evita que crezca más allá */
+    flex: 1;                /* Ocupa el espacio restante vertical */
+    min-width: 0;           /* TRUCO CLAVE: Permite que el flex item se encoja */
+    position: relative;     /* Necesario para Chart.js */
+}
+
+/* La etiqueta canvas en sí */
+.graph-placeholder canvas {
+    max-width: 100% !important;
+    height: auto !important;
 }
 
 .gas-main-info h4 i {
