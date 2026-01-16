@@ -65,48 +65,50 @@ function obtenerMediciones($conn)
  * * @return array Colección de puntos con latitud, longitud y valor.
  * * @note La localización se asume almacenada en formato "lat,long" en la columna m.localizacion.
  */
-function getMedicionesXTipo($conn, $tipoId, $fecha = null)
-{
-    // Si no llega fecha, usamos la de hoy por defecto
-    $fechaFiltro = $fecha ?? date('Y-m-d');
+function getMedicionesXTipo($conn, $tipoId, $fecha = null) {
+    // Si no pasan fecha, usamos la de hoy
+    if (!$fecha) {
+        $fecha = date('Y-m-d');
+    }
 
-    // Modificamos la consulta para filtrar por el día específico usando DATE()
-    // Nota: DATE(m.hora) extrae solo la parte Y-m-d de la columna datetime
-    $sql = "SELECT m.valor, m.localizacion, m.hora, tm.unidad, tm.medida, s.mac
+    // Definimos rango del día completo
+    $fechaInicio = $fecha . " 00:00:00";
+    $fechaFin    = $fecha . " 23:59:59";
+
+    // CONSULTA CLAVE:
+    // 1. MAX(m.valor): Coge el valor 500 aunque haya veinte ceros.
+    // 2. GROUP BY s.id: Agrupa por sensor para no repetir puntos.
+    // 3. Aliases (lat, lon, value): Para que el JS lo entienda directo.
+
+    $sql = "SELECT 
+                s.latitud AS lat, 
+                s.longitud AS lon, 
+                MAX(m.valor) AS value
             FROM medicion m
-            INNER JOIN tipo_medicion tm ON m.tipo_medicion_id = tm.id
             INNER JOIN sensor s ON m.sensor_id = s.id
             WHERE m.tipo_medicion_id = ? 
-            AND DATE(m.hora) = ? 
-            ORDER BY m.hora ASC";
+            AND m.hora >= ? AND m.hora <= ?
+            GROUP BY s.id
+            HAVING value > 0"; // Opcional: Para no pintar sensores apagados (0)
 
     $stmt = $conn->prepare($sql);
 
-    // Bind de parámetros: "is" -> (integer, string)
-    $stmt->bind_param("is", $tipoId, $fechaFiltro);
+    // "iss" -> Entero (id), String (fecha), String (fecha)
+    $stmt->bind_param("iss", $tipoId, $fechaInicio, $fechaFin);
 
     $stmt->execute();
     $result = $stmt->get_result();
 
-    $puntos = [];
-
+    $datos = [];
     while ($row = $result->fetch_assoc()) {
-        if (!empty($row['localizacion'])) {
-            $coords = explode(',', $row['localizacion']);
-            if (count($coords) === 2) {
-                $puntos[] = [
-                    "lat"    => (float)trim($coords[0]),
-                    "lon"    => (float)trim($coords[1]),
-                    "value"  => (float)$row['valor'],
-                    "unit"   => $row['unidad'],
-                    "label"  => $row['medida'],
-                    "sensor" => $row['mac'],
-                    "fecha"  => $row['hora']
-                ];
-            }
-        }
+        // Forzamos que sean números para evitar errores en JS
+        $datos[] = [
+            'lat'   => (float)$row['lat'],
+            'lon'   => (float)$row['lon'],
+            'value' => (float)$row['value']
+        ];
     }
 
-    return $puntos;
+    return $datos;
 }
 ?>

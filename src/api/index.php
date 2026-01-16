@@ -161,18 +161,13 @@ switch ($method) {
                 break;
             case "getObtenerSensoresUsuario": echo json_encode(obtenerListaSensores($conn, $_GET['usuario_id'])); break;
             case "getRecompensasDisponibles": echo json_encode(obtenerRecompensasDisponibles($conn));   break;
-            case "getMedicionesXTipo":
-                $tipoId = isset($_GET['tipo_id']) ? intval($_GET['tipo_id']) : 0;
-                // Recogemos la fecha si existe, si no, pasamos null (la función usará "hoy")
-                $fecha = $_GET['fecha'] ?? null;
+            // En api/index.php
+            case 'getMedicionesXTipo':
+                $tipoId = $_GET['tipo_id'];
+                $fecha = $_GET['fecha'] ?? date('Y-m-d'); // Si no hay fecha, usa hoy
 
-                if ($tipoId > 0) {
-                    // Pasamos la conexión, el ID del gas y la fecha seleccionada
-                    echo json_encode(getMedicionesXTipo($conn, $tipoId, $fecha));
-                } else {
-                    http_response_code(400);
-                    echo json_encode(["status" => "error", "mensaje" => "ID de tipo de medición no válido"]);
-                }
+                $datos = getMedicionesXTipo($conn, $tipoId, $fecha);
+                echo json_encode($datos);
                 break;
             case "getEvolucionDiaria":
                 $tipoId = intval($_GET['tipo_id'] ?? 0);
