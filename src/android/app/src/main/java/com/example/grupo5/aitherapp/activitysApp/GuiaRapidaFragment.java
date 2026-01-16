@@ -35,6 +35,13 @@ public class GuiaRapidaFragment extends Fragment {
             String urlPdf = "https://fsanpra.upv.edu.es/src/img/ComoVincularTuSensor.pdf";
             descargarPDF(urlPdf, "ComoVincularTuSensor.pdf");
         });
+
+        // --- BOTÓN 2 ---
+        btnDescarga1.setOnClickListener(v -> {
+            // URL DE PLESK
+            String urlPdf = "https://fsanpra.upv.edu.es/src/img/ManualUsuario.pdf";
+            descargarPDF(urlPdf, "ManualUsuario.pdf");
+        });
     }
 
     // --- FUNCIÓN PARA DESCARGAR ---
