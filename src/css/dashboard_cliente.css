@@ -238,7 +238,7 @@ nav a:hover{
     color: var(--Principal_1);
 }
 
-#statsGasSelect option {
+#statsGasSelect {
     font-size: 16px;
     font-weight: var(--semibold);
     color: #333;
