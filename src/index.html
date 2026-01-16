@@ -66,7 +66,24 @@ Y la segunda sección son los pasos para optener la app.
                 <p>En muchas ciudades, la gente no sabe qué aire respira. Ahora puedes verlo, entenderlo y actuar.</p>
                 <a href="#descargar" class="btn-arrow"><i class="fa-solid fa-chevron-down"></i></a>
             </div>
-            <div class="hero-visual">
+            <div class="hero-visual" style="position: relative;">
+                <div id="loader" style="
+                    position: absolute;
+                        top: 0; left: 0; width: 100%; height: 100%;
+                        background: rgba(0,0,0,0.8);
+                        color: #ffae00;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 700;
+                        font-size: 1.2rem;
+                        z-index: 1000;
+                        border-radius: 20px; /* Para que coincida con bordes del mapa si los tiene */
+                    ">
+                    Calculando atmósfera...
+                </div>
+
                 <div id="map"></div>
             </div>
         </div>
@@ -185,8 +202,6 @@ estan en el header y links a las redes sociales que aun no estan activas.
 
 <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
         integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-
-<script src="js/leaflet-heat.js"></script>
 
 <script src="js/map-logic-index.js"></script>
 </html>

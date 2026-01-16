@@ -4,14 +4,12 @@ session_start();
 // Configuración de errores (Desactivar en producción)
 // error_reporting(0);
 
-/*
-// Seguridad: Descomentar cuando el login esté 100% operativo
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: login.html");
     exit;
 }
-*/
 
+date_default_timezone_set('Europe/Madrid');
 $nombre = $_SESSION['usuario_nombre'] ?? 'Usuario';
 
 // ===============================
@@ -196,16 +194,9 @@ if ($conn) {
                 </div>
 
                 <div class="graph-placeholder" style="background: #202020; border: 1px solid #444; position: relative;">
-                    <h3 style="color: #ffae00; margin-bottom: 10px; text-align: center;">Resumen Máximos/Mínimos Globales</h3>
+                    <h3 style="color: #ffae00; margin-bottom: 10px; text-align: center;">Resumen Máximos Y Mínimos Globales</h3>
                     <div style="height: 300px; width: 100%;">
                         <canvas id="chartMinMax"></canvas>
-                    </div>
-                </div>
-
-                <div class="graph-placeholder" style="background: #202020; border: 1px solid #444; position: relative;">
-                    <h3 style="color: #ffae00; margin-bottom: 10px; text-align: center;">Top 5 Sensores Más Contaminantes</h3>
-                    <div style="height: 300px; width: 100%;">
-                        <canvas id="chartTopSensores"></canvas>
                     </div>
                 </div>
 

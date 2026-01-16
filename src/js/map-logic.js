@@ -64,6 +64,7 @@ const stations = [
     {code: "52-1-1", lat: 35.291, lng: -2.946, name: "MELILLA"},
     {code: "41-72-3", lat: 41.72361, lon: -2.85694, name: "DURUELO DE LA SIERRA"}
 ];
+window.stations = stations;
 
 // --- 1. CONFIGURACIÓN VISUAL Y CONVERSIONES ---
 const config = {
@@ -88,6 +89,7 @@ const config = {
         stops: [ { val: 0, c: [0, 102, 151] }, { val: 1, c: [50, 135, 175] }, { val: 10, c: [195, 195, 125] }, { val: 25, c: [217, 113, 51] }, { val: 100, c: [74, 12, 0] } ]
     }
 };
+window.gasConfig = config;
 
 const maxRiskConfig = {
     unit: "Dominante",
@@ -241,12 +243,52 @@ function renderMap(mode) {
 
 // --- RENDERIZAR ESTACIONES ---
 function renderStations() {
+    // 1. Limpiamos capas anteriores
     if (canvasLayer) map.removeLayer(canvasLayer);
     stationLayer.clearLayers();
+
+    // 2. Averiguar qué gas estamos viendo y sus datos
+    const selector = document.getElementById('gasSelect');
+    // Si el selector está en "ESTACIONES", por defecto mostramos datos de NO2 o el último seleccionado
+    // Pero para ser consistentes, intentemos ver qué gas hay seleccionado en Estadísticas o usar NO2 por defecto
+    const statsSelector = document.getElementById('statsGasSelect');
+    const gasKey = statsSelector ? statsSelector.value : 'NO2'; // Usamos el gas de la otra pestaña como referencia
+
+    // Obtener datos crudos y config
+    const datosContaminacion = (window.SERVER_DATA && window.SERVER_DATA[gasKey]) ? window.SERVER_DATA[gasKey] : [];
+    const conversion = (config[gasKey] ? config[gasKey].conversion : 1);
+    const unit = config[gasKey] ? config[gasKey].unit : '';
 
     stations.forEach(st => {
         const lat = st.lat;
         const lng = st.lng || st.lon;
+
+        // --- LÓGICA DE CÁLCULO (IGUAL QUE LA GRÁFICA) ---
+        let valorMostrar = 0;
+        let distMinima = Infinity;
+        let hayDatos = false;
+
+        datosContaminacion.forEach(dato => {
+            // Distancia simple
+            const dist = Math.sqrt(Math.pow(lat - dato.lat, 2) + Math.pow(lng - dato.lon, 2));
+
+            // Buscamos el dato más cercano.
+            // Si está muy cerca (< 0.1 grados), asumimos que afecta a la estación
+            if (dist < distMinima) {
+                distMinima = dist;
+                if (dist < 0.1) { // Umbral de cercanía (~11km)
+                    hayDatos = true;
+                    // Nos quedamos con el valor mayor (principio de precaución)
+                    const val = parseFloat(dato.value);
+                    if (val > valorMostrar) valorMostrar = val;
+                }
+            }
+        });
+
+        // Aplicamos conversión
+        const valorFinal = hayDatos ? (valorMostrar * conversion).toFixed(2) : "Sin datos";
+
+        // --- GENERAR POPUP ---
         const popupContent = `
             <div style="font-family:'Segoe UI',sans-serif; min-width:180px;">
                 <div style="border-bottom:1px solid #444; padding-bottom:5px; margin-bottom:10px;">
@@ -256,11 +298,14 @@ function renderStations() {
                     ${st.name}
                 </div>
                 <div style="background:#333; padding:8px; border-radius:5px; margin-top:5px;">
-                    <div style="font-size:12px; color:#ccc; margin-bottom:2px;">
-                        <span style="color:#888;">Código:</span> ${st.code}
+                    <div style="font-size:12px; color:#ccc; margin-bottom:4px;">
+                        <span style="color:#888;">Gas Ref:</span> <strong>${gasKey}</strong>
                     </div>
-                    <div style="font-size:12px; color:#ccc;">
-                        <span style="color:#888;">Coords:</span> ${lat.toFixed(4)}, ${lng.toFixed(4)}
+                    <div style="font-size:16px; font-weight:bold; color:#fff; margin-bottom:4px;">
+                        ${valorFinal} <span style="font-size:11px; font-weight:normal; color:#aaa;">${unit}</span>
+                    </div>
+                    <div style="font-size:10px; color:#aaa; margin-top:5px; border-top:1px solid #555; padding-top:3px;">
+                        Cód: ${st.code} | Coords: ${lat.toFixed(3)}, ${lng.toFixed(3)}
                     </div>
                 </div>
             </div>
@@ -271,6 +316,7 @@ function renderStations() {
             .addTo(stationLayer);
     });
 }
+
 
 // --- FUNCIÓN PRINCIPAL DE CARGA (LOAD DATA) ---
 function loadData() {
@@ -387,21 +433,20 @@ map.on('click', function(e) {
 
 
 // --- ACTUALIZACIÓN POR FECHA (AJAX) ---
-async function updateMapByDate(fechaFormatoSQL) {
+window.updateMapByDate = async function(fechaFormatoSQL) {
     const loader = document.getElementById('loader');
     if (loader) loader.style.display = 'flex';
 
     try {
         const promesas = Object.keys(GAS_IDS).map(async (gasKey) => {
             const id = GAS_IDS[gasKey];
+            // Pedimos los datos crudos a la API
             const url = `../api/index.php?accion=getMedicionesXTipo&tipo_id=${id}&fecha=${fechaFormatoSQL}`;
             const response = await fetch(url);
             if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
             const data = await response.json();
 
-            // IMPORTANTE: Aquí solo guardamos los datos CRUDOS.
-            // NO aplicamos conversión aquí para no multiplicarlo dos veces.
-            // La conversión la hace 'loadData' cuando pinta.
+            // Guardamos datos crudos
             const datosCrudos = data.map(p => ({
                 ...p,
                 lat: parseFloat(p.lat),
@@ -412,21 +457,27 @@ async function updateMapByDate(fechaFormatoSQL) {
         });
 
         const resultados = await Promise.all(promesas);
+
+        // Actualizamos la variable global
         resultados.forEach(item => {
             if(window.SERVER_DATA) {
                 window.SERVER_DATA[item.key] = item.data;
             }
         });
 
+        // Repintamos mapa (si está visible)
         loadData();
+
+        // DEVOLVEMOS TRUE para indicar que todo fue bien
+        return true;
 
     } catch (error) {
         console.error("Error actualizando el mapa:", error);
-        alert("Hubo un error al cargar los datos de la fecha seleccionada.");
+        return false;
     } finally {
         if (loader) loader.style.display = 'none';
     }
-}
+};
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', function() {
