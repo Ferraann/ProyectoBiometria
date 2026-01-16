@@ -192,7 +192,13 @@ switch ($method) {
                 echo json_encode(getTopSensores($conn, $tipoId, $fecha));
                 break;
             case 'getTodosLosSensoresDetallados':
-                echo json_encode(getTodosLosSensoresDetallados($conn));
+                $respuesta = getTodosLosSensoresDetallados($conn);  
+                if ($respuesta['status'] === 'ok') {
+                echo json_encode($respuesta['listaSensores']);
+                } else {
+                    error_log("Error en API: " . $respuesta['mensaje']);
+                    echo json_encode([]); 
+                }
                 break;
             default: echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]); break;
         }
