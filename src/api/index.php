@@ -191,7 +191,7 @@ switch ($method) {
                 $fecha = $_GET['fecha'] ?? date('Y-m-d');
                 echo json_encode(getTopSensores($conn, $tipoId, $fecha));
                 break;
-                
+
             case 'getTodosLosSensoresDetallados':
                 $respuesta = getTodosLosSensoresDetallados($conn);  
                 if ($respuesta['status'] === 'ok') {
@@ -201,6 +201,9 @@ switch ($method) {
                     echo json_encode([]); 
                 }
                 break;
+
+            case "listaSensores":    echo json_encode(obtenerListaSensores($conn)); break;
+            
             default: echo json_encode(["status" => "error", "mensaje" => "Acción GET no reconocida."]); break;
         }
         break;
