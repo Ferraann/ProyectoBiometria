@@ -162,9 +162,6 @@ window.actualizarTodasLasGraficas = function(fechaForzada = null) {
     // Llamamos a las APIs (PHP) para Evolución y MinMax
     cargarEvolucion(tipoId, fecha);
     cargarMinMax(tipoId, fecha);
-
-    // Llamamos a la función FRONTEND para el Top 5 (usando los datos recién bajados)
-    cargarTopSensoresFrontend(gasKey);
 };
 
 function cargarEvolucion(tipoId, fecha) {

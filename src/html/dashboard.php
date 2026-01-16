@@ -197,7 +197,7 @@ if ($conn) {
                 </div>
 
                 <div class="graph-placeholder" style="background: #202020; border: 1px solid #444; position: relative;">
-                    <h3 style="color: #ffae00; margin-bottom: 10px; text-align: center;">Resumen Máximos/Mínimos Globales</h3>
+                    <h3 style="color: #ffae00; margin-bottom: 10px; text-align: center;">Resumen Máximos Y Mínimos Globales</h3>
                     <div style="height: 300px; width: 100%;">
                         <canvas id="chartMinMax"></canvas>
                     </div>
