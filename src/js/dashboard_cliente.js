@@ -46,28 +46,20 @@ document.addEventListener('DOMContentLoaded', () => {
             defaultDate: "today",
             locale: { firstDayOfWeek: 1 },
             onChange: async function(selectedDates, dateStr, instance) {
-                // 1. Actualizar texto visual
+                // 1. Convertir fecha visual (16/01/2026) a formato SQL (2026-01-16)
+                const fechaParaAPI = instance.formatDate(selectedDates[0], "Y-m-d");
+                
+                // 2. Actualizar texto visual
                 instance.element.querySelector('span').textContent = 'Fecha: ' + dateStr;
 
-                // 2. Formato SQL
-                const fechaParaAPI = instance.formatDate(selectedDates[0], "Y-m-d");
-
-                // 3. Sincronizar todos los calendarios (para que tengan la misma fecha)
-                document.querySelectorAll('.date-picker').forEach(p => {
-                    if (p._flatpickr && p !== instance.element) {
-                        p._flatpickr.setDate(selectedDates[0], false);
-                        p.querySelector('span').textContent = 'Fecha: ' + dateStr;
-                    }
-                });
-
-                // 4. LÓGICA CENTRALIZADA: Siempre actualizamos los datos primero
+                // 3. LLAMAR A LA API PARA ACTUALIZAR EL MAPA
+                // Esto va a api/index.php?accion=getMedicionesXTipo&fecha=2026-01-16
                 if (typeof window.updateMapByDate === 'function') {
-                    // Esperamos a que se bajen los datos nuevos
                     await window.updateMapByDate(fechaParaAPI);
                 }
 
-                // 5. Si estamos en estadísticas, repintamos las gráficas con los datos NUEVOS
-                if (document.getElementById('estadisticas-content').classList.contains('active-tab-content')) {
+                // 4. Actualizar gráficas también
+                if (typeof window.actualizarTodasLasGraficas === 'function') {
                     window.actualizarTodasLasGraficas(fechaParaAPI);
                 }
             }
